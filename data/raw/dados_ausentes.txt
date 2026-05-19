@@ -1,69 +1,84 @@
 
-===== Ergast/Jolpica 2014–2024 =====
-Shape: (2979, 9)
-Colunas: ['season', 'round', 'race_name', 'driver_id', 'constructor', 'grid_position', 'finish_position', 'status', 'points']
-Seasons: [2018, 2019, 2020, 2021, 2022, 2023, 2024]
+=======================================================
+  Ergast 2018-2024
+=======================================================
+  Shape  : (2979, 9)
+  Colunas: ['season', 'round', 'race_name', 'driver_id', 'constructor', 'grid_position', 'finish_position', 'status', 'points']
+  Seasons: [2018, 2019, 2020, 2021, 2022, 2023, 2024]
 
-Sem nulos encontrados.
+  Sem nulos.
 
-===== Pitstops 2014–2024 =====
-Shape: (5120, 7)
-Colunas: ['season', 'round', 'race_name', 'driver_id', 'stop', 'lap', 'duration']
-Seasons: [2018, 2019, 2020, 2021, 2022, 2023, 2024]
+=======================================================
+  Ergast pitstops 2018-2024
+=======================================================
+  Shape  : (5120, 7)
+  Colunas: ['season', 'round', 'race_name', 'driver_id', 'stop', 'lap', 'duration']
+  Seasons: [2018, 2019, 2020, 2021, 2022, 2023, 2024]
 
-Nulos por coluna:
-duration    6
-dtype: int64
+  Nulos por coluna:
+    duration: 6 (0.1%)
 
-===== Ergast/Jolpica 2025 =====
-Shape: (479, 9)
-Colunas: ['season', 'round', 'race_name', 'driver_id', 'constructor', 'grid_position', 'finish_position', 'status', 'points']
-Seasons: [2025]
+=======================================================
+  Ergast 2025
+=======================================================
+  Shape  : (479, 9)
+  Colunas: ['season', 'round', 'race_name', 'driver_id', 'constructor', 'grid_position', 'finish_position', 'status', 'points']
+  Seasons: [2025]
 
-Sem nulos encontrados.
+  Sem nulos.
 
-===== OpenF1 Starting Grid 2025 =====
-Shape: (460, 9)
-Colunas: ['season', 'meeting_key', 'race_session_key', 'qualifying_session_key', 'circuit_short_name', 'date_start', 'driver_number', 'grid_position', 'qualifying_lap_duration']
-Seasons: [2025]
+=======================================================
+  OpenF1 starting grid 2025
+=======================================================
+  Shape  : (460, 9)
+  Colunas: ['season', 'meeting_key', 'race_session_key', 'qualifying_session_key', 'circuit_short_name', 'date_start', 'driver_number', 'grid_position', 'qualifying_lap_duration']
+  Seasons: [2025]
 
-Nulos por coluna:
-qualifying_lap_duration    16
-dtype: int64
+  Nulos por coluna:
+    qualifying_lap_duration: 16 (3.5%)
 
-===== Corridas no Ergast sem pitstop =====
-Total: 1
-Season 2021, Round 12
+=======================================================
+  FastF1 qualifying 2018-2024
+=======================================================
+  Shape  : (45809, 7)
+  Colunas: ['Driver', 'LapTime', 'Sector1Time', 'Sector2Time', 'Sector3Time', 'season', 'round']
+  Seasons: [2018, 2019, 2020, 2021, 2022, 2023, 2024]
 
-===== Piloto/corrida sem registro de pitstop =====
-Total: 194
-Season 2018, Round 1, Driver ericsson
-Season 2018, Round 1, Driver gasly
-Season 2018, Round 1, Driver sirotkin
-Season 2018, Round 2, Driver ricciardo
-Season 2018, Round 4, Driver hulkenberg
-Season 2018, Round 4, Driver ocon
-Season 2018, Round 4, Driver sirotkin
-Season 2018, Round 5, Driver gasly
-Season 2018, Round 5, Driver grosjean
-Season 2018, Round 5, Driver hulkenberg
-Season 2018, Round 5, Driver raikkonen
-Season 2018, Round 7, Driver brendon_hartley
-Season 2018, Round 7, Driver stroll
-Season 2018, Round 8, Driver gasly
-Season 2018, Round 8, Driver ocon
-Season 2018, Round 8, Driver perez
-Season 2018, Round 9, Driver bottas
-Season 2018, Round 9, Driver brendon_hartley
-Season 2018, Round 9, Driver hulkenberg
-Season 2018, Round 10, Driver brendon_hartley
-Season 2018, Round 11, Driver ricciardo
-Season 2018, Round 12, Driver leclerc
-Season 2018, Round 12, Driver max_verstappen
-Season 2018, Round 13, Driver alonso
-Season 2018, Round 13, Driver hulkenberg
-Season 2018, Round 13, Driver leclerc
-Season 2018, Round 13, Driver ricciardo
-Season 2018, Round 14, Driver alonso
-Season 2018, Round 14, Driver brendon_hartley
-Season 2018, Round 15, Driver ocon
+  Nulos por coluna:
+    LapTime: 14475 (31.6%)
+    Sector1Time: 10948 (23.9%)
+    Sector2Time: 681 (1.5%)
+    Sector3Time: 3176 (6.9%)
+
+=======================================================
+  FastF1 laps 2018-2024
+=======================================================
+  Shape  : (164463, 11)
+  Colunas: ['Driver', 'LapNumber', 'LapTime', 'Sector1Time', 'Sector2Time', 'Sector3Time', 'Compound', 'TyreLife', 'Stint', 'season', 'round']
+  Seasons: [2018, 2019, 2020, 2021, 2022, 2023, 2024]
+
+  Nulos por coluna:
+    LapTime: 2969 (1.8%)
+    Sector1Time: 3565 (2.2%)
+    Sector2Time: 349 (0.2%)
+    Sector3Time: 533 (0.3%)
+    Compound: 343 (0.2%)
+    TyreLife: 343 (0.2%)
+    Stint: 343 (0.2%)
+
+=======================================================
+  Ergast vs FastF1 Qualifying
+=======================================================
+  Corridas em Ergast sem correspondencia em FastF1 Qualifying: 1
+    Season 2024, Round 21
+
+=======================================================
+  Ergast vs FastF1 Laps
+=======================================================
+  Corridas em Ergast sem correspondencia em FastF1 Laps: 0
+
+=======================================================
+  Ergast vs Pitstops
+=======================================================
+  Corridas em Ergast sem correspondencia em Pitstops: 1
+    Season 2021, Round 12
