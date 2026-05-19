@@ -6,7 +6,7 @@ arquivo_ergast = "data/raw/ergast_2018_2024.csv"
 arquivo_openf1_validation = "data/raw/openf1_validation.json"
 arquivo_openf1_grid = "data/raw/openf1_starting_grid_2025.csv"
 
-saida_md = "mapeamento_openf1_ergast.md"
+saida_md = "docs/mapeamento_openf1_ergast.md"
 
 
 def carregar_csv(nome, caminho):
