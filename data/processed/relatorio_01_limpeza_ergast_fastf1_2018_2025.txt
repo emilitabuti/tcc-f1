@@ -1,0 +1,54 @@
+RELATÓRIO - 01 LIMPEZA ERGAST + FASTF1
+============================================================
+
+ARQUIVOS UTILIZADOS
+------------------------------------------------------------
+Ergast 2018-2024: C:\Users\isagr\Documents\tcc-f1-master\data\raw\ergast_2018_2024.csv
+Ergast 2025: C:\Users\isagr\Documents\tcc-f1-master\data\raw\ergast_2025_results.csv
+FastF1 laps 2018-2025: C:\Users\isagr\Documents\tcc-f1-master\data\raw\fastf1_laps_2018_2025.csv
+
+DIMENSÕES INICIAIS
+------------------------------------------------------------
+Linhas iniciais Ergast concatenado: 3458
+Linhas iniciais FastF1: 206202
+
+LIMPEZA ERGAST
+------------------------------------------------------------
+Linhas Ergast após filtro season >= 2018: 3458
+Registros removidos por grid_position/finish_position nulos: 0
+Duplicatas removidas por RaceID: 0
+
+AGREGAÇÃO FASTF1
+------------------------------------------------------------
+Linhas FastF1 agregadas por RaceID: 3452
+Todos os códigos de pilotos do FastF1 foram mapeados.
+
+MERGE FINAL
+------------------------------------------------------------
+Linhas finais após merge geral: 3458
+Linhas finais 2018-2024: 2979
+Linhas finais 2018-2025: 3458
+Registros Ergast sem correspondência FastF1: 6
+
+Temporadas no arquivo 2018-2024:
+season
+2018    420
+2019    420
+2020    340
+2021    440
+2022    440
+2023    440
+2024    479
+Name: count, dtype: int64
+
+Temporadas no arquivo 2018-2025:
+season
+2018    420
+2019    420
+2020    340
+2021    440
+2022    440
+2023    440
+2024    479
+2025    479
+Name: count, dtype: int64

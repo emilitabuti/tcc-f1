@@ -1,0 +1,192 @@
+Com base em tudo verificado nos papers e nas APIs, aqui está a lista definitiva:
+
+---
+
+## 1. Jolpica — `/results/`
+`api.jolpi.ca/ergast/f1/{season}/{round}/results.json`
+
+| Campo | Feature derivada | Verificado em |
+|---|---|---|
+| `season` | `season_factor` + ordenação temporal | TabNet [4], RAPM [9] |
+| `round` | ordenação temporal + RaceID | TabNet [4], RAPM [9] |
+| `Results[].Driver.driverId` | chave do piloto | RAPM [9], Koopman [5] |
+| `Results[].Constructor.constructorId` | chave do construtor | RAPM [9], Koopman [5] |
+| `Results[].grid` | **`grid_position`** | TabNet [4], Koopman [5], Barra [3] |
+| `Results[].positionOrder` | **`finish_position`** (target) | todos |
+| `Results[].status` | `driver_dnf_rate`, `constructor_dnf_rate`, `safety_car_flag` | RAPM [9] exclui DNFs — sua arquitetura mantém com flag |
+| `Results[].laps` | feature direta ou exclusão documentada | TabNet [4] usa |
+| `Results[].points` | excluída — data leakage; necessária só para validar RAPM | RAPM [9] |
+
+---
+
+## 2. Jolpica — `/qualifying/`
+`api.jolpi.ca/ergast/f1/{season}/{round}/qualifying.json`
+
+| Campo | Feature derivada | Verificado em |
+|---|---|---|
+| `season` + `round` | join com results | — |
+| `QualifyingResults[].Driver.driverId` | chave | — |
+| `QualifyingResults[].position` | confirmar `grid_position` / `qualifying_position` | Koopman [5] usa diretamente |
+| `QualifyingResults[].Q1`, `Q2`, `Q3` | imputação KNN dos nulos de qualifying | arquitetura |
+
+---
+
+## 3. Jolpica — `/pitstops/`
+`api.jolpi.ca/ergast/f1/{season}/{round}/pitstops.json`
+
+| Campo | Feature derivada | Verificado em |
+|---|---|---|
+| `season` + `round` | join | — |
+| `PitStops[].driverId` | chave | — |
+| `PitStops[].stop` | contar número de stops → **`avg_pit_stops_circuit`** | Koopman [5] usa `pit_stops_count` |
+| `PitStops[].lap` | identificar se pit foi sob safety car | arquitetura |
+
+---
+
+## 4. Jolpica — `/circuits/`
+`api.jolpi.ca/ergast/f1/circuits.json`
+
+| Campo | Feature derivada | Verificado em |
+|---|---|---|
+| `circuitId` | chave de circuito | — |
+| `circuitName` | identificação | — |
+| `Location.lat` + `Location.long` | geolocalização — altitude **não está aqui** | ⚠️ altitude precisa de tabela manual |
+| `Location.country` | identificação | — |
+
+---
+
+## 5. Jolpica — `/drivers/`
+`api.jolpi.ca/ergast/f1/drivers.json`
+
+| Campo | Feature derivada | Verificado em |
+|---|---|---|
+| `driverId` | chave | — |
+| `dateOfBirth` | base para `driver_experience` (count de corridas) | arquitetura |
+
+---
+
+## 6. FastF1 — `session.laps` (sessão Race, 2018–2025)
+`fastf1.get_session(year, round, 'R').load(laps=True)`
+
+| Campo real FastF1 | Feature derivada | Verificado em |
+|---|---|---|
+| `Driver` | chave (abreviação 3 letras) | Pit Stop paper [8] |
+| `LapNumber` | identificar volta 1 → pneu de largada | Pit Stop paper [8] |
+| `Compound` | **`tire_compound_start`** (stint 1, volta 1) | Pit Stop paper [8] |
+| `TyreLife` | confirmar se pneu era novo na largada | Pit Stop paper [8] |
+| `FreshTyre` | confirmar pneu novo | Pit Stop paper [8] |
+| `Stint` | agrupar stints para estratégia | Pit Stop paper [8] |
+| `PitInTime` / `PitOutTime` | confirmar número de pit stops | Pit Stop paper [8] |
+| `TrackStatus` | **`safety_car_flag`** — valor "4"=SC, "5"=VSC | Pit Stop paper [8] |
+| `LapTime` | mediana por circuito para imputação de nulos | arquitetura |
+
+---
+
+## 7. FastF1 — `session.laps.get_weather_data()` (sessão Race, 2018–2025)
+
+| Campo real FastF1 | Feature derivada | Verificado em |
+|---|---|---|
+| `AirTemp` | componente do **`weather_impact_factor`** | FastF1 docs confirmados |
+| `Humidity` | componente do **`weather_impact_factor`** | FastF1 docs confirmados |
+| `Rainfall` | componente do **`weather_impact_factor`** | FastF1 docs confirmados |
+| `TrackTemp` | componente do **`weather_impact_factor`** | FastF1 docs confirmados |
+| `WindSpeed` | componente complementar | FastF1 docs confirmados |
+
+⚠️ O Pit Stop paper [8] omitiu `AirTemp` e `Humidity` por baixa relevância para pit stop — mas o objetivo dele é diferente do seu. Para predição de resultado de corrida, a literatura (Barra [3], Frontiers [8] revisão) confirma relevância do clima.
+
+---
+
+## 8. OpenF1 — `/stints` (2023–2026)
+`api.openf1.org/v1/stints?session_key=...`
+
+| Campo real | Feature derivada | Verificado em |
+|---|---|---|
+| `driver_number` | chave | OpenF1 docs |
+| `compound` | **`tire_compound_start`** para 2023+ (stint_number==1) | OpenF1 docs, Koopman [5] usa OpenF1 |
+| `lap_start` | confirmar largada | OpenF1 docs |
+| `tyre_age_at_start` | pneu novo ou usado | OpenF1 docs |
+| `stint_number` | filtrar stint 1 | OpenF1 docs |
+
+---
+
+## 9. OpenF1 — `/weather` (2023–2026)
+`api.openf1.org/v1/weather?session_key=...`
+
+| Campo real | Feature derivada | Verificado em |
+|---|---|---|
+| `air_temperature` | **`weather_impact_factor`** | OpenF1 docs |
+| `humidity` | **`weather_impact_factor`** | OpenF1 docs |
+| `rainfall` | **`weather_impact_factor`** | OpenF1 docs |
+| `track_temperature` | **`weather_impact_factor`** | OpenF1 docs |
+| `wind_speed` | complementar | OpenF1 docs |
+
+---
+
+## 10. OpenF1 — `/race_control` (2023–2026)
+`api.openf1.org/v1/race_control?session_key=...`
+
+| Campo real | Feature derivada | Verificado em |
+|---|---|---|
+| `category` | filtrar "SafetyCar" | OpenF1 docs |
+| `message` | confirmar SC vs VSC | OpenF1 docs |
+| `flag` | contexto de `safety_car_flag` | OpenF1 docs |
+
+---
+
+## 11. OpenF1 — `/meetings` (2023–2026)
+`api.openf1.org/v1/meetings?year=...`
+
+| Campo real | Feature derivada | Verificado em |
+|---|---|---|
+| `circuit_type` | **`circuit_type`** direto — "Permanent"=0, "Temporary - Street"=1 | OpenF1 docs |
+| `meeting_key` | join com sessions | OpenF1 docs |
+| `circuit_short_name` | join com Jolpica | OpenF1 docs |
+
+---
+
+## 12. OpenF1 — `/session_result` (2023–2026)
+`api.openf1.org/v1/session_result?session_key=...`
+
+| Campo real | Feature derivada | Verificado em |
+|---|---|---|
+| `driver_number` | chave | OpenF1 docs |
+| `position` | `finish_position` para 2023+ | OpenF1 docs |
+| `dnf` | flag booleana de DNF | OpenF1 docs |
+| `number_of_laps` | complementar ao campo `laps` do Jolpica | OpenF1 docs |
+
+---
+
+## 13. Tabela manual — obrigatória (~25 linhas)
+
+| Campo | Motivo | Como coletar |
+|---|---|---|
+| `altitude` | nenhuma API tem | Wikipedia por circuito (~25 linhas) |
+| `number_of_corners` | componente de `track_complexity` | racefans.net / Wikipedia |
+| `circuit_length_km` | componente de `track_complexity` | Jolpica tem parcialmente, completar manualmente |
+| `circuit_type` 2018–2022 | OpenF1 só tem 2023+ | classificar manualmente (~20 circuitos fixos) |
+
+---
+
+## Resumo: de onde vem cada feature final do modelo
+
+| Feature final | Fonte primária | Fonte secundária (2023+) |
+|---|---|---|
+| `grid_position` | Jolpica `results.grid` | OpenF1 `starting_grid` |
+| `finish_position` (target) | Jolpica `results.positionOrder` | OpenF1 `session_result.position` |
+| `recent_form_5` / `recent_form_3` | derivado de Jolpica `positionOrder` | — |
+| `driver_experience` | count de Jolpica `results` por `driverId` | — |
+| `driver_wins_total` | acumulado de Jolpica `positionOrder==1` | Koopman usa `wins_before` |
+| `constructor_wins_total` | acumulado de Jolpica por `constructorId` | — |
+| `driver_dnf_rate` | Jolpica `results.status` | OpenF1 `session_result.dnf` |
+| `constructor_dnf_rate` | Jolpica `results.status` | OpenF1 `session_result.dnf` |
+| `driver_coef_rapm` | Ridge sobre Jolpica `positionOrder` | RAPM [9] |
+| `constructor_coef_rapm` | Ridge sobre Jolpica `positionOrder` | RAPM [9] |
+| `driver_constructor_synergy` | média Jolpica `positionOrder` por par piloto+equipe | — |
+| `tire_compound_start` | FastF1 `Compound` (stint 1) | OpenF1 `stints.compound` |
+| `avg_pit_stops_circuit` | Jolpica `pitstops.stop` count por circuito | OpenF1 `pit` |
+| `safety_car_flag` | FastF1 `TrackStatus` | OpenF1 `race_control` |
+| `weather_impact_factor` | FastF1 `get_weather_data()` | OpenF1 `weather` |
+| `circuit_type` | OpenF1 `meetings.circuit_type` (2023+) + tabela manual | — |
+| `track_complexity` | tabela manual (altitude + corners + length + incidents históricos) | — |
+| `altitude` | tabela manual | — |
+| `season_factor` | Jolpica `results.season` direto | — |

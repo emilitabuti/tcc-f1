@@ -21,7 +21,7 @@ Este documento descreve como os campos da OpenF1 se relacionam com o schema usad
 ### Jolpica/Ergast
 
 ```text
-['season', 'round', 'race_name', 'driver_id', 'constructor', 'grid_position', 'finish_position', 'status', 'points']
+['season', 'round', 'race_name', 'driver_id', 'constructor_id', 'grid_position', 'finish_position', 'status', 'points', 'laps']
 ```
 
 ### OpenF1 Position
