@@ -1,0 +1,69 @@
+
+===== Ergast/Jolpica 2014–2024 =====
+Shape: (2979, 9)
+Colunas: ['season', 'round', 'race_name', 'driver_id', 'constructor', 'grid_position', 'finish_position', 'status', 'points']
+Seasons: [2018, 2019, 2020, 2021, 2022, 2023, 2024]
+
+Sem nulos encontrados.
+
+===== Pitstops 2014–2024 =====
+Shape: (5120, 7)
+Colunas: ['season', 'round', 'race_name', 'driver_id', 'stop', 'lap', 'duration']
+Seasons: [2018, 2019, 2020, 2021, 2022, 2023, 2024]
+
+Nulos por coluna:
+duration    6
+dtype: int64
+
+===== Ergast/Jolpica 2025 =====
+Shape: (479, 9)
+Colunas: ['season', 'round', 'race_name', 'driver_id', 'constructor', 'grid_position', 'finish_position', 'status', 'points']
+Seasons: [2025]
+
+Sem nulos encontrados.
+
+===== OpenF1 Starting Grid 2025 =====
+Shape: (460, 9)
+Colunas: ['season', 'meeting_key', 'race_session_key', 'qualifying_session_key', 'circuit_short_name', 'date_start', 'driver_number', 'grid_position', 'qualifying_lap_duration']
+Seasons: [2025]
+
+Nulos por coluna:
+qualifying_lap_duration    16
+dtype: int64
+
+===== Corridas no Ergast sem pitstop =====
+Total: 1
+Season 2021, Round 12
+
+===== Piloto/corrida sem registro de pitstop =====
+Total: 194
+Season 2018, Round 1, Driver ericsson
+Season 2018, Round 1, Driver gasly
+Season 2018, Round 1, Driver sirotkin
+Season 2018, Round 2, Driver ricciardo
+Season 2018, Round 4, Driver hulkenberg
+Season 2018, Round 4, Driver ocon
+Season 2018, Round 4, Driver sirotkin
+Season 2018, Round 5, Driver gasly
+Season 2018, Round 5, Driver grosjean
+Season 2018, Round 5, Driver hulkenberg
+Season 2018, Round 5, Driver raikkonen
+Season 2018, Round 7, Driver brendon_hartley
+Season 2018, Round 7, Driver stroll
+Season 2018, Round 8, Driver gasly
+Season 2018, Round 8, Driver ocon
+Season 2018, Round 8, Driver perez
+Season 2018, Round 9, Driver bottas
+Season 2018, Round 9, Driver brendon_hartley
+Season 2018, Round 9, Driver hulkenberg
+Season 2018, Round 10, Driver brendon_hartley
+Season 2018, Round 11, Driver ricciardo
+Season 2018, Round 12, Driver leclerc
+Season 2018, Round 12, Driver max_verstappen
+Season 2018, Round 13, Driver alonso
+Season 2018, Round 13, Driver hulkenberg
+Season 2018, Round 13, Driver leclerc
+Season 2018, Round 13, Driver ricciardo
+Season 2018, Round 14, Driver alonso
+Season 2018, Round 14, Driver brendon_hartley
+Season 2018, Round 15, Driver ocon

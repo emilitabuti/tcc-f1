@@ -1,0 +1,150 @@
+{
+  "timestamp": "2026-05-19T02:01:00.358333+00:00",
+  "base_url": "https://api.openf1.org/v1",
+  "plan": "community_free",
+  "endpoints": {
+    "sessions_coverage": {
+      "2023": {
+        "ok": true,
+        "sessions_found": 118,
+        "elapsed_ms": 253.5
+      },
+      "2024": {
+        "ok": true,
+        "sessions_found": 123,
+        "elapsed_ms": 253.8
+      },
+      "2025": {
+        "ok": true,
+        "sessions_found": 123,
+        "elapsed_ms": 287.5
+      }
+    },
+    "meetings": {
+      "2023": {
+        "ok": true,
+        "meetings_found": 24,
+        "elapsed_ms": 246.0
+      },
+      "2024": {
+        "ok": true,
+        "meetings_found": 25,
+        "elapsed_ms": 246.2
+      }
+    },
+    "laps": {
+      "ok": true,
+      "laps_found": 62,
+      "elapsed_ms": 913.5,
+      "sample": {
+        "meeting_key": 1219,
+        "session_key": 9165,
+        "driver_number": 1,
+        "lap_number": 1,
+        "date_start": "2023-09-17T12:03:44.658000+00:00",
+        "duration_sector_1": 35.639,
+        "duration_sector_2": 45.712,
+        "duration_sector_3": 28.852,
+        "i1_speed": 294,
+        "i2_speed": 261,
+        "is_pit_out_lap": false,
+        "lap_duration": 110.203,
+        "segments_sector_1": [
+          null,
+          2049,
+          2049,
+          2049,
+          2049,
+          2049,
+          2049,
+          2049
+        ],
+        "segments_sector_2": [
+          2049,
+          2049,
+          2049,
+          2049,
+          2049,
+          2049,
+          2049,
+          2049
+        ],
+        "segments_sector_3": [
+          2049,
+          2049,
+          2049,
+          2049,
+          2049,
+          2049,
+          2049,
+          2048
+        ],
+        "st_speed": 224
+      }
+    },
+    "stints": {
+      "ok": true,
+      "stints_found": 2,
+      "elapsed_ms": 246.5
+    },
+    "pit": {
+      "ok": true,
+      "pits_found": 25,
+      "elapsed_ms": 246.4
+    },
+    "drivers": {
+      "ok": true,
+      "drivers_found": 19,
+      "elapsed_ms": 245.3
+    },
+    "position": {
+      "ok": true,
+      "positions_found": 30,
+      "elapsed_ms": 315.6
+    },
+    "race_control": {
+      "ok": true,
+      "events_found": 76,
+      "elapsed_ms": 249.8
+    },
+    "weather": {
+      "ok": true,
+      "weather_found": 533,
+      "elapsed_ms": 274.2
+    },
+    "session_result": {
+      "ok": true,
+      "results_found": 19,
+      "elapsed_ms": 244.6
+    },
+    "starting_grid": {
+      "ok": true,
+      "grid_positions_found": 20,
+      "elapsed_ms": 254.2,
+      "nota": "grid_position nao existe como campo isolado. Equivalente: /starting_grid -> campo `position` (session_key da Qualifying). Requer join por meeting_key para cruzar com dados de corrida."
+    }
+  },
+  "connectivity": {
+    "ok": true,
+    "elapsed_ms": 773.4
+  },
+  "field_mapping": {
+    "session_key": "presente em todos os endpoints",
+    "driver_number": "presente em todos os endpoints",
+    "position": "/position (ao longo da corrida) | /session_result (final) | /starting_grid (grid)",
+    "date": "/position → campo `date` (timestamp de cada mudança de posição)",
+    "grid_position": "NAO existe como campo isolado. Equivalente: /starting_grid -> campo `position` (session_key da Qualifying). Join por meeting_key necessario."
+  },
+  "rate_limit_test": {
+    "requests": 5,
+    "avg_ms": 258.4,
+    "min_ms": 248.7,
+    "max_ms": 281.1,
+    "all_ok": true
+  },
+  "summary": {
+    "endpoints_tested": 11,
+    "all_connectivity_ok": true,
+    "rate_limit_ok": true
+  }
+}

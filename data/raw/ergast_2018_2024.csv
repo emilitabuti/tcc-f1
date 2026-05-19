@@ -1,0 +1,2980 @@
+season,round,race_name,driver_id,constructor,grid_position,finish_position,status,points
+2018,1,Australian Grand Prix,vettel,Ferrari,3,1,Finished,25
+2018,1,Australian Grand Prix,hamilton,Mercedes,1,2,Finished,18
+2018,1,Australian Grand Prix,raikkonen,Ferrari,2,3,Finished,15
+2018,1,Australian Grand Prix,ricciardo,Red Bull,8,4,Finished,12
+2018,1,Australian Grand Prix,alonso,McLaren,10,5,Finished,10
+2018,1,Australian Grand Prix,max_verstappen,Red Bull,4,6,Finished,8
+2018,1,Australian Grand Prix,hulkenberg,Renault,7,7,Finished,6
+2018,1,Australian Grand Prix,bottas,Mercedes,15,8,Finished,4
+2018,1,Australian Grand Prix,vandoorne,McLaren,11,9,Finished,2
+2018,1,Australian Grand Prix,sainz,Renault,9,10,Finished,1
+2018,1,Australian Grand Prix,perez,Force India,12,11,Finished,0
+2018,1,Australian Grand Prix,ocon,Force India,14,12,Finished,0
+2018,1,Australian Grand Prix,leclerc,Sauber,18,13,Finished,0
+2018,1,Australian Grand Prix,stroll,Williams,13,14,Finished,0
+2018,1,Australian Grand Prix,brendon_hartley,Toro Rosso,16,15,+1 Lap,0
+2018,1,Australian Grand Prix,grosjean,Haas F1 Team,6,16,Wheel,0
+2018,1,Australian Grand Prix,kevin_magnussen,Haas F1 Team,5,17,Wheel,0
+2018,1,Australian Grand Prix,gasly,Toro Rosso,20,18,Engine,0
+2018,1,Australian Grand Prix,ericsson,Sauber,17,19,Steering,0
+2018,1,Australian Grand Prix,sirotkin,Williams,19,20,Brakes,0
+2018,2,Bahrain Grand Prix,vettel,Ferrari,1,1,Finished,25
+2018,2,Bahrain Grand Prix,bottas,Mercedes,3,2,Finished,18
+2018,2,Bahrain Grand Prix,hamilton,Mercedes,9,3,Finished,15
+2018,2,Bahrain Grand Prix,gasly,Toro Rosso,5,4,Finished,12
+2018,2,Bahrain Grand Prix,kevin_magnussen,Haas F1 Team,6,5,Finished,10
+2018,2,Bahrain Grand Prix,hulkenberg,Renault,7,6,Finished,8
+2018,2,Bahrain Grand Prix,alonso,McLaren,13,7,+1 Lap,6
+2018,2,Bahrain Grand Prix,vandoorne,McLaren,14,8,+1 Lap,4
+2018,2,Bahrain Grand Prix,ericsson,Sauber,17,9,+1 Lap,2
+2018,2,Bahrain Grand Prix,ocon,Force India,8,10,+1 Lap,1
+2018,2,Bahrain Grand Prix,sainz,Renault,10,11,+1 Lap,0
+2018,2,Bahrain Grand Prix,leclerc,Sauber,19,12,+1 Lap,0
+2018,2,Bahrain Grand Prix,grosjean,Haas F1 Team,16,13,+1 Lap,0
+2018,2,Bahrain Grand Prix,stroll,Williams,20,14,+1 Lap,0
+2018,2,Bahrain Grand Prix,sirotkin,Williams,18,15,+1 Lap,0
+2018,2,Bahrain Grand Prix,perez,Force India,12,16,+1 Lap,0
+2018,2,Bahrain Grand Prix,brendon_hartley,Toro Rosso,11,17,+1 Lap,0
+2018,2,Bahrain Grand Prix,raikkonen,Ferrari,2,18,Wheel,0
+2018,2,Bahrain Grand Prix,max_verstappen,Red Bull,15,19,Puncture,0
+2018,2,Bahrain Grand Prix,ricciardo,Red Bull,4,20,Electrical,0
+2018,3,Chinese Grand Prix,ricciardo,Red Bull,6,1,Finished,25
+2018,3,Chinese Grand Prix,bottas,Mercedes,3,2,Finished,18
+2018,3,Chinese Grand Prix,raikkonen,Ferrari,2,3,Finished,15
+2018,3,Chinese Grand Prix,hamilton,Mercedes,4,4,Finished,12
+2018,3,Chinese Grand Prix,max_verstappen,Red Bull,5,5,Finished,10
+2018,3,Chinese Grand Prix,hulkenberg,Renault,7,6,Finished,8
+2018,3,Chinese Grand Prix,alonso,McLaren,13,7,Finished,6
+2018,3,Chinese Grand Prix,vettel,Ferrari,1,8,Finished,4
+2018,3,Chinese Grand Prix,sainz,Renault,9,9,Finished,2
+2018,3,Chinese Grand Prix,kevin_magnussen,Haas F1 Team,11,10,Finished,1
+2018,3,Chinese Grand Prix,ocon,Force India,12,11,Finished,0
+2018,3,Chinese Grand Prix,perez,Force India,8,12,Finished,0
+2018,3,Chinese Grand Prix,vandoorne,McLaren,14,13,Finished,0
+2018,3,Chinese Grand Prix,stroll,Williams,18,14,Finished,0
+2018,3,Chinese Grand Prix,sirotkin,Williams,16,15,Finished,0
+2018,3,Chinese Grand Prix,ericsson,Sauber,20,16,Finished,0
+2018,3,Chinese Grand Prix,grosjean,Haas F1 Team,10,17,Finished,0
+2018,3,Chinese Grand Prix,gasly,Toro Rosso,17,18,Finished,0
+2018,3,Chinese Grand Prix,leclerc,Sauber,19,19,Finished,0
+2018,3,Chinese Grand Prix,brendon_hartley,Toro Rosso,15,20,Collision damage,0
+2018,4,Azerbaijan Grand Prix,hamilton,Mercedes,2,1,Finished,25
+2018,4,Azerbaijan Grand Prix,raikkonen,Ferrari,6,2,Finished,18
+2018,4,Azerbaijan Grand Prix,perez,Force India,8,3,Finished,15
+2018,4,Azerbaijan Grand Prix,vettel,Ferrari,1,4,Finished,12
+2018,4,Azerbaijan Grand Prix,sainz,Renault,9,5,Finished,10
+2018,4,Azerbaijan Grand Prix,leclerc,Sauber,13,6,Finished,8
+2018,4,Azerbaijan Grand Prix,alonso,McLaren,12,7,Finished,6
+2018,4,Azerbaijan Grand Prix,stroll,Williams,10,8,Finished,4
+2018,4,Azerbaijan Grand Prix,vandoorne,McLaren,16,9,Finished,2
+2018,4,Azerbaijan Grand Prix,brendon_hartley,Toro Rosso,19,10,Finished,1
+2018,4,Azerbaijan Grand Prix,ericsson,Sauber,18,11,Finished,0
+2018,4,Azerbaijan Grand Prix,gasly,Toro Rosso,17,12,Finished,0
+2018,4,Azerbaijan Grand Prix,kevin_magnussen,Haas F1 Team,15,13,Finished,0
+2018,4,Azerbaijan Grand Prix,bottas,Mercedes,3,14,Puncture,0
+2018,4,Azerbaijan Grand Prix,grosjean,Haas F1 Team,20,15,Accident,0
+2018,4,Azerbaijan Grand Prix,max_verstappen,Red Bull,5,16,Collision,0
+2018,4,Azerbaijan Grand Prix,ricciardo,Red Bull,4,17,Collision,0
+2018,4,Azerbaijan Grand Prix,hulkenberg,Renault,14,18,Accident,0
+2018,4,Azerbaijan Grand Prix,ocon,Force India,7,19,Collision,0
+2018,4,Azerbaijan Grand Prix,sirotkin,Williams,11,20,Collision,0
+2018,5,Spanish Grand Prix,hamilton,Mercedes,1,1,Finished,25
+2018,5,Spanish Grand Prix,bottas,Mercedes,2,2,Finished,18
+2018,5,Spanish Grand Prix,max_verstappen,Red Bull,5,3,Finished,15
+2018,5,Spanish Grand Prix,vettel,Ferrari,3,4,Finished,12
+2018,5,Spanish Grand Prix,ricciardo,Red Bull,6,5,Finished,10
+2018,5,Spanish Grand Prix,kevin_magnussen,Haas F1 Team,7,6,+1 Lap,8
+2018,5,Spanish Grand Prix,sainz,Renault,9,7,+1 Lap,6
+2018,5,Spanish Grand Prix,alonso,McLaren,8,8,+1 Lap,4
+2018,5,Spanish Grand Prix,perez,Force India,15,9,+2 Laps,2
+2018,5,Spanish Grand Prix,leclerc,Sauber,14,10,+2 Laps,1
+2018,5,Spanish Grand Prix,stroll,Williams,18,11,+2 Laps,0
+2018,5,Spanish Grand Prix,brendon_hartley,Toro Rosso,20,12,+2 Laps,0
+2018,5,Spanish Grand Prix,ericsson,Sauber,17,13,+2 Laps,0
+2018,5,Spanish Grand Prix,sirotkin,Williams,19,14,+3 Laps,0
+2018,5,Spanish Grand Prix,vandoorne,McLaren,11,15,Gearbox,0
+2018,5,Spanish Grand Prix,ocon,Force India,13,16,Oil leak,0
+2018,5,Spanish Grand Prix,raikkonen,Ferrari,4,17,Turbo,0
+2018,5,Spanish Grand Prix,grosjean,Haas F1 Team,10,18,Collision,0
+2018,5,Spanish Grand Prix,gasly,Toro Rosso,12,19,Collision,0
+2018,5,Spanish Grand Prix,hulkenberg,Renault,16,20,Collision,0
+2018,6,Monaco Grand Prix,ricciardo,Red Bull,1,1,Finished,25
+2018,6,Monaco Grand Prix,vettel,Ferrari,2,2,Finished,18
+2018,6,Monaco Grand Prix,hamilton,Mercedes,3,3,Finished,15
+2018,6,Monaco Grand Prix,raikkonen,Ferrari,4,4,Finished,12
+2018,6,Monaco Grand Prix,bottas,Mercedes,5,5,Finished,10
+2018,6,Monaco Grand Prix,ocon,Force India,6,6,Finished,8
+2018,6,Monaco Grand Prix,gasly,Toro Rosso,10,7,Finished,6
+2018,6,Monaco Grand Prix,hulkenberg,Renault,11,8,Finished,4
+2018,6,Monaco Grand Prix,max_verstappen,Red Bull,20,9,Finished,2
+2018,6,Monaco Grand Prix,sainz,Renault,8,10,Finished,1
+2018,6,Monaco Grand Prix,ericsson,Sauber,16,11,Finished,0
+2018,6,Monaco Grand Prix,perez,Force India,9,12,Finished,0
+2018,6,Monaco Grand Prix,kevin_magnussen,Haas F1 Team,19,13,Finished,0
+2018,6,Monaco Grand Prix,vandoorne,McLaren,12,14,+1 Lap,0
+2018,6,Monaco Grand Prix,grosjean,Haas F1 Team,18,15,+1 Lap,0
+2018,6,Monaco Grand Prix,sirotkin,Williams,13,16,+1 Lap,0
+2018,6,Monaco Grand Prix,stroll,Williams,17,17,+2 Laps,0
+2018,6,Monaco Grand Prix,leclerc,Sauber,14,18,Collision,0
+2018,6,Monaco Grand Prix,brendon_hartley,Toro Rosso,15,19,Collision,0
+2018,6,Monaco Grand Prix,alonso,McLaren,7,20,Gearbox,0
+2018,7,Canadian Grand Prix,vettel,Ferrari,1,1,Finished,25
+2018,7,Canadian Grand Prix,bottas,Mercedes,2,2,Finished,18
+2018,7,Canadian Grand Prix,max_verstappen,Red Bull,3,3,Finished,15
+2018,7,Canadian Grand Prix,ricciardo,Red Bull,6,4,Finished,12
+2018,7,Canadian Grand Prix,hamilton,Mercedes,4,5,Finished,10
+2018,7,Canadian Grand Prix,raikkonen,Ferrari,5,6,Finished,8
+2018,7,Canadian Grand Prix,hulkenberg,Renault,7,7,+1 Lap,6
+2018,7,Canadian Grand Prix,sainz,Renault,9,8,+1 Lap,4
+2018,7,Canadian Grand Prix,ocon,Force India,8,9,+1 Lap,2
+2018,7,Canadian Grand Prix,leclerc,Sauber,13,10,+1 Lap,1
+2018,7,Canadian Grand Prix,gasly,Toro Rosso,16,11,+1 Lap,0
+2018,7,Canadian Grand Prix,grosjean,Haas F1 Team,20,12,+1 Lap,0
+2018,7,Canadian Grand Prix,kevin_magnussen,Haas F1 Team,11,13,+1 Lap,0
+2018,7,Canadian Grand Prix,perez,Force India,10,14,+1 Lap,0
+2018,7,Canadian Grand Prix,ericsson,Sauber,19,15,+2 Laps,0
+2018,7,Canadian Grand Prix,vandoorne,McLaren,15,16,+2 Laps,0
+2018,7,Canadian Grand Prix,sirotkin,Williams,18,17,+2 Laps,0
+2018,7,Canadian Grand Prix,alonso,McLaren,14,18,Exhaust,0
+2018,7,Canadian Grand Prix,brendon_hartley,Toro Rosso,12,19,Collision,0
+2018,7,Canadian Grand Prix,stroll,Williams,17,20,Collision,0
+2018,8,French Grand Prix,hamilton,Mercedes,1,1,Finished,25
+2018,8,French Grand Prix,max_verstappen,Red Bull,4,2,Finished,18
+2018,8,French Grand Prix,raikkonen,Ferrari,6,3,Finished,15
+2018,8,French Grand Prix,ricciardo,Red Bull,5,4,Finished,12
+2018,8,French Grand Prix,vettel,Ferrari,3,5,Finished,10
+2018,8,French Grand Prix,kevin_magnussen,Haas F1 Team,9,6,Finished,8
+2018,8,French Grand Prix,bottas,Mercedes,2,7,Finished,6
+2018,8,French Grand Prix,sainz,Renault,7,8,Finished,4
+2018,8,French Grand Prix,hulkenberg,Renault,12,9,Finished,2
+2018,8,French Grand Prix,leclerc,Sauber,8,10,Finished,1
+2018,8,French Grand Prix,grosjean,Haas F1 Team,10,11,+1 Lap,0
+2018,8,French Grand Prix,vandoorne,McLaren,17,12,+1 Lap,0
+2018,8,French Grand Prix,ericsson,Sauber,15,13,+1 Lap,0
+2018,8,French Grand Prix,brendon_hartley,Toro Rosso,20,14,+1 Lap,0
+2018,8,French Grand Prix,sirotkin,Williams,18,15,+1 Lap,0
+2018,8,French Grand Prix,alonso,McLaren,16,16,Wheel,0
+2018,8,French Grand Prix,stroll,Williams,19,17,Puncture,0
+2018,8,French Grand Prix,perez,Force India,13,18,Engine,0
+2018,8,French Grand Prix,ocon,Force India,11,19,Collision,0
+2018,8,French Grand Prix,gasly,Toro Rosso,14,20,Collision,0
+2018,9,Austrian Grand Prix,max_verstappen,Red Bull,4,1,Finished,25
+2018,9,Austrian Grand Prix,raikkonen,Ferrari,3,2,Finished,18
+2018,9,Austrian Grand Prix,vettel,Ferrari,6,3,Finished,15
+2018,9,Austrian Grand Prix,grosjean,Haas F1 Team,5,4,+1 Lap,12
+2018,9,Austrian Grand Prix,kevin_magnussen,Haas F1 Team,8,5,+1 Lap,10
+2018,9,Austrian Grand Prix,ocon,Force India,11,6,+1 Lap,8
+2018,9,Austrian Grand Prix,perez,Force India,16,7,+1 Lap,6
+2018,9,Austrian Grand Prix,alonso,McLaren,13,8,+1 Lap,4
+2018,9,Austrian Grand Prix,leclerc,Sauber,18,9,+1 Lap,2
+2018,9,Austrian Grand Prix,ericsson,Sauber,20,10,+1 Lap,1
+2018,9,Austrian Grand Prix,gasly,Toro Rosso,12,11,+1 Lap,0
+2018,9,Austrian Grand Prix,sainz,Renault,9,12,+1 Lap,0
+2018,9,Austrian Grand Prix,sirotkin,Williams,17,13,+2 Laps,0
+2018,9,Austrian Grand Prix,stroll,Williams,14,14,+2 Laps,0
+2018,9,Austrian Grand Prix,vandoorne,McLaren,15,15,Collision damage,0
+2018,9,Austrian Grand Prix,hamilton,Mercedes,2,16,Fuel pressure,0
+2018,9,Austrian Grand Prix,brendon_hartley,Toro Rosso,19,17,Hydraulics,0
+2018,9,Austrian Grand Prix,ricciardo,Red Bull,7,18,Exhaust,0
+2018,9,Austrian Grand Prix,bottas,Mercedes,1,19,Hydraulics,0
+2018,9,Austrian Grand Prix,hulkenberg,Renault,10,20,Engine,0
+2018,10,British Grand Prix,vettel,Ferrari,2,1,Finished,25
+2018,10,British Grand Prix,hamilton,Mercedes,1,2,Finished,18
+2018,10,British Grand Prix,raikkonen,Ferrari,3,3,Finished,15
+2018,10,British Grand Prix,bottas,Mercedes,4,4,Finished,12
+2018,10,British Grand Prix,ricciardo,Red Bull,6,5,Finished,10
+2018,10,British Grand Prix,hulkenberg,Renault,11,6,Finished,8
+2018,10,British Grand Prix,ocon,Force India,10,7,Finished,6
+2018,10,British Grand Prix,alonso,McLaren,13,8,Finished,4
+2018,10,British Grand Prix,kevin_magnussen,Haas F1 Team,7,9,Finished,2
+2018,10,British Grand Prix,perez,Force India,12,10,Finished,1
+2018,10,British Grand Prix,vandoorne,McLaren,17,11,Finished,0
+2018,10,British Grand Prix,stroll,Williams,19,12,Finished,0
+2018,10,British Grand Prix,gasly,Toro Rosso,14,13,Finished,0
+2018,10,British Grand Prix,sirotkin,Williams,18,14,Finished,0
+2018,10,British Grand Prix,max_verstappen,Red Bull,5,15,Brakes,0
+2018,10,British Grand Prix,grosjean,Haas F1 Team,8,16,Collision,0
+2018,10,British Grand Prix,sainz,Renault,16,17,Collision,0
+2018,10,British Grand Prix,ericsson,Sauber,15,18,Accident,0
+2018,10,British Grand Prix,leclerc,Sauber,9,19,Tyre,0
+2018,10,British Grand Prix,brendon_hartley,Toro Rosso,0,20,Power Unit,0
+2018,11,German Grand Prix,hamilton,Mercedes,14,1,Finished,25
+2018,11,German Grand Prix,bottas,Mercedes,2,2,Finished,18
+2018,11,German Grand Prix,raikkonen,Ferrari,3,3,Finished,15
+2018,11,German Grand Prix,max_verstappen,Red Bull,4,4,Finished,12
+2018,11,German Grand Prix,hulkenberg,Renault,7,5,Finished,10
+2018,11,German Grand Prix,grosjean,Haas F1 Team,6,6,Finished,8
+2018,11,German Grand Prix,perez,Force India,10,7,Finished,6
+2018,11,German Grand Prix,ocon,Force India,15,8,Finished,4
+2018,11,German Grand Prix,ericsson,Sauber,13,9,Finished,2
+2018,11,German Grand Prix,brendon_hartley,Toro Rosso,17,10,Finished,1
+2018,11,German Grand Prix,kevin_magnussen,Haas F1 Team,5,11,Finished,0
+2018,11,German Grand Prix,sainz,Renault,8,12,Finished,0
+2018,11,German Grand Prix,vandoorne,McLaren,19,13,Finished,0
+2018,11,German Grand Prix,gasly,Toro Rosso,16,14,+1 Lap,0
+2018,11,German Grand Prix,leclerc,Sauber,9,15,+1 Lap,0
+2018,11,German Grand Prix,alonso,McLaren,11,16,Retired,0
+2018,11,German Grand Prix,stroll,Williams,18,17,Engine,0
+2018,11,German Grand Prix,vettel,Ferrari,1,18,Accident,0
+2018,11,German Grand Prix,sirotkin,Williams,12,19,Engine,0
+2018,11,German Grand Prix,ricciardo,Red Bull,20,20,Engine,0
+2018,12,Hungarian Grand Prix,hamilton,Mercedes,1,1,Finished,25
+2018,12,Hungarian Grand Prix,vettel,Ferrari,4,2,Finished,18
+2018,12,Hungarian Grand Prix,raikkonen,Ferrari,3,3,Finished,15
+2018,12,Hungarian Grand Prix,ricciardo,Red Bull,12,4,Finished,12
+2018,12,Hungarian Grand Prix,bottas,Mercedes,2,5,Finished,10
+2018,12,Hungarian Grand Prix,gasly,Toro Rosso,6,6,Finished,8
+2018,12,Hungarian Grand Prix,kevin_magnussen,Haas F1 Team,9,7,+1 Lap,6
+2018,12,Hungarian Grand Prix,alonso,McLaren,11,8,+1 Lap,4
+2018,12,Hungarian Grand Prix,sainz,Renault,5,9,+1 Lap,2
+2018,12,Hungarian Grand Prix,grosjean,Haas F1 Team,10,10,+1 Lap,1
+2018,12,Hungarian Grand Prix,brendon_hartley,Toro Rosso,8,11,+1 Lap,0
+2018,12,Hungarian Grand Prix,hulkenberg,Renault,13,12,+1 Lap,0
+2018,12,Hungarian Grand Prix,ocon,Force India,18,13,+1 Lap,0
+2018,12,Hungarian Grand Prix,perez,Force India,19,14,+1 Lap,0
+2018,12,Hungarian Grand Prix,ericsson,Sauber,14,15,+2 Laps,0
+2018,12,Hungarian Grand Prix,sirotkin,Williams,20,16,+2 Laps,0
+2018,12,Hungarian Grand Prix,stroll,Williams,15,17,+2 Laps,0
+2018,12,Hungarian Grand Prix,vandoorne,McLaren,16,18,Gearbox,0
+2018,12,Hungarian Grand Prix,max_verstappen,Red Bull,7,19,Power loss,0
+2018,12,Hungarian Grand Prix,leclerc,Sauber,17,20,Suspension,0
+2018,13,Belgian Grand Prix,vettel,Ferrari,2,1,Finished,25
+2018,13,Belgian Grand Prix,hamilton,Mercedes,1,2,Finished,18
+2018,13,Belgian Grand Prix,max_verstappen,Red Bull,7,3,Finished,15
+2018,13,Belgian Grand Prix,bottas,Mercedes,19,4,Finished,12
+2018,13,Belgian Grand Prix,perez,Force India,4,5,Finished,10
+2018,13,Belgian Grand Prix,ocon,Force India,3,6,Finished,8
+2018,13,Belgian Grand Prix,grosjean,Haas F1 Team,5,7,Finished,6
+2018,13,Belgian Grand Prix,kevin_magnussen,Haas F1 Team,9,8,Finished,4
+2018,13,Belgian Grand Prix,gasly,Toro Rosso,10,9,Finished,2
+2018,13,Belgian Grand Prix,ericsson,Sauber,13,10,+1 Lap,1
+2018,13,Belgian Grand Prix,sainz,Renault,14,11,+1 Lap,0
+2018,13,Belgian Grand Prix,sirotkin,Williams,16,12,+1 Lap,0
+2018,13,Belgian Grand Prix,stroll,Williams,17,13,+1 Lap,0
+2018,13,Belgian Grand Prix,brendon_hartley,Toro Rosso,11,14,+1 Lap,0
+2018,13,Belgian Grand Prix,vandoorne,McLaren,18,15,+1 Lap,0
+2018,13,Belgian Grand Prix,ricciardo,Red Bull,8,16,Retired,0
+2018,13,Belgian Grand Prix,raikkonen,Ferrari,6,17,Brakes,0
+2018,13,Belgian Grand Prix,leclerc,Sauber,12,18,Accident,0
+2018,13,Belgian Grand Prix,alonso,McLaren,15,19,Accident,0
+2018,13,Belgian Grand Prix,hulkenberg,Renault,20,20,Accident,0
+2018,14,Italian Grand Prix,hamilton,Mercedes,3,1,Finished,25
+2018,14,Italian Grand Prix,raikkonen,Ferrari,1,2,Finished,18
+2018,14,Italian Grand Prix,bottas,Mercedes,4,3,Finished,15
+2018,14,Italian Grand Prix,vettel,Ferrari,2,4,Finished,12
+2018,14,Italian Grand Prix,max_verstappen,Red Bull,5,5,Finished,10
+2018,14,Italian Grand Prix,ocon,Force India,8,6,Finished,8
+2018,14,Italian Grand Prix,perez,Force India,14,7,Finished,6
+2018,14,Italian Grand Prix,sainz,Renault,7,8,Finished,4
+2018,14,Italian Grand Prix,stroll,Williams,10,9,+1 Lap,2
+2018,14,Italian Grand Prix,sirotkin,Williams,12,10,+1 Lap,1
+2018,14,Italian Grand Prix,leclerc,Sauber,15,11,+1 Lap,0
+2018,14,Italian Grand Prix,vandoorne,McLaren,17,12,+1 Lap,0
+2018,14,Italian Grand Prix,hulkenberg,Renault,20,13,+1 Lap,0
+2018,14,Italian Grand Prix,gasly,Toro Rosso,9,14,+1 Lap,0
+2018,14,Italian Grand Prix,ericsson,Sauber,18,15,+1 Lap,0
+2018,14,Italian Grand Prix,kevin_magnussen,Haas F1 Team,11,16,+1 Lap,0
+2018,14,Italian Grand Prix,ricciardo,Red Bull,19,17,Engine,0
+2018,14,Italian Grand Prix,alonso,McLaren,13,18,Engine,0
+2018,14,Italian Grand Prix,brendon_hartley,Toro Rosso,16,19,Brakes,0
+2018,14,Italian Grand Prix,grosjean,Haas F1 Team,6,20,Disqualified,0
+2018,15,Singapore Grand Prix,hamilton,Mercedes,1,1,Finished,25
+2018,15,Singapore Grand Prix,max_verstappen,Red Bull,2,2,Finished,18
+2018,15,Singapore Grand Prix,vettel,Ferrari,3,3,Finished,15
+2018,15,Singapore Grand Prix,bottas,Mercedes,4,4,Finished,12
+2018,15,Singapore Grand Prix,raikkonen,Ferrari,5,5,Finished,10
+2018,15,Singapore Grand Prix,ricciardo,Red Bull,6,6,Finished,8
+2018,15,Singapore Grand Prix,alonso,McLaren,11,7,Finished,6
+2018,15,Singapore Grand Prix,sainz,Renault,12,8,+1 Lap,4
+2018,15,Singapore Grand Prix,leclerc,Sauber,13,9,+1 Lap,2
+2018,15,Singapore Grand Prix,hulkenberg,Renault,10,10,+1 Lap,1
+2018,15,Singapore Grand Prix,ericsson,Sauber,14,11,+1 Lap,0
+2018,15,Singapore Grand Prix,vandoorne,McLaren,18,12,+1 Lap,0
+2018,15,Singapore Grand Prix,gasly,Toro Rosso,15,13,+1 Lap,0
+2018,15,Singapore Grand Prix,stroll,Williams,20,14,+1 Lap,0
+2018,15,Singapore Grand Prix,grosjean,Haas F1 Team,8,15,+1 Lap,0
+2018,15,Singapore Grand Prix,perez,Force India,7,16,+1 Lap,0
+2018,15,Singapore Grand Prix,brendon_hartley,Toro Rosso,17,17,+1 Lap,0
+2018,15,Singapore Grand Prix,kevin_magnussen,Haas F1 Team,16,18,+2 Laps,0
+2018,15,Singapore Grand Prix,sirotkin,Williams,19,19,+2 Laps,0
+2018,15,Singapore Grand Prix,ocon,Force India,9,20,Collision,0
+2018,16,Russian Grand Prix,hamilton,Mercedes,2,1,Finished,25
+2018,16,Russian Grand Prix,bottas,Mercedes,1,2,Finished,18
+2018,16,Russian Grand Prix,vettel,Ferrari,3,3,Finished,15
+2018,16,Russian Grand Prix,raikkonen,Ferrari,4,4,Finished,12
+2018,16,Russian Grand Prix,max_verstappen,Red Bull,19,5,Finished,10
+2018,16,Russian Grand Prix,ricciardo,Red Bull,18,6,Finished,8
+2018,16,Russian Grand Prix,leclerc,Sauber,7,7,Finished,6
+2018,16,Russian Grand Prix,kevin_magnussen,Haas F1 Team,5,8,+1 Lap,4
+2018,16,Russian Grand Prix,ocon,Force India,6,9,+1 Lap,2
+2018,16,Russian Grand Prix,perez,Force India,8,10,+1 Lap,1
+2018,16,Russian Grand Prix,grosjean,Haas F1 Team,9,11,+1 Lap,0
+2018,16,Russian Grand Prix,hulkenberg,Renault,12,12,+1 Lap,0
+2018,16,Russian Grand Prix,ericsson,Sauber,10,13,+1 Lap,0
+2018,16,Russian Grand Prix,alonso,McLaren,16,14,+1 Lap,0
+2018,16,Russian Grand Prix,stroll,Williams,14,15,+1 Lap,0
+2018,16,Russian Grand Prix,vandoorne,McLaren,15,16,+2 Laps,0
+2018,16,Russian Grand Prix,sainz,Renault,11,17,+2 Laps,0
+2018,16,Russian Grand Prix,sirotkin,Williams,13,18,+2 Laps,0
+2018,16,Russian Grand Prix,gasly,Toro Rosso,17,19,Brakes,0
+2018,16,Russian Grand Prix,brendon_hartley,Toro Rosso,20,20,Brakes,0
+2018,17,Japanese Grand Prix,hamilton,Mercedes,1,1,Finished,25
+2018,17,Japanese Grand Prix,bottas,Mercedes,2,2,Finished,18
+2018,17,Japanese Grand Prix,max_verstappen,Red Bull,3,3,Finished,15
+2018,17,Japanese Grand Prix,ricciardo,Red Bull,15,4,Finished,12
+2018,17,Japanese Grand Prix,raikkonen,Ferrari,4,5,Finished,10
+2018,17,Japanese Grand Prix,vettel,Ferrari,8,6,Finished,8
+2018,17,Japanese Grand Prix,perez,Force India,9,7,Finished,6
+2018,17,Japanese Grand Prix,grosjean,Haas F1 Team,5,8,Finished,4
+2018,17,Japanese Grand Prix,ocon,Force India,11,9,Finished,2
+2018,17,Japanese Grand Prix,sainz,Renault,13,10,+1 Lap,1
+2018,17,Japanese Grand Prix,gasly,Toro Rosso,7,11,+1 Lap,0
+2018,17,Japanese Grand Prix,ericsson,Sauber,20,12,+1 Lap,0
+2018,17,Japanese Grand Prix,brendon_hartley,Toro Rosso,6,13,+1 Lap,0
+2018,17,Japanese Grand Prix,alonso,McLaren,18,14,+1 Lap,0
+2018,17,Japanese Grand Prix,vandoorne,McLaren,19,15,+1 Lap,0
+2018,17,Japanese Grand Prix,sirotkin,Williams,17,16,+1 Lap,0
+2018,17,Japanese Grand Prix,stroll,Williams,14,17,+1 Lap,0
+2018,17,Japanese Grand Prix,leclerc,Sauber,10,18,Mechanical,0
+2018,17,Japanese Grand Prix,hulkenberg,Renault,16,19,Engine,0
+2018,17,Japanese Grand Prix,kevin_magnussen,Haas F1 Team,12,20,Collision damage,0
+2018,18,United States Grand Prix,raikkonen,Ferrari,2,1,Finished,25
+2018,18,United States Grand Prix,max_verstappen,Red Bull,18,2,Finished,18
+2018,18,United States Grand Prix,hamilton,Mercedes,1,3,Finished,15
+2018,18,United States Grand Prix,vettel,Ferrari,5,4,Finished,12
+2018,18,United States Grand Prix,bottas,Mercedes,3,5,Finished,10
+2018,18,United States Grand Prix,hulkenberg,Renault,7,6,Finished,8
+2018,18,United States Grand Prix,sainz,Renault,11,7,Finished,6
+2018,18,United States Grand Prix,perez,Force India,10,8,Finished,4
+2018,18,United States Grand Prix,brendon_hartley,Toro Rosso,20,9,+1 Lap,2
+2018,18,United States Grand Prix,ericsson,Sauber,16,10,+1 Lap,1
+2018,18,United States Grand Prix,vandoorne,McLaren,17,11,+1 Lap,0
+2018,18,United States Grand Prix,gasly,Toro Rosso,19,12,+1 Lap,0
+2018,18,United States Grand Prix,sirotkin,Williams,14,13,+1 Lap,0
+2018,18,United States Grand Prix,stroll,Williams,15,14,+2 Laps,0
+2018,18,United States Grand Prix,leclerc,Sauber,9,15,Collision damage,0
+2018,18,United States Grand Prix,ricciardo,Red Bull,4,16,Battery,0
+2018,18,United States Grand Prix,grosjean,Haas F1 Team,8,17,Collision damage,0
+2018,18,United States Grand Prix,alonso,McLaren,13,18,Collision,0
+2018,18,United States Grand Prix,ocon,Force India,6,19,Disqualified,0
+2018,18,United States Grand Prix,kevin_magnussen,Haas F1 Team,12,20,Disqualified,0
+2018,19,Mexican Grand Prix,max_verstappen,Red Bull,2,1,Finished,25
+2018,19,Mexican Grand Prix,vettel,Ferrari,4,2,Finished,18
+2018,19,Mexican Grand Prix,raikkonen,Ferrari,6,3,Finished,15
+2018,19,Mexican Grand Prix,hamilton,Mercedes,3,4,Finished,12
+2018,19,Mexican Grand Prix,bottas,Mercedes,5,5,+1 Lap,10
+2018,19,Mexican Grand Prix,hulkenberg,Renault,7,6,+2 Laps,8
+2018,19,Mexican Grand Prix,leclerc,Sauber,9,7,+2 Laps,6
+2018,19,Mexican Grand Prix,vandoorne,McLaren,15,8,+2 Laps,4
+2018,19,Mexican Grand Prix,ericsson,Sauber,10,9,+2 Laps,2
+2018,19,Mexican Grand Prix,gasly,Toro Rosso,20,10,+2 Laps,1
+2018,19,Mexican Grand Prix,ocon,Force India,11,11,+2 Laps,0
+2018,19,Mexican Grand Prix,stroll,Williams,17,12,+2 Laps,0
+2018,19,Mexican Grand Prix,sirotkin,Williams,19,13,+2 Laps,0
+2018,19,Mexican Grand Prix,brendon_hartley,Toro Rosso,14,14,+2 Laps,0
+2018,19,Mexican Grand Prix,kevin_magnussen,Haas F1 Team,16,15,+2 Laps,0
+2018,19,Mexican Grand Prix,grosjean,Haas F1 Team,18,16,+3 Laps,0
+2018,19,Mexican Grand Prix,ricciardo,Red Bull,1,17,Engine,0
+2018,19,Mexican Grand Prix,perez,Force India,13,18,Brakes,0
+2018,19,Mexican Grand Prix,sainz,Renault,8,19,Suspension,0
+2018,19,Mexican Grand Prix,alonso,McLaren,12,20,Engine,0
+2018,20,Brazilian Grand Prix,hamilton,Mercedes,1,1,Finished,25
+2018,20,Brazilian Grand Prix,max_verstappen,Red Bull,5,2,Finished,18
+2018,20,Brazilian Grand Prix,raikkonen,Ferrari,4,3,Finished,15
+2018,20,Brazilian Grand Prix,ricciardo,Red Bull,11,4,Finished,12
+2018,20,Brazilian Grand Prix,bottas,Mercedes,3,5,Finished,10
+2018,20,Brazilian Grand Prix,vettel,Ferrari,2,6,Finished,8
+2018,20,Brazilian Grand Prix,leclerc,Sauber,7,7,Finished,6
+2018,20,Brazilian Grand Prix,grosjean,Haas F1 Team,8,8,Finished,4
+2018,20,Brazilian Grand Prix,kevin_magnussen,Haas F1 Team,10,9,Finished,2
+2018,20,Brazilian Grand Prix,perez,Force India,12,10,+1 Lap,1
+2018,20,Brazilian Grand Prix,brendon_hartley,Toro Rosso,16,11,+1 Lap,0
+2018,20,Brazilian Grand Prix,sainz,Renault,15,12,+1 Lap,0
+2018,20,Brazilian Grand Prix,gasly,Toro Rosso,9,13,+1 Lap,0
+2018,20,Brazilian Grand Prix,vandoorne,McLaren,20,14,+1 Lap,0
+2018,20,Brazilian Grand Prix,ocon,Force India,18,15,+1 Lap,0
+2018,20,Brazilian Grand Prix,sirotkin,Williams,14,16,+2 Laps,0
+2018,20,Brazilian Grand Prix,alonso,McLaren,17,17,+2 Laps,0
+2018,20,Brazilian Grand Prix,stroll,Williams,19,18,+2 Laps,0
+2018,20,Brazilian Grand Prix,hulkenberg,Renault,13,19,Overheating,0
+2018,20,Brazilian Grand Prix,ericsson,Sauber,6,20,Collision,0
+2018,21,Abu Dhabi Grand Prix,hamilton,Mercedes,1,1,Finished,25
+2018,21,Abu Dhabi Grand Prix,vettel,Ferrari,3,2,Finished,18
+2018,21,Abu Dhabi Grand Prix,max_verstappen,Red Bull,6,3,Finished,15
+2018,21,Abu Dhabi Grand Prix,ricciardo,Red Bull,5,4,Finished,12
+2018,21,Abu Dhabi Grand Prix,bottas,Mercedes,2,5,Finished,10
+2018,21,Abu Dhabi Grand Prix,sainz,Renault,11,6,Finished,8
+2018,21,Abu Dhabi Grand Prix,leclerc,Sauber,8,7,Finished,6
+2018,21,Abu Dhabi Grand Prix,perez,Force India,14,8,Finished,4
+2018,21,Abu Dhabi Grand Prix,grosjean,Haas F1 Team,7,9,+1 Lap,2
+2018,21,Abu Dhabi Grand Prix,kevin_magnussen,Haas F1 Team,13,10,+1 Lap,1
+2018,21,Abu Dhabi Grand Prix,alonso,McLaren,15,11,+1 Lap,0
+2018,21,Abu Dhabi Grand Prix,brendon_hartley,Toro Rosso,16,12,+1 Lap,0
+2018,21,Abu Dhabi Grand Prix,stroll,Williams,20,13,+1 Lap,0
+2018,21,Abu Dhabi Grand Prix,vandoorne,McLaren,18,14,+1 Lap,0
+2018,21,Abu Dhabi Grand Prix,sirotkin,Williams,19,15,+1 Lap,0
+2018,21,Abu Dhabi Grand Prix,gasly,Toro Rosso,17,16,Engine,0
+2018,21,Abu Dhabi Grand Prix,ocon,Force India,9,17,Engine,0
+2018,21,Abu Dhabi Grand Prix,ericsson,Sauber,12,18,Power loss,0
+2018,21,Abu Dhabi Grand Prix,raikkonen,Ferrari,4,19,Power loss,0
+2018,21,Abu Dhabi Grand Prix,hulkenberg,Renault,10,20,Collision,0
+2019,1,Australian Grand Prix,bottas,Mercedes,2,1,Finished,26
+2019,1,Australian Grand Prix,hamilton,Mercedes,1,2,Finished,18
+2019,1,Australian Grand Prix,max_verstappen,Red Bull,4,3,Finished,15
+2019,1,Australian Grand Prix,vettel,Ferrari,3,4,Finished,12
+2019,1,Australian Grand Prix,leclerc,Ferrari,5,5,Finished,10
+2019,1,Australian Grand Prix,kevin_magnussen,Haas F1 Team,7,6,Finished,8
+2019,1,Australian Grand Prix,hulkenberg,Renault,11,7,+1 Lap,6
+2019,1,Australian Grand Prix,raikkonen,Alfa Romeo,9,8,+1 Lap,4
+2019,1,Australian Grand Prix,stroll,Racing Point,16,9,+1 Lap,2
+2019,1,Australian Grand Prix,kvyat,Toro Rosso,15,10,+1 Lap,1
+2019,1,Australian Grand Prix,gasly,Red Bull,17,11,+1 Lap,0
+2019,1,Australian Grand Prix,norris,McLaren,8,12,+1 Lap,0
+2019,1,Australian Grand Prix,perez,Racing Point,10,13,+1 Lap,0
+2019,1,Australian Grand Prix,albon,Toro Rosso,13,14,+1 Lap,0
+2019,1,Australian Grand Prix,giovinazzi,Alfa Romeo,14,15,+1 Lap,0
+2019,1,Australian Grand Prix,russell,Williams,19,16,+2 Laps,0
+2019,1,Australian Grand Prix,kubica,Williams,20,17,+3 Laps,0
+2019,1,Australian Grand Prix,grosjean,Haas F1 Team,6,18,Wheel,0
+2019,1,Australian Grand Prix,ricciardo,Renault,12,19,Damage,0
+2019,1,Australian Grand Prix,sainz,McLaren,18,20,Engine,0
+2019,2,Bahrain Grand Prix,hamilton,Mercedes,3,1,Finished,25
+2019,2,Bahrain Grand Prix,bottas,Mercedes,4,2,Finished,18
+2019,2,Bahrain Grand Prix,leclerc,Ferrari,1,3,Finished,16
+2019,2,Bahrain Grand Prix,max_verstappen,Red Bull,5,4,Finished,12
+2019,2,Bahrain Grand Prix,vettel,Ferrari,2,5,Finished,10
+2019,2,Bahrain Grand Prix,norris,McLaren,9,6,Finished,8
+2019,2,Bahrain Grand Prix,raikkonen,Alfa Romeo,8,7,Finished,6
+2019,2,Bahrain Grand Prix,gasly,Red Bull,13,8,Finished,4
+2019,2,Bahrain Grand Prix,albon,Toro Rosso,12,9,Finished,2
+2019,2,Bahrain Grand Prix,perez,Racing Point,14,10,Finished,1
+2019,2,Bahrain Grand Prix,giovinazzi,Alfa Romeo,16,11,Finished,0
+2019,2,Bahrain Grand Prix,kvyat,Toro Rosso,15,12,+1 Lap,0
+2019,2,Bahrain Grand Prix,kevin_magnussen,Haas F1 Team,6,13,+1 Lap,0
+2019,2,Bahrain Grand Prix,stroll,Racing Point,18,14,+1 Lap,0
+2019,2,Bahrain Grand Prix,russell,Williams,19,15,+1 Lap,0
+2019,2,Bahrain Grand Prix,kubica,Williams,20,16,+2 Laps,0
+2019,2,Bahrain Grand Prix,hulkenberg,Renault,17,17,Engine,0
+2019,2,Bahrain Grand Prix,ricciardo,Renault,10,18,Out of fuel,0
+2019,2,Bahrain Grand Prix,sainz,McLaren,7,19,Collision damage,0
+2019,2,Bahrain Grand Prix,grosjean,Haas F1 Team,11,20,Retired,0
+2019,3,Chinese Grand Prix,hamilton,Mercedes,2,1,Finished,25
+2019,3,Chinese Grand Prix,bottas,Mercedes,1,2,Finished,18
+2019,3,Chinese Grand Prix,vettel,Ferrari,3,3,Finished,15
+2019,3,Chinese Grand Prix,max_verstappen,Red Bull,5,4,Finished,12
+2019,3,Chinese Grand Prix,leclerc,Ferrari,4,5,Finished,10
+2019,3,Chinese Grand Prix,gasly,Red Bull,6,6,Finished,9
+2019,3,Chinese Grand Prix,ricciardo,Renault,7,7,+1 Lap,6
+2019,3,Chinese Grand Prix,perez,Racing Point,12,8,+1 Lap,4
+2019,3,Chinese Grand Prix,raikkonen,Alfa Romeo,13,9,+1 Lap,2
+2019,3,Chinese Grand Prix,albon,Toro Rosso,0,10,+1 Lap,1
+2019,3,Chinese Grand Prix,grosjean,Haas F1 Team,10,11,+1 Lap,0
+2019,3,Chinese Grand Prix,stroll,Racing Point,16,12,+1 Lap,0
+2019,3,Chinese Grand Prix,kevin_magnussen,Haas F1 Team,9,13,+1 Lap,0
+2019,3,Chinese Grand Prix,sainz,McLaren,14,14,+1 Lap,0
+2019,3,Chinese Grand Prix,giovinazzi,Alfa Romeo,19,15,+1 Lap,0
+2019,3,Chinese Grand Prix,russell,Williams,17,16,+2 Laps,0
+2019,3,Chinese Grand Prix,kubica,Williams,18,17,+2 Laps,0
+2019,3,Chinese Grand Prix,norris,McLaren,15,18,Collision,0
+2019,3,Chinese Grand Prix,kvyat,Toro Rosso,11,19,Collision,0
+2019,3,Chinese Grand Prix,hulkenberg,Renault,8,20,Power Unit,0
+2019,4,Azerbaijan Grand Prix,bottas,Mercedes,1,1,Finished,25
+2019,4,Azerbaijan Grand Prix,hamilton,Mercedes,2,2,Finished,18
+2019,4,Azerbaijan Grand Prix,vettel,Ferrari,3,3,Finished,15
+2019,4,Azerbaijan Grand Prix,max_verstappen,Red Bull,4,4,Finished,12
+2019,4,Azerbaijan Grand Prix,leclerc,Ferrari,8,5,Finished,11
+2019,4,Azerbaijan Grand Prix,perez,Racing Point,5,6,Finished,8
+2019,4,Azerbaijan Grand Prix,sainz,McLaren,9,7,Finished,6
+2019,4,Azerbaijan Grand Prix,norris,McLaren,7,8,Finished,4
+2019,4,Azerbaijan Grand Prix,stroll,Racing Point,13,9,Finished,2
+2019,4,Azerbaijan Grand Prix,raikkonen,Alfa Romeo,0,10,+1 Lap,1
+2019,4,Azerbaijan Grand Prix,albon,Toro Rosso,11,11,+1 Lap,0
+2019,4,Azerbaijan Grand Prix,giovinazzi,Alfa Romeo,17,12,+1 Lap,0
+2019,4,Azerbaijan Grand Prix,kevin_magnussen,Haas F1 Team,12,13,+1 Lap,0
+2019,4,Azerbaijan Grand Prix,hulkenberg,Renault,15,14,+1 Lap,0
+2019,4,Azerbaijan Grand Prix,russell,Williams,16,15,+2 Laps,0
+2019,4,Azerbaijan Grand Prix,kubica,Williams,0,16,+2 Laps,0
+2019,4,Azerbaijan Grand Prix,gasly,Red Bull,0,17,Transmission,0
+2019,4,Azerbaijan Grand Prix,grosjean,Haas F1 Team,14,18,Brakes,0
+2019,4,Azerbaijan Grand Prix,kvyat,Toro Rosso,6,19,Collision,0
+2019,4,Azerbaijan Grand Prix,ricciardo,Renault,10,20,Collision,0
+2019,5,Spanish Grand Prix,hamilton,Mercedes,2,1,Finished,26
+2019,5,Spanish Grand Prix,bottas,Mercedes,1,2,Finished,18
+2019,5,Spanish Grand Prix,max_verstappen,Red Bull,4,3,Finished,15
+2019,5,Spanish Grand Prix,vettel,Ferrari,3,4,Finished,12
+2019,5,Spanish Grand Prix,leclerc,Ferrari,5,5,Finished,10
+2019,5,Spanish Grand Prix,gasly,Red Bull,6,6,Finished,8
+2019,5,Spanish Grand Prix,kevin_magnussen,Haas F1 Team,8,7,Finished,6
+2019,5,Spanish Grand Prix,sainz,McLaren,12,8,Finished,4
+2019,5,Spanish Grand Prix,kvyat,Toro Rosso,9,9,Finished,2
+2019,5,Spanish Grand Prix,grosjean,Haas F1 Team,7,10,Finished,1
+2019,5,Spanish Grand Prix,albon,Toro Rosso,11,11,Finished,0
+2019,5,Spanish Grand Prix,ricciardo,Renault,13,12,Finished,0
+2019,5,Spanish Grand Prix,hulkenberg,Renault,0,13,Finished,0
+2019,5,Spanish Grand Prix,raikkonen,Alfa Romeo,14,14,Finished,0
+2019,5,Spanish Grand Prix,perez,Racing Point,15,15,Finished,0
+2019,5,Spanish Grand Prix,giovinazzi,Alfa Romeo,18,16,Finished,0
+2019,5,Spanish Grand Prix,russell,Williams,19,17,+1 Lap,0
+2019,5,Spanish Grand Prix,kubica,Williams,17,18,+1 Lap,0
+2019,5,Spanish Grand Prix,stroll,Racing Point,16,19,Collision,0
+2019,5,Spanish Grand Prix,norris,McLaren,10,20,Collision,0
+2019,6,Monaco Grand Prix,hamilton,Mercedes,1,1,Finished,25
+2019,6,Monaco Grand Prix,vettel,Ferrari,4,2,Finished,18
+2019,6,Monaco Grand Prix,bottas,Mercedes,2,3,Finished,15
+2019,6,Monaco Grand Prix,max_verstappen,Red Bull,3,4,Finished,12
+2019,6,Monaco Grand Prix,gasly,Red Bull,8,5,Finished,11
+2019,6,Monaco Grand Prix,sainz,McLaren,9,6,Finished,8
+2019,6,Monaco Grand Prix,kvyat,Toro Rosso,7,7,Finished,6
+2019,6,Monaco Grand Prix,albon,Toro Rosso,10,8,Finished,4
+2019,6,Monaco Grand Prix,ricciardo,Renault,6,9,Finished,2
+2019,6,Monaco Grand Prix,grosjean,Haas F1 Team,13,10,Finished,1
+2019,6,Monaco Grand Prix,norris,McLaren,12,11,Finished,0
+2019,6,Monaco Grand Prix,perez,Racing Point,16,12,+1 Lap,0
+2019,6,Monaco Grand Prix,hulkenberg,Renault,11,13,+1 Lap,0
+2019,6,Monaco Grand Prix,kevin_magnussen,Haas F1 Team,5,14,+1 Lap,0
+2019,6,Monaco Grand Prix,russell,Williams,19,15,+1 Lap,0
+2019,6,Monaco Grand Prix,stroll,Racing Point,17,16,+1 Lap,0
+2019,6,Monaco Grand Prix,raikkonen,Alfa Romeo,14,17,+1 Lap,0
+2019,6,Monaco Grand Prix,kubica,Williams,20,18,+1 Lap,0
+2019,6,Monaco Grand Prix,giovinazzi,Alfa Romeo,18,19,+2 Laps,0
+2019,6,Monaco Grand Prix,leclerc,Ferrari,15,20,Collision,0
+2019,7,Canadian Grand Prix,hamilton,Mercedes,2,1,Finished,25
+2019,7,Canadian Grand Prix,vettel,Ferrari,1,2,Finished,18
+2019,7,Canadian Grand Prix,leclerc,Ferrari,3,3,Finished,15
+2019,7,Canadian Grand Prix,bottas,Mercedes,6,4,Finished,13
+2019,7,Canadian Grand Prix,max_verstappen,Red Bull,9,5,Finished,10
+2019,7,Canadian Grand Prix,ricciardo,Renault,4,6,+1 Lap,8
+2019,7,Canadian Grand Prix,hulkenberg,Renault,7,7,+1 Lap,6
+2019,7,Canadian Grand Prix,gasly,Red Bull,5,8,+1 Lap,4
+2019,7,Canadian Grand Prix,stroll,Racing Point,17,9,+1 Lap,2
+2019,7,Canadian Grand Prix,kvyat,Toro Rosso,10,10,+1 Lap,1
+2019,7,Canadian Grand Prix,sainz,McLaren,11,11,+1 Lap,0
+2019,7,Canadian Grand Prix,perez,Racing Point,15,12,+1 Lap,0
+2019,7,Canadian Grand Prix,giovinazzi,Alfa Romeo,12,13,+1 Lap,0
+2019,7,Canadian Grand Prix,grosjean,Haas F1 Team,14,14,+1 Lap,0
+2019,7,Canadian Grand Prix,raikkonen,Alfa Romeo,16,15,+1 Lap,0
+2019,7,Canadian Grand Prix,russell,Williams,18,16,+2 Laps,0
+2019,7,Canadian Grand Prix,kevin_magnussen,Haas F1 Team,0,17,+2 Laps,0
+2019,7,Canadian Grand Prix,kubica,Williams,19,18,+3 Laps,0
+2019,7,Canadian Grand Prix,albon,Toro Rosso,13,19,Collision damage,0
+2019,7,Canadian Grand Prix,norris,McLaren,8,20,Suspension,0
+2019,8,French Grand Prix,hamilton,Mercedes,1,1,Finished,25
+2019,8,French Grand Prix,bottas,Mercedes,2,2,Finished,18
+2019,8,French Grand Prix,leclerc,Ferrari,3,3,Finished,15
+2019,8,French Grand Prix,max_verstappen,Red Bull,4,4,Finished,12
+2019,8,French Grand Prix,vettel,Ferrari,7,5,Finished,11
+2019,8,French Grand Prix,sainz,McLaren,6,6,Finished,8
+2019,8,French Grand Prix,raikkonen,Alfa Romeo,12,7,+1 Lap,6
+2019,8,French Grand Prix,hulkenberg,Renault,13,8,+1 Lap,4
+2019,8,French Grand Prix,norris,McLaren,5,9,+1 Lap,2
+2019,8,French Grand Prix,gasly,Red Bull,9,10,+1 Lap,1
+2019,8,French Grand Prix,ricciardo,Renault,8,11,+1 Lap,0
+2019,8,French Grand Prix,perez,Racing Point,14,12,+1 Lap,0
+2019,8,French Grand Prix,stroll,Racing Point,17,13,+1 Lap,0
+2019,8,French Grand Prix,kvyat,Toro Rosso,19,14,+1 Lap,0
+2019,8,French Grand Prix,albon,Toro Rosso,11,15,+1 Lap,0
+2019,8,French Grand Prix,giovinazzi,Alfa Romeo,10,16,+1 Lap,0
+2019,8,French Grand Prix,kevin_magnussen,Haas F1 Team,15,17,+1 Lap,0
+2019,8,French Grand Prix,kubica,Williams,18,18,+2 Laps,0
+2019,8,French Grand Prix,russell,Williams,20,19,+2 Laps,0
+2019,8,French Grand Prix,grosjean,Haas F1 Team,16,20,Retired,0
+2019,9,Austrian Grand Prix,max_verstappen,Red Bull,2,1,Finished,26
+2019,9,Austrian Grand Prix,leclerc,Ferrari,1,2,Finished,18
+2019,9,Austrian Grand Prix,bottas,Mercedes,3,3,Finished,15
+2019,9,Austrian Grand Prix,vettel,Ferrari,9,4,Finished,12
+2019,9,Austrian Grand Prix,hamilton,Mercedes,4,5,Finished,10
+2019,9,Austrian Grand Prix,norris,McLaren,5,6,+1 Lap,8
+2019,9,Austrian Grand Prix,gasly,Red Bull,8,7,+1 Lap,6
+2019,9,Austrian Grand Prix,sainz,McLaren,19,8,+1 Lap,4
+2019,9,Austrian Grand Prix,raikkonen,Alfa Romeo,6,9,+1 Lap,2
+2019,9,Austrian Grand Prix,giovinazzi,Alfa Romeo,7,10,+1 Lap,1
+2019,9,Austrian Grand Prix,perez,Racing Point,13,11,+1 Lap,0
+2019,9,Austrian Grand Prix,ricciardo,Renault,12,12,+1 Lap,0
+2019,9,Austrian Grand Prix,hulkenberg,Renault,15,13,+1 Lap,0
+2019,9,Austrian Grand Prix,stroll,Racing Point,14,14,+1 Lap,0
+2019,9,Austrian Grand Prix,albon,Toro Rosso,18,15,+1 Lap,0
+2019,9,Austrian Grand Prix,grosjean,Haas F1 Team,11,16,+1 Lap,0
+2019,9,Austrian Grand Prix,kvyat,Toro Rosso,16,17,+1 Lap,0
+2019,9,Austrian Grand Prix,russell,Williams,0,18,+2 Laps,0
+2019,9,Austrian Grand Prix,kevin_magnussen,Haas F1 Team,10,19,+2 Laps,0
+2019,9,Austrian Grand Prix,kubica,Williams,17,20,+3 Laps,0
+2019,10,British Grand Prix,hamilton,Mercedes,2,1,Finished,26
+2019,10,British Grand Prix,bottas,Mercedes,1,2,Finished,18
+2019,10,British Grand Prix,leclerc,Ferrari,3,3,Finished,15
+2019,10,British Grand Prix,gasly,Red Bull,5,4,Finished,12
+2019,10,British Grand Prix,max_verstappen,Red Bull,4,5,Finished,10
+2019,10,British Grand Prix,sainz,McLaren,13,6,Finished,8
+2019,10,British Grand Prix,ricciardo,Renault,7,7,Finished,6
+2019,10,British Grand Prix,raikkonen,Alfa Romeo,12,8,Finished,4
+2019,10,British Grand Prix,kvyat,Toro Rosso,17,9,Finished,2
+2019,10,British Grand Prix,hulkenberg,Renault,10,10,Finished,1
+2019,10,British Grand Prix,norris,McLaren,8,11,Finished,0
+2019,10,British Grand Prix,albon,Toro Rosso,9,12,Finished,0
+2019,10,British Grand Prix,stroll,Racing Point,18,13,Finished,0
+2019,10,British Grand Prix,russell,Williams,19,14,+1 Lap,0
+2019,10,British Grand Prix,kubica,Williams,20,15,+1 Lap,0
+2019,10,British Grand Prix,vettel,Ferrari,6,16,+1 Lap,0
+2019,10,British Grand Prix,perez,Racing Point,15,17,+1 Lap,0
+2019,10,British Grand Prix,giovinazzi,Alfa Romeo,11,18,Spun off,0
+2019,10,British Grand Prix,grosjean,Haas F1 Team,14,19,Collision,0
+2019,10,British Grand Prix,kevin_magnussen,Haas F1 Team,16,20,Collision,0
+2019,11,German Grand Prix,max_verstappen,Red Bull,2,1,Finished,26
+2019,11,German Grand Prix,vettel,Ferrari,20,2,Finished,18
+2019,11,German Grand Prix,kvyat,Toro Rosso,14,3,Finished,15
+2019,11,German Grand Prix,stroll,Racing Point,15,4,Finished,12
+2019,11,German Grand Prix,sainz,McLaren,7,5,Finished,10
+2019,11,German Grand Prix,albon,Toro Rosso,16,6,Finished,8
+2019,11,German Grand Prix,grosjean,Haas F1 Team,6,7,Finished,6
+2019,11,German Grand Prix,kevin_magnussen,Haas F1 Team,12,8,Finished,4
+2019,11,German Grand Prix,hamilton,Mercedes,1,9,Finished,2
+2019,11,German Grand Prix,kubica,Williams,18,10,Finished,1
+2019,11,German Grand Prix,russell,Williams,17,11,Finished,0
+2019,11,German Grand Prix,raikkonen,Alfa Romeo,5,12,Finished,0
+2019,11,German Grand Prix,giovinazzi,Alfa Romeo,11,13,Finished,0
+2019,11,German Grand Prix,gasly,Red Bull,4,14,Collision,0
+2019,11,German Grand Prix,bottas,Mercedes,3,15,Accident,0
+2019,11,German Grand Prix,hulkenberg,Renault,9,16,Accident,0
+2019,11,German Grand Prix,leclerc,Ferrari,10,17,Accident,0
+2019,11,German Grand Prix,norris,McLaren,19,18,Power loss,0
+2019,11,German Grand Prix,ricciardo,Renault,13,19,Exhaust,0
+2019,11,German Grand Prix,perez,Racing Point,8,20,Spun off,0
+2019,12,Hungarian Grand Prix,hamilton,Mercedes,3,1,Finished,25
+2019,12,Hungarian Grand Prix,max_verstappen,Red Bull,1,2,Finished,19
+2019,12,Hungarian Grand Prix,vettel,Ferrari,5,3,Finished,15
+2019,12,Hungarian Grand Prix,leclerc,Ferrari,4,4,Finished,12
+2019,12,Hungarian Grand Prix,sainz,McLaren,8,5,+1 Lap,10
+2019,12,Hungarian Grand Prix,gasly,Red Bull,6,6,+1 Lap,8
+2019,12,Hungarian Grand Prix,raikkonen,Alfa Romeo,10,7,+1 Lap,6
+2019,12,Hungarian Grand Prix,bottas,Mercedes,2,8,+1 Lap,4
+2019,12,Hungarian Grand Prix,norris,McLaren,7,9,+1 Lap,2
+2019,12,Hungarian Grand Prix,albon,Toro Rosso,12,10,+1 Lap,1
+2019,12,Hungarian Grand Prix,perez,Racing Point,16,11,+1 Lap,0
+2019,12,Hungarian Grand Prix,hulkenberg,Renault,11,12,+1 Lap,0
+2019,12,Hungarian Grand Prix,kevin_magnussen,Haas F1 Team,14,13,+1 Lap,0
+2019,12,Hungarian Grand Prix,ricciardo,Renault,20,14,+1 Lap,0
+2019,12,Hungarian Grand Prix,kvyat,Toro Rosso,13,15,+2 Laps,0
+2019,12,Hungarian Grand Prix,russell,Williams,15,16,+2 Laps,0
+2019,12,Hungarian Grand Prix,stroll,Racing Point,18,17,+2 Laps,0
+2019,12,Hungarian Grand Prix,giovinazzi,Alfa Romeo,17,18,+2 Laps,0
+2019,12,Hungarian Grand Prix,kubica,Williams,19,19,+3 Laps,0
+2019,12,Hungarian Grand Prix,grosjean,Haas F1 Team,9,20,Water pressure,0
+2019,13,Belgian Grand Prix,leclerc,Ferrari,1,1,Finished,25
+2019,13,Belgian Grand Prix,hamilton,Mercedes,3,2,Finished,18
+2019,13,Belgian Grand Prix,bottas,Mercedes,4,3,Finished,15
+2019,13,Belgian Grand Prix,vettel,Ferrari,2,4,Finished,13
+2019,13,Belgian Grand Prix,albon,Red Bull,17,5,Finished,10
+2019,13,Belgian Grand Prix,perez,Racing Point,7,6,Finished,8
+2019,13,Belgian Grand Prix,kvyat,Toro Rosso,19,7,Finished,6
+2019,13,Belgian Grand Prix,hulkenberg,Renault,12,8,Finished,4
+2019,13,Belgian Grand Prix,gasly,Toro Rosso,13,9,Finished,2
+2019,13,Belgian Grand Prix,stroll,Racing Point,16,10,Finished,1
+2019,13,Belgian Grand Prix,norris,McLaren,11,11,Engine,0
+2019,13,Belgian Grand Prix,kevin_magnussen,Haas F1 Team,8,12,+1 Lap,0
+2019,13,Belgian Grand Prix,grosjean,Haas F1 Team,9,13,+1 Lap,0
+2019,13,Belgian Grand Prix,ricciardo,Renault,10,14,+1 Lap,0
+2019,13,Belgian Grand Prix,russell,Williams,14,15,+1 Lap,0
+2019,13,Belgian Grand Prix,raikkonen,Alfa Romeo,6,16,+1 Lap,0
+2019,13,Belgian Grand Prix,kubica,Williams,0,17,+1 Lap,0
+2019,13,Belgian Grand Prix,giovinazzi,Alfa Romeo,18,18,Accident,0
+2019,13,Belgian Grand Prix,sainz,McLaren,15,19,Power loss,0
+2019,13,Belgian Grand Prix,max_verstappen,Red Bull,5,20,Accident,0
+2019,14,Italian Grand Prix,leclerc,Ferrari,1,1,Finished,25
+2019,14,Italian Grand Prix,bottas,Mercedes,3,2,Finished,18
+2019,14,Italian Grand Prix,hamilton,Mercedes,2,3,Finished,16
+2019,14,Italian Grand Prix,ricciardo,Renault,5,4,Finished,12
+2019,14,Italian Grand Prix,hulkenberg,Renault,6,5,Finished,10
+2019,14,Italian Grand Prix,albon,Red Bull,8,6,Finished,8
+2019,14,Italian Grand Prix,perez,Racing Point,18,7,Finished,6
+2019,14,Italian Grand Prix,max_verstappen,Red Bull,19,8,Finished,4
+2019,14,Italian Grand Prix,giovinazzi,Alfa Romeo,10,9,+1 Lap,2
+2019,14,Italian Grand Prix,norris,McLaren,16,10,+1 Lap,1
+2019,14,Italian Grand Prix,gasly,Toro Rosso,17,11,+1 Lap,0
+2019,14,Italian Grand Prix,stroll,Racing Point,9,12,+1 Lap,0
+2019,14,Italian Grand Prix,vettel,Ferrari,4,13,+1 Lap,0
+2019,14,Italian Grand Prix,russell,Williams,14,14,+1 Lap,0
+2019,14,Italian Grand Prix,raikkonen,Alfa Romeo,0,15,+1 Lap,0
+2019,14,Italian Grand Prix,grosjean,Haas F1 Team,13,16,+1 Lap,0
+2019,14,Italian Grand Prix,kubica,Williams,15,17,+2 Laps,0
+2019,14,Italian Grand Prix,kevin_magnussen,Haas F1 Team,11,18,Hydraulics,0
+2019,14,Italian Grand Prix,kvyat,Toro Rosso,12,19,Engine,0
+2019,14,Italian Grand Prix,sainz,McLaren,7,20,Wheel,0
+2019,15,Singapore Grand Prix,vettel,Ferrari,3,1,Finished,25
+2019,15,Singapore Grand Prix,leclerc,Ferrari,1,2,Finished,18
+2019,15,Singapore Grand Prix,max_verstappen,Red Bull,4,3,Finished,15
+2019,15,Singapore Grand Prix,hamilton,Mercedes,2,4,Finished,12
+2019,15,Singapore Grand Prix,bottas,Mercedes,5,5,Finished,10
+2019,15,Singapore Grand Prix,albon,Red Bull,6,6,Finished,8
+2019,15,Singapore Grand Prix,norris,McLaren,9,7,Finished,6
+2019,15,Singapore Grand Prix,gasly,Toro Rosso,11,8,Finished,4
+2019,15,Singapore Grand Prix,hulkenberg,Renault,8,9,Finished,2
+2019,15,Singapore Grand Prix,giovinazzi,Alfa Romeo,10,10,Finished,1
+2019,15,Singapore Grand Prix,grosjean,Haas F1 Team,17,11,Finished,0
+2019,15,Singapore Grand Prix,sainz,McLaren,7,12,Finished,0
+2019,15,Singapore Grand Prix,stroll,Racing Point,16,13,Finished,0
+2019,15,Singapore Grand Prix,ricciardo,Renault,20,14,Finished,0
+2019,15,Singapore Grand Prix,kvyat,Toro Rosso,14,15,Finished,0
+2019,15,Singapore Grand Prix,kubica,Williams,19,16,Finished,0
+2019,15,Singapore Grand Prix,kevin_magnussen,Haas F1 Team,13,17,Finished,0
+2019,15,Singapore Grand Prix,raikkonen,Alfa Romeo,12,18,Collision,0
+2019,15,Singapore Grand Prix,perez,Racing Point,15,19,Engine,0
+2019,15,Singapore Grand Prix,russell,Williams,18,20,Collision,0
+2019,16,Russian Grand Prix,hamilton,Mercedes,2,1,Finished,26
+2019,16,Russian Grand Prix,bottas,Mercedes,4,2,Finished,18
+2019,16,Russian Grand Prix,leclerc,Ferrari,1,3,Finished,15
+2019,16,Russian Grand Prix,max_verstappen,Red Bull,9,4,Finished,12
+2019,16,Russian Grand Prix,albon,Red Bull,0,5,Finished,10
+2019,16,Russian Grand Prix,sainz,McLaren,5,6,Finished,8
+2019,16,Russian Grand Prix,perez,Racing Point,11,7,Finished,6
+2019,16,Russian Grand Prix,norris,McLaren,7,8,Finished,4
+2019,16,Russian Grand Prix,kevin_magnussen,Haas F1 Team,13,9,Finished,2
+2019,16,Russian Grand Prix,hulkenberg,Renault,6,10,Finished,1
+2019,16,Russian Grand Prix,stroll,Racing Point,14,11,Finished,0
+2019,16,Russian Grand Prix,kvyat,Toro Rosso,19,12,Finished,0
+2019,16,Russian Grand Prix,raikkonen,Alfa Romeo,15,13,Finished,0
+2019,16,Russian Grand Prix,gasly,Toro Rosso,16,14,Finished,0
+2019,16,Russian Grand Prix,giovinazzi,Alfa Romeo,12,15,Finished,0
+2019,16,Russian Grand Prix,kubica,Williams,18,16,Brakes,0
+2019,16,Russian Grand Prix,russell,Williams,17,17,Brakes,0
+2019,16,Russian Grand Prix,vettel,Ferrari,3,18,Power loss,0
+2019,16,Russian Grand Prix,ricciardo,Renault,10,19,Collision,0
+2019,16,Russian Grand Prix,grosjean,Haas F1 Team,8,20,Collision,0
+2019,17,Japanese Grand Prix,bottas,Mercedes,3,1,Finished,25
+2019,17,Japanese Grand Prix,vettel,Ferrari,1,2,Finished,18
+2019,17,Japanese Grand Prix,hamilton,Mercedes,4,3,Finished,16
+2019,17,Japanese Grand Prix,albon,Red Bull,6,4,Finished,12
+2019,17,Japanese Grand Prix,sainz,McLaren,7,5,Finished,10
+2019,17,Japanese Grand Prix,leclerc,Ferrari,2,6,+1 Lap,8
+2019,17,Japanese Grand Prix,gasly,Toro Rosso,9,7,+1 Lap,6
+2019,17,Japanese Grand Prix,perez,Racing Point,17,8,+1 Lap,4
+2019,17,Japanese Grand Prix,stroll,Racing Point,12,9,+1 Lap,2
+2019,17,Japanese Grand Prix,kvyat,Toro Rosso,14,10,+1 Lap,1
+2019,17,Japanese Grand Prix,norris,McLaren,8,11,+1 Lap,0
+2019,17,Japanese Grand Prix,raikkonen,Alfa Romeo,13,12,+1 Lap,0
+2019,17,Japanese Grand Prix,grosjean,Haas F1 Team,10,13,+1 Lap,0
+2019,17,Japanese Grand Prix,giovinazzi,Alfa Romeo,11,14,+1 Lap,0
+2019,17,Japanese Grand Prix,kevin_magnussen,Haas F1 Team,19,15,+1 Lap,0
+2019,17,Japanese Grand Prix,russell,Williams,18,16,+2 Laps,0
+2019,17,Japanese Grand Prix,kubica,Williams,0,17,+2 Laps,0
+2019,17,Japanese Grand Prix,max_verstappen,Red Bull,5,18,Brakes,0
+2019,17,Japanese Grand Prix,ricciardo,Renault,16,19,Disqualified,0
+2019,17,Japanese Grand Prix,hulkenberg,Renault,15,20,Disqualified,0
+2019,18,Mexican Grand Prix,hamilton,Mercedes,3,1,Finished,25
+2019,18,Mexican Grand Prix,vettel,Ferrari,2,2,Finished,18
+2019,18,Mexican Grand Prix,bottas,Mercedes,6,3,Finished,15
+2019,18,Mexican Grand Prix,leclerc,Ferrari,1,4,Finished,13
+2019,18,Mexican Grand Prix,albon,Red Bull,5,5,Finished,10
+2019,18,Mexican Grand Prix,max_verstappen,Red Bull,4,6,Finished,8
+2019,18,Mexican Grand Prix,perez,Racing Point,11,7,Finished,6
+2019,18,Mexican Grand Prix,ricciardo,Renault,13,8,Finished,4
+2019,18,Mexican Grand Prix,gasly,Toro Rosso,10,9,+1 Lap,2
+2019,18,Mexican Grand Prix,hulkenberg,Renault,12,10,+1 Lap,1
+2019,18,Mexican Grand Prix,kvyat,Toro Rosso,9,11,+1 Lap,0
+2019,18,Mexican Grand Prix,stroll,Racing Point,16,12,+1 Lap,0
+2019,18,Mexican Grand Prix,sainz,McLaren,7,13,+1 Lap,0
+2019,18,Mexican Grand Prix,giovinazzi,Alfa Romeo,15,14,+1 Lap,0
+2019,18,Mexican Grand Prix,kevin_magnussen,Haas F1 Team,17,15,+2 Laps,0
+2019,18,Mexican Grand Prix,russell,Williams,19,16,+2 Laps,0
+2019,18,Mexican Grand Prix,grosjean,Haas F1 Team,18,17,+2 Laps,0
+2019,18,Mexican Grand Prix,kubica,Williams,20,18,+2 Laps,0
+2019,18,Mexican Grand Prix,raikkonen,Alfa Romeo,14,19,Overheating,0
+2019,18,Mexican Grand Prix,norris,McLaren,8,20,Withdrew,0
+2019,19,United States Grand Prix,bottas,Mercedes,1,1,Finished,25
+2019,19,United States Grand Prix,hamilton,Mercedes,5,2,Finished,18
+2019,19,United States Grand Prix,max_verstappen,Red Bull,3,3,Finished,15
+2019,19,United States Grand Prix,leclerc,Ferrari,4,4,Finished,13
+2019,19,United States Grand Prix,albon,Red Bull,6,5,Finished,10
+2019,19,United States Grand Prix,ricciardo,Renault,9,6,Finished,8
+2019,19,United States Grand Prix,norris,McLaren,8,7,Finished,6
+2019,19,United States Grand Prix,sainz,McLaren,7,8,+1 Lap,4
+2019,19,United States Grand Prix,hulkenberg,Renault,11,9,+1 Lap,2
+2019,19,United States Grand Prix,perez,Racing Point,0,10,+1 Lap,1
+2019,19,United States Grand Prix,raikkonen,Alfa Romeo,17,11,+1 Lap,0
+2019,19,United States Grand Prix,kvyat,Toro Rosso,13,12,+1 Lap,0
+2019,19,United States Grand Prix,stroll,Racing Point,14,13,+1 Lap,0
+2019,19,United States Grand Prix,giovinazzi,Alfa Romeo,16,14,+1 Lap,0
+2019,19,United States Grand Prix,grosjean,Haas F1 Team,15,15,+1 Lap,0
+2019,19,United States Grand Prix,gasly,Toro Rosso,10,16,Suspension,0
+2019,19,United States Grand Prix,russell,Williams,18,17,+2 Laps,0
+2019,19,United States Grand Prix,kevin_magnussen,Haas F1 Team,12,18,Brakes,0
+2019,19,United States Grand Prix,kubica,Williams,19,19,Oil leak,0
+2019,19,United States Grand Prix,vettel,Ferrari,2,20,Suspension,0
+2019,20,Brazilian Grand Prix,max_verstappen,Red Bull,1,1,Finished,25
+2019,20,Brazilian Grand Prix,gasly,Toro Rosso,6,2,Finished,18
+2019,20,Brazilian Grand Prix,sainz,McLaren,20,3,Finished,15
+2019,20,Brazilian Grand Prix,raikkonen,Alfa Romeo,8,4,Finished,12
+2019,20,Brazilian Grand Prix,giovinazzi,Alfa Romeo,12,5,Finished,10
+2019,20,Brazilian Grand Prix,ricciardo,Renault,11,6,Finished,8
+2019,20,Brazilian Grand Prix,hamilton,Mercedes,3,7,Finished,6
+2019,20,Brazilian Grand Prix,norris,McLaren,10,8,Finished,4
+2019,20,Brazilian Grand Prix,perez,Racing Point,15,9,Finished,2
+2019,20,Brazilian Grand Prix,kvyat,Toro Rosso,16,10,Finished,1
+2019,20,Brazilian Grand Prix,kevin_magnussen,Haas F1 Team,9,11,Finished,0
+2019,20,Brazilian Grand Prix,russell,Williams,18,12,Finished,0
+2019,20,Brazilian Grand Prix,grosjean,Haas F1 Team,7,13,Finished,0
+2019,20,Brazilian Grand Prix,albon,Red Bull,5,14,Finished,0
+2019,20,Brazilian Grand Prix,hulkenberg,Renault,13,15,Finished,0
+2019,20,Brazilian Grand Prix,kubica,Williams,19,16,+1 Lap,0
+2019,20,Brazilian Grand Prix,vettel,Ferrari,2,17,Collision,0
+2019,20,Brazilian Grand Prix,leclerc,Ferrari,14,18,Collision,0
+2019,20,Brazilian Grand Prix,stroll,Racing Point,17,19,Suspension,0
+2019,20,Brazilian Grand Prix,bottas,Mercedes,4,20,Power Unit,0
+2019,21,Abu Dhabi Grand Prix,hamilton,Mercedes,1,1,Finished,26
+2019,21,Abu Dhabi Grand Prix,max_verstappen,Red Bull,2,2,Finished,18
+2019,21,Abu Dhabi Grand Prix,leclerc,Ferrari,3,3,Finished,15
+2019,21,Abu Dhabi Grand Prix,bottas,Mercedes,20,4,Finished,12
+2019,21,Abu Dhabi Grand Prix,vettel,Ferrari,4,5,Finished,10
+2019,21,Abu Dhabi Grand Prix,albon,Red Bull,5,6,Finished,8
+2019,21,Abu Dhabi Grand Prix,perez,Racing Point,10,7,+1 Lap,6
+2019,21,Abu Dhabi Grand Prix,norris,McLaren,6,8,+1 Lap,4
+2019,21,Abu Dhabi Grand Prix,kvyat,Toro Rosso,13,9,+1 Lap,2
+2019,21,Abu Dhabi Grand Prix,sainz,McLaren,8,10,+1 Lap,1
+2019,21,Abu Dhabi Grand Prix,ricciardo,Renault,7,11,+1 Lap,0
+2019,21,Abu Dhabi Grand Prix,hulkenberg,Renault,9,12,+1 Lap,0
+2019,21,Abu Dhabi Grand Prix,raikkonen,Alfa Romeo,17,13,+1 Lap,0
+2019,21,Abu Dhabi Grand Prix,kevin_magnussen,Haas F1 Team,14,14,+1 Lap,0
+2019,21,Abu Dhabi Grand Prix,grosjean,Haas F1 Team,15,15,+1 Lap,0
+2019,21,Abu Dhabi Grand Prix,giovinazzi,Alfa Romeo,16,16,+1 Lap,0
+2019,21,Abu Dhabi Grand Prix,russell,Williams,18,17,+1 Lap,0
+2019,21,Abu Dhabi Grand Prix,gasly,Toro Rosso,11,18,+2 Laps,0
+2019,21,Abu Dhabi Grand Prix,kubica,Williams,19,19,+2 Laps,0
+2019,21,Abu Dhabi Grand Prix,stroll,Racing Point,12,20,Brakes,0
+2020,1,Austrian Grand Prix,bottas,Mercedes,1,1,Finished,25
+2020,1,Austrian Grand Prix,leclerc,Ferrari,7,2,Finished,18
+2020,1,Austrian Grand Prix,norris,McLaren,3,3,Finished,16
+2020,1,Austrian Grand Prix,hamilton,Mercedes,5,4,Finished,12
+2020,1,Austrian Grand Prix,sainz,McLaren,8,5,Finished,10
+2020,1,Austrian Grand Prix,perez,Racing Point,6,6,Finished,8
+2020,1,Austrian Grand Prix,gasly,AlphaTauri,12,7,Finished,6
+2020,1,Austrian Grand Prix,ocon,Renault,14,8,Finished,4
+2020,1,Austrian Grand Prix,giovinazzi,Alfa Romeo,18,9,Finished,2
+2020,1,Austrian Grand Prix,vettel,Ferrari,11,10,Finished,1
+2020,1,Austrian Grand Prix,latifi,Williams,20,11,Finished,0
+2020,1,Austrian Grand Prix,kvyat,AlphaTauri,13,12,Suspension,0
+2020,1,Austrian Grand Prix,albon,Red Bull,4,13,Electronics,0
+2020,1,Austrian Grand Prix,raikkonen,Alfa Romeo,19,14,Wheel,0
+2020,1,Austrian Grand Prix,russell,Williams,17,15,Fuel pressure,0
+2020,1,Austrian Grand Prix,grosjean,Haas F1 Team,15,16,Brakes,0
+2020,1,Austrian Grand Prix,kevin_magnussen,Haas F1 Team,16,17,Brakes,0
+2020,1,Austrian Grand Prix,stroll,Racing Point,9,18,Engine,0
+2020,1,Austrian Grand Prix,ricciardo,Renault,10,19,Overheating,0
+2020,1,Austrian Grand Prix,max_verstappen,Red Bull,2,20,Electronics,0
+2020,2,Styrian Grand Prix,hamilton,Mercedes,1,1,Finished,25
+2020,2,Styrian Grand Prix,bottas,Mercedes,4,2,Finished,18
+2020,2,Styrian Grand Prix,max_verstappen,Red Bull,2,3,Finished,15
+2020,2,Styrian Grand Prix,albon,Red Bull,6,4,Finished,12
+2020,2,Styrian Grand Prix,norris,McLaren,9,5,Finished,10
+2020,2,Styrian Grand Prix,perez,Racing Point,17,6,Finished,8
+2020,2,Styrian Grand Prix,stroll,Racing Point,12,7,Finished,6
+2020,2,Styrian Grand Prix,ricciardo,Renault,8,8,Finished,4
+2020,2,Styrian Grand Prix,sainz,McLaren,3,9,+1 Lap,3
+2020,2,Styrian Grand Prix,kvyat,AlphaTauri,13,10,+1 Lap,1
+2020,2,Styrian Grand Prix,raikkonen,Alfa Romeo,16,11,+1 Lap,0
+2020,2,Styrian Grand Prix,kevin_magnussen,Haas F1 Team,15,12,+1 Lap,0
+2020,2,Styrian Grand Prix,grosjean,Haas F1 Team,0,13,+1 Lap,0
+2020,2,Styrian Grand Prix,giovinazzi,Alfa Romeo,19,14,+1 Lap,0
+2020,2,Styrian Grand Prix,gasly,AlphaTauri,7,15,+1 Lap,0
+2020,2,Styrian Grand Prix,russell,Williams,11,16,+2 Laps,0
+2020,2,Styrian Grand Prix,latifi,Williams,18,17,+2 Laps,0
+2020,2,Styrian Grand Prix,ocon,Renault,5,18,Overheating,0
+2020,2,Styrian Grand Prix,leclerc,Ferrari,14,19,Collision damage,0
+2020,2,Styrian Grand Prix,vettel,Ferrari,10,20,Collision damage,0
+2020,3,Hungarian Grand Prix,hamilton,Mercedes,1,1,Finished,26
+2020,3,Hungarian Grand Prix,max_verstappen,Red Bull,7,2,Finished,18
+2020,3,Hungarian Grand Prix,bottas,Mercedes,2,3,Finished,15
+2020,3,Hungarian Grand Prix,stroll,Racing Point,3,4,Finished,12
+2020,3,Hungarian Grand Prix,albon,Red Bull,13,5,Finished,10
+2020,3,Hungarian Grand Prix,vettel,Ferrari,5,6,+1 Lap,8
+2020,3,Hungarian Grand Prix,perez,Racing Point,4,7,+1 Lap,6
+2020,3,Hungarian Grand Prix,ricciardo,Renault,11,8,+1 Lap,4
+2020,3,Hungarian Grand Prix,sainz,McLaren,9,9,+1 Lap,2
+2020,3,Hungarian Grand Prix,kevin_magnussen,Haas F1 Team,0,10,+1 Lap,1
+2020,3,Hungarian Grand Prix,leclerc,Ferrari,6,11,+1 Lap,0
+2020,3,Hungarian Grand Prix,kvyat,AlphaTauri,17,12,+1 Lap,0
+2020,3,Hungarian Grand Prix,norris,McLaren,8,13,+1 Lap,0
+2020,3,Hungarian Grand Prix,ocon,Renault,14,14,+1 Lap,0
+2020,3,Hungarian Grand Prix,raikkonen,Alfa Romeo,20,15,+1 Lap,0
+2020,3,Hungarian Grand Prix,grosjean,Haas F1 Team,0,16,+1 Lap,0
+2020,3,Hungarian Grand Prix,giovinazzi,Alfa Romeo,19,17,+1 Lap,0
+2020,3,Hungarian Grand Prix,russell,Williams,12,18,+1 Lap,0
+2020,3,Hungarian Grand Prix,latifi,Williams,15,19,+5 Laps,0
+2020,3,Hungarian Grand Prix,gasly,AlphaTauri,10,20,Engine,0
+2020,4,British Grand Prix,hamilton,Mercedes,1,1,Finished,25
+2020,4,British Grand Prix,max_verstappen,Red Bull,3,2,Finished,19
+2020,4,British Grand Prix,leclerc,Ferrari,4,3,Finished,15
+2020,4,British Grand Prix,ricciardo,Renault,8,4,Finished,12
+2020,4,British Grand Prix,norris,McLaren,5,5,Finished,10
+2020,4,British Grand Prix,ocon,Renault,9,6,Finished,8
+2020,4,British Grand Prix,gasly,AlphaTauri,11,7,Finished,6
+2020,4,British Grand Prix,albon,Red Bull,12,8,Finished,4
+2020,4,British Grand Prix,stroll,Racing Point,6,9,Finished,2
+2020,4,British Grand Prix,vettel,Ferrari,10,10,Finished,1
+2020,4,British Grand Prix,bottas,Mercedes,2,11,Finished,0
+2020,4,British Grand Prix,russell,Williams,20,12,Finished,0
+2020,4,British Grand Prix,sainz,McLaren,7,13,Finished,0
+2020,4,British Grand Prix,giovinazzi,Alfa Romeo,15,14,Finished,0
+2020,4,British Grand Prix,latifi,Williams,18,15,Finished,0
+2020,4,British Grand Prix,grosjean,Haas F1 Team,17,16,Finished,0
+2020,4,British Grand Prix,raikkonen,Alfa Romeo,16,17,+1 Lap,0
+2020,4,British Grand Prix,kvyat,AlphaTauri,19,18,Accident,0
+2020,4,British Grand Prix,kevin_magnussen,Haas F1 Team,14,19,Collision,0
+2020,4,British Grand Prix,hulkenberg,Racing Point,13,20,Power Unit,0
+2020,5,70th Anniversary Grand Prix,max_verstappen,Red Bull,4,1,Finished,25
+2020,5,70th Anniversary Grand Prix,hamilton,Mercedes,2,2,Finished,19
+2020,5,70th Anniversary Grand Prix,bottas,Mercedes,1,3,Finished,15
+2020,5,70th Anniversary Grand Prix,leclerc,Ferrari,8,4,Finished,12
+2020,5,70th Anniversary Grand Prix,albon,Red Bull,9,5,Finished,10
+2020,5,70th Anniversary Grand Prix,stroll,Racing Point,6,6,Finished,8
+2020,5,70th Anniversary Grand Prix,hulkenberg,Racing Point,3,7,Finished,6
+2020,5,70th Anniversary Grand Prix,ocon,Renault,14,8,Finished,4
+2020,5,70th Anniversary Grand Prix,norris,McLaren,10,9,Finished,2
+2020,5,70th Anniversary Grand Prix,kvyat,AlphaTauri,16,10,Finished,1
+2020,5,70th Anniversary Grand Prix,gasly,AlphaTauri,7,11,Finished,0
+2020,5,70th Anniversary Grand Prix,vettel,Ferrari,11,12,Finished,0
+2020,5,70th Anniversary Grand Prix,sainz,McLaren,12,13,Finished,0
+2020,5,70th Anniversary Grand Prix,ricciardo,Renault,5,14,+1 Lap,0
+2020,5,70th Anniversary Grand Prix,raikkonen,Alfa Romeo,20,15,+1 Lap,0
+2020,5,70th Anniversary Grand Prix,grosjean,Haas F1 Team,13,16,+1 Lap,0
+2020,5,70th Anniversary Grand Prix,giovinazzi,Alfa Romeo,19,17,+1 Lap,0
+2020,5,70th Anniversary Grand Prix,russell,Williams,15,18,+1 Lap,0
+2020,5,70th Anniversary Grand Prix,latifi,Williams,18,19,+1 Lap,0
+2020,5,70th Anniversary Grand Prix,kevin_magnussen,Haas F1 Team,17,20,Retired,0
+2020,6,Spanish Grand Prix,hamilton,Mercedes,1,1,Finished,25
+2020,6,Spanish Grand Prix,max_verstappen,Red Bull,3,2,Finished,18
+2020,6,Spanish Grand Prix,bottas,Mercedes,2,3,Finished,16
+2020,6,Spanish Grand Prix,stroll,Racing Point,5,4,+1 Lap,12
+2020,6,Spanish Grand Prix,perez,Racing Point,4,5,+1 Lap,10
+2020,6,Spanish Grand Prix,sainz,McLaren,7,6,+1 Lap,8
+2020,6,Spanish Grand Prix,vettel,Ferrari,11,7,+1 Lap,6
+2020,6,Spanish Grand Prix,albon,Red Bull,6,8,+1 Lap,4
+2020,6,Spanish Grand Prix,gasly,AlphaTauri,10,9,+1 Lap,2
+2020,6,Spanish Grand Prix,norris,McLaren,8,10,+1 Lap,1
+2020,6,Spanish Grand Prix,ricciardo,Renault,13,11,+1 Lap,0
+2020,6,Spanish Grand Prix,kvyat,AlphaTauri,12,12,+1 Lap,0
+2020,6,Spanish Grand Prix,ocon,Renault,15,13,+1 Lap,0
+2020,6,Spanish Grand Prix,raikkonen,Alfa Romeo,14,14,+1 Lap,0
+2020,6,Spanish Grand Prix,kevin_magnussen,Haas F1 Team,16,15,+1 Lap,0
+2020,6,Spanish Grand Prix,giovinazzi,Alfa Romeo,20,16,+1 Lap,0
+2020,6,Spanish Grand Prix,russell,Williams,18,17,+1 Lap,0
+2020,6,Spanish Grand Prix,latifi,Williams,19,18,+2 Laps,0
+2020,6,Spanish Grand Prix,grosjean,Haas F1 Team,17,19,+2 Laps,0
+2020,6,Spanish Grand Prix,leclerc,Ferrari,9,20,Electronics,0
+2020,7,Belgian Grand Prix,hamilton,Mercedes,1,1,Finished,25
+2020,7,Belgian Grand Prix,bottas,Mercedes,2,2,Finished,18
+2020,7,Belgian Grand Prix,max_verstappen,Red Bull,3,3,Finished,15
+2020,7,Belgian Grand Prix,ricciardo,Renault,4,4,Finished,13
+2020,7,Belgian Grand Prix,ocon,Renault,6,5,Finished,10
+2020,7,Belgian Grand Prix,albon,Red Bull,5,6,Finished,8
+2020,7,Belgian Grand Prix,norris,McLaren,10,7,Finished,6
+2020,7,Belgian Grand Prix,gasly,AlphaTauri,12,8,Finished,4
+2020,7,Belgian Grand Prix,stroll,Racing Point,9,9,Finished,2
+2020,7,Belgian Grand Prix,perez,Racing Point,8,10,Finished,1
+2020,7,Belgian Grand Prix,kvyat,AlphaTauri,11,11,Finished,0
+2020,7,Belgian Grand Prix,raikkonen,Alfa Romeo,16,12,Finished,0
+2020,7,Belgian Grand Prix,vettel,Ferrari,14,13,Finished,0
+2020,7,Belgian Grand Prix,leclerc,Ferrari,13,14,Finished,0
+2020,7,Belgian Grand Prix,grosjean,Haas F1 Team,17,15,Finished,0
+2020,7,Belgian Grand Prix,latifi,Williams,19,16,Finished,0
+2020,7,Belgian Grand Prix,kevin_magnussen,Haas F1 Team,20,17,Finished,0
+2020,7,Belgian Grand Prix,giovinazzi,Alfa Romeo,18,18,Accident,0
+2020,7,Belgian Grand Prix,russell,Williams,15,19,Debris,0
+2020,7,Belgian Grand Prix,sainz,McLaren,7,20,Exhaust,0
+2020,8,Italian Grand Prix,gasly,AlphaTauri,10,1,Finished,25
+2020,8,Italian Grand Prix,sainz,McLaren,3,2,Finished,18
+2020,8,Italian Grand Prix,stroll,Racing Point,8,3,Finished,15
+2020,8,Italian Grand Prix,norris,McLaren,6,4,Finished,12
+2020,8,Italian Grand Prix,bottas,Mercedes,2,5,Finished,10
+2020,8,Italian Grand Prix,ricciardo,Renault,7,6,Finished,8
+2020,8,Italian Grand Prix,hamilton,Mercedes,1,7,Finished,7
+2020,8,Italian Grand Prix,ocon,Renault,12,8,Finished,4
+2020,8,Italian Grand Prix,kvyat,AlphaTauri,11,9,Finished,2
+2020,8,Italian Grand Prix,perez,Racing Point,4,10,Finished,1
+2020,8,Italian Grand Prix,latifi,Williams,20,11,Finished,0
+2020,8,Italian Grand Prix,grosjean,Haas F1 Team,16,12,Finished,0
+2020,8,Italian Grand Prix,raikkonen,Alfa Romeo,14,13,Finished,0
+2020,8,Italian Grand Prix,russell,Williams,19,14,Finished,0
+2020,8,Italian Grand Prix,albon,Red Bull,9,15,Finished,0
+2020,8,Italian Grand Prix,giovinazzi,Alfa Romeo,18,16,Finished,0
+2020,8,Italian Grand Prix,max_verstappen,Red Bull,5,17,Power Unit,0
+2020,8,Italian Grand Prix,leclerc,Ferrari,13,18,Accident,0
+2020,8,Italian Grand Prix,kevin_magnussen,Haas F1 Team,15,19,Power Unit,0
+2020,8,Italian Grand Prix,vettel,Ferrari,17,20,Brakes,0
+2020,9,Tuscan Grand Prix,hamilton,Mercedes,1,1,Finished,26
+2020,9,Tuscan Grand Prix,bottas,Mercedes,2,2,Finished,18
+2020,9,Tuscan Grand Prix,albon,Red Bull,4,3,Finished,15
+2020,9,Tuscan Grand Prix,ricciardo,Renault,8,4,Finished,12
+2020,9,Tuscan Grand Prix,perez,Racing Point,7,5,Finished,10
+2020,9,Tuscan Grand Prix,norris,McLaren,11,6,Finished,8
+2020,9,Tuscan Grand Prix,kvyat,AlphaTauri,12,7,Finished,6
+2020,9,Tuscan Grand Prix,leclerc,Ferrari,5,8,Finished,4
+2020,9,Tuscan Grand Prix,raikkonen,Alfa Romeo,13,9,Finished,2
+2020,9,Tuscan Grand Prix,vettel,Ferrari,14,10,Finished,1
+2020,9,Tuscan Grand Prix,russell,Williams,18,11,Finished,0
+2020,9,Tuscan Grand Prix,grosjean,Haas F1 Team,15,12,Finished,0
+2020,9,Tuscan Grand Prix,stroll,Racing Point,6,13,Puncture,0
+2020,9,Tuscan Grand Prix,ocon,Renault,10,14,Brakes,0
+2020,9,Tuscan Grand Prix,latifi,Williams,19,15,Collision,0
+2020,9,Tuscan Grand Prix,kevin_magnussen,Haas F1 Team,20,16,Collision,0
+2020,9,Tuscan Grand Prix,giovinazzi,Alfa Romeo,17,17,Collision,0
+2020,9,Tuscan Grand Prix,sainz,McLaren,9,18,Collision,0
+2020,9,Tuscan Grand Prix,max_verstappen,Red Bull,3,19,Collision,0
+2020,9,Tuscan Grand Prix,gasly,AlphaTauri,16,20,Collision,0
+2020,10,Russian Grand Prix,bottas,Mercedes,3,1,Finished,26
+2020,10,Russian Grand Prix,max_verstappen,Red Bull,2,2,Finished,18
+2020,10,Russian Grand Prix,hamilton,Mercedes,1,3,Finished,15
+2020,10,Russian Grand Prix,perez,Racing Point,4,4,Finished,12
+2020,10,Russian Grand Prix,ricciardo,Renault,5,5,Finished,10
+2020,10,Russian Grand Prix,leclerc,Ferrari,10,6,Finished,8
+2020,10,Russian Grand Prix,ocon,Renault,7,7,Finished,6
+2020,10,Russian Grand Prix,kvyat,AlphaTauri,11,8,Finished,4
+2020,10,Russian Grand Prix,gasly,AlphaTauri,9,9,Finished,2
+2020,10,Russian Grand Prix,albon,Red Bull,15,10,Finished,1
+2020,10,Russian Grand Prix,giovinazzi,Alfa Romeo,17,11,+1 Lap,0
+2020,10,Russian Grand Prix,kevin_magnussen,Haas F1 Team,18,12,+1 Lap,0
+2020,10,Russian Grand Prix,vettel,Ferrari,14,13,+1 Lap,0
+2020,10,Russian Grand Prix,raikkonen,Alfa Romeo,19,14,+1 Lap,0
+2020,10,Russian Grand Prix,norris,McLaren,8,15,+1 Lap,0
+2020,10,Russian Grand Prix,latifi,Williams,20,16,+1 Lap,0
+2020,10,Russian Grand Prix,grosjean,Haas F1 Team,16,17,+1 Lap,0
+2020,10,Russian Grand Prix,russell,Williams,13,18,+1 Lap,0
+2020,10,Russian Grand Prix,sainz,McLaren,6,19,Accident,0
+2020,10,Russian Grand Prix,stroll,Racing Point,12,20,Collision,0
+2020,11,Eifel Grand Prix,hamilton,Mercedes,2,1,Finished,25
+2020,11,Eifel Grand Prix,max_verstappen,Red Bull,3,2,Finished,19
+2020,11,Eifel Grand Prix,ricciardo,Renault,6,3,Finished,15
+2020,11,Eifel Grand Prix,perez,Racing Point,9,4,Finished,12
+2020,11,Eifel Grand Prix,sainz,McLaren,10,5,Finished,10
+2020,11,Eifel Grand Prix,gasly,AlphaTauri,12,6,Finished,8
+2020,11,Eifel Grand Prix,leclerc,Ferrari,4,7,Finished,6
+2020,11,Eifel Grand Prix,hulkenberg,Racing Point,20,8,Finished,4
+2020,11,Eifel Grand Prix,grosjean,Haas F1 Team,16,9,Finished,2
+2020,11,Eifel Grand Prix,giovinazzi,Alfa Romeo,14,10,Finished,1
+2020,11,Eifel Grand Prix,vettel,Ferrari,11,11,Finished,0
+2020,11,Eifel Grand Prix,raikkonen,Alfa Romeo,19,12,Finished,0
+2020,11,Eifel Grand Prix,kevin_magnussen,Haas F1 Team,15,13,Finished,0
+2020,11,Eifel Grand Prix,latifi,Williams,18,14,Finished,0
+2020,11,Eifel Grand Prix,kvyat,AlphaTauri,13,15,Finished,0
+2020,11,Eifel Grand Prix,norris,McLaren,8,16,Power Unit,0
+2020,11,Eifel Grand Prix,albon,Red Bull,5,17,Radiator,0
+2020,11,Eifel Grand Prix,ocon,Renault,7,18,Gearbox,0
+2020,11,Eifel Grand Prix,bottas,Mercedes,1,19,Power Unit,0
+2020,11,Eifel Grand Prix,russell,Williams,17,20,Collision,0
+2020,12,Portuguese Grand Prix,hamilton,Mercedes,1,1,Finished,26
+2020,12,Portuguese Grand Prix,bottas,Mercedes,2,2,Finished,18
+2020,12,Portuguese Grand Prix,max_verstappen,Red Bull,3,3,Finished,15
+2020,12,Portuguese Grand Prix,leclerc,Ferrari,4,4,Finished,12
+2020,12,Portuguese Grand Prix,gasly,AlphaTauri,9,5,+1 Lap,10
+2020,12,Portuguese Grand Prix,sainz,McLaren,7,6,+1 Lap,8
+2020,12,Portuguese Grand Prix,perez,Racing Point,5,7,+1 Lap,6
+2020,12,Portuguese Grand Prix,ocon,Renault,11,8,+1 Lap,4
+2020,12,Portuguese Grand Prix,ricciardo,Renault,10,9,+1 Lap,2
+2020,12,Portuguese Grand Prix,vettel,Ferrari,15,10,+1 Lap,1
+2020,12,Portuguese Grand Prix,raikkonen,Alfa Romeo,16,11,+1 Lap,0
+2020,12,Portuguese Grand Prix,albon,Red Bull,6,12,+1 Lap,0
+2020,12,Portuguese Grand Prix,norris,McLaren,8,13,+1 Lap,0
+2020,12,Portuguese Grand Prix,russell,Williams,14,14,+1 Lap,0
+2020,12,Portuguese Grand Prix,giovinazzi,Alfa Romeo,17,15,+1 Lap,0
+2020,12,Portuguese Grand Prix,kevin_magnussen,Haas F1 Team,19,16,+1 Lap,0
+2020,12,Portuguese Grand Prix,grosjean,Haas F1 Team,18,17,+1 Lap,0
+2020,12,Portuguese Grand Prix,latifi,Williams,20,18,+2 Laps,0
+2020,12,Portuguese Grand Prix,kvyat,AlphaTauri,13,19,+2 Laps,0
+2020,12,Portuguese Grand Prix,stroll,Racing Point,12,20,Collision damage,0
+2020,13,Emilia Romagna Grand Prix,hamilton,Mercedes,2,1,Finished,26
+2020,13,Emilia Romagna Grand Prix,bottas,Mercedes,1,2,Finished,18
+2020,13,Emilia Romagna Grand Prix,ricciardo,Renault,5,3,Finished,15
+2020,13,Emilia Romagna Grand Prix,kvyat,AlphaTauri,8,4,Finished,12
+2020,13,Emilia Romagna Grand Prix,leclerc,Ferrari,7,5,Finished,10
+2020,13,Emilia Romagna Grand Prix,perez,Racing Point,11,6,Finished,8
+2020,13,Emilia Romagna Grand Prix,sainz,McLaren,10,7,Finished,6
+2020,13,Emilia Romagna Grand Prix,norris,McLaren,9,8,Finished,4
+2020,13,Emilia Romagna Grand Prix,raikkonen,Alfa Romeo,18,9,Finished,2
+2020,13,Emilia Romagna Grand Prix,giovinazzi,Alfa Romeo,20,10,Finished,1
+2020,13,Emilia Romagna Grand Prix,latifi,Williams,19,11,Finished,0
+2020,13,Emilia Romagna Grand Prix,vettel,Ferrari,14,12,Finished,0
+2020,13,Emilia Romagna Grand Prix,stroll,Racing Point,15,13,Finished,0
+2020,13,Emilia Romagna Grand Prix,grosjean,Haas F1 Team,16,14,Finished,0
+2020,13,Emilia Romagna Grand Prix,albon,Red Bull,6,15,Finished,0
+2020,13,Emilia Romagna Grand Prix,russell,Williams,13,16,Accident,0
+2020,13,Emilia Romagna Grand Prix,max_verstappen,Red Bull,3,17,Puncture,0
+2020,13,Emilia Romagna Grand Prix,kevin_magnussen,Haas F1 Team,17,18,Illness,0
+2020,13,Emilia Romagna Grand Prix,ocon,Renault,12,19,Gearbox,0
+2020,13,Emilia Romagna Grand Prix,gasly,AlphaTauri,4,20,Water pressure,0
+2020,14,Turkish Grand Prix,hamilton,Mercedes,6,1,Finished,25
+2020,14,Turkish Grand Prix,perez,Racing Point,3,2,Finished,18
+2020,14,Turkish Grand Prix,vettel,Ferrari,11,3,Finished,15
+2020,14,Turkish Grand Prix,leclerc,Ferrari,12,4,Finished,12
+2020,14,Turkish Grand Prix,sainz,McLaren,15,5,Finished,10
+2020,14,Turkish Grand Prix,max_verstappen,Red Bull,2,6,Finished,8
+2020,14,Turkish Grand Prix,albon,Red Bull,4,7,Finished,6
+2020,14,Turkish Grand Prix,norris,McLaren,14,8,Finished,5
+2020,14,Turkish Grand Prix,stroll,Racing Point,1,9,Finished,2
+2020,14,Turkish Grand Prix,ricciardo,Renault,5,10,Finished,1
+2020,14,Turkish Grand Prix,ocon,Renault,7,11,+1 Lap,0
+2020,14,Turkish Grand Prix,kvyat,AlphaTauri,16,12,+1 Lap,0
+2020,14,Turkish Grand Prix,gasly,AlphaTauri,19,13,+1 Lap,0
+2020,14,Turkish Grand Prix,bottas,Mercedes,9,14,+1 Lap,0
+2020,14,Turkish Grand Prix,raikkonen,Alfa Romeo,8,15,+1 Lap,0
+2020,14,Turkish Grand Prix,russell,Williams,0,16,+1 Lap,0
+2020,14,Turkish Grand Prix,kevin_magnussen,Haas F1 Team,13,17,Withdrew,0
+2020,14,Turkish Grand Prix,grosjean,Haas F1 Team,17,18,Collision damage,0
+2020,14,Turkish Grand Prix,latifi,Williams,0,19,Collision damage,0
+2020,14,Turkish Grand Prix,giovinazzi,Alfa Romeo,10,20,Gearbox,0
+2020,15,Bahrain Grand Prix,hamilton,Mercedes,1,1,Finished,25
+2020,15,Bahrain Grand Prix,max_verstappen,Red Bull,3,2,Finished,19
+2020,15,Bahrain Grand Prix,albon,Red Bull,4,3,Finished,15
+2020,15,Bahrain Grand Prix,norris,McLaren,9,4,Finished,12
+2020,15,Bahrain Grand Prix,sainz,McLaren,15,5,Finished,10
+2020,15,Bahrain Grand Prix,gasly,AlphaTauri,8,6,Finished,8
+2020,15,Bahrain Grand Prix,ricciardo,Renault,6,7,Finished,6
+2020,15,Bahrain Grand Prix,bottas,Mercedes,2,8,Finished,4
+2020,15,Bahrain Grand Prix,ocon,Renault,7,9,Finished,2
+2020,15,Bahrain Grand Prix,leclerc,Ferrari,12,10,+1 Lap,1
+2020,15,Bahrain Grand Prix,kvyat,AlphaTauri,10,11,+1 Lap,0
+2020,15,Bahrain Grand Prix,russell,Williams,14,12,+1 Lap,0
+2020,15,Bahrain Grand Prix,vettel,Ferrari,11,13,+1 Lap,0
+2020,15,Bahrain Grand Prix,latifi,Williams,20,14,+1 Lap,0
+2020,15,Bahrain Grand Prix,raikkonen,Alfa Romeo,17,15,+1 Lap,0
+2020,15,Bahrain Grand Prix,giovinazzi,Alfa Romeo,16,16,+1 Lap,0
+2020,15,Bahrain Grand Prix,kevin_magnussen,Haas F1 Team,18,17,+1 Lap,0
+2020,15,Bahrain Grand Prix,perez,Racing Point,5,18,Engine,0
+2020,15,Bahrain Grand Prix,stroll,Racing Point,13,19,Collision,0
+2020,15,Bahrain Grand Prix,grosjean,Haas F1 Team,19,20,Collision,0
+2020,16,Sakhir Grand Prix,perez,Racing Point,5,1,Finished,25
+2020,16,Sakhir Grand Prix,ocon,Renault,11,2,Finished,18
+2020,16,Sakhir Grand Prix,stroll,Racing Point,10,3,Finished,15
+2020,16,Sakhir Grand Prix,sainz,McLaren,8,4,Finished,12
+2020,16,Sakhir Grand Prix,ricciardo,Renault,7,5,Finished,10
+2020,16,Sakhir Grand Prix,albon,Red Bull,12,6,Finished,8
+2020,16,Sakhir Grand Prix,kvyat,AlphaTauri,6,7,Finished,6
+2020,16,Sakhir Grand Prix,bottas,Mercedes,1,8,Finished,4
+2020,16,Sakhir Grand Prix,russell,Mercedes,2,9,Finished,3
+2020,16,Sakhir Grand Prix,norris,McLaren,19,10,Finished,1
+2020,16,Sakhir Grand Prix,gasly,AlphaTauri,9,11,Finished,0
+2020,16,Sakhir Grand Prix,vettel,Ferrari,13,12,Finished,0
+2020,16,Sakhir Grand Prix,giovinazzi,Alfa Romeo,14,13,Finished,0
+2020,16,Sakhir Grand Prix,raikkonen,Alfa Romeo,18,14,Finished,0
+2020,16,Sakhir Grand Prix,kevin_magnussen,Haas F1 Team,15,15,Finished,0
+2020,16,Sakhir Grand Prix,aitken,Williams,17,16,Finished,0
+2020,16,Sakhir Grand Prix,pietro_fittipaldi,Haas F1 Team,20,17,Finished,0
+2020,16,Sakhir Grand Prix,latifi,Williams,16,18,Engine,0
+2020,16,Sakhir Grand Prix,max_verstappen,Red Bull,3,19,Accident,0
+2020,16,Sakhir Grand Prix,leclerc,Ferrari,4,20,Collision,0
+2020,17,Abu Dhabi Grand Prix,max_verstappen,Red Bull,1,1,Finished,25
+2020,17,Abu Dhabi Grand Prix,bottas,Mercedes,2,2,Finished,18
+2020,17,Abu Dhabi Grand Prix,hamilton,Mercedes,3,3,Finished,15
+2020,17,Abu Dhabi Grand Prix,albon,Red Bull,5,4,Finished,12
+2020,17,Abu Dhabi Grand Prix,norris,McLaren,4,5,Finished,10
+2020,17,Abu Dhabi Grand Prix,sainz,McLaren,6,6,Finished,8
+2020,17,Abu Dhabi Grand Prix,ricciardo,Renault,11,7,Finished,7
+2020,17,Abu Dhabi Grand Prix,gasly,AlphaTauri,9,8,Finished,4
+2020,17,Abu Dhabi Grand Prix,ocon,Renault,10,9,Finished,2
+2020,17,Abu Dhabi Grand Prix,stroll,Racing Point,8,10,Finished,1
+2020,17,Abu Dhabi Grand Prix,kvyat,AlphaTauri,7,11,+1 Lap,0
+2020,17,Abu Dhabi Grand Prix,raikkonen,Alfa Romeo,15,12,+1 Lap,0
+2020,17,Abu Dhabi Grand Prix,leclerc,Ferrari,12,13,+1 Lap,0
+2020,17,Abu Dhabi Grand Prix,vettel,Ferrari,13,14,+1 Lap,0
+2020,17,Abu Dhabi Grand Prix,russell,Williams,16,15,+1 Lap,0
+2020,17,Abu Dhabi Grand Prix,giovinazzi,Alfa Romeo,14,16,+1 Lap,0
+2020,17,Abu Dhabi Grand Prix,latifi,Williams,18,17,+1 Lap,0
+2020,17,Abu Dhabi Grand Prix,kevin_magnussen,Haas F1 Team,20,18,+1 Lap,0
+2020,17,Abu Dhabi Grand Prix,pietro_fittipaldi,Haas F1 Team,17,19,+2 Laps,0
+2020,17,Abu Dhabi Grand Prix,perez,Racing Point,19,20,Transmission,0
+2021,1,Bahrain Grand Prix,hamilton,Mercedes,2,1,Finished,25
+2021,1,Bahrain Grand Prix,max_verstappen,Red Bull,1,2,Finished,18
+2021,1,Bahrain Grand Prix,bottas,Mercedes,3,3,Finished,16
+2021,1,Bahrain Grand Prix,norris,McLaren,7,4,Finished,12
+2021,1,Bahrain Grand Prix,perez,Red Bull,0,5,Finished,10
+2021,1,Bahrain Grand Prix,leclerc,Ferrari,4,6,Finished,8
+2021,1,Bahrain Grand Prix,ricciardo,McLaren,6,7,Finished,6
+2021,1,Bahrain Grand Prix,sainz,Ferrari,8,8,Finished,4
+2021,1,Bahrain Grand Prix,tsunoda,AlphaTauri,13,9,Finished,2
+2021,1,Bahrain Grand Prix,stroll,Aston Martin,10,10,Finished,1
+2021,1,Bahrain Grand Prix,raikkonen,Alfa Romeo,14,11,Finished,0
+2021,1,Bahrain Grand Prix,giovinazzi,Alfa Romeo,12,12,+1 Lap,0
+2021,1,Bahrain Grand Prix,ocon,Alpine F1 Team,16,13,+1 Lap,0
+2021,1,Bahrain Grand Prix,russell,Williams,15,14,+1 Lap,0
+2021,1,Bahrain Grand Prix,vettel,Aston Martin,20,15,+1 Lap,0
+2021,1,Bahrain Grand Prix,mick_schumacher,Haas F1 Team,18,16,+1 Lap,0
+2021,1,Bahrain Grand Prix,gasly,AlphaTauri,5,17,Retired,0
+2021,1,Bahrain Grand Prix,latifi,Williams,17,18,Retired,0
+2021,1,Bahrain Grand Prix,alonso,Alpine F1 Team,9,19,Brakes,0
+2021,1,Bahrain Grand Prix,mazepin,Haas F1 Team,19,20,Accident,0
+2021,2,Emilia Romagna Grand Prix,max_verstappen,Red Bull,3,1,Finished,25
+2021,2,Emilia Romagna Grand Prix,hamilton,Mercedes,1,2,Finished,19
+2021,2,Emilia Romagna Grand Prix,norris,McLaren,7,3,Finished,15
+2021,2,Emilia Romagna Grand Prix,leclerc,Ferrari,4,4,Finished,12
+2021,2,Emilia Romagna Grand Prix,sainz,Ferrari,11,5,Finished,10
+2021,2,Emilia Romagna Grand Prix,ricciardo,McLaren,6,6,Finished,8
+2021,2,Emilia Romagna Grand Prix,gasly,AlphaTauri,5,7,Finished,6
+2021,2,Emilia Romagna Grand Prix,stroll,Aston Martin,10,8,Finished,4
+2021,2,Emilia Romagna Grand Prix,ocon,Alpine F1 Team,9,9,Finished,2
+2021,2,Emilia Romagna Grand Prix,alonso,Alpine F1 Team,15,10,Finished,1
+2021,2,Emilia Romagna Grand Prix,perez,Red Bull,2,11,Finished,0
+2021,2,Emilia Romagna Grand Prix,tsunoda,AlphaTauri,20,12,Finished,0
+2021,2,Emilia Romagna Grand Prix,raikkonen,Alfa Romeo,16,13,Finished,0
+2021,2,Emilia Romagna Grand Prix,giovinazzi,Alfa Romeo,17,14,+1 Lap,0
+2021,2,Emilia Romagna Grand Prix,vettel,Aston Martin,0,15,Gearbox,0
+2021,2,Emilia Romagna Grand Prix,mick_schumacher,Haas F1 Team,18,16,+2 Laps,0
+2021,2,Emilia Romagna Grand Prix,mazepin,Haas F1 Team,19,17,+2 Laps,0
+2021,2,Emilia Romagna Grand Prix,bottas,Mercedes,8,18,Collision,0
+2021,2,Emilia Romagna Grand Prix,russell,Williams,12,19,Collision,0
+2021,2,Emilia Romagna Grand Prix,latifi,Williams,14,20,Collision,0
+2021,3,Portuguese Grand Prix,hamilton,Mercedes,2,1,Finished,25
+2021,3,Portuguese Grand Prix,max_verstappen,Red Bull,3,2,Finished,18
+2021,3,Portuguese Grand Prix,bottas,Mercedes,1,3,Finished,16
+2021,3,Portuguese Grand Prix,perez,Red Bull,4,4,Finished,12
+2021,3,Portuguese Grand Prix,norris,McLaren,7,5,Finished,10
+2021,3,Portuguese Grand Prix,leclerc,Ferrari,8,6,Finished,8
+2021,3,Portuguese Grand Prix,ocon,Alpine F1 Team,6,7,Finished,6
+2021,3,Portuguese Grand Prix,alonso,Alpine F1 Team,13,8,Finished,4
+2021,3,Portuguese Grand Prix,ricciardo,McLaren,16,9,Finished,2
+2021,3,Portuguese Grand Prix,gasly,AlphaTauri,9,10,Finished,1
+2021,3,Portuguese Grand Prix,sainz,Ferrari,5,11,Finished,0
+2021,3,Portuguese Grand Prix,giovinazzi,Alfa Romeo,12,12,+1 Lap,0
+2021,3,Portuguese Grand Prix,vettel,Aston Martin,10,13,+1 Lap,0
+2021,3,Portuguese Grand Prix,stroll,Aston Martin,17,14,+1 Lap,0
+2021,3,Portuguese Grand Prix,tsunoda,AlphaTauri,14,15,+1 Lap,0
+2021,3,Portuguese Grand Prix,russell,Williams,11,16,+1 Lap,0
+2021,3,Portuguese Grand Prix,mick_schumacher,Haas F1 Team,19,17,+2 Laps,0
+2021,3,Portuguese Grand Prix,latifi,Williams,18,18,+2 Laps,0
+2021,3,Portuguese Grand Prix,mazepin,Haas F1 Team,20,19,+2 Laps,0
+2021,3,Portuguese Grand Prix,raikkonen,Alfa Romeo,15,20,Collision damage,0
+2021,4,Spanish Grand Prix,hamilton,Mercedes,1,1,Finished,25
+2021,4,Spanish Grand Prix,max_verstappen,Red Bull,2,2,Finished,19
+2021,4,Spanish Grand Prix,bottas,Mercedes,3,3,Finished,15
+2021,4,Spanish Grand Prix,leclerc,Ferrari,4,4,Finished,12
+2021,4,Spanish Grand Prix,perez,Red Bull,8,5,Finished,10
+2021,4,Spanish Grand Prix,ricciardo,McLaren,7,6,Finished,8
+2021,4,Spanish Grand Prix,sainz,Ferrari,6,7,Finished,6
+2021,4,Spanish Grand Prix,norris,McLaren,9,8,+1 Lap,4
+2021,4,Spanish Grand Prix,ocon,Alpine F1 Team,5,9,+1 Lap,2
+2021,4,Spanish Grand Prix,gasly,AlphaTauri,12,10,+1 Lap,1
+2021,4,Spanish Grand Prix,stroll,Aston Martin,11,11,+1 Lap,0
+2021,4,Spanish Grand Prix,raikkonen,Alfa Romeo,17,12,+1 Lap,0
+2021,4,Spanish Grand Prix,vettel,Aston Martin,13,13,+1 Lap,0
+2021,4,Spanish Grand Prix,russell,Williams,15,14,+1 Lap,0
+2021,4,Spanish Grand Prix,giovinazzi,Alfa Romeo,14,15,+1 Lap,0
+2021,4,Spanish Grand Prix,latifi,Williams,19,16,+1 Lap,0
+2021,4,Spanish Grand Prix,alonso,Alpine F1 Team,10,17,+1 Lap,0
+2021,4,Spanish Grand Prix,mick_schumacher,Haas F1 Team,18,18,+2 Laps,0
+2021,4,Spanish Grand Prix,mazepin,Haas F1 Team,20,19,+2 Laps,0
+2021,4,Spanish Grand Prix,tsunoda,AlphaTauri,16,20,Electrical,0
+2021,5,Monaco Grand Prix,max_verstappen,Red Bull,2,1,Finished,25
+2021,5,Monaco Grand Prix,sainz,Ferrari,4,2,Finished,18
+2021,5,Monaco Grand Prix,norris,McLaren,5,3,Finished,15
+2021,5,Monaco Grand Prix,perez,Red Bull,9,4,Finished,12
+2021,5,Monaco Grand Prix,vettel,Aston Martin,8,5,Finished,10
+2021,5,Monaco Grand Prix,gasly,AlphaTauri,6,6,Finished,8
+2021,5,Monaco Grand Prix,hamilton,Mercedes,7,7,Finished,7
+2021,5,Monaco Grand Prix,stroll,Aston Martin,13,8,+1 Lap,4
+2021,5,Monaco Grand Prix,ocon,Alpine F1 Team,11,9,+1 Lap,2
+2021,5,Monaco Grand Prix,giovinazzi,Alfa Romeo,10,10,+1 Lap,1
+2021,5,Monaco Grand Prix,raikkonen,Alfa Romeo,14,11,+1 Lap,0
+2021,5,Monaco Grand Prix,ricciardo,McLaren,12,12,+1 Lap,0
+2021,5,Monaco Grand Prix,alonso,Alpine F1 Team,17,13,+1 Lap,0
+2021,5,Monaco Grand Prix,russell,Williams,15,14,+1 Lap,0
+2021,5,Monaco Grand Prix,latifi,Williams,18,15,+1 Lap,0
+2021,5,Monaco Grand Prix,tsunoda,AlphaTauri,16,16,+1 Lap,0
+2021,5,Monaco Grand Prix,mazepin,Haas F1 Team,19,17,+3 Laps,0
+2021,5,Monaco Grand Prix,mick_schumacher,Haas F1 Team,20,18,+3 Laps,0
+2021,5,Monaco Grand Prix,bottas,Mercedes,3,19,Wheel nut,0
+2021,5,Monaco Grand Prix,leclerc,Ferrari,1,20,Driveshaft,0
+2021,6,Azerbaijan Grand Prix,perez,Red Bull,6,1,Finished,25
+2021,6,Azerbaijan Grand Prix,vettel,Aston Martin,11,2,Finished,18
+2021,6,Azerbaijan Grand Prix,gasly,AlphaTauri,4,3,Finished,15
+2021,6,Azerbaijan Grand Prix,leclerc,Ferrari,1,4,Finished,12
+2021,6,Azerbaijan Grand Prix,norris,McLaren,9,5,Finished,10
+2021,6,Azerbaijan Grand Prix,alonso,Alpine F1 Team,8,6,Finished,8
+2021,6,Azerbaijan Grand Prix,tsunoda,AlphaTauri,7,7,Finished,6
+2021,6,Azerbaijan Grand Prix,sainz,Ferrari,5,8,Finished,4
+2021,6,Azerbaijan Grand Prix,ricciardo,McLaren,13,9,Finished,2
+2021,6,Azerbaijan Grand Prix,raikkonen,Alfa Romeo,14,10,Finished,1
+2021,6,Azerbaijan Grand Prix,giovinazzi,Alfa Romeo,20,11,Finished,0
+2021,6,Azerbaijan Grand Prix,bottas,Mercedes,10,12,Finished,0
+2021,6,Azerbaijan Grand Prix,mick_schumacher,Haas F1 Team,17,13,Finished,0
+2021,6,Azerbaijan Grand Prix,mazepin,Haas F1 Team,18,14,Finished,0
+2021,6,Azerbaijan Grand Prix,hamilton,Mercedes,2,15,Finished,0
+2021,6,Azerbaijan Grand Prix,latifi,Williams,16,16,Finished,0
+2021,6,Azerbaijan Grand Prix,russell,Williams,15,17,Gearbox,0
+2021,6,Azerbaijan Grand Prix,max_verstappen,Red Bull,3,18,Accident,0
+2021,6,Azerbaijan Grand Prix,stroll,Aston Martin,19,19,Accident,0
+2021,6,Azerbaijan Grand Prix,ocon,Alpine F1 Team,12,20,Turbo,0
+2021,7,French Grand Prix,max_verstappen,Red Bull,1,1,Finished,26
+2021,7,French Grand Prix,hamilton,Mercedes,2,2,Finished,18
+2021,7,French Grand Prix,perez,Red Bull,4,3,Finished,15
+2021,7,French Grand Prix,bottas,Mercedes,3,4,Finished,12
+2021,7,French Grand Prix,norris,McLaren,8,5,Finished,10
+2021,7,French Grand Prix,ricciardo,McLaren,10,6,Finished,8
+2021,7,French Grand Prix,gasly,AlphaTauri,6,7,Finished,6
+2021,7,French Grand Prix,alonso,Alpine F1 Team,9,8,Finished,4
+2021,7,French Grand Prix,vettel,Aston Martin,12,9,Finished,2
+2021,7,French Grand Prix,stroll,Aston Martin,19,10,Finished,1
+2021,7,French Grand Prix,sainz,Ferrari,5,11,Finished,0
+2021,7,French Grand Prix,russell,Williams,14,12,+1 Lap,0
+2021,7,French Grand Prix,tsunoda,AlphaTauri,0,13,+1 Lap,0
+2021,7,French Grand Prix,ocon,Alpine F1 Team,11,14,+1 Lap,0
+2021,7,French Grand Prix,giovinazzi,Alfa Romeo,13,15,+1 Lap,0
+2021,7,French Grand Prix,leclerc,Ferrari,7,16,+1 Lap,0
+2021,7,French Grand Prix,raikkonen,Alfa Romeo,17,17,+1 Lap,0
+2021,7,French Grand Prix,latifi,Williams,16,18,+1 Lap,0
+2021,7,French Grand Prix,mick_schumacher,Haas F1 Team,15,19,+1 Lap,0
+2021,7,French Grand Prix,mazepin,Haas F1 Team,18,20,+1 Lap,0
+2021,8,Styrian Grand Prix,max_verstappen,Red Bull,1,1,Finished,25
+2021,8,Styrian Grand Prix,hamilton,Mercedes,2,2,Finished,19
+2021,8,Styrian Grand Prix,bottas,Mercedes,5,3,Finished,15
+2021,8,Styrian Grand Prix,perez,Red Bull,4,4,Finished,12
+2021,8,Styrian Grand Prix,norris,McLaren,3,5,+1 Lap,10
+2021,8,Styrian Grand Prix,sainz,Ferrari,12,6,+1 Lap,8
+2021,8,Styrian Grand Prix,leclerc,Ferrari,7,7,+1 Lap,6
+2021,8,Styrian Grand Prix,stroll,Aston Martin,9,8,+1 Lap,4
+2021,8,Styrian Grand Prix,alonso,Alpine F1 Team,8,9,+1 Lap,2
+2021,8,Styrian Grand Prix,tsunoda,AlphaTauri,11,10,+1 Lap,1
+2021,8,Styrian Grand Prix,raikkonen,Alfa Romeo,18,11,+1 Lap,0
+2021,8,Styrian Grand Prix,vettel,Aston Martin,14,12,+1 Lap,0
+2021,8,Styrian Grand Prix,ricciardo,McLaren,13,13,+1 Lap,0
+2021,8,Styrian Grand Prix,ocon,Alpine F1 Team,17,14,+1 Lap,0
+2021,8,Styrian Grand Prix,giovinazzi,Alfa Romeo,15,15,+1 Lap,0
+2021,8,Styrian Grand Prix,mick_schumacher,Haas F1 Team,19,16,+2 Laps,0
+2021,8,Styrian Grand Prix,latifi,Williams,16,17,+3 Laps,0
+2021,8,Styrian Grand Prix,mazepin,Haas F1 Team,20,18,+3 Laps,0
+2021,8,Styrian Grand Prix,russell,Williams,10,19,Engine,0
+2021,8,Styrian Grand Prix,gasly,AlphaTauri,6,20,Collision,0
+2021,9,Austrian Grand Prix,max_verstappen,Red Bull,1,1,Finished,26
+2021,9,Austrian Grand Prix,bottas,Mercedes,5,2,Finished,18
+2021,9,Austrian Grand Prix,norris,McLaren,2,3,Finished,15
+2021,9,Austrian Grand Prix,hamilton,Mercedes,4,4,Finished,12
+2021,9,Austrian Grand Prix,sainz,Ferrari,10,5,Finished,10
+2021,9,Austrian Grand Prix,perez,Red Bull,3,6,Finished,8
+2021,9,Austrian Grand Prix,ricciardo,McLaren,13,7,Finished,6
+2021,9,Austrian Grand Prix,leclerc,Ferrari,12,8,Finished,4
+2021,9,Austrian Grand Prix,gasly,AlphaTauri,6,9,Finished,2
+2021,9,Austrian Grand Prix,alonso,Alpine F1 Team,14,10,+1 Lap,1
+2021,9,Austrian Grand Prix,russell,Williams,8,11,+1 Lap,0
+2021,9,Austrian Grand Prix,tsunoda,AlphaTauri,7,12,+1 Lap,0
+2021,9,Austrian Grand Prix,stroll,Aston Martin,9,13,+1 Lap,0
+2021,9,Austrian Grand Prix,giovinazzi,Alfa Romeo,15,14,+1 Lap,0
+2021,9,Austrian Grand Prix,raikkonen,Alfa Romeo,16,15,+1 Lap,0
+2021,9,Austrian Grand Prix,latifi,Williams,18,16,+1 Lap,0
+2021,9,Austrian Grand Prix,vettel,Aston Martin,11,17,Collision,0
+2021,9,Austrian Grand Prix,mick_schumacher,Haas F1 Team,19,18,+2 Laps,0
+2021,9,Austrian Grand Prix,mazepin,Haas F1 Team,20,19,+2 Laps,0
+2021,9,Austrian Grand Prix,ocon,Alpine F1 Team,17,20,Collision,0
+2021,10,British Grand Prix,hamilton,Mercedes,2,1,Finished,25
+2021,10,British Grand Prix,leclerc,Ferrari,4,2,Finished,18
+2021,10,British Grand Prix,bottas,Mercedes,3,3,Finished,15
+2021,10,British Grand Prix,norris,McLaren,5,4,Finished,12
+2021,10,British Grand Prix,ricciardo,McLaren,6,5,Finished,10
+2021,10,British Grand Prix,sainz,Ferrari,10,6,Finished,8
+2021,10,British Grand Prix,alonso,Alpine F1 Team,7,7,Finished,6
+2021,10,British Grand Prix,stroll,Aston Martin,14,8,Finished,4
+2021,10,British Grand Prix,ocon,Alpine F1 Team,9,9,Finished,2
+2021,10,British Grand Prix,tsunoda,AlphaTauri,16,10,Finished,1
+2021,10,British Grand Prix,gasly,AlphaTauri,11,11,Finished,0
+2021,10,British Grand Prix,russell,Williams,12,12,+1 Lap,0
+2021,10,British Grand Prix,giovinazzi,Alfa Romeo,15,13,+1 Lap,0
+2021,10,British Grand Prix,latifi,Williams,17,14,+1 Lap,0
+2021,10,British Grand Prix,raikkonen,Alfa Romeo,13,15,+1 Lap,0
+2021,10,British Grand Prix,perez,Red Bull,0,16,+1 Lap,0
+2021,10,British Grand Prix,mazepin,Haas F1 Team,19,17,+1 Lap,0
+2021,10,British Grand Prix,mick_schumacher,Haas F1 Team,18,18,+1 Lap,0
+2021,10,British Grand Prix,vettel,Aston Martin,8,19,Retired,0
+2021,10,British Grand Prix,max_verstappen,Red Bull,1,20,Collision,0
+2021,11,Hungarian Grand Prix,ocon,Alpine F1 Team,8,1,Finished,25
+2021,11,Hungarian Grand Prix,hamilton,Mercedes,1,2,Finished,18
+2021,11,Hungarian Grand Prix,sainz,Ferrari,15,3,Finished,15
+2021,11,Hungarian Grand Prix,alonso,Alpine F1 Team,9,4,Finished,12
+2021,11,Hungarian Grand Prix,gasly,AlphaTauri,5,5,Finished,11
+2021,11,Hungarian Grand Prix,tsunoda,AlphaTauri,16,6,Finished,8
+2021,11,Hungarian Grand Prix,latifi,Williams,18,7,Finished,6
+2021,11,Hungarian Grand Prix,russell,Williams,17,8,Finished,4
+2021,11,Hungarian Grand Prix,max_verstappen,Red Bull,3,9,Finished,2
+2021,11,Hungarian Grand Prix,raikkonen,Alfa Romeo,13,10,+1 Lap,1
+2021,11,Hungarian Grand Prix,ricciardo,McLaren,11,11,+1 Lap,0
+2021,11,Hungarian Grand Prix,mick_schumacher,Haas F1 Team,20,12,+1 Lap,0
+2021,11,Hungarian Grand Prix,giovinazzi,Alfa Romeo,0,13,+1 Lap,0
+2021,11,Hungarian Grand Prix,mazepin,Haas F1 Team,19,14,Collision,0
+2021,11,Hungarian Grand Prix,norris,McLaren,6,15,Collision,0
+2021,11,Hungarian Grand Prix,bottas,Mercedes,2,16,Collision,0
+2021,11,Hungarian Grand Prix,perez,Red Bull,4,17,Collision,0
+2021,11,Hungarian Grand Prix,leclerc,Ferrari,7,18,Collision,0
+2021,11,Hungarian Grand Prix,stroll,Aston Martin,12,19,Collision,0
+2021,11,Hungarian Grand Prix,vettel,Aston Martin,10,20,Disqualified,0
+2021,12,Belgian Grand Prix,max_verstappen,Red Bull,1,1,Finished,12.5
+2021,12,Belgian Grand Prix,russell,Williams,2,2,Finished,9
+2021,12,Belgian Grand Prix,hamilton,Mercedes,3,3,Finished,7.5
+2021,12,Belgian Grand Prix,ricciardo,McLaren,4,4,Finished,6
+2021,12,Belgian Grand Prix,vettel,Aston Martin,5,5,Finished,5
+2021,12,Belgian Grand Prix,gasly,AlphaTauri,6,6,Finished,4
+2021,12,Belgian Grand Prix,ocon,Alpine F1 Team,8,7,Finished,3
+2021,12,Belgian Grand Prix,leclerc,Ferrari,9,8,Finished,2
+2021,12,Belgian Grand Prix,latifi,Williams,10,9,Finished,1
+2021,12,Belgian Grand Prix,sainz,Ferrari,11,10,Finished,0.5
+2021,12,Belgian Grand Prix,alonso,Alpine F1 Team,12,11,Finished,0
+2021,12,Belgian Grand Prix,bottas,Mercedes,13,12,Finished,0
+2021,12,Belgian Grand Prix,giovinazzi,Alfa Romeo,14,13,Finished,0
+2021,12,Belgian Grand Prix,norris,McLaren,15,14,Finished,0
+2021,12,Belgian Grand Prix,tsunoda,AlphaTauri,16,15,Finished,0
+2021,12,Belgian Grand Prix,mick_schumacher,Haas F1 Team,17,16,Finished,0
+2021,12,Belgian Grand Prix,mazepin,Haas F1 Team,18,17,Finished,0
+2021,12,Belgian Grand Prix,raikkonen,Alfa Romeo,0,18,Finished,0
+2021,12,Belgian Grand Prix,perez,Red Bull,0,19,Finished,0
+2021,12,Belgian Grand Prix,stroll,Aston Martin,19,20,Finished,0
+2021,13,Dutch Grand Prix,max_verstappen,Red Bull,1,1,Finished,25
+2021,13,Dutch Grand Prix,hamilton,Mercedes,2,2,Finished,19
+2021,13,Dutch Grand Prix,bottas,Mercedes,3,3,Finished,15
+2021,13,Dutch Grand Prix,gasly,AlphaTauri,4,4,+1 Lap,12
+2021,13,Dutch Grand Prix,leclerc,Ferrari,5,5,+1 Lap,10
+2021,13,Dutch Grand Prix,alonso,Alpine F1 Team,9,6,+1 Lap,8
+2021,13,Dutch Grand Prix,sainz,Ferrari,6,7,+1 Lap,6
+2021,13,Dutch Grand Prix,perez,Red Bull,0,8,+1 Lap,4
+2021,13,Dutch Grand Prix,ocon,Alpine F1 Team,8,9,+1 Lap,2
+2021,13,Dutch Grand Prix,norris,McLaren,13,10,+1 Lap,1
+2021,13,Dutch Grand Prix,ricciardo,McLaren,10,11,+1 Lap,0
+2021,13,Dutch Grand Prix,stroll,Aston Martin,12,12,+2 Laps,0
+2021,13,Dutch Grand Prix,vettel,Aston Martin,15,13,+2 Laps,0
+2021,13,Dutch Grand Prix,giovinazzi,Alfa Romeo,7,14,+2 Laps,0
+2021,13,Dutch Grand Prix,kubica,Alfa Romeo,16,15,+2 Laps,0
+2021,13,Dutch Grand Prix,latifi,Williams,0,16,+2 Laps,0
+2021,13,Dutch Grand Prix,russell,Williams,11,17,Gearbox,0
+2021,13,Dutch Grand Prix,mick_schumacher,Haas F1 Team,17,18,+3 Laps,0
+2021,13,Dutch Grand Prix,tsunoda,AlphaTauri,14,19,Power Unit,0
+2021,13,Dutch Grand Prix,mazepin,Haas F1 Team,18,20,Hydraulics,0
+2021,14,Italian Grand Prix,ricciardo,McLaren,2,1,Finished,26
+2021,14,Italian Grand Prix,norris,McLaren,3,2,Finished,18
+2021,14,Italian Grand Prix,bottas,Mercedes,19,3,Finished,15
+2021,14,Italian Grand Prix,leclerc,Ferrari,5,4,Finished,12
+2021,14,Italian Grand Prix,perez,Red Bull,8,5,Finished,10
+2021,14,Italian Grand Prix,sainz,Ferrari,6,6,Finished,8
+2021,14,Italian Grand Prix,stroll,Aston Martin,9,7,Finished,6
+2021,14,Italian Grand Prix,alonso,Alpine F1 Team,10,8,Finished,4
+2021,14,Italian Grand Prix,russell,Williams,14,9,Finished,2
+2021,14,Italian Grand Prix,ocon,Alpine F1 Team,12,10,Finished,1
+2021,14,Italian Grand Prix,latifi,Williams,13,11,Finished,0
+2021,14,Italian Grand Prix,vettel,Aston Martin,11,12,Finished,0
+2021,14,Italian Grand Prix,giovinazzi,Alfa Romeo,7,13,Finished,0
+2021,14,Italian Grand Prix,kubica,Alfa Romeo,17,14,Finished,0
+2021,14,Italian Grand Prix,mick_schumacher,Haas F1 Team,18,15,Finished,0
+2021,14,Italian Grand Prix,mazepin,Haas F1 Team,16,16,Power Unit,0
+2021,14,Italian Grand Prix,hamilton,Mercedes,4,17,Collision,0
+2021,14,Italian Grand Prix,max_verstappen,Red Bull,1,18,Collision,0
+2021,14,Italian Grand Prix,gasly,AlphaTauri,0,19,Suspension,0
+2021,14,Italian Grand Prix,tsunoda,AlphaTauri,0,20,Brakes,0
+2021,15,Russian Grand Prix,hamilton,Mercedes,4,1,Finished,25
+2021,15,Russian Grand Prix,max_verstappen,Red Bull,20,2,Finished,18
+2021,15,Russian Grand Prix,sainz,Ferrari,2,3,Finished,15
+2021,15,Russian Grand Prix,ricciardo,McLaren,5,4,Finished,12
+2021,15,Russian Grand Prix,bottas,Mercedes,16,5,Finished,10
+2021,15,Russian Grand Prix,alonso,Alpine F1 Team,6,6,Finished,8
+2021,15,Russian Grand Prix,norris,McLaren,1,7,Finished,7
+2021,15,Russian Grand Prix,raikkonen,Alfa Romeo,13,8,Finished,4
+2021,15,Russian Grand Prix,perez,Red Bull,8,9,Finished,2
+2021,15,Russian Grand Prix,russell,Williams,3,10,Finished,1
+2021,15,Russian Grand Prix,stroll,Aston Martin,7,11,Finished,0
+2021,15,Russian Grand Prix,vettel,Aston Martin,10,12,+1 Lap,0
+2021,15,Russian Grand Prix,gasly,AlphaTauri,11,13,+1 Lap,0
+2021,15,Russian Grand Prix,ocon,Alpine F1 Team,9,14,+1 Lap,0
+2021,15,Russian Grand Prix,leclerc,Ferrari,19,15,+1 Lap,0
+2021,15,Russian Grand Prix,giovinazzi,Alfa Romeo,17,16,+1 Lap,0
+2021,15,Russian Grand Prix,tsunoda,AlphaTauri,12,17,+1 Lap,0
+2021,15,Russian Grand Prix,mazepin,Haas F1 Team,15,18,+2 Laps,0
+2021,15,Russian Grand Prix,latifi,Williams,18,19,Accident,0
+2021,15,Russian Grand Prix,mick_schumacher,Haas F1 Team,14,20,Oil leak,0
+2021,16,Turkish Grand Prix,bottas,Mercedes,1,1,Finished,26
+2021,16,Turkish Grand Prix,max_verstappen,Red Bull,2,2,Finished,18
+2021,16,Turkish Grand Prix,perez,Red Bull,6,3,Finished,15
+2021,16,Turkish Grand Prix,leclerc,Ferrari,3,4,Finished,12
+2021,16,Turkish Grand Prix,hamilton,Mercedes,11,5,Finished,10
+2021,16,Turkish Grand Prix,gasly,AlphaTauri,4,6,Finished,8
+2021,16,Turkish Grand Prix,norris,McLaren,7,7,Finished,6
+2021,16,Turkish Grand Prix,sainz,Ferrari,19,8,Finished,4
+2021,16,Turkish Grand Prix,stroll,Aston Martin,8,9,Finished,2
+2021,16,Turkish Grand Prix,ocon,Alpine F1 Team,12,10,+1 Lap,1
+2021,16,Turkish Grand Prix,giovinazzi,Alfa Romeo,16,11,+1 Lap,0
+2021,16,Turkish Grand Prix,raikkonen,Alfa Romeo,17,12,+1 Lap,0
+2021,16,Turkish Grand Prix,ricciardo,McLaren,20,13,+1 Lap,0
+2021,16,Turkish Grand Prix,tsunoda,AlphaTauri,9,14,+1 Lap,0
+2021,16,Turkish Grand Prix,russell,Williams,13,15,+1 Lap,0
+2021,16,Turkish Grand Prix,alonso,Alpine F1 Team,5,16,+1 Lap,0
+2021,16,Turkish Grand Prix,latifi,Williams,15,17,+1 Lap,0
+2021,16,Turkish Grand Prix,vettel,Aston Martin,10,18,+1 Lap,0
+2021,16,Turkish Grand Prix,mick_schumacher,Haas F1 Team,14,19,+2 Laps,0
+2021,16,Turkish Grand Prix,mazepin,Haas F1 Team,18,20,+2 Laps,0
+2021,17,United States Grand Prix,max_verstappen,Red Bull,1,1,Finished,25
+2021,17,United States Grand Prix,hamilton,Mercedes,2,2,Finished,19
+2021,17,United States Grand Prix,perez,Red Bull,3,3,Finished,15
+2021,17,United States Grand Prix,leclerc,Ferrari,4,4,Finished,12
+2021,17,United States Grand Prix,ricciardo,McLaren,6,5,Finished,10
+2021,17,United States Grand Prix,bottas,Mercedes,9,6,Finished,8
+2021,17,United States Grand Prix,sainz,Ferrari,5,7,Finished,6
+2021,17,United States Grand Prix,norris,McLaren,7,8,Finished,4
+2021,17,United States Grand Prix,tsunoda,AlphaTauri,10,9,+1 Lap,2
+2021,17,United States Grand Prix,vettel,Aston Martin,18,10,+1 Lap,1
+2021,17,United States Grand Prix,giovinazzi,Alfa Romeo,12,11,+1 Lap,0
+2021,17,United States Grand Prix,stroll,Aston Martin,13,12,+1 Lap,0
+2021,17,United States Grand Prix,raikkonen,Alfa Romeo,15,13,+1 Lap,0
+2021,17,United States Grand Prix,russell,Williams,20,14,+1 Lap,0
+2021,17,United States Grand Prix,latifi,Williams,14,15,+1 Lap,0
+2021,17,United States Grand Prix,mick_schumacher,Haas F1 Team,16,16,+2 Laps,0
+2021,17,United States Grand Prix,mazepin,Haas F1 Team,17,17,+2 Laps,0
+2021,17,United States Grand Prix,alonso,Alpine F1 Team,19,18,Rear wing,0
+2021,17,United States Grand Prix,ocon,Alpine F1 Team,11,19,Mechanical,0
+2021,17,United States Grand Prix,gasly,AlphaTauri,8,20,Suspension,0
+2021,18,Mexico City Grand Prix,max_verstappen,Red Bull,3,1,Finished,25
+2021,18,Mexico City Grand Prix,hamilton,Mercedes,2,2,Finished,18
+2021,18,Mexico City Grand Prix,perez,Red Bull,4,3,Finished,15
+2021,18,Mexico City Grand Prix,gasly,AlphaTauri,5,4,Finished,12
+2021,18,Mexico City Grand Prix,leclerc,Ferrari,8,5,Finished,10
+2021,18,Mexico City Grand Prix,sainz,Ferrari,6,6,+1 Lap,8
+2021,18,Mexico City Grand Prix,vettel,Aston Martin,9,7,+1 Lap,6
+2021,18,Mexico City Grand Prix,raikkonen,Alfa Romeo,10,8,+1 Lap,4
+2021,18,Mexico City Grand Prix,alonso,Alpine F1 Team,12,9,+1 Lap,2
+2021,18,Mexico City Grand Prix,norris,McLaren,18,10,+1 Lap,1
+2021,18,Mexico City Grand Prix,giovinazzi,Alfa Romeo,11,11,+1 Lap,0
+2021,18,Mexico City Grand Prix,ricciardo,McLaren,7,12,+1 Lap,0
+2021,18,Mexico City Grand Prix,ocon,Alpine F1 Team,19,13,+1 Lap,0
+2021,18,Mexico City Grand Prix,stroll,Aston Martin,20,14,+2 Laps,0
+2021,18,Mexico City Grand Prix,bottas,Mercedes,1,15,+2 Laps,0
+2021,18,Mexico City Grand Prix,russell,Williams,16,16,+2 Laps,0
+2021,18,Mexico City Grand Prix,latifi,Williams,13,17,+2 Laps,0
+2021,18,Mexico City Grand Prix,mazepin,Haas F1 Team,15,18,+3 Laps,0
+2021,18,Mexico City Grand Prix,mick_schumacher,Haas F1 Team,14,19,Collision,0
+2021,18,Mexico City Grand Prix,tsunoda,AlphaTauri,17,20,Collision,0
+2021,19,São Paulo Grand Prix,hamilton,Mercedes,10,1,Finished,25
+2021,19,São Paulo Grand Prix,max_verstappen,Red Bull,2,2,Finished,18
+2021,19,São Paulo Grand Prix,bottas,Mercedes,1,3,Finished,15
+2021,19,São Paulo Grand Prix,perez,Red Bull,4,4,Finished,13
+2021,19,São Paulo Grand Prix,leclerc,Ferrari,6,5,Finished,10
+2021,19,São Paulo Grand Prix,sainz,Ferrari,3,6,Finished,8
+2021,19,São Paulo Grand Prix,gasly,AlphaTauri,7,7,+1 Lap,6
+2021,19,São Paulo Grand Prix,ocon,Alpine F1 Team,8,8,+1 Lap,4
+2021,19,São Paulo Grand Prix,alonso,Alpine F1 Team,12,9,+1 Lap,2
+2021,19,São Paulo Grand Prix,norris,McLaren,5,10,+1 Lap,1
+2021,19,São Paulo Grand Prix,vettel,Aston Martin,9,11,+1 Lap,0
+2021,19,São Paulo Grand Prix,raikkonen,Alfa Romeo,0,12,+1 Lap,0
+2021,19,São Paulo Grand Prix,russell,Williams,17,13,+1 Lap,0
+2021,19,São Paulo Grand Prix,giovinazzi,Alfa Romeo,13,14,+1 Lap,0
+2021,19,São Paulo Grand Prix,tsunoda,AlphaTauri,15,15,+1 Lap,0
+2021,19,São Paulo Grand Prix,latifi,Williams,16,16,+1 Lap,0
+2021,19,São Paulo Grand Prix,mazepin,Haas F1 Team,19,17,+2 Laps,0
+2021,19,São Paulo Grand Prix,mick_schumacher,Haas F1 Team,18,18,+2 Laps,0
+2021,19,São Paulo Grand Prix,ricciardo,McLaren,11,19,Power loss,0
+2021,19,São Paulo Grand Prix,stroll,Aston Martin,14,20,Collision damage,0
+2021,20,Qatar Grand Prix,hamilton,Mercedes,1,1,Finished,25
+2021,20,Qatar Grand Prix,max_verstappen,Red Bull,7,2,Finished,19
+2021,20,Qatar Grand Prix,alonso,Alpine F1 Team,3,3,Finished,15
+2021,20,Qatar Grand Prix,perez,Red Bull,11,4,Finished,12
+2021,20,Qatar Grand Prix,ocon,Alpine F1 Team,9,5,Finished,10
+2021,20,Qatar Grand Prix,stroll,Aston Martin,12,6,Finished,8
+2021,20,Qatar Grand Prix,sainz,Ferrari,5,7,Finished,6
+2021,20,Qatar Grand Prix,leclerc,Ferrari,13,8,Finished,4
+2021,20,Qatar Grand Prix,norris,McLaren,4,9,+1 Lap,2
+2021,20,Qatar Grand Prix,vettel,Aston Martin,10,10,+1 Lap,1
+2021,20,Qatar Grand Prix,gasly,AlphaTauri,2,11,+1 Lap,0
+2021,20,Qatar Grand Prix,ricciardo,McLaren,14,12,+1 Lap,0
+2021,20,Qatar Grand Prix,tsunoda,AlphaTauri,8,13,+1 Lap,0
+2021,20,Qatar Grand Prix,raikkonen,Alfa Romeo,16,14,+1 Lap,0
+2021,20,Qatar Grand Prix,giovinazzi,Alfa Romeo,18,15,+1 Lap,0
+2021,20,Qatar Grand Prix,mick_schumacher,Haas F1 Team,19,16,+1 Lap,0
+2021,20,Qatar Grand Prix,russell,Williams,15,17,+2 Laps,0
+2021,20,Qatar Grand Prix,mazepin,Haas F1 Team,20,18,+2 Laps,0
+2021,20,Qatar Grand Prix,latifi,Williams,17,19,Puncture,0
+2021,20,Qatar Grand Prix,bottas,Mercedes,6,20,Damage,0
+2021,21,Saudi Arabian Grand Prix,hamilton,Mercedes,1,1,Finished,26
+2021,21,Saudi Arabian Grand Prix,max_verstappen,Red Bull,3,2,Finished,18
+2021,21,Saudi Arabian Grand Prix,bottas,Mercedes,2,3,Finished,15
+2021,21,Saudi Arabian Grand Prix,ocon,Alpine F1 Team,9,4,Finished,12
+2021,21,Saudi Arabian Grand Prix,ricciardo,McLaren,11,5,Finished,10
+2021,21,Saudi Arabian Grand Prix,gasly,AlphaTauri,6,6,Finished,8
+2021,21,Saudi Arabian Grand Prix,leclerc,Ferrari,4,7,Finished,6
+2021,21,Saudi Arabian Grand Prix,sainz,Ferrari,15,8,Finished,4
+2021,21,Saudi Arabian Grand Prix,giovinazzi,Alfa Romeo,10,9,Finished,2
+2021,21,Saudi Arabian Grand Prix,norris,McLaren,7,10,Finished,1
+2021,21,Saudi Arabian Grand Prix,stroll,Aston Martin,18,11,Finished,0
+2021,21,Saudi Arabian Grand Prix,latifi,Williams,16,12,Finished,0
+2021,21,Saudi Arabian Grand Prix,alonso,Alpine F1 Team,13,13,+1 Lap,0
+2021,21,Saudi Arabian Grand Prix,tsunoda,AlphaTauri,8,14,+1 Lap,0
+2021,21,Saudi Arabian Grand Prix,raikkonen,Alfa Romeo,12,15,+1 Lap,0
+2021,21,Saudi Arabian Grand Prix,vettel,Aston Martin,17,16,Collision damage,0
+2021,21,Saudi Arabian Grand Prix,perez,Red Bull,5,17,Collision,0
+2021,21,Saudi Arabian Grand Prix,mazepin,Haas F1 Team,20,18,Collision,0
+2021,21,Saudi Arabian Grand Prix,russell,Williams,14,19,Collision,0
+2021,21,Saudi Arabian Grand Prix,mick_schumacher,Haas F1 Team,19,20,Accident,0
+2021,22,Abu Dhabi Grand Prix,max_verstappen,Red Bull,1,1,Finished,26
+2021,22,Abu Dhabi Grand Prix,hamilton,Mercedes,2,2,Finished,18
+2021,22,Abu Dhabi Grand Prix,sainz,Ferrari,5,3,Finished,15
+2021,22,Abu Dhabi Grand Prix,tsunoda,AlphaTauri,8,4,Finished,12
+2021,22,Abu Dhabi Grand Prix,gasly,AlphaTauri,12,5,Finished,10
+2021,22,Abu Dhabi Grand Prix,bottas,Mercedes,6,6,Finished,8
+2021,22,Abu Dhabi Grand Prix,norris,McLaren,3,7,Finished,6
+2021,22,Abu Dhabi Grand Prix,alonso,Alpine F1 Team,11,8,Finished,4
+2021,22,Abu Dhabi Grand Prix,ocon,Alpine F1 Team,9,9,Finished,2
+2021,22,Abu Dhabi Grand Prix,leclerc,Ferrari,7,10,Finished,1
+2021,22,Abu Dhabi Grand Prix,vettel,Aston Martin,15,11,Finished,0
+2021,22,Abu Dhabi Grand Prix,ricciardo,McLaren,10,12,+1 Lap,0
+2021,22,Abu Dhabi Grand Prix,stroll,Aston Martin,13,13,+1 Lap,0
+2021,22,Abu Dhabi Grand Prix,mick_schumacher,Haas F1 Team,19,14,+1 Lap,0
+2021,22,Abu Dhabi Grand Prix,perez,Red Bull,4,15,Engine,0
+2021,22,Abu Dhabi Grand Prix,latifi,Williams,16,16,Accident,0
+2021,22,Abu Dhabi Grand Prix,giovinazzi,Alfa Romeo,14,17,Gearbox,0
+2021,22,Abu Dhabi Grand Prix,russell,Williams,17,18,Gearbox,0
+2021,22,Abu Dhabi Grand Prix,raikkonen,Alfa Romeo,18,19,Brakes,0
+2021,22,Abu Dhabi Grand Prix,mazepin,Haas F1 Team,20,20,Illness,0
+2022,1,Bahrain Grand Prix,leclerc,Ferrari,1,1,Finished,26
+2022,1,Bahrain Grand Prix,sainz,Ferrari,3,2,Finished,18
+2022,1,Bahrain Grand Prix,hamilton,Mercedes,5,3,Finished,15
+2022,1,Bahrain Grand Prix,russell,Mercedes,9,4,Finished,12
+2022,1,Bahrain Grand Prix,kevin_magnussen,Haas F1 Team,7,5,Finished,10
+2022,1,Bahrain Grand Prix,bottas,Alfa Romeo,6,6,Finished,8
+2022,1,Bahrain Grand Prix,ocon,Alpine F1 Team,11,7,Finished,6
+2022,1,Bahrain Grand Prix,tsunoda,AlphaTauri,16,8,Finished,4
+2022,1,Bahrain Grand Prix,alonso,Alpine F1 Team,8,9,Finished,2
+2022,1,Bahrain Grand Prix,zhou,Alfa Romeo,15,10,Finished,1
+2022,1,Bahrain Grand Prix,mick_schumacher,Haas F1 Team,12,11,Finished,0
+2022,1,Bahrain Grand Prix,stroll,Aston Martin,19,12,Finished,0
+2022,1,Bahrain Grand Prix,albon,Williams,14,13,Finished,0
+2022,1,Bahrain Grand Prix,ricciardo,McLaren,18,14,Finished,0
+2022,1,Bahrain Grand Prix,norris,McLaren,13,15,Finished,0
+2022,1,Bahrain Grand Prix,latifi,Williams,20,16,Finished,0
+2022,1,Bahrain Grand Prix,hulkenberg,Aston Martin,17,17,Finished,0
+2022,1,Bahrain Grand Prix,perez,Red Bull,4,18,Fuel pressure,0
+2022,1,Bahrain Grand Prix,max_verstappen,Red Bull,2,19,Fuel pressure,0
+2022,1,Bahrain Grand Prix,gasly,AlphaTauri,10,20,Power Unit,0
+2022,2,Saudi Arabian Grand Prix,max_verstappen,Red Bull,4,1,Finished,25
+2022,2,Saudi Arabian Grand Prix,leclerc,Ferrari,2,2,Finished,19
+2022,2,Saudi Arabian Grand Prix,sainz,Ferrari,3,3,Finished,15
+2022,2,Saudi Arabian Grand Prix,perez,Red Bull,1,4,Finished,12
+2022,2,Saudi Arabian Grand Prix,russell,Mercedes,6,5,Finished,10
+2022,2,Saudi Arabian Grand Prix,ocon,Alpine F1 Team,5,6,Finished,8
+2022,2,Saudi Arabian Grand Prix,norris,McLaren,11,7,Finished,6
+2022,2,Saudi Arabian Grand Prix,gasly,AlphaTauri,9,8,Finished,4
+2022,2,Saudi Arabian Grand Prix,kevin_magnussen,Haas F1 Team,10,9,Finished,2
+2022,2,Saudi Arabian Grand Prix,hamilton,Mercedes,15,10,Finished,1
+2022,2,Saudi Arabian Grand Prix,zhou,Alfa Romeo,12,11,Finished,0
+2022,2,Saudi Arabian Grand Prix,hulkenberg,Aston Martin,17,12,Finished,0
+2022,2,Saudi Arabian Grand Prix,stroll,Aston Martin,13,13,+1 Lap,0
+2022,2,Saudi Arabian Grand Prix,albon,Williams,16,14,Collision damage,0
+2022,2,Saudi Arabian Grand Prix,bottas,Alfa Romeo,8,15,Cooling system,0
+2022,2,Saudi Arabian Grand Prix,alonso,Alpine F1 Team,7,16,Water pump,0
+2022,2,Saudi Arabian Grand Prix,ricciardo,McLaren,14,17,Gearbox,0
+2022,2,Saudi Arabian Grand Prix,latifi,Williams,18,18,Accident,0
+2022,2,Saudi Arabian Grand Prix,tsunoda,AlphaTauri,19,19,Power Unit,0
+2022,2,Saudi Arabian Grand Prix,mick_schumacher,Haas F1 Team,0,20,Withdrew,0
+2022,3,Australian Grand Prix,leclerc,Ferrari,1,1,Finished,26
+2022,3,Australian Grand Prix,perez,Red Bull,3,2,Finished,18
+2022,3,Australian Grand Prix,russell,Mercedes,6,3,Finished,15
+2022,3,Australian Grand Prix,hamilton,Mercedes,5,4,Finished,12
+2022,3,Australian Grand Prix,norris,McLaren,4,5,Finished,10
+2022,3,Australian Grand Prix,ricciardo,McLaren,7,6,Finished,8
+2022,3,Australian Grand Prix,ocon,Alpine F1 Team,8,7,Finished,6
+2022,3,Australian Grand Prix,bottas,Alfa Romeo,12,8,Finished,4
+2022,3,Australian Grand Prix,gasly,AlphaTauri,11,9,Finished,2
+2022,3,Australian Grand Prix,albon,Williams,20,10,Finished,1
+2022,3,Australian Grand Prix,zhou,Alfa Romeo,14,11,Finished,0
+2022,3,Australian Grand Prix,stroll,Aston Martin,19,12,Finished,0
+2022,3,Australian Grand Prix,mick_schumacher,Haas F1 Team,15,13,+1 Lap,0
+2022,3,Australian Grand Prix,kevin_magnussen,Haas F1 Team,16,14,+1 Lap,0
+2022,3,Australian Grand Prix,tsunoda,AlphaTauri,13,15,+1 Lap,0
+2022,3,Australian Grand Prix,latifi,Williams,18,16,+1 Lap,0
+2022,3,Australian Grand Prix,alonso,Alpine F1 Team,10,17,+1 Lap,0
+2022,3,Australian Grand Prix,max_verstappen,Red Bull,2,18,Fuel leak,0
+2022,3,Australian Grand Prix,vettel,Aston Martin,17,19,Accident,0
+2022,3,Australian Grand Prix,sainz,Ferrari,9,20,Spun off,0
+2022,4,Emilia Romagna Grand Prix,max_verstappen,Red Bull,1,1,Finished,26
+2022,4,Emilia Romagna Grand Prix,perez,Red Bull,3,2,Finished,18
+2022,4,Emilia Romagna Grand Prix,norris,McLaren,5,3,Finished,15
+2022,4,Emilia Romagna Grand Prix,russell,Mercedes,11,4,Finished,12
+2022,4,Emilia Romagna Grand Prix,bottas,Alfa Romeo,7,5,Finished,10
+2022,4,Emilia Romagna Grand Prix,leclerc,Ferrari,2,6,Finished,8
+2022,4,Emilia Romagna Grand Prix,tsunoda,AlphaTauri,12,7,Finished,6
+2022,4,Emilia Romagna Grand Prix,vettel,Aston Martin,13,8,Finished,4
+2022,4,Emilia Romagna Grand Prix,kevin_magnussen,Haas F1 Team,8,9,Finished,2
+2022,4,Emilia Romagna Grand Prix,stroll,Aston Martin,15,10,+1 Lap,1
+2022,4,Emilia Romagna Grand Prix,albon,Williams,18,11,+1 Lap,0
+2022,4,Emilia Romagna Grand Prix,gasly,AlphaTauri,17,12,+1 Lap,0
+2022,4,Emilia Romagna Grand Prix,hamilton,Mercedes,14,13,+1 Lap,0
+2022,4,Emilia Romagna Grand Prix,ocon,Alpine F1 Team,16,14,+1 Lap,0
+2022,4,Emilia Romagna Grand Prix,zhou,Alfa Romeo,0,15,+1 Lap,0
+2022,4,Emilia Romagna Grand Prix,latifi,Williams,19,16,+1 Lap,0
+2022,4,Emilia Romagna Grand Prix,mick_schumacher,Haas F1 Team,10,17,+1 Lap,0
+2022,4,Emilia Romagna Grand Prix,ricciardo,McLaren,6,18,+1 Lap,0
+2022,4,Emilia Romagna Grand Prix,alonso,Alpine F1 Team,9,19,Collision damage,0
+2022,4,Emilia Romagna Grand Prix,sainz,Ferrari,4,20,Collision,0
+2022,5,Miami Grand Prix,max_verstappen,Red Bull,3,1,Finished,26
+2022,5,Miami Grand Prix,leclerc,Ferrari,1,2,Finished,18
+2022,5,Miami Grand Prix,sainz,Ferrari,2,3,Finished,15
+2022,5,Miami Grand Prix,perez,Red Bull,4,4,Finished,12
+2022,5,Miami Grand Prix,russell,Mercedes,12,5,Finished,10
+2022,5,Miami Grand Prix,hamilton,Mercedes,6,6,Finished,8
+2022,5,Miami Grand Prix,bottas,Alfa Romeo,5,7,Finished,6
+2022,5,Miami Grand Prix,ocon,Alpine F1 Team,20,8,Finished,4
+2022,5,Miami Grand Prix,albon,Williams,18,9,Finished,2
+2022,5,Miami Grand Prix,stroll,Aston Martin,0,10,Finished,1
+2022,5,Miami Grand Prix,alonso,Alpine F1 Team,11,11,Finished,0
+2022,5,Miami Grand Prix,tsunoda,AlphaTauri,9,12,Finished,0
+2022,5,Miami Grand Prix,ricciardo,McLaren,14,13,Finished,0
+2022,5,Miami Grand Prix,latifi,Williams,19,14,Finished,0
+2022,5,Miami Grand Prix,mick_schumacher,Haas F1 Team,15,15,Finished,0
+2022,5,Miami Grand Prix,kevin_magnussen,Haas F1 Team,16,16,Front wing,0
+2022,5,Miami Grand Prix,vettel,Aston Martin,0,17,Collision,0
+2022,5,Miami Grand Prix,gasly,AlphaTauri,7,18,Suspension,0
+2022,5,Miami Grand Prix,norris,McLaren,8,19,Collision,0
+2022,5,Miami Grand Prix,zhou,Alfa Romeo,17,20,Water leak,0
+2022,6,Spanish Grand Prix,max_verstappen,Red Bull,2,1,Finished,25
+2022,6,Spanish Grand Prix,perez,Red Bull,5,2,Finished,19
+2022,6,Spanish Grand Prix,russell,Mercedes,4,3,Finished,15
+2022,6,Spanish Grand Prix,sainz,Ferrari,3,4,Finished,12
+2022,6,Spanish Grand Prix,hamilton,Mercedes,6,5,Finished,10
+2022,6,Spanish Grand Prix,bottas,Alfa Romeo,7,6,Finished,8
+2022,6,Spanish Grand Prix,ocon,Alpine F1 Team,12,7,Finished,6
+2022,6,Spanish Grand Prix,norris,McLaren,11,8,Finished,4
+2022,6,Spanish Grand Prix,alonso,Alpine F1 Team,20,9,+1 Lap,2
+2022,6,Spanish Grand Prix,tsunoda,AlphaTauri,13,10,+1 Lap,1
+2022,6,Spanish Grand Prix,vettel,Aston Martin,16,11,+1 Lap,0
+2022,6,Spanish Grand Prix,ricciardo,McLaren,9,12,+1 Lap,0
+2022,6,Spanish Grand Prix,gasly,AlphaTauri,14,13,+1 Lap,0
+2022,6,Spanish Grand Prix,mick_schumacher,Haas F1 Team,10,14,+1 Lap,0
+2022,6,Spanish Grand Prix,stroll,Aston Martin,17,15,+1 Lap,0
+2022,6,Spanish Grand Prix,latifi,Williams,19,16,+2 Laps,0
+2022,6,Spanish Grand Prix,kevin_magnussen,Haas F1 Team,8,17,+2 Laps,0
+2022,6,Spanish Grand Prix,albon,Williams,18,18,+2 Laps,0
+2022,6,Spanish Grand Prix,zhou,Alfa Romeo,15,19,Power loss,0
+2022,6,Spanish Grand Prix,leclerc,Ferrari,1,20,Turbo,0
+2022,7,Monaco Grand Prix,perez,Red Bull,3,1,Finished,25
+2022,7,Monaco Grand Prix,sainz,Ferrari,2,2,Finished,18
+2022,7,Monaco Grand Prix,max_verstappen,Red Bull,4,3,Finished,15
+2022,7,Monaco Grand Prix,leclerc,Ferrari,1,4,Finished,12
+2022,7,Monaco Grand Prix,russell,Mercedes,6,5,Finished,10
+2022,7,Monaco Grand Prix,norris,McLaren,5,6,Finished,9
+2022,7,Monaco Grand Prix,alonso,Alpine F1 Team,7,7,Finished,6
+2022,7,Monaco Grand Prix,hamilton,Mercedes,8,8,Finished,4
+2022,7,Monaco Grand Prix,bottas,Alfa Romeo,12,9,Finished,2
+2022,7,Monaco Grand Prix,vettel,Aston Martin,9,10,Finished,1
+2022,7,Monaco Grand Prix,gasly,AlphaTauri,17,11,Finished,0
+2022,7,Monaco Grand Prix,ocon,Alpine F1 Team,10,12,Finished,0
+2022,7,Monaco Grand Prix,ricciardo,McLaren,14,13,Finished,0
+2022,7,Monaco Grand Prix,stroll,Aston Martin,18,14,Finished,0
+2022,7,Monaco Grand Prix,latifi,Williams,19,15,+1 Lap,0
+2022,7,Monaco Grand Prix,zhou,Alfa Romeo,20,16,+1 Lap,0
+2022,7,Monaco Grand Prix,tsunoda,AlphaTauri,11,17,+1 Lap,0
+2022,7,Monaco Grand Prix,albon,Williams,16,18,Mechanical,0
+2022,7,Monaco Grand Prix,mick_schumacher,Haas F1 Team,15,19,Accident,0
+2022,7,Monaco Grand Prix,kevin_magnussen,Haas F1 Team,13,20,Water pressure,0
+2022,8,Azerbaijan Grand Prix,max_verstappen,Red Bull,3,1,Finished,25
+2022,8,Azerbaijan Grand Prix,perez,Red Bull,2,2,Finished,19
+2022,8,Azerbaijan Grand Prix,russell,Mercedes,5,3,Finished,15
+2022,8,Azerbaijan Grand Prix,hamilton,Mercedes,7,4,Finished,12
+2022,8,Azerbaijan Grand Prix,gasly,AlphaTauri,6,5,Finished,10
+2022,8,Azerbaijan Grand Prix,vettel,Aston Martin,9,6,Finished,8
+2022,8,Azerbaijan Grand Prix,alonso,Alpine F1 Team,10,7,Finished,6
+2022,8,Azerbaijan Grand Prix,ricciardo,McLaren,12,8,Finished,4
+2022,8,Azerbaijan Grand Prix,norris,McLaren,11,9,Finished,2
+2022,8,Azerbaijan Grand Prix,ocon,Alpine F1 Team,13,10,Finished,1
+2022,8,Azerbaijan Grand Prix,bottas,Alfa Romeo,15,11,+1 Lap,0
+2022,8,Azerbaijan Grand Prix,albon,Williams,17,12,+1 Lap,0
+2022,8,Azerbaijan Grand Prix,tsunoda,AlphaTauri,8,13,+1 Lap,0
+2022,8,Azerbaijan Grand Prix,mick_schumacher,Haas F1 Team,20,14,+1 Lap,0
+2022,8,Azerbaijan Grand Prix,latifi,Williams,18,15,+1 Lap,0
+2022,8,Azerbaijan Grand Prix,stroll,Aston Martin,19,16,Vibrations,0
+2022,8,Azerbaijan Grand Prix,kevin_magnussen,Haas F1 Team,16,17,Power Unit,0
+2022,8,Azerbaijan Grand Prix,zhou,Alfa Romeo,14,18,Hydraulics,0
+2022,8,Azerbaijan Grand Prix,leclerc,Ferrari,1,19,Power Unit,0
+2022,8,Azerbaijan Grand Prix,sainz,Ferrari,4,20,Hydraulics,0
+2022,9,Canadian Grand Prix,max_verstappen,Red Bull,1,1,Finished,25
+2022,9,Canadian Grand Prix,sainz,Ferrari,3,2,Finished,19
+2022,9,Canadian Grand Prix,hamilton,Mercedes,4,3,Finished,15
+2022,9,Canadian Grand Prix,russell,Mercedes,8,4,Finished,12
+2022,9,Canadian Grand Prix,leclerc,Ferrari,19,5,Finished,10
+2022,9,Canadian Grand Prix,ocon,Alpine F1 Team,7,6,Finished,8
+2022,9,Canadian Grand Prix,bottas,Alfa Romeo,11,7,Finished,6
+2022,9,Canadian Grand Prix,zhou,Alfa Romeo,10,8,Finished,4
+2022,9,Canadian Grand Prix,alonso,Alpine F1 Team,2,9,Finished,2
+2022,9,Canadian Grand Prix,stroll,Aston Martin,17,10,Finished,1
+2022,9,Canadian Grand Prix,ricciardo,McLaren,9,11,Finished,0
+2022,9,Canadian Grand Prix,vettel,Aston Martin,16,12,Finished,0
+2022,9,Canadian Grand Prix,albon,Williams,12,13,Finished,0
+2022,9,Canadian Grand Prix,gasly,AlphaTauri,15,14,Finished,0
+2022,9,Canadian Grand Prix,norris,McLaren,14,15,Finished,0
+2022,9,Canadian Grand Prix,latifi,Williams,18,16,Finished,0
+2022,9,Canadian Grand Prix,kevin_magnussen,Haas F1 Team,5,17,Finished,0
+2022,9,Canadian Grand Prix,tsunoda,AlphaTauri,20,18,Accident,0
+2022,9,Canadian Grand Prix,mick_schumacher,Haas F1 Team,6,19,Engine,0
+2022,9,Canadian Grand Prix,perez,Red Bull,13,20,Gearbox,0
+2022,10,British Grand Prix,sainz,Ferrari,1,1,Finished,25
+2022,10,British Grand Prix,perez,Red Bull,4,2,Finished,18
+2022,10,British Grand Prix,hamilton,Mercedes,5,3,Finished,16
+2022,10,British Grand Prix,leclerc,Ferrari,3,4,Finished,12
+2022,10,British Grand Prix,alonso,Alpine F1 Team,7,5,Finished,10
+2022,10,British Grand Prix,norris,McLaren,6,6,Finished,8
+2022,10,British Grand Prix,max_verstappen,Red Bull,2,7,Finished,6
+2022,10,British Grand Prix,mick_schumacher,Haas F1 Team,19,8,Finished,4
+2022,10,British Grand Prix,vettel,Aston Martin,18,9,Finished,2
+2022,10,British Grand Prix,kevin_magnussen,Haas F1 Team,17,10,Finished,1
+2022,10,British Grand Prix,stroll,Aston Martin,20,11,Finished,0
+2022,10,British Grand Prix,latifi,Williams,10,12,Finished,0
+2022,10,British Grand Prix,ricciardo,McLaren,14,13,Finished,0
+2022,10,British Grand Prix,tsunoda,AlphaTauri,13,14,Finished,0
+2022,10,British Grand Prix,ocon,Alpine F1 Team,15,15,Fuel pump,0
+2022,10,British Grand Prix,gasly,AlphaTauri,11,16,Collision damage,0
+2022,10,British Grand Prix,bottas,Alfa Romeo,12,17,Gearbox,0
+2022,10,British Grand Prix,russell,Mercedes,8,18,Collision,0
+2022,10,British Grand Prix,zhou,Alfa Romeo,9,19,Collision,0
+2022,10,British Grand Prix,albon,Williams,16,20,Collision,0
+2022,11,Austrian Grand Prix,leclerc,Ferrari,2,1,Finished,25
+2022,11,Austrian Grand Prix,max_verstappen,Red Bull,1,2,Finished,19
+2022,11,Austrian Grand Prix,hamilton,Mercedes,8,3,Finished,15
+2022,11,Austrian Grand Prix,russell,Mercedes,4,4,Finished,12
+2022,11,Austrian Grand Prix,ocon,Alpine F1 Team,6,5,Finished,10
+2022,11,Austrian Grand Prix,mick_schumacher,Haas F1 Team,9,6,+1 Lap,8
+2022,11,Austrian Grand Prix,norris,McLaren,10,7,+1 Lap,6
+2022,11,Austrian Grand Prix,kevin_magnussen,Haas F1 Team,7,8,+1 Lap,4
+2022,11,Austrian Grand Prix,ricciardo,McLaren,11,9,+1 Lap,2
+2022,11,Austrian Grand Prix,alonso,Alpine F1 Team,19,10,+1 Lap,1
+2022,11,Austrian Grand Prix,bottas,Alfa Romeo,0,11,+1 Lap,0
+2022,11,Austrian Grand Prix,albon,Williams,15,12,+1 Lap,0
+2022,11,Austrian Grand Prix,stroll,Aston Martin,12,13,+1 Lap,0
+2022,11,Austrian Grand Prix,zhou,Alfa Romeo,13,14,+1 Lap,0
+2022,11,Austrian Grand Prix,gasly,AlphaTauri,14,15,+1 Lap,0
+2022,11,Austrian Grand Prix,tsunoda,AlphaTauri,16,16,+1 Lap,0
+2022,11,Austrian Grand Prix,vettel,Aston Martin,18,17,+1 Lap,0
+2022,11,Austrian Grand Prix,sainz,Ferrari,3,18,Power Unit,0
+2022,11,Austrian Grand Prix,latifi,Williams,17,19,Undertray,0
+2022,11,Austrian Grand Prix,perez,Red Bull,5,20,Collision damage,0
+2022,12,French Grand Prix,max_verstappen,Red Bull,2,1,Finished,25
+2022,12,French Grand Prix,hamilton,Mercedes,4,2,Finished,18
+2022,12,French Grand Prix,russell,Mercedes,6,3,Finished,15
+2022,12,French Grand Prix,perez,Red Bull,3,4,Finished,12
+2022,12,French Grand Prix,sainz,Ferrari,19,5,Finished,11
+2022,12,French Grand Prix,alonso,Alpine F1 Team,7,6,Finished,8
+2022,12,French Grand Prix,norris,McLaren,5,7,Finished,6
+2022,12,French Grand Prix,ocon,Alpine F1 Team,10,8,Finished,4
+2022,12,French Grand Prix,ricciardo,McLaren,9,9,Finished,2
+2022,12,French Grand Prix,stroll,Aston Martin,15,10,Finished,1
+2022,12,French Grand Prix,vettel,Aston Martin,12,11,Finished,0
+2022,12,French Grand Prix,gasly,AlphaTauri,14,12,Finished,0
+2022,12,French Grand Prix,albon,Williams,13,13,Finished,0
+2022,12,French Grand Prix,bottas,Alfa Romeo,11,14,Finished,0
+2022,12,French Grand Prix,mick_schumacher,Haas F1 Team,17,15,Finished,0
+2022,12,French Grand Prix,zhou,Alfa Romeo,16,16,+6 Laps,0
+2022,12,French Grand Prix,latifi,Williams,18,17,Collision damage,0
+2022,12,French Grand Prix,kevin_magnussen,Haas F1 Team,20,18,Collision damage,0
+2022,12,French Grand Prix,leclerc,Ferrari,1,19,Accident,0
+2022,12,French Grand Prix,tsunoda,AlphaTauri,8,20,Undertray,0
+2022,13,Hungarian Grand Prix,max_verstappen,Red Bull,10,1,Finished,25
+2022,13,Hungarian Grand Prix,hamilton,Mercedes,7,2,Finished,19
+2022,13,Hungarian Grand Prix,russell,Mercedes,1,3,Finished,15
+2022,13,Hungarian Grand Prix,sainz,Ferrari,2,4,Finished,12
+2022,13,Hungarian Grand Prix,perez,Red Bull,11,5,Finished,10
+2022,13,Hungarian Grand Prix,leclerc,Ferrari,3,6,Finished,8
+2022,13,Hungarian Grand Prix,norris,McLaren,4,7,Finished,6
+2022,13,Hungarian Grand Prix,alonso,Alpine F1 Team,6,8,+1 Lap,4
+2022,13,Hungarian Grand Prix,ocon,Alpine F1 Team,5,9,+1 Lap,2
+2022,13,Hungarian Grand Prix,vettel,Aston Martin,18,10,+1 Lap,1
+2022,13,Hungarian Grand Prix,stroll,Aston Martin,14,11,+1 Lap,0
+2022,13,Hungarian Grand Prix,gasly,AlphaTauri,0,12,+1 Lap,0
+2022,13,Hungarian Grand Prix,zhou,Alfa Romeo,12,13,+1 Lap,0
+2022,13,Hungarian Grand Prix,mick_schumacher,Haas F1 Team,15,14,+1 Lap,0
+2022,13,Hungarian Grand Prix,ricciardo,McLaren,9,15,+1 Lap,0
+2022,13,Hungarian Grand Prix,kevin_magnussen,Haas F1 Team,13,16,+1 Lap,0
+2022,13,Hungarian Grand Prix,albon,Williams,17,17,+1 Lap,0
+2022,13,Hungarian Grand Prix,latifi,Williams,19,18,+1 Lap,0
+2022,13,Hungarian Grand Prix,tsunoda,AlphaTauri,16,19,+2 Laps,0
+2022,13,Hungarian Grand Prix,bottas,Alfa Romeo,8,20,Power Unit,0
+2022,14,Belgian Grand Prix,max_verstappen,Red Bull,14,1,Finished,26
+2022,14,Belgian Grand Prix,perez,Red Bull,2,2,Finished,18
+2022,14,Belgian Grand Prix,sainz,Ferrari,1,3,Finished,15
+2022,14,Belgian Grand Prix,russell,Mercedes,5,4,Finished,12
+2022,14,Belgian Grand Prix,alonso,Alpine F1 Team,3,5,Finished,10
+2022,14,Belgian Grand Prix,leclerc,Ferrari,15,6,Finished,8
+2022,14,Belgian Grand Prix,ocon,Alpine F1 Team,16,7,Finished,6
+2022,14,Belgian Grand Prix,vettel,Aston Martin,10,8,Finished,4
+2022,14,Belgian Grand Prix,gasly,AlphaTauri,0,9,Finished,2
+2022,14,Belgian Grand Prix,albon,Williams,6,10,Finished,1
+2022,14,Belgian Grand Prix,stroll,Aston Martin,9,11,Finished,0
+2022,14,Belgian Grand Prix,norris,McLaren,17,12,Finished,0
+2022,14,Belgian Grand Prix,tsunoda,AlphaTauri,0,13,Finished,0
+2022,14,Belgian Grand Prix,zhou,Alfa Romeo,18,14,Finished,0
+2022,14,Belgian Grand Prix,ricciardo,McLaren,7,15,Finished,0
+2022,14,Belgian Grand Prix,kevin_magnussen,Haas F1 Team,12,16,+1 Lap,0
+2022,14,Belgian Grand Prix,mick_schumacher,Haas F1 Team,19,17,+1 Lap,0
+2022,14,Belgian Grand Prix,latifi,Williams,11,18,+1 Lap,0
+2022,14,Belgian Grand Prix,bottas,Alfa Romeo,13,19,Accident,0
+2022,14,Belgian Grand Prix,hamilton,Mercedes,4,20,Collision damage,0
+2022,15,Dutch Grand Prix,max_verstappen,Red Bull,1,1,Finished,26
+2022,15,Dutch Grand Prix,russell,Mercedes,6,2,Finished,18
+2022,15,Dutch Grand Prix,leclerc,Ferrari,2,3,Finished,15
+2022,15,Dutch Grand Prix,hamilton,Mercedes,4,4,Finished,12
+2022,15,Dutch Grand Prix,perez,Red Bull,5,5,Finished,10
+2022,15,Dutch Grand Prix,alonso,Alpine F1 Team,13,6,Finished,8
+2022,15,Dutch Grand Prix,norris,McLaren,7,7,Finished,6
+2022,15,Dutch Grand Prix,sainz,Ferrari,3,8,Finished,4
+2022,15,Dutch Grand Prix,ocon,Alpine F1 Team,12,9,Finished,2
+2022,15,Dutch Grand Prix,stroll,Aston Martin,10,10,Finished,1
+2022,15,Dutch Grand Prix,gasly,AlphaTauri,11,11,Finished,0
+2022,15,Dutch Grand Prix,albon,Williams,15,12,Finished,0
+2022,15,Dutch Grand Prix,mick_schumacher,Haas F1 Team,8,13,Finished,0
+2022,15,Dutch Grand Prix,vettel,Aston Martin,19,14,Finished,0
+2022,15,Dutch Grand Prix,kevin_magnussen,Haas F1 Team,18,15,Finished,0
+2022,15,Dutch Grand Prix,zhou,Alfa Romeo,14,16,Finished,0
+2022,15,Dutch Grand Prix,ricciardo,McLaren,17,17,Finished,0
+2022,15,Dutch Grand Prix,latifi,Williams,20,18,+1 Lap,0
+2022,15,Dutch Grand Prix,bottas,Alfa Romeo,16,19,Engine,0
+2022,15,Dutch Grand Prix,tsunoda,AlphaTauri,9,20,Differential,0
+2022,16,Italian Grand Prix,max_verstappen,Red Bull,7,1,Finished,25
+2022,16,Italian Grand Prix,leclerc,Ferrari,1,2,Finished,18
+2022,16,Italian Grand Prix,russell,Mercedes,2,3,Finished,15
+2022,16,Italian Grand Prix,sainz,Ferrari,18,4,Finished,12
+2022,16,Italian Grand Prix,hamilton,Mercedes,19,5,Finished,10
+2022,16,Italian Grand Prix,perez,Red Bull,13,6,Finished,9
+2022,16,Italian Grand Prix,norris,McLaren,3,7,Finished,6
+2022,16,Italian Grand Prix,gasly,AlphaTauri,5,8,Finished,4
+2022,16,Italian Grand Prix,de_vries,Williams,8,9,Finished,2
+2022,16,Italian Grand Prix,zhou,Alfa Romeo,9,10,Finished,1
+2022,16,Italian Grand Prix,ocon,Alpine F1 Team,14,11,Finished,0
+2022,16,Italian Grand Prix,mick_schumacher,Haas F1 Team,17,12,Finished,0
+2022,16,Italian Grand Prix,bottas,Alfa Romeo,15,13,+1 Lap,0
+2022,16,Italian Grand Prix,tsunoda,AlphaTauri,20,14,+1 Lap,0
+2022,16,Italian Grand Prix,latifi,Williams,10,15,+1 Lap,0
+2022,16,Italian Grand Prix,kevin_magnussen,Haas F1 Team,16,16,+1 Lap,0
+2022,16,Italian Grand Prix,ricciardo,McLaren,4,17,Oil leak,0
+2022,16,Italian Grand Prix,stroll,Aston Martin,12,18,Engine,0
+2022,16,Italian Grand Prix,alonso,Alpine F1 Team,6,19,Water pressure,0
+2022,16,Italian Grand Prix,vettel,Aston Martin,11,20,Engine,0
+2022,17,Singapore Grand Prix,perez,Red Bull,2,1,Finished,25
+2022,17,Singapore Grand Prix,leclerc,Ferrari,1,2,Finished,18
+2022,17,Singapore Grand Prix,sainz,Ferrari,4,3,Finished,15
+2022,17,Singapore Grand Prix,norris,McLaren,6,4,Finished,12
+2022,17,Singapore Grand Prix,ricciardo,McLaren,16,5,Finished,10
+2022,17,Singapore Grand Prix,stroll,Aston Martin,11,6,Finished,8
+2022,17,Singapore Grand Prix,max_verstappen,Red Bull,8,7,Finished,6
+2022,17,Singapore Grand Prix,vettel,Aston Martin,13,8,Finished,4
+2022,17,Singapore Grand Prix,hamilton,Mercedes,3,9,Finished,2
+2022,17,Singapore Grand Prix,gasly,AlphaTauri,7,10,Finished,1
+2022,17,Singapore Grand Prix,bottas,Alfa Romeo,15,11,Finished,0
+2022,17,Singapore Grand Prix,kevin_magnussen,Haas F1 Team,9,12,Finished,0
+2022,17,Singapore Grand Prix,mick_schumacher,Haas F1 Team,12,13,+1 Lap,0
+2022,17,Singapore Grand Prix,russell,Mercedes,0,14,+2 Laps,0
+2022,17,Singapore Grand Prix,tsunoda,AlphaTauri,10,15,Accident,0
+2022,17,Singapore Grand Prix,ocon,Alpine F1 Team,17,16,Engine,0
+2022,17,Singapore Grand Prix,albon,Williams,18,17,Collision damage,0
+2022,17,Singapore Grand Prix,alonso,Alpine F1 Team,5,18,Engine,0
+2022,17,Singapore Grand Prix,latifi,Williams,19,19,Collision damage,0
+2022,17,Singapore Grand Prix,zhou,Alfa Romeo,14,20,Collision,0
+2022,18,Japanese Grand Prix,max_verstappen,Red Bull,1,1,Finished,25
+2022,18,Japanese Grand Prix,perez,Red Bull,4,2,Finished,18
+2022,18,Japanese Grand Prix,leclerc,Ferrari,2,3,Finished,15
+2022,18,Japanese Grand Prix,ocon,Alpine F1 Team,5,4,Finished,12
+2022,18,Japanese Grand Prix,hamilton,Mercedes,6,5,Finished,10
+2022,18,Japanese Grand Prix,vettel,Aston Martin,9,6,Finished,8
+2022,18,Japanese Grand Prix,alonso,Alpine F1 Team,7,7,Finished,6
+2022,18,Japanese Grand Prix,russell,Mercedes,8,8,Finished,4
+2022,18,Japanese Grand Prix,latifi,Williams,20,9,Finished,2
+2022,18,Japanese Grand Prix,norris,McLaren,10,10,Finished,1
+2022,18,Japanese Grand Prix,ricciardo,McLaren,11,11,Finished,0
+2022,18,Japanese Grand Prix,stroll,Aston Martin,19,12,Finished,0
+2022,18,Japanese Grand Prix,tsunoda,AlphaTauri,13,13,Finished,0
+2022,18,Japanese Grand Prix,kevin_magnussen,Haas F1 Team,18,14,Finished,0
+2022,18,Japanese Grand Prix,bottas,Alfa Romeo,12,15,Finished,0
+2022,18,Japanese Grand Prix,zhou,Alfa Romeo,14,16,Finished,0
+2022,18,Japanese Grand Prix,mick_schumacher,Haas F1 Team,15,17,Finished,0
+2022,18,Japanese Grand Prix,gasly,AlphaTauri,17,18,Finished,0
+2022,18,Japanese Grand Prix,sainz,Ferrari,3,19,Accident,0
+2022,18,Japanese Grand Prix,albon,Williams,16,20,Hydraulics,0
+2022,19,United States Grand Prix,max_verstappen,Red Bull,2,1,Finished,25
+2022,19,United States Grand Prix,hamilton,Mercedes,3,2,Finished,18
+2022,19,United States Grand Prix,leclerc,Ferrari,12,3,Finished,15
+2022,19,United States Grand Prix,perez,Red Bull,9,4,Finished,12
+2022,19,United States Grand Prix,russell,Mercedes,4,5,Finished,11
+2022,19,United States Grand Prix,norris,McLaren,6,6,Finished,8
+2022,19,United States Grand Prix,alonso,Alpine F1 Team,14,7,Finished,6
+2022,19,United States Grand Prix,vettel,Aston Martin,10,8,Finished,4
+2022,19,United States Grand Prix,kevin_magnussen,Haas F1 Team,13,9,Finished,2
+2022,19,United States Grand Prix,tsunoda,AlphaTauri,19,10,Finished,1
+2022,19,United States Grand Prix,ocon,Alpine F1 Team,0,11,Finished,0
+2022,19,United States Grand Prix,zhou,Alfa Romeo,18,12,Finished,0
+2022,19,United States Grand Prix,albon,Williams,8,13,Finished,0
+2022,19,United States Grand Prix,gasly,AlphaTauri,11,14,Finished,0
+2022,19,United States Grand Prix,mick_schumacher,Haas F1 Team,16,15,Finished,0
+2022,19,United States Grand Prix,ricciardo,McLaren,15,16,Finished,0
+2022,19,United States Grand Prix,latifi,Williams,17,17,Finished,0
+2022,19,United States Grand Prix,stroll,Aston Martin,5,18,Collision,0
+2022,19,United States Grand Prix,bottas,Alfa Romeo,7,19,Spun off,0
+2022,19,United States Grand Prix,sainz,Ferrari,1,20,Collision damage,0
+2022,20,Mexico City Grand Prix,max_verstappen,Red Bull,1,1,Finished,25
+2022,20,Mexico City Grand Prix,hamilton,Mercedes,3,2,Finished,18
+2022,20,Mexico City Grand Prix,perez,Red Bull,4,3,Finished,15
+2022,20,Mexico City Grand Prix,russell,Mercedes,2,4,Finished,13
+2022,20,Mexico City Grand Prix,sainz,Ferrari,5,5,Finished,10
+2022,20,Mexico City Grand Prix,leclerc,Ferrari,7,6,Finished,8
+2022,20,Mexico City Grand Prix,ricciardo,McLaren,11,7,+1 Lap,6
+2022,20,Mexico City Grand Prix,ocon,Alpine F1 Team,10,8,+1 Lap,4
+2022,20,Mexico City Grand Prix,norris,McLaren,8,9,+1 Lap,2
+2022,20,Mexico City Grand Prix,bottas,Alfa Romeo,6,10,+1 Lap,1
+2022,20,Mexico City Grand Prix,gasly,AlphaTauri,14,11,+1 Lap,0
+2022,20,Mexico City Grand Prix,albon,Williams,17,12,+1 Lap,0
+2022,20,Mexico City Grand Prix,zhou,Alfa Romeo,12,13,+1 Lap,0
+2022,20,Mexico City Grand Prix,vettel,Aston Martin,16,14,+1 Lap,0
+2022,20,Mexico City Grand Prix,stroll,Aston Martin,20,15,+1 Lap,0
+2022,20,Mexico City Grand Prix,mick_schumacher,Haas F1 Team,15,16,+1 Lap,0
+2022,20,Mexico City Grand Prix,kevin_magnussen,Haas F1 Team,19,17,+1 Lap,0
+2022,20,Mexico City Grand Prix,latifi,Williams,18,18,+2 Laps,0
+2022,20,Mexico City Grand Prix,alonso,Alpine F1 Team,9,19,Engine,0
+2022,20,Mexico City Grand Prix,tsunoda,AlphaTauri,13,20,Collision damage,0
+2022,21,São Paulo Grand Prix,russell,Mercedes,1,1,Finished,26
+2022,21,São Paulo Grand Prix,hamilton,Mercedes,2,2,Finished,18
+2022,21,São Paulo Grand Prix,sainz,Ferrari,7,3,Finished,15
+2022,21,São Paulo Grand Prix,leclerc,Ferrari,5,4,Finished,12
+2022,21,São Paulo Grand Prix,alonso,Alpine F1 Team,17,5,Finished,10
+2022,21,São Paulo Grand Prix,max_verstappen,Red Bull,3,6,Finished,8
+2022,21,São Paulo Grand Prix,perez,Red Bull,4,7,Finished,6
+2022,21,São Paulo Grand Prix,ocon,Alpine F1 Team,16,8,Finished,4
+2022,21,São Paulo Grand Prix,bottas,Alfa Romeo,14,9,Finished,2
+2022,21,São Paulo Grand Prix,stroll,Aston Martin,15,10,Finished,1
+2022,21,São Paulo Grand Prix,vettel,Aston Martin,9,11,Finished,0
+2022,21,São Paulo Grand Prix,zhou,Alfa Romeo,13,12,Finished,0
+2022,21,São Paulo Grand Prix,mick_schumacher,Haas F1 Team,12,13,Finished,0
+2022,21,São Paulo Grand Prix,gasly,AlphaTauri,10,14,Finished,0
+2022,21,São Paulo Grand Prix,albon,Williams,19,15,Finished,0
+2022,21,São Paulo Grand Prix,latifi,Williams,18,16,Finished,0
+2022,21,São Paulo Grand Prix,tsunoda,AlphaTauri,0,17,+1 Lap,0
+2022,21,São Paulo Grand Prix,norris,McLaren,6,18,Gearbox,0
+2022,21,São Paulo Grand Prix,kevin_magnussen,Haas F1 Team,8,19,Collision,0
+2022,21,São Paulo Grand Prix,ricciardo,McLaren,11,20,Collision,0
+2022,22,Abu Dhabi Grand Prix,max_verstappen,Red Bull,1,1,Finished,25
+2022,22,Abu Dhabi Grand Prix,leclerc,Ferrari,3,2,Finished,18
+2022,22,Abu Dhabi Grand Prix,perez,Red Bull,2,3,Finished,15
+2022,22,Abu Dhabi Grand Prix,sainz,Ferrari,4,4,Finished,12
+2022,22,Abu Dhabi Grand Prix,russell,Mercedes,6,5,Finished,10
+2022,22,Abu Dhabi Grand Prix,norris,McLaren,7,6,Finished,9
+2022,22,Abu Dhabi Grand Prix,ocon,Alpine F1 Team,8,7,Finished,6
+2022,22,Abu Dhabi Grand Prix,stroll,Aston Martin,14,8,Finished,4
+2022,22,Abu Dhabi Grand Prix,ricciardo,McLaren,13,9,Finished,2
+2022,22,Abu Dhabi Grand Prix,vettel,Aston Martin,9,10,Finished,1
+2022,22,Abu Dhabi Grand Prix,tsunoda,AlphaTauri,11,11,Finished,0
+2022,22,Abu Dhabi Grand Prix,zhou,Alfa Romeo,15,12,+1 Lap,0
+2022,22,Abu Dhabi Grand Prix,albon,Williams,19,13,+1 Lap,0
+2022,22,Abu Dhabi Grand Prix,gasly,AlphaTauri,17,14,+1 Lap,0
+2022,22,Abu Dhabi Grand Prix,bottas,Alfa Romeo,18,15,+1 Lap,0
+2022,22,Abu Dhabi Grand Prix,mick_schumacher,Haas F1 Team,12,16,+1 Lap,0
+2022,22,Abu Dhabi Grand Prix,kevin_magnussen,Haas F1 Team,16,17,+1 Lap,0
+2022,22,Abu Dhabi Grand Prix,hamilton,Mercedes,5,18,Hydraulics,0
+2022,22,Abu Dhabi Grand Prix,latifi,Williams,20,19,Collision damage,0
+2022,22,Abu Dhabi Grand Prix,alonso,Alpine F1 Team,10,20,Water leak,0
+2023,1,Bahrain Grand Prix,max_verstappen,Red Bull,1,1,Finished,25
+2023,1,Bahrain Grand Prix,perez,Red Bull,2,2,Finished,18
+2023,1,Bahrain Grand Prix,alonso,Aston Martin,5,3,Finished,15
+2023,1,Bahrain Grand Prix,sainz,Ferrari,4,4,Finished,12
+2023,1,Bahrain Grand Prix,hamilton,Mercedes,7,5,Finished,10
+2023,1,Bahrain Grand Prix,stroll,Aston Martin,8,6,Finished,8
+2023,1,Bahrain Grand Prix,russell,Mercedes,6,7,Finished,6
+2023,1,Bahrain Grand Prix,bottas,Alfa Romeo,12,8,Finished,4
+2023,1,Bahrain Grand Prix,gasly,Alpine F1 Team,20,9,Finished,2
+2023,1,Bahrain Grand Prix,albon,Williams,15,10,Finished,1
+2023,1,Bahrain Grand Prix,tsunoda,AlphaTauri,14,11,Finished,0
+2023,1,Bahrain Grand Prix,sargeant,Williams,16,12,Lapped,0
+2023,1,Bahrain Grand Prix,kevin_magnussen,Haas F1 Team,17,13,Lapped,0
+2023,1,Bahrain Grand Prix,de_vries,AlphaTauri,19,14,Lapped,0
+2023,1,Bahrain Grand Prix,hulkenberg,Haas F1 Team,10,15,Lapped,0
+2023,1,Bahrain Grand Prix,zhou,Alfa Romeo,13,16,Lapped,0
+2023,1,Bahrain Grand Prix,norris,McLaren,11,17,Lapped,0
+2023,1,Bahrain Grand Prix,ocon,Alpine F1 Team,9,18,Retired,0
+2023,1,Bahrain Grand Prix,leclerc,Ferrari,3,19,Retired,0
+2023,1,Bahrain Grand Prix,piastri,McLaren,18,20,Retired,0
+2023,2,Saudi Arabian Grand Prix,perez,Red Bull,1,1,Finished,25
+2023,2,Saudi Arabian Grand Prix,max_verstappen,Red Bull,15,2,Finished,19
+2023,2,Saudi Arabian Grand Prix,alonso,Aston Martin,2,3,Finished,15
+2023,2,Saudi Arabian Grand Prix,russell,Mercedes,3,4,Finished,12
+2023,2,Saudi Arabian Grand Prix,hamilton,Mercedes,7,5,Finished,10
+2023,2,Saudi Arabian Grand Prix,sainz,Ferrari,4,6,Finished,8
+2023,2,Saudi Arabian Grand Prix,leclerc,Ferrari,12,7,Finished,6
+2023,2,Saudi Arabian Grand Prix,ocon,Alpine F1 Team,6,8,Finished,4
+2023,2,Saudi Arabian Grand Prix,gasly,Alpine F1 Team,9,9,Finished,2
+2023,2,Saudi Arabian Grand Prix,kevin_magnussen,Haas F1 Team,13,10,Finished,1
+2023,2,Saudi Arabian Grand Prix,tsunoda,AlphaTauri,16,11,Finished,0
+2023,2,Saudi Arabian Grand Prix,hulkenberg,Haas F1 Team,10,12,Finished,0
+2023,2,Saudi Arabian Grand Prix,zhou,Alfa Romeo,11,13,Finished,0
+2023,2,Saudi Arabian Grand Prix,de_vries,AlphaTauri,18,14,Finished,0
+2023,2,Saudi Arabian Grand Prix,piastri,McLaren,8,15,Finished,0
+2023,2,Saudi Arabian Grand Prix,sargeant,Williams,20,16,Finished,0
+2023,2,Saudi Arabian Grand Prix,norris,McLaren,19,17,Finished,0
+2023,2,Saudi Arabian Grand Prix,bottas,Alfa Romeo,14,18,Lapped,0
+2023,2,Saudi Arabian Grand Prix,albon,Williams,17,19,Retired,0
+2023,2,Saudi Arabian Grand Prix,stroll,Aston Martin,5,20,Retired,0
+2023,3,Australian Grand Prix,max_verstappen,Red Bull,1,1,Finished,25
+2023,3,Australian Grand Prix,hamilton,Mercedes,3,2,Finished,18
+2023,3,Australian Grand Prix,alonso,Aston Martin,4,3,Finished,15
+2023,3,Australian Grand Prix,stroll,Aston Martin,6,4,Finished,12
+2023,3,Australian Grand Prix,perez,Red Bull,20,5,Finished,11
+2023,3,Australian Grand Prix,norris,McLaren,13,6,Finished,8
+2023,3,Australian Grand Prix,hulkenberg,Haas F1 Team,10,7,Finished,6
+2023,3,Australian Grand Prix,piastri,McLaren,16,8,Finished,4
+2023,3,Australian Grand Prix,zhou,Alfa Romeo,17,9,Finished,2
+2023,3,Australian Grand Prix,tsunoda,AlphaTauri,12,10,Finished,1
+2023,3,Australian Grand Prix,bottas,Alfa Romeo,19,11,Finished,0
+2023,3,Australian Grand Prix,sainz,Ferrari,5,12,Finished,0
+2023,3,Australian Grand Prix,gasly,Alpine F1 Team,9,13,Retired,0
+2023,3,Australian Grand Prix,ocon,Alpine F1 Team,11,14,Retired,0
+2023,3,Australian Grand Prix,de_vries,AlphaTauri,15,15,Retired,0
+2023,3,Australian Grand Prix,sargeant,Williams,18,16,Retired,0
+2023,3,Australian Grand Prix,kevin_magnussen,Haas F1 Team,14,17,Retired,0
+2023,3,Australian Grand Prix,russell,Mercedes,2,18,Retired,0
+2023,3,Australian Grand Prix,albon,Williams,8,19,Retired,0
+2023,3,Australian Grand Prix,leclerc,Ferrari,7,20,Retired,0
+2023,4,Azerbaijan Grand Prix,perez,Red Bull,3,1,Finished,25
+2023,4,Azerbaijan Grand Prix,max_verstappen,Red Bull,2,2,Finished,18
+2023,4,Azerbaijan Grand Prix,leclerc,Ferrari,1,3,Finished,15
+2023,4,Azerbaijan Grand Prix,alonso,Aston Martin,6,4,Finished,12
+2023,4,Azerbaijan Grand Prix,sainz,Ferrari,4,5,Finished,10
+2023,4,Azerbaijan Grand Prix,hamilton,Mercedes,5,6,Finished,8
+2023,4,Azerbaijan Grand Prix,stroll,Aston Martin,9,7,Finished,6
+2023,4,Azerbaijan Grand Prix,russell,Mercedes,11,8,Finished,5
+2023,4,Azerbaijan Grand Prix,norris,McLaren,7,9,Finished,2
+2023,4,Azerbaijan Grand Prix,tsunoda,AlphaTauri,8,10,Finished,1
+2023,4,Azerbaijan Grand Prix,piastri,McLaren,10,11,Finished,0
+2023,4,Azerbaijan Grand Prix,albon,Williams,12,12,Finished,0
+2023,4,Azerbaijan Grand Prix,kevin_magnussen,Haas F1 Team,16,13,Finished,0
+2023,4,Azerbaijan Grand Prix,gasly,Alpine F1 Team,17,14,Finished,0
+2023,4,Azerbaijan Grand Prix,ocon,Alpine F1 Team,19,15,Finished,0
+2023,4,Azerbaijan Grand Prix,sargeant,Williams,14,16,Finished,0
+2023,4,Azerbaijan Grand Prix,hulkenberg,Haas F1 Team,20,17,Lapped,0
+2023,4,Azerbaijan Grand Prix,bottas,Alfa Romeo,13,18,Lapped,0
+2023,4,Azerbaijan Grand Prix,zhou,Alfa Romeo,15,19,Retired,0
+2023,4,Azerbaijan Grand Prix,de_vries,AlphaTauri,18,20,Retired,0
+2023,5,Miami Grand Prix,max_verstappen,Red Bull,9,1,Finished,26
+2023,5,Miami Grand Prix,perez,Red Bull,1,2,Finished,18
+2023,5,Miami Grand Prix,alonso,Aston Martin,2,3,Finished,15
+2023,5,Miami Grand Prix,russell,Mercedes,6,4,Finished,12
+2023,5,Miami Grand Prix,sainz,Ferrari,3,5,Finished,10
+2023,5,Miami Grand Prix,hamilton,Mercedes,13,6,Finished,8
+2023,5,Miami Grand Prix,leclerc,Ferrari,7,7,Finished,6
+2023,5,Miami Grand Prix,gasly,Alpine F1 Team,5,8,Finished,4
+2023,5,Miami Grand Prix,ocon,Alpine F1 Team,8,9,Finished,2
+2023,5,Miami Grand Prix,kevin_magnussen,Haas F1 Team,4,10,Finished,1
+2023,5,Miami Grand Prix,tsunoda,AlphaTauri,17,11,Finished,0
+2023,5,Miami Grand Prix,stroll,Aston Martin,18,12,Finished,0
+2023,5,Miami Grand Prix,bottas,Alfa Romeo,10,13,Finished,0
+2023,5,Miami Grand Prix,albon,Williams,11,14,Finished,0
+2023,5,Miami Grand Prix,hulkenberg,Haas F1 Team,12,15,Finished,0
+2023,5,Miami Grand Prix,zhou,Alfa Romeo,14,16,Finished,0
+2023,5,Miami Grand Prix,norris,McLaren,16,17,Finished,0
+2023,5,Miami Grand Prix,de_vries,AlphaTauri,15,18,Finished,0
+2023,5,Miami Grand Prix,piastri,McLaren,19,19,Lapped,0
+2023,5,Miami Grand Prix,sargeant,Williams,20,20,Lapped,0
+2023,6,Monaco Grand Prix,max_verstappen,Red Bull,1,1,Finished,25
+2023,6,Monaco Grand Prix,alonso,Aston Martin,2,2,Finished,18
+2023,6,Monaco Grand Prix,ocon,Alpine F1 Team,3,3,Finished,15
+2023,6,Monaco Grand Prix,hamilton,Mercedes,5,4,Finished,13
+2023,6,Monaco Grand Prix,russell,Mercedes,8,5,Finished,10
+2023,6,Monaco Grand Prix,leclerc,Ferrari,6,6,Finished,8
+2023,6,Monaco Grand Prix,gasly,Alpine F1 Team,7,7,Finished,6
+2023,6,Monaco Grand Prix,sainz,Ferrari,4,8,Finished,4
+2023,6,Monaco Grand Prix,norris,McLaren,10,9,Lapped,2
+2023,6,Monaco Grand Prix,piastri,McLaren,11,10,Lapped,1
+2023,6,Monaco Grand Prix,bottas,Alfa Romeo,15,11,Lapped,0
+2023,6,Monaco Grand Prix,de_vries,AlphaTauri,12,12,Lapped,0
+2023,6,Monaco Grand Prix,zhou,Alfa Romeo,19,13,Lapped,0
+2023,6,Monaco Grand Prix,albon,Williams,13,14,Lapped,0
+2023,6,Monaco Grand Prix,tsunoda,AlphaTauri,9,15,Lapped,0
+2023,6,Monaco Grand Prix,perez,Red Bull,20,16,Lapped,0
+2023,6,Monaco Grand Prix,hulkenberg,Haas F1 Team,18,17,Lapped,0
+2023,6,Monaco Grand Prix,sargeant,Williams,16,18,Lapped,0
+2023,6,Monaco Grand Prix,kevin_magnussen,Haas F1 Team,17,19,Retired,0
+2023,6,Monaco Grand Prix,stroll,Aston Martin,14,20,Retired,0
+2023,7,Spanish Grand Prix,max_verstappen,Red Bull,1,1,Finished,26
+2023,7,Spanish Grand Prix,hamilton,Mercedes,4,2,Finished,18
+2023,7,Spanish Grand Prix,russell,Mercedes,12,3,Finished,15
+2023,7,Spanish Grand Prix,perez,Red Bull,11,4,Finished,12
+2023,7,Spanish Grand Prix,sainz,Ferrari,2,5,Finished,10
+2023,7,Spanish Grand Prix,stroll,Aston Martin,5,6,Finished,8
+2023,7,Spanish Grand Prix,alonso,Aston Martin,8,7,Finished,6
+2023,7,Spanish Grand Prix,ocon,Alpine F1 Team,6,8,Finished,4
+2023,7,Spanish Grand Prix,zhou,Alfa Romeo,13,9,Finished,2
+2023,7,Spanish Grand Prix,gasly,Alpine F1 Team,10,10,Finished,1
+2023,7,Spanish Grand Prix,leclerc,Ferrari,19,11,Finished,0
+2023,7,Spanish Grand Prix,tsunoda,AlphaTauri,15,12,Finished,0
+2023,7,Spanish Grand Prix,piastri,McLaren,9,13,Lapped,0
+2023,7,Spanish Grand Prix,de_vries,AlphaTauri,14,14,Lapped,0
+2023,7,Spanish Grand Prix,hulkenberg,Haas F1 Team,7,15,Lapped,0
+2023,7,Spanish Grand Prix,albon,Williams,18,16,Lapped,0
+2023,7,Spanish Grand Prix,norris,McLaren,3,17,Lapped,0
+2023,7,Spanish Grand Prix,kevin_magnussen,Haas F1 Team,17,18,Lapped,0
+2023,7,Spanish Grand Prix,bottas,Alfa Romeo,16,19,Lapped,0
+2023,7,Spanish Grand Prix,sargeant,Williams,20,20,Lapped,0
+2023,8,Canadian Grand Prix,max_verstappen,Red Bull,1,1,Finished,25
+2023,8,Canadian Grand Prix,alonso,Aston Martin,2,2,Finished,18
+2023,8,Canadian Grand Prix,hamilton,Mercedes,3,3,Finished,15
+2023,8,Canadian Grand Prix,leclerc,Ferrari,10,4,Finished,12
+2023,8,Canadian Grand Prix,sainz,Ferrari,11,5,Finished,10
+2023,8,Canadian Grand Prix,perez,Red Bull,12,6,Finished,9
+2023,8,Canadian Grand Prix,albon,Williams,9,7,Finished,6
+2023,8,Canadian Grand Prix,ocon,Alpine F1 Team,6,8,Finished,4
+2023,8,Canadian Grand Prix,stroll,Aston Martin,16,9,Finished,2
+2023,8,Canadian Grand Prix,bottas,Alfa Romeo,14,10,Finished,1
+2023,8,Canadian Grand Prix,piastri,McLaren,8,11,Finished,0
+2023,8,Canadian Grand Prix,gasly,Alpine F1 Team,15,12,Finished,0
+2023,8,Canadian Grand Prix,norris,McLaren,7,13,Finished,0
+2023,8,Canadian Grand Prix,tsunoda,AlphaTauri,19,14,Finished,0
+2023,8,Canadian Grand Prix,hulkenberg,Haas F1 Team,5,15,Lapped,0
+2023,8,Canadian Grand Prix,zhou,Alfa Romeo,20,16,Lapped,0
+2023,8,Canadian Grand Prix,kevin_magnussen,Haas F1 Team,13,17,Lapped,0
+2023,8,Canadian Grand Prix,de_vries,AlphaTauri,17,18,Lapped,0
+2023,8,Canadian Grand Prix,russell,Mercedes,4,19,Retired,0
+2023,8,Canadian Grand Prix,sargeant,Williams,18,20,Retired,0
+2023,9,Austrian Grand Prix,max_verstappen,Red Bull,1,1,Finished,26
+2023,9,Austrian Grand Prix,leclerc,Ferrari,2,2,Finished,18
+2023,9,Austrian Grand Prix,perez,Red Bull,15,3,Finished,15
+2023,9,Austrian Grand Prix,norris,McLaren,4,4,Finished,12
+2023,9,Austrian Grand Prix,alonso,Aston Martin,7,5,Finished,10
+2023,9,Austrian Grand Prix,sainz,Ferrari,3,6,Finished,8
+2023,9,Austrian Grand Prix,russell,Mercedes,11,7,Finished,6
+2023,9,Austrian Grand Prix,hamilton,Mercedes,5,8,Finished,4
+2023,9,Austrian Grand Prix,stroll,Aston Martin,6,9,Finished,2
+2023,9,Austrian Grand Prix,gasly,Alpine F1 Team,9,10,Finished,1
+2023,9,Austrian Grand Prix,albon,Williams,10,11,Finished,0
+2023,9,Austrian Grand Prix,zhou,Alfa Romeo,17,12,Lapped,0
+2023,9,Austrian Grand Prix,sargeant,Williams,18,13,Lapped,0
+2023,9,Austrian Grand Prix,ocon,Alpine F1 Team,12,14,Lapped,0
+2023,9,Austrian Grand Prix,bottas,Alfa Romeo,14,15,Lapped,0
+2023,9,Austrian Grand Prix,piastri,McLaren,13,16,Lapped,0
+2023,9,Austrian Grand Prix,de_vries,AlphaTauri,20,17,Lapped,0
+2023,9,Austrian Grand Prix,kevin_magnussen,Haas F1 Team,19,18,Lapped,0
+2023,9,Austrian Grand Prix,tsunoda,AlphaTauri,16,19,Lapped,0
+2023,9,Austrian Grand Prix,hulkenberg,Haas F1 Team,8,20,Retired,0
+2023,10,British Grand Prix,max_verstappen,Red Bull,1,1,Finished,26
+2023,10,British Grand Prix,norris,McLaren,2,2,Finished,18
+2023,10,British Grand Prix,hamilton,Mercedes,7,3,Finished,15
+2023,10,British Grand Prix,piastri,McLaren,3,4,Finished,12
+2023,10,British Grand Prix,russell,Mercedes,6,5,Finished,10
+2023,10,British Grand Prix,perez,Red Bull,15,6,Finished,8
+2023,10,British Grand Prix,alonso,Aston Martin,9,7,Finished,6
+2023,10,British Grand Prix,albon,Williams,8,8,Finished,4
+2023,10,British Grand Prix,leclerc,Ferrari,4,9,Finished,2
+2023,10,British Grand Prix,sainz,Ferrari,5,10,Finished,1
+2023,10,British Grand Prix,sargeant,Williams,14,11,Finished,0
+2023,10,British Grand Prix,bottas,Alfa Romeo,20,12,Finished,0
+2023,10,British Grand Prix,hulkenberg,Haas F1 Team,11,13,Finished,0
+2023,10,British Grand Prix,stroll,Aston Martin,12,14,Finished,0
+2023,10,British Grand Prix,zhou,Alfa Romeo,17,15,Finished,0
+2023,10,British Grand Prix,tsunoda,AlphaTauri,16,16,Finished,0
+2023,10,British Grand Prix,de_vries,AlphaTauri,18,17,Finished,0
+2023,10,British Grand Prix,gasly,Alpine F1 Team,10,18,Retired,0
+2023,10,British Grand Prix,kevin_magnussen,Haas F1 Team,19,19,Retired,0
+2023,10,British Grand Prix,ocon,Alpine F1 Team,13,20,Retired,0
+2023,11,Hungarian Grand Prix,max_verstappen,Red Bull,2,1,Finished,26
+2023,11,Hungarian Grand Prix,norris,McLaren,3,2,Finished,18
+2023,11,Hungarian Grand Prix,perez,Red Bull,9,3,Finished,15
+2023,11,Hungarian Grand Prix,hamilton,Mercedes,1,4,Finished,12
+2023,11,Hungarian Grand Prix,piastri,McLaren,4,5,Finished,10
+2023,11,Hungarian Grand Prix,russell,Mercedes,18,6,Finished,8
+2023,11,Hungarian Grand Prix,leclerc,Ferrari,6,7,Finished,6
+2023,11,Hungarian Grand Prix,sainz,Ferrari,11,8,Finished,4
+2023,11,Hungarian Grand Prix,alonso,Aston Martin,8,9,Finished,2
+2023,11,Hungarian Grand Prix,stroll,Aston Martin,14,10,Lapped,1
+2023,11,Hungarian Grand Prix,albon,Williams,16,11,Lapped,0
+2023,11,Hungarian Grand Prix,bottas,Alfa Romeo,7,12,Lapped,0
+2023,11,Hungarian Grand Prix,ricciardo,AlphaTauri,13,13,Lapped,0
+2023,11,Hungarian Grand Prix,hulkenberg,Haas F1 Team,10,14,Lapped,0
+2023,11,Hungarian Grand Prix,tsunoda,AlphaTauri,17,15,Lapped,0
+2023,11,Hungarian Grand Prix,zhou,Alfa Romeo,5,16,Lapped,0
+2023,11,Hungarian Grand Prix,kevin_magnussen,Haas F1 Team,19,17,Lapped,0
+2023,11,Hungarian Grand Prix,sargeant,Williams,20,18,Retired,0
+2023,11,Hungarian Grand Prix,ocon,Alpine F1 Team,12,19,Retired,0
+2023,11,Hungarian Grand Prix,gasly,Alpine F1 Team,15,20,Retired,0
+2023,12,Belgian Grand Prix,max_verstappen,Red Bull,6,1,Finished,25
+2023,12,Belgian Grand Prix,perez,Red Bull,2,2,Finished,18
+2023,12,Belgian Grand Prix,leclerc,Ferrari,1,3,Finished,15
+2023,12,Belgian Grand Prix,hamilton,Mercedes,3,4,Finished,13
+2023,12,Belgian Grand Prix,alonso,Aston Martin,9,5,Finished,10
+2023,12,Belgian Grand Prix,russell,Mercedes,8,6,Finished,8
+2023,12,Belgian Grand Prix,norris,McLaren,7,7,Finished,6
+2023,12,Belgian Grand Prix,ocon,Alpine F1 Team,14,8,Finished,4
+2023,12,Belgian Grand Prix,stroll,Aston Martin,10,9,Finished,2
+2023,12,Belgian Grand Prix,tsunoda,AlphaTauri,11,10,Finished,1
+2023,12,Belgian Grand Prix,gasly,Alpine F1 Team,12,11,Finished,0
+2023,12,Belgian Grand Prix,bottas,Alfa Romeo,13,12,Finished,0
+2023,12,Belgian Grand Prix,zhou,Alfa Romeo,17,13,Finished,0
+2023,12,Belgian Grand Prix,albon,Williams,15,14,Finished,0
+2023,12,Belgian Grand Prix,kevin_magnussen,Haas F1 Team,16,15,Finished,0
+2023,12,Belgian Grand Prix,ricciardo,AlphaTauri,19,16,Finished,0
+2023,12,Belgian Grand Prix,sargeant,Williams,18,17,Finished,0
+2023,12,Belgian Grand Prix,hulkenberg,Haas F1 Team,20,18,Finished,0
+2023,12,Belgian Grand Prix,sainz,Ferrari,4,19,Retired,0
+2023,12,Belgian Grand Prix,piastri,McLaren,5,20,Retired,0
+2023,13,Dutch Grand Prix,max_verstappen,Red Bull,1,1,Finished,25
+2023,13,Dutch Grand Prix,alonso,Aston Martin,5,2,Finished,19
+2023,13,Dutch Grand Prix,gasly,Alpine F1 Team,12,3,Finished,15
+2023,13,Dutch Grand Prix,perez,Red Bull,7,4,Finished,12
+2023,13,Dutch Grand Prix,sainz,Ferrari,6,5,Finished,10
+2023,13,Dutch Grand Prix,hamilton,Mercedes,13,6,Finished,8
+2023,13,Dutch Grand Prix,norris,McLaren,2,7,Finished,6
+2023,13,Dutch Grand Prix,albon,Williams,4,8,Finished,4
+2023,13,Dutch Grand Prix,piastri,McLaren,8,9,Finished,2
+2023,13,Dutch Grand Prix,ocon,Alpine F1 Team,16,10,Finished,1
+2023,13,Dutch Grand Prix,stroll,Aston Martin,11,11,Finished,0
+2023,13,Dutch Grand Prix,hulkenberg,Haas F1 Team,14,12,Finished,0
+2023,13,Dutch Grand Prix,lawson,AlphaTauri,19,13,Finished,0
+2023,13,Dutch Grand Prix,bottas,Alfa Romeo,18,14,Finished,0
+2023,13,Dutch Grand Prix,tsunoda,AlphaTauri,17,15,Finished,0
+2023,13,Dutch Grand Prix,kevin_magnussen,Haas F1 Team,0,16,Finished,0
+2023,13,Dutch Grand Prix,russell,Mercedes,3,17,Finished,0
+2023,13,Dutch Grand Prix,zhou,Alfa Romeo,15,18,Accident,0
+2023,13,Dutch Grand Prix,leclerc,Ferrari,9,19,Undertray,0
+2023,13,Dutch Grand Prix,sargeant,Williams,10,20,Accident,0
+2023,14,Italian Grand Prix,max_verstappen,Red Bull,2,1,Finished,25
+2023,14,Italian Grand Prix,perez,Red Bull,5,2,Finished,18
+2023,14,Italian Grand Prix,sainz,Ferrari,1,3,Finished,15
+2023,14,Italian Grand Prix,leclerc,Ferrari,3,4,Finished,12
+2023,14,Italian Grand Prix,russell,Mercedes,4,5,Finished,10
+2023,14,Italian Grand Prix,hamilton,Mercedes,8,6,Finished,8
+2023,14,Italian Grand Prix,albon,Williams,6,7,Finished,6
+2023,14,Italian Grand Prix,norris,McLaren,9,8,Finished,4
+2023,14,Italian Grand Prix,alonso,Aston Martin,10,9,Finished,2
+2023,14,Italian Grand Prix,bottas,Alfa Romeo,14,10,Finished,1
+2023,14,Italian Grand Prix,lawson,AlphaTauri,12,11,Finished,0
+2023,14,Italian Grand Prix,piastri,McLaren,7,12,Finished,0
+2023,14,Italian Grand Prix,sargeant,Williams,15,13,Finished,0
+2023,14,Italian Grand Prix,zhou,Alfa Romeo,16,14,Finished,0
+2023,14,Italian Grand Prix,gasly,Alpine F1 Team,17,15,Finished,0
+2023,14,Italian Grand Prix,stroll,Aston Martin,20,16,Finished,0
+2023,14,Italian Grand Prix,hulkenberg,Haas F1 Team,13,17,Lapped,0
+2023,14,Italian Grand Prix,kevin_magnussen,Haas F1 Team,19,18,Lapped,0
+2023,14,Italian Grand Prix,ocon,Alpine F1 Team,18,19,Retired,0
+2023,14,Italian Grand Prix,tsunoda,AlphaTauri,11,20,Did not start,0
+2023,15,Singapore Grand Prix,sainz,Ferrari,1,1,Finished,25
+2023,15,Singapore Grand Prix,norris,McLaren,4,2,Finished,18
+2023,15,Singapore Grand Prix,hamilton,Mercedes,5,3,Finished,16
+2023,15,Singapore Grand Prix,leclerc,Ferrari,3,4,Finished,12
+2023,15,Singapore Grand Prix,max_verstappen,Red Bull,11,5,Finished,10
+2023,15,Singapore Grand Prix,gasly,Alpine F1 Team,12,6,Finished,8
+2023,15,Singapore Grand Prix,piastri,McLaren,17,7,Finished,6
+2023,15,Singapore Grand Prix,perez,Red Bull,13,8,Finished,4
+2023,15,Singapore Grand Prix,lawson,AlphaTauri,10,9,Finished,2
+2023,15,Singapore Grand Prix,kevin_magnussen,Haas F1 Team,6,10,Finished,1
+2023,15,Singapore Grand Prix,albon,Williams,14,11,Finished,0
+2023,15,Singapore Grand Prix,zhou,Alfa Romeo,19,12,Finished,0
+2023,15,Singapore Grand Prix,hulkenberg,Haas F1 Team,9,13,Finished,0
+2023,15,Singapore Grand Prix,sargeant,Williams,18,14,Finished,0
+2023,15,Singapore Grand Prix,alonso,Aston Martin,7,15,Finished,0
+2023,15,Singapore Grand Prix,russell,Mercedes,2,16,Retired,0
+2023,15,Singapore Grand Prix,bottas,Alfa Romeo,16,17,Retired,0
+2023,15,Singapore Grand Prix,ocon,Alpine F1 Team,8,18,Retired,0
+2023,15,Singapore Grand Prix,tsunoda,AlphaTauri,15,19,Retired,0
+2023,15,Singapore Grand Prix,stroll,Aston Martin,0,20,Withdrew,0
+2023,16,Japanese Grand Prix,max_verstappen,Red Bull,1,1,Finished,26
+2023,16,Japanese Grand Prix,norris,McLaren,3,2,Finished,18
+2023,16,Japanese Grand Prix,piastri,McLaren,2,3,Finished,15
+2023,16,Japanese Grand Prix,leclerc,Ferrari,4,4,Finished,12
+2023,16,Japanese Grand Prix,hamilton,Mercedes,7,5,Finished,10
+2023,16,Japanese Grand Prix,sainz,Ferrari,6,6,Finished,8
+2023,16,Japanese Grand Prix,russell,Mercedes,8,7,Finished,6
+2023,16,Japanese Grand Prix,alonso,Aston Martin,10,8,Finished,4
+2023,16,Japanese Grand Prix,ocon,Alpine F1 Team,14,9,Finished,2
+2023,16,Japanese Grand Prix,gasly,Alpine F1 Team,12,10,Finished,1
+2023,16,Japanese Grand Prix,lawson,AlphaTauri,11,11,Lapped,0
+2023,16,Japanese Grand Prix,tsunoda,AlphaTauri,9,12,Lapped,0
+2023,16,Japanese Grand Prix,zhou,Alfa Romeo,19,13,Lapped,0
+2023,16,Japanese Grand Prix,hulkenberg,Haas F1 Team,18,14,Lapped,0
+2023,16,Japanese Grand Prix,kevin_magnussen,Haas F1 Team,15,15,Lapped,0
+2023,16,Japanese Grand Prix,albon,Williams,13,16,Retired,0
+2023,16,Japanese Grand Prix,sargeant,Williams,20,17,Retired,0
+2023,16,Japanese Grand Prix,stroll,Aston Martin,17,18,Retired,0
+2023,16,Japanese Grand Prix,perez,Red Bull,5,19,Retired,0
+2023,16,Japanese Grand Prix,bottas,Alfa Romeo,16,20,Retired,0
+2023,17,Qatar Grand Prix,max_verstappen,Red Bull,1,1,Finished,26
+2023,17,Qatar Grand Prix,piastri,McLaren,6,2,Finished,18
+2023,17,Qatar Grand Prix,norris,McLaren,10,3,Finished,15
+2023,17,Qatar Grand Prix,russell,Mercedes,2,4,Finished,12
+2023,17,Qatar Grand Prix,leclerc,Ferrari,5,5,Finished,10
+2023,17,Qatar Grand Prix,alonso,Aston Martin,4,6,Finished,8
+2023,17,Qatar Grand Prix,ocon,Alpine F1 Team,8,7,Finished,6
+2023,17,Qatar Grand Prix,bottas,Alfa Romeo,9,8,Finished,4
+2023,17,Qatar Grand Prix,zhou,Alfa Romeo,19,9,Finished,2
+2023,17,Qatar Grand Prix,perez,Red Bull,20,10,Finished,1
+2023,17,Qatar Grand Prix,stroll,Aston Martin,16,11,Finished,0
+2023,17,Qatar Grand Prix,gasly,Alpine F1 Team,7,12,Finished,0
+2023,17,Qatar Grand Prix,albon,Williams,13,13,Finished,0
+2023,17,Qatar Grand Prix,kevin_magnussen,Haas F1 Team,18,14,Lapped,0
+2023,17,Qatar Grand Prix,tsunoda,AlphaTauri,11,15,Lapped,0
+2023,17,Qatar Grand Prix,hulkenberg,Haas F1 Team,14,16,Lapped,0
+2023,17,Qatar Grand Prix,lawson,AlphaTauri,17,17,Lapped,0
+2023,17,Qatar Grand Prix,sargeant,Williams,15,18,Retired,0
+2023,17,Qatar Grand Prix,hamilton,Mercedes,3,19,Retired,0
+2023,17,Qatar Grand Prix,sainz,Ferrari,12,20,Did not start,0
+2023,18,United States Grand Prix,max_verstappen,Red Bull,6,1,Finished,25
+2023,18,United States Grand Prix,norris,McLaren,2,2,Finished,18
+2023,18,United States Grand Prix,sainz,Ferrari,4,3,Finished,15
+2023,18,United States Grand Prix,perez,Red Bull,9,4,Finished,12
+2023,18,United States Grand Prix,russell,Mercedes,5,5,Finished,10
+2023,18,United States Grand Prix,gasly,Alpine F1 Team,7,6,Finished,8
+2023,18,United States Grand Prix,stroll,Aston Martin,20,7,Finished,6
+2023,18,United States Grand Prix,tsunoda,AlphaTauri,11,8,Finished,5
+2023,18,United States Grand Prix,albon,Williams,15,9,Finished,2
+2023,18,United States Grand Prix,sargeant,Williams,16,10,Finished,1
+2023,18,United States Grand Prix,hulkenberg,Haas F1 Team,18,11,Finished,0
+2023,18,United States Grand Prix,bottas,Alfa Romeo,13,12,Finished,0
+2023,18,United States Grand Prix,zhou,Alfa Romeo,12,13,Lapped,0
+2023,18,United States Grand Prix,kevin_magnussen,Haas F1 Team,17,14,Lapped,0
+2023,18,United States Grand Prix,ricciardo,AlphaTauri,14,15,Lapped,0
+2023,18,United States Grand Prix,alonso,Aston Martin,19,16,Retired,0
+2023,18,United States Grand Prix,piastri,McLaren,10,17,Retired,0
+2023,18,United States Grand Prix,ocon,Alpine F1 Team,8,18,Retired,0
+2023,18,United States Grand Prix,hamilton,Mercedes,3,19,Disqualified,0
+2023,18,United States Grand Prix,leclerc,Ferrari,1,20,Disqualified,0
+2023,19,Mexico City Grand Prix,max_verstappen,Red Bull,3,1,Finished,25
+2023,19,Mexico City Grand Prix,hamilton,Mercedes,6,2,Finished,19
+2023,19,Mexico City Grand Prix,leclerc,Ferrari,1,3,Finished,15
+2023,19,Mexico City Grand Prix,sainz,Ferrari,2,4,Finished,12
+2023,19,Mexico City Grand Prix,norris,McLaren,17,5,Finished,10
+2023,19,Mexico City Grand Prix,russell,Mercedes,8,6,Finished,8
+2023,19,Mexico City Grand Prix,ricciardo,AlphaTauri,4,7,Finished,6
+2023,19,Mexico City Grand Prix,piastri,McLaren,7,8,Finished,4
+2023,19,Mexico City Grand Prix,albon,Williams,14,9,Finished,2
+2023,19,Mexico City Grand Prix,ocon,Alpine F1 Team,15,10,Finished,1
+2023,19,Mexico City Grand Prix,gasly,Alpine F1 Team,11,11,Finished,0
+2023,19,Mexico City Grand Prix,tsunoda,AlphaTauri,18,12,Finished,0
+2023,19,Mexico City Grand Prix,hulkenberg,Haas F1 Team,12,13,Finished,0
+2023,19,Mexico City Grand Prix,zhou,Alfa Romeo,10,14,Finished,0
+2023,19,Mexico City Grand Prix,bottas,Alfa Romeo,9,15,Finished,0
+2023,19,Mexico City Grand Prix,sargeant,Williams,19,16,Retired,0
+2023,19,Mexico City Grand Prix,stroll,Aston Martin,0,17,Collision damage,0
+2023,19,Mexico City Grand Prix,alonso,Aston Martin,13,18,Withdrew,0
+2023,19,Mexico City Grand Prix,kevin_magnussen,Haas F1 Team,16,19,Accident,0
+2023,19,Mexico City Grand Prix,perez,Red Bull,5,20,Collision damage,0
+2023,20,São Paulo Grand Prix,max_verstappen,Red Bull,1,1,Finished,25
+2023,20,São Paulo Grand Prix,norris,McLaren,6,2,Finished,19
+2023,20,São Paulo Grand Prix,alonso,Aston Martin,4,3,Finished,15
+2023,20,São Paulo Grand Prix,perez,Red Bull,9,4,Finished,12
+2023,20,São Paulo Grand Prix,stroll,Aston Martin,3,5,Finished,10
+2023,20,São Paulo Grand Prix,sainz,Ferrari,7,6,Finished,8
+2023,20,São Paulo Grand Prix,gasly,Alpine F1 Team,15,7,Finished,6
+2023,20,São Paulo Grand Prix,hamilton,Mercedes,5,8,Finished,4
+2023,20,São Paulo Grand Prix,tsunoda,AlphaTauri,16,9,Finished,2
+2023,20,São Paulo Grand Prix,ocon,Alpine F1 Team,14,10,Lapped,1
+2023,20,São Paulo Grand Prix,sargeant,Williams,19,11,Lapped,0
+2023,20,São Paulo Grand Prix,hulkenberg,Haas F1 Team,11,12,Lapped,0
+2023,20,São Paulo Grand Prix,ricciardo,AlphaTauri,17,13,Lapped,0
+2023,20,São Paulo Grand Prix,piastri,McLaren,10,14,Lapped,0
+2023,20,São Paulo Grand Prix,russell,Mercedes,8,15,Retired,0
+2023,20,São Paulo Grand Prix,bottas,Alfa Romeo,18,16,Retired,0
+2023,20,São Paulo Grand Prix,zhou,Alfa Romeo,20,17,Retired,0
+2023,20,São Paulo Grand Prix,kevin_magnussen,Haas F1 Team,12,18,Retired,0
+2023,20,São Paulo Grand Prix,albon,Williams,13,19,Retired,0
+2023,20,São Paulo Grand Prix,leclerc,Ferrari,2,20,Did not start,0
+2023,21,Las Vegas Grand Prix,max_verstappen,Red Bull,2,1,Finished,25
+2023,21,Las Vegas Grand Prix,leclerc,Ferrari,1,2,Finished,18
+2023,21,Las Vegas Grand Prix,perez,Red Bull,11,3,Finished,15
+2023,21,Las Vegas Grand Prix,ocon,Alpine F1 Team,16,4,Finished,12
+2023,21,Las Vegas Grand Prix,stroll,Aston Martin,19,5,Finished,10
+2023,21,Las Vegas Grand Prix,sainz,Ferrari,12,6,Finished,8
+2023,21,Las Vegas Grand Prix,hamilton,Mercedes,10,7,Finished,6
+2023,21,Las Vegas Grand Prix,russell,Mercedes,3,8,Finished,4
+2023,21,Las Vegas Grand Prix,alonso,Aston Martin,9,9,Finished,2
+2023,21,Las Vegas Grand Prix,piastri,McLaren,18,10,Finished,2
+2023,21,Las Vegas Grand Prix,gasly,Alpine F1 Team,4,11,Finished,0
+2023,21,Las Vegas Grand Prix,albon,Williams,5,12,Finished,0
+2023,21,Las Vegas Grand Prix,kevin_magnussen,Haas F1 Team,8,13,Finished,0
+2023,21,Las Vegas Grand Prix,ricciardo,AlphaTauri,14,14,Finished,0
+2023,21,Las Vegas Grand Prix,zhou,Alfa Romeo,17,15,Finished,0
+2023,21,Las Vegas Grand Prix,sargeant,Williams,6,16,Finished,0
+2023,21,Las Vegas Grand Prix,bottas,Alfa Romeo,7,17,Finished,0
+2023,21,Las Vegas Grand Prix,tsunoda,AlphaTauri,20,18,Retired,0
+2023,21,Las Vegas Grand Prix,hulkenberg,Haas F1 Team,13,19,Retired,0
+2023,21,Las Vegas Grand Prix,norris,McLaren,15,20,Retired,0
+2023,22,Abu Dhabi Grand Prix,max_verstappen,Red Bull,1,1,Finished,26
+2023,22,Abu Dhabi Grand Prix,leclerc,Ferrari,2,2,Finished,18
+2023,22,Abu Dhabi Grand Prix,russell,Mercedes,4,3,Finished,15
+2023,22,Abu Dhabi Grand Prix,perez,Red Bull,9,4,Finished,12
+2023,22,Abu Dhabi Grand Prix,norris,McLaren,5,5,Finished,10
+2023,22,Abu Dhabi Grand Prix,piastri,McLaren,3,6,Finished,8
+2023,22,Abu Dhabi Grand Prix,alonso,Aston Martin,7,7,Finished,6
+2023,22,Abu Dhabi Grand Prix,tsunoda,AlphaTauri,6,8,Finished,4
+2023,22,Abu Dhabi Grand Prix,hamilton,Mercedes,11,9,Finished,2
+2023,22,Abu Dhabi Grand Prix,stroll,Aston Martin,13,10,Finished,1
+2023,22,Abu Dhabi Grand Prix,ricciardo,AlphaTauri,15,11,Finished,0
+2023,22,Abu Dhabi Grand Prix,ocon,Alpine F1 Team,12,12,Finished,0
+2023,22,Abu Dhabi Grand Prix,gasly,Alpine F1 Team,10,13,Finished,0
+2023,22,Abu Dhabi Grand Prix,albon,Williams,14,14,Finished,0
+2023,22,Abu Dhabi Grand Prix,hulkenberg,Haas F1 Team,8,15,Finished,0
+2023,22,Abu Dhabi Grand Prix,sargeant,Williams,20,16,Finished,0
+2023,22,Abu Dhabi Grand Prix,zhou,Alfa Romeo,19,17,Finished,0
+2023,22,Abu Dhabi Grand Prix,sainz,Ferrari,16,18,Retired,0
+2023,22,Abu Dhabi Grand Prix,bottas,Alfa Romeo,18,19,Lapped,0
+2023,22,Abu Dhabi Grand Prix,kevin_magnussen,Haas F1 Team,17,20,Lapped,0
+2024,1,Bahrain Grand Prix,max_verstappen,Red Bull,1,1,Finished,26
+2024,1,Bahrain Grand Prix,perez,Red Bull,5,2,Finished,18
+2024,1,Bahrain Grand Prix,sainz,Ferrari,4,3,Finished,15
+2024,1,Bahrain Grand Prix,leclerc,Ferrari,2,4,Finished,12
+2024,1,Bahrain Grand Prix,russell,Mercedes,3,5,Finished,10
+2024,1,Bahrain Grand Prix,norris,McLaren,7,6,Finished,8
+2024,1,Bahrain Grand Prix,hamilton,Mercedes,9,7,Finished,6
+2024,1,Bahrain Grand Prix,piastri,McLaren,8,8,Finished,4
+2024,1,Bahrain Grand Prix,alonso,Aston Martin,6,9,Finished,2
+2024,1,Bahrain Grand Prix,stroll,Aston Martin,12,10,Finished,1
+2024,1,Bahrain Grand Prix,zhou,Sauber,17,11,Lapped,0
+2024,1,Bahrain Grand Prix,kevin_magnussen,Haas F1 Team,15,12,Lapped,0
+2024,1,Bahrain Grand Prix,ricciardo,RB F1 Team,14,13,Lapped,0
+2024,1,Bahrain Grand Prix,tsunoda,RB F1 Team,11,14,Lapped,0
+2024,1,Bahrain Grand Prix,albon,Williams,13,15,Lapped,0
+2024,1,Bahrain Grand Prix,hulkenberg,Haas F1 Team,10,16,Lapped,0
+2024,1,Bahrain Grand Prix,ocon,Alpine F1 Team,19,17,Lapped,0
+2024,1,Bahrain Grand Prix,gasly,Alpine F1 Team,20,18,Lapped,0
+2024,1,Bahrain Grand Prix,bottas,Sauber,16,19,Lapped,0
+2024,1,Bahrain Grand Prix,sargeant,Williams,18,20,Lapped,0
+2024,2,Saudi Arabian Grand Prix,max_verstappen,Red Bull,1,1,Finished,25
+2024,2,Saudi Arabian Grand Prix,perez,Red Bull,3,2,Finished,18
+2024,2,Saudi Arabian Grand Prix,leclerc,Ferrari,2,3,Finished,16
+2024,2,Saudi Arabian Grand Prix,piastri,McLaren,5,4,Finished,12
+2024,2,Saudi Arabian Grand Prix,alonso,Aston Martin,4,5,Finished,10
+2024,2,Saudi Arabian Grand Prix,russell,Mercedes,7,6,Finished,8
+2024,2,Saudi Arabian Grand Prix,bearman,Ferrari,11,7,Finished,6
+2024,2,Saudi Arabian Grand Prix,norris,McLaren,6,8,Finished,4
+2024,2,Saudi Arabian Grand Prix,hamilton,Mercedes,8,9,Finished,2
+2024,2,Saudi Arabian Grand Prix,hulkenberg,Haas F1 Team,15,10,Finished,1
+2024,2,Saudi Arabian Grand Prix,albon,Williams,12,11,Finished,0
+2024,2,Saudi Arabian Grand Prix,kevin_magnussen,Haas F1 Team,13,12,Finished,0
+2024,2,Saudi Arabian Grand Prix,ocon,Alpine F1 Team,17,13,Lapped,0
+2024,2,Saudi Arabian Grand Prix,sargeant,Williams,19,14,Lapped,0
+2024,2,Saudi Arabian Grand Prix,tsunoda,RB F1 Team,9,15,Lapped,0
+2024,2,Saudi Arabian Grand Prix,ricciardo,RB F1 Team,14,16,Lapped,0
+2024,2,Saudi Arabian Grand Prix,bottas,Sauber,16,17,Lapped,0
+2024,2,Saudi Arabian Grand Prix,zhou,Sauber,20,18,Lapped,0
+2024,2,Saudi Arabian Grand Prix,stroll,Aston Martin,10,19,Retired,0
+2024,2,Saudi Arabian Grand Prix,gasly,Alpine F1 Team,18,20,Retired,0
+2024,3,Australian Grand Prix,sainz,Ferrari,2,1,Finished,25
+2024,3,Australian Grand Prix,leclerc,Ferrari,4,2,Finished,19
+2024,3,Australian Grand Prix,norris,McLaren,3,3,Finished,15
+2024,3,Australian Grand Prix,piastri,McLaren,5,4,Finished,12
+2024,3,Australian Grand Prix,perez,Red Bull,6,5,Finished,10
+2024,3,Australian Grand Prix,stroll,Aston Martin,9,6,Finished,8
+2024,3,Australian Grand Prix,tsunoda,RB F1 Team,8,7,Finished,6
+2024,3,Australian Grand Prix,alonso,Aston Martin,10,8,Finished,4
+2024,3,Australian Grand Prix,hulkenberg,Haas F1 Team,16,9,Finished,2
+2024,3,Australian Grand Prix,kevin_magnussen,Haas F1 Team,14,10,Lapped,1
+2024,3,Australian Grand Prix,albon,Williams,12,11,Lapped,0
+2024,3,Australian Grand Prix,ricciardo,RB F1 Team,18,12,Lapped,0
+2024,3,Australian Grand Prix,gasly,Alpine F1 Team,17,13,Lapped,0
+2024,3,Australian Grand Prix,bottas,Sauber,13,14,Lapped,0
+2024,3,Australian Grand Prix,zhou,Sauber,19,15,Lapped,0
+2024,3,Australian Grand Prix,ocon,Alpine F1 Team,15,16,Lapped,0
+2024,3,Australian Grand Prix,russell,Mercedes,7,17,Retired,0
+2024,3,Australian Grand Prix,hamilton,Mercedes,11,18,Retired,0
+2024,3,Australian Grand Prix,max_verstappen,Red Bull,1,19,Retired,0
+2024,4,Japanese Grand Prix,max_verstappen,Red Bull,1,1,Finished,26
+2024,4,Japanese Grand Prix,perez,Red Bull,2,2,Finished,18
+2024,4,Japanese Grand Prix,sainz,Ferrari,4,3,Finished,15
+2024,4,Japanese Grand Prix,leclerc,Ferrari,8,4,Finished,12
+2024,4,Japanese Grand Prix,norris,McLaren,3,5,Finished,10
+2024,4,Japanese Grand Prix,alonso,Aston Martin,5,6,Finished,8
+2024,4,Japanese Grand Prix,russell,Mercedes,9,7,Finished,6
+2024,4,Japanese Grand Prix,piastri,McLaren,6,8,Finished,4
+2024,4,Japanese Grand Prix,hamilton,Mercedes,7,9,Finished,2
+2024,4,Japanese Grand Prix,tsunoda,RB F1 Team,10,10,Lapped,1
+2024,4,Japanese Grand Prix,hulkenberg,Haas F1 Team,12,11,Lapped,0
+2024,4,Japanese Grand Prix,stroll,Aston Martin,16,12,Lapped,0
+2024,4,Japanese Grand Prix,kevin_magnussen,Haas F1 Team,18,13,Lapped,0
+2024,4,Japanese Grand Prix,bottas,Sauber,13,14,Lapped,0
+2024,4,Japanese Grand Prix,ocon,Alpine F1 Team,15,15,Lapped,0
+2024,4,Japanese Grand Prix,gasly,Alpine F1 Team,17,16,Lapped,0
+2024,4,Japanese Grand Prix,sargeant,Williams,19,17,Lapped,0
+2024,4,Japanese Grand Prix,zhou,Sauber,20,18,Retired,0
+2024,4,Japanese Grand Prix,ricciardo,RB F1 Team,11,19,Retired,0
+2024,4,Japanese Grand Prix,albon,Williams,14,20,Retired,0
+2024,5,Chinese Grand Prix,max_verstappen,Red Bull,1,1,Finished,25
+2024,5,Chinese Grand Prix,norris,McLaren,4,2,Finished,18
+2024,5,Chinese Grand Prix,perez,Red Bull,2,3,Finished,15
+2024,5,Chinese Grand Prix,leclerc,Ferrari,6,4,Finished,12
+2024,5,Chinese Grand Prix,sainz,Ferrari,7,5,Finished,10
+2024,5,Chinese Grand Prix,russell,Mercedes,8,6,Finished,8
+2024,5,Chinese Grand Prix,alonso,Aston Martin,3,7,Finished,7
+2024,5,Chinese Grand Prix,piastri,McLaren,5,8,Finished,4
+2024,5,Chinese Grand Prix,hamilton,Mercedes,18,9,Finished,2
+2024,5,Chinese Grand Prix,hulkenberg,Haas F1 Team,9,10,Finished,1
+2024,5,Chinese Grand Prix,ocon,Alpine F1 Team,13,11,Finished,0
+2024,5,Chinese Grand Prix,albon,Williams,14,12,Finished,0
+2024,5,Chinese Grand Prix,gasly,Alpine F1 Team,15,13,Finished,0
+2024,5,Chinese Grand Prix,zhou,Sauber,16,14,Finished,0
+2024,5,Chinese Grand Prix,stroll,Aston Martin,11,15,Finished,0
+2024,5,Chinese Grand Prix,kevin_magnussen,Haas F1 Team,17,16,Finished,0
+2024,5,Chinese Grand Prix,sargeant,Williams,20,17,Finished,0
+2024,5,Chinese Grand Prix,ricciardo,RB F1 Team,12,18,Retired,0
+2024,5,Chinese Grand Prix,tsunoda,RB F1 Team,19,19,Retired,0
+2024,5,Chinese Grand Prix,bottas,Sauber,10,20,Retired,0
+2024,6,Miami Grand Prix,norris,McLaren,5,1,Finished,25
+2024,6,Miami Grand Prix,max_verstappen,Red Bull,1,2,Finished,18
+2024,6,Miami Grand Prix,leclerc,Ferrari,2,3,Finished,15
+2024,6,Miami Grand Prix,perez,Red Bull,4,4,Finished,12
+2024,6,Miami Grand Prix,sainz,Ferrari,3,5,Finished,10
+2024,6,Miami Grand Prix,hamilton,Mercedes,8,6,Finished,8
+2024,6,Miami Grand Prix,tsunoda,RB F1 Team,10,7,Finished,6
+2024,6,Miami Grand Prix,russell,Mercedes,7,8,Finished,4
+2024,6,Miami Grand Prix,alonso,Aston Martin,15,9,Finished,2
+2024,6,Miami Grand Prix,ocon,Alpine F1 Team,13,10,Finished,1
+2024,6,Miami Grand Prix,hulkenberg,Haas F1 Team,9,11,Finished,0
+2024,6,Miami Grand Prix,gasly,Alpine F1 Team,12,12,Finished,0
+2024,6,Miami Grand Prix,piastri,McLaren,6,13,Finished,0
+2024,6,Miami Grand Prix,zhou,Sauber,19,14,Finished,0
+2024,6,Miami Grand Prix,ricciardo,RB F1 Team,20,15,Finished,0
+2024,6,Miami Grand Prix,bottas,Sauber,16,16,Finished,0
+2024,6,Miami Grand Prix,stroll,Aston Martin,11,17,Finished,0
+2024,6,Miami Grand Prix,albon,Williams,14,18,Finished,0
+2024,6,Miami Grand Prix,kevin_magnussen,Haas F1 Team,18,19,Finished,0
+2024,6,Miami Grand Prix,sargeant,Williams,17,20,Retired,0
+2024,7,Emilia Romagna Grand Prix,max_verstappen,Red Bull,1,1,Finished,25
+2024,7,Emilia Romagna Grand Prix,norris,McLaren,2,2,Finished,18
+2024,7,Emilia Romagna Grand Prix,leclerc,Ferrari,3,3,Finished,15
+2024,7,Emilia Romagna Grand Prix,piastri,McLaren,5,4,Finished,12
+2024,7,Emilia Romagna Grand Prix,sainz,Ferrari,4,5,Finished,10
+2024,7,Emilia Romagna Grand Prix,hamilton,Mercedes,8,6,Finished,8
+2024,7,Emilia Romagna Grand Prix,russell,Mercedes,6,7,Finished,7
+2024,7,Emilia Romagna Grand Prix,perez,Red Bull,11,8,Finished,4
+2024,7,Emilia Romagna Grand Prix,stroll,Aston Martin,13,9,Finished,2
+2024,7,Emilia Romagna Grand Prix,tsunoda,RB F1 Team,7,10,Lapped,1
+2024,7,Emilia Romagna Grand Prix,hulkenberg,Haas F1 Team,10,11,Lapped,0
+2024,7,Emilia Romagna Grand Prix,kevin_magnussen,Haas F1 Team,18,12,Lapped,0
+2024,7,Emilia Romagna Grand Prix,ricciardo,RB F1 Team,9,13,Lapped,0
+2024,7,Emilia Romagna Grand Prix,ocon,Alpine F1 Team,12,14,Lapped,0
+2024,7,Emilia Romagna Grand Prix,zhou,Sauber,17,15,Lapped,0
+2024,7,Emilia Romagna Grand Prix,gasly,Alpine F1 Team,15,16,Lapped,0
+2024,7,Emilia Romagna Grand Prix,sargeant,Williams,19,17,Lapped,0
+2024,7,Emilia Romagna Grand Prix,bottas,Sauber,16,18,Lapped,0
+2024,7,Emilia Romagna Grand Prix,alonso,Aston Martin,20,19,Lapped,0
+2024,7,Emilia Romagna Grand Prix,albon,Williams,14,20,Retired,0
+2024,8,Monaco Grand Prix,leclerc,Ferrari,1,1,Finished,25
+2024,8,Monaco Grand Prix,piastri,McLaren,2,2,Finished,18
+2024,8,Monaco Grand Prix,sainz,Ferrari,3,3,Finished,15
+2024,8,Monaco Grand Prix,norris,McLaren,4,4,Finished,12
+2024,8,Monaco Grand Prix,russell,Mercedes,5,5,Finished,10
+2024,8,Monaco Grand Prix,max_verstappen,Red Bull,6,6,Finished,8
+2024,8,Monaco Grand Prix,hamilton,Mercedes,7,7,Finished,7
+2024,8,Monaco Grand Prix,tsunoda,RB F1 Team,8,8,Lapped,4
+2024,8,Monaco Grand Prix,albon,Williams,9,9,Lapped,2
+2024,8,Monaco Grand Prix,gasly,Alpine F1 Team,10,10,Lapped,1
+2024,8,Monaco Grand Prix,alonso,Aston Martin,14,11,Lapped,0
+2024,8,Monaco Grand Prix,ricciardo,RB F1 Team,12,12,Lapped,0
+2024,8,Monaco Grand Prix,bottas,Sauber,17,13,Lapped,0
+2024,8,Monaco Grand Prix,stroll,Aston Martin,13,14,Lapped,0
+2024,8,Monaco Grand Prix,sargeant,Williams,15,15,Lapped,0
+2024,8,Monaco Grand Prix,zhou,Sauber,18,16,Lapped,0
+2024,8,Monaco Grand Prix,ocon,Alpine F1 Team,11,17,Retired,0
+2024,8,Monaco Grand Prix,perez,Red Bull,16,18,Retired,0
+2024,8,Monaco Grand Prix,hulkenberg,Haas F1 Team,19,19,Retired,0
+2024,8,Monaco Grand Prix,kevin_magnussen,Haas F1 Team,20,20,Retired,0
+2024,9,Canadian Grand Prix,max_verstappen,Red Bull,2,1,Finished,25
+2024,9,Canadian Grand Prix,norris,McLaren,3,2,Finished,18
+2024,9,Canadian Grand Prix,russell,Mercedes,1,3,Finished,15
+2024,9,Canadian Grand Prix,hamilton,Mercedes,7,4,Finished,13
+2024,9,Canadian Grand Prix,piastri,McLaren,4,5,Finished,10
+2024,9,Canadian Grand Prix,alonso,Aston Martin,6,6,Finished,8
+2024,9,Canadian Grand Prix,stroll,Aston Martin,9,7,Finished,6
+2024,9,Canadian Grand Prix,ricciardo,RB F1 Team,5,8,Finished,4
+2024,9,Canadian Grand Prix,gasly,Alpine F1 Team,15,9,Finished,2
+2024,9,Canadian Grand Prix,ocon,Alpine F1 Team,18,10,Finished,1
+2024,9,Canadian Grand Prix,hulkenberg,Haas F1 Team,17,11,Finished,0
+2024,9,Canadian Grand Prix,kevin_magnussen,Haas F1 Team,14,12,Finished,0
+2024,9,Canadian Grand Prix,bottas,Sauber,19,13,Finished,0
+2024,9,Canadian Grand Prix,tsunoda,RB F1 Team,8,14,Finished,0
+2024,9,Canadian Grand Prix,zhou,Sauber,20,15,Lapped,0
+2024,9,Canadian Grand Prix,sainz,Ferrari,12,16,Retired,0
+2024,9,Canadian Grand Prix,albon,Williams,10,17,Retired,0
+2024,9,Canadian Grand Prix,perez,Red Bull,16,18,Retired,0
+2024,9,Canadian Grand Prix,leclerc,Ferrari,11,19,Retired,0
+2024,9,Canadian Grand Prix,sargeant,Williams,13,20,Retired,0
+2024,10,Spanish Grand Prix,max_verstappen,Red Bull,2,1,Finished,25
+2024,10,Spanish Grand Prix,norris,McLaren,1,2,Finished,19
+2024,10,Spanish Grand Prix,hamilton,Mercedes,3,3,Finished,15
+2024,10,Spanish Grand Prix,russell,Mercedes,4,4,Finished,12
+2024,10,Spanish Grand Prix,leclerc,Ferrari,5,5,Finished,10
+2024,10,Spanish Grand Prix,sainz,Ferrari,6,6,Finished,8
+2024,10,Spanish Grand Prix,piastri,McLaren,9,7,Finished,6
+2024,10,Spanish Grand Prix,perez,Red Bull,11,8,Finished,4
+2024,10,Spanish Grand Prix,gasly,Alpine F1 Team,7,9,Finished,2
+2024,10,Spanish Grand Prix,ocon,Alpine F1 Team,8,10,Finished,1
+2024,10,Spanish Grand Prix,hulkenberg,Haas F1 Team,13,11,Finished,0
+2024,10,Spanish Grand Prix,alonso,Aston Martin,10,12,Lapped,0
+2024,10,Spanish Grand Prix,zhou,Sauber,15,13,Lapped,0
+2024,10,Spanish Grand Prix,stroll,Aston Martin,14,14,Lapped,0
+2024,10,Spanish Grand Prix,ricciardo,RB F1 Team,18,15,Lapped,0
+2024,10,Spanish Grand Prix,bottas,Sauber,12,16,Lapped,0
+2024,10,Spanish Grand Prix,kevin_magnussen,Haas F1 Team,16,17,Lapped,0
+2024,10,Spanish Grand Prix,albon,Williams,20,18,Lapped,0
+2024,10,Spanish Grand Prix,tsunoda,RB F1 Team,17,19,Lapped,0
+2024,10,Spanish Grand Prix,sargeant,Williams,19,20,Lapped,0
+2024,11,Austrian Grand Prix,russell,Mercedes,3,1,Finished,25
+2024,11,Austrian Grand Prix,piastri,McLaren,7,2,Finished,18
+2024,11,Austrian Grand Prix,sainz,Ferrari,4,3,Finished,15
+2024,11,Austrian Grand Prix,hamilton,Mercedes,5,4,Finished,12
+2024,11,Austrian Grand Prix,max_verstappen,Red Bull,1,5,Finished,10
+2024,11,Austrian Grand Prix,hulkenberg,Haas F1 Team,9,6,Finished,8
+2024,11,Austrian Grand Prix,perez,Red Bull,8,7,Finished,6
+2024,11,Austrian Grand Prix,kevin_magnussen,Haas F1 Team,12,8,Finished,4
+2024,11,Austrian Grand Prix,ricciardo,RB F1 Team,11,9,Finished,2
+2024,11,Austrian Grand Prix,gasly,Alpine F1 Team,13,10,Finished,1
+2024,11,Austrian Grand Prix,leclerc,Ferrari,6,11,Finished,0
+2024,11,Austrian Grand Prix,ocon,Alpine F1 Team,10,12,Finished,0
+2024,11,Austrian Grand Prix,stroll,Aston Martin,17,13,Lapped,0
+2024,11,Austrian Grand Prix,tsunoda,RB F1 Team,14,14,Lapped,0
+2024,11,Austrian Grand Prix,albon,Williams,16,15,Lapped,0
+2024,11,Austrian Grand Prix,bottas,Sauber,18,16,Lapped,0
+2024,11,Austrian Grand Prix,zhou,Sauber,20,17,Lapped,0
+2024,11,Austrian Grand Prix,alonso,Aston Martin,15,18,Lapped,0
+2024,11,Austrian Grand Prix,sargeant,Williams,19,19,Lapped,0
+2024,11,Austrian Grand Prix,norris,McLaren,2,20,Lapped,0
+2024,12,British Grand Prix,hamilton,Mercedes,2,1,Finished,25
+2024,12,British Grand Prix,max_verstappen,Red Bull,4,2,Finished,18
+2024,12,British Grand Prix,norris,McLaren,3,3,Finished,15
+2024,12,British Grand Prix,piastri,McLaren,5,4,Finished,12
+2024,12,British Grand Prix,sainz,Ferrari,7,5,Finished,11
+2024,12,British Grand Prix,hulkenberg,Haas F1 Team,6,6,Finished,8
+2024,12,British Grand Prix,stroll,Aston Martin,8,7,Finished,6
+2024,12,British Grand Prix,alonso,Aston Martin,10,8,Finished,4
+2024,12,British Grand Prix,albon,Williams,9,9,Finished,2
+2024,12,British Grand Prix,tsunoda,RB F1 Team,13,10,Finished,1
+2024,12,British Grand Prix,sargeant,Williams,12,11,Finished,0
+2024,12,British Grand Prix,kevin_magnussen,Haas F1 Team,17,12,Finished,0
+2024,12,British Grand Prix,ricciardo,RB F1 Team,15,13,Lapped,0
+2024,12,British Grand Prix,leclerc,Ferrari,11,14,Lapped,0
+2024,12,British Grand Prix,bottas,Sauber,16,15,Lapped,0
+2024,12,British Grand Prix,ocon,Alpine F1 Team,18,16,Lapped,0
+2024,12,British Grand Prix,perez,Red Bull,20,17,Lapped,0
+2024,12,British Grand Prix,zhou,Sauber,14,18,Lapped,0
+2024,12,British Grand Prix,russell,Mercedes,1,19,Retired,0
+2024,12,British Grand Prix,gasly,Alpine F1 Team,19,20,Did not start,0
+2024,13,Hungarian Grand Prix,piastri,McLaren,2,1,Finished,25
+2024,13,Hungarian Grand Prix,norris,McLaren,1,2,Finished,18
+2024,13,Hungarian Grand Prix,hamilton,Mercedes,5,3,Finished,15
+2024,13,Hungarian Grand Prix,leclerc,Ferrari,6,4,Finished,12
+2024,13,Hungarian Grand Prix,max_verstappen,Red Bull,3,5,Finished,10
+2024,13,Hungarian Grand Prix,sainz,Ferrari,4,6,Finished,8
+2024,13,Hungarian Grand Prix,perez,Red Bull,16,7,Finished,6
+2024,13,Hungarian Grand Prix,russell,Mercedes,17,8,Finished,5
+2024,13,Hungarian Grand Prix,tsunoda,RB F1 Team,10,9,Finished,2
+2024,13,Hungarian Grand Prix,stroll,Aston Martin,8,10,Finished,1
+2024,13,Hungarian Grand Prix,alonso,Aston Martin,7,11,Finished,0
+2024,13,Hungarian Grand Prix,ricciardo,RB F1 Team,9,12,Lapped,0
+2024,13,Hungarian Grand Prix,hulkenberg,Haas F1 Team,11,13,Lapped,0
+2024,13,Hungarian Grand Prix,albon,Williams,13,14,Lapped,0
+2024,13,Hungarian Grand Prix,kevin_magnussen,Haas F1 Team,15,15,Lapped,0
+2024,13,Hungarian Grand Prix,bottas,Sauber,12,16,Lapped,0
+2024,13,Hungarian Grand Prix,sargeant,Williams,14,17,Lapped,0
+2024,13,Hungarian Grand Prix,ocon,Alpine F1 Team,19,18,Lapped,0
+2024,13,Hungarian Grand Prix,zhou,Sauber,18,19,Lapped,0
+2024,13,Hungarian Grand Prix,gasly,Alpine F1 Team,20,20,Retired,0
+2024,14,Belgian Grand Prix,hamilton,Mercedes,3,1,Finished,25
+2024,14,Belgian Grand Prix,piastri,McLaren,5,2,Finished,18
+2024,14,Belgian Grand Prix,leclerc,Ferrari,1,3,Finished,15
+2024,14,Belgian Grand Prix,max_verstappen,Red Bull,11,4,Finished,12
+2024,14,Belgian Grand Prix,norris,McLaren,4,5,Finished,10
+2024,14,Belgian Grand Prix,sainz,Ferrari,7,6,Finished,8
+2024,14,Belgian Grand Prix,perez,Red Bull,2,7,Finished,7
+2024,14,Belgian Grand Prix,alonso,Aston Martin,8,8,Finished,4
+2024,14,Belgian Grand Prix,ocon,Alpine F1 Team,9,9,Finished,2
+2024,14,Belgian Grand Prix,ricciardo,RB F1 Team,13,10,Finished,1
+2024,14,Belgian Grand Prix,stroll,Aston Martin,15,11,Finished,0
+2024,14,Belgian Grand Prix,albon,Williams,10,12,Finished,0
+2024,14,Belgian Grand Prix,gasly,Alpine F1 Team,12,13,Finished,0
+2024,14,Belgian Grand Prix,kevin_magnussen,Haas F1 Team,17,14,Finished,0
+2024,14,Belgian Grand Prix,bottas,Sauber,14,15,Finished,0
+2024,14,Belgian Grand Prix,tsunoda,RB F1 Team,20,16,Finished,0
+2024,14,Belgian Grand Prix,sargeant,Williams,18,17,Finished,0
+2024,14,Belgian Grand Prix,hulkenberg,Haas F1 Team,16,18,Finished,0
+2024,14,Belgian Grand Prix,zhou,Sauber,19,19,Retired,0
+2024,14,Belgian Grand Prix,russell,Mercedes,6,20,Disqualified,0
+2024,15,Dutch Grand Prix,norris,McLaren,1,1,Finished,26
+2024,15,Dutch Grand Prix,max_verstappen,Red Bull,2,2,Finished,18
+2024,15,Dutch Grand Prix,leclerc,Ferrari,6,3,Finished,15
+2024,15,Dutch Grand Prix,piastri,McLaren,3,4,Finished,12
+2024,15,Dutch Grand Prix,sainz,Ferrari,10,5,Finished,10
+2024,15,Dutch Grand Prix,perez,Red Bull,5,6,Finished,8
+2024,15,Dutch Grand Prix,russell,Mercedes,4,7,Finished,6
+2024,15,Dutch Grand Prix,hamilton,Mercedes,14,8,Finished,4
+2024,15,Dutch Grand Prix,gasly,Alpine F1 Team,9,9,Lapped,2
+2024,15,Dutch Grand Prix,alonso,Aston Martin,7,10,Lapped,1
+2024,15,Dutch Grand Prix,hulkenberg,Haas F1 Team,12,11,Lapped,0
+2024,15,Dutch Grand Prix,ricciardo,RB F1 Team,13,12,Lapped,0
+2024,15,Dutch Grand Prix,stroll,Aston Martin,8,13,Lapped,0
+2024,15,Dutch Grand Prix,albon,Williams,19,14,Lapped,0
+2024,15,Dutch Grand Prix,ocon,Alpine F1 Team,15,15,Lapped,0
+2024,15,Dutch Grand Prix,sargeant,Williams,18,16,Lapped,0
+2024,15,Dutch Grand Prix,tsunoda,RB F1 Team,11,17,Lapped,0
+2024,15,Dutch Grand Prix,kevin_magnussen,Haas F1 Team,20,18,Lapped,0
+2024,15,Dutch Grand Prix,bottas,Sauber,16,19,Lapped,0
+2024,15,Dutch Grand Prix,zhou,Sauber,17,20,Lapped,0
+2024,16,Italian Grand Prix,leclerc,Ferrari,4,1,Finished,25
+2024,16,Italian Grand Prix,piastri,McLaren,2,2,Finished,18
+2024,16,Italian Grand Prix,norris,McLaren,1,3,Finished,16
+2024,16,Italian Grand Prix,sainz,Ferrari,5,4,Finished,12
+2024,16,Italian Grand Prix,hamilton,Mercedes,6,5,Finished,10
+2024,16,Italian Grand Prix,max_verstappen,Red Bull,7,6,Finished,8
+2024,16,Italian Grand Prix,russell,Mercedes,3,7,Finished,6
+2024,16,Italian Grand Prix,perez,Red Bull,8,8,Finished,4
+2024,16,Italian Grand Prix,albon,Williams,9,9,Finished,2
+2024,16,Italian Grand Prix,kevin_magnussen,Haas F1 Team,13,10,Finished,1
+2024,16,Italian Grand Prix,alonso,Aston Martin,11,11,Finished,0
+2024,16,Italian Grand Prix,colapinto,Williams,18,12,Finished,0
+2024,16,Italian Grand Prix,ricciardo,RB F1 Team,12,13,Finished,0
+2024,16,Italian Grand Prix,ocon,Alpine F1 Team,15,14,Lapped,0
+2024,16,Italian Grand Prix,gasly,Alpine F1 Team,14,15,Lapped,0
+2024,16,Italian Grand Prix,bottas,Sauber,19,16,Lapped,0
+2024,16,Italian Grand Prix,hulkenberg,Haas F1 Team,10,17,Lapped,0
+2024,16,Italian Grand Prix,zhou,Sauber,20,18,Lapped,0
+2024,16,Italian Grand Prix,stroll,Aston Martin,17,19,Lapped,0
+2024,16,Italian Grand Prix,tsunoda,RB F1 Team,16,20,Retired,0
+2024,17,Azerbaijan Grand Prix,piastri,McLaren,2,1,Finished,25
+2024,17,Azerbaijan Grand Prix,leclerc,Ferrari,1,2,Finished,18
+2024,17,Azerbaijan Grand Prix,russell,Mercedes,5,3,Finished,15
+2024,17,Azerbaijan Grand Prix,norris,McLaren,15,4,Finished,13
+2024,17,Azerbaijan Grand Prix,max_verstappen,Red Bull,6,5,Finished,10
+2024,17,Azerbaijan Grand Prix,alonso,Aston Martin,7,6,Finished,8
+2024,17,Azerbaijan Grand Prix,albon,Williams,9,7,Finished,6
+2024,17,Azerbaijan Grand Prix,colapinto,Williams,8,8,Finished,4
+2024,17,Azerbaijan Grand Prix,hamilton,Mercedes,19,9,Finished,2
+2024,17,Azerbaijan Grand Prix,bearman,Haas F1 Team,10,10,Finished,1
+2024,17,Azerbaijan Grand Prix,hulkenberg,Haas F1 Team,12,11,Finished,0
+2024,17,Azerbaijan Grand Prix,gasly,Alpine F1 Team,18,12,Finished,0
+2024,17,Azerbaijan Grand Prix,ricciardo,RB F1 Team,14,13,Finished,0
+2024,17,Azerbaijan Grand Prix,zhou,Sauber,17,14,Finished,0
+2024,17,Azerbaijan Grand Prix,ocon,Alpine F1 Team,20,15,Lapped,0
+2024,17,Azerbaijan Grand Prix,bottas,Sauber,16,16,Lapped,0
+2024,17,Azerbaijan Grand Prix,perez,Red Bull,4,17,Retired,0
+2024,17,Azerbaijan Grand Prix,sainz,Ferrari,3,18,Retired,0
+2024,17,Azerbaijan Grand Prix,stroll,Aston Martin,13,19,Retired,0
+2024,17,Azerbaijan Grand Prix,tsunoda,RB F1 Team,11,20,Retired,0
+2024,18,Singapore Grand Prix,norris,McLaren,1,1,Finished,25
+2024,18,Singapore Grand Prix,max_verstappen,Red Bull,2,2,Finished,18
+2024,18,Singapore Grand Prix,piastri,McLaren,5,3,Finished,15
+2024,18,Singapore Grand Prix,russell,Mercedes,4,4,Finished,12
+2024,18,Singapore Grand Prix,leclerc,Ferrari,9,5,Finished,10
+2024,18,Singapore Grand Prix,hamilton,Mercedes,3,6,Finished,8
+2024,18,Singapore Grand Prix,sainz,Ferrari,10,7,Finished,6
+2024,18,Singapore Grand Prix,alonso,Aston Martin,7,8,Lapped,4
+2024,18,Singapore Grand Prix,hulkenberg,Haas F1 Team,6,9,Lapped,2
+2024,18,Singapore Grand Prix,perez,Red Bull,13,10,Lapped,1
+2024,18,Singapore Grand Prix,colapinto,Williams,12,11,Lapped,0
+2024,18,Singapore Grand Prix,tsunoda,RB F1 Team,8,12,Lapped,0
+2024,18,Singapore Grand Prix,ocon,Alpine F1 Team,15,13,Lapped,0
+2024,18,Singapore Grand Prix,stroll,Aston Martin,17,14,Lapped,0
+2024,18,Singapore Grand Prix,zhou,Sauber,20,15,Lapped,0
+2024,18,Singapore Grand Prix,bottas,Sauber,19,16,Lapped,0
+2024,18,Singapore Grand Prix,gasly,Alpine F1 Team,18,17,Lapped,0
+2024,18,Singapore Grand Prix,ricciardo,RB F1 Team,16,18,Lapped,0
+2024,18,Singapore Grand Prix,kevin_magnussen,Haas F1 Team,14,19,Retired,0
+2024,18,Singapore Grand Prix,albon,Williams,11,20,Retired,0
+2024,19,United States Grand Prix,leclerc,Ferrari,4,1,Finished,25
+2024,19,United States Grand Prix,sainz,Ferrari,3,2,Finished,18
+2024,19,United States Grand Prix,max_verstappen,Red Bull,2,3,Finished,15
+2024,19,United States Grand Prix,norris,McLaren,1,4,Finished,12
+2024,19,United States Grand Prix,piastri,McLaren,5,5,Finished,10
+2024,19,United States Grand Prix,russell,Mercedes,20,6,Finished,8
+2024,19,United States Grand Prix,perez,Red Bull,9,7,Finished,6
+2024,19,United States Grand Prix,hulkenberg,Haas F1 Team,11,8,Finished,4
+2024,19,United States Grand Prix,lawson,RB F1 Team,19,9,Finished,2
+2024,19,United States Grand Prix,colapinto,Williams,15,10,Finished,1
+2024,19,United States Grand Prix,kevin_magnussen,Haas F1 Team,8,11,Finished,0
+2024,19,United States Grand Prix,gasly,Alpine F1 Team,6,12,Finished,0
+2024,19,United States Grand Prix,alonso,Aston Martin,7,13,Lapped,0
+2024,19,United States Grand Prix,tsunoda,RB F1 Team,10,14,Lapped,0
+2024,19,United States Grand Prix,stroll,Aston Martin,13,15,Lapped,0
+2024,19,United States Grand Prix,albon,Williams,14,16,Lapped,0
+2024,19,United States Grand Prix,bottas,Sauber,16,17,Lapped,0
+2024,19,United States Grand Prix,ocon,Alpine F1 Team,12,18,Lapped,0
+2024,19,United States Grand Prix,zhou,Sauber,18,19,Lapped,0
+2024,19,United States Grand Prix,hamilton,Mercedes,17,20,Retired,0
+2024,20,Mexico City Grand Prix,sainz,Ferrari,1,1,Finished,25
+2024,20,Mexico City Grand Prix,norris,McLaren,3,2,Finished,18
+2024,20,Mexico City Grand Prix,leclerc,Ferrari,4,3,Finished,16
+2024,20,Mexico City Grand Prix,hamilton,Mercedes,6,4,Finished,12
+2024,20,Mexico City Grand Prix,russell,Mercedes,5,5,Finished,10
+2024,20,Mexico City Grand Prix,max_verstappen,Red Bull,2,6,Finished,8
+2024,20,Mexico City Grand Prix,kevin_magnussen,Haas F1 Team,7,7,Finished,6
+2024,20,Mexico City Grand Prix,piastri,McLaren,17,8,Finished,4
+2024,20,Mexico City Grand Prix,hulkenberg,Haas F1 Team,10,9,Lapped,2
+2024,20,Mexico City Grand Prix,gasly,Alpine F1 Team,8,10,Lapped,1
+2024,20,Mexico City Grand Prix,stroll,Aston Martin,14,11,Lapped,0
+2024,20,Mexico City Grand Prix,colapinto,Williams,16,12,Lapped,0
+2024,20,Mexico City Grand Prix,ocon,Alpine F1 Team,0,13,Lapped,0
+2024,20,Mexico City Grand Prix,bottas,Sauber,15,14,Lapped,0
+2024,20,Mexico City Grand Prix,zhou,Sauber,19,15,Lapped,0
+2024,20,Mexico City Grand Prix,lawson,RB F1 Team,12,16,Lapped,0
+2024,20,Mexico City Grand Prix,perez,Red Bull,18,17,Lapped,0
+2024,20,Mexico City Grand Prix,alonso,Aston Martin,13,18,Retired,0
+2024,20,Mexico City Grand Prix,albon,Williams,9,19,Retired,0
+2024,20,Mexico City Grand Prix,tsunoda,RB F1 Team,11,20,Retired,0
+2024,21,São Paulo Grand Prix,max_verstappen,Red Bull,17,1,Finished,26
+2024,21,São Paulo Grand Prix,ocon,Alpine F1 Team,4,2,Finished,18
+2024,21,São Paulo Grand Prix,gasly,Alpine F1 Team,13,3,Finished,15
+2024,21,São Paulo Grand Prix,russell,Mercedes,2,4,Finished,12
+2024,21,São Paulo Grand Prix,leclerc,Ferrari,6,5,Finished,10
+2024,21,São Paulo Grand Prix,norris,McLaren,1,6,Finished,8
+2024,21,São Paulo Grand Prix,tsunoda,RB F1 Team,3,7,Finished,6
+2024,21,São Paulo Grand Prix,piastri,McLaren,8,8,Finished,4
+2024,21,São Paulo Grand Prix,lawson,RB F1 Team,5,9,Finished,2
+2024,21,São Paulo Grand Prix,hamilton,Mercedes,14,10,Finished,1
+2024,21,São Paulo Grand Prix,perez,Red Bull,12,11,Finished,0
+2024,21,São Paulo Grand Prix,bearman,Haas F1 Team,15,12,Finished,0
+2024,21,São Paulo Grand Prix,bottas,Sauber,11,13,Finished,0
+2024,21,São Paulo Grand Prix,alonso,Aston Martin,9,14,Finished,0
+2024,21,São Paulo Grand Prix,zhou,Sauber,19,15,Finished,0
+2024,21,São Paulo Grand Prix,sainz,Ferrari,20,16,Retired,0
+2024,21,São Paulo Grand Prix,colapinto,Williams,16,17,Retired,0
+2024,21,São Paulo Grand Prix,albon,Williams,7,18,Did not start,0
+2024,21,São Paulo Grand Prix,stroll,Aston Martin,10,19,Did not start,0
+2024,21,São Paulo Grand Prix,hulkenberg,Haas F1 Team,18,20,Disqualified,0
+2024,22,Las Vegas Grand Prix,russell,Mercedes,1,1,Finished,25
+2024,22,Las Vegas Grand Prix,hamilton,Mercedes,10,2,Finished,18
+2024,22,Las Vegas Grand Prix,sainz,Ferrari,2,3,Finished,15
+2024,22,Las Vegas Grand Prix,leclerc,Ferrari,4,4,Finished,12
+2024,22,Las Vegas Grand Prix,max_verstappen,Red Bull,5,5,Finished,10
+2024,22,Las Vegas Grand Prix,norris,McLaren,6,6,Finished,9
+2024,22,Las Vegas Grand Prix,piastri,McLaren,8,7,Finished,6
+2024,22,Las Vegas Grand Prix,hulkenberg,Haas F1 Team,9,8,Finished,4
+2024,22,Las Vegas Grand Prix,tsunoda,RB F1 Team,7,9,Finished,2
+2024,22,Las Vegas Grand Prix,perez,Red Bull,15,10,Finished,1
+2024,22,Las Vegas Grand Prix,alonso,Aston Martin,16,11,Finished,0
+2024,22,Las Vegas Grand Prix,kevin_magnussen,Haas F1 Team,12,12,Finished,0
+2024,22,Las Vegas Grand Prix,zhou,Sauber,13,13,Finished,0
+2024,22,Las Vegas Grand Prix,colapinto,Williams,20,14,Finished,0
+2024,22,Las Vegas Grand Prix,stroll,Aston Martin,18,15,Finished,0
+2024,22,Las Vegas Grand Prix,lawson,RB F1 Team,14,16,Finished,0
+2024,22,Las Vegas Grand Prix,ocon,Alpine F1 Team,11,17,Lapped,0
+2024,22,Las Vegas Grand Prix,bottas,Sauber,19,18,Lapped,0
+2024,22,Las Vegas Grand Prix,albon,Williams,17,19,Retired,0
+2024,22,Las Vegas Grand Prix,gasly,Alpine F1 Team,3,20,Retired,0
+2024,23,Qatar Grand Prix,max_verstappen,Red Bull,2,1,Finished,25
+2024,23,Qatar Grand Prix,leclerc,Ferrari,5,2,Finished,18
+2024,23,Qatar Grand Prix,piastri,McLaren,4,3,Finished,15
+2024,23,Qatar Grand Prix,russell,Mercedes,1,4,Finished,12
+2024,23,Qatar Grand Prix,gasly,Alpine F1 Team,11,5,Finished,10
+2024,23,Qatar Grand Prix,sainz,Ferrari,7,6,Finished,8
+2024,23,Qatar Grand Prix,alonso,Aston Martin,8,7,Finished,6
+2024,23,Qatar Grand Prix,zhou,Sauber,12,8,Finished,4
+2024,23,Qatar Grand Prix,kevin_magnussen,Haas F1 Team,10,9,Finished,2
+2024,23,Qatar Grand Prix,norris,McLaren,3,10,Finished,2
+2024,23,Qatar Grand Prix,bottas,Sauber,13,11,Finished,0
+2024,23,Qatar Grand Prix,hamilton,Mercedes,6,12,Finished,0
+2024,23,Qatar Grand Prix,tsunoda,RB F1 Team,14,13,Finished,0
+2024,23,Qatar Grand Prix,lawson,RB F1 Team,17,14,Finished,0
+2024,23,Qatar Grand Prix,albon,Williams,16,15,Lapped,0
+2024,23,Qatar Grand Prix,hulkenberg,Haas F1 Team,18,16,Retired,0
+2024,23,Qatar Grand Prix,perez,Red Bull,9,17,Retired,0
+2024,23,Qatar Grand Prix,stroll,Aston Martin,15,18,Retired,0
+2024,23,Qatar Grand Prix,colapinto,Williams,19,19,Retired,0
+2024,23,Qatar Grand Prix,ocon,Alpine F1 Team,20,20,Retired,0
+2024,24,Abu Dhabi Grand Prix,norris,McLaren,1,1,Finished,25
+2024,24,Abu Dhabi Grand Prix,sainz,Ferrari,3,2,Finished,18
+2024,24,Abu Dhabi Grand Prix,leclerc,Ferrari,19,3,Finished,15
+2024,24,Abu Dhabi Grand Prix,hamilton,Mercedes,16,4,Finished,12
+2024,24,Abu Dhabi Grand Prix,russell,Mercedes,6,5,Finished,10
+2024,24,Abu Dhabi Grand Prix,max_verstappen,Red Bull,4,6,Finished,8
+2024,24,Abu Dhabi Grand Prix,gasly,Alpine F1 Team,5,7,Finished,6
+2024,24,Abu Dhabi Grand Prix,hulkenberg,Haas F1 Team,7,8,Finished,4
+2024,24,Abu Dhabi Grand Prix,alonso,Aston Martin,8,9,Finished,2
+2024,24,Abu Dhabi Grand Prix,piastri,McLaren,2,10,Finished,1
+2024,24,Abu Dhabi Grand Prix,albon,Williams,18,11,Lapped,0
+2024,24,Abu Dhabi Grand Prix,tsunoda,RB F1 Team,11,12,Lapped,0
+2024,24,Abu Dhabi Grand Prix,zhou,Sauber,15,13,Lapped,0
+2024,24,Abu Dhabi Grand Prix,stroll,Aston Martin,13,14,Lapped,0
+2024,24,Abu Dhabi Grand Prix,doohan,Alpine F1 Team,17,15,Lapped,0
+2024,24,Abu Dhabi Grand Prix,kevin_magnussen,Haas F1 Team,14,16,Lapped,0
+2024,24,Abu Dhabi Grand Prix,lawson,RB F1 Team,12,17,Retired,0
+2024,24,Abu Dhabi Grand Prix,bottas,Sauber,9,18,Retired,0
+2024,24,Abu Dhabi Grand Prix,colapinto,Williams,20,19,Retired,0
+2024,24,Abu Dhabi Grand Prix,perez,Red Bull,10,20,Retired,0
