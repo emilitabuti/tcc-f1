@@ -1,11 +1,11 @@
 """
-Extração Ergast/Jolpica — pit stops 2018–2024.
+Extração Ergast/Jolpica — pit stops 2018–2025.
 
 Saída:
-  data/raw/ergast_pitstop_2018_2024.csv  — pit stops por volta/piloto
+  data/raw/ergast_pitstop_2018_2025.csv  — pit stops por volta/piloto
     colunas: season, round, race_name, driver_id, stop, lap, duration
 
-  data/raw/ergast_pitstop_2018_2024_parcial.csv — checkpoint incremental
+  data/raw/ergast_pitstop_2018_2025_parcial.csv — checkpoint incremental
     (sobrescrito a cada página; útil para retomar em caso de interrupção)
 
 Fonte: https://api.jolpi.ca/ergast/f1/{ano}/{round}/pitstops.json
@@ -24,13 +24,13 @@ from tqdm import tqdm
 # ---------------------------------------------------------------------------
 BASE_DIR  = os.path.dirname(os.path.abspath(__file__))
 DATA_RAW  = os.path.join(BASE_DIR, "../data/raw")
-OUT_FILE  = os.path.join(DATA_RAW, "ergast_pitstop_2018_2024.csv")
-OUT_PARC  = os.path.join(DATA_RAW, "ergast_pitstop_2018_2024_parcial.csv")
+OUT_FILE  = os.path.join(DATA_RAW, "ergast_pitstop_2018_2025.csv")
+OUT_PARC  = os.path.join(DATA_RAW, "ergast_pitstop_2018_2025_parcial.csv")
 
 os.makedirs(DATA_RAW, exist_ok=True)
 
 BASE_URL   = "https://api.jolpi.ca/ergast/f1"
-ANOS       = range(2018, 2025)
+ANOS       = range(2018, 2026)
 MAX_ROUNDS = 24  # número máximo de rounds por temporada
 
 # ---------------------------------------------------------------------------

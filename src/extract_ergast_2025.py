@@ -3,8 +3,8 @@ Extração Ergast/Jolpica — resultados de corrida 2025.
 
 Saída:
   data/raw/ergast_2025_results.csv
-    colunas: season, round, race_name, driver_id, constructor,
-             grid_position, finish_position, status, points
+    colunas: season, round, race_name, driver_id, constructor_id,
+             grid_position, finish_position, status, points, laps
 
 Fonte: https://api.jolpi.ca/ergast/f1/2025/results.json
 Rodar periodicamente para manter o CSV atualizado ao longo da temporada.
@@ -75,11 +75,12 @@ while True:
                 "round":           race["round"],
                 "race_name":       race["raceName"],
                 "driver_id":       result["Driver"]["driverId"],
-                "constructor":     result["Constructor"]["name"],
+                "constructor_id":  result["Constructor"]["constructorId"],
                 "grid_position":   result["grid"],
                 "finish_position": result["position"],
                 "status":          result["status"],
                 "points":          result["points"],
+                "laps":            result.get("laps", ""),
             })
 
     offset += limit

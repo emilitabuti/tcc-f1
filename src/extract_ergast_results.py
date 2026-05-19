@@ -3,8 +3,8 @@ Extração Ergast/Jolpica — resultados de corrida 2018–2025.
 
 Saída:
   data/raw/ergast_2018_2024.csv  — temporadas 2018–2024
-    colunas: season, round, race_name, driver_id, constructor,
-             grid_position, finish_position, status, points
+    colunas: season, round, race_name, driver_id, constructor_id,
+             grid_position, finish_position, status, points, laps
 
 Fonte: https://api.jolpi.ca/ergast/f1  (mirror não-oficial do Ergast)
 Rate limit: ~4 req/s. sleep(0.3) mantém ~3 req/s.
@@ -72,11 +72,12 @@ for ano in tqdm(ANOS, desc="Temporadas"):
                     "round":           race["round"],
                     "race_name":       race["raceName"],
                     "driver_id":       result["Driver"]["driverId"],
-                    "constructor":     result["Constructor"]["name"],
+                    "constructor_id":  result["Constructor"]["constructorId"],
                     "grid_position":   result["grid"],
                     "finish_position": result["position"],
                     "status":          result["status"],
                     "points":          result["points"],
+                    "laps":            result.get("laps", ""),
                 })
 
         offset += limit
