@@ -23,6 +23,8 @@ FASTF1_LAPS_FILE = RAW_DIR / "fastf1_laps_2018_2025.csv"
 # Arquivos de saída
 OUTPUT_FILE_ATE_2024 = PROCESSED_DIR / "historico_ergast_fastf1_limpo_2018_2024.csv"
 OUTPUT_FILE_ATE_2025 = PROCESSED_DIR / "historico_ergast_fastf1_limpo_2018_2025.csv"
+OUTPUT_BASE_LIMPA_ATE_2024 = PROCESSED_DIR / "base_historica_limpa_2018_2024.csv"
+OUTPUT_BASE_LIMPA_ATE_2025 = PROCESSED_DIR / "base_historica_limpa_2018_2025.csv"
 
 REPORT_FILE = PROCESSED_DIR / "relatorio_01_limpeza_ergast_fastf1_2018_2025.txt"
 
@@ -125,6 +127,11 @@ def validate_columns(df, required_columns, dataframe_name):
         )
 
 
+def repo_relative(path):
+    # Registra caminhos portáveis no relatório, independentemente da máquina.
+    return path.relative_to(BASE_DIR).as_posix()
+
+
 # 1. Carregar os arquivos
 ergast_2018_2024 = pd.read_csv(ERGAST_FILE_2018_2024)
 ergast_2025 = pd.read_csv(ERGAST_FILE_2025)
@@ -148,9 +155,13 @@ fastf1_laps.columns = fastf1_laps.columns.str.strip()
 required_ergast_columns = [
     "season",
     "round",
+    "race_name",
     "driver_id",
+    "constructor_id",
     "grid_position",
     "finish_position",
+    "status",
+    "laps",
 ]
 
 required_fastf1_columns = [
@@ -223,17 +234,29 @@ print(f"Ergast após filtro: {ergast.shape}")
 print(f"FastF1 após filtro: {fastf1_laps.shape}")
 
 
-# 7. Remover registros com grid_position ou finish_position nulos
+# 7. Remover registros com chaves essenciais ou target nulos
+required_non_null_columns = [
+    "season",
+    "round",
+    "driver_id",
+    "constructor_id",
+    "grid_position",
+    "finish_position",
+]
+
+nulos_por_coluna_essencial = ergast[required_non_null_columns].isna().sum()
+nulos_chaves_target = ergast[required_non_null_columns].isna().any(axis=1).sum()
 nulos_grid_finish = ergast[
     ergast["grid_position"].isna() | ergast["finish_position"].isna()
 ].shape[0]
 
 ergast = ergast.dropna(
-    subset=["grid_position", "finish_position"]
+    subset=required_non_null_columns
 ).copy()
 
 print("\nRemoção de nulos:")
-print(f"Registros removidos por grid_position/finish_position nulos: {nulos_grid_finish}")
+print(f"Registros removidos por chaves essenciais/target nulos: {nulos_chaves_target}")
+print(f"Registros com grid_position/finish_position nulos: {nulos_grid_finish}")
 
 
 # 8. Criar chave primária RaceID no Ergast
@@ -259,6 +282,19 @@ ergast = ergast.drop_duplicates(
 
 print("\nRemoção de duplicatas:")
 print(f"Duplicatas removidas por RaceID: {duplicatas_raceid}")
+
+
+# 9.1 Criar flag para grid_position = 0
+# Em Jolpica/Ergast, grid 0 pode indicar pit lane, punição, DNS ou ausência
+# de posição formal. Mantemos o registro, mas marcamos para análise posterior.
+ergast["grid_position_zero_flag"] = (
+    ergast["grid_position"].eq(0)
+).astype(int)
+
+grid_zero_count = int(ergast["grid_position_zero_flag"].sum())
+
+print("\nFlag de grid_position = 0 criada.")
+print(f"Registros com grid_position = 0: {grid_zero_count}")
 
 
 
@@ -350,7 +386,15 @@ print(f"Registros Ergast sem correspondência FastF1: {sem_fastf1}")
 
 
 
-# 14. Criar versões finais: até 2024 e até 2025
+# 14. Criar versões finais: base limpa e base enriquecida com FastF1
+base_limpa_ate_2024 = ergast[
+    ergast["season"] <= 2024
+].copy()
+
+base_limpa_ate_2025 = ergast[
+    ergast["season"] <= 2025
+].copy()
+
 historico_limpo_ate_2024 = historico_limpo[
     historico_limpo["season"] <= 2024
 ].copy()
@@ -361,15 +405,33 @@ historico_limpo_ate_2025 = historico_limpo[
 
 print("\nConferência das temporadas nos arquivos finais:")
 
-print("\nArquivo até 2024:")
+print("\nBase limpa até 2024:")
+print(base_limpa_ate_2024["season"].value_counts().sort_index())
+
+print("\nBase limpa até 2025:")
+print(base_limpa_ate_2025["season"].value_counts().sort_index())
+
+print("\nArquivo enriquecido com FastF1 até 2024:")
 print(historico_limpo_ate_2024["season"].value_counts().sort_index())
 
-print("\nArquivo até 2025:")
+print("\nArquivo enriquecido com FastF1 até 2025:")
 print(historico_limpo_ate_2025["season"].value_counts().sort_index())
 
 
 
 # 15. Salvar arquivos finais
+base_limpa_ate_2024.to_csv(
+    OUTPUT_BASE_LIMPA_ATE_2024,
+    index=False,
+    encoding="utf-8-sig"
+)
+
+base_limpa_ate_2025.to_csv(
+    OUTPUT_BASE_LIMPA_ATE_2025,
+    index=False,
+    encoding="utf-8-sig"
+)
+
 historico_limpo_ate_2024.to_csv(
     OUTPUT_FILE_ATE_2024,
     index=False,
@@ -382,10 +444,16 @@ historico_limpo_ate_2025.to_csv(
     encoding="utf-8-sig"
 )
 
-print("\nArquivo histórico até 2024 salvo em:")
+print("\nBase histórica limpa até 2024 salva em:")
+print(OUTPUT_BASE_LIMPA_ATE_2024)
+
+print("\nBase histórica limpa até 2025 salva em:")
+print(OUTPUT_BASE_LIMPA_ATE_2025)
+
+print("\nArquivo histórico enriquecido com FastF1 até 2024 salvo em:")
 print(OUTPUT_FILE_ATE_2024)
 
-print("\nArquivo histórico até 2025 salvo em:")
+print("\nArquivo histórico enriquecido com FastF1 até 2025 salvo em:")
 print(OUTPUT_FILE_ATE_2025)
 
 
@@ -397,9 +465,9 @@ with open(REPORT_FILE, "w", encoding="utf-8") as f:
 
     f.write("ARQUIVOS UTILIZADOS\n")
     f.write("-" * 60 + "\n")
-    f.write(f"Ergast 2018-2024: {ERGAST_FILE_2018_2024}\n")
-    f.write(f"Ergast 2025: {ERGAST_FILE_2025}\n")
-    f.write(f"FastF1 laps 2018-2025: {FASTF1_LAPS_FILE}\n\n")
+    f.write(f"Ergast 2018-2024: {repo_relative(ERGAST_FILE_2018_2024)}\n")
+    f.write(f"Ergast 2025: {repo_relative(ERGAST_FILE_2025)}\n")
+    f.write(f"FastF1 laps 2018-2025: {repo_relative(FASTF1_LAPS_FILE)}\n\n")
 
     f.write("DIMENSÕES INICIAIS\n")
     f.write("-" * 60 + "\n")
@@ -409,8 +477,13 @@ with open(REPORT_FILE, "w", encoding="utf-8") as f:
     f.write("LIMPEZA ERGAST\n")
     f.write("-" * 60 + "\n")
     f.write(f"Linhas Ergast após filtro season >= 2018: {len(ergast)}\n")
-    f.write(f"Registros removidos por grid_position/finish_position nulos: {nulos_grid_finish}\n")
-    f.write(f"Duplicatas removidas por RaceID: {duplicatas_raceid}\n\n")
+    f.write("Nulos em colunas essenciais antes da remoção:\n")
+    for col, nulos in nulos_por_coluna_essencial.items():
+        f.write(f"- {col}: {nulos}\n")
+    f.write(f"Registros removidos por chaves essenciais/target nulos: {nulos_chaves_target}\n")
+    f.write(f"Registros com grid_position/finish_position nulos: {nulos_grid_finish}\n")
+    f.write(f"Duplicatas removidas por RaceID: {duplicatas_raceid}\n")
+    f.write(f"Registros mantidos com grid_position = 0: {grid_zero_count}\n\n")
 
     f.write("AGREGAÇÃO FASTF1\n")
     f.write("-" * 60 + "\n")
@@ -426,16 +499,18 @@ with open(REPORT_FILE, "w", encoding="utf-8") as f:
     f.write("\nMERGE FINAL\n")
     f.write("-" * 60 + "\n")
     f.write(f"Linhas finais após merge geral: {len(historico_limpo)}\n")
-    f.write(f"Linhas finais 2018-2024: {len(historico_limpo_ate_2024)}\n")
-    f.write(f"Linhas finais 2018-2025: {len(historico_limpo_ate_2025)}\n")
+    f.write(f"Linhas base limpa 2018-2024: {len(base_limpa_ate_2024)}\n")
+    f.write(f"Linhas base limpa 2018-2025: {len(base_limpa_ate_2025)}\n")
+    f.write(f"Linhas base enriquecida 2018-2024: {len(historico_limpo_ate_2024)}\n")
+    f.write(f"Linhas base enriquecida 2018-2025: {len(historico_limpo_ate_2025)}\n")
     f.write(f"Registros Ergast sem correspondência FastF1: {sem_fastf1}\n\n")
 
-    f.write("Temporadas no arquivo 2018-2024:\n")
-    f.write(str(historico_limpo_ate_2024["season"].value_counts().sort_index()))
+    f.write("Temporadas na base limpa 2018-2024:\n")
+    f.write(str(base_limpa_ate_2024["season"].value_counts().sort_index()))
     f.write("\n\n")
 
-    f.write("Temporadas no arquivo 2018-2025:\n")
-    f.write(str(historico_limpo_ate_2025["season"].value_counts().sort_index()))
+    f.write("Temporadas na base limpa 2018-2025:\n")
+    f.write(str(base_limpa_ate_2025["season"].value_counts().sort_index()))
     f.write("\n")
 
 print("\nRelatório salvo em:")

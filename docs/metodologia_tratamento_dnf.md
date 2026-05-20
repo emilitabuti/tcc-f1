@@ -55,6 +55,8 @@ Exemplos:
 
 ## Decisão metodológica
 
-A base final utilizada para treinamento segue a abordagem **DNF Excluded**, alinhada ao benchmark RAPM com MAE de 2,3 posições. Dessa forma, apenas pilotos classificados, incluindo aqueles marcados como `Finished` ou com status de voltas atrás, como `+1 Lap` e `+2 Laps`, são mantidos na base final.
+A base final utilizada para treinamento segue a abordagem **DNF Excluded**, alinhada ao benchmark RAPM com MAE de 2,3 posições. Dessa forma, apenas pilotos classificados, incluindo aqueles marcados como `Finished`, `Lapped` ou com status de voltas atrás, como `+1 Lap` e `+2 Laps`, são mantidos na base final.
+
+O status `Lapped` é mantido como classificado porque representa pilotos oficialmente classificados com volta(s) atrás, não abandono de corrida.
 
 Os registros de DNF são preservados em uma base intermediária classificada, permitindo análise exploratória e rastreabilidade da decisão metodológica.

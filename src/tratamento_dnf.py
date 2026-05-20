@@ -33,6 +33,7 @@ METHODOLOGY_FILE = DOCS_DIR / "metodologia_tratamento_dnf.md"
 # Status considerados como corrida concluída
 STATUS_CLASSIFICADO_EXATOS = {
     "finished",
+    "lapped",
 }
 
 # Exemplo de status de classificados com voltas atrás:
@@ -63,16 +64,23 @@ DNF_CARRO_KEYWORDS = [
     "electronics",
     "ers",
     "power unit",
+    "power loss",
     "brakes",
     "brake",
     "suspension",
+    "steering",
     "radiator",
     "oil",
     "oil leak",
+    "water pressure",
     "water leak",
+    "water pump",
+    "cooling system",
     "fuel",
     "fuel pressure",
     "fuel pump",
+    "fuel leak",
+    "out of fuel",
     "turbo",
     "exhaust",
     "mechanical",
@@ -80,8 +88,14 @@ DNF_CARRO_KEYWORDS = [
     "puncture",
     "tyre",
     "wheel",
+    "wheel nut",
     "driveshaft",
     "differential",
+    "battery",
+    "undertray",
+    "front wing",
+    "rear wing",
+    "vibrations",
 ]
 
 
@@ -113,6 +127,11 @@ def validar_colunas(df, colunas_obrigatorias, nome_base):
             f"As seguintes colunas estão ausentes em {nome_base}: "
             f"{colunas_ausentes}"
         )
+
+
+def repo_relative(path):
+    # Registra caminhos portáveis no relatório, independentemente da máquina.
+    return path.relative_to(BASE_DIR).as_posix()
 
 
 def normalizar_status(status):
@@ -185,6 +204,10 @@ def aplicar_tratamento_dnf(df, nome_base):
     df["is_dnf"] = df["dnf_categoria"].isin(
         ["dnf_piloto", "dnf_carro", "dnf_outros"]
     )
+    df["dnf_flag"] = df["is_dnf"].astype(int)
+    df["dnf_driver_flag"] = (df["dnf_categoria"] == "dnf_piloto").astype(int)
+    df["dnf_car_flag"] = (df["dnf_categoria"] == "dnf_carro").astype(int)
+    df["dnf_other_flag"] = (df["dnf_categoria"] == "dnf_outros").astype(int)
 
     df_dnf_excluded = df[df["dnf_categoria"] == "classificado"].copy()
 
@@ -255,7 +278,9 @@ Exemplos:
 
 ## Decisão metodológica
 
-A base final utilizada para treinamento segue a abordagem **DNF Excluded**, alinhada ao benchmark RAPM com MAE de 2,3 posições. Dessa forma, apenas pilotos classificados, incluindo aqueles marcados como `Finished` ou com status de voltas atrás, como `+1 Lap` e `+2 Laps`, são mantidos na base final.
+A base final utilizada para treinamento segue a abordagem **DNF Excluded**, alinhada ao benchmark RAPM com MAE de 2,3 posições. Dessa forma, apenas pilotos classificados, incluindo aqueles marcados como `Finished`, `Lapped` ou com status de voltas atrás, como `+1 Lap` e `+2 Laps`, são mantidos na base final.
+
+O status `Lapped` é mantido como classificado porque representa pilotos oficialmente classificados com volta(s) atrás, não abandono de corrida.
 
 Os registros de DNF são preservados em uma base intermediária classificada, permitindo análise exploratória e rastreabilidade da decisão metodológica.
 """
@@ -350,7 +375,7 @@ with open(REPORT_FILE, "w", encoding="utf-8") as f:
 
     f.write("CRITÉRIOS DE CLASSIFICAÇÃO\n")
     f.write("-" * 60 + "\n")
-    f.write("classificado: Finished ou status de voltas atrás, como +1 Lap, +2 Laps.\n")
+    f.write("classificado: Finished, Lapped ou status de voltas atrás, como +1 Lap, +2 Laps.\n")
     f.write("dnf_piloto: acidente, colisão, rodada ou erro/incidente do piloto.\n")
     f.write("dnf_carro: falha mecânica, motor, câmbio, ERS, freios, suspensão etc.\n")
     f.write("dnf_outros: DNS, retirada, doença, desclassificação ou casos indefinidos.\n\n")
@@ -373,10 +398,10 @@ with open(REPORT_FILE, "w", encoding="utf-8") as f:
 
     f.write("ARQUIVOS GERADOS\n")
     f.write("-" * 60 + "\n")
-    f.write(f"{OUTPUT_CLASSIFICADO_2018_2024}\n")
-    f.write(f"{OUTPUT_DNF_EXCLUDED_2018_2024}\n")
-    f.write(f"{OUTPUT_CLASSIFICADO_2018_2025}\n")
-    f.write(f"{OUTPUT_DNF_EXCLUDED_2018_2025}\n")
+    f.write(f"{repo_relative(OUTPUT_CLASSIFICADO_2018_2024)}\n")
+    f.write(f"{repo_relative(OUTPUT_DNF_EXCLUDED_2018_2024)}\n")
+    f.write(f"{repo_relative(OUTPUT_CLASSIFICADO_2018_2025)}\n")
+    f.write(f"{repo_relative(OUTPUT_DNF_EXCLUDED_2018_2025)}\n")
 
 print("\nRelatório salvo em:")
 print(REPORT_FILE)
