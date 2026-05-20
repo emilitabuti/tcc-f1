@@ -41,6 +41,8 @@ Para variáveis de qualifying, foi prevista imputação por KNN.
 
 Caso não existam colunas de qualifying na base, a etapa é registrada como não aplicada.
 
+Quando aplicada, a imputação por KNN usa apenas variáveis disponíveis antes ou durante a corrida. Variáveis pós-corrida, como posição final e pontos, são excluídas para evitar vazamento de informação.
+
 ## Reprocessamento da normalização
 
 Após a imputação, as colunas normalizadas foram recalculadas para manter consistência entre os valores originais e os valores padronizados.

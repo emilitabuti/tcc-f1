@@ -313,8 +313,6 @@ def imputar_qualifying_knn(df_2024, df_2025):
         "season",
         "round",
         "grid_position",
-        "finish_position",
-        "points",
         "laps",
         "compound_ordinal",
         "fastf1_avg_lap_time",
@@ -456,6 +454,8 @@ Após a imputação, a variável `compound_ordinal` foi recalculada conforme a r
 Para variáveis de qualifying, foi prevista imputação por KNN.
 
 Caso não existam colunas de qualifying na base, a etapa é registrada como não aplicada.
+
+Quando aplicada, a imputação por KNN usa apenas variáveis disponíveis antes ou durante a corrida. Variáveis pós-corrida, como posição final e pontos, são excluídas para evitar vazamento de informação.
 
 ## Reprocessamento da normalização
 

@@ -94,6 +94,11 @@ FALHA_MECANICA_KEYWORDS = [
     "wheel",
 ]
 
+WET_COMPOUNDS = {
+    "WET",
+    "INTERMEDIATE",
+}
+
 
 # Funções auxiliares
 def validar_colunas(df, colunas_obrigatorias, nome_base):
@@ -179,6 +184,47 @@ def status_indica_falha_mecanica(status):
     )
 
 
+def preparar_flags_contexto_corrida(df):
+    """
+    Cria flags de contexto que ajudam a diferenciar evento real de erro de dado.
+    Uma corrida com qualquer composto WET/INTERMEDIATE é tratada como corrida de chuva.
+    """
+    df = df.copy()
+
+    if "compound_normalizado" in df.columns:
+        composto = df["compound_normalizado"].astype(str).str.strip().str.upper()
+    elif "fastf1_first_compound" in df.columns:
+        composto = df["fastf1_first_compound"].astype(str).str.strip().str.upper()
+    else:
+        composto = pd.Series("", index=df.index)
+
+    df["wet_compound_flag"] = composto.isin(WET_COMPOUNDS).astype(int)
+
+    df["corrida_chuva_flag"] = (
+        df.groupby(["season", "round"])["wet_compound_flag"]
+        .transform("max")
+        .fillna(0)
+        .astype(int)
+    )
+
+    return df
+
+
+def marcar_outlier_espurio_estrito(df, outlier_cols):
+    """
+    Marca apenas valores tecnicamente inválidos como espúrios.
+    Valores extremos plausíveis ficam para revisão e não são removidos automaticamente.
+    """
+    colunas_existentes = selecionar_colunas_existentes(df, outlier_cols)
+    valores_invalidos = pd.Series(False, index=df.index)
+
+    for coluna in colunas_existentes:
+        valores = pd.to_numeric(df[coluna], errors="coerce")
+        valores_invalidos = valores_invalidos | valores.isna() | (valores <= 0)
+
+    return (df["outlier_flag"] == 1) & valores_invalidos
+
+
 def marcar_outliers_por_circuito(df):
     """
     Marca outliers usando critério:
@@ -215,14 +261,17 @@ def marcar_outliers_por_circuito(df):
             + ";"
         )
 
+    df.loc[df["outlier_flag"] == 0, "outlier_colunas"] = "NONE"
+
     return df, outlier_cols
 
 
-def classificar_outliers(df):
+def classificar_outliers(df, outlier_cols):
     """
     Classifica outlier como:
     - nao_outlier
     - outlier_legitimo
+    - outlier_revisao
     - outlier_espurio
 
     Regras:
@@ -230,7 +279,9 @@ def classificar_outliers(df):
     - Se safety_car_flag = 1: outlier_legitimo
     - Se dnf_car_flag = 1: outlier_legitimo
     - Se status indica falha mecânica: outlier_legitimo
-    - Caso contrário: outlier_espurio
+    - Se corrida teve WET/INTERMEDIATE: outlier_legitimo
+    - Se valor é tecnicamente inválido: outlier_espurio
+    - Caso contrário: outlier_revisao
     """
     df = df.copy()
 
@@ -247,6 +298,7 @@ def classificar_outliers(df):
     ).astype(int)
 
     df["outlier_tipo"] = "nao_outlier"
+    cond_espurio = marcar_outlier_espurio_estrito(df, outlier_cols)
 
     cond_legitimo = (
         (df["outlier_flag"] == 1)
@@ -254,19 +306,26 @@ def classificar_outliers(df):
             (df["safety_car_flag"] == 1)
             | (df["dnf_car_flag"] == 1)
             | (df["status_falha_mecanica_flag"] == 1)
+            | (df["corrida_chuva_flag"] == 1)
         )
     )
 
-    cond_espurio = (
+    cond_revisao = (
         (df["outlier_flag"] == 1)
         & ~cond_legitimo
+        & ~cond_espurio
     )
 
     df.loc[cond_legitimo, "outlier_tipo"] = "outlier_legitimo"
+    df.loc[cond_revisao, "outlier_tipo"] = "outlier_revisao"
     df.loc[cond_espurio, "outlier_tipo"] = "outlier_espurio"
 
     df["outlier_legitimo_flag"] = (
         df["outlier_tipo"] == "outlier_legitimo"
+    ).astype(int)
+
+    df["outlier_revisao_flag"] = (
+        df["outlier_tipo"] == "outlier_revisao"
     ).astype(int)
 
     df["outlier_espurio_flag"] = (
@@ -375,19 +434,25 @@ Foram avaliadas as seguintes colunas:
 
 ## Classificação dos outliers
 
-Os outliers foram classificados em dois grupos:
+Os outliers foram classificados em tres grupos:
 
 ### Outliers legítimos
 
-São valores extremos que podem ser explicados por eventos reais da corrida, como Safety Car ou falha mecânica.
+São valores extremos que podem ser explicados por eventos reais da corrida, como Safety Car, falha mecânica ou corrida com pneus WET/INTERMEDIATE.
 
 Esses registros foram mantidos na base e marcados com flags.
 
 ### Outliers espúrios
 
-São valores extremos sem indicação de justificativa real nos dados disponíveis.
+São valores extremos tecnicamente inválidos, como tempos ausentes ou menores/iguais a zero.
 
 Esses registros foram removidos da base tratada.
+
+### Outliers para revisão
+
+São valores extremos plausíveis, mas sem evidência suficiente para remoção automática.
+
+Esses registros foram mantidos na base com flag, seguindo a decisão metodológica de não descartar eventos reais de corrida sem confirmação.
 
 ## Observação sobre Safety Car
 
@@ -446,6 +511,9 @@ df_2025 = criar_coluna_circuito_derivada(df_2025)
 df_2024 = preparar_safety_car_flag(df_2024)
 df_2025 = preparar_safety_car_flag(df_2025)
 
+df_2024 = preparar_flags_contexto_corrida(df_2024)
+df_2025 = preparar_flags_contexto_corrida(df_2025)
+
 print("\nColunas auxiliares preparadas com sucesso.")
 
 
@@ -457,8 +525,8 @@ print("\nOutliers marcados com sucesso.")
 
 
 # 5. Classificar outliers
-df_2024 = classificar_outliers(df_2024)
-df_2025 = classificar_outliers(df_2025)
+df_2024 = classificar_outliers(df_2024, outlier_cols_2024)
+df_2025 = classificar_outliers(df_2025, outlier_cols_2025)
 
 print("\nOutliers classificados com sucesso.")
 

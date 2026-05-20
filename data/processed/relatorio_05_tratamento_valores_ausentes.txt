@@ -3,13 +3,13 @@ RELATÓRIO - 05 TRATAMENTO DE VALORES AUSENTES
 
 ARQUIVOS DE ENTRADA
 ----------------------------------------------------------------------
-C:\Users\isagr\Documents\tcc-f1\data\processed\historico_normalizado_2018_2024.csv
-C:\Users\isagr\Documents\tcc-f1\data\processed\historico_normalizado_2018_2025.csv
+/home/emili-tabuti/tcc-f1/data/processed/historico_normalizado_2018_2024.csv
+/home/emili-tabuti/tcc-f1/data/processed/historico_normalizado_2018_2025.csv
 
 ARQUIVOS DE SAÍDA
 ----------------------------------------------------------------------
-C:\Users\isagr\Documents\tcc-f1\data\processed\historico_imputado_normalizado_2018_2024.csv
-C:\Users\isagr\Documents\tcc-f1\data\processed\historico_imputado_normalizado_2018_2025.csv
+/home/emili-tabuti/tcc-f1/data/processed/historico_imputado_normalizado_2018_2024.csv
+/home/emili-tabuti/tcc-f1/data/processed/historico_imputado_normalizado_2018_2025.csv
 
 TEMPOS DE VOLTA - MEDIANA DO CIRCUITO NO ANO
 ----------------------------------------------------------------------

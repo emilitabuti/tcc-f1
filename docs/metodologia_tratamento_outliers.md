@@ -18,19 +18,25 @@ Foram avaliadas as seguintes colunas:
 
 ## Classificação dos outliers
 
-Os outliers foram classificados em dois grupos:
+Os outliers foram classificados em tres grupos:
 
 ### Outliers legítimos
 
-São valores extremos que podem ser explicados por eventos reais da corrida, como Safety Car ou falha mecânica.
+São valores extremos que podem ser explicados por eventos reais da corrida, como Safety Car, falha mecânica ou corrida com pneus WET/INTERMEDIATE.
 
 Esses registros foram mantidos na base e marcados com flags.
 
 ### Outliers espúrios
 
-São valores extremos sem indicação de justificativa real nos dados disponíveis.
+São valores extremos tecnicamente inválidos, como tempos ausentes ou menores/iguais a zero.
 
 Esses registros foram removidos da base tratada.
+
+### Outliers para revisão
+
+São valores extremos plausíveis, mas sem evidência suficiente para remoção automática.
+
+Esses registros foram mantidos na base com flag, seguindo a decisão metodológica de não descartar eventos reais de corrida sem confirmação.
 
 ## Observação sobre Safety Car
 

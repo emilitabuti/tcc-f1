@@ -3,15 +3,15 @@ RELATÓRIO - 06 TRATAMENTO DE OUTLIERS
 
 ARQUIVOS DE ENTRADA
 ----------------------------------------------------------------------
-C:\Users\isagr\Documents\tcc-f1\data\processed\historico_imputado_normalizado_2018_2024.csv
-C:\Users\isagr\Documents\tcc-f1\data\processed\historico_imputado_normalizado_2018_2025.csv
+/home/emili-tabuti/tcc-f1/data/processed/historico_imputado_normalizado_2018_2024.csv
+/home/emili-tabuti/tcc-f1/data/processed/historico_imputado_normalizado_2018_2025.csv
 
 ARQUIVOS DE SAÍDA
 ----------------------------------------------------------------------
-C:\Users\isagr\Documents\tcc-f1\data\processed\historico_outliers_tratados_2018_2024.csv
-C:\Users\isagr\Documents\tcc-f1\data\processed\historico_outliers_tratados_2018_2025.csv
-C:\Users\isagr\Documents\tcc-f1\data\processed\outliers_removidos_2018_2024.csv
-C:\Users\isagr\Documents\tcc-f1\data\processed\outliers_removidos_2018_2025.csv
+/home/emili-tabuti/tcc-f1/data/processed/historico_outliers_tratados_2018_2024.csv
+/home/emili-tabuti/tcc-f1/data/processed/historico_outliers_tratados_2018_2025.csv
+/home/emili-tabuti/tcc-f1/data/processed/outliers_removidos_2018_2024.csv
+/home/emili-tabuti/tcc-f1/data/processed/outliers_removidos_2018_2025.csv
 
 COLUNAS AVALIADAS PARA OUTLIER
 ----------------------------------------------------------------------
@@ -24,22 +24,24 @@ COLUNAS AVALIADAS PARA OUTLIER
 RESUMO 2018-2024
 ----------------------------------------------------------------------
 outlier_tipo
-nao_outlier        2516
-outlier_espurio       8
+nao_outlier         2516
+outlier_revisao        4
+outlier_legitimo       4
 Name: count, dtype: int64
 Linhas antes: 2524
-Linhas depois: 2516
-Outliers removidos: 8
+Linhas depois: 2524
+Outliers removidos: 0
 
 RESUMO 2018-2025
 ----------------------------------------------------------------------
 outlier_tipo
-nao_outlier        2922
-outlier_espurio      21
+nao_outlier         2922
+outlier_legitimo      12
+outlier_revisao        9
 Name: count, dtype: int64
 Linhas antes: 2943
-Linhas depois: 2922
-Outliers removidos: 21
+Linhas depois: 2943
+Outliers removidos: 0
 
 NORMALIZAÇÃO RECALCULADA
 ----------------------------------------------------------------------
