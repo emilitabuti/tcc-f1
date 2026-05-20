@@ -16,6 +16,7 @@ z = (x - média) / desvio padrão
 
 As colunas normalizadas por Z-score foram:
 
+- `laps`
 - `fastf1_laps_count`
 - `fastf1_avg_lap_time`
 - `fastf1_best_lap_time`
@@ -50,9 +51,13 @@ Os parâmetros de normalização foram ajustados com base na base histórica de 
 
 Essa decisão evita vazamento de informação da base com 2025 para o processo de ajuste dos scalers.
 
+Foram gerados artefatos `.joblib` com os scalers ajustados em 2018-2024 para permitir reaplicação reprodutível do mesmo pré-processamento.
+
 ## Arquivos gerados
 
 - `historico_normalizado_2018_2024.csv`
 - `historico_normalizado_2018_2025.csv`
+- `base_historica_normalizado_2018_2024.csv`
+- `base_historica_normalizado_2018_2025.csv`
 
 A base principal recomendada para treinamento inicial do modelo é a versão 2018-2024.

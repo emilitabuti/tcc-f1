@@ -3,21 +3,34 @@ RELATÓRIO - 04 NORMALIZAÇÃO
 
 ARQUIVOS DE ENTRADA
 ------------------------------------------------------------
-C:\Users\isagr\Documents\tcc-f1\data\processed\historico_encoded_2018_2024.csv
-C:\Users\isagr\Documents\tcc-f1\data\processed\historico_encoded_2018_2025.csv
+data/processed/historico_encoded_2018_2024.csv
+data/processed/historico_encoded_2018_2025.csv
+data/processed/base_historica_encoded_2018_2024.csv
+data/processed/base_historica_encoded_2018_2025.csv
 
 ARQUIVOS DE SAÍDA
 ------------------------------------------------------------
-C:\Users\isagr\Documents\tcc-f1\data\processed\historico_normalizado_2018_2024.csv
-C:\Users\isagr\Documents\tcc-f1\data\processed\historico_normalizado_2018_2025.csv
+data/processed/historico_normalizado_2018_2024.csv
+data/processed/historico_normalizado_2018_2025.csv
+data/processed/base_historica_normalizado_2018_2024.csv
+data/processed/base_historica_normalizado_2018_2025.csv
+
+ARTEFATOS DE SCALER
+------------------------------------------------------------
+models/preprocessing/standard_scaler_historico.joblib
+models/preprocessing/minmax_scaler_historico.joblib
+models/preprocessing/standard_scaler_base_historica.joblib
+models/preprocessing/minmax_scaler_base_historica.joblib
 
 NORMALIZAÇÃO APLICADA
 ------------------------------------------------------------
 Z-score aplicado nas variáveis numéricas contínuas.
 MinMaxScaler aplicado em grid_position e laps.
 
-COLUNAS COM Z-SCORE
+HISTÓRICO ENRIQUECIDO COM FASTF1
 ------------------------------------------------------------
+Colunas com Z-score:
+- laps -> laps_zscore
 - fastf1_laps_count -> fastf1_laps_count_zscore
 - fastf1_avg_lap_time -> fastf1_avg_lap_time_zscore
 - fastf1_best_lap_time -> fastf1_best_lap_time_zscore
@@ -29,13 +42,12 @@ COLUNAS COM Z-SCORE
 - fastf1_pit_in_count -> fastf1_pit_in_count_zscore
 - fastf1_pit_out_count -> fastf1_pit_out_count_zscore
 
-COLUNAS COM MINMAXSCALER
-------------------------------------------------------------
+Colunas com MinMaxScaler:
 - grid_position -> grid_position_minmax
 - laps -> laps_minmax
 
-MEDIANAS USADAS PARA PREENCHER NULOS
-------------------------------------------------------------
+Medianas usadas para preencher nulos:
+laps: 57.0
 fastf1_laps_count: 59.0
 fastf1_avg_lap_time: 92.8485951417004
 fastf1_best_lap_time: 87.4425
@@ -47,11 +59,29 @@ fastf1_stints_count: 3.0
 fastf1_pit_in_count: 2.0
 fastf1_pit_out_count: 2.0
 grid_position: 10.0
-laps: 57.0
 
-DIMENSÕES
-------------------------------------------------------------
+Dimensões:
 Base 2018-2024 antes: (2524, 83)
-Base 2018-2024 depois: (2524, 95)
+Base 2018-2024 depois: (2524, 96)
 Base 2018-2025 antes: (2943, 83)
-Base 2018-2025 depois: (2943, 95)
+Base 2018-2025 depois: (2943, 96)
+
+BASE HISTÓRICA LIMPA
+------------------------------------------------------------
+Colunas com Z-score:
+- laps -> laps_zscore
+
+Colunas com MinMaxScaler:
+- grid_position -> grid_position_minmax
+- laps -> laps_minmax
+
+Medianas usadas para preencher nulos:
+laps: 57.0
+grid_position: 10.0
+
+Dimensões:
+Base 2018-2024 antes: (2524, 71)
+Base 2018-2024 depois: (2524, 74)
+Base 2018-2025 antes: (2943, 71)
+Base 2018-2025 depois: (2943, 74)
+
