@@ -1,0 +1,50 @@
+RELATÓRIO - 05 TRATAMENTO DE VALORES AUSENTES
+======================================================================
+
+ARQUIVOS DE ENTRADA
+----------------------------------------------------------------------
+C:\Users\isagr\Documents\tcc-f1\data\processed\historico_normalizado_2018_2024.csv
+C:\Users\isagr\Documents\tcc-f1\data\processed\historico_normalizado_2018_2025.csv
+
+ARQUIVOS DE SAÍDA
+----------------------------------------------------------------------
+C:\Users\isagr\Documents\tcc-f1\data\processed\historico_imputado_normalizado_2018_2024.csv
+C:\Users\isagr\Documents\tcc-f1\data\processed\historico_imputado_normalizado_2018_2025.csv
+
+TEMPOS DE VOLTA - MEDIANA DO CIRCUITO NO ANO
+----------------------------------------------------------------------
+Base 2018-2024:
+{'fastf1_avg_lap_time': {'nulos_antes': 0, 'nulos_depois': 0, 'mediana_global_fallback': 92.8485951417004}, 'fastf1_best_lap_time': {'nulos_antes': 0, 'nulos_depois': 0, 'mediana_global_fallback': 87.4425}, 'fastf1_avg_sector1': {'nulos_antes': 0, 'nulos_depois': 0, 'mediana_global_fallback': 29.72798408871745}, 'fastf1_avg_sector2': {'nulos_antes': 0, 'nulos_depois': 0, 'mediana_global_fallback': 34.281472040816325}, 'fastf1_avg_sector3': {'nulos_antes': 0, 'nulos_depois': 0, 'mediana_global_fallback': 27.8518396351137}}
+
+Base 2018-2025:
+{'fastf1_avg_lap_time': {'nulos_antes': 0, 'nulos_depois': 0, 'mediana_global_fallback': 92.85242105263156}, 'fastf1_best_lap_time': {'nulos_antes': 0, 'nulos_depois': 0, 'mediana_global_fallback': 87.496}, 'fastf1_avg_sector1': {'nulos_antes': 0, 'nulos_depois': 0, 'mediana_global_fallback': 29.62168115942029}, 'fastf1_avg_sector2': {'nulos_antes': 0, 'nulos_depois': 0, 'mediana_global_fallback': 34.136296875}, 'fastf1_avg_sector3': {'nulos_antes': 0, 'nulos_depois': 0, 'mediana_global_fallback': 27.797301886792454}}
+
+COMPOSTO DE PNEU - MODA DA CORRIDA
+----------------------------------------------------------------------
+Base 2018-2024:
+{'compound_normalizado': {'nulos_antes': 0, 'nulos_depois': 0, 'moda_global_fallback': 'MEDIUM'}}
+
+Base 2018-2025:
+{'compound_normalizado': {'nulos_antes': 0, 'nulos_depois': 0, 'moda_global_fallback': 'MEDIUM'}}
+
+QUALIFYING - KNN IMPUTER
+----------------------------------------------------------------------
+{'colunas_qualifying': [], 'aplicado': False}
+
+NORMALIZAÇÃO RECALCULADA
+----------------------------------------------------------------------
+Colunas Z-score:
+- fastf1_laps_count -> fastf1_laps_count_zscore
+- fastf1_avg_lap_time -> fastf1_avg_lap_time_zscore
+- fastf1_best_lap_time -> fastf1_best_lap_time_zscore
+- fastf1_avg_sector1 -> fastf1_avg_sector1_zscore
+- fastf1_avg_sector2 -> fastf1_avg_sector2_zscore
+- fastf1_avg_sector3 -> fastf1_avg_sector3_zscore
+- fastf1_max_tyre_life -> fastf1_max_tyre_life_zscore
+- fastf1_stints_count -> fastf1_stints_count_zscore
+- fastf1_pit_in_count -> fastf1_pit_in_count_zscore
+- fastf1_pit_out_count -> fastf1_pit_out_count_zscore
+
+Colunas MinMaxScaler:
+- grid_position -> grid_position_minmax
+- laps -> laps_minmax
