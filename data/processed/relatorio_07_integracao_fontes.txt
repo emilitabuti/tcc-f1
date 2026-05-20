@@ -1,0 +1,74 @@
+RELATÓRIO - 07 INTEGRAÇÃO DE FONTES DE SUPORTE
+============================================================
+
+ARQUIVOS DE ENTRADA
+------------------------------------------------------------
+/home/emili-tabuti/tcc-f1/data/processed/historico_outliers_tratados_2018_2024.csv
+/home/emili-tabuti/tcc-f1/data/processed/historico_outliers_tratados_2018_2025.csv
+/home/emili-tabuti/tcc-f1/data/raw/circuitos_manual.csv
+/home/emili-tabuti/tcc-f1/data/raw/fastf1_weather_2018_2025.csv
+/home/emili-tabuti/tcc-f1/data/raw/ergast_pitstop_2018_2025.csv
+/home/emili-tabuti/tcc-f1/data/raw/openf1_race_control_2025_2026.csv
+/home/emili-tabuti/tcc-f1/data/raw/openf1_meetings_2025_2026.csv
+/home/emili-tabuti/tcc-f1/data/raw/fastf1_qualifying_2018_2025.csv
+
+/home/emili-tabuti/tcc-f1/data/raw/fastf1_laps_2018_2025.csv
+
+ARQUIVOS DE SAÍDA
+------------------------------------------------------------
+/home/emili-tabuti/tcc-f1/data/processed/dataset_pre_features_2018_2024.csv
+/home/emili-tabuti/tcc-f1/data/processed/dataset_pre_features_2018_2025.csv
+
+CORREÇÕES APLICADAS
+------------------------------------------------------------
+grid_position 0→21 (2018-2024): 35 registros
+grid_position 0→21 (2018-2025): 35 registros
+
+QUALIFYING POSITION
+------------------------------------------------------------
+Registros no arquivo de qualifying: 3439
+Cobertura 2018-2024: 100.0%
+Penalizados (grid_penalty > 0): 176
+Promovidos  (grid_penalty < 0): 520
+Sem penalidade (grid_penalty = 0): 1828
+
+CIRCUIT FEATURES
+------------------------------------------------------------
+Circuitos integrados: 32
+Colunas: altitude_m, corners, length_km, circuit_type, track_complexity
+
+WEATHER IMPACT FACTOR
+------------------------------------------------------------
+Corridas com dados de weather: 173
+Formula: (norm_humidity + 2*rain_binary + (1-norm_air_temp)) / 4
+weather_impact_factor 2018-2024 - mean: 0.3750
+weather_impact_factor 2018-2024 - std:  0.2531
+
+AVG PIT STOPS POR CIRCUITO
+------------------------------------------------------------
+Registros no arquivo de pitstops: 5941
+avg_pit_stops_circuit 2018-2024 - mean: 1.8293
+avg_pit_stops_circuit 2018-2024 - std:  0.4535
+
+SAFETY CAR FLAG
+------------------------------------------------------------
+Fonte principal: FastF1 TrackStatus, codigos 4=SC e 5=VSC.
+Para 2025, OpenF1 Race Control foi usado como corroboracao adicional.
+Registros FastF1 laps avaliados: 206202
+2018-2024: 1419 registros com SC/VSC
+2018-2025: 1641 registros com SC/VSC
+Corridas com SC/VSC por temporada:
+season
+2018    13
+2019     9
+2020    12
+2021    14
+2022    16
+2023    13
+2024    10
+2025    13
+
+DIMENSÕES FINAIS
+------------------------------------------------------------
+2018-2024: (2524, 114)
+2018-2025: (2943, 114)

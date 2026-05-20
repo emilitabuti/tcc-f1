@@ -10,7 +10,7 @@ Foi aplicado One-Hot Encoding para variáveis categóricas sem ordem natural.
 
 As variáveis utilizadas foram:
 
-- `race_name`: representação do circuito ou corrida.
+- `circuit_id`: representação do circuito ou corrida.
 - `constructor_id`: identificação da equipe/construtor.
 
 O One-Hot Encoding cria uma coluna binária para cada categoria. Dessa forma, evita-se que o modelo interprete categorias nominais como se tivessem uma ordem numérica.

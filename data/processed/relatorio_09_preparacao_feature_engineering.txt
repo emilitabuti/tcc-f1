@@ -1,0 +1,69 @@
+RELATORIO - 09 PREPARACAO PARA FEATURE ENGINEERING
+======================================================================
+
+ENTRADAS
+----------------------------------------------------------------------
+data/processed/dataset_pre_features_2018_2024.csv
+data/processed/dataset_pre_features_2018_2025.csv
+
+SAIDAS
+----------------------------------------------------------------------
+data/processed/dataset_feature_engineering_ready_2018_2024.csv
+data/processed/dataset_feature_engineering_ready_2018_2025.csv
+data/processed/target_finish_position_2018_2024.csv
+data/processed/target_finish_position_2018_2025.csv
+data/processed/outliers_revisao_2018_2025.csv
+data/processed/manifest_feature_engineering.json
+
+VALIDACAO
+----------------------------------------------------------------------
+Nenhum erro bloqueante encontrado.
+
+ANTI-LEAKAGE
+----------------------------------------------------------------------
+Target: finish_position
+Colunas proibidas em X:
+- finish_position
+- points
+- race_points
+- fastest_lap_race
+- previous_position
+
+Colunas proibidas ainda presentes na base FE-ready:
+- finish_position
+
+Observacao: finish_position permanece apenas como target/historico.
+
+DIMENSOES
+----------------------------------------------------------------------
+2018-2024: (2524, 117)
+2018-2025: (2943, 117)
+
+SAFETY CAR
+----------------------------------------------------------------------
+Corridas 2018-2024 com SC/VSC: 87
+Corridas 2018-2025 com SC/VSC: 100
+
+OUTLIERS EM REVISAO
+----------------------------------------------------------------------
+Total: 14
+ season  round                race_name         driver_id                         outlier_colunas
+   2018      4    Azerbaijan Grand Prix          ericsson                    fastf1_avg_lap_time;
+   2020      1      Austrian Grand Prix             gasly fastf1_avg_lap_time;fastf1_avg_sector2;
+   2020      1      Austrian Grand Prix        giovinazzi fastf1_avg_lap_time;fastf1_avg_sector3;
+   2020      1      Austrian Grand Prix          hamilton                     fastf1_avg_sector2;
+   2020      1      Austrian Grand Prix            latifi fastf1_avg_lap_time;fastf1_avg_sector1;
+   2020      1      Austrian Grand Prix              ocon  fastf1_avg_sector2;fastf1_avg_sector3;
+   2020      1      Austrian Grand Prix             perez                     fastf1_avg_sector2;
+   2020      1      Austrian Grand Prix            vettel fastf1_avg_lap_time;fastf1_avg_sector2;
+   2020     17     Abu Dhabi Grand Prix pietro_fittipaldi                     fastf1_avg_sector1;
+   2021      8       Styrian Grand Prix            stroll                     fastf1_avg_sector1;
+   2021     21 Saudi Arabian Grand Prix         raikkonen                     fastf1_avg_sector1;
+   2021     21 Saudi Arabian Grand Prix           tsunoda                     fastf1_avg_sector1;
+   2022     19 United States Grand Prix         ricciardo                    fastf1_avg_lap_time;
+   2023     21     Las Vegas Grand Prix            bottas                    fastf1_avg_lap_time;
+
+AVG PIT STOPS CAUSAL
+----------------------------------------------------------------------
+`avg_pit_stops_circuit` foi recalculada usando apenas corridas anteriores do mesmo circuito. A media global antiga foi preservada em `avg_pit_stops_circuit_static_global` apenas para auditoria.
+Linhas cold-start 2018-2025: 511

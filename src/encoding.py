@@ -31,6 +31,56 @@ REPORT_FILE = PROCESSED_DIR / "relatorio_03_encoding.txt"
 METHODOLOGY_FILE = DOCS_DIR / "metodologia_encoding.md"
  
  
+# Colunas de metadado que devem ser preservadas mesmo quando são usadas como
+# categoria de entrada do encoder (não serão dropadas do DataFrame final).
+COLS_METADADOS = {"constructor_id", "circuit_id"}
+
+# Mapeamento race_name → circuit_id (físico)
+# Resolve duplicatas: Styrian/Austrian → red_bull_ring, Brazilian/São Paulo → interlagos, etc.
+RACE_NAME_TO_CIRCUIT_ID = {
+    "Australian Grand Prix": "albert_park",
+    "Bahrain Grand Prix": "bahrain",
+    "Chinese Grand Prix": "shanghai",
+    "Azerbaijan Grand Prix": "baku",
+    "Spanish Grand Prix": "catalunya",
+    "Monaco Grand Prix": "monaco",
+    "Canadian Grand Prix": "villeneuve",
+    "French Grand Prix": "ricard",
+    "Austrian Grand Prix": "red_bull_ring",
+    "British Grand Prix": "silverstone",
+    "German Grand Prix": "hockenheim",
+    "Hungarian Grand Prix": "hungaroring",
+    "Belgian Grand Prix": "spa",
+    "Italian Grand Prix": "monza",
+    "Singapore Grand Prix": "marina_bay",
+    "Russian Grand Prix": "sochi",
+    "Japanese Grand Prix": "suzuka",
+    "United States Grand Prix": "americas",
+    "Mexican Grand Prix": "rodriguez",
+    "Mexico City Grand Prix": "rodriguez",
+    "Brazilian Grand Prix": "interlagos",
+    "São Paulo Grand Prix": "interlagos",
+    "Abu Dhabi Grand Prix": "yas_marina",
+    # 2020 COVID extras
+    "Styrian Grand Prix": "red_bull_ring",
+    "70th Anniversary Grand Prix": "silverstone",
+    "Tuscan Grand Prix": "mugello",
+    "Eifel Grand Prix": "nurburgring",
+    "Turkish Grand Prix": "istanbul",
+    "Sakhir Grand Prix": "bahrain_outer",
+    # 2021+
+    "Dutch Grand Prix": "zandvoort",
+    "Emilia Romagna Grand Prix": "imola",
+    "Portuguese Grand Prix": "portimao",
+    # 2022+
+    "Saudi Arabian Grand Prix": "jeddah",
+    "Miami Grand Prix": "miami",
+    # 2023+
+    "Qatar Grand Prix": "losail",
+    "Las Vegas Grand Prix": "las_vegas",
+}
+
+
 # Mapeamento ordinal dos compostos de pneu
 # Soft > Medium > Hard
 COMPOUND_ORDINAL_MAP = {
@@ -100,15 +150,26 @@ def escolher_coluna_circuito(df):
 def preparar_base_encoding(df, nome_base):
     # Valida e prepara colunas categóricas antes do OneHotEncoder.
     df = df.copy()
- 
+
     colunas_obrigatorias = [
         "season",
         "round",
         "driver_id",
         "constructor_id",
     ]
- 
+
     validar_colunas(df, colunas_obrigatorias, nome_base)
+
+    # Derivar circuit_id a partir de race_name (se ainda não existir).
+    # Resolve duplicatas de nome (Styrian/Austrian → red_bull_ring, etc.)
+    # para que o encoder use o circuito físico, não o nome da corrida.
+    if "race_name" in df.columns and "circuit_id" not in df.columns:
+        df["circuit_id"] = df["race_name"].map(RACE_NAME_TO_CIRCUIT_ID)
+        sem_mapa = df[df["circuit_id"].isnull()]["race_name"].unique()
+        if len(sem_mapa) > 0:
+            raise ValueError(
+                f"race_name sem mapeamento para circuit_id em {nome_base}: {sem_mapa}"
+            )
  
     # Escolher coluna de circuito
     coluna_circuito = escolher_coluna_circuito(df)
@@ -161,7 +222,10 @@ def aplicar_onehot(df, encoder, colunas_categoricas):
         index=df.index,
     ).astype(int)
  
-    df_sem_categoricas = df.drop(columns=colunas_categoricas)
+    # Preserva colunas de metadado (constructor_id, circuit_id) mesmo quando
+    # foram usadas como entrada do encoder — são úteis em Feature Engineering.
+    colunas_para_dropar = [c for c in colunas_categoricas if c not in COLS_METADADOS]
+    df_sem_categoricas = df.drop(columns=colunas_para_dropar)
     return pd.concat([df_sem_categoricas, encoded_df], axis=1)
  
  

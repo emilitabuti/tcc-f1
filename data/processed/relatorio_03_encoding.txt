@@ -34,36 +34,36 @@ INTERMEDIATE/WET/UNKNOWN = 0
 HISTÓRICO ENRIQUECIDO COM FASTF1 - 2018-2024
 ------------------------------------------------------------
 Dimensão inicial: (2524, 31)
-Dimensão final: (2524, 83)
-Coluna usada para circuito: race_name
+Dimensão final: (2524, 82)
+Coluna usada para circuito: circuit_id
 Coluna usada para composto: fastf1_first_compound
-Colunas de circuito criadas: 36
-Colunas de construtor criadas: 16
+Colunas de circuito criadas: 32
+Colunas de construtor criadas: 17
 
 HISTÓRICO ENRIQUECIDO COM FASTF1 - 2018-2025
 ------------------------------------------------------------
 Dimensão inicial: (2943, 31)
-Dimensão final: (2943, 83)
-Coluna usada para circuito: race_name
+Dimensão final: (2943, 82)
+Coluna usada para circuito: circuit_id
 Coluna usada para composto: fastf1_first_compound
-Colunas de circuito criadas: 36
-Colunas de construtor criadas: 16
+Colunas de circuito criadas: 32
+Colunas de construtor criadas: 17
 
 BASE HISTÓRICA LIMPA - 2018-2024
 ------------------------------------------------------------
 Dimensão inicial: (2524, 19)
-Dimensão final: (2524, 71)
-Coluna usada para circuito: race_name
+Dimensão final: (2524, 70)
+Coluna usada para circuito: circuit_id
 Coluna usada para composto: UNKNOWN
-Colunas de circuito criadas: 36
-Colunas de construtor criadas: 16
+Colunas de circuito criadas: 32
+Colunas de construtor criadas: 17
 
 BASE HISTÓRICA LIMPA - 2018-2025
 ------------------------------------------------------------
 Dimensão inicial: (2943, 19)
-Dimensão final: (2943, 71)
-Coluna usada para circuito: race_name
+Dimensão final: (2943, 70)
+Coluna usada para circuito: circuit_id
 Coluna usada para composto: UNKNOWN
-Colunas de circuito criadas: 36
-Colunas de construtor criadas: 16
+Colunas de circuito criadas: 32
+Colunas de construtor criadas: 17
 

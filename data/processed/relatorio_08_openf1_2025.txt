@@ -1,0 +1,52 @@
+RELATÓRIO - 08 DATASET 2025 PARA WALK-FORWARD VALIDATION
+============================================================
+
+Arquivo de entrada: /home/emili-tabuti/tcc-f1/data/processed/dataset_pre_features_2018_2025.csv
+Arquivo de saída principal: /home/emili-tabuti/tcc-f1/data/processed/validacao_2025_clean.csv
+Alias legado: /home/emili-tabuti/tcc-f1/data/processed/openf1_2025_clean.csv
+Observação metodológica: este arquivo é um fold de validação 2025 derivado do pipeline processado, não uma base OpenF1-first.
+
+Shape: (419, 114)
+Corridas: 24
+Pilotos únicos: 21
+Construtores únicos: 10
+
+CORRIDAS 2025
+------------------------------------------------------------
+ round                 race_name  drivers safety_car
+     1     Australian Grand Prix       14        sim
+     2        Chinese Grand Prix       16        nao
+     3       Japanese Grand Prix       20        nao
+     4        Bahrain Grand Prix       18        sim
+     5  Saudi Arabian Grand Prix       18        sim
+     6          Miami Grand Prix       16        nao
+     7 Emilia Romagna Grand Prix       18        sim
+     8         Monaco Grand Prix       18        nao
+     9        Spanish Grand Prix       17        sim
+    10       Canadian Grand Prix       17        sim
+    11       Austrian Grand Prix       16        sim
+    12        British Grand Prix       15        sim
+    13        Belgian Grand Prix       20        sim
+    14      Hungarian Grand Prix       19        nao
+    15          Dutch Grand Prix       17        sim
+    16        Italian Grand Prix       18        nao
+    17     Azerbaijan Grand Prix       19        sim
+    18      Singapore Grand Prix       20        nao
+    19  United States Grand Prix       19        nao
+    20    Mexico City Grand Prix       16        nao
+    21      São Paulo Grand Prix       17        sim
+    22      Las Vegas Grand Prix       15        nao
+    23          Qatar Grand Prix       16        sim
+    24      Abu Dhabi Grand Prix       20        nao
+
+ESTATÍSTICAS DAS FEATURES
+------------------------------------------------------------
+       weather_impact_factor  avg_pit_stops_circuit  track_complexity  safety_car_flag  grid_position
+count             419.000000             419.000000        419.000000       419.000000     419.000000
+mean                0.375488               1.814489          0.364892         0.529833      10.310263
+std                 0.257104               0.401059          0.138283         0.499706       5.886825
+min                 0.117499               1.181818          0.139600         0.000000       1.000000
+25%                 0.201760               1.442748          0.278505         0.000000       5.000000
+50%                 0.274089               1.670886          0.314562         1.000000      10.000000
+75%                 0.398308               2.044248          0.442907         1.000000      15.500000
+max                 0.896885               2.734694          0.733410         1.000000      20.000000

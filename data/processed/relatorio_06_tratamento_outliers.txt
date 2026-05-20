@@ -24,8 +24,8 @@ COLUNAS AVALIADAS PARA OUTLIER
 RESUMO 2018-2024
 ----------------------------------------------------------------------
 outlier_tipo
-nao_outlier         2516
-outlier_revisao        4
+nao_outlier         2510
+outlier_revisao       10
 outlier_legitimo       4
 Name: count, dtype: int64
 Linhas antes: 2524
@@ -35,9 +35,9 @@ Outliers removidos: 0
 RESUMO 2018-2025
 ----------------------------------------------------------------------
 outlier_tipo
-nao_outlier         2922
+nao_outlier         2917
+outlier_revisao       14
 outlier_legitimo      12
-outlier_revisao        9
 Name: count, dtype: int64
 Linhas antes: 2943
 Linhas depois: 2943

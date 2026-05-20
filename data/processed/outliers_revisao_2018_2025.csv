@@ -1,0 +1,15 @@
+﻿season,round,race_name,driver_id,constructor_id,RaceID,grid_position,finish_position,status,fastf1_avg_lap_time,fastf1_best_lap_time,fastf1_avg_sector1,fastf1_avg_sector2,fastf1_avg_sector3,outlier_colunas,safety_car_flag,corrida_chuva_flag,outlier_tipo
+2018,4,Azerbaijan Grand Prix,ericsson,sauber,ericsson_2018_4,18,11,Finished,118.32676086956522,107.925,43.78086,48.515647058823525,29.80596078431373,fastf1_avg_lap_time;,1,0,outlier_revisao
+2020,1,Austrian Grand Prix,gasly,alphatauri,gasly_2020_1,12,7,Finished,77.53686363636363,69.025,19.497153846153847,34.1505,23.87746153846154,fastf1_avg_lap_time;fastf1_avg_sector2;,1,0,outlier_revisao
+2020,1,Austrian Grand Prix,giovinazzi,alfa,giovinazzi_2020_1,18,9,Finished,77.55839393939394,68.796,19.471061538461537,34.01107692307692,24.0902,fastf1_avg_lap_time;fastf1_avg_sector3;,1,0,outlier_revisao
+2020,1,Austrian Grand Prix,hamilton,mercedes,hamilton_2020_1,5,4,Finished,77.40769696969697,67.712,19.190375,34.37712307692308,23.935815384615385,fastf1_avg_sector2;,1,0,outlier_revisao
+2020,1,Austrian Grand Prix,latifi,williams,latifi_2020_1,20,11,Finished,77.66481818181818,69.662,19.76953846153846,34.02051515151515,23.8114696969697,fastf1_avg_lap_time;fastf1_avg_sector1;,1,0,outlier_revisao
+2020,1,Austrian Grand Prix,ocon,renault,ocon_2020_1,14,8,Finished,77.50027272727273,68.912,19.104,34.27967692307693,24.133984615384616,fastf1_avg_sector2;fastf1_avg_sector3;,1,0,outlier_revisao
+2020,1,Austrian Grand Prix,perez,racing_point,perez_2020_1,6,6,Finished,77.49086363636364,68.305,19.25743076923077,34.29369696969697,23.94166153846154,fastf1_avg_sector2;,1,0,outlier_revisao
+2020,1,Austrian Grand Prix,vettel,ferrari,vettel_2020_1,11,10,Finished,77.64287878787879,68.623,19.638661538461538,34.15065151515152,23.854630769230766,fastf1_avg_lap_time;fastf1_avg_sector2;,1,0,outlier_revisao
+2020,17,Abu Dhabi Grand Prix,pietro_fittipaldi,haas,pietro_fittipaldi_2020_17,17,19,+2 Laps,108.36032692307693,101.707,20.23476923076923,45.50643396226415,43.58066037735849,fastf1_avg_sector1;,1,0,outlier_revisao
+2021,8,Styrian Grand Prix,stroll,aston_martin,stroll_2021_8,9,8,+1 Lap,72.19070588235294,69.787,20.036757575757576,31.55754411764706,21.61708695652174,fastf1_avg_sector1;,0,0,outlier_revisao
+2021,21,Saudi Arabian Grand Prix,raikkonen,alfa,raikkonen_2021_21,12,15,+1 Lap,102.10018604651162,92.778,41.0740652173913,34.50751020408163,36.33369387755102,fastf1_avg_sector1;,1,0,outlier_revisao
+2021,21,Saudi Arabian Grand Prix,tsunoda,alphatauri,tsunoda_2021_21,8,14,+1 Lap,100.0935238095238,92.506,41.20278260869565,34.28120408163265,36.08873469387755,fastf1_avg_sector1;,1,0,outlier_revisao
+2022,19,United States Grand Prix,ricciardo,mclaren,ricciardo_2022_19,15,16,Finished,108.8837962962963,102.42,30.06403636363636,44.959339285714286,36.04083928571429,fastf1_avg_lap_time;,1,0,outlier_revisao
+2023,21,Las Vegas Grand Prix,bottas,alfa,bottas_2023_21,7,17,Finished,107.44702040816324,97.562,31.886408163265305,36.28322,39.93706,fastf1_avg_lap_time;,1,0,outlier_revisao

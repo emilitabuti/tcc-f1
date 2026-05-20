@@ -61,10 +61,10 @@ fastf1_pit_out_count: 2.0
 grid_position: 10.0
 
 Dimensões:
-Base 2018-2024 antes: (2524, 83)
-Base 2018-2024 depois: (2524, 96)
-Base 2018-2025 antes: (2943, 83)
-Base 2018-2025 depois: (2943, 96)
+Base 2018-2024 antes: (2524, 82)
+Base 2018-2024 depois: (2524, 95)
+Base 2018-2025 antes: (2943, 82)
+Base 2018-2025 depois: (2943, 95)
 
 BASE HISTÓRICA LIMPA
 ------------------------------------------------------------
@@ -80,8 +80,8 @@ laps: 57.0
 grid_position: 10.0
 
 Dimensões:
-Base 2018-2024 antes: (2524, 71)
-Base 2018-2024 depois: (2524, 74)
-Base 2018-2025 antes: (2943, 71)
-Base 2018-2025 depois: (2943, 74)
+Base 2018-2024 antes: (2524, 70)
+Base 2018-2024 depois: (2524, 73)
+Base 2018-2025 antes: (2943, 70)
+Base 2018-2025 depois: (2943, 73)
 

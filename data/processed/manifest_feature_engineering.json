@@ -1,0 +1,44 @@
+{
+  "recorte_temporal_oficial": "2018-2025",
+  "entrada_oficial_feature_engineering": "data/processed/dataset_feature_engineering_ready_2018_2025.csv",
+  "entrada_treino_ate_2024": "data/processed/dataset_feature_engineering_ready_2018_2024.csv",
+  "target": "finish_position",
+  "target_files": {
+    "2018_2024": "data/processed/target_finish_position_2018_2024.csv",
+    "2018_2025": "data/processed/target_finish_position_2018_2025.csv"
+  },
+  "colunas_proibidas_modelo": [
+    "finish_position",
+    "points",
+    "race_points",
+    "fastest_lap_race",
+    "previous_position"
+  ],
+  "colunas_proibidas_presentes_na_base_fe_ready": [
+    "finish_position"
+  ],
+  "colunas_removidas_da_base_fe_ready": [
+    "points",
+    "race_points",
+    "fastest_lap_race",
+    "previous_position"
+  ],
+  "observacao_target": "finish_position permanece na base FE-ready para ser target e para calculos historicos causais. Deve ser removida de X antes da modelagem.",
+  "novas_colunas_de_preparacao": [
+    "tire_compound_start",
+    "season_factor",
+    "avg_pit_stops_circuit_static_global",
+    "avg_pit_stops_circuit_cold_start_flag"
+  ],
+  "validacoes": {
+    "linhas_2018_2024": 2524,
+    "linhas_2018_2025": 2943,
+    "raceid_duplicados_2018_2024": 0,
+    "raceid_duplicados_2018_2025": 0,
+    "nulos_obrigatorios_2018_2024": 0,
+    "nulos_obrigatorios_2018_2025": 0,
+    "safety_car_corridas_2018_2024": 87,
+    "safety_car_corridas_2018_2025": 100,
+    "pitstop_cold_start_rows_2018_2025": 511
+  }
+}
