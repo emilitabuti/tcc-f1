@@ -1,0 +1,57 @@
+RELATÓRIO - 04 NORMALIZAÇÃO
+============================================================
+
+ARQUIVOS DE ENTRADA
+------------------------------------------------------------
+C:\Users\isagr\Documents\tcc-f1\data\processed\historico_encoded_2018_2024.csv
+C:\Users\isagr\Documents\tcc-f1\data\processed\historico_encoded_2018_2025.csv
+
+ARQUIVOS DE SAÍDA
+------------------------------------------------------------
+C:\Users\isagr\Documents\tcc-f1\data\processed\historico_normalizado_2018_2024.csv
+C:\Users\isagr\Documents\tcc-f1\data\processed\historico_normalizado_2018_2025.csv
+
+NORMALIZAÇÃO APLICADA
+------------------------------------------------------------
+Z-score aplicado nas variáveis numéricas contínuas.
+MinMaxScaler aplicado em grid_position e laps.
+
+COLUNAS COM Z-SCORE
+------------------------------------------------------------
+- fastf1_laps_count -> fastf1_laps_count_zscore
+- fastf1_avg_lap_time -> fastf1_avg_lap_time_zscore
+- fastf1_best_lap_time -> fastf1_best_lap_time_zscore
+- fastf1_avg_sector1 -> fastf1_avg_sector1_zscore
+- fastf1_avg_sector2 -> fastf1_avg_sector2_zscore
+- fastf1_avg_sector3 -> fastf1_avg_sector3_zscore
+- fastf1_max_tyre_life -> fastf1_max_tyre_life_zscore
+- fastf1_stints_count -> fastf1_stints_count_zscore
+- fastf1_pit_in_count -> fastf1_pit_in_count_zscore
+- fastf1_pit_out_count -> fastf1_pit_out_count_zscore
+
+COLUNAS COM MINMAXSCALER
+------------------------------------------------------------
+- grid_position -> grid_position_minmax
+- laps -> laps_minmax
+
+MEDIANAS USADAS PARA PREENCHER NULOS
+------------------------------------------------------------
+fastf1_laps_count: 59.0
+fastf1_avg_lap_time: 92.8485951417004
+fastf1_best_lap_time: 87.4425
+fastf1_avg_sector1: 29.72798408871745
+fastf1_avg_sector2: 34.281472040816325
+fastf1_avg_sector3: 27.8518396351137
+fastf1_max_tyre_life: 33.0
+fastf1_stints_count: 3.0
+fastf1_pit_in_count: 2.0
+fastf1_pit_out_count: 2.0
+grid_position: 10.0
+laps: 57.0
+
+DIMENSÕES
+------------------------------------------------------------
+Base 2018-2024 antes: (2524, 83)
+Base 2018-2024 depois: (2524, 95)
+Base 2018-2025 antes: (2943, 83)
+Base 2018-2025 depois: (2943, 95)
