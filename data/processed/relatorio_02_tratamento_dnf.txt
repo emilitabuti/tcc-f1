@@ -1,0 +1,50 @@
+RELATÓRIO - 02 TRATAMENTO DE DNFs
+============================================================
+
+VARIANTE ADOTADA
+------------------------------------------------------------
+DNF Excluded
+
+JUSTIFICATIVA
+------------------------------------------------------------
+A variante DNF Excluded foi adotada para reduzir ruídos na variável de resultado, removendo casos em que a posição final foi impactada por abandono, acidente, falha mecânica ou outro evento externo. A decisão está alinhada ao benchmark RAPM com MAE de 2,3 posições.
+
+CRITÉRIOS DE CLASSIFICAÇÃO
+------------------------------------------------------------
+classificado: Finished ou status de voltas atrás, como +1 Lap, +2 Laps.
+dnf_piloto: acidente, colisão, rodada ou erro/incidente do piloto.
+dnf_carro: falha mecânica, motor, câmbio, ERS, freios, suspensão etc.
+dnf_outros: DNS, retirada, doença, desclassificação ou casos indefinidos.
+
+RESUMO 2018-2024
+------------------------------------------------------------
+Linhas antes do DNF Excluded: 2979
+Linhas após DNF Excluded: 2316
+
+Categorias:
+dnf_categoria
+classificado    2316
+dnf_carro        152
+dnf_outros       364
+dnf_piloto       147
+Name: count, dtype: int64
+
+RESUMO 2018-2025
+------------------------------------------------------------
+Linhas antes do DNF Excluded: 3458
+Linhas após DNF Excluded: 2646
+
+Categorias:
+dnf_categoria
+classificado    2646
+dnf_carro        152
+dnf_outros       513
+dnf_piloto       147
+Name: count, dtype: int64
+
+ARQUIVOS GERADOS
+------------------------------------------------------------
+C:\Users\isagr\Documents\tcc-f1\data\processed\historico_dnf_classificado_2018_2024.csv
+C:\Users\isagr\Documents\tcc-f1\data\processed\historico_dnf_excluded_2018_2024.csv
+C:\Users\isagr\Documents\tcc-f1\data\processed\historico_dnf_classificado_2018_2025.csv
+C:\Users\isagr\Documents\tcc-f1\data\processed\historico_dnf_excluded_2018_2025.csv
