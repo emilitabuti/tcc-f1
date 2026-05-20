@@ -1,6 +1,7 @@
 from pathlib import Path
 import pandas as pd
 import numpy as np
+from sklearn.preprocessing import OneHotEncoder
  
  
 # 03 - Encoding das variáveis categóricas
@@ -16,11 +17,15 @@ DOCS_DIR.mkdir(parents=True, exist_ok=True)
 # Arquivos de entrada
 INPUT_FILE_2018_2024 = PROCESSED_DIR / "historico_dnf_excluded_2018_2024.csv"
 INPUT_FILE_2018_2025 = PROCESSED_DIR / "historico_dnf_excluded_2018_2025.csv"
+INPUT_BASE_LIMPA_2018_2024 = PROCESSED_DIR / "base_historica_dnf_excluded_2018_2024.csv"
+INPUT_BASE_LIMPA_2018_2025 = PROCESSED_DIR / "base_historica_dnf_excluded_2018_2025.csv"
  
  
 # Arquivos de saída
 OUTPUT_FILE_2018_2024 = PROCESSED_DIR / "historico_encoded_2018_2024.csv"
 OUTPUT_FILE_2018_2025 = PROCESSED_DIR / "historico_encoded_2018_2025.csv"
+OUTPUT_BASE_LIMPA_2018_2024 = PROCESSED_DIR / "base_historica_encoded_2018_2024.csv"
+OUTPUT_BASE_LIMPA_2018_2025 = PROCESSED_DIR / "base_historica_encoded_2018_2025.csv"
  
 REPORT_FILE = PROCESSED_DIR / "relatorio_03_encoding.txt"
 METHODOLOGY_FILE = DOCS_DIR / "metodologia_encoding.md"
@@ -29,6 +34,9 @@ METHODOLOGY_FILE = DOCS_DIR / "metodologia_encoding.md"
 # Mapeamento ordinal dos compostos de pneu
 # Soft > Medium > Hard
 COMPOUND_ORDINAL_MAP = {
+    "HYPERSOFT": 6,
+    "ULTRASOFT": 5,
+    "SUPERSOFT": 4,
     "SOFT": 3,
     "MEDIUM": 2,
     "HARD": 1,
@@ -56,6 +64,11 @@ def validar_colunas(df, colunas_obrigatorias, nome_base):
         )
  
  
+def repo_relative(path):
+    # Registra caminhos portáveis no relatório, independentemente da máquina.
+    return path.relative_to(BASE_DIR).as_posix()
+
+
 def normalizar_composto(valor):
     #Padroniza o nome do composto de pneu.
     
@@ -84,15 +97,10 @@ def escolher_coluna_circuito(df):
     )
  
  
-def aplicar_encoding(df, nome_base):
-    # Aplica:
-    # One-Hot Encoding para circuito/corrida
-    # One-Hot Encoding para construtor
-    # Label Encoding ordinal para composto de pneu
-    
+def preparar_base_encoding(df, nome_base):
+    # Valida e prepara colunas categóricas antes do OneHotEncoder.
     df = df.copy()
  
-    # Validação mínima
     colunas_obrigatorias = [
         "season",
         "round",
@@ -112,13 +120,13 @@ def aplicar_encoding(df, nome_base):
     elif "fastf1_main_compound" in df.columns:
         coluna_composto = "fastf1_main_compound"
     else:
-        raise ValueError(
-            "Nenhuma coluna de composto encontrada. "
-            "Esperado: fastf1_first_compound ou fastf1_main_compound."
-        )
+        coluna_composto = None
  
     # Normalizar composto
-    df["compound_normalizado"] = df[coluna_composto].apply(normalizar_composto)
+    if coluna_composto is None:
+        df["compound_normalizado"] = "UNKNOWN"
+    else:
+        df["compound_normalizado"] = df[coluna_composto].apply(normalizar_composto)
  
     # Label Encoding ordinal para composto
     df["compound_ordinal"] = (
@@ -127,18 +135,170 @@ def aplicar_encoding(df, nome_base):
         .fillna(0)
         .astype(int)
     )
+
+    return df, coluna_circuito, coluna_composto
+
+
+def criar_onehot_encoder():
+    try:
+        return OneHotEncoder(handle_unknown="ignore", sparse_output=False)
+    except TypeError:
+        return OneHotEncoder(handle_unknown="ignore", sparse=False)
+
+
+def aplicar_onehot(df, encoder, colunas_categoricas):
+    encoded_array = encoder.transform(df[colunas_categoricas])
+    encoded_columns = encoder.get_feature_names_out()
+    coluna_circuito = colunas_categoricas[0]
+    encoded_columns = [
+        col.replace(f"{coluna_circuito}_", "circuito_", 1)
+           .replace("constructor_id_", "constructor_", 1)
+        for col in encoded_columns
+    ]
+    encoded_df = pd.DataFrame(
+        encoded_array,
+        columns=encoded_columns,
+        index=df.index,
+    ).astype(int)
  
-    # One-Hot Encoding para circuito/corrida e construtor
-    df_encoded = pd.get_dummies(
-        df,
-        columns=[coluna_circuito, "constructor_id"],
-        prefix=["circuito", "constructor"],
-        dtype=int
+    df_sem_categoricas = df.drop(columns=colunas_categoricas)
+    return pd.concat([df_sem_categoricas, encoded_df], axis=1)
+ 
+ 
+def aplicar_encoding_par(df_2024, df_2025, nome_base_2024, nome_base_2025):
+    # Fit do encoder na base 2018-2024 e transform nas duas versões.
+    df_2024, coluna_circuito_2024, coluna_composto_2024 = preparar_base_encoding(
+        df_2024,
+        nome_base_2024,
+    )
+    df_2025, coluna_circuito_2025, coluna_composto_2025 = preparar_base_encoding(
+        df_2025,
+        nome_base_2025,
+    )
+
+    if coluna_circuito_2024 != coluna_circuito_2025:
+        raise ValueError(
+            "As bases 2018-2024 e 2018-2025 escolheram colunas de circuito "
+            f"diferentes: {coluna_circuito_2024} vs {coluna_circuito_2025}"
+        )
+
+    colunas_categoricas = [coluna_circuito_2024, "constructor_id"]
+    encoder = criar_onehot_encoder()
+    encoder.fit(df_2024[colunas_categoricas])
+
+    encoded_2024 = aplicar_onehot(df_2024, encoder, colunas_categoricas)
+    encoded_2025 = aplicar_onehot(df_2025, encoder, colunas_categoricas)
+
+    return (
+        encoded_2024,
+        encoded_2025,
+        coluna_circuito_2024,
+        coluna_composto_2024,
+        coluna_composto_2025,
     )
  
-    return df_encoded, coluna_circuito, coluna_composto
  
- 
+def processar_base(input_2024, input_2025, output_2024, output_2025, rotulo):
+    historico_2018_2024 = pd.read_csv(input_2024)
+    historico_2018_2025 = pd.read_csv(input_2025)
+
+    print(f"\nArquivos carregados com sucesso ({rotulo}).")
+    print(f"{rotulo} 2018-2024: {historico_2018_2024.shape}")
+    print(f"{rotulo} 2018-2025: {historico_2018_2025.shape}")
+
+    (
+        encoded_2018_2024,
+        encoded_2018_2025,
+        coluna_circuito_2024,
+        coluna_composto_2024,
+        coluna_composto_2025,
+    ) = aplicar_encoding_par(
+        historico_2018_2024,
+        historico_2018_2025,
+        input_2024.name,
+        input_2025.name,
+    )
+    coluna_circuito_2025 = coluna_circuito_2024
+
+    colunas_circuito_2024 = [
+        col for col in encoded_2018_2024.columns
+        if col.startswith("circuito_")
+    ]
+
+    colunas_constructor_2024 = [
+        col for col in encoded_2018_2024.columns
+        if col.startswith("constructor_")
+    ]
+
+    colunas_circuito_2025 = [
+        col for col in encoded_2018_2025.columns
+        if col.startswith("circuito_")
+    ]
+
+    colunas_constructor_2025 = [
+        col for col in encoded_2018_2025.columns
+        if col.startswith("constructor_")
+    ]
+
+    print(f"\nEncoding aplicado com sucesso ({rotulo}).")
+
+    print("\nBase 2018-2024:")
+    print(f"Coluna usada para circuito: {coluna_circuito_2024}")
+    print(f"Coluna usada para composto: {coluna_composto_2024 or 'UNKNOWN'}")
+    print(f"Quantidade de colunas de circuito criadas: {len(colunas_circuito_2024)}")
+    print(f"Quantidade de colunas de construtor criadas: {len(colunas_constructor_2024)}")
+    print(f"Dimensão final: {encoded_2018_2024.shape}")
+
+    print("\nBase 2018-2025:")
+    print(f"Coluna usada para circuito: {coluna_circuito_2025}")
+    print(f"Coluna usada para composto: {coluna_composto_2025 or 'UNKNOWN'}")
+    print(f"Quantidade de colunas de circuito criadas: {len(colunas_circuito_2025)}")
+    print(f"Quantidade de colunas de construtor criadas: {len(colunas_constructor_2025)}")
+    print(f"Dimensão final: {encoded_2018_2025.shape}")
+
+    print(f"\nDistribuição compound_ordinal - {rotulo} - 2018-2024:")
+    print(encoded_2018_2024["compound_ordinal"].value_counts().sort_index())
+
+    print(f"\nDistribuição compound_ordinal - {rotulo} - 2018-2025:")
+    print(encoded_2018_2025["compound_ordinal"].value_counts().sort_index())
+
+    encoded_2018_2024.to_csv(
+        output_2024,
+        index=False,
+        encoding="utf-8-sig"
+    )
+
+    encoded_2018_2025.to_csv(
+        output_2025,
+        index=False,
+        encoding="utf-8-sig"
+    )
+
+    print(f"\nArquivos salvos com sucesso ({rotulo}):")
+    print(output_2024)
+    print(output_2025)
+
+    return {
+        "rotulo": rotulo,
+        "input_2024": input_2024,
+        "input_2025": input_2025,
+        "output_2024": output_2024,
+        "output_2025": output_2025,
+        "inicial_2024": historico_2018_2024.shape,
+        "inicial_2025": historico_2018_2025.shape,
+        "final_2024": encoded_2018_2024.shape,
+        "final_2025": encoded_2018_2025.shape,
+        "coluna_circuito_2024": coluna_circuito_2024,
+        "coluna_circuito_2025": coluna_circuito_2025,
+        "coluna_composto_2024": coluna_composto_2024,
+        "coluna_composto_2025": coluna_composto_2025,
+        "colunas_circuito_2024": len(colunas_circuito_2024),
+        "colunas_circuito_2025": len(colunas_circuito_2025),
+        "colunas_constructor_2024": len(colunas_constructor_2024),
+        "colunas_constructor_2025": len(colunas_constructor_2025),
+    }
+
+
 def salvar_metodologia(coluna_circuito, coluna_composto):
     # Salva documentação metodológica da etapa de encoding.
     texto = f"""# Encoding das variáveis categóricas
@@ -158,6 +318,8 @@ As variáveis utilizadas foram:
 
 O One-Hot Encoding cria uma coluna binária para cada categoria. Dessa forma, evita-se que o modelo interprete categorias nominais como se tivessem uma ordem numérica.
 
+O encoder é ajustado na base 2018-2024 e reaplicado na base 2018-2025 com `handle_unknown="ignore"`, evitando quebra do pipeline caso apareçam categorias novas em dados futuros.
+
 ## Label Encoding ordinal para composto de pneu
 
 Para o composto de pneu foi utilizado Label Encoding ordinal, pois os compostos de pista seca possuem uma relação técnica de dureza.
@@ -168,6 +330,9 @@ A coluna utilizada foi:
 
 A regra aplicada foi:
 
+- HYPERSOFT = 6
+- ULTRASOFT = 5
+- SUPERSOFT = 4
 - SOFT = 3
 - MEDIUM = 2
 - HARD = 1
@@ -177,14 +342,16 @@ A ordem adotada segue a relação:
 
 SOFT > MEDIUM > HARD
 
-Compostos intermediários, de chuva ou ausentes foram mantidos com valor 0, pois não seguem a mesma escala ordinal dos compostos de pista seca.
+Compostos intermediários, de chuva ou ausentes foram mantidos com valor 0, pois não seguem a mesma escala ordinal dos compostos de pista seca. Compostos secos antigos da era 2018, como HyperSoft, UltraSoft e SuperSoft, foram preservados na ordem ordinal por serem pneus de pista seca.
 
 ## Arquivos gerados
 
-Esta etapa gera duas bases:
+Esta etapa gera quatro bases:
 
 - `historico_encoded_2018_2024.csv`
 - `historico_encoded_2018_2025.csv`
+- `base_historica_encoded_2018_2024.csv`
+- `base_historica_encoded_2018_2025.csv`
 
 A base principal recomendada para treinamento inicial do modelo é a versão 2018-2024.
 """
@@ -193,143 +360,95 @@ A base principal recomendada para treinamento inicial do modelo é a versão 201
         f.write(texto)
 
 
-# 1. Carregar arquivos da etapa 02
-historico_2018_2024 = pd.read_csv(INPUT_FILE_2018_2024)
-historico_2018_2025 = pd.read_csv(INPUT_FILE_2018_2025)
+# 1. Processar arquivos da etapa 02
+resultados = []
 
-print("Arquivos carregados com sucesso.")
-print(f"Histórico DNF Excluded 2018-2024: {historico_2018_2024.shape}")
-print(f"Histórico DNF Excluded 2018-2025: {historico_2018_2025.shape}")
-
-
-# 2. Aplicar encoding
-encoded_2018_2024, coluna_circuito_2024, coluna_composto_2024 = aplicar_encoding(
-    historico_2018_2024,
-    "historico_dnf_excluded_2018_2024.csv"
-)
-
-encoded_2018_2025, coluna_circuito_2025, coluna_composto_2025 = aplicar_encoding(
-    historico_2018_2025,
-    "historico_dnf_excluded_2018_2025.csv"
-)
-
-
-# 3. Conferir colunas criadas
-colunas_circuito_2024 = [
-    col for col in encoded_2018_2024.columns
-    if col.startswith("circuito_")
-]
-
-colunas_constructor_2024 = [
-    col for col in encoded_2018_2024.columns
-    if col.startswith("constructor_")
-]
-
-colunas_circuito_2025 = [
-    col for col in encoded_2018_2025.columns
-    if col.startswith("circuito_")
-]
-
-colunas_constructor_2025 = [
-    col for col in encoded_2018_2025.columns
-    if col.startswith("constructor_")
-]
-
-print("\nEncoding aplicado com sucesso.")
-
-print("\nBase 2018-2024:")
-print(f"Coluna usada para circuito: {coluna_circuito_2024}")
-print(f"Coluna usada para composto: {coluna_composto_2024}")
-print(f"Quantidade de colunas de circuito criadas: {len(colunas_circuito_2024)}")
-print(f"Quantidade de colunas de construtor criadas: {len(colunas_constructor_2024)}")
-print(f"Dimensão final: {encoded_2018_2024.shape}")
-
-print("\nBase 2018-2025:")
-print(f"Coluna usada para circuito: {coluna_circuito_2025}")
-print(f"Coluna usada para composto: {coluna_composto_2025}")
-print(f"Quantidade de colunas de circuito criadas: {len(colunas_circuito_2025)}")
-print(f"Quantidade de colunas de construtor criadas: {len(colunas_constructor_2025)}")
-print(f"Dimensão final: {encoded_2018_2025.shape}")
-
-
-
-# 4. Conferir compound_ordinal
-print("\nDistribuição compound_ordinal - 2018-2024:")
-print(encoded_2018_2024["compound_ordinal"].value_counts().sort_index())
-
-print("\nDistribuição compound_ordinal - 2018-2025:")
-print(encoded_2018_2025["compound_ordinal"].value_counts().sort_index())
-
-
-# 5. Salvar arquivos finais
-encoded_2018_2024.to_csv(
+resultados.append(processar_base(
+    INPUT_FILE_2018_2024,
+    INPUT_FILE_2018_2025,
     OUTPUT_FILE_2018_2024,
-    index=False,
-    encoding="utf-8-sig"
-)
-
-encoded_2018_2025.to_csv(
     OUTPUT_FILE_2018_2025,
-    index=False,
-    encoding="utf-8-sig"
-)
+    "Histórico enriquecido com FastF1"
+))
 
-print("\nArquivos salvos com sucesso:")
-print(OUTPUT_FILE_2018_2024)
-print(OUTPUT_FILE_2018_2025)
+resultados.append(processar_base(
+    INPUT_BASE_LIMPA_2018_2024,
+    INPUT_BASE_LIMPA_2018_2025,
+    OUTPUT_BASE_LIMPA_2018_2024,
+    OUTPUT_BASE_LIMPA_2018_2025,
+    "Base histórica limpa"
+))
 
 
-# 6. Salvar relatório
+# 2. Salvar relatório
 with open(REPORT_FILE, "w", encoding="utf-8") as f:
     f.write("RELATÓRIO - 03 ENCODING\n")
     f.write("=" * 60 + "\n\n")
 
     f.write("ARQUIVOS DE ENTRADA\n")
     f.write("-" * 60 + "\n")
-    f.write(f"{INPUT_FILE_2018_2024}\n")
-    f.write(f"{INPUT_FILE_2018_2025}\n\n")
+    for resultado in resultados:
+        f.write(f"{repo_relative(resultado['input_2024'])}\n")
+        f.write(f"{repo_relative(resultado['input_2025'])}\n")
+    f.write("\n")
 
     f.write("ARQUIVOS DE SAÍDA\n")
     f.write("-" * 60 + "\n")
-    f.write(f"{OUTPUT_FILE_2018_2024}\n")
-    f.write(f"{OUTPUT_FILE_2018_2025}\n\n")
+    for resultado in resultados:
+        f.write(f"{repo_relative(resultado['output_2024'])}\n")
+        f.write(f"{repo_relative(resultado['output_2025'])}\n")
+    f.write("\n")
 
     f.write("ENCODING APLICADO\n")
     f.write("-" * 60 + "\n")
     f.write("One-Hot Encoding aplicado para circuito/corrida e constructor_id.\n")
+    f.write("Encoder ajustado em 2018-2024 e reaplicado em 2018-2025 com handle_unknown='ignore'.\n")
     f.write("Label Encoding ordinal aplicado para composto de pneu.\n\n")
 
     f.write("REGRA DO COMPOSTO ORDINAL\n")
     f.write("-" * 60 + "\n")
+    f.write("HYPERSOFT = 6\n")
+    f.write("ULTRASOFT = 5\n")
+    f.write("SUPERSOFT = 4\n")
     f.write("SOFT = 3\n")
     f.write("MEDIUM = 2\n")
     f.write("HARD = 1\n")
     f.write("INTERMEDIATE/WET/UNKNOWN = 0\n\n")
 
-    f.write("BASE 2018-2024\n")
-    f.write("-" * 60 + "\n")
-    f.write(f"Dimensão inicial: {historico_2018_2024.shape}\n")
-    f.write(f"Dimensão final: {encoded_2018_2024.shape}\n")
-    f.write(f"Coluna usada para circuito: {coluna_circuito_2024}\n")
-    f.write(f"Coluna usada para composto: {coluna_composto_2024}\n")
-    f.write(f"Colunas de circuito criadas: {len(colunas_circuito_2024)}\n")
-    f.write(f"Colunas de construtor criadas: {len(colunas_constructor_2024)}\n\n")
+    for resultado in resultados:
+        f.write(f"{resultado['rotulo'].upper()} - 2018-2024\n")
+        f.write("-" * 60 + "\n")
+        f.write(f"Dimensão inicial: {resultado['inicial_2024']}\n")
+        f.write(f"Dimensão final: {resultado['final_2024']}\n")
+        f.write(f"Coluna usada para circuito: {resultado['coluna_circuito_2024']}\n")
+        f.write(
+            "Coluna usada para composto: "
+            f"{resultado['coluna_composto_2024'] or 'UNKNOWN'}\n"
+        )
+        f.write(f"Colunas de circuito criadas: {resultado['colunas_circuito_2024']}\n")
+        f.write(f"Colunas de construtor criadas: {resultado['colunas_constructor_2024']}\n\n")
 
-    f.write("BASE 2018-2025\n")
-    f.write("-" * 60 + "\n")
-    f.write(f"Dimensão inicial: {historico_2018_2025.shape}\n")
-    f.write(f"Dimensão final: {encoded_2018_2025.shape}\n")
-    f.write(f"Coluna usada para circuito: {coluna_circuito_2025}\n")
-    f.write(f"Coluna usada para composto: {coluna_composto_2025}\n")
-    f.write(f"Colunas de circuito criadas: {len(colunas_circuito_2025)}\n")
-    f.write(f"Colunas de construtor criadas: {len(colunas_constructor_2025)}\n")
+        f.write(f"{resultado['rotulo'].upper()} - 2018-2025\n")
+        f.write("-" * 60 + "\n")
+        f.write(f"Dimensão inicial: {resultado['inicial_2025']}\n")
+        f.write(f"Dimensão final: {resultado['final_2025']}\n")
+        f.write(f"Coluna usada para circuito: {resultado['coluna_circuito_2025']}\n")
+        f.write(
+            "Coluna usada para composto: "
+            f"{resultado['coluna_composto_2025'] or 'UNKNOWN'}\n"
+        )
+        f.write(f"Colunas de circuito criadas: {resultado['colunas_circuito_2025']}\n")
+        f.write(f"Colunas de construtor criadas: {resultado['colunas_constructor_2025']}\n\n")
 
 print("\nRelatório salvo em:")
 print(REPORT_FILE)
 
 
-# 7. Salvar documentação metodológica
-salvar_metodologia(coluna_circuito_2024, coluna_composto_2024)
+# 3. Salvar documentação metodológica
+salvar_metodologia(
+    resultados[0]["coluna_circuito_2024"],
+    resultados[0]["coluna_composto_2024"] or "UNKNOWN"
+)
 
 print("\nDocumentação metodológica salva em:")
 print(METHODOLOGY_FILE)

@@ -15,6 +15,8 @@ As variáveis utilizadas foram:
 
 O One-Hot Encoding cria uma coluna binária para cada categoria. Dessa forma, evita-se que o modelo interprete categorias nominais como se tivessem uma ordem numérica.
 
+O encoder é ajustado na base 2018-2024 e reaplicado na base 2018-2025 com `handle_unknown="ignore"`, evitando quebra do pipeline caso apareçam categorias novas em dados futuros.
+
 ## Label Encoding ordinal para composto de pneu
 
 Para o composto de pneu foi utilizado Label Encoding ordinal, pois os compostos de pista seca possuem uma relação técnica de dureza.
@@ -25,6 +27,9 @@ A coluna utilizada foi:
 
 A regra aplicada foi:
 
+- HYPERSOFT = 6
+- ULTRASOFT = 5
+- SUPERSOFT = 4
 - SOFT = 3
 - MEDIUM = 2
 - HARD = 1
@@ -34,13 +39,15 @@ A ordem adotada segue a relação:
 
 SOFT > MEDIUM > HARD
 
-Compostos intermediários, de chuva ou ausentes foram mantidos com valor 0, pois não seguem a mesma escala ordinal dos compostos de pista seca.
+Compostos intermediários, de chuva ou ausentes foram mantidos com valor 0, pois não seguem a mesma escala ordinal dos compostos de pista seca. Compostos secos antigos da era 2018, como HyperSoft, UltraSoft e SuperSoft, foram preservados na ordem ordinal por serem pneus de pista seca.
 
 ## Arquivos gerados
 
-Esta etapa gera duas bases:
+Esta etapa gera quatro bases:
 
 - `historico_encoded_2018_2024.csv`
 - `historico_encoded_2018_2025.csv`
+- `base_historica_encoded_2018_2024.csv`
+- `base_historica_encoded_2018_2025.csv`
 
 A base principal recomendada para treinamento inicial do modelo é a versão 2018-2024.

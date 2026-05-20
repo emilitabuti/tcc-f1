@@ -3,27 +3,35 @@ RELATÓRIO - 03 ENCODING
 
 ARQUIVOS DE ENTRADA
 ------------------------------------------------------------
-C:\Users\isagr\Documents\tcc-f1\data\processed\historico_dnf_excluded_2018_2024.csv
-C:\Users\isagr\Documents\tcc-f1\data\processed\historico_dnf_excluded_2018_2025.csv
+data/processed/historico_dnf_excluded_2018_2024.csv
+data/processed/historico_dnf_excluded_2018_2025.csv
+data/processed/base_historica_dnf_excluded_2018_2024.csv
+data/processed/base_historica_dnf_excluded_2018_2025.csv
 
 ARQUIVOS DE SAÍDA
 ------------------------------------------------------------
-C:\Users\isagr\Documents\tcc-f1\data\processed\historico_encoded_2018_2024.csv
-C:\Users\isagr\Documents\tcc-f1\data\processed\historico_encoded_2018_2025.csv
+data/processed/historico_encoded_2018_2024.csv
+data/processed/historico_encoded_2018_2025.csv
+data/processed/base_historica_encoded_2018_2024.csv
+data/processed/base_historica_encoded_2018_2025.csv
 
 ENCODING APLICADO
 ------------------------------------------------------------
 One-Hot Encoding aplicado para circuito/corrida e constructor_id.
+Encoder ajustado em 2018-2024 e reaplicado em 2018-2025 com handle_unknown='ignore'.
 Label Encoding ordinal aplicado para composto de pneu.
 
 REGRA DO COMPOSTO ORDINAL
 ------------------------------------------------------------
+HYPERSOFT = 6
+ULTRASOFT = 5
+SUPERSOFT = 4
 SOFT = 3
 MEDIUM = 2
 HARD = 1
 INTERMEDIATE/WET/UNKNOWN = 0
 
-BASE 2018-2024
+HISTÓRICO ENRIQUECIDO COM FASTF1 - 2018-2024
 ------------------------------------------------------------
 Dimensão inicial: (2524, 31)
 Dimensão final: (2524, 83)
@@ -32,7 +40,7 @@ Coluna usada para composto: fastf1_first_compound
 Colunas de circuito criadas: 36
 Colunas de construtor criadas: 16
 
-BASE 2018-2025
+HISTÓRICO ENRIQUECIDO COM FASTF1 - 2018-2025
 ------------------------------------------------------------
 Dimensão inicial: (2943, 31)
 Dimensão final: (2943, 83)
@@ -40,3 +48,22 @@ Coluna usada para circuito: race_name
 Coluna usada para composto: fastf1_first_compound
 Colunas de circuito criadas: 36
 Colunas de construtor criadas: 16
+
+BASE HISTÓRICA LIMPA - 2018-2024
+------------------------------------------------------------
+Dimensão inicial: (2524, 19)
+Dimensão final: (2524, 71)
+Coluna usada para circuito: race_name
+Coluna usada para composto: UNKNOWN
+Colunas de circuito criadas: 36
+Colunas de construtor criadas: 16
+
+BASE HISTÓRICA LIMPA - 2018-2025
+------------------------------------------------------------
+Dimensão inicial: (2943, 19)
+Dimensão final: (2943, 71)
+Coluna usada para circuito: race_name
+Coluna usada para composto: UNKNOWN
+Colunas de circuito criadas: 36
+Colunas de construtor criadas: 16
+
