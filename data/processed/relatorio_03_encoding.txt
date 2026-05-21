@@ -19,6 +19,7 @@ ENCODING APLICADO
 ------------------------------------------------------------
 One-Hot Encoding aplicado para circuito/corrida e constructor_id.
 Encoder ajustado em 2018-2024 e reaplicado em 2018-2025 com handle_unknown='ignore'.
+Encoders e schemas persistidos em models/preprocessing.
 Label Encoding ordinal aplicado para composto de pneu.
 
 REGRA DO COMPOSTO ORDINAL
@@ -49,6 +50,9 @@ Coluna usada para composto: fastf1_first_compound
 Colunas de circuito criadas: 32
 Colunas de construtor criadas: 17
 
+Encoder salvo em: models/preprocessing/onehot_encoder_historico_fastf1.joblib
+Schema salvo em: models/preprocessing/schema_encoding_historico_fastf1.json
+
 BASE HISTÓRICA LIMPA - 2018-2024
 ------------------------------------------------------------
 Dimensão inicial: (2524, 19)
@@ -66,4 +70,7 @@ Coluna usada para circuito: circuit_id
 Coluna usada para composto: UNKNOWN
 Colunas de circuito criadas: 32
 Colunas de construtor criadas: 17
+
+Encoder salvo em: models/preprocessing/onehot_encoder_base_historica.joblib
+Schema salvo em: models/preprocessing/schema_encoding_base_historica.json
 

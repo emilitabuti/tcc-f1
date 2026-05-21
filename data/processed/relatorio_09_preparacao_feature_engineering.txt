@@ -36,34 +36,42 @@ Observacao: finish_position permanece apenas como target/historico.
 
 DIMENSOES
 ----------------------------------------------------------------------
-2018-2024: (2524, 117)
-2018-2025: (2943, 117)
+2018-2024: (2524, 122)
+2018-2025: (2943, 122)
 
 SAFETY CAR
 ----------------------------------------------------------------------
-Corridas 2018-2024 com SC/VSC: 87
-Corridas 2018-2025 com SC/VSC: 100
+Corridas 2018-2024 com SC/VSC: 108
+Corridas 2018-2025 com SC/VSC: 126
 
 OUTLIERS EM REVISAO
 ----------------------------------------------------------------------
-Total: 14
- season  round                race_name         driver_id                         outlier_colunas
-   2018      4    Azerbaijan Grand Prix          ericsson                    fastf1_avg_lap_time;
-   2020      1      Austrian Grand Prix             gasly fastf1_avg_lap_time;fastf1_avg_sector2;
-   2020      1      Austrian Grand Prix        giovinazzi fastf1_avg_lap_time;fastf1_avg_sector3;
-   2020      1      Austrian Grand Prix          hamilton                     fastf1_avg_sector2;
-   2020      1      Austrian Grand Prix            latifi fastf1_avg_lap_time;fastf1_avg_sector1;
-   2020      1      Austrian Grand Prix              ocon  fastf1_avg_sector2;fastf1_avg_sector3;
-   2020      1      Austrian Grand Prix             perez                     fastf1_avg_sector2;
-   2020      1      Austrian Grand Prix            vettel fastf1_avg_lap_time;fastf1_avg_sector2;
-   2020     17     Abu Dhabi Grand Prix pietro_fittipaldi                     fastf1_avg_sector1;
-   2021      8       Styrian Grand Prix            stroll                     fastf1_avg_sector1;
-   2021     21 Saudi Arabian Grand Prix         raikkonen                     fastf1_avg_sector1;
-   2021     21 Saudi Arabian Grand Prix           tsunoda                     fastf1_avg_sector1;
-   2022     19 United States Grand Prix         ricciardo                    fastf1_avg_lap_time;
-   2023     21     Las Vegas Grand Prix            bottas                    fastf1_avg_lap_time;
+Outliers totais: 26
+Por tipo: {'outlier_legitimo': 26}
+Reclassificados pos-contexto por SC/VSC: 13
+Outlier em revisao ainda com safety_car_flag=1: 0
+
+Total: 0
 
 AVG PIT STOPS CAUSAL
 ----------------------------------------------------------------------
 `avg_pit_stops_circuit` foi recalculada usando apenas corridas anteriores do mesmo circuito. A media global antiga foi preservada em `avg_pit_stops_circuit_static_global` apenas para auditoria.
 Linhas cold-start 2018-2025: 511
+
+TRACK COMPLEXITY ENRIQUECIDA
+----------------------------------------------------------------------
+Formula estatica (etapa 07): 0.40*corners_norm + 0.30*length_km_norm + 0.20*altitude_norm + 0.10*circuit_type (etapa 07, baseada em circuitos_manual.csv)
+Formula enriquecida (etapa 09): 0.35*corners_norm + 0.25*length_km_norm + 0.20*altitude_norm + 0.10*circuit_type + 0.10*incident_rate_hist_norm (etapa 09, com componente causal de incidentes historicos por circuito)
+Componente de incidentes: incident_rate_hist = taxa historica de SC/VSC no circuito, calculada causalmente com expanding().mean().shift(1) por circuit_id. Cold-start usa taxa global 2018-2024.
+incident_rate_hist_norm 2018-2025 — mean: 0.7766  std: 0.2150
+Variacao media |track_complexity - track_complexity_static|: 0.0365
+
+OUTLIERS — ESTADO FINAL
+----------------------------------------------------------------------
+Reconciliacoes aplicadas:
+  1. Pos-contexto SC/VSC (etapa anterior): 13 reclassificados
+  2. Colunas nao-feature (esta etapa): 1 reclassificado(s)
+
+Caso especifico resolvido: season=2021, round=8, driver_id=stroll, outlier_colunas=fastf1_avg_sector1
+  Decisao: outlier_legitimo
+  Justificativa: A coluna outlier (fastf1_avg_sector1) nao e feature final do modelo. O modelo prediz finish_position a partir de coeficientes RAPM, forma recente e features de contexto. Tempos de setor sao insumos de auditoria e nao entram em X. O resultado da corrida (8o lugar, +1 Lap) e valido. Reclassificado via reconciliar_outliers_nao_feature.

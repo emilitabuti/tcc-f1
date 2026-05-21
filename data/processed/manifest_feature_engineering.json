@@ -24,12 +24,59 @@
     "previous_position"
   ],
   "observacao_target": "finish_position permanece na base FE-ready para ser target e para calculos historicos causais. Deve ser removida de X antes da modelagem.",
+  "contrato_dnf_rates": {
+    "fonte_obrigatoria": "data/processed/historico_dnf_classificado_2018_2025.csv",
+    "motivo": "dataset_feature_engineering_ready_* usa DNF Excluded; portanto dnf_flag e dnf_car_flag ficam zerados na base modelavel.",
+    "regra_temporal": "Calcular driver_dnf_rate e constructor_dnf_rate usando apenas corridas anteriores a corrida alvo, com shift(1) dentro de cada grupo."
+  },
+  "contrato_qualifying": {
+    "feature_principal": "qualifying_position",
+    "fallback_ausentes": "grid_position",
+    "observacao": "Q1/Q2/Q3 permanecem nos dados brutos para auditoria, mas nao entram na base FE-ready. A imputacao KNN prevista originalmente nao foi aplicada porque a feature usada no modelo e a posicao de qualifying."
+  },
+  "contrato_normalizacao_modelagem": {
+    "regra": "Em walk-forward, scalers devem ser ajustados somente no treino de cada fold. Colunas normalizadas no CSV sao artefatos de preprocessamento/auditoria e nao substituem o fit temporal."
+  },
   "novas_colunas_de_preparacao": [
     "tire_compound_start",
     "season_factor",
     "avg_pit_stops_circuit_static_global",
-    "avg_pit_stops_circuit_cold_start_flag"
+    "avg_pit_stops_circuit_cold_start_flag",
+    "outlier_reclassificado_pos_contexto_flag",
+    "outlier_reclassificado_nao_feature_flag",
+    "track_complexity_static",
+    "incident_rate_hist",
+    "incident_rate_hist_norm"
   ],
+  "contrato_track_complexity": {
+    "formula_estatica": "0.40*corners_norm + 0.30*length_km_norm + 0.20*altitude_norm + 0.10*circuit_type (etapa 07, baseada em circuitos_manual.csv)",
+    "formula_enriquecida": "0.35*corners_norm + 0.25*length_km_norm + 0.20*altitude_norm + 0.10*circuit_type + 0.10*incident_rate_hist_norm (etapa 09, com componente causal de incidentes historicos por circuito)",
+    "componente_incidentes": "incident_rate_hist = taxa historica de SC/VSC no circuito, calculada causalmente com expanding().mean().shift(1) por circuit_id. Cold-start usa taxa global 2018-2024.",
+    "track_complexity_static": "Versao estatica original preservada para auditoria. Nao deve ser usada como feature; usar track_complexity."
+  },
+  "decisao_outlier_stroll_styrian_2021": {
+    "caso": "season=2021, round=8, driver_id=stroll, outlier_colunas=fastf1_avg_sector1",
+    "decisao": "outlier_legitimo",
+    "justificativa": "A coluna outlier (fastf1_avg_sector1) nao e feature final do modelo. O modelo prediz finish_position a partir de coeficientes RAPM, forma recente e features de contexto. Tempos de setor sao insumos de auditoria e nao entram em X. O resultado da corrida (8o lugar, +1 Lap) e valido. Reclassificado via reconciliar_outliers_nao_feature."
+  },
+  "outliers": {
+    "2018_2024": {
+      "total_outliers": 14,
+      "por_tipo": {
+        "outlier_legitimo": 14
+      },
+      "reclassificados_pos_contexto": 9,
+      "revisao_com_safety_car": 0
+    },
+    "2018_2025": {
+      "total_outliers": 26,
+      "por_tipo": {
+        "outlier_legitimo": 26
+      },
+      "reclassificados_pos_contexto": 13,
+      "revisao_com_safety_car": 0
+    }
+  },
   "validacoes": {
     "linhas_2018_2024": 2524,
     "linhas_2018_2025": 2943,
@@ -37,8 +84,8 @@
     "raceid_duplicados_2018_2025": 0,
     "nulos_obrigatorios_2018_2024": 0,
     "nulos_obrigatorios_2018_2025": 0,
-    "safety_car_corridas_2018_2024": 87,
-    "safety_car_corridas_2018_2025": 100,
+    "safety_car_corridas_2018_2024": 108,
+    "safety_car_corridas_2018_2025": 126,
     "pitstop_cold_start_rows_2018_2025": 511
   }
 }

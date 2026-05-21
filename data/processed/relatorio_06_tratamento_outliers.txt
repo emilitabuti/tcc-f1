@@ -3,15 +3,15 @@ RELATÓRIO - 06 TRATAMENTO DE OUTLIERS
 
 ARQUIVOS DE ENTRADA
 ----------------------------------------------------------------------
-/home/emili-tabuti/tcc-f1/data/processed/historico_imputado_normalizado_2018_2024.csv
-/home/emili-tabuti/tcc-f1/data/processed/historico_imputado_normalizado_2018_2025.csv
+C:\Users\isagr\Documents\tcc-f1\data\processed\historico_imputado_normalizado_2018_2024.csv
+C:\Users\isagr\Documents\tcc-f1\data\processed\historico_imputado_normalizado_2018_2025.csv
 
 ARQUIVOS DE SAÍDA
 ----------------------------------------------------------------------
-/home/emili-tabuti/tcc-f1/data/processed/historico_outliers_tratados_2018_2024.csv
-/home/emili-tabuti/tcc-f1/data/processed/historico_outliers_tratados_2018_2025.csv
-/home/emili-tabuti/tcc-f1/data/processed/outliers_removidos_2018_2024.csv
-/home/emili-tabuti/tcc-f1/data/processed/outliers_removidos_2018_2025.csv
+C:\Users\isagr\Documents\tcc-f1\data\processed\historico_outliers_tratados_2018_2024.csv
+C:\Users\isagr\Documents\tcc-f1\data\processed\historico_outliers_tratados_2018_2025.csv
+C:\Users\isagr\Documents\tcc-f1\data\processed\outliers_removidos_2018_2024.csv
+C:\Users\isagr\Documents\tcc-f1\data\processed\outliers_removidos_2018_2025.csv
 
 COLUNAS AVALIADAS PARA OUTLIER
 ----------------------------------------------------------------------

@@ -3,26 +3,26 @@ RELATÓRIO - 07 INTEGRAÇÃO DE FONTES DE SUPORTE
 
 ARQUIVOS DE ENTRADA
 ------------------------------------------------------------
-/home/emili-tabuti/tcc-f1/data/processed/historico_outliers_tratados_2018_2024.csv
-/home/emili-tabuti/tcc-f1/data/processed/historico_outliers_tratados_2018_2025.csv
-/home/emili-tabuti/tcc-f1/data/raw/circuitos_manual.csv
-/home/emili-tabuti/tcc-f1/data/raw/fastf1_weather_2018_2025.csv
-/home/emili-tabuti/tcc-f1/data/raw/ergast_pitstop_2018_2025.csv
-/home/emili-tabuti/tcc-f1/data/raw/openf1_race_control_2025_2026.csv
-/home/emili-tabuti/tcc-f1/data/raw/openf1_meetings_2025_2026.csv
-/home/emili-tabuti/tcc-f1/data/raw/fastf1_qualifying_2018_2025.csv
+C:\Users\isagr\Documents\tcc-f1\data\processed\historico_outliers_tratados_2018_2024.csv
+C:\Users\isagr\Documents\tcc-f1\data\processed\historico_outliers_tratados_2018_2025.csv
+C:\Users\isagr\Documents\tcc-f1\data\raw\circuitos_manual.csv
+C:\Users\isagr\Documents\tcc-f1\data\raw\fastf1_weather_2018_2025.csv
+C:\Users\isagr\Documents\tcc-f1\data\raw\ergast_pitstop_2018_2025.csv
+C:\Users\isagr\Documents\tcc-f1\data\raw\openf1_race_control_2025_2026.csv
+C:\Users\isagr\Documents\tcc-f1\data\raw\openf1_meetings_2025_2026.csv
+C:\Users\isagr\Documents\tcc-f1\data\raw\fastf1_qualifying_2018_2025.csv
 
-/home/emili-tabuti/tcc-f1/data/raw/fastf1_laps_2018_2025.csv
+C:\Users\isagr\Documents\tcc-f1\data\raw\fastf1_laps_2018_2025.csv
 
 ARQUIVOS DE SAÍDA
 ------------------------------------------------------------
-/home/emili-tabuti/tcc-f1/data/processed/dataset_pre_features_2018_2024.csv
-/home/emili-tabuti/tcc-f1/data/processed/dataset_pre_features_2018_2025.csv
+C:\Users\isagr\Documents\tcc-f1\data\processed\dataset_pre_features_2018_2024.csv
+C:\Users\isagr\Documents\tcc-f1\data\processed\dataset_pre_features_2018_2025.csv
 
 CORREÇÕES APLICADAS
 ------------------------------------------------------------
-grid_position 0→21 (2018-2024): 35 registros
-grid_position 0→21 (2018-2025): 35 registros
+grid_position 0->21 (2018-2024): 35 registros
+grid_position 0->21 (2018-2025): 35 registros
 
 QUALIFYING POSITION
 ------------------------------------------------------------
@@ -52,21 +52,22 @@ avg_pit_stops_circuit 2018-2024 - std:  0.4535
 
 SAFETY CAR FLAG
 ------------------------------------------------------------
-Fonte principal: FastF1 TrackStatus, codigos 4=SC e 5=VSC.
+Fonte principal: FastF1 TrackStatus: 4=SC, 5=Red Flag, 6=VSC deployed e 7=VSC ending.
+Para safety_car_flag foram considerados apenas 4, 6 e 7. O codigo 5 foi excluido por representar Red Flag.
 Para 2025, OpenF1 Race Control foi usado como corroboracao adicional.
 Registros FastF1 laps avaliados: 206202
-2018-2024: 1419 registros com SC/VSC
-2018-2025: 1641 registros com SC/VSC
+2018-2024: 1769 registros com SC/VSC
+2018-2025: 2075 registros com SC/VSC
 Corridas com SC/VSC por temporada:
 season
-2018    13
-2019     9
-2020    12
-2021    14
-2022    16
-2023    13
-2024    10
-2025    13
+2018    19
+2019    14
+2020    13
+2021    15
+2022    20
+2023    14
+2024    13
+2025    18
 
 DIMENSÕES FINAIS
 ------------------------------------------------------------

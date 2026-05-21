@@ -1,6 +1,9 @@
 from pathlib import Path
+import json
+
 import pandas as pd
 import numpy as np
+import joblib
 from sklearn.preprocessing import OneHotEncoder
  
  
@@ -9,9 +12,11 @@ BASE_DIR = Path(__file__).resolve().parents[1]
  
 PROCESSED_DIR = BASE_DIR / "data" / "processed"
 DOCS_DIR = BASE_DIR / "docs"
+MODELS_DIR = BASE_DIR / "models" / "preprocessing"
  
 PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
 DOCS_DIR.mkdir(parents=True, exist_ok=True)
+MODELS_DIR.mkdir(parents=True, exist_ok=True)
  
  
 # Arquivos de entrada
@@ -29,6 +34,11 @@ OUTPUT_BASE_LIMPA_2018_2025 = PROCESSED_DIR / "base_historica_encoded_2018_2025.
  
 REPORT_FILE = PROCESSED_DIR / "relatorio_03_encoding.txt"
 METHODOLOGY_FILE = DOCS_DIR / "metodologia_encoding.md"
+
+ENCODER_HISTORICO = MODELS_DIR / "onehot_encoder_historico_fastf1.joblib"
+SCHEMA_HISTORICO = MODELS_DIR / "schema_encoding_historico_fastf1.json"
+ENCODER_BASE_LIMPA = MODELS_DIR / "onehot_encoder_base_historica.joblib"
+SCHEMA_BASE_LIMPA = MODELS_DIR / "schema_encoding_base_historica.json"
  
  
 # Colunas de metadado que devem ser preservadas mesmo quando são usadas como
@@ -117,6 +127,13 @@ def validar_colunas(df, colunas_obrigatorias, nome_base):
 def repo_relative(path):
     # Registra caminhos portáveis no relatório, independentemente da máquina.
     return path.relative_to(BASE_DIR).as_posix()
+
+
+def paths_encoding_por_rotulo(rotulo):
+    if "FastF1" in rotulo:
+        return ENCODER_HISTORICO, SCHEMA_HISTORICO
+
+    return ENCODER_BASE_LIMPA, SCHEMA_BASE_LIMPA
 
 
 def normalizar_composto(valor):
@@ -256,10 +273,48 @@ def aplicar_encoding_par(df_2024, df_2025, nome_base_2024, nome_base_2025):
     return (
         encoded_2024,
         encoded_2025,
+        encoder,
+        colunas_categoricas,
         coluna_circuito_2024,
         coluna_composto_2024,
         coluna_composto_2025,
     )
+
+
+def salvar_encoder_schema(
+    encoder,
+    colunas_categoricas,
+    encoded_2018_2024,
+    encoded_2018_2025,
+    rotulo,
+):
+    encoder_path, schema_path = paths_encoding_por_rotulo(rotulo)
+    joblib.dump(encoder, encoder_path)
+
+    schema = {
+        "rotulo": rotulo,
+        "encoder_path": repo_relative(encoder_path),
+        "colunas_categoricas": colunas_categoricas,
+        "categorias": {
+            coluna: [str(valor) for valor in categorias]
+            for coluna, categorias in zip(colunas_categoricas, encoder.categories_)
+        },
+        "colunas_saida_2018_2024": list(encoded_2018_2024.columns),
+        "colunas_saida_2018_2025": list(encoded_2018_2025.columns),
+        "compound_ordinal_map": COMPOUND_ORDINAL_MAP,
+        "handle_unknown": "ignore",
+        "observacao": (
+            "Encoder ajustado na base 2018-2024 e reaplicado na base 2018-2025. "
+            "Usar este schema para manter ordem e compatibilidade das colunas em dados futuros."
+        ),
+    }
+
+    schema_path.write_text(
+        json.dumps(schema, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+
+    return encoder_path, schema_path
  
  
 def processar_base(input_2024, input_2025, output_2024, output_2025, rotulo):
@@ -273,6 +328,8 @@ def processar_base(input_2024, input_2025, output_2024, output_2025, rotulo):
     (
         encoded_2018_2024,
         encoded_2018_2025,
+        encoder,
+        colunas_categoricas,
         coluna_circuito_2024,
         coluna_composto_2024,
         coluna_composto_2025,
@@ -338,9 +395,19 @@ def processar_base(input_2024, input_2025, output_2024, output_2025, rotulo):
         encoding="utf-8-sig"
     )
 
+    encoder_path, schema_path = salvar_encoder_schema(
+        encoder,
+        colunas_categoricas,
+        encoded_2018_2024,
+        encoded_2018_2025,
+        rotulo,
+    )
+
     print(f"\nArquivos salvos com sucesso ({rotulo}):")
     print(output_2024)
     print(output_2025)
+    print(encoder_path)
+    print(schema_path)
 
     return {
         "rotulo": rotulo,
@@ -348,6 +415,8 @@ def processar_base(input_2024, input_2025, output_2024, output_2025, rotulo):
         "input_2025": input_2025,
         "output_2024": output_2024,
         "output_2025": output_2025,
+        "encoder_path": encoder_path,
+        "schema_path": schema_path,
         "inicial_2024": historico_2018_2024.shape,
         "inicial_2025": historico_2018_2025.shape,
         "final_2024": encoded_2018_2024.shape,
@@ -467,6 +536,7 @@ with open(REPORT_FILE, "w", encoding="utf-8") as f:
     f.write("-" * 60 + "\n")
     f.write("One-Hot Encoding aplicado para circuito/corrida e constructor_id.\n")
     f.write("Encoder ajustado em 2018-2024 e reaplicado em 2018-2025 com handle_unknown='ignore'.\n")
+    f.write("Encoders e schemas persistidos em models/preprocessing.\n")
     f.write("Label Encoding ordinal aplicado para composto de pneu.\n\n")
 
     f.write("REGRA DO COMPOSTO ORDINAL\n")
@@ -503,6 +573,8 @@ with open(REPORT_FILE, "w", encoding="utf-8") as f:
         )
         f.write(f"Colunas de circuito criadas: {resultado['colunas_circuito_2025']}\n")
         f.write(f"Colunas de construtor criadas: {resultado['colunas_constructor_2025']}\n\n")
+        f.write(f"Encoder salvo em: {repo_relative(resultado['encoder_path'])}\n")
+        f.write(f"Schema salvo em: {repo_relative(resultado['schema_path'])}\n\n")
 
 print("\nRelatório salvo em:")
 print(REPORT_FILE)

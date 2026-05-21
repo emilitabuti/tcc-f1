@@ -1,9 +1,9 @@
 RELATÓRIO - 08 DATASET 2025 PARA WALK-FORWARD VALIDATION
 ============================================================
 
-Arquivo de entrada: /home/emili-tabuti/tcc-f1/data/processed/dataset_pre_features_2018_2025.csv
-Arquivo de saída principal: /home/emili-tabuti/tcc-f1/data/processed/validacao_2025_clean.csv
-Alias legado: /home/emili-tabuti/tcc-f1/data/processed/openf1_2025_clean.csv
+Arquivo de entrada: C:\Users\isagr\Documents\tcc-f1\data\processed\dataset_pre_features_2018_2025.csv
+Arquivo de saída principal: C:\Users\isagr\Documents\tcc-f1\data\processed\validacao_2025_clean.csv
+Alias legado: C:\Users\isagr\Documents\tcc-f1\data\processed\openf1_2025_clean.csv
 Observação metodológica: este arquivo é um fold de validação 2025 derivado do pipeline processado, não uma base OpenF1-first.
 
 Shape: (419, 114)
@@ -19,9 +19,9 @@ CORRIDAS 2025
      3       Japanese Grand Prix       20        nao
      4        Bahrain Grand Prix       18        sim
      5  Saudi Arabian Grand Prix       18        sim
-     6          Miami Grand Prix       16        nao
+     6          Miami Grand Prix       16        sim
      7 Emilia Romagna Grand Prix       18        sim
-     8         Monaco Grand Prix       18        nao
+     8         Monaco Grand Prix       18        sim
      9        Spanish Grand Prix       17        sim
     10       Canadian Grand Prix       17        sim
     11       Austrian Grand Prix       16        sim
@@ -32,10 +32,10 @@ CORRIDAS 2025
     16        Italian Grand Prix       18        nao
     17     Azerbaijan Grand Prix       19        sim
     18      Singapore Grand Prix       20        nao
-    19  United States Grand Prix       19        nao
-    20    Mexico City Grand Prix       16        nao
+    19  United States Grand Prix       19        sim
+    20    Mexico City Grand Prix       16        sim
     21      São Paulo Grand Prix       17        sim
-    22      Las Vegas Grand Prix       15        nao
+    22      Las Vegas Grand Prix       15        sim
     23          Qatar Grand Prix       16        sim
     24      Abu Dhabi Grand Prix       20        nao
 
@@ -43,8 +43,8 @@ ESTATÍSTICAS DAS FEATURES
 ------------------------------------------------------------
        weather_impact_factor  avg_pit_stops_circuit  track_complexity  safety_car_flag  grid_position
 count             419.000000             419.000000        419.000000       419.000000     419.000000
-mean                0.375488               1.814489          0.364892         0.529833      10.310263
-std                 0.257104               0.401059          0.138283         0.499706       5.886825
+mean                0.375488               1.814489          0.364892         0.730310      10.310263
+std                 0.257104               0.401059          0.138283         0.444329       5.886825
 min                 0.117499               1.181818          0.139600         0.000000       1.000000
 25%                 0.201760               1.442748          0.278505         0.000000       5.000000
 50%                 0.274089               1.670886          0.314562         1.000000      10.000000

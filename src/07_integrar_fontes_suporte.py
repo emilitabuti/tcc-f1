@@ -7,7 +7,7 @@ from sklearn.preprocessing import MinMaxScaler
 
 # 07 - Integração de fontes de suporte ao dataset principal
 # Adiciona: circuit features, weather_impact_factor, avg_pit_stops_circuit,
-#           safety_car_flag (2025), track_complexity e corrige grid_position=0.
+#           safety_car_flag histórica, track_complexity e corrige grid_position=0.
 BASE_DIR = Path(__file__).resolve().parents[1]
 
 PROCESSED_DIR = BASE_DIR / "data" / "processed"
@@ -147,7 +147,7 @@ def integrar_qualifying(df, qual_df):
     n_sem = sem_qualifying.sum()
     n_penalizados = (df["grid_penalty"] > 0).sum()
     taxa_cobertura = 1 - (n_sem / len(df))
-    print(f"  qualifying_position: cobertura {taxa_cobertura:.1%} ({n_sem} sem dados → proxy grid_pos)")
+    print(f"  qualifying_position: cobertura {taxa_cobertura:.1%} ({n_sem} sem dados -> proxy grid_pos)")
     print(f"  grid_penalty > 0 (penalidades): {n_penalizados} registros")
     print(f"  grid_penalty < 0 (promoções):   {(df['grid_penalty'] < 0).sum()} registros")
 
@@ -165,7 +165,7 @@ def corrigir_grid_position(df):
     n = mask.sum()
     if n > 0:
         df.loc[mask, "grid_position"] = 21
-        print(f"  grid_position: {n} pit-lane starts corrigidos (0 → 21).")
+        print(f"  grid_position: {n} pit-lane starts corrigidos (0 -> 21).")
     return df, n
 
 
@@ -249,7 +249,7 @@ def integrar_weather(df, weather_df, df_2024_agg):
     if n_sem_weather > 0:
         mediana = df.loc[df["season"] <= 2024, "weather_impact_factor"].median()
         df["weather_impact_factor"] = df["weather_impact_factor"].fillna(mediana)
-        print(f"  AVISO: {n_sem_weather} linhas sem weather → preenchido com mediana ({mediana:.3f}).")
+        print(f"  AVISO: {n_sem_weather} linhas sem weather -> preenchido com mediana ({mediana:.3f}).")
     return df
 
 
@@ -288,24 +288,31 @@ def integrar_pitstops(df, pitstop_df):
     if n_sem_pitstop > 0:
         mediana = avg_stops["avg_pit_stops_circuit"].median()
         df["avg_pit_stops_circuit"] = df["avg_pit_stops_circuit"].fillna(mediana)
-        print(f"  AVISO: {n_sem_pitstop} linhas sem pitstop → preenchido com mediana ({mediana:.2f}).")
+        print(f"  AVISO: {n_sem_pitstop} linhas sem pitstop -> preenchido com mediana ({mediana:.2f}).")
     return df
 
 
 # ─────────────────────────────────────────────────────────────────────────────
 # LACUNA 3 — safety_car_flag histórica
 # Fonte principal: FastF1 TrackStatus em todas as temporadas 2018-2025.
-# Códigos relevantes:
+# Códigos oficiais FastF1:
 #   4 = Safety Car
-#   5 = Virtual Safety Car
-# TrackStatus pode combinar múltiplos códigos no mesmo valor (ex.: 41, 124).
+#   5 = Red Flag
+#   6 = Virtual Safety Car deployed
+#   7 = Virtual Safety Car ending
+#
+# Para safety_car_flag, considera SC/VSC: 4, 6 e 7.
+# O código 5 não entra aqui porque representa Red Flag.
+# TrackStatus pode combinar múltiplos códigos no mesmo valor.
 # ─────────────────────────────────────────────────────────────────────────────
 def construir_safety_car_fastf1(laps_df):
     df = laps_df[["season", "round", "TrackStatus"]].copy()
     df["TrackStatus"] = df["TrackStatus"].astype(str)
+
     df["safety_car_lap_flag"] = (
         df["TrackStatus"].str.contains("4", regex=False)
-        | df["TrackStatus"].str.contains("5", regex=False)
+        | df["TrackStatus"].str.contains("6", regex=False)
+        | df["TrackStatus"].str.contains("7", regex=False)
     ).astype(int)
 
     return (
@@ -313,6 +320,7 @@ def construir_safety_car_fastf1(laps_df):
         .max()
         .rename(columns={"safety_car_lap_flag": "safety_car_flag_fastf1"})
     )
+
 
 
 def construir_safety_car_openf1_2025(race_control_df, meetings_df):
@@ -452,8 +460,8 @@ def salvar_relatorio(df_2024, df_2025, n_fix_2024, n_fix_2025,
 
         f.write("CORREÇÕES APLICADAS\n")
         f.write("-" * 60 + "\n")
-        f.write(f"grid_position 0→21 (2018-2024): {n_fix_2024} registros\n")
-        f.write(f"grid_position 0→21 (2018-2025): {n_fix_2025} registros\n\n")
+        f.write(f"grid_position 0->21 (2018-2024): {n_fix_2024} registros\n")
+        f.write(f"grid_position 0->21 (2018-2025): {n_fix_2025} registros\n\n")
 
         f.write("QUALIFYING POSITION\n")
         f.write("-" * 60 + "\n")
@@ -486,7 +494,8 @@ def salvar_relatorio(df_2024, df_2025, n_fix_2024, n_fix_2025,
 
         f.write("SAFETY CAR FLAG\n")
         f.write("-" * 60 + "\n")
-        f.write("Fonte principal: FastF1 TrackStatus, codigos 4=SC e 5=VSC.\n")
+        f.write("Fonte principal: FastF1 TrackStatus: 4=SC, 5=Red Flag, 6=VSC deployed e 7=VSC ending.\n")
+        f.write("Para safety_car_flag foram considerados apenas 4, 6 e 7. O codigo 5 foi excluido por representar Red Flag.\n")
         f.write("Para 2025, OpenF1 Race Control foi usado como corroboracao adicional.\n")
         f.write(f"Registros FastF1 laps avaliados: {laps_df.shape[0]}\n")
         f.write(f"2018-2024: {df_2024['safety_car_flag'].sum()} registros com SC/VSC\n")
