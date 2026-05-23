@@ -1,0 +1,263 @@
+[
+  {
+    "expectation": "dataset_not_empty",
+    "success": true,
+    "observed": 2943,
+    "details": "Dataset deve ter linhas."
+  },
+  {
+    "expectation": "critical_columns_present",
+    "success": true,
+    "observed": [],
+    "details": "Colunas criticas para EDA/pre-FE devem existir."
+  },
+  {
+    "expectation": "no_null_values",
+    "success": true,
+    "observed": 0,
+    "details": "Dataset tratado nao deve ter nulos."
+  },
+  {
+    "expectation": "no_full_duplicate_rows",
+    "success": true,
+    "observed": 0,
+    "details": "Sem linhas totalmente duplicadas."
+  },
+  {
+    "expectation": "unique_driver_per_race",
+    "success": true,
+    "observed": {
+      "subset": [
+        "season",
+        "round",
+        "driver_id"
+      ],
+      "duplicates": 0
+    },
+    "details": "Cada piloto deve aparecer uma vez por corrida."
+  },
+  {
+    "expectation": "raceid_unique",
+    "success": true,
+    "observed": 0,
+    "details": "RaceID deve ser unico por linha."
+  },
+  {
+    "expectation": "season_within_range",
+    "success": true,
+    "observed": {
+      "invalid": 0,
+      "min": 2018.0,
+      "max": 2025.0
+    },
+    "details": "season deve estar entre 2018 e 2025."
+  },
+  {
+    "expectation": "round_within_range",
+    "success": true,
+    "observed": {
+      "invalid": 0,
+      "min": 1.0,
+      "max": 24.0
+    },
+    "details": "round deve estar entre 1 e 30."
+  },
+  {
+    "expectation": "grid_position_within_range",
+    "success": true,
+    "observed": {
+      "invalid": 0,
+      "min": 1.0,
+      "max": 21.0
+    },
+    "details": "grid_position deve estar entre 1 e 24."
+  },
+  {
+    "expectation": "qualifying_position_within_range",
+    "success": true,
+    "observed": {
+      "invalid": 0,
+      "min": 1.0,
+      "max": 21.0
+    },
+    "details": "qualifying_position deve estar entre 1 e 24."
+  },
+  {
+    "expectation": "finish_position_within_range",
+    "success": true,
+    "observed": {
+      "invalid": 0,
+      "min": 1.0,
+      "max": 20.0
+    },
+    "details": "finish_position deve estar entre 1 e 24."
+  },
+  {
+    "expectation": "laps_within_range",
+    "success": true,
+    "observed": {
+      "invalid": 0,
+      "min": 1.0,
+      "max": 87.0
+    },
+    "details": "laps deve estar entre 0 e 200."
+  },
+  {
+    "expectation": "compound_ordinal_within_range",
+    "success": true,
+    "observed": {
+      "invalid": 0,
+      "min": 0.0,
+      "max": 3.0
+    },
+    "details": "compound_ordinal deve estar entre 0 e 5."
+  },
+  {
+    "expectation": "tire_compound_start_within_range",
+    "success": true,
+    "observed": {
+      "invalid": 0,
+      "min": 0.0,
+      "max": 3.0
+    },
+    "details": "tire_compound_start deve estar entre 0 e 5."
+  },
+  {
+    "expectation": "safety_car_flag_within_range",
+    "success": true,
+    "observed": {
+      "invalid": 0,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "details": "safety_car_flag deve estar entre 0 e 1."
+  },
+  {
+    "expectation": "weather_impact_factor_within_range",
+    "success": true,
+    "observed": {
+      "invalid": 0,
+      "min": 9.236722497973916e-12,
+      "max": 0.9675567798674544
+    },
+    "details": "weather_impact_factor deve estar entre 0 e 1."
+  },
+  {
+    "expectation": "avg_pit_stops_circuit_within_range",
+    "success": true,
+    "observed": {
+      "invalid": 0,
+      "min": 0.0,
+      "max": 3.80479302832244
+    },
+    "details": "avg_pit_stops_circuit deve estar entre 0 e 10."
+  },
+  {
+    "expectation": "track_complexity_within_range",
+    "success": true,
+    "observed": {
+      "invalid": 0,
+      "min": 0.1077283259612044,
+      "max": 0.7447271451806697
+    },
+    "details": "track_complexity deve estar entre 0 e 1."
+  },
+  {
+    "expectation": "altitude_m_within_range",
+    "success": true,
+    "observed": {
+      "invalid": 0,
+      "min": 0.0,
+      "max": 2285.0
+    },
+    "details": "altitude_m deve estar entre -100 e 2500."
+  },
+  {
+    "expectation": "circuit_type_within_range",
+    "success": true,
+    "observed": {
+      "invalid": 0,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "details": "circuit_type deve estar entre 0 e 5."
+  },
+  {
+    "expectation": "grid_position_zero_flag_is_binary",
+    "success": true,
+    "observed": [],
+    "details": "grid_position_zero_flag deve ser flag binaria."
+  },
+  {
+    "expectation": "wet_compound_flag_is_binary",
+    "success": true,
+    "observed": [],
+    "details": "wet_compound_flag deve ser flag binaria."
+  },
+  {
+    "expectation": "corrida_chuva_flag_is_binary",
+    "success": true,
+    "observed": [],
+    "details": "corrida_chuva_flag deve ser flag binaria."
+  },
+  {
+    "expectation": "outlier_flag_is_binary",
+    "success": true,
+    "observed": [],
+    "details": "outlier_flag deve ser flag binaria."
+  },
+  {
+    "expectation": "dnf_flag_is_binary",
+    "success": true,
+    "observed": [],
+    "details": "dnf_flag deve ser flag binaria."
+  },
+  {
+    "expectation": "dnf_driver_flag_is_binary",
+    "success": true,
+    "observed": [],
+    "details": "dnf_driver_flag deve ser flag binaria."
+  },
+  {
+    "expectation": "dnf_car_flag_is_binary",
+    "success": true,
+    "observed": [],
+    "details": "dnf_car_flag deve ser flag binaria."
+  },
+  {
+    "expectation": "dnf_other_flag_is_binary",
+    "success": true,
+    "observed": [],
+    "details": "dnf_other_flag deve ser flag binaria."
+  },
+  {
+    "expectation": "safety_car_flag_is_binary",
+    "success": true,
+    "observed": [],
+    "details": "safety_car_flag deve ser flag binaria."
+  },
+  {
+    "expectation": "avg_pit_stops_circuit_cold_start_flag_is_binary",
+    "success": true,
+    "observed": [],
+    "details": "avg_pit_stops_circuit_cold_start_flag deve ser flag binaria."
+  },
+  {
+    "expectation": "season_minimum_volume",
+    "success": true,
+    "observed": {},
+    "details": "Cada temporada deve ter volume minimo plausivel de registros."
+  },
+  {
+    "expectation": "race_grid_size_plausible",
+    "success": true,
+    "observed": {},
+    "details": "Cada corrida deve ter entre 10 e 24 registros de pilotos."
+  },
+  {
+    "expectation": "target_has_variation",
+    "success": true,
+    "observed": 20,
+    "details": "Target precisa ter variacao."
+  }
+]
