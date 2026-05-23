@@ -8,12 +8,13 @@ Esta etapa cria coeficientes auxiliares de desempenho para pilotos e construtore
 
 Arquivo padrao:
 
-C:\Users\isagr\Documents\tcc-f1\data\processed\dataset_feature_engineering_ready_2018_2024.csv
+data/processed/dataset_feature_engineering_ready_2018_2025.csv
 
 Colunas obrigatorias:
 
 - season
 - round
+- RaceID
 - race_name
 - driver_id
 - constructor_id
@@ -44,15 +45,21 @@ Para cada corrida r, o modelo e treinado somente com corridas anteriores a r.
 
 Assim, os coeficientes podem ser usados como feature historica sem vazamento de informacao futura.
 
+Para corridas ou entidades sem historico suficiente, o coeficiente recebe cold start 0.0.
+
 ## Time-decay
 
-O peso de cada observacao historica e calculado por distancia temporal em corridas:
+O peso de cada observacao historica e calculado por distancia temporal:
 
-peso = decay ^ distancia_em_corridas
+peso = decay ^ distancia
 
-Valor padrao:
+Unidade padrao:
 
-decay = 0.97
+decay_unit = season
+
+Valor de decay:
+
+decay = 0.75
 
 Corridas mais recentes recebem maior peso.
 
@@ -66,13 +73,18 @@ alpha = 10.0
 
 ## Saidas
 
-data/processed/coef_pilotos.csv
-data/processed/coef_construtores.csv
+data/processed/coef_pilotos_rapm_2018_2025.csv
+data/processed/coef_construtores_rapm_2018_2025.csv
 data/processed/relatorio_10_rapm_ridge.txt
 models/rapm/manifest_rapm_ridge.json
+
+Tambem sao gravadas copias de compatibilidade em:
+
+data/processed/coef_pilotos.csv
+data/processed/coef_construtores.csv
 
 ## LOESS opcional
 
 O script permite suavizar os coeficientes com LOESS usando:
 
-py src/rapm_ridge.py --loess
+python src/rapm_ridge.py --loess

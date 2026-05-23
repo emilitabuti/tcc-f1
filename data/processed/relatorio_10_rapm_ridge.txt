@@ -1,18 +1,19 @@
 Relatorio 10 - RAPM Ridge
 ================================
-Gerado em: 2026-05-22T23:06:30
-Entrada: C:\Users\isagr\Documents\tcc-f1\data\processed\dataset_feature_engineering_ready_2018_2024.csv
-Temporadas na base: 2018-2024
-Total de linhas historicas: 2524
-Total de corridas: 149
+Gerado em: 2026-05-22T23:26:02
+Entrada: data/processed/dataset_feature_engineering_ready_2018_2025.csv
+Temporadas na base: 2018-2025
+Total de linhas historicas: 2943
+Total de corridas: 173
 Alpha Ridge: 10.0
-Time-decay: 0.97
-Minimo de corridas para treino: 5
+Time-decay: 0.75
+Unidade do time-decay: season
+Minimo de corridas para treino: 1
 LOESS solicitado: False
 
 Saidas geradas:
-- C:\Users\isagr\Documents\tcc-f1\data\processed\coef_pilotos.csv: 4467 linhas
-- C:\Users\isagr\Documents\tcc-f1\data\processed\coef_construtores.csv: 2001 linhas
+- data/processed/coef_pilotos_rapm_2018_2025.csv: 2943 linhas
+- data/processed/coef_construtores_rapm_2018_2025.csv: 2943 linhas
 
 Logica causal:
 Para cada corrida r, o modelo foi treinado apenas com corridas anteriores a r.
@@ -21,5 +22,5 @@ A corrida r recebe o snapshot de coeficientes conhecido antes dela acontecer.
 Interpretacao:
 O target e -finish_position. Portanto, coeficientes maiores indicam melhor contribuicao historica estimada.
 
-Corridas puladas por falta de historico inicial:
-5
+Corridas com cold start por falta de historico inicial:
+1

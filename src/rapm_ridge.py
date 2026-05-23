@@ -17,7 +17,7 @@ from sklearn.preprocessing import OneHotEncoder
 # - construir matriz esparsa binaria com indicadores de driver_id e constructor_id;
 # - aplicar Ridge Regression com pesos temporais time-decay;
 # - respeitar causalidade: para cada corrida r, treinar somente com corridas anteriores a r;
-# - gerar coef_pilotos.csv e coef_construtores.csv para uso futuro em Feature Engineering.
+# - gerar coeficientes prontos para merge por RaceID no Feature Engineering.
 #
 # Observacao metodologica:
 # O alvo usado e -finish_position. Assim, coeficientes maiores indicam contribuicao
@@ -28,9 +28,11 @@ PROCESSED_DIR = BASE_DIR / "data" / "processed"
 DOCS_DIR = BASE_DIR / "docs"
 MODELS_DIR = BASE_DIR / "models" / "rapm"
 
-DEFAULT_INPUT = PROCESSED_DIR / "dataset_feature_engineering_ready_2018_2024.csv"
-OUTPUT_DRIVERS = PROCESSED_DIR / "coef_pilotos.csv"
-OUTPUT_CONSTRUCTORS = PROCESSED_DIR / "coef_construtores.csv"
+DEFAULT_INPUT = PROCESSED_DIR / "dataset_feature_engineering_ready_2018_2025.csv"
+OUTPUT_DRIVERS = PROCESSED_DIR / "coef_pilotos_rapm_2018_2025.csv"
+OUTPUT_CONSTRUCTORS = PROCESSED_DIR / "coef_construtores_rapm_2018_2025.csv"
+LEGACY_OUTPUT_DRIVERS = PROCESSED_DIR / "coef_pilotos.csv"
+LEGACY_OUTPUT_CONSTRUCTORS = PROCESSED_DIR / "coef_construtores.csv"
 REPORT_FILE = PROCESSED_DIR / "relatorio_10_rapm_ridge.txt"
 DOC_FILE = DOCS_DIR / "metodologia_rapm_ridge.md"
 MANIFEST_FILE = MODELS_DIR / "manifest_rapm_ridge.json"
@@ -38,6 +40,7 @@ MANIFEST_FILE = MODELS_DIR / "manifest_rapm_ridge.json"
 REQUIRED_COLUMNS = [
     "season",
     "round",
+    "RaceID",
     "race_name",
     "driver_id",
     "constructor_id",
@@ -46,7 +49,11 @@ REQUIRED_COLUMNS = [
 
 
 def repo_relative(path: Path) -> str:
-    return path.relative_to(BASE_DIR).as_posix()
+    path = Path(path)
+    try:
+        return path.relative_to(BASE_DIR).as_posix()
+    except ValueError:
+        return path.as_posix()
 
 
 def parse_args() -> argparse.Namespace:
@@ -70,15 +77,22 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--decay",
         type=float,
-        default=0.97,
-        help="Fator de time-decay por corrida passada.",
+        default=0.75,
+        help="Fator de time-decay. Por padrao, aplicado por temporada.",
+    )
+
+    parser.add_argument(
+        "--decay-unit",
+        choices=["season", "race"],
+        default="season",
+        help="Unidade do time-decay: season segue o plano/RAPM; race permite decaimento por corrida.",
     )
 
     parser.add_argument(
         "--min-races-train",
         type=int,
-        default=5,
-        help="Minimo de corridas historicas antes de estimar coeficientes.",
+        default=1,
+        help="Minimo de corridas historicas antes de estimar coeficientes. Antes disso, usa cold start 0.0.",
     )
 
     parser.add_argument(
@@ -117,8 +131,8 @@ def load_and_validate(input_path: Path) -> pd.DataFrame:
     df = df.dropna(subset=["finish_position"])
     df = df[df["finish_position"] > 0]
 
-    # Garante uma linha por piloto em cada corrida
-    df = df.drop_duplicates(subset=["season", "round", "driver_id"])
+    # Garante uma linha por piloto em cada corrida sem perder a chave de merge.
+    df = df.drop_duplicates(subset=["RaceID"])
 
     df = df.sort_values(
         ["season", "round", "finish_position", "driver_id"]
@@ -171,10 +185,16 @@ def build_sparse_matrix(df_train: pd.DataFrame):
 def time_decay_weights(
     df_train: pd.DataFrame,
     current_race_order: int,
+    current_season: int,
     decay: float,
+    decay_unit: str,
 ) -> np.ndarray:
-    distance = current_race_order - df_train["race_order"].to_numpy(dtype=float)
-    distance = np.maximum(distance, 1.0)
+    if decay_unit == "season":
+        distance = current_season - df_train["season"].to_numpy(dtype=float)
+        distance = np.maximum(distance, 0.0)
+    else:
+        distance = current_race_order - df_train["race_order"].to_numpy(dtype=float)
+        distance = np.maximum(distance, 1.0)
 
     weights = np.power(decay, distance)
 
@@ -186,6 +206,8 @@ def fit_ridge(
     alpha: float,
     decay: float,
     current_race_order: int,
+    current_season: int,
+    decay_unit: str,
 ):
     x, feature_names = build_sparse_matrix(df_train)
 
@@ -197,7 +219,9 @@ def fit_ridge(
     weights = time_decay_weights(
         df_train,
         current_race_order=current_race_order,
+        current_season=current_season,
         decay=decay,
+        decay_unit=decay_unit,
     )
 
     model = Ridge(
@@ -286,6 +310,7 @@ def generate_rapm(
     df: pd.DataFrame,
     alpha: float,
     decay: float,
+    decay_unit: str,
     min_races_train: int,
     apply_loess: bool,
     loess_frac: float,
@@ -303,6 +328,12 @@ def generate_rapm(
 
     for race in race_table.itertuples(index=False):
         current_order = int(race.race_order)
+        current_season = int(race.season)
+        current_rows = (
+            df[df["race_order"] == current_order]
+            .sort_values(["finish_position", "driver_id"])
+            .copy()
+        )
 
         # Causalidade:
         # para a corrida atual, treina somente com corridas anteriores.
@@ -315,37 +346,62 @@ def generate_rapm(
         if n_train_races < min_races_train:
             skipped.append(
                 {
-                    "season": int(race.season),
+                    "season": current_season,
                     "round": int(race.round),
                     "race_name": race.race_name,
                     "race_order": current_order,
-                    "motivo": f"menos_de_{min_races_train}_corridas_anteriores",
+                    "motivo": f"cold_start_menos_de_{min_races_train}_corridas_anteriores",
                 }
             )
-            continue
+            driver_map = {}
+            constructor_map = {}
+            coefficient_status = "cold_start_sem_historico_suficiente"
+        else:
+            _, coef_df = fit_ridge(
+                train,
+                alpha=alpha,
+                decay=decay,
+                current_race_order=current_order,
+                current_season=current_season,
+                decay_unit=decay_unit,
+            )
 
-        _, coef_df = fit_ridge(
-            train,
-            alpha=alpha,
-            decay=decay,
-            current_race_order=current_order,
+            drivers, constructors = split_coefficients(coef_df)
+            driver_map = drivers.set_index("driver_id")["coef_rapm"].to_dict()
+            constructor_map = constructors.set_index("constructor_id")["coef_rapm"].to_dict()
+            coefficient_status = "estimado_historico_anterior"
+
+        drivers_current = current_rows[
+            ["season", "round", "RaceID", "race_name", "driver_id", "constructor_id", "race_order"]
+        ].copy()
+        drivers_current["driver_coef_rapm"] = (
+            drivers_current["driver_id"].map(driver_map).fillna(0.0)
         )
+        drivers_current["rapm_cold_start_flag"] = (
+            ~drivers_current["driver_id"].isin(driver_map.keys())
+        ).astype(int)
 
-        drivers, constructors = split_coefficients(coef_df)
+        constructors_current = current_rows[
+            ["season", "round", "RaceID", "race_name", "driver_id", "constructor_id", "race_order"]
+        ].copy()
+        constructors_current["constructor_coef_rapm"] = (
+            constructors_current["constructor_id"].map(constructor_map).fillna(0.0)
+        )
+        constructors_current["rapm_cold_start_flag"] = (
+            ~constructors_current["constructor_id"].isin(constructor_map.keys())
+        ).astype(int)
 
-        for fixed_df in [drivers, constructors]:
+        for fixed_df in [drivers_current, constructors_current]:
             fixed_df["target_definition"] = "-finish_position"
             fixed_df["alpha"] = alpha
             fixed_df["decay"] = decay
-            fixed_df["season"] = int(race.season)
-            fixed_df["round"] = int(race.round)
-            fixed_df["race_name"] = race.race_name
-            fixed_df["race_order"] = current_order
+            fixed_df["decay_unit"] = decay_unit
+            fixed_df["coefficient_status"] = coefficient_status
             fixed_df["n_train_rows"] = int(len(train))
             fixed_df["n_train_races"] = n_train_races
 
-        driver_rows.append(drivers)
-        constructor_rows.append(constructors)
+        driver_rows.append(drivers_current)
+        constructor_rows.append(constructors_current)
 
     coef_pilotos = (
         pd.concat(driver_rows, ignore_index=True)
@@ -363,7 +419,7 @@ def generate_rapm(
         coef_pilotos = smooth_loess(
             coef_pilotos,
             "driver_id",
-            "coef_rapm",
+            "driver_coef_rapm",
             loess_frac,
         )
 
@@ -371,7 +427,7 @@ def generate_rapm(
         coef_construtores = smooth_loess(
             coef_construtores,
             "constructor_id",
-            "coef_rapm",
+            "constructor_coef_rapm",
             loess_frac,
         )
 
@@ -393,18 +449,19 @@ def write_report(
     linhas.append("Relatorio 10 - RAPM Ridge")
     linhas.append("=" * 32)
     linhas.append(f"Gerado em: {datetime.now().isoformat(timespec='seconds')}")
-    linhas.append(f"Entrada: {args.input}")
+    linhas.append(f"Entrada: {repo_relative(Path(args.input))}")
     linhas.append(f"Temporadas na base: {int(df['season'].min())}-{int(df['season'].max())}")
     linhas.append(f"Total de linhas historicas: {len(df)}")
     linhas.append(f"Total de corridas: {race_table.shape[0]}")
     linhas.append(f"Alpha Ridge: {args.alpha}")
     linhas.append(f"Time-decay: {args.decay}")
+    linhas.append(f"Unidade do time-decay: {args.decay_unit}")
     linhas.append(f"Minimo de corridas para treino: {args.min_races_train}")
     linhas.append(f"LOESS solicitado: {bool(args.loess)}")
     linhas.append("")
     linhas.append("Saidas geradas:")
-    linhas.append(f"- {OUTPUT_DRIVERS}: {len(coef_pilotos)} linhas")
-    linhas.append(f"- {OUTPUT_CONSTRUCTORS}: {len(coef_construtores)} linhas")
+    linhas.append(f"- {repo_relative(OUTPUT_DRIVERS)}: {len(coef_pilotos)} linhas")
+    linhas.append(f"- {repo_relative(OUTPUT_CONSTRUCTORS)}: {len(coef_construtores)} linhas")
     linhas.append("")
     linhas.append("Logica causal:")
     linhas.append("Para cada corrida r, o modelo foi treinado apenas com corridas anteriores a r.")
@@ -413,7 +470,7 @@ def write_report(
     linhas.append("Interpretacao:")
     linhas.append("O target e -finish_position. Portanto, coeficientes maiores indicam melhor contribuicao historica estimada.")
     linhas.append("")
-    linhas.append("Corridas puladas por falta de historico inicial:")
+    linhas.append("Corridas com cold start por falta de historico inicial:")
     linhas.append(str(len(skipped_df)))
 
     REPORT_FILE.write_text("\n".join(linhas), encoding="utf-8")
@@ -430,12 +487,13 @@ Esta etapa cria coeficientes auxiliares de desempenho para pilotos e construtore
 
 Arquivo padrao:
 
-{DEFAULT_INPUT}
+{repo_relative(DEFAULT_INPUT)}
 
 Colunas obrigatorias:
 
 - season
 - round
+- RaceID
 - race_name
 - driver_id
 - constructor_id
@@ -466,13 +524,19 @@ Para cada corrida r, o modelo e treinado somente com corridas anteriores a r.
 
 Assim, os coeficientes podem ser usados como feature historica sem vazamento de informacao futura.
 
+Para corridas ou entidades sem historico suficiente, o coeficiente recebe cold start 0.0.
+
 ## Time-decay
 
-O peso de cada observacao historica e calculado por distancia temporal em corridas:
+O peso de cada observacao historica e calculado por distancia temporal:
 
-peso = decay ^ distancia_em_corridas
+peso = decay ^ distancia
 
-Valor padrao:
+Unidade padrao:
+
+decay_unit = {args.decay_unit}
+
+Valor de decay:
 
 decay = {args.decay}
 
@@ -488,16 +552,21 @@ alpha = {args.alpha}
 
 ## Saidas
 
-data/processed/coef_pilotos.csv
-data/processed/coef_construtores.csv
+data/processed/coef_pilotos_rapm_2018_2025.csv
+data/processed/coef_construtores_rapm_2018_2025.csv
 data/processed/relatorio_10_rapm_ridge.txt
 models/rapm/manifest_rapm_ridge.json
+
+Tambem sao gravadas copias de compatibilidade em:
+
+data/processed/coef_pilotos.csv
+data/processed/coef_construtores.csv
 
 ## LOESS opcional
 
 O script permite suavizar os coeficientes com LOESS usando:
 
-py src/rapm_ridge.py --loess
+python src/rapm_ridge.py --loess
 """
 
     DOC_FILE.write_text(text, encoding="utf-8")
@@ -514,16 +583,19 @@ def write_manifest(
     manifest = {
         "step": "10_rapm_ridge",
         "created_at": datetime.now().isoformat(timespec="seconds"),
-        "input": str(Path(args.input)),
+        "input": repo_relative(Path(args.input)),
         "outputs": {
-            "drivers": str(OUTPUT_DRIVERS),
-            "constructors": str(OUTPUT_CONSTRUCTORS),
-            "report": str(REPORT_FILE),
-            "documentation": str(DOC_FILE),
+            "drivers": repo_relative(OUTPUT_DRIVERS),
+            "constructors": repo_relative(OUTPUT_CONSTRUCTORS),
+            "drivers_legacy_copy": repo_relative(LEGACY_OUTPUT_DRIVERS),
+            "constructors_legacy_copy": repo_relative(LEGACY_OUTPUT_CONSTRUCTORS),
+            "report": repo_relative(REPORT_FILE),
+            "documentation": repo_relative(DOC_FILE),
         },
         "target": "-finish_position",
         "alpha": args.alpha,
         "decay": args.decay,
+        "decay_unit": args.decay_unit,
         "min_races_train": args.min_races_train,
         "loess": bool(args.loess),
         "loess_frac": args.loess_frac,
@@ -533,8 +605,12 @@ def write_manifest(
         "n_races": int(race_table.shape[0]),
         "n_driver_coef_rows": int(len(coef_pilotos)),
         "n_constructor_coef_rows": int(len(coef_construtores)),
-        "n_skipped_initial_races": int(len(skipped_df)),
+        "n_cold_start_initial_races": int(len(skipped_df)),
         "anti_leakage_rule": "for each race r, train only on races before r",
+        "merge_contract": {
+            "drivers": ["season", "round", "RaceID", "driver_id", "driver_coef_rapm"],
+            "constructors": ["season", "round", "RaceID", "constructor_id", "constructor_coef_rapm"],
+        },
     }
 
     MANIFEST_FILE.write_text(
@@ -563,6 +639,7 @@ def main():
         df=df,
         alpha=args.alpha,
         decay=args.decay,
+        decay_unit=args.decay_unit,
         min_races_train=args.min_races_train,
         apply_loess=args.loess,
         loess_frac=args.loess_frac,
@@ -574,15 +651,17 @@ def main():
         )
 
     coef_pilotos = coef_pilotos.sort_values(
-        ["season", "round", "driver_id"]
+        ["season", "round", "RaceID", "driver_id"]
     ).reset_index(drop=True)
 
     coef_construtores = coef_construtores.sort_values(
-        ["season", "round", "constructor_id"]
+        ["season", "round", "RaceID", "constructor_id"]
     ).reset_index(drop=True)
 
     coef_pilotos.to_csv(OUTPUT_DRIVERS, index=False)
     coef_construtores.to_csv(OUTPUT_CONSTRUCTORS, index=False)
+    coef_pilotos.to_csv(LEGACY_OUTPUT_DRIVERS, index=False)
+    coef_construtores.to_csv(LEGACY_OUTPUT_CONSTRUCTORS, index=False)
 
     write_report(
         df,
