@@ -1,0 +1,2002 @@
+constructor_id,coef_rapm,target_definition,alpha,decay,season,round,race_name,race_order,n_train_rows,n_train_races
+ferrari,1.8003476361147164,-finish_position,10.0,0.97,2018,6,Monaco Grand Prix,6,78,5
+force_india,-0.68335182360869,-finish_position,10.0,0.97,2018,6,Monaco Grand Prix,6,78,5
+haas,-0.7136492741508799,-finish_position,10.0,0.97,2018,6,Monaco Grand Prix,6,78,5
+mclaren,0.10528652888453365,-finish_position,10.0,0.97,2018,6,Monaco Grand Prix,6,78,5
+mercedes,2.0985743387595197,-finish_position,10.0,0.97,2018,6,Monaco Grand Prix,6,78,5
+red_bull,1.3493654607564767,-finish_position,10.0,0.97,2018,6,Monaco Grand Prix,6,78,5
+renault,0.32379657415074914,-finish_position,10.0,0.97,2018,6,Monaco Grand Prix,6,78,5
+sauber,-1.3357106207491354,-finish_position,10.0,0.97,2018,6,Monaco Grand Prix,6,78,5
+toro_rosso,-1.3185632247161032,-finish_position,10.0,0.97,2018,6,Monaco Grand Prix,6,78,5
+williams,-1.6260955954411882,-finish_position,10.0,0.97,2018,6,Monaco Grand Prix,6,78,5
+ferrari,2.056923897423621,-finish_position,10.0,0.97,2018,7,Canadian Grand Prix,7,95,6
+force_india,-0.5627032230257102,-finish_position,10.0,0.97,2018,7,Canadian Grand Prix,7,95,6
+haas,-1.073421876523271,-finish_position,10.0,0.97,2018,7,Canadian Grand Prix,7,95,6
+mclaren,-0.06008099803751278,-finish_position,10.0,0.97,2018,7,Canadian Grand Prix,7,95,6
+mercedes,2.231877970811713,-finish_position,10.0,0.97,2018,7,Canadian Grand Prix,7,95,6
+red_bull,1.5138352509086621,-finish_position,10.0,0.97,2018,7,Canadian Grand Prix,7,95,6
+renault,0.2928116220638669,-finish_position,10.0,0.97,2018,7,Canadian Grand Prix,7,95,6
+sauber,-1.2853974409441384,-finish_position,10.0,0.97,2018,7,Canadian Grand Prix,7,95,6
+toro_rosso,-1.1036832590979768,-finish_position,10.0,0.97,2018,7,Canadian Grand Prix,7,95,6
+williams,-2.0101619435792544,-finish_position,10.0,0.97,2018,7,Canadian Grand Prix,7,95,6
+ferrari,2.2187897210643013,-finish_position,10.0,0.97,2018,8,French Grand Prix,8,112,7
+force_india,-0.656003959498318,-finish_position,10.0,0.97,2018,8,French Grand Prix,8,112,7
+haas,-1.2014210072424651,-finish_position,10.0,0.97,2018,8,French Grand Prix,8,112,7
+mclaren,-0.2757164436081955,-finish_position,10.0,0.97,2018,8,French Grand Prix,8,112,7
+mercedes,2.3821255727795383,-finish_position,10.0,0.97,2018,8,French Grand Prix,8,112,7
+red_bull,1.7705133381378917,-finish_position,10.0,0.97,2018,8,French Grand Prix,8,112,7
+renault,0.38463430689007194,-finish_position,10.0,0.97,2018,8,French Grand Prix,8,112,7
+sauber,-1.371785625734821,-finish_position,10.0,0.97,2018,8,French Grand Prix,8,112,7
+toro_rosso,-1.0979419550894745,-finish_position,10.0,0.97,2018,8,French Grand Prix,8,112,7
+williams,-2.1531939476985316,-finish_position,10.0,0.97,2018,8,French Grand Prix,8,112,7
+ferrari,2.2790727395787975,-finish_position,10.0,0.97,2018,9,Austrian Grand Prix,9,127,8
+force_india,-0.6638347370524343,-finish_position,10.0,0.97,2018,9,Austrian Grand Prix,9,127,8
+haas,-1.058982831751654,-finish_position,10.0,0.97,2018,9,Austrian Grand Prix,9,127,8
+mclaren,-0.36373449019808896,-finish_position,10.0,0.97,2018,9,Austrian Grand Prix,9,127,8
+mercedes,2.4115043719308966,-finish_position,10.0,0.97,2018,9,Austrian Grand Prix,9,127,8
+red_bull,1.963234189776187,-finish_position,10.0,0.97,2018,9,Austrian Grand Prix,9,127,8
+renault,0.33645523427622553,-finish_position,10.0,0.97,2018,9,Austrian Grand Prix,9,127,8
+sauber,-1.4227812171193346,-finish_position,10.0,0.97,2018,9,Austrian Grand Prix,9,127,8
+toro_rosso,-1.236107518633378,-finish_position,10.0,0.97,2018,9,Austrian Grand Prix,9,127,8
+williams,-2.2448257408072174,-finish_position,10.0,0.97,2018,9,Austrian Grand Prix,9,127,8
+ferrari,2.346961999930945,-finish_position,10.0,0.97,2018,10,British Grand Prix,10,141,9
+force_india,-0.5165093458477915,-finish_position,10.0,0.97,2018,10,British Grand Prix,10,141,9
+haas,-0.7307439747203025,-finish_position,10.0,0.97,2018,10,British Grand Prix,10,141,9
+mclaren,-0.424978603354427,-finish_position,10.0,0.97,2018,10,British Grand Prix,10,141,9
+mercedes,2.3025540387700305,-finish_position,10.0,0.97,2018,10,British Grand Prix,10,141,9
+red_bull,2.034459326249787,-finish_position,10.0,0.97,2018,10,British Grand Prix,10,141,9
+renault,0.13734356426319796,-finish_position,10.0,0.97,2018,10,British Grand Prix,10,141,9
+sauber,-1.4128064181002706,-finish_position,10.0,0.97,2018,10,British Grand Prix,10,141,9
+toro_rosso,-1.3317704830978523,-finish_position,10.0,0.97,2018,10,British Grand Prix,10,141,9
+williams,-2.4045101040933172,-finish_position,10.0,0.97,2018,10,British Grand Prix,10,141,9
+ferrari,2.471850585810757,-finish_position,10.0,0.97,2018,11,German Grand Prix,11,155,10
+force_india,-0.4838783352207089,-finish_position,10.0,0.97,2018,11,German Grand Prix,11,155,10
+haas,-0.7448137712868749,-finish_position,10.0,0.97,2018,11,German Grand Prix,11,155,10
+mclaren,-0.46944208357369777,-finish_position,10.0,0.97,2018,11,German Grand Prix,11,155,10
+mercedes,2.379931222396827,-finish_position,10.0,0.97,2018,11,German Grand Prix,11,155,10
+red_bull,2.000436056053072,-finish_position,10.0,0.97,2018,11,German Grand Prix,11,155,10
+renault,0.1775676034466796,-finish_position,10.0,0.97,2018,11,German Grand Prix,11,155,10
+sauber,-1.4236963100873874,-finish_position,10.0,0.97,2018,11,German Grand Prix,11,155,10
+toro_rosso,-1.4446165710498897,-finish_position,10.0,0.97,2018,11,German Grand Prix,11,155,10
+williams,-2.463338396488776,-finish_position,10.0,0.97,2018,11,German Grand Prix,11,155,10
+ferrari,2.483717314248565,-finish_position,10.0,0.97,2018,12,Hungarian Grand Prix,12,170,11
+force_india,-0.40325099266023123,-finish_position,10.0,0.97,2018,12,Hungarian Grand Prix,12,170,11
+haas,-0.6782032351004,-finish_position,10.0,0.97,2018,12,Hungarian Grand Prix,12,170,11
+mclaren,-0.5781072336640312,-finish_position,10.0,0.97,2018,12,Hungarian Grand Prix,12,170,11
+mercedes,2.5318901532334275,-finish_position,10.0,0.97,2018,12,Hungarian Grand Prix,12,170,11
+red_bull,2.010937458575977,-finish_position,10.0,0.97,2018,12,Hungarian Grand Prix,12,170,11
+renault,0.1437783343732026,-finish_position,10.0,0.97,2018,12,Hungarian Grand Prix,12,170,11
+sauber,-1.516772466883774,-finish_position,10.0,0.97,2018,12,Hungarian Grand Prix,12,170,11
+toro_rosso,-1.5359414370466296,-finish_position,10.0,0.97,2018,12,Hungarian Grand Prix,12,170,11
+williams,-2.4580478950761053,-finish_position,10.0,0.97,2018,12,Hungarian Grand Prix,12,170,11
+ferrari,2.6140078776829636,-finish_position,10.0,0.97,2018,13,Belgian Grand Prix,13,187,12
+force_india,-0.6171915682546901,-finish_position,10.0,0.97,2018,13,Belgian Grand Prix,13,187,12
+haas,-0.5903150591025831,-finish_position,10.0,0.97,2018,13,Belgian Grand Prix,13,187,12
+mclaren,-0.5294430094213409,-finish_position,10.0,0.97,2018,13,Belgian Grand Prix,13,187,12
+mercedes,2.629795038428621,-finish_position,10.0,0.97,2018,13,Belgian Grand Prix,13,187,12
+red_bull,2.0653256382780167,-finish_position,10.0,0.97,2018,13,Belgian Grand Prix,13,187,12
+renault,0.04116985800228222,-finish_position,10.0,0.97,2018,13,Belgian Grand Prix,13,187,12
+sauber,-1.5901451678134093,-finish_position,10.0,0.97,2018,13,Belgian Grand Prix,13,187,12
+toro_rosso,-1.3538552621599984,-finish_position,10.0,0.97,2018,13,Belgian Grand Prix,13,187,12
+williams,-2.669348345639867,-finish_position,10.0,0.97,2018,13,Belgian Grand Prix,13,187,12
+ferrari,2.648717981802918,-finish_position,10.0,0.97,2018,14,Italian Grand Prix,14,202,13
+force_india,-0.44111414587288955,-finish_position,10.0,0.97,2018,14,Italian Grand Prix,14,202,13
+haas,-0.5134707008832625,-finish_position,10.0,0.97,2018,14,Italian Grand Prix,14,202,13
+mclaren,-0.6969011641524709,-finish_position,10.0,0.97,2018,14,Italian Grand Prix,14,202,13
+mercedes,2.654203400277126,-finish_position,10.0,0.97,2018,14,Italian Grand Prix,14,202,13
+red_bull,2.0919581915771053,-finish_position,10.0,0.97,2018,14,Italian Grand Prix,14,202,13
+renault,-0.046979331896220416,-finish_position,10.0,0.97,2018,14,Italian Grand Prix,14,202,13
+sauber,-1.5790345154675225,-finish_position,10.0,0.97,2018,14,Italian Grand Prix,14,202,13
+toro_rosso,-1.4385148845502997,-finish_position,10.0,0.97,2018,14,Italian Grand Prix,14,202,13
+williams,-2.6788648308344816,-finish_position,10.0,0.97,2018,14,Italian Grand Prix,14,202,13
+ferrari,2.7091562709350367,-finish_position,10.0,0.97,2018,15,Singapore Grand Prix,15,218,14
+force_india,-0.30285947515920086,-finish_position,10.0,0.97,2018,15,Singapore Grand Prix,15,218,14
+haas,-0.6756261965966658,-finish_position,10.0,0.97,2018,15,Singapore Grand Prix,15,218,14
+mclaren,-0.7280226231364914,-finish_position,10.0,0.97,2018,15,Singapore Grand Prix,15,218,14
+mercedes,2.7583137290038753,-finish_position,10.0,0.97,2018,15,Singapore Grand Prix,15,218,14
+red_bull,2.0869719416289723,-finish_position,10.0,0.97,2018,15,Singapore Grand Prix,15,218,14
+renault,-0.1549536179987274,-finish_position,10.0,0.97,2018,15,Singapore Grand Prix,15,218,14
+sauber,-1.6739670817335188,-finish_position,10.0,0.97,2018,15,Singapore Grand Prix,15,218,14
+toro_rosso,-1.5239575127078557,-finish_position,10.0,0.97,2018,15,Singapore Grand Prix,15,218,14
+williams,-2.4950554342354265,-finish_position,10.0,0.97,2018,15,Singapore Grand Prix,15,218,14
+ferrari,2.7835214792640537,-finish_position,10.0,0.97,2018,16,Russian Grand Prix,16,237,15
+force_india,-0.3804737813574774,-finish_position,10.0,0.97,2018,16,Russian Grand Prix,16,237,15
+haas,-0.9422085904880151,-finish_position,10.0,0.97,2018,16,Russian Grand Prix,16,237,15
+mclaren,-0.6426781972874975,-finish_position,10.0,0.97,2018,16,Russian Grand Prix,16,237,15
+mercedes,2.8996991532499448,-finish_position,10.0,0.97,2018,16,Russian Grand Prix,16,237,15
+red_bull,2.2101008374697173,-finish_position,10.0,0.97,2018,16,Russian Grand Prix,16,237,15
+renault,-0.09693155850334668,-finish_position,10.0,0.97,2018,16,Russian Grand Prix,16,237,15
+sauber,-1.5348422076640842,-finish_position,10.0,0.97,2018,16,Russian Grand Prix,16,237,15
+toro_rosso,-1.680921339586484,-finish_position,10.0,0.97,2018,16,Russian Grand Prix,16,237,15
+williams,-2.6152657950968123,-finish_position,10.0,0.97,2018,16,Russian Grand Prix,16,237,15
+ferrari,2.860556080827794,-finish_position,10.0,0.97,2018,17,Japanese Grand Prix,17,255,16
+force_india,-0.3389365571537296,-finish_position,10.0,0.97,2018,17,Japanese Grand Prix,17,255,16
+haas,-0.8616533868929805,-finish_position,10.0,0.97,2018,17,Japanese Grand Prix,17,255,16
+mclaren,-0.8769637453198553,-finish_position,10.0,0.97,2018,17,Japanese Grand Prix,17,255,16
+mercedes,3.056770192831805,-finish_position,10.0,0.97,2018,17,Japanese Grand Prix,17,255,16
+red_bull,2.230287568991106,-finish_position,10.0,0.97,2018,17,Japanese Grand Prix,17,255,16
+renault,-0.30539379332737376,-finish_position,10.0,0.97,2018,17,Japanese Grand Prix,17,255,16
+sauber,-1.4202401878643898,-finish_position,10.0,0.97,2018,17,Japanese Grand Prix,17,255,16
+toro_rosso,-1.6133929515867107,-finish_position,10.0,0.97,2018,17,Japanese Grand Prix,17,255,16
+williams,-2.7310332205056733,-finish_position,10.0,0.97,2018,17,Japanese Grand Prix,17,255,16
+ferrari,2.8163772903919235,-finish_position,10.0,0.97,2018,18,United States Grand Prix,18,272,17
+force_india,-0.2652103909804752,-finish_position,10.0,0.97,2018,18,United States Grand Prix,18,272,17
+haas,-0.7806971182224768,-finish_position,10.0,0.97,2018,18,United States Grand Prix,18,272,17
+mclaren,-1.0784673521853767,-finish_position,10.0,0.97,2018,18,United States Grand Prix,18,272,17
+mercedes,3.168928852843698,-finish_position,10.0,0.97,2018,18,United States Grand Prix,18,272,17
+red_bull,2.326828447058445,-finish_position,10.0,0.97,2018,18,United States Grand Prix,18,272,17
+renault,-0.2938068090931312,-finish_position,10.0,0.97,2018,18,United States Grand Prix,18,272,17
+sauber,-1.40593333441339,-finish_position,10.0,0.97,2018,18,United States Grand Prix,18,272,17
+toro_rosso,-1.6287956627845923,-finish_position,10.0,0.97,2018,18,United States Grand Prix,18,272,17
+williams,-2.859223922614634,-finish_position,10.0,0.97,2018,18,United States Grand Prix,18,272,17
+ferrari,2.846308840216171,-finish_position,10.0,0.97,2018,19,Mexican Grand Prix,19,286,18
+force_india,-0.2695368161103789,-finish_position,10.0,0.97,2018,19,Mexican Grand Prix,19,286,18
+haas,-0.8103722876991997,-finish_position,10.0,0.97,2018,19,Mexican Grand Prix,19,286,18
+mclaren,-1.0991686375580212,-finish_position,10.0,0.97,2018,19,Mexican Grand Prix,19,286,18
+mercedes,3.1101609227267213,-finish_position,10.0,0.97,2018,19,Mexican Grand Prix,19,286,18
+red_bull,2.3470243747604425,-finish_position,10.0,0.97,2018,19,Mexican Grand Prix,19,286,18
+renault,-0.2099593182258089,-finish_position,10.0,0.97,2018,19,Mexican Grand Prix,19,286,18
+sauber,-1.405008629915222,-finish_position,10.0,0.97,2018,19,Mexican Grand Prix,19,286,18
+toro_rosso,-1.6112620207832162,-finish_position,10.0,0.97,2018,19,Mexican Grand Prix,19,286,18
+williams,-2.8981864274114906,-finish_position,10.0,0.97,2018,19,Mexican Grand Prix,19,286,18
+ferrari,2.896812201811109,-finish_position,10.0,0.97,2018,20,Brazilian Grand Prix,20,302,19
+force_india,-0.32694016656261665,-finish_position,10.0,0.97,2018,20,Brazilian Grand Prix,20,302,19
+haas,-1.069767030057767,-finish_position,10.0,0.97,2018,20,Brazilian Grand Prix,20,302,19
+mclaren,-1.0265288430913317,-finish_position,10.0,0.97,2018,20,Brazilian Grand Prix,20,302,19
+mercedes,3.064415584072761,-finish_position,10.0,0.97,2018,20,Brazilian Grand Prix,20,302,19
+red_bull,2.41248345751554,-finish_position,10.0,0.97,2018,20,Brazilian Grand Prix,20,302,19
+renault,-0.15500237166462652,-finish_position,10.0,0.97,2018,20,Brazilian Grand Prix,20,302,19
+sauber,-1.275392859050907,-finish_position,10.0,0.97,2018,20,Brazilian Grand Prix,20,302,19
+toro_rosso,-1.6546188730941374,-finish_position,10.0,0.97,2018,20,Brazilian Grand Prix,20,302,19
+williams,-2.8654610998780257,-finish_position,10.0,0.97,2018,20,Brazilian Grand Prix,20,302,19
+ferrari,2.9127078755086666,-finish_position,10.0,0.97,2018,21,Abu Dhabi Grand Prix,21,320,20
+force_india,-0.4329405992308547,-finish_position,10.0,0.97,2018,21,Abu Dhabi Grand Prix,21,320,20
+haas,-0.9466489912775342,-finish_position,10.0,0.97,2018,21,Abu Dhabi Grand Prix,21,320,20
+mclaren,-1.243679474135378,-finish_position,10.0,0.97,2018,21,Abu Dhabi Grand Prix,21,320,20
+mercedes,3.125091293468397,-finish_position,10.0,0.97,2018,21,Abu Dhabi Grand Prix,21,320,20
+red_bull,2.5255617129388623,-finish_position,10.0,0.97,2018,21,Abu Dhabi Grand Prix,21,320,20
+renault,-0.171566719127597,-finish_position,10.0,0.97,2018,21,Abu Dhabi Grand Prix,21,320,20
+sauber,-1.155437624876626,-finish_position,10.0,0.97,2018,21,Abu Dhabi Grand Prix,21,320,20
+toro_rosso,-1.6413302184842686,-finish_position,10.0,0.97,2018,21,Abu Dhabi Grand Prix,21,320,20
+williams,-2.9717572547836664,-finish_position,10.0,0.97,2018,21,Abu Dhabi Grand Prix,21,320,20
+ferrari,2.9166728847932712,-finish_position,10.0,0.97,2019,1,Australian Grand Prix,22,335,21
+force_india,-0.4218341165059406,-finish_position,10.0,0.97,2019,1,Australian Grand Prix,22,335,21
+haas,-0.9341517129957558,-finish_position,10.0,0.97,2019,1,Australian Grand Prix,22,335,21
+mclaren,-1.3397632370231367,-finish_position,10.0,0.97,2019,1,Australian Grand Prix,22,335,21
+mercedes,3.122690041206842,-finish_position,10.0,0.97,2019,1,Australian Grand Prix,22,335,21
+red_bull,2.5513132214074026,-finish_position,10.0,0.97,2019,1,Australian Grand Prix,22,335,21
+renault,-0.12442926675600494,-finish_position,10.0,0.97,2019,1,Australian Grand Prix,22,335,21
+sauber,-1.1020938096297361,-finish_position,10.0,0.97,2019,1,Australian Grand Prix,22,335,21
+toro_rosso,-1.6610722328307699,-finish_position,10.0,0.97,2019,1,Australian Grand Prix,22,335,21
+williams,-3.007331771666163,-finish_position,10.0,0.97,2019,1,Australian Grand Prix,22,335,21
+alfa,-0.5007480544956541,-finish_position,10.0,0.97,2019,2,Bahrain Grand Prix,23,352,22
+ferrari,3.047857891233165,-finish_position,10.0,0.97,2019,2,Bahrain Grand Prix,23,352,22
+force_india,-0.2207728893387639,-finish_position,10.0,0.97,2019,2,Bahrain Grand Prix,23,352,22
+haas,-0.7413577324481669,-finish_position,10.0,0.97,2019,2,Bahrain Grand Prix,23,352,22
+mclaren,-1.304650185178036,-finish_position,10.0,0.97,2019,2,Bahrain Grand Prix,23,352,22
+mercedes,3.3069586271517664,-finish_position,10.0,0.97,2019,2,Bahrain Grand Prix,23,352,22
+racing_point,-0.23611145031571354,-finish_position,10.0,0.97,2019,2,Bahrain Grand Prix,23,352,22
+red_bull,2.4808826048023493,-finish_position,10.0,0.97,2019,2,Bahrain Grand Prix,23,352,22
+renault,0.017294917370817155,-finish_position,10.0,0.97,2019,2,Bahrain Grand Prix,23,352,22
+sauber,-1.0061367971718682,-finish_position,10.0,0.97,2019,2,Bahrain Grand Prix,23,352,22
+toro_rosso,-1.576546877933949,-finish_position,10.0,0.97,2019,2,Bahrain Grand Prix,23,352,22
+williams,-3.2666700536759388,-finish_position,10.0,0.97,2019,2,Bahrain Grand Prix,23,352,22
+alfa,-0.48090519473606963,-finish_position,10.0,0.97,2019,3,Chinese Grand Prix,24,368,23
+ferrari,3.1200137189273645,-finish_position,10.0,0.97,2019,3,Chinese Grand Prix,24,368,23
+force_india,-0.20658217452435232,-finish_position,10.0,0.97,2019,3,Chinese Grand Prix,24,368,23
+haas,-0.7770354934579008,-finish_position,10.0,0.97,2019,3,Chinese Grand Prix,24,368,23
+mclaren,-1.113114604142335,-finish_position,10.0,0.97,2019,3,Chinese Grand Prix,24,368,23
+mercedes,3.39399037201618,-finish_position,10.0,0.97,2019,3,Chinese Grand Prix,24,368,23
+racing_point,-0.5269451761991805,-finish_position,10.0,0.97,2019,3,Chinese Grand Prix,24,368,23
+red_bull,2.4601573441318996,-finish_position,10.0,0.97,2019,3,Chinese Grand Prix,24,368,23
+renault,0.03656410764283374,-finish_position,10.0,0.97,2019,3,Chinese Grand Prix,24,368,23
+sauber,-1.0355711827013836,-finish_position,10.0,0.97,2019,3,Chinese Grand Prix,24,368,23
+toro_rosso,-1.5217448601286392,-finish_position,10.0,0.97,2019,3,Chinese Grand Prix,24,368,23
+williams,-3.3488268568284183,-finish_position,10.0,0.97,2019,3,Chinese Grand Prix,24,368,23
+alfa,-0.7641051739199589,-finish_position,10.0,0.97,2019,4,Azerbaijan Grand Prix,25,385,24
+ferrari,3.1859958231996344,-finish_position,10.0,0.97,2019,4,Azerbaijan Grand Prix,25,385,24
+force_india,-0.20949424539373396,-finish_position,10.0,0.97,2019,4,Azerbaijan Grand Prix,25,385,24
+haas,-0.8021341968534871,-finish_position,10.0,0.97,2019,4,Azerbaijan Grand Prix,25,385,24
+mclaren,-1.208521051667218,-finish_position,10.0,0.97,2019,4,Azerbaijan Grand Prix,25,385,24
+mercedes,3.499782016305958,-finish_position,10.0,0.97,2019,4,Azerbaijan Grand Prix,25,385,24
+racing_point,-0.5026799507932399,-finish_position,10.0,0.97,2019,4,Azerbaijan Grand Prix,25,385,24
+red_bull,2.530006393548349,-finish_position,10.0,0.97,2019,4,Azerbaijan Grand Prix,25,385,24
+renault,0.1955029545656584,-finish_position,10.0,0.97,2019,4,Azerbaijan Grand Prix,25,385,24
+sauber,-0.9961865239298033,-finish_position,10.0,0.97,2019,4,Azerbaijan Grand Prix,25,385,24
+toro_rosso,-1.466540277111233,-finish_position,10.0,0.97,2019,4,Azerbaijan Grand Prix,25,385,24
+williams,-3.461625767950933,-finish_position,10.0,0.97,2019,4,Azerbaijan Grand Prix,25,385,24
+alfa,-0.894105334666227,-finish_position,10.0,0.97,2019,5,Spanish Grand Prix,26,401,25
+ferrari,3.2218253593113237,-finish_position,10.0,0.97,2019,5,Spanish Grand Prix,26,401,25
+force_india,-0.2700946272307734,-finish_position,10.0,0.97,2019,5,Spanish Grand Prix,26,401,25
+haas,-0.8494262687094688,-finish_position,10.0,0.97,2019,5,Spanish Grand Prix,26,401,25
+mclaren,-1.005186726658037,-finish_position,10.0,0.97,2019,5,Spanish Grand Prix,26,401,25
+mercedes,3.555508469364775,-finish_position,10.0,0.97,2019,5,Spanish Grand Prix,26,401,25
+racing_point,-0.24993898194850186,-finish_position,10.0,0.97,2019,5,Spanish Grand Prix,26,401,25
+red_bull,2.523358129923426,-finish_position,10.0,0.97,2019,5,Spanish Grand Prix,26,401,25
+renault,-0.0009559793424077688,-finish_position,10.0,0.97,2019,5,Spanish Grand Prix,26,401,25
+sauber,-0.9951016697474419,-finish_position,10.0,0.97,2019,5,Spanish Grand Prix,26,401,25
+toro_rosso,-1.4717671190089574,-finish_position,10.0,0.97,2019,5,Spanish Grand Prix,26,401,25
+williams,-3.564115251287708,-finish_position,10.0,0.97,2019,5,Spanish Grand Prix,26,401,25
+alfa,-1.2938610502541381,-finish_position,10.0,0.97,2019,6,Monaco Grand Prix,27,419,26
+ferrari,3.3352740056070314,-finish_position,10.0,0.97,2019,6,Monaco Grand Prix,27,419,26
+force_india,-0.1263737475307725,-finish_position,10.0,0.97,2019,6,Monaco Grand Prix,27,419,26
+haas,-0.7197294705877322,-finish_position,10.0,0.97,2019,6,Monaco Grand Prix,27,419,26
+mclaren,-0.8700947869530983,-finish_position,10.0,0.97,2019,6,Monaco Grand Prix,27,419,26
+mercedes,3.6713044838511713,-finish_position,10.0,0.97,2019,6,Monaco Grand Prix,27,419,26
+racing_point,-0.48613216095658085,-finish_position,10.0,0.97,2019,6,Monaco Grand Prix,27,419,26
+red_bull,2.694466451206971,-finish_position,10.0,0.97,2019,6,Monaco Grand Prix,27,419,26
+renault,-0.21704291707031573,-finish_position,10.0,0.97,2019,6,Monaco Grand Prix,27,419,26
+sauber,-0.9351077095599286,-finish_position,10.0,0.97,2019,6,Monaco Grand Prix,27,419,26
+toro_rosso,-1.3707076296718852,-finish_position,10.0,0.97,2019,6,Monaco Grand Prix,27,419,26
+williams,-3.681995468080719,-finish_position,10.0,0.97,2019,6,Monaco Grand Prix,27,419,26
+alfa,-1.8218044257643635,-finish_position,10.0,0.97,2019,7,Canadian Grand Prix,28,438,27
+ferrari,3.478085589677134,-finish_position,10.0,0.97,2019,7,Canadian Grand Prix,28,438,27
+force_india,-0.06851882822115753,-finish_position,10.0,0.97,2019,7,Canadian Grand Prix,28,438,27
+haas,-0.7120018484992787,-finish_position,10.0,0.97,2019,7,Canadian Grand Prix,28,438,27
+mclaren,-0.7136674754288842,-finish_position,10.0,0.97,2019,7,Canadian Grand Prix,28,438,27
+mercedes,3.770589983999164,-finish_position,10.0,0.97,2019,7,Canadian Grand Prix,28,438,27
+racing_point,-0.7895079308117127,-finish_position,10.0,0.97,2019,7,Canadian Grand Prix,28,438,27
+red_bull,2.826332893916721,-finish_position,10.0,0.97,2019,7,Canadian Grand Prix,28,438,27
+renault,-0.3036969930941602,-finish_position,10.0,0.97,2019,7,Canadian Grand Prix,28,438,27
+sauber,-0.8629263392984065,-finish_position,10.0,0.97,2019,7,Canadian Grand Prix,28,438,27
+toro_rosso,-1.161339008521176,-finish_position,10.0,0.97,2019,7,Canadian Grand Prix,28,438,27
+williams,-3.6415456179538874,-finish_position,10.0,0.97,2019,7,Canadian Grand Prix,28,438,27
+alfa,-1.982005011364448,-finish_position,10.0,0.97,2019,8,French Grand Prix,29,456,28
+ferrari,3.6270050251907398,-finish_position,10.0,0.97,2019,8,French Grand Prix,29,456,28
+force_india,-0.017498872777357167,-finish_position,10.0,0.97,2019,8,French Grand Prix,29,456,28
+haas,-0.8679283958655277,-finish_position,10.0,0.97,2019,8,French Grand Prix,29,456,28
+mclaren,-0.7143057529759854,-finish_position,10.0,0.97,2019,8,French Grand Prix,29,456,28
+mercedes,3.8099321067838474,-finish_position,10.0,0.97,2019,8,French Grand Prix,29,456,28
+racing_point,-0.7697254930218873,-finish_position,10.0,0.97,2019,8,French Grand Prix,29,456,28
+red_bull,2.765370427226798,-finish_position,10.0,0.97,2019,8,French Grand Prix,29,456,28
+renault,-0.13123636774446476,-finish_position,10.0,0.97,2019,8,French Grand Prix,29,456,28
+sauber,-0.8639466895222047,-finish_position,10.0,0.97,2019,8,French Grand Prix,29,456,28
+toro_rosso,-1.1164223600571532,-finish_position,10.0,0.97,2019,8,French Grand Prix,29,456,28
+williams,-3.739238615872361,-finish_position,10.0,0.97,2019,8,French Grand Prix,29,456,28
+alfa,-1.898994207400384,-finish_position,10.0,0.97,2019,9,Austrian Grand Prix,30,475,29
+ferrari,3.654256125325459,-finish_position,10.0,0.97,2019,9,Austrian Grand Prix,30,475,29
+force_india,0.028443295598602855,-finish_position,10.0,0.97,2019,9,Austrian Grand Prix,30,475,29
+haas,-0.9208072280094655,-finish_position,10.0,0.97,2019,9,Austrian Grand Prix,30,475,29
+mclaren,-0.5381596420618789,-finish_position,10.0,0.97,2019,9,Austrian Grand Prix,30,475,29
+mercedes,3.9023435012325813,-finish_position,10.0,0.97,2019,9,Austrian Grand Prix,30,475,29
+racing_point,-0.8895926098311675,-finish_position,10.0,0.97,2019,9,Austrian Grand Prix,30,475,29
+red_bull,2.73353151507768,-finish_position,10.0,0.97,2019,9,Austrian Grand Prix,30,475,29
+renault,-0.19118800981858175,-finish_position,10.0,0.97,2019,9,Austrian Grand Prix,30,475,29
+sauber,-0.8534808055320222,-finish_position,10.0,0.97,2019,9,Austrian Grand Prix,30,475,29
+toro_rosso,-1.216370650501542,-finish_position,10.0,0.97,2019,9,Austrian Grand Prix,30,475,29
+williams,-3.809981284079273,-finish_position,10.0,0.97,2019,9,Austrian Grand Prix,30,475,29
+alfa,-1.711746278090714,-finish_position,10.0,0.97,2019,10,British Grand Prix,31,495,30
+ferrari,3.7564708701248612,-finish_position,10.0,0.97,2019,10,British Grand Prix,31,495,30
+force_india,0.05474942993733923,-finish_position,10.0,0.97,2019,10,British Grand Prix,31,495,30
+haas,-1.1010397706876893,-finish_position,10.0,0.97,2019,10,British Grand Prix,31,495,30
+mclaren,-0.36905558041292724,-finish_position,10.0,0.97,2019,10,British Grand Prix,31,495,30
+mercedes,3.920101002785566,-finish_position,10.0,0.97,2019,10,British Grand Prix,31,495,30
+racing_point,-0.985908817496838,-finish_position,10.0,0.97,2019,10,British Grand Prix,31,495,30
+red_bull,2.8298339196386064,-finish_position,10.0,0.97,2019,10,British Grand Prix,31,495,30
+renault,-0.2985507947131687,-finish_position,10.0,0.97,2019,10,British Grand Prix,31,495,30
+sauber,-0.8466931669220703,-finish_position,10.0,0.97,2019,10,British Grand Prix,31,495,30
+toro_rosso,-1.379551090897024,-finish_position,10.0,0.97,2019,10,British Grand Prix,31,495,30
+williams,-3.8686097232659487,-finish_position,10.0,0.97,2019,10,British Grand Prix,31,495,30
+alfa,-1.6306521032390702,-finish_position,10.0,0.97,2019,11,German Grand Prix,32,512,31
+ferrari,3.6275123615576805,-finish_position,10.0,0.97,2019,11,German Grand Prix,32,512,31
+force_india,0.12705061148776006,-finish_position,10.0,0.97,2019,11,German Grand Prix,32,512,31
+haas,-1.088080551026783,-finish_position,10.0,0.97,2019,11,German Grand Prix,32,512,31
+mclaren,-0.30727100561624754,-finish_position,10.0,0.97,2019,11,German Grand Prix,32,512,31
+mercedes,3.9695263169210393,-finish_position,10.0,0.97,2019,11,German Grand Prix,32,512,31
+racing_point,-1.2211437292705831,-finish_position,10.0,0.97,2019,11,German Grand Prix,32,512,31
+red_bull,2.873732200258142,-finish_position,10.0,0.97,2019,11,German Grand Prix,32,512,31
+renault,-0.2776159362058136,-finish_position,10.0,0.97,2019,11,German Grand Prix,32,512,31
+sauber,-0.8758599495502222,-finish_position,10.0,0.97,2019,11,German Grand Prix,32,512,31
+toro_rosso,-1.3697310964638547,-finish_position,10.0,0.97,2019,11,German Grand Prix,32,512,31
+williams,-3.8274671188520415,-finish_position,10.0,0.97,2019,11,German Grand Prix,32,512,31
+alfa,-1.7414827980646388,-finish_position,10.0,0.97,2019,12,Hungarian Grand Prix,33,525,32
+ferrari,3.58406391936902,-finish_position,10.0,0.97,2019,12,Hungarian Grand Prix,33,525,32
+force_india,0.10460792399464439,-finish_position,10.0,0.97,2019,12,Hungarian Grand Prix,33,525,32
+haas,-1.0240008423514286,-finish_position,10.0,0.97,2019,12,Hungarian Grand Prix,33,525,32
+mclaren,-0.2808240769018266,-finish_position,10.0,0.97,2019,12,Hungarian Grand Prix,33,525,32
+mercedes,3.796792951636868,-finish_position,10.0,0.97,2019,12,Hungarian Grand Prix,33,525,32
+racing_point,-1.014288890063766,-finish_position,10.0,0.97,2019,12,Hungarian Grand Prix,33,525,32
+red_bull,2.856529430554995,-finish_position,10.0,0.97,2019,12,Hungarian Grand Prix,33,525,32
+renault,-0.37853811584165253,-finish_position,10.0,0.97,2019,12,Hungarian Grand Prix,33,525,32
+sauber,-0.9166978807796083,-finish_position,10.0,0.97,2019,12,Hungarian Grand Prix,33,525,32
+toro_rosso,-1.1878170025694748,-finish_position,10.0,0.97,2019,12,Hungarian Grand Prix,33,525,32
+williams,-3.7983446189831214,-finish_position,10.0,0.97,2019,12,Hungarian Grand Prix,33,525,32
+alfa,-1.7317227707695286,-finish_position,10.0,0.97,2019,13,Belgian Grand Prix,34,544,33
+ferrari,3.6052249790663637,-finish_position,10.0,0.97,2019,13,Belgian Grand Prix,34,544,33
+force_india,0.10690523264636564,-finish_position,10.0,0.97,2019,13,Belgian Grand Prix,34,544,33
+haas,-1.0089799664827395,-finish_position,10.0,0.97,2019,13,Belgian Grand Prix,34,544,33
+mclaren,-0.1543912053448492,-finish_position,10.0,0.97,2019,13,Belgian Grand Prix,34,544,33
+mercedes,3.7951224869088263,-finish_position,10.0,0.97,2019,13,Belgian Grand Prix,34,544,33
+racing_point,-1.1664928834420527,-finish_position,10.0,0.97,2019,13,Belgian Grand Prix,34,544,33
+red_bull,2.966564862309989,-finish_position,10.0,0.97,2019,13,Belgian Grand Prix,34,544,33
+renault,-0.53045349998704,-finish_position,10.0,0.97,2019,13,Belgian Grand Prix,34,544,33
+sauber,-0.8884007989786311,-finish_position,10.0,0.97,2019,13,Belgian Grand Prix,34,544,33
+toro_rosso,-1.2102894919828224,-finish_position,10.0,0.97,2019,13,Belgian Grand Prix,34,544,33
+williams,-3.7830869439438817,-finish_position,10.0,0.97,2019,13,Belgian Grand Prix,34,544,33
+alfa,-1.874205466208949,-finish_position,10.0,0.97,2019,14,Italian Grand Prix,35,560,34
+ferrari,3.7110782356447807,-finish_position,10.0,0.97,2019,14,Italian Grand Prix,35,560,34
+force_india,0.04720283386145293,-finish_position,10.0,0.97,2019,14,Italian Grand Prix,35,560,34
+haas,-1.0685564223860975,-finish_position,10.0,0.97,2019,14,Italian Grand Prix,35,560,34
+mclaren,-0.17335985913010707,-finish_position,10.0,0.97,2019,14,Italian Grand Prix,35,560,34
+mercedes,3.8040149072527747,-finish_position,10.0,0.97,2019,14,Italian Grand Prix,35,560,34
+racing_point,-0.9973932566076184,-finish_position,10.0,0.97,2019,14,Italian Grand Prix,35,560,34
+red_bull,3.0229909637042636,-finish_position,10.0,0.97,2019,14,Italian Grand Prix,35,560,34
+renault,-0.6134902161631607,-finish_position,10.0,0.97,2019,14,Italian Grand Prix,35,560,34
+sauber,-0.9230456935948939,-finish_position,10.0,0.97,2019,14,Italian Grand Prix,35,560,34
+toro_rosso,-1.1248761845562076,-finish_position,10.0,0.97,2019,14,Italian Grand Prix,35,560,34
+williams,-3.8103598418162132,-finish_position,10.0,0.97,2019,14,Italian Grand Prix,35,560,34
+alfa,-1.8971767323444038,-finish_position,10.0,0.97,2019,15,Singapore Grand Prix,36,577,35
+ferrari,3.709694820693605,-finish_position,10.0,0.97,2019,15,Singapore Grand Prix,36,577,35
+force_india,0.0012063546221995755,-finish_position,10.0,0.97,2019,15,Singapore Grand Prix,36,577,35
+haas,-1.1604357527902753,-finish_position,10.0,0.97,2019,15,Singapore Grand Prix,36,577,35
+mclaren,-0.1725211501181788,-finish_position,10.0,0.97,2019,15,Singapore Grand Prix,36,577,35
+mercedes,3.8184866266560027,-finish_position,10.0,0.97,2019,15,Singapore Grand Prix,36,577,35
+racing_point,-0.9221778477073745,-finish_position,10.0,0.97,2019,15,Singapore Grand Prix,36,577,35
+red_bull,2.9416807563794323,-finish_position,10.0,0.97,2019,15,Singapore Grand Prix,36,577,35
+renault,-0.4146692064676193,-finish_position,10.0,0.97,2019,15,Singapore Grand Prix,36,577,35
+sauber,-0.9608463522414253,-finish_position,10.0,0.97,2019,15,Singapore Grand Prix,36,577,35
+toro_rosso,-1.140143473772152,-finish_position,10.0,0.97,2019,15,Singapore Grand Prix,36,577,35
+williams,-3.803098042909817,-finish_position,10.0,0.97,2019,15,Singapore Grand Prix,36,577,35
+alfa,-1.8032691849944684,-finish_position,10.0,0.97,2019,16,Russian Grand Prix,37,594,36
+ferrari,3.7944872208008302,-finish_position,10.0,0.97,2019,16,Russian Grand Prix,37,594,36
+force_india,-0.0007660602682204072,-finish_position,10.0,0.97,2019,16,Russian Grand Prix,37,594,36
+haas,-1.2354694549740508,-finish_position,10.0,0.97,2019,16,Russian Grand Prix,37,594,36
+mclaren,-0.19982568986440427,-finish_position,10.0,0.97,2019,16,Russian Grand Prix,37,594,36
+mercedes,3.7869139038935566,-finish_position,10.0,0.97,2019,16,Russian Grand Prix,37,594,36
+racing_point,-0.9596382674068957,-finish_position,10.0,0.97,2019,16,Russian Grand Prix,37,594,36
+red_bull,2.9719878574275533,-finish_position,10.0,0.97,2019,16,Russian Grand Prix,37,594,36
+renault,-0.4645828353519913,-finish_position,10.0,0.97,2019,16,Russian Grand Prix,37,594,36
+sauber,-0.9634411848781108,-finish_position,10.0,0.97,2019,16,Russian Grand Prix,37,594,36
+toro_rosso,-1.1473931651021207,-finish_position,10.0,0.97,2019,16,Russian Grand Prix,37,594,36
+williams,-3.77900313928167,-finish_position,10.0,0.97,2019,16,Russian Grand Prix,37,594,36
+alfa,-1.9113092049905842,-finish_position,10.0,0.97,2019,17,Japanese Grand Prix,38,609,37
+ferrari,3.8000271037855495,-finish_position,10.0,0.97,2019,17,Japanese Grand Prix,38,609,37
+force_india,-0.04319431021203717,-finish_position,10.0,0.97,2019,17,Japanese Grand Prix,38,609,37
+haas,-1.2027810586700636,-finish_position,10.0,0.97,2019,17,Japanese Grand Prix,38,609,37
+mclaren,-0.12464396216529003,-finish_position,10.0,0.97,2019,17,Japanese Grand Prix,38,609,37
+mercedes,3.8201985776230165,-finish_position,10.0,0.97,2019,17,Japanese Grand Prix,38,609,37
+racing_point,-0.8682673271834704,-finish_position,10.0,0.97,2019,17,Japanese Grand Prix,38,609,37
+red_bull,3.0050025519607213,-finish_position,10.0,0.97,2019,17,Japanese Grand Prix,38,609,37
+renault,-0.4900792738950655,-finish_position,10.0,0.97,2019,17,Japanese Grand Prix,38,609,37
+sauber,-0.9720644778215596,-finish_position,10.0,0.97,2019,17,Japanese Grand Prix,38,609,37
+toro_rosso,-1.2476984721586963,-finish_position,10.0,0.97,2019,17,Japanese Grand Prix,38,609,37
+williams,-3.765190146272523,-finish_position,10.0,0.97,2019,17,Japanese Grand Prix,38,609,37
+alfa,-1.9630295500242856,-finish_position,10.0,0.97,2019,18,Mexican Grand Prix,39,626,38
+ferrari,3.7744637498072877,-finish_position,10.0,0.97,2019,18,Mexican Grand Prix,39,626,38
+force_india,-0.06273247322587709,-finish_position,10.0,0.97,2019,18,Mexican Grand Prix,39,626,38
+haas,-1.291826715028717,-finish_position,10.0,0.97,2019,18,Mexican Grand Prix,39,626,38
+mclaren,-0.08518975678643441,-finish_position,10.0,0.97,2019,18,Mexican Grand Prix,39,626,38
+mercedes,3.8423056932140556,-finish_position,10.0,0.97,2019,18,Mexican Grand Prix,39,626,38
+racing_point,-0.7694360177740461,-finish_position,10.0,0.97,2019,18,Mexican Grand Prix,39,626,38
+red_bull,3.0191321245435923,-finish_position,10.0,0.97,2019,18,Mexican Grand Prix,39,626,38
+renault,-0.5169213634698813,-finish_position,10.0,0.97,2019,18,Mexican Grand Prix,39,626,38
+sauber,-0.9462761783042966,-finish_position,10.0,0.97,2019,18,Mexican Grand Prix,39,626,38
+toro_rosso,-1.1856382223548578,-finish_position,10.0,0.97,2019,18,Mexican Grand Prix,39,626,38
+williams,-3.814851290596528,-finish_position,10.0,0.97,2019,18,Mexican Grand Prix,39,626,38
+alfa,-1.958496979260136,-finish_position,10.0,0.97,2019,19,United States Grand Prix,40,644,39
+ferrari,3.798429999307293,-finish_position,10.0,0.97,2019,19,United States Grand Prix,40,644,39
+force_india,-0.08748083801648998,-finish_position,10.0,0.97,2019,19,United States Grand Prix,40,644,39
+haas,-1.4248134685798024,-finish_position,10.0,0.97,2019,19,United States Grand Prix,40,644,39
+mclaren,-0.15633793166389565,-finish_position,10.0,0.97,2019,19,United States Grand Prix,40,644,39
+mercedes,3.8807257100795782,-finish_position,10.0,0.97,2019,19,United States Grand Prix,40,644,39
+racing_point,-0.7128521137465355,-finish_position,10.0,0.97,2019,19,United States Grand Prix,40,644,39
+red_bull,3.0126012241829923,-finish_position,10.0,0.97,2019,19,United States Grand Prix,40,644,39
+renault,-0.43604703976966736,-finish_position,10.0,0.97,2019,19,United States Grand Prix,40,644,39
+sauber,-0.9271017584352828,-finish_position,10.0,0.97,2019,19,United States Grand Prix,40,644,39
+toro_rosso,-1.1539052674848946,-finish_position,10.0,0.97,2019,19,United States Grand Prix,40,644,39
+williams,-3.834721536613159,-finish_position,10.0,0.97,2019,19,United States Grand Prix,40,644,39
+alfa,-1.9758860203257198,-finish_position,10.0,0.97,2019,20,Brazilian Grand Prix,41,660,40
+ferrari,3.7802085450857112,-finish_position,10.0,0.97,2019,20,Brazilian Grand Prix,41,660,40
+force_india,-0.09615513494656436,-finish_position,10.0,0.97,2019,20,Brazilian Grand Prix,41,660,40
+haas,-1.481571950453715,-finish_position,10.0,0.97,2019,20,Brazilian Grand Prix,41,660,40
+mclaren,-0.09686751333976533,-finish_position,10.0,0.97,2019,20,Brazilian Grand Prix,41,660,40
+mercedes,3.9148457403752994,-finish_position,10.0,0.97,2019,20,Brazilian Grand Prix,41,660,40
+racing_point,-0.7584187111357172,-finish_position,10.0,0.97,2019,20,Brazilian Grand Prix,41,660,40
+red_bull,3.017727345008227,-finish_position,10.0,0.97,2019,20,Brazilian Grand Prix,41,660,40
+renault,-0.35290898809418286,-finish_position,10.0,0.97,2019,20,Brazilian Grand Prix,41,660,40
+sauber,-0.9231572761930787,-finish_position,10.0,0.97,2019,20,Brazilian Grand Prix,41,660,40
+toro_rosso,-1.1798564762977977,-finish_position,10.0,0.97,2019,20,Brazilian Grand Prix,41,660,40
+williams,-3.8479595596826957,-finish_position,10.0,0.97,2019,20,Brazilian Grand Prix,41,660,40
+alfa,-1.6905685107070323,-finish_position,10.0,0.97,2019,21,Abu Dhabi Grand Prix,42,676,41
+ferrari,3.70549261544033,-finish_position,10.0,0.97,2019,21,Abu Dhabi Grand Prix,42,676,41
+force_india,-0.12361950039614232,-finish_position,10.0,0.97,2019,21,Abu Dhabi Grand Prix,42,676,41
+haas,-1.5195267346950252,-finish_position,10.0,0.97,2019,21,Abu Dhabi Grand Prix,42,676,41
+mclaren,-0.006127691937540823,-finish_position,10.0,0.97,2019,21,Abu Dhabi Grand Prix,42,676,41
+mercedes,3.8190726999158597,-finish_position,10.0,0.97,2019,21,Abu Dhabi Grand Prix,42,676,41
+racing_point,-0.7509028124208057,-finish_position,10.0,0.97,2019,21,Abu Dhabi Grand Prix,42,676,41
+red_bull,2.779447200322696,-finish_position,10.0,0.97,2019,21,Abu Dhabi Grand Prix,42,676,41
+renault,-0.43291524928489183,-finish_position,10.0,0.97,2019,21,Abu Dhabi Grand Prix,42,676,41
+sauber,-0.9367651454140082,-finish_position,10.0,0.97,2019,21,Abu Dhabi Grand Prix,42,676,41
+toro_rosso,-1.0031028249236562,-finish_position,10.0,0.97,2019,21,Abu Dhabi Grand Prix,42,676,41
+williams,-3.840484045899774,-finish_position,10.0,0.97,2019,21,Abu Dhabi Grand Prix,42,676,41
+alfa,-1.7773017550060668,-finish_position,10.0,0.97,2020,1,Austrian Grand Prix,43,695,42
+ferrari,3.7364641358591175,-finish_position,10.0,0.97,2020,1,Austrian Grand Prix,43,695,42
+force_india,-0.1297324679577294,-finish_position,10.0,0.97,2020,1,Austrian Grand Prix,43,695,42
+haas,-1.5757173299560472,-finish_position,10.0,0.97,2020,1,Austrian Grand Prix,43,695,42
+mclaren,0.00498646527300393,-finish_position,10.0,0.97,2020,1,Austrian Grand Prix,43,695,42
+mercedes,3.8567096284584697,-finish_position,10.0,0.97,2020,1,Austrian Grand Prix,43,695,42
+racing_point,-0.6703171063275718,-finish_position,10.0,0.97,2020,1,Austrian Grand Prix,43,695,42
+red_bull,2.8778914808378464,-finish_position,10.0,0.97,2020,1,Austrian Grand Prix,43,695,42
+renault,-0.4489400448220686,-finish_position,10.0,0.97,2020,1,Austrian Grand Prix,43,695,42
+sauber,-0.9196910852912926,-finish_position,10.0,0.97,2020,1,Austrian Grand Prix,43,695,42
+toro_rosso,-1.076914025611439,-finish_position,10.0,0.97,2020,1,Austrian Grand Prix,43,695,42
+williams,-3.8774378954562323,-finish_position,10.0,0.97,2020,1,Austrian Grand Prix,43,695,42
+alfa,-1.7477003494776968,-finish_position,10.0,0.97,2020,2,Styrian Grand Prix,44,706,43
+alphatauri,0.20523784126084474,-finish_position,10.0,0.97,2020,2,Styrian Grand Prix,44,706,43
+ferrari,3.6585266003625847,-finish_position,10.0,0.97,2020,2,Styrian Grand Prix,44,706,43
+force_india,-0.21571600288368892,-finish_position,10.0,0.97,2020,2,Styrian Grand Prix,44,706,43
+haas,-1.6133493993233856,-finish_position,10.0,0.97,2020,2,Styrian Grand Prix,44,706,43
+mclaren,0.11349087972350758,-finish_position,10.0,0.97,2020,2,Styrian Grand Prix,44,706,43
+mercedes,3.8238627926473456,-finish_position,10.0,0.97,2020,2,Styrian Grand Prix,44,706,43
+racing_point,-0.618520679507397,-finish_position,10.0,0.97,2020,2,Styrian Grand Prix,44,706,43
+red_bull,2.8015653012777406,-finish_position,10.0,0.97,2020,2,Styrian Grand Prix,44,706,43
+renault,-0.44458077756585906,-finish_position,10.0,0.97,2020,2,Styrian Grand Prix,44,706,43
+sauber,-0.9661560956907463,-finish_position,10.0,0.97,2020,2,Styrian Grand Prix,44,706,43
+toro_rosso,-1.1537636663293223,-finish_position,10.0,0.97,2020,2,Styrian Grand Prix,44,706,43
+williams,-3.842896444493936,-finish_position,10.0,0.97,2020,2,Styrian Grand Prix,44,706,43
+alfa,-1.7580599441611713,-finish_position,10.0,0.97,2020,3,Hungarian Grand Prix,45,723,44
+alphatauri,-0.2608592633682917,-finish_position,10.0,0.97,2020,3,Hungarian Grand Prix,45,723,44
+ferrari,3.6539092726556834,-finish_position,10.0,0.97,2020,3,Hungarian Grand Prix,45,723,44
+force_india,-0.21313425946865824,-finish_position,10.0,0.97,2020,3,Hungarian Grand Prix,45,723,44
+haas,-1.6115830289990576,-finish_position,10.0,0.97,2020,3,Hungarian Grand Prix,45,723,44
+mclaren,0.18025897282259534,-finish_position,10.0,0.97,2020,3,Hungarian Grand Prix,45,723,44
+mercedes,3.8797085840628576,-finish_position,10.0,0.97,2020,3,Hungarian Grand Prix,45,723,44
+racing_point,-0.4554128020073043,-finish_position,10.0,0.97,2020,3,Hungarian Grand Prix,45,723,44
+red_bull,2.9141972516990124,-finish_position,10.0,0.97,2020,3,Hungarian Grand Prix,45,723,44
+renault,-0.37900066744626865,-finish_position,10.0,0.97,2020,3,Hungarian Grand Prix,45,723,44
+sauber,-0.9404408963392419,-finish_position,10.0,0.97,2020,3,Hungarian Grand Prix,45,723,44
+toro_rosso,-1.0666396467688,-finish_position,10.0,0.97,2020,3,Hungarian Grand Prix,45,723,44
+williams,-3.9429435726813575,-finish_position,10.0,0.97,2020,3,Hungarian Grand Prix,45,723,44
+alfa,-1.8948779690692563,-finish_position,10.0,0.97,2020,4,British Grand Prix,46,742,45
+alphatauri,-0.3863683360718922,-finish_position,10.0,0.97,2020,4,British Grand Prix,46,742,45
+ferrari,3.5559635077291354,-finish_position,10.0,0.97,2020,4,British Grand Prix,46,742,45
+force_india,-0.11230872836391059,-finish_position,10.0,0.97,2020,4,British Grand Prix,46,742,45
+haas,-1.606749862446585,-finish_position,10.0,0.97,2020,4,British Grand Prix,46,742,45
+mclaren,0.14042160590545022,-finish_position,10.0,0.97,2020,4,British Grand Prix,46,742,45
+mercedes,3.942004477662391,-finish_position,10.0,0.97,2020,4,British Grand Prix,46,742,45
+racing_point,-0.24333007445370372,-finish_position,10.0,0.97,2020,4,British Grand Prix,46,742,45
+red_bull,2.9831723225988087,-finish_position,10.0,0.97,2020,4,British Grand Prix,46,742,45
+renault,-0.4420696043257641,-finish_position,10.0,0.97,2020,4,British Grand Prix,46,742,45
+sauber,-0.8540054781472682,-finish_position,10.0,0.97,2020,4,British Grand Prix,46,742,45
+toro_rosso,-1.0001678767305995,-finish_position,10.0,0.97,2020,4,British Grand Prix,46,742,45
+williams,-4.081683984286821,-finish_position,10.0,0.97,2020,4,British Grand Prix,46,742,45
+alfa,-2.038803838875944,-finish_position,10.0,0.97,2020,5,70th Anniversary Grand Prix,47,759,46
+alphatauri,-0.1987054935222395,-finish_position,10.0,0.97,2020,5,70th Anniversary Grand Prix,47,759,46
+ferrari,3.528414134534652,-finish_position,10.0,0.97,2020,5,70th Anniversary Grand Prix,47,759,46
+force_india,-0.15658502682800862,-finish_position,10.0,0.97,2020,5,70th Anniversary Grand Prix,47,759,46
+haas,-1.6656817511341278,-finish_position,10.0,0.97,2020,5,70th Anniversary Grand Prix,47,759,46
+mclaren,0.1333076753381271,-finish_position,10.0,0.97,2020,5,70th Anniversary Grand Prix,47,759,46
+mercedes,3.8582973236696274,-finish_position,10.0,0.97,2020,5,70th Anniversary Grand Prix,47,759,46
+racing_point,-0.22322066876206784,-finish_position,10.0,0.97,2020,5,70th Anniversary Grand Prix,47,759,46
+red_bull,2.929176096454862,-finish_position,10.0,0.97,2020,5,70th Anniversary Grand Prix,47,759,46
+renault,-0.2198918958253364,-finish_position,10.0,0.97,2020,5,70th Anniversary Grand Prix,47,759,46
+sauber,-0.8630994055955921,-finish_position,10.0,0.97,2020,5,70th Anniversary Grand Prix,47,759,46
+toro_rosso,-1.0186915472145033,-finish_position,10.0,0.97,2020,5,70th Anniversary Grand Prix,47,759,46
+williams,-4.06451560223947,-finish_position,10.0,0.97,2020,5,70th Anniversary Grand Prix,47,759,46
+alfa,-2.1506382561020865,-finish_position,10.0,0.97,2020,6,Spanish Grand Prix,48,778,47
+alphatauri,-0.2549814995924771,-finish_position,10.0,0.97,2020,6,Spanish Grand Prix,48,778,47
+ferrari,3.480038116696411,-finish_position,10.0,0.97,2020,6,Spanish Grand Prix,48,778,47
+force_india,-0.13280306849948412,-finish_position,10.0,0.97,2020,6,Spanish Grand Prix,48,778,47
+haas,-1.6882280682230504,-finish_position,10.0,0.97,2020,6,Spanish Grand Prix,48,778,47
+mclaren,0.08372577302249924,-finish_position,10.0,0.97,2020,6,Spanish Grand Prix,48,778,47
+mercedes,3.9000079709552615,-finish_position,10.0,0.97,2020,6,Spanish Grand Prix,48,778,47
+racing_point,-0.03659970794689438,-finish_position,10.0,0.97,2020,6,Spanish Grand Prix,48,778,47
+red_bull,3.03483189334743,-finish_position,10.0,0.97,2020,6,Spanish Grand Prix,48,778,47
+renault,-0.2513840484427674,-finish_position,10.0,0.97,2020,6,Spanish Grand Prix,48,778,47
+sauber,-0.8474348524424674,-finish_position,10.0,0.97,2020,6,Spanish Grand Prix,48,778,47
+toro_rosso,-0.9731331948246414,-finish_position,10.0,0.97,2020,6,Spanish Grand Prix,48,778,47
+williams,-4.163401057947727,-finish_position,10.0,0.97,2020,6,Spanish Grand Prix,48,778,47
+alfa,-2.2176885776708777,-finish_position,10.0,0.97,2020,7,Belgian Grand Prix,49,797,48
+alphatauri,-0.2947045466350731,-finish_position,10.0,0.97,2020,7,Belgian Grand Prix,49,797,48
+ferrari,3.466340267766155,-finish_position,10.0,0.97,2020,7,Belgian Grand Prix,49,797,48
+force_india,-0.09226947890208233,-finish_position,10.0,0.97,2020,7,Belgian Grand Prix,49,797,48
+haas,-1.8067514508913778,-finish_position,10.0,0.97,2020,7,Belgian Grand Prix,49,797,48
+mclaren,0.1255019362185904,-finish_position,10.0,0.97,2020,7,Belgian Grand Prix,49,797,48
+mercedes,3.9455098699176654,-finish_position,10.0,0.97,2020,7,Belgian Grand Prix,49,797,48
+racing_point,0.16474881401864228,-finish_position,10.0,0.97,2020,7,Belgian Grand Prix,49,797,48
+red_bull,3.0337974463595674,-finish_position,10.0,0.97,2020,7,Belgian Grand Prix,49,797,48
+renault,-0.346434064038422,-finish_position,10.0,0.97,2020,7,Belgian Grand Prix,49,797,48
+sauber,-0.8235206584472156,-finish_position,10.0,0.97,2020,7,Belgian Grand Prix,49,797,48
+toro_rosso,-0.9247383471593003,-finish_position,10.0,0.97,2020,7,Belgian Grand Prix,49,797,48
+williams,-4.229791210536254,-finish_position,10.0,0.97,2020,7,Belgian Grand Prix,49,797,48
+alfa,-2.233675642825676,-finish_position,10.0,0.97,2020,8,Italian Grand Prix,50,814,49
+alphatauri,-0.2455796164440231,-finish_position,10.0,0.97,2020,8,Italian Grand Prix,50,814,49
+ferrari,3.2188204073330873,-finish_position,10.0,0.97,2020,8,Italian Grand Prix,50,814,49
+force_india,-0.12341725673697962,-finish_position,10.0,0.97,2020,8,Italian Grand Prix,50,814,49
+haas,-1.9018848240624275,-finish_position,10.0,0.97,2020,8,Italian Grand Prix,50,814,49
+mclaren,0.17270075452344452,-finish_position,10.0,0.97,2020,8,Italian Grand Prix,50,814,49
+mercedes,3.9857900633911245,-finish_position,10.0,0.97,2020,8,Italian Grand Prix,50,814,49
+racing_point,0.16114632992188296,-finish_position,10.0,0.97,2020,8,Italian Grand Prix,50,814,49
+red_bull,3.027067604358466,-finish_position,10.0,0.97,2020,8,Italian Grand Prix,50,814,49
+renault,-0.14793062230143533,-finish_position,10.0,0.97,2020,8,Italian Grand Prix,50,814,49
+sauber,-0.7596742183404368,-finish_position,10.0,0.97,2020,8,Italian Grand Prix,50,814,49
+toro_rosso,-0.9212089902877975,-finish_position,10.0,0.97,2020,8,Italian Grand Prix,50,814,49
+williams,-4.232153988529217,-finish_position,10.0,0.97,2020,8,Italian Grand Prix,50,814,49
+alfa,-2.32780859305912,-finish_position,10.0,0.97,2020,9,Tuscan Grand Prix,51,830,50
+alphatauri,0.11870894112798412,-finish_position,10.0,0.97,2020,9,Tuscan Grand Prix,51,830,50
+ferrari,3.1629138578195026,-finish_position,10.0,0.97,2020,9,Tuscan Grand Prix,51,830,50
+force_india,-0.12903781834324207,-finish_position,10.0,0.97,2020,9,Tuscan Grand Prix,51,830,50
+haas,-1.9220288803807726,-finish_position,10.0,0.97,2020,9,Tuscan Grand Prix,51,830,50
+mclaren,0.3004489170766681,-finish_position,10.0,0.97,2020,9,Tuscan Grand Prix,51,830,50
+mercedes,3.8747269621670517,-finish_position,10.0,0.97,2020,9,Tuscan Grand Prix,51,830,50
+racing_point,0.23631792304769236,-finish_position,10.0,0.97,2020,9,Tuscan Grand Prix,51,830,50
+red_bull,2.784413654730647,-finish_position,10.0,0.97,2020,9,Tuscan Grand Prix,51,830,50
+renault,-0.1413928730022765,-finish_position,10.0,0.97,2020,9,Tuscan Grand Prix,51,830,50
+sauber,-0.773026396133796,-finish_position,10.0,0.97,2020,9,Tuscan Grand Prix,51,830,50
+toro_rosso,-0.9766344481713437,-finish_position,10.0,0.97,2020,9,Tuscan Grand Prix,51,830,50
+williams,-4.207601246878962,-finish_position,10.0,0.97,2020,9,Tuscan Grand Prix,51,830,50
+alfa,-2.303224861728819,-finish_position,10.0,0.97,2020,10,Russian Grand Prix,52,842,51
+alphatauri,0.19493503780597166,-finish_position,10.0,0.97,2020,10,Russian Grand Prix,52,842,51
+ferrari,3.0124434846290016,-finish_position,10.0,0.97,2020,10,Russian Grand Prix,52,842,51
+force_india,-0.16301526523350723,-finish_position,10.0,0.97,2020,10,Russian Grand Prix,52,842,51
+haas,-1.9343093364108677,-finish_position,10.0,0.97,2020,10,Russian Grand Prix,52,842,51
+mclaren,0.3046653326487304,-finish_position,10.0,0.97,2020,10,Russian Grand Prix,52,842,51
+mercedes,3.879807062166237,-finish_position,10.0,0.97,2020,10,Russian Grand Prix,52,842,51
+racing_point,0.2854992602912585,-finish_position,10.0,0.97,2020,10,Russian Grand Prix,52,842,51
+red_bull,2.794480072672606,-finish_position,10.0,0.97,2020,10,Russian Grand Prix,52,842,51
+renault,-0.09090339083534663,-finish_position,10.0,0.97,2020,10,Russian Grand Prix,52,842,51
+sauber,-0.7710620722365039,-finish_position,10.0,0.97,2020,10,Russian Grand Prix,52,842,51
+toro_rosso,-1.0349022249206838,-finish_position,10.0,0.97,2020,10,Russian Grand Prix,52,842,51
+williams,-4.174413098848069,-finish_position,10.0,0.97,2020,10,Russian Grand Prix,52,842,51
+alfa,-2.303769163722507,-finish_position,10.0,0.97,2020,11,Eifel Grand Prix,53,860,52
+alphatauri,0.2517658821386281,-finish_position,10.0,0.97,2020,11,Eifel Grand Prix,53,860,52
+ferrari,2.926368317692536,-finish_position,10.0,0.97,2020,11,Eifel Grand Prix,53,860,52
+force_india,-0.20345921519456753,-finish_position,10.0,0.97,2020,11,Eifel Grand Prix,53,860,52
+haas,-1.978650829742455,-finish_position,10.0,0.97,2020,11,Eifel Grand Prix,53,860,52
+mclaren,0.24165385556973937,-finish_position,10.0,0.97,2020,11,Eifel Grand Prix,53,860,52
+mercedes,3.9119031027716504,-finish_position,10.0,0.97,2020,11,Eifel Grand Prix,53,860,52
+racing_point,0.36791035009528344,-finish_position,10.0,0.97,2020,11,Eifel Grand Prix,53,860,52
+red_bull,2.7549174016590925,-finish_position,10.0,0.97,2020,11,Eifel Grand Prix,53,860,52
+renault,0.010222877410861185,-finish_position,10.0,0.97,2020,11,Eifel Grand Prix,53,860,52
+sauber,-0.7603690744149472,-finish_position,10.0,0.97,2020,11,Eifel Grand Prix,53,860,52
+toro_rosso,-1.0166692988673076,-finish_position,10.0,0.97,2020,11,Eifel Grand Prix,53,860,52
+williams,-4.20182420539601,-finish_position,10.0,0.97,2020,11,Eifel Grand Prix,53,860,52
+alfa,-2.2773331715884484,-finish_position,10.0,0.97,2020,12,Portuguese Grand Prix,54,875,53
+alphatauri,0.16251213460224873,-finish_position,10.0,0.97,2020,12,Portuguese Grand Prix,54,875,53
+ferrari,2.819692829083385,-finish_position,10.0,0.97,2020,12,Portuguese Grand Prix,54,875,53
+force_india,-0.22701394717410592,-finish_position,10.0,0.97,2020,12,Portuguese Grand Prix,54,875,53
+haas,-1.9502915758625388,-finish_position,10.0,0.97,2020,12,Portuguese Grand Prix,54,875,53
+mclaren,0.28429918657534087,-finish_position,10.0,0.97,2020,12,Portuguese Grand Prix,54,875,53
+mercedes,3.905043836742956,-finish_position,10.0,0.97,2020,12,Portuguese Grand Prix,54,875,53
+racing_point,0.4678142323182669,-finish_position,10.0,0.97,2020,12,Portuguese Grand Prix,54,875,53
+red_bull,2.7198843156676626,-finish_position,10.0,0.97,2020,12,Portuguese Grand Prix,54,875,53
+renault,0.04340110255281634,-finish_position,10.0,0.97,2020,12,Portuguese Grand Prix,54,875,53
+sauber,-0.7575261324416301,-finish_position,10.0,0.97,2020,12,Portuguese Grand Prix,54,875,53
+toro_rosso,-1.0043559076515471,-finish_position,10.0,0.97,2020,12,Portuguese Grand Prix,54,875,53
+williams,-4.1861269028244115,-finish_position,10.0,0.97,2020,12,Portuguese Grand Prix,54,875,53
+alfa,-2.2575193613370614,-finish_position,10.0,0.97,2020,13,Emilia Romagna Grand Prix,55,894,54
+alphatauri,0.03322006066769939,-finish_position,10.0,0.97,2020,13,Emilia Romagna Grand Prix,55,894,54
+ferrari,2.8099029202792676,-finish_position,10.0,0.97,2020,13,Emilia Romagna Grand Prix,55,894,54
+force_india,-0.2252890361835381,-finish_position,10.0,0.97,2020,13,Emilia Romagna Grand Prix,55,894,54
+haas,-2.0280844277925807,-finish_position,10.0,0.97,2020,13,Emilia Romagna Grand Prix,55,894,54
+mclaren,0.30022267761653176,-finish_position,10.0,0.97,2020,13,Emilia Romagna Grand Prix,55,894,54
+mercedes,3.967935125922684,-finish_position,10.0,0.97,2020,13,Emilia Romagna Grand Prix,55,894,54
+racing_point,0.5109267772125681,-finish_position,10.0,0.97,2020,13,Emilia Romagna Grand Prix,55,894,54
+red_bull,2.654062573409415,-finish_position,10.0,0.97,2020,13,Emilia Romagna Grand Prix,55,894,54
+renault,0.07208663951986571,-finish_position,10.0,0.97,2020,13,Emilia Romagna Grand Prix,55,894,54
+sauber,-0.744140989225832,-finish_position,10.0,0.97,2020,13,Emilia Romagna Grand Prix,55,894,54
+toro_rosso,-0.9146310232454764,-finish_position,10.0,0.97,2020,13,Emilia Romagna Grand Prix,55,894,54
+williams,-4.178691936843527,-finish_position,10.0,0.97,2020,13,Emilia Romagna Grand Prix,55,894,54
+alfa,-2.181973977255236,-finish_position,10.0,0.97,2020,14,Turkish Grand Prix,56,909,55
+alphatauri,0.19121918883328334,-finish_position,10.0,0.97,2020,14,Turkish Grand Prix,56,909,55
+ferrari,2.719007314798809,-finish_position,10.0,0.97,2020,14,Turkish Grand Prix,56,909,55
+force_india,-0.24824302629205638,-finish_position,10.0,0.97,2020,14,Turkish Grand Prix,56,909,55
+haas,-2.0541179556967553,-finish_position,10.0,0.97,2020,14,Turkish Grand Prix,56,909,55
+mclaren,0.3151167594824782,-finish_position,10.0,0.97,2020,14,Turkish Grand Prix,56,909,55
+mercedes,3.9806477978652994,-finish_position,10.0,0.97,2020,14,Turkish Grand Prix,56,909,55
+racing_point,0.47078958350380934,-finish_position,10.0,0.97,2020,14,Turkish Grand Prix,56,909,55
+red_bull,2.4914337822831536,-finish_position,10.0,0.97,2020,14,Turkish Grand Prix,56,909,55
+renault,0.11585659306876338,-finish_position,10.0,0.97,2020,14,Turkish Grand Prix,56,909,55
+sauber,-0.7550507896373317,-finish_position,10.0,0.97,2020,14,Turkish Grand Prix,56,909,55
+toro_rosso,-0.933680343334007,-finish_position,10.0,0.97,2020,14,Turkish Grand Prix,56,909,55
+williams,-4.111004927620223,-finish_position,10.0,0.97,2020,14,Turkish Grand Prix,56,909,55
+alfa,-2.2069512737427237,-finish_position,10.0,0.97,2020,15,Bahrain Grand Prix,57,925,56
+alphatauri,0.014173676366377156,-finish_position,10.0,0.97,2020,15,Bahrain Grand Prix,57,925,56
+ferrari,2.785635284331203,-finish_position,10.0,0.97,2020,15,Bahrain Grand Prix,57,925,56
+force_india,-0.25543810598509104,-finish_position,10.0,0.97,2020,15,Bahrain Grand Prix,57,925,56
+haas,-2.0320390415644245,-finish_position,10.0,0.97,2020,15,Bahrain Grand Prix,57,925,56
+mclaren,0.38182771628873663,-finish_position,10.0,0.97,2020,15,Bahrain Grand Prix,57,925,56
+mercedes,3.8830931182142945,-finish_position,10.0,0.97,2020,15,Bahrain Grand Prix,57,925,56
+racing_point,0.5821920526190262,-finish_position,10.0,0.97,2020,15,Bahrain Grand Prix,57,925,56
+red_bull,2.501514863663174,-finish_position,10.0,0.97,2020,15,Bahrain Grand Prix,57,925,56
+renault,0.06399151730407189,-finish_position,10.0,0.97,2020,15,Bahrain Grand Prix,57,925,56
+sauber,-0.7385208152483849,-finish_position,10.0,0.97,2020,15,Bahrain Grand Prix,57,925,56
+toro_rosso,-0.8924836851414822,-finish_position,10.0,0.97,2020,15,Bahrain Grand Prix,57,925,56
+williams,-4.086995307104799,-finish_position,10.0,0.97,2020,15,Bahrain Grand Prix,57,925,56
+alfa,-2.3053183909528694,-finish_position,10.0,0.97,2020,16,Sakhir Grand Prix,58,942,57
+alphatauri,0.0772099054287535,-finish_position,10.0,0.97,2020,16,Sakhir Grand Prix,58,942,57
+ferrari,2.641112690784584,-finish_position,10.0,0.97,2020,16,Sakhir Grand Prix,58,942,57
+force_india,-0.24661353014827075,-finish_position,10.0,0.97,2020,16,Sakhir Grand Prix,58,942,57
+haas,-2.0918671832808453,-finish_position,10.0,0.97,2020,16,Sakhir Grand Prix,58,942,57
+mclaren,0.48534736628245206,-finish_position,10.0,0.97,2020,16,Sakhir Grand Prix,58,942,57
+mercedes,3.84817687834448,-finish_position,10.0,0.97,2020,16,Sakhir Grand Prix,58,942,57
+racing_point,0.5838329757002567,-finish_position,10.0,0.97,2020,16,Sakhir Grand Prix,58,942,57
+red_bull,2.571781612132172,-finish_position,10.0,0.97,2020,16,Sakhir Grand Prix,58,942,57
+renault,0.08704074749485216,-finish_position,10.0,0.97,2020,16,Sakhir Grand Prix,58,942,57
+sauber,-0.7123900408064394,-finish_position,10.0,0.97,2020,16,Sakhir Grand Prix,58,942,57
+toro_rosso,-0.9051270469461644,-finish_position,10.0,0.97,2020,16,Sakhir Grand Prix,58,942,57
+williams,-4.033185984032967,-finish_position,10.0,0.97,2020,16,Sakhir Grand Prix,58,942,57
+alfa,-2.3254548035465064,-finish_position,10.0,0.97,2020,17,Abu Dhabi Grand Prix,59,959,58
+alphatauri,0.09953303413875303,-finish_position,10.0,0.97,2020,17,Abu Dhabi Grand Prix,59,959,58
+ferrari,2.5815428829540457,-finish_position,10.0,0.97,2020,17,Abu Dhabi Grand Prix,59,959,58
+force_india,-0.3088472807287171,-finish_position,10.0,0.97,2020,17,Abu Dhabi Grand Prix,59,959,58
+haas,-2.313025253481417,-finish_position,10.0,0.97,2020,17,Abu Dhabi Grand Prix,59,959,58
+mclaren,0.5481930064945634,-finish_position,10.0,0.97,2020,17,Abu Dhabi Grand Prix,59,959,58
+mercedes,3.7159970706765613,-finish_position,10.0,0.97,2020,17,Abu Dhabi Grand Prix,59,959,58
+racing_point,0.8038347255058389,-finish_position,10.0,0.97,2020,17,Abu Dhabi Grand Prix,59,959,58
+red_bull,2.597262508594438,-finish_position,10.0,0.97,2020,17,Abu Dhabi Grand Prix,59,959,58
+renault,0.2555846654987268,-finish_position,10.0,0.97,2020,17,Abu Dhabi Grand Prix,59,959,58
+sauber,-0.7031123697548456,-finish_position,10.0,0.97,2020,17,Abu Dhabi Grand Prix,59,959,58
+toro_rosso,-0.9037773231646491,-finish_position,10.0,0.97,2020,17,Abu Dhabi Grand Prix,59,959,58
+williams,-4.047730863186821,-finish_position,10.0,0.97,2020,17,Abu Dhabi Grand Prix,59,959,58
+alfa,-2.342879505359469,-finish_position,10.0,0.97,2021,1,Bahrain Grand Prix,60,978,59
+alphatauri,0.1248517695466868,-finish_position,10.0,0.97,2021,1,Bahrain Grand Prix,60,978,59
+ferrari,2.411476096039067,-finish_position,10.0,0.97,2021,1,Bahrain Grand Prix,60,978,59
+force_india,-0.28394270338525684,-finish_position,10.0,0.97,2021,1,Bahrain Grand Prix,60,978,59
+haas,-2.565386850140365,-finish_position,10.0,0.97,2021,1,Bahrain Grand Prix,60,978,59
+mclaren,0.6486311802300667,-finish_position,10.0,0.97,2021,1,Bahrain Grand Prix,60,978,59
+mercedes,3.764129250491011,-finish_position,10.0,0.97,2021,1,Bahrain Grand Prix,60,978,59
+racing_point,0.8078208161599334,-finish_position,10.0,0.97,2021,1,Bahrain Grand Prix,60,978,59
+red_bull,2.694046600066812,-finish_position,10.0,0.97,2021,1,Bahrain Grand Prix,60,978,59
+renault,0.3011819171640924,-finish_position,10.0,0.97,2021,1,Bahrain Grand Prix,60,978,59
+sauber,-0.6501495969128284,-finish_position,10.0,0.97,2021,1,Bahrain Grand Prix,60,978,59
+toro_rosso,-0.876959500811756,-finish_position,10.0,0.97,2021,1,Bahrain Grand Prix,60,978,59
+williams,-4.0328194730879785,-finish_position,10.0,0.97,2021,1,Bahrain Grand Prix,60,978,59
+alfa,-2.2560639902419988,-finish_position,10.0,0.97,2021,2,Emilia Romagna Grand Prix,61,994,60
+alphatauri,0.17352939024779265,-finish_position,10.0,0.97,2021,2,Emilia Romagna Grand Prix,61,994,60
+alpine,-0.33396797784661436,-finish_position,10.0,0.97,2021,2,Emilia Romagna Grand Prix,61,994,60
+aston_martin,-0.4339528813700157,-finish_position,10.0,0.97,2021,2,Emilia Romagna Grand Prix,61,994,60
+ferrari,2.4898516241350226,-finish_position,10.0,0.97,2021,2,Emilia Romagna Grand Prix,61,994,60
+force_india,-0.23175995263812824,-finish_position,10.0,0.97,2021,2,Emilia Romagna Grand Prix,61,994,60
+haas,-2.6427252050947736,-finish_position,10.0,0.97,2021,2,Emilia Romagna Grand Prix,61,994,60
+mclaren,0.7976691386329374,-finish_position,10.0,0.97,2021,2,Emilia Romagna Grand Prix,61,994,60
+mercedes,3.8331562409243682,-finish_position,10.0,0.97,2021,2,Emilia Romagna Grand Prix,61,994,60
+racing_point,0.8199441010891562,-finish_position,10.0,0.97,2021,2,Emilia Romagna Grand Prix,61,994,60
+red_bull,2.7831935844167854,-finish_position,10.0,0.97,2021,2,Emilia Romagna Grand Prix,61,994,60
+renault,0.4021824534611289,-finish_position,10.0,0.97,2021,2,Emilia Romagna Grand Prix,61,994,60
+sauber,-0.6121258790408941,-finish_position,10.0,0.97,2021,2,Emilia Romagna Grand Prix,61,994,60
+toro_rosso,-0.8270323450467401,-finish_position,10.0,0.97,2021,2,Emilia Romagna Grand Prix,61,994,60
+williams,-3.961898301628012,-finish_position,10.0,0.97,2021,2,Emilia Romagna Grand Prix,61,994,60
+alfa,-2.264563523533163,-finish_position,10.0,0.97,2021,3,Portuguese Grand Prix,62,1010,61
+alphatauri,0.12437990672173921,-finish_position,10.0,0.97,2021,3,Portuguese Grand Prix,62,1010,61
+alpine,-0.2770292500814522,-finish_position,10.0,0.97,2021,3,Portuguese Grand Prix,62,1010,61
+aston_martin,-0.2516276244028785,-finish_position,10.0,0.97,2021,3,Portuguese Grand Prix,62,1010,61
+ferrari,2.547483948938459,-finish_position,10.0,0.97,2021,3,Portuguese Grand Prix,62,1010,61
+force_india,-0.1877773569092007,-finish_position,10.0,0.97,2021,3,Portuguese Grand Prix,62,1010,61
+haas,-2.8861502599327222,-finish_position,10.0,0.97,2021,3,Portuguese Grand Prix,62,1010,61
+mclaren,0.8752633511186009,-finish_position,10.0,0.97,2021,3,Portuguese Grand Prix,62,1010,61
+mercedes,3.835811072540384,-finish_position,10.0,0.97,2021,3,Portuguese Grand Prix,62,1010,61
+racing_point,0.8730894316363399,-finish_position,10.0,0.97,2021,3,Portuguese Grand Prix,62,1010,61
+red_bull,2.6460104409798926,-finish_position,10.0,0.97,2021,3,Portuguese Grand Prix,62,1010,61
+renault,0.3769672161364828,-finish_position,10.0,0.97,2021,3,Portuguese Grand Prix,62,1010,61
+sauber,-0.6062212356479222,-finish_position,10.0,0.97,2021,3,Portuguese Grand Prix,62,1010,61
+toro_rosso,-0.8602036088871331,-finish_position,10.0,0.97,2021,3,Portuguese Grand Prix,62,1010,61
+williams,-3.9454325086774045,-finish_position,10.0,0.97,2021,3,Portuguese Grand Prix,62,1010,61
+alfa,-2.1975771938416773,-finish_position,10.0,0.97,2021,4,Spanish Grand Prix,63,1029,62
+alphatauri,-0.016327613701043204,-finish_position,10.0,0.97,2021,4,Spanish Grand Prix,63,1029,62
+alpine,0.025119957884257037,-finish_position,10.0,0.97,2021,4,Spanish Grand Prix,63,1029,62
+aston_martin,-0.6677869160309851,-finish_position,10.0,0.97,2021,4,Spanish Grand Prix,63,1029,62
+ferrari,2.480711724177668,-finish_position,10.0,0.97,2021,4,Spanish Grand Prix,63,1029,62
+force_india,-0.18587899490023158,-finish_position,10.0,0.97,2021,4,Spanish Grand Prix,63,1029,62
+haas,-3.101618075652192,-finish_position,10.0,0.97,2021,4,Spanish Grand Prix,63,1029,62
+mclaren,0.9723584390039048,-finish_position,10.0,0.97,2021,4,Spanish Grand Prix,63,1029,62
+mercedes,3.909148059671104,-finish_position,10.0,0.97,2021,4,Spanish Grand Prix,63,1029,62
+racing_point,0.9089940045828201,-finish_position,10.0,0.97,2021,4,Spanish Grand Prix,63,1029,62
+red_bull,2.768834986939324,-finish_position,10.0,0.97,2021,4,Spanish Grand Prix,63,1029,62
+renault,0.45621680422702576,-finish_position,10.0,0.97,2021,4,Spanish Grand Prix,63,1029,62
+sauber,-0.5846780300747321,-finish_position,10.0,0.97,2021,4,Spanish Grand Prix,63,1029,62
+toro_rosso,-0.8353572374241441,-finish_position,10.0,0.97,2021,4,Spanish Grand Prix,63,1029,62
+williams,-3.93215991486108,-finish_position,10.0,0.97,2021,4,Spanish Grand Prix,63,1029,62
+alfa,-2.1588269831870983,-finish_position,10.0,0.97,2021,5,Monaco Grand Prix,64,1048,63
+alphatauri,0.011906073555823021,-finish_position,10.0,0.97,2021,5,Monaco Grand Prix,64,1048,63
+alpine,-0.3118241748368931,-finish_position,10.0,0.97,2021,5,Monaco Grand Prix,64,1048,63
+aston_martin,-0.7914090858637394,-finish_position,10.0,0.97,2021,5,Monaco Grand Prix,64,1048,63
+ferrari,2.5649507746221074,-finish_position,10.0,0.97,2021,5,Monaco Grand Prix,64,1048,63
+force_india,-0.18028898643896762,-finish_position,10.0,0.97,2021,5,Monaco Grand Prix,64,1048,63
+haas,-3.273171489395156,-finish_position,10.0,0.97,2021,5,Monaco Grand Prix,64,1048,63
+mclaren,1.0981267671573562,-finish_position,10.0,0.97,2021,5,Monaco Grand Prix,64,1048,63
+mercedes,3.9847292170779194,-finish_position,10.0,0.97,2021,5,Monaco Grand Prix,64,1048,63
+racing_point,0.9220847722575042,-finish_position,10.0,0.97,2021,5,Monaco Grand Prix,64,1048,63
+red_bull,2.8588865574450515,-finish_position,10.0,0.97,2021,5,Monaco Grand Prix,64,1048,63
+renault,0.48060214872364665,-finish_position,10.0,0.97,2021,5,Monaco Grand Prix,64,1048,63
+sauber,-0.5561660900956393,-finish_position,10.0,0.97,2021,5,Monaco Grand Prix,64,1048,63
+toro_rosso,-0.7786559378546382,-finish_position,10.0,0.97,2021,5,Monaco Grand Prix,64,1048,63
+williams,-3.8709435631672444,-finish_position,10.0,0.97,2021,5,Monaco Grand Prix,64,1048,63
+alfa,-2.0980172335068565,-finish_position,10.0,0.97,2021,6,Azerbaijan Grand Prix,65,1066,64
+alphatauri,-0.08066673607393729,-finish_position,10.0,0.97,2021,6,Azerbaijan Grand Prix,65,1066,64
+alpine,-0.397619898083045,-finish_position,10.0,0.97,2021,6,Azerbaijan Grand Prix,65,1066,64
+aston_martin,-0.3585073699904291,-finish_position,10.0,0.97,2021,6,Azerbaijan Grand Prix,65,1066,64
+ferrari,2.5782576870206046,-finish_position,10.0,0.97,2021,6,Azerbaijan Grand Prix,65,1066,64
+force_india,-0.19790410231949737,-finish_position,10.0,0.97,2021,6,Azerbaijan Grand Prix,65,1066,64
+haas,-3.4145202892912856,-finish_position,10.0,0.97,2021,6,Azerbaijan Grand Prix,65,1066,64
+mclaren,0.9738913690997381,-finish_position,10.0,0.97,2021,6,Azerbaijan Grand Prix,65,1066,64
+mercedes,3.923030211609692,-finish_position,10.0,0.97,2021,6,Azerbaijan Grand Prix,65,1066,64
+racing_point,0.8697627275000944,-finish_position,10.0,0.97,2021,6,Azerbaijan Grand Prix,65,1066,64
+red_bull,2.91732945807268,-finish_position,10.0,0.97,2021,6,Azerbaijan Grand Prix,65,1066,64
+renault,0.5081629842281081,-finish_position,10.0,0.97,2021,6,Azerbaijan Grand Prix,65,1066,64
+sauber,-0.5462292451006253,-finish_position,10.0,0.97,2021,6,Azerbaijan Grand Prix,65,1066,64
+toro_rosso,-0.8127497836106004,-finish_position,10.0,0.97,2021,6,Azerbaijan Grand Prix,65,1066,64
+williams,-3.8642197795546074,-finish_position,10.0,0.97,2021,6,Azerbaijan Grand Prix,65,1066,64
+alfa,-2.0920084946094106,-finish_position,10.0,0.97,2021,7,French Grand Prix,66,1082,65
+alphatauri,0.10383236708983488,-finish_position,10.0,0.97,2021,7,French Grand Prix,66,1082,65
+alpine,-0.22071990270674421,-finish_position,10.0,0.97,2021,7,French Grand Prix,66,1082,65
+aston_martin,-0.014424105827185549,-finish_position,10.0,0.97,2021,7,French Grand Prix,66,1082,65
+ferrari,2.3874815487225853,-finish_position,10.0,0.97,2021,7,French Grand Prix,66,1082,65
+force_india,-0.23689340728027475,-finish_position,10.0,0.97,2021,7,French Grand Prix,66,1082,65
+haas,-3.409345433432974,-finish_position,10.0,0.97,2021,7,French Grand Prix,66,1082,65
+mclaren,0.9168209158631642,-finish_position,10.0,0.97,2021,7,French Grand Prix,66,1082,65
+mercedes,3.6509074931250702,-finish_position,10.0,0.97,2021,7,French Grand Prix,66,1082,65
+racing_point,0.7803610364913504,-finish_position,10.0,0.97,2021,7,French Grand Prix,66,1082,65
+red_bull,2.976557259719264,-finish_position,10.0,0.97,2021,7,French Grand Prix,66,1082,65
+renault,0.4964438520978537,-finish_position,10.0,0.97,2021,7,French Grand Prix,66,1082,65
+sauber,-0.5867071676583705,-finish_position,10.0,0.97,2021,7,French Grand Prix,66,1082,65
+toro_rosso,-0.8335531270338485,-finish_position,10.0,0.97,2021,7,French Grand Prix,66,1082,65
+williams,-3.9187528345603093,-finish_position,10.0,0.97,2021,7,French Grand Prix,66,1082,65
+alfa,-2.16613066225283,-finish_position,10.0,0.97,2021,8,Styrian Grand Prix,67,1102,66
+alphatauri,0.10802078623638227,-finish_position,10.0,0.97,2021,8,Styrian Grand Prix,67,1102,66
+alpine,-0.3026205792572379,-finish_position,10.0,0.97,2021,8,Styrian Grand Prix,67,1102,66
+aston_martin,-0.01295632129937998,-finish_position,10.0,0.97,2021,8,Styrian Grand Prix,67,1102,66
+ferrari,2.1975053753314673,-finish_position,10.0,0.97,2021,8,Styrian Grand Prix,67,1102,66
+force_india,-0.20467461612838092,-finish_position,10.0,0.97,2021,8,Styrian Grand Prix,67,1102,66
+haas,-3.5584291240520147,-finish_position,10.0,0.97,2021,8,Styrian Grand Prix,67,1102,66
+mclaren,1.0467585167837117,-finish_position,10.0,0.97,2021,8,Styrian Grand Prix,67,1102,66
+mercedes,3.694054342178574,-finish_position,10.0,0.97,2021,8,Styrian Grand Prix,67,1102,66
+racing_point,0.7691424411942038,-finish_position,10.0,0.97,2021,8,Styrian Grand Prix,67,1102,66
+red_bull,3.0807524425438206,-finish_position,10.0,0.97,2021,8,Styrian Grand Prix,67,1102,66
+renault,0.5676880943904027,-finish_position,10.0,0.97,2021,8,Styrian Grand Prix,67,1102,66
+sauber,-0.5289900590789404,-finish_position,10.0,0.97,2021,8,Styrian Grand Prix,67,1102,66
+toro_rosso,-0.8107740903467059,-finish_position,10.0,0.97,2021,8,Styrian Grand Prix,67,1102,66
+williams,-3.8793465462431,-finish_position,10.0,0.97,2021,8,Styrian Grand Prix,67,1102,66
+alfa,-2.153494831750044,-finish_position,10.0,0.97,2021,9,Austrian Grand Prix,68,1120,67
+alphatauri,0.12671180546534372,-finish_position,10.0,0.97,2021,9,Austrian Grand Prix,68,1120,67
+alpine,-0.4171342303477197,-finish_position,10.0,0.97,2021,9,Austrian Grand Prix,68,1120,67
+aston_martin,-0.03387511619148964,-finish_position,10.0,0.97,2021,9,Austrian Grand Prix,68,1120,67
+ferrari,2.2346985828184573,-finish_position,10.0,0.97,2021,9,Austrian Grand Prix,68,1120,67
+force_india,-0.1791439084949959,-finish_position,10.0,0.97,2021,9,Austrian Grand Prix,68,1120,67
+haas,-3.614621478217516,-finish_position,10.0,0.97,2021,9,Austrian Grand Prix,68,1120,67
+mclaren,0.9571502529384723,-finish_position,10.0,0.97,2021,9,Austrian Grand Prix,68,1120,67
+mercedes,3.7242106148679417,-finish_position,10.0,0.97,2021,9,Austrian Grand Prix,68,1120,67
+racing_point,0.7263102696203353,-finish_position,10.0,0.97,2021,9,Austrian Grand Prix,68,1120,67
+red_bull,3.14949711996153,-finish_position,10.0,0.97,2021,9,Austrian Grand Prix,68,1120,67
+renault,0.6645818749592142,-finish_position,10.0,0.97,2021,9,Austrian Grand Prix,68,1120,67
+sauber,-0.508465538237361,-finish_position,10.0,0.97,2021,9,Austrian Grand Prix,68,1120,67
+toro_rosso,-0.7881072906166482,-finish_position,10.0,0.97,2021,9,Austrian Grand Prix,68,1120,67
+williams,-3.8883181267755274,-finish_position,10.0,0.97,2021,9,Austrian Grand Prix,68,1120,67
+alfa,-2.186189655555104,-finish_position,10.0,0.97,2021,10,British Grand Prix,69,1138,68
+alphatauri,0.09560890202596468,-finish_position,10.0,0.97,2021,10,British Grand Prix,69,1138,68
+alpine,-0.39647598748209617,-finish_position,10.0,0.97,2021,10,British Grand Prix,69,1138,68
+aston_martin,-0.1367582168067984,-finish_position,10.0,0.97,2021,10,British Grand Prix,69,1138,68
+ferrari,2.2524663148018096,-finish_position,10.0,0.97,2021,10,British Grand Prix,69,1138,68
+force_india,-0.16323545020709002,-finish_position,10.0,0.97,2021,10,British Grand Prix,69,1138,68
+haas,-3.713075679927629,-finish_position,10.0,0.97,2021,10,British Grand Prix,69,1138,68
+mclaren,1.0041544945343082,-finish_position,10.0,0.97,2021,10,British Grand Prix,69,1138,68
+mercedes,3.742279779066304,-finish_position,10.0,0.97,2021,10,British Grand Prix,69,1138,68
+racing_point,0.7716838454636815,-finish_position,10.0,0.97,2021,10,British Grand Prix,69,1138,68
+red_bull,3.1616546610828404,-finish_position,10.0,0.97,2021,10,British Grand Prix,69,1138,68
+renault,0.6599953062277664,-finish_position,10.0,0.97,2021,10,British Grand Prix,69,1138,68
+sauber,-0.4854387331583698,-finish_position,10.0,0.97,2021,10,British Grand Prix,69,1138,68
+toro_rosso,-0.7792560715187297,-finish_position,10.0,0.97,2021,10,British Grand Prix,69,1138,68
+williams,-3.82741350854683,-finish_position,10.0,0.97,2021,10,British Grand Prix,69,1138,68
+alfa,-2.226366845408818,-finish_position,10.0,0.97,2021,11,Hungarian Grand Prix,70,1156,69
+alphatauri,0.03415909431188909,-finish_position,10.0,0.97,2021,11,Hungarian Grand Prix,70,1156,69
+alpine,-0.2698804717315967,-finish_position,10.0,0.97,2021,11,Hungarian Grand Prix,70,1156,69
+aston_martin,-0.045821348558936256,-finish_position,10.0,0.97,2021,11,Hungarian Grand Prix,70,1156,69
+ferrari,2.3053630967633123,-finish_position,10.0,0.97,2021,11,Hungarian Grand Prix,70,1156,69
+force_india,-0.10897147081743336,-finish_position,10.0,0.97,2021,11,Hungarian Grand Prix,70,1156,69
+haas,-3.794644341091559,-finish_position,10.0,0.97,2021,11,Hungarian Grand Prix,70,1156,69
+mclaren,1.0580696818431568,-finish_position,10.0,0.97,2021,11,Hungarian Grand Prix,70,1156,69
+mercedes,3.7532390523667543,-finish_position,10.0,0.97,2021,11,Hungarian Grand Prix,70,1156,69
+racing_point,0.8571894010036861,-finish_position,10.0,0.97,2021,11,Hungarian Grand Prix,70,1156,69
+red_bull,2.91729568206858,-finish_position,10.0,0.97,2021,11,Hungarian Grand Prix,70,1156,69
+renault,0.610825262118277,-finish_position,10.0,0.97,2021,11,Hungarian Grand Prix,70,1156,69
+sauber,-0.499166044248397,-finish_position,10.0,0.97,2021,11,Hungarian Grand Prix,70,1156,69
+toro_rosso,-0.7973720673883311,-finish_position,10.0,0.97,2021,11,Hungarian Grand Prix,70,1156,69
+williams,-3.793918681230553,-finish_position,10.0,0.97,2021,11,Hungarian Grand Prix,70,1156,69
+alfa,-2.23849222591759,-finish_position,10.0,0.97,2021,12,Belgian Grand Prix,71,1169,70
+alphatauri,0.13086943882834012,-finish_position,10.0,0.97,2021,12,Belgian Grand Prix,71,1169,70
+alpine,0.15276906021607675,-finish_position,10.0,0.97,2021,12,Belgian Grand Prix,71,1169,70
+aston_martin,-0.07048614792627625,-finish_position,10.0,0.97,2021,12,Belgian Grand Prix,71,1169,70
+ferrari,2.299089395281945,-finish_position,10.0,0.97,2021,12,Belgian Grand Prix,71,1169,70
+force_india,-0.1631889252596573,-finish_position,10.0,0.97,2021,12,Belgian Grand Prix,71,1169,70
+haas,-3.7953232859379336,-finish_position,10.0,0.97,2021,12,Belgian Grand Prix,71,1169,70
+mclaren,0.8896552317640201,-finish_position,10.0,0.97,2021,12,Belgian Grand Prix,71,1169,70
+mercedes,3.6931558045481716,-finish_position,10.0,0.97,2021,12,Belgian Grand Prix,71,1169,70
+racing_point,0.8034168975903068,-finish_position,10.0,0.97,2021,12,Belgian Grand Prix,71,1169,70
+red_bull,2.805027417415959,-finish_position,10.0,0.97,2021,12,Belgian Grand Prix,71,1169,70
+renault,0.5234182408268849,-finish_position,10.0,0.97,2021,12,Belgian Grand Prix,71,1169,70
+sauber,-0.5102278713841188,-finish_position,10.0,0.97,2021,12,Belgian Grand Prix,71,1169,70
+toro_rosso,-0.836816828319816,-finish_position,10.0,0.97,2021,12,Belgian Grand Prix,71,1169,70
+williams,-3.6828662017263096,-finish_position,10.0,0.97,2021,12,Belgian Grand Prix,71,1169,70
+alfa,-2.29536912033643,-finish_position,10.0,0.97,2021,13,Dutch Grand Prix,72,1189,71
+alphatauri,0.09535717670190264,-finish_position,10.0,0.97,2021,13,Dutch Grand Prix,72,1189,71
+alpine,0.19341896354370253,-finish_position,10.0,0.97,2021,13,Dutch Grand Prix,72,1189,71
+aston_martin,-0.21112953957546382,-finish_position,10.0,0.97,2021,13,Dutch Grand Prix,72,1189,71
+ferrari,2.1558068036357314,-finish_position,10.0,0.97,2021,13,Dutch Grand Prix,72,1189,71
+force_india,-0.0830467956422623,-finish_position,10.0,0.97,2021,13,Dutch Grand Prix,72,1189,71
+haas,-3.7949581335645295,-finish_position,10.0,0.97,2021,13,Dutch Grand Prix,72,1189,71
+mclaren,0.9451358001830519,-finish_position,10.0,0.97,2021,13,Dutch Grand Prix,72,1189,71
+mercedes,3.6195002865131984,-finish_position,10.0,0.97,2021,13,Dutch Grand Prix,72,1189,71
+racing_point,1.0795942983806268,-finish_position,10.0,0.97,2021,13,Dutch Grand Prix,72,1189,71
+red_bull,2.5817039733149296,-finish_position,10.0,0.97,2021,13,Dutch Grand Prix,72,1189,71
+renault,0.48920454617151143,-finish_position,10.0,0.97,2021,13,Dutch Grand Prix,72,1189,71
+sauber,-0.4990256425672466,-finish_position,10.0,0.97,2021,13,Dutch Grand Prix,72,1189,71
+toro_rosso,-0.8577790733787856,-finish_position,10.0,0.97,2021,13,Dutch Grand Prix,72,1189,71
+williams,-3.4184135433799634,-finish_position,10.0,0.97,2021,13,Dutch Grand Prix,72,1189,71
+alfa,-2.3445779760659073,-finish_position,10.0,0.97,2021,14,Italian Grand Prix,73,1206,72
+alphatauri,0.17870299146960222,-finish_position,10.0,0.97,2021,14,Italian Grand Prix,73,1206,72
+alpine,0.2821392400386685,-finish_position,10.0,0.97,2021,14,Italian Grand Prix,73,1206,72
+aston_martin,-0.37022148052495263,-finish_position,10.0,0.97,2021,14,Italian Grand Prix,73,1206,72
+ferrari,2.17908997540333,-finish_position,10.0,0.97,2021,14,Italian Grand Prix,73,1206,72
+force_india,-0.06621676428604031,-finish_position,10.0,0.97,2021,14,Italian Grand Prix,73,1206,72
+haas,-3.815623595386823,-finish_position,10.0,0.97,2021,14,Italian Grand Prix,73,1206,72
+mclaren,0.8710295066961323,-finish_position,10.0,0.97,2021,14,Italian Grand Prix,73,1206,72
+mercedes,3.647366850808694,-finish_position,10.0,0.97,2021,14,Italian Grand Prix,73,1206,72
+racing_point,1.0870029869960123,-finish_position,10.0,0.97,2021,14,Italian Grand Prix,73,1206,72
+red_bull,2.5798606313111847,-finish_position,10.0,0.97,2021,14,Italian Grand Prix,73,1206,72
+renault,0.5252524865883821,-finish_position,10.0,0.97,2021,14,Italian Grand Prix,73,1206,72
+sauber,-0.49195687809080707,-finish_position,10.0,0.97,2021,14,Italian Grand Prix,73,1206,72
+toro_rosso,-0.8601970742187951,-finish_position,10.0,0.97,2021,14,Italian Grand Prix,73,1206,72
+williams,-3.40165090073865,-finish_position,10.0,0.97,2021,14,Italian Grand Prix,73,1206,72
+alfa,-2.3657065176698002,-finish_position,10.0,0.97,2021,15,Russian Grand Prix,74,1221,73
+alphatauri,0.15389528303391553,-finish_position,10.0,0.97,2021,15,Russian Grand Prix,74,1221,73
+alpine,0.26219442017010075,-finish_position,10.0,0.97,2021,15,Russian Grand Prix,74,1221,73
+aston_martin,-0.34043723638676576,-finish_position,10.0,0.97,2021,15,Russian Grand Prix,74,1221,73
+ferrari,2.22951543784796,-finish_position,10.0,0.97,2021,15,Russian Grand Prix,74,1221,73
+force_india,-0.08210048818312712,-finish_position,10.0,0.97,2021,15,Russian Grand Prix,74,1221,73
+haas,-3.824632568262605,-finish_position,10.0,0.97,2021,15,Russian Grand Prix,74,1221,73
+mclaren,1.0106977789250506,-finish_position,10.0,0.97,2021,15,Russian Grand Prix,74,1221,73
+mercedes,3.6273558812057556,-finish_position,10.0,0.97,2021,15,Russian Grand Prix,74,1221,73
+racing_point,0.9982106348058613,-finish_position,10.0,0.97,2021,15,Russian Grand Prix,74,1221,73
+red_bull,2.5715940392678993,-finish_position,10.0,0.97,2021,15,Russian Grand Prix,74,1221,73
+renault,0.4575667950531701,-finish_position,10.0,0.97,2021,15,Russian Grand Prix,74,1221,73
+sauber,-0.4961957820020224,-finish_position,10.0,0.97,2021,15,Russian Grand Prix,74,1221,73
+toro_rosso,-0.8680346016079253,-finish_position,10.0,0.97,2021,15,Russian Grand Prix,74,1221,73
+williams,-3.333923076197475,-finish_position,10.0,0.97,2021,15,Russian Grand Prix,74,1221,73
+alfa,-2.3128157908043003,-finish_position,10.0,0.97,2021,16,Turkish Grand Prix,75,1239,74
+alphatauri,-0.03253428216028885,-finish_position,10.0,0.97,2021,16,Turkish Grand Prix,75,1239,74
+alpine,0.2071492273961151,-finish_position,10.0,0.97,2021,16,Turkish Grand Prix,75,1239,74
+aston_martin,-0.4063871834419134,-finish_position,10.0,0.97,2021,16,Turkish Grand Prix,75,1239,74
+ferrari,2.233772265209127,-finish_position,10.0,0.97,2021,16,Turkish Grand Prix,75,1239,74
+force_india,-0.041747700627281815,-finish_position,10.0,0.97,2021,16,Turkish Grand Prix,75,1239,74
+haas,-3.82937775197109,-finish_position,10.0,0.97,2021,16,Turkish Grand Prix,75,1239,74
+mclaren,1.0521926439291998,-finish_position,10.0,0.97,2021,16,Turkish Grand Prix,75,1239,74
+mercedes,3.653757514358051,-finish_position,10.0,0.97,2021,16,Turkish Grand Prix,75,1239,74
+racing_point,1.0217578737842619,-finish_position,10.0,0.97,2021,16,Turkish Grand Prix,75,1239,74
+red_bull,2.55591726957278,-finish_position,10.0,0.97,2021,16,Turkish Grand Prix,75,1239,74
+renault,0.45747993324535463,-finish_position,10.0,0.97,2021,16,Turkish Grand Prix,75,1239,74
+sauber,-0.441623429963063,-finish_position,10.0,0.97,2021,16,Turkish Grand Prix,75,1239,74
+toro_rosso,-0.8545918248103347,-finish_position,10.0,0.97,2021,16,Turkish Grand Prix,75,1239,74
+williams,-3.262948763716584,-finish_position,10.0,0.97,2021,16,Turkish Grand Prix,75,1239,74
+alfa,-2.238710938194618,-finish_position,10.0,0.97,2021,17,United States Grand Prix,76,1259,75
+alphatauri,-0.006431944011163978,-finish_position,10.0,0.97,2021,17,United States Grand Prix,76,1259,75
+alpine,0.07035570191530768,-finish_position,10.0,0.97,2021,17,United States Grand Prix,76,1259,75
+aston_martin,-0.573550044695198,-finish_position,10.0,0.97,2021,17,United States Grand Prix,76,1259,75
+ferrari,2.3239518536127513,-finish_position,10.0,0.97,2021,17,United States Grand Prix,76,1259,75
+force_india,-0.05113774938565073,-finish_position,10.0,0.97,2021,17,United States Grand Prix,76,1259,75
+haas,-3.8968619306002648,-finish_position,10.0,0.97,2021,17,United States Grand Prix,76,1259,75
+mclaren,1.0321323985393673,-finish_position,10.0,0.97,2021,17,United States Grand Prix,76,1259,75
+mercedes,3.703593177590171,-finish_position,10.0,0.97,2021,17,United States Grand Prix,76,1259,75
+racing_point,0.9576895221186671,-finish_position,10.0,0.97,2021,17,United States Grand Prix,76,1259,75
+red_bull,2.6686504310842727,-finish_position,10.0,0.97,2021,17,United States Grand Prix,76,1259,75
+renault,0.5359351249375238,-finish_position,10.0,0.97,2021,17,United States Grand Prix,76,1259,75
+sauber,-0.42393130769146514,-finish_position,10.0,0.97,2021,17,United States Grand Prix,76,1259,75
+toro_rosso,-0.8305968738066524,-finish_position,10.0,0.97,2021,17,United States Grand Prix,76,1259,75
+williams,-3.271087421413052,-finish_position,10.0,0.97,2021,17,United States Grand Prix,76,1259,75
+alfa,-2.2246422240025128,-finish_position,10.0,0.97,2021,18,Mexico City Grand Prix,77,1276,76
+alphatauri,0.02059802621435746,-finish_position,10.0,0.97,2021,18,Mexico City Grand Prix,77,1276,76
+alpine,0.06406114747019795,-finish_position,10.0,0.97,2021,18,Mexico City Grand Prix,77,1276,76
+aston_martin,-0.6028941288221246,-finish_position,10.0,0.97,2021,18,Mexico City Grand Prix,77,1276,76
+ferrari,2.3199326625011785,-finish_position,10.0,0.97,2021,18,Mexico City Grand Prix,77,1276,76
+force_india,-0.06619844691094458,-finish_position,10.0,0.97,2021,18,Mexico City Grand Prix,77,1276,76
+haas,-3.9180421587980114,-finish_position,10.0,0.97,2021,18,Mexico City Grand Prix,77,1276,76
+mclaren,1.0687225789135129,-finish_position,10.0,0.97,2021,18,Mexico City Grand Prix,77,1276,76
+mercedes,3.6852353032484597,-finish_position,10.0,0.97,2021,18,Mexico City Grand Prix,77,1276,76
+racing_point,0.9225344978184372,-finish_position,10.0,0.97,2021,18,Mexico City Grand Prix,77,1276,76
+red_bull,2.744246233500917,-finish_position,10.0,0.97,2021,18,Mexico City Grand Prix,77,1276,76
+renault,0.5085590502403723,-finish_position,10.0,0.97,2021,18,Mexico City Grand Prix,77,1276,76
+sauber,-0.42876934724931703,-finish_position,10.0,0.97,2021,18,Mexico City Grand Prix,77,1276,76
+toro_rosso,-0.8141337631842851,-finish_position,10.0,0.97,2021,18,Mexico City Grand Prix,77,1276,76
+williams,-3.279209430940233,-finish_position,10.0,0.97,2021,18,Mexico City Grand Prix,77,1276,76
+alfa,-2.137894373563444,-finish_position,10.0,0.97,2021,19,São Paulo Grand Prix,78,1294,77
+alphatauri,0.10782269488742609,-finish_position,10.0,0.97,2021,19,São Paulo Grand Prix,78,1294,77
+alpine,-0.01357788315305751,-finish_position,10.0,0.97,2021,19,São Paulo Grand Prix,78,1294,77
+aston_martin,-0.5946496898874228,-finish_position,10.0,0.97,2021,19,São Paulo Grand Prix,78,1294,77
+ferrari,2.2898071642016506,-finish_position,10.0,0.97,2021,19,São Paulo Grand Prix,78,1294,77
+force_india,-0.05969314978749611,-finish_position,10.0,0.97,2021,19,São Paulo Grand Prix,78,1294,77
+haas,-3.9260434137941695,-finish_position,10.0,0.97,2021,19,São Paulo Grand Prix,78,1294,77
+mclaren,0.9782724819455609,-finish_position,10.0,0.97,2021,19,São Paulo Grand Prix,78,1294,77
+mercedes,3.584781926466711,-finish_position,10.0,0.97,2021,19,São Paulo Grand Prix,78,1294,77
+racing_point,0.9250873749714909,-finish_position,10.0,0.97,2021,19,São Paulo Grand Prix,78,1294,77
+red_bull,2.831222575761006,-finish_position,10.0,0.97,2021,19,São Paulo Grand Prix,78,1294,77
+renault,0.5580109281036285,-finish_position,10.0,0.97,2021,19,São Paulo Grand Prix,78,1294,77
+sauber,-0.4261045288626334,-finish_position,10.0,0.97,2021,19,São Paulo Grand Prix,78,1294,77
+toro_rosso,-0.8079501873384585,-finish_position,10.0,0.97,2021,19,São Paulo Grand Prix,78,1294,77
+williams,-3.3090919199507747,-finish_position,10.0,0.97,2021,19,São Paulo Grand Prix,78,1294,77
+alfa,-2.135154769367614,-finish_position,10.0,0.97,2021,20,Qatar Grand Prix,79,1312,78
+alphatauri,0.06400773094689753,-finish_position,10.0,0.97,2021,20,Qatar Grand Prix,79,1312,78
+alpine,0.036819696485555845,-finish_position,10.0,0.97,2021,20,Qatar Grand Prix,79,1312,78
+aston_martin,-0.6083696302266692,-finish_position,10.0,0.97,2021,20,Qatar Grand Prix,79,1312,78
+ferrari,2.3076867409388764,-finish_position,10.0,0.97,2021,20,Qatar Grand Prix,79,1312,78
+force_india,-0.07063644884845777,-finish_position,10.0,0.97,2021,20,Qatar Grand Prix,79,1312,78
+haas,-3.9591965938916136,-finish_position,10.0,0.97,2021,20,Qatar Grand Prix,79,1312,78
+mclaren,0.9599973515041853,-finish_position,10.0,0.97,2021,20,Qatar Grand Prix,79,1312,78
+mercedes,3.622973111092638,-finish_position,10.0,0.97,2021,20,Qatar Grand Prix,79,1312,78
+racing_point,0.8946140784615104,-finish_position,10.0,0.97,2021,20,Qatar Grand Prix,79,1312,78
+red_bull,2.8761865766132453,-finish_position,10.0,0.97,2021,20,Qatar Grand Prix,79,1312,78
+renault,0.5469689471783172,-finish_position,10.0,0.97,2021,20,Qatar Grand Prix,79,1312,78
+sauber,-0.4200093578251016,-finish_position,10.0,0.97,2021,20,Qatar Grand Prix,79,1312,78
+toro_rosso,-0.809626100889772,-finish_position,10.0,0.97,2021,20,Qatar Grand Prix,79,1312,78
+williams,-3.3062613321719563,-finish_position,10.0,0.97,2021,20,Qatar Grand Prix,79,1312,78
+alfa,-2.181312805528761,-finish_position,10.0,0.97,2021,21,Saudi Arabian Grand Prix,80,1330,79
+alphatauri,-0.01702768037526324,-finish_position,10.0,0.97,2021,21,Saudi Arabian Grand Prix,80,1330,79
+alpine,0.261072966104443,-finish_position,10.0,0.97,2021,21,Saudi Arabian Grand Prix,80,1330,79
+aston_martin,-0.503817596379663,-finish_position,10.0,0.97,2021,21,Saudi Arabian Grand Prix,80,1330,79
+ferrari,2.2723309833857743,-finish_position,10.0,0.97,2021,21,Saudi Arabian Grand Prix,80,1330,79
+force_india,-0.08636284254568553,-finish_position,10.0,0.97,2021,21,Saudi Arabian Grand Prix,80,1330,79
+haas,-3.9897805214689375,-finish_position,10.0,0.97,2021,21,Saudi Arabian Grand Prix,80,1330,79
+mclaren,0.8706595069332261,-finish_position,10.0,0.97,2021,21,Saudi Arabian Grand Prix,80,1330,79
+mercedes,3.630287226540534,-finish_position,10.0,0.97,2021,21,Saudi Arabian Grand Prix,80,1330,79
+racing_point,0.8264656643406042,-finish_position,10.0,0.97,2021,21,Saudi Arabian Grand Prix,80,1330,79
+red_bull,2.9154984502185606,-finish_position,10.0,0.97,2021,21,Saudi Arabian Grand Prix,80,1330,79
+renault,0.556697279399084,-finish_position,10.0,0.97,2021,21,Saudi Arabian Grand Prix,80,1330,79
+sauber,-0.4103167975444646,-finish_position,10.0,0.97,2021,21,Saudi Arabian Grand Prix,80,1330,79
+toro_rosso,-0.7995485891968451,-finish_position,10.0,0.97,2021,21,Saudi Arabian Grand Prix,80,1330,79
+williams,-3.3448452438826064,-finish_position,10.0,0.97,2021,21,Saudi Arabian Grand Prix,80,1330,79
+alfa,-2.171776408940156,-finish_position,10.0,0.97,2021,22,Abu Dhabi Grand Prix,81,1345,80
+alphatauri,-0.029318202110684546,-finish_position,10.0,0.97,2021,22,Abu Dhabi Grand Prix,81,1345,80
+alpine,0.29937672389768144,-finish_position,10.0,0.97,2021,22,Abu Dhabi Grand Prix,81,1345,80
+aston_martin,-0.5198413293050105,-finish_position,10.0,0.97,2021,22,Abu Dhabi Grand Prix,81,1345,80
+ferrari,2.2364072528247037,-finish_position,10.0,0.97,2021,22,Abu Dhabi Grand Prix,81,1345,80
+force_india,-0.10580016383883624,-finish_position,10.0,0.97,2021,22,Abu Dhabi Grand Prix,81,1345,80
+haas,-3.9778574904027972,-finish_position,10.0,0.97,2021,22,Abu Dhabi Grand Prix,81,1345,80
+mclaren,0.9044664522921967,-finish_position,10.0,0.97,2021,22,Abu Dhabi Grand Prix,81,1345,80
+mercedes,3.659223041959633,-finish_position,10.0,0.97,2021,22,Abu Dhabi Grand Prix,81,1345,80
+racing_point,0.816385552477508,-finish_position,10.0,0.97,2021,22,Abu Dhabi Grand Prix,81,1345,80
+red_bull,2.90986416785235,-finish_position,10.0,0.97,2021,22,Abu Dhabi Grand Prix,81,1345,80
+renault,0.498936474563865,-finish_position,10.0,0.97,2021,22,Abu Dhabi Grand Prix,81,1345,80
+sauber,-0.40415466943065276,-finish_position,10.0,0.97,2021,22,Abu Dhabi Grand Prix,81,1345,80
+toro_rosso,-0.808461116975315,-finish_position,10.0,0.97,2021,22,Abu Dhabi Grand Prix,81,1345,80
+williams,-3.3074502848644993,-finish_position,10.0,0.97,2021,22,Abu Dhabi Grand Prix,81,1345,80
+alfa,-2.1730428972164235,-finish_position,10.0,0.97,2022,1,Bahrain Grand Prix,82,1359,81
+alphatauri,0.11796289287888204,-finish_position,10.0,0.97,2022,1,Bahrain Grand Prix,82,1359,81
+alpine,0.305932613045154,-finish_position,10.0,0.97,2022,1,Bahrain Grand Prix,82,1359,81
+aston_martin,-0.5996840032306636,-finish_position,10.0,0.97,2022,1,Bahrain Grand Prix,82,1359,81
+ferrari,2.2275379314569665,-finish_position,10.0,0.97,2022,1,Bahrain Grand Prix,82,1359,81
+force_india,-0.10369501579244232,-finish_position,10.0,0.97,2022,1,Bahrain Grand Prix,82,1359,81
+haas,-3.961176266715352,-finish_position,10.0,0.97,2022,1,Bahrain Grand Prix,82,1359,81
+mclaren,0.807856173256034,-finish_position,10.0,0.97,2022,1,Bahrain Grand Prix,82,1359,81
+mercedes,3.6331723370418167,-finish_position,10.0,0.97,2022,1,Bahrain Grand Prix,82,1359,81
+racing_point,0.8150954169768949,-finish_position,10.0,0.97,2022,1,Bahrain Grand Prix,82,1359,81
+red_bull,2.917042645155871,-finish_position,10.0,0.97,2022,1,Bahrain Grand Prix,82,1359,81
+renault,0.5045587811003882,-finish_position,10.0,0.97,2022,1,Bahrain Grand Prix,82,1359,81
+sauber,-0.38787917618935336,-finish_position,10.0,0.97,2022,1,Bahrain Grand Prix,82,1359,81
+toro_rosso,-0.7993067784183499,-finish_position,10.0,0.97,2022,1,Bahrain Grand Prix,82,1359,81
+williams,-3.30437465334947,-finish_position,10.0,0.97,2022,1,Bahrain Grand Prix,82,1359,81
+alfa,-1.9569310220888685,-finish_position,10.0,0.97,2022,2,Saudi Arabian Grand Prix,83,1376,82
+alphatauri,0.1431088817692827,-finish_position,10.0,0.97,2022,2,Saudi Arabian Grand Prix,83,1376,82
+alpine,0.34191429189452227,-finish_position,10.0,0.97,2022,2,Saudi Arabian Grand Prix,83,1376,82
+aston_martin,-0.8527953633427564,-finish_position,10.0,0.97,2022,2,Saudi Arabian Grand Prix,83,1376,82
+ferrari,2.2857614422354957,-finish_position,10.0,0.97,2022,2,Saudi Arabian Grand Prix,83,1376,82
+force_india,-0.10850136859286076,-finish_position,10.0,0.97,2022,2,Saudi Arabian Grand Prix,83,1376,82
+haas,-3.781751944091969,-finish_position,10.0,0.97,2022,2,Saudi Arabian Grand Prix,83,1376,82
+mclaren,0.6384003153596006,-finish_position,10.0,0.97,2022,2,Saudi Arabian Grand Prix,83,1376,82
+mercedes,3.582994891920504,-finish_position,10.0,0.97,2022,2,Saudi Arabian Grand Prix,83,1376,82
+racing_point,0.7860544906123348,-finish_position,10.0,0.97,2022,2,Saudi Arabian Grand Prix,83,1376,82
+red_bull,2.901856985980823,-finish_position,10.0,0.97,2022,2,Saudi Arabian Grand Prix,83,1376,82
+renault,0.5780909125709112,-finish_position,10.0,0.97,2022,2,Saudi Arabian Grand Prix,83,1376,82
+sauber,-0.39731036671811026,-finish_position,10.0,0.97,2022,2,Saudi Arabian Grand Prix,83,1376,82
+toro_rosso,-0.7914971002218082,-finish_position,10.0,0.97,2022,2,Saudi Arabian Grand Prix,83,1376,82
+williams,-3.369395047287108,-finish_position,10.0,0.97,2022,2,Saudi Arabian Grand Prix,83,1376,82
+alfa,-1.947778654029994,-finish_position,10.0,0.97,2022,3,Australian Grand Prix,84,1389,83
+alphatauri,0.13604667223178438,-finish_position,10.0,0.97,2022,3,Australian Grand Prix,84,1389,83
+alpine,0.3888332401782224,-finish_position,10.0,0.97,2022,3,Australian Grand Prix,84,1389,83
+aston_martin,-0.9246565650010159,-finish_position,10.0,0.97,2022,3,Australian Grand Prix,84,1389,83
+ferrari,2.343292469932148,-finish_position,10.0,0.97,2022,3,Australian Grand Prix,84,1389,83
+force_india,-0.12295739458909477,-finish_position,10.0,0.97,2022,3,Australian Grand Prix,84,1389,83
+haas,-3.724203173796703,-finish_position,10.0,0.97,2022,3,Australian Grand Prix,84,1389,83
+mclaren,0.6234522841445967,-finish_position,10.0,0.97,2022,3,Australian Grand Prix,84,1389,83
+mercedes,3.544403448026457,-finish_position,10.0,0.97,2022,3,Australian Grand Prix,84,1389,83
+racing_point,0.7659061380149831,-finish_position,10.0,0.97,2022,3,Australian Grand Prix,84,1389,83
+red_bull,2.941636826845395,-finish_position,10.0,0.97,2022,3,Australian Grand Prix,84,1389,83
+renault,0.5560105305669142,-finish_position,10.0,0.97,2022,3,Australian Grand Prix,84,1389,83
+sauber,-0.40202368917222575,-finish_position,10.0,0.97,2022,3,Australian Grand Prix,84,1389,83
+toro_rosso,-0.7878826008088311,-finish_position,10.0,0.97,2022,3,Australian Grand Prix,84,1389,83
+williams,-3.3900795325426496,-finish_position,10.0,0.97,2022,3,Australian Grand Prix,84,1389,83
+alfa,-1.857139596941703,-finish_position,10.0,0.97,2022,4,Emilia Romagna Grand Prix,85,1406,84
+alphatauri,0.05640221402295098,-finish_position,10.0,0.97,2022,4,Emilia Romagna Grand Prix,85,1406,84
+alpine,0.28493497023708614,-finish_position,10.0,0.97,2022,4,Emilia Romagna Grand Prix,85,1406,84
+aston_martin,-0.9390994358443766,-finish_position,10.0,0.97,2022,4,Emilia Romagna Grand Prix,85,1406,84
+ferrari,2.384636261133247,-finish_position,10.0,0.97,2022,4,Emilia Romagna Grand Prix,85,1406,84
+force_india,-0.1493140692034678,-finish_position,10.0,0.97,2022,4,Emilia Romagna Grand Prix,85,1406,84
+haas,-3.7032773561086922,-finish_position,10.0,0.97,2022,4,Emilia Romagna Grand Prix,85,1406,84
+mclaren,0.69411454782479,-finish_position,10.0,0.97,2022,4,Emilia Romagna Grand Prix,85,1406,84
+mercedes,3.585606678778992,-finish_position,10.0,0.97,2022,4,Emilia Romagna Grand Prix,85,1406,84
+racing_point,0.7251284563916225,-finish_position,10.0,0.97,2022,4,Emilia Romagna Grand Prix,85,1406,84
+red_bull,2.9632457186982406,-finish_position,10.0,0.97,2022,4,Emilia Romagna Grand Prix,85,1406,84
+renault,0.5220667317496853,-finish_position,10.0,0.97,2022,4,Emilia Romagna Grand Prix,85,1406,84
+sauber,-0.40723050378432074,-finish_position,10.0,0.97,2022,4,Emilia Romagna Grand Prix,85,1406,84
+toro_rosso,-0.7998235063017205,-finish_position,10.0,0.97,2022,4,Emilia Romagna Grand Prix,85,1406,84
+williams,-3.3602511106523143,-finish_position,10.0,0.97,2022,4,Emilia Romagna Grand Prix,85,1406,84
+alfa,-1.7931269427328878,-finish_position,10.0,0.97,2022,5,Miami Grand Prix,86,1424,85
+alphatauri,0.05890379076193339,-finish_position,10.0,0.97,2022,5,Miami Grand Prix,86,1424,85
+alpine,0.18444950542373684,-finish_position,10.0,0.97,2022,5,Miami Grand Prix,86,1424,85
+aston_martin,-0.8640928804347225,-finish_position,10.0,0.97,2022,5,Miami Grand Prix,86,1424,85
+ferrari,2.3550471928140455,-finish_position,10.0,0.97,2022,5,Miami Grand Prix,86,1424,85
+force_india,-0.14265118142378927,-finish_position,10.0,0.97,2022,5,Miami Grand Prix,86,1424,85
+haas,-3.662174874830275,-finish_position,10.0,0.97,2022,5,Miami Grand Prix,86,1424,85
+mclaren,0.5931293880045727,-finish_position,10.0,0.97,2022,5,Miami Grand Prix,86,1424,85
+mercedes,3.45349794348839,-finish_position,10.0,0.97,2022,5,Miami Grand Prix,86,1424,85
+racing_point,0.6929416087008041,-finish_position,10.0,0.97,2022,5,Miami Grand Prix,86,1424,85
+red_bull,3.0396979875440886,-finish_position,10.0,0.97,2022,5,Miami Grand Prix,86,1424,85
+renault,0.609936571046916,-finish_position,10.0,0.97,2022,5,Miami Grand Prix,86,1424,85
+sauber,-0.40035135186981435,-finish_position,10.0,0.97,2022,5,Miami Grand Prix,86,1424,85
+toro_rosso,-0.7738696781187069,-finish_position,10.0,0.97,2022,5,Miami Grand Prix,86,1424,85
+williams,-3.3513370783743013,-finish_position,10.0,0.97,2022,5,Miami Grand Prix,86,1424,85
+alfa,-1.71806264611552,-finish_position,10.0,0.97,2022,6,Spanish Grand Prix,87,1439,86
+alphatauri,0.02391663145902696,-finish_position,10.0,0.97,2022,6,Spanish Grand Prix,87,1439,86
+alpine,0.16581132095973086,-finish_position,10.0,0.97,2022,6,Spanish Grand Prix,87,1439,86
+aston_martin,-0.8414664445194309,-finish_position,10.0,0.97,2022,6,Spanish Grand Prix,87,1439,86
+ferrari,2.4167220890090886,-finish_position,10.0,0.97,2022,6,Spanish Grand Prix,87,1439,86
+force_india,-0.15187867016352646,-finish_position,10.0,0.97,2022,6,Spanish Grand Prix,87,1439,86
+haas,-3.6608948981329945,-finish_position,10.0,0.97,2022,6,Spanish Grand Prix,87,1439,86
+mclaren,0.5094854946732791,-finish_position,10.0,0.97,2022,6,Spanish Grand Prix,87,1439,86
+mercedes,3.4057981770783354,-finish_position,10.0,0.97,2022,6,Spanish Grand Prix,87,1439,86
+racing_point,0.6607822900915921,-finish_position,10.0,0.97,2022,6,Spanish Grand Prix,87,1439,86
+red_bull,3.0397499321623904,-finish_position,10.0,0.97,2022,6,Spanish Grand Prix,87,1439,86
+renault,0.611587381272709,-finish_position,10.0,0.97,2022,6,Spanish Grand Prix,87,1439,86
+sauber,-0.40185921561838883,-finish_position,10.0,0.97,2022,6,Spanish Grand Prix,87,1439,86
+toro_rosso,-0.7876081281101773,-finish_position,10.0,0.97,2022,6,Spanish Grand Prix,87,1439,86
+williams,-3.272083314046146,-finish_position,10.0,0.97,2022,6,Spanish Grand Prix,87,1439,86
+alfa,-1.6095955091213763,-finish_position,10.0,0.97,2022,7,Monaco Grand Prix,88,1457,87
+alphatauri,-0.024045078137021184,-finish_position,10.0,0.97,2022,7,Monaco Grand Prix,88,1457,87
+alpine,0.2135481854324633,-finish_position,10.0,0.97,2022,7,Monaco Grand Prix,88,1457,87
+aston_martin,-0.9252188552527093,-finish_position,10.0,0.97,2022,7,Monaco Grand Prix,88,1457,87
+ferrari,2.435529179925261,-finish_position,10.0,0.97,2022,7,Monaco Grand Prix,88,1457,87
+force_india,-0.15646091967952794,-finish_position,10.0,0.97,2022,7,Monaco Grand Prix,88,1457,87
+haas,-3.6881158527896676,-finish_position,10.0,0.97,2022,7,Monaco Grand Prix,88,1457,87
+mclaren,0.46057076315603046,-finish_position,10.0,0.97,2022,7,Monaco Grand Prix,88,1457,87
+mercedes,3.402250133439286,-finish_position,10.0,0.97,2022,7,Monaco Grand Prix,88,1457,87
+racing_point,0.6596436068533098,-finish_position,10.0,0.97,2022,7,Monaco Grand Prix,88,1457,87
+red_bull,3.166770084939296,-finish_position,10.0,0.97,2022,7,Monaco Grand Prix,88,1457,87
+renault,0.6171193073370133,-finish_position,10.0,0.97,2022,7,Monaco Grand Prix,88,1457,87
+sauber,-0.3898529609631438,-finish_position,10.0,0.97,2022,7,Monaco Grand Prix,88,1457,87
+toro_rosso,-0.7355635860413541,-finish_position,10.0,0.97,2022,7,Monaco Grand Prix,88,1457,87
+williams,-3.426578499097875,-finish_position,10.0,0.97,2022,7,Monaco Grand Prix,88,1457,87
+alfa,-1.6745940875643766,-finish_position,10.0,0.97,2022,8,Azerbaijan Grand Prix,89,1474,88
+alphatauri,-0.1290600219311211,-finish_position,10.0,0.97,2022,8,Azerbaijan Grand Prix,89,1474,88
+alpine,0.20780537937651863,-finish_position,10.0,0.97,2022,8,Azerbaijan Grand Prix,89,1474,88
+aston_martin,-0.9461780824950168,-finish_position,10.0,0.97,2022,8,Azerbaijan Grand Prix,89,1474,88
+ferrari,2.5006251744235413,-finish_position,10.0,0.97,2022,8,Azerbaijan Grand Prix,89,1474,88
+force_india,-0.15161914862075662,-finish_position,10.0,0.97,2022,8,Azerbaijan Grand Prix,89,1474,88
+haas,-3.6537392123119994,-finish_position,10.0,0.97,2022,8,Azerbaijan Grand Prix,89,1474,88
+mclaren,0.41710648127847816,-finish_position,10.0,0.97,2022,8,Azerbaijan Grand Prix,89,1474,88
+mercedes,3.386894710188861,-finish_position,10.0,0.97,2022,8,Azerbaijan Grand Prix,89,1474,88
+racing_point,0.6499765859494565,-finish_position,10.0,0.97,2022,8,Azerbaijan Grand Prix,89,1474,88
+red_bull,3.2501235692458947,-finish_position,10.0,0.97,2022,8,Azerbaijan Grand Prix,89,1474,88
+renault,0.6538167814245605,-finish_position,10.0,0.97,2022,8,Azerbaijan Grand Prix,89,1474,88
+sauber,-0.3784506209778294,-finish_position,10.0,0.97,2022,8,Azerbaijan Grand Prix,89,1474,88
+toro_rosso,-0.7194633896642508,-finish_position,10.0,0.97,2022,8,Azerbaijan Grand Prix,89,1474,88
+williams,-3.4132441183219773,-finish_position,10.0,0.97,2022,8,Azerbaijan Grand Prix,89,1474,88
+alfa,-1.7156088785131944,-finish_position,10.0,0.97,2022,9,Canadian Grand Prix,90,1489,89
+alphatauri,-0.11927833024434903,-finish_position,10.0,0.97,2022,9,Canadian Grand Prix,90,1489,89
+alpine,0.21011470757836456,-finish_position,10.0,0.97,2022,9,Canadian Grand Prix,90,1489,89
+aston_martin,-0.869583286160044,-finish_position,10.0,0.97,2022,9,Canadian Grand Prix,90,1489,89
+ferrari,2.4457015528852604,-finish_position,10.0,0.97,2022,9,Canadian Grand Prix,90,1489,89
+force_india,-0.15692822050525912,-finish_position,10.0,0.97,2022,9,Canadian Grand Prix,90,1489,89
+haas,-3.6481123817022443,-finish_position,10.0,0.97,2022,9,Canadian Grand Prix,90,1489,89
+mclaren,0.4038993744848478,-finish_position,10.0,0.97,2022,9,Canadian Grand Prix,90,1489,89
+mercedes,3.4553097852449492,-finish_position,10.0,0.97,2022,9,Canadian Grand Prix,90,1489,89
+racing_point,0.6210468062414719,-finish_position,10.0,0.97,2022,9,Canadian Grand Prix,90,1489,89
+red_bull,3.281937666137955,-finish_position,10.0,0.97,2022,9,Canadian Grand Prix,90,1489,89
+renault,0.6314858845007357,-finish_position,10.0,0.97,2022,9,Canadian Grand Prix,90,1489,89
+sauber,-0.37755015550477494,-finish_position,10.0,0.97,2022,9,Canadian Grand Prix,90,1489,89
+toro_rosso,-0.7367650379166468,-finish_position,10.0,0.97,2022,9,Canadian Grand Prix,90,1489,89
+williams,-3.4256694865270707,-finish_position,10.0,0.97,2022,9,Canadian Grand Prix,90,1489,89
+alfa,-1.576880061776251,-finish_position,10.0,0.97,2022,10,British Grand Prix,91,1506,90
+alphatauri,-0.19875968243087255,-finish_position,10.0,0.97,2022,10,British Grand Prix,91,1506,90
+alpine,0.25945741485601354,-finish_position,10.0,0.97,2022,10,British Grand Prix,91,1506,90
+aston_martin,-0.8778768999999736,-finish_position,10.0,0.97,2022,10,British Grand Prix,91,1506,90
+ferrari,2.5050080168798794,-finish_position,10.0,0.97,2022,10,British Grand Prix,91,1506,90
+force_india,-0.15873373230167268,-finish_position,10.0,0.97,2022,10,British Grand Prix,91,1506,90
+haas,-3.692920541073954,-finish_position,10.0,0.97,2022,10,British Grand Prix,91,1506,90
+mclaren,0.3040365030447279,-finish_position,10.0,0.97,2022,10,British Grand Prix,91,1506,90
+mercedes,3.4642294614579434,-finish_position,10.0,0.97,2022,10,British Grand Prix,91,1506,90
+racing_point,0.6040365772930257,-finish_position,10.0,0.97,2022,10,British Grand Prix,91,1506,90
+red_bull,3.2928633857929204,-finish_position,10.0,0.97,2022,10,British Grand Prix,91,1506,90
+renault,0.6058026669779698,-finish_position,10.0,0.97,2022,10,British Grand Prix,91,1506,90
+sauber,-0.3680118410752039,-finish_position,10.0,0.97,2022,10,British Grand Prix,91,1506,90
+toro_rosso,-0.713868181095533,-finish_position,10.0,0.97,2022,10,British Grand Prix,91,1506,90
+williams,-3.4483830865490406,-finish_position,10.0,0.97,2022,10,British Grand Prix,91,1506,90
+alfa,-1.5939856896570324,-finish_position,10.0,0.97,2022,11,Austrian Grand Prix,92,1520,91
+alphatauri,-0.2621348248124885,-finish_position,10.0,0.97,2022,11,Austrian Grand Prix,92,1520,91
+alpine,0.30296436976536634,-finish_position,10.0,0.97,2022,11,Austrian Grand Prix,92,1520,91
+aston_martin,-0.858212333405408,-finish_position,10.0,0.97,2022,11,Austrian Grand Prix,92,1520,91
+ferrari,2.548577467114185,-finish_position,10.0,0.97,2022,11,Austrian Grand Prix,92,1520,91
+force_india,-0.16648455145122815,-finish_position,10.0,0.97,2022,11,Austrian Grand Prix,92,1520,91
+haas,-3.5789830270290923,-finish_position,10.0,0.97,2022,11,Austrian Grand Prix,92,1520,91
+mclaren,0.22920780312710626,-finish_position,10.0,0.97,2022,11,Austrian Grand Prix,92,1520,91
+mercedes,3.4442063164922936,-finish_position,10.0,0.97,2022,11,Austrian Grand Prix,92,1520,91
+racing_point,0.5629023880122526,-finish_position,10.0,0.97,2022,11,Austrian Grand Prix,92,1520,91
+red_bull,3.284820270209517,-finish_position,10.0,0.97,2022,11,Austrian Grand Prix,92,1520,91
+renault,0.6036484043594089,-finish_position,10.0,0.97,2022,11,Austrian Grand Prix,92,1520,91
+sauber,-0.3664323676602306,-finish_position,10.0,0.97,2022,11,Austrian Grand Prix,92,1520,91
+toro_rosso,-0.7201481338403338,-finish_position,10.0,0.97,2022,11,Austrian Grand Prix,92,1520,91
+williams,-3.429946091224347,-finish_position,10.0,0.97,2022,11,Austrian Grand Prix,92,1520,91
+alfa,-1.6639072688308656,-finish_position,10.0,0.97,2022,12,French Grand Prix,93,1537,92
+alphatauri,-0.4149903073926018,-finish_position,10.0,0.97,2022,12,French Grand Prix,93,1537,92
+alpine,0.3547918368776232,-finish_position,10.0,0.97,2022,12,French Grand Prix,93,1537,92
+aston_martin,-1.0069867701979947,-finish_position,10.0,0.97,2022,12,French Grand Prix,93,1537,92
+ferrari,2.612686763328066,-finish_position,10.0,0.97,2022,12,French Grand Prix,93,1537,92
+force_india,-0.17018589363207148,-finish_position,10.0,0.97,2022,12,French Grand Prix,93,1537,92
+haas,-3.3997296951449005,-finish_position,10.0,0.97,2022,12,French Grand Prix,93,1537,92
+mclaren,0.2524773502078303,-finish_position,10.0,0.97,2022,12,French Grand Prix,93,1537,92
+mercedes,3.498624924581914,-finish_position,10.0,0.97,2022,12,French Grand Prix,93,1537,92
+racing_point,0.5501739050502341,-finish_position,10.0,0.97,2022,12,French Grand Prix,93,1537,92
+red_bull,3.284376607218575,-finish_position,10.0,0.97,2022,12,French Grand Prix,93,1537,92
+renault,0.5836738973096216,-finish_position,10.0,0.97,2022,12,French Grand Prix,93,1537,92
+sauber,-0.3665354323329479,-finish_position,10.0,0.97,2022,12,French Grand Prix,93,1537,92
+toro_rosso,-0.7051310343862924,-finish_position,10.0,0.97,2022,12,French Grand Prix,93,1537,92
+williams,-3.4093388826562054,-finish_position,10.0,0.97,2022,12,French Grand Prix,93,1537,92
+alfa,-1.8200103074447236,-finish_position,10.0,0.97,2022,13,Hungarian Grand Prix,94,1553,93
+alphatauri,-0.45667797022353784,-finish_position,10.0,0.97,2022,13,Hungarian Grand Prix,94,1553,93
+alpine,0.40801743073248864,-finish_position,10.0,0.97,2022,13,Hungarian Grand Prix,94,1553,93
+aston_martin,-0.9957805102053813,-finish_position,10.0,0.97,2022,13,Hungarian Grand Prix,94,1553,93
+ferrari,2.6093437412454823,-finish_position,10.0,0.97,2022,13,Hungarian Grand Prix,94,1553,93
+force_india,-0.16703276965022426,-finish_position,10.0,0.97,2022,13,Hungarian Grand Prix,94,1553,93
+haas,-3.3977864601501517,-finish_position,10.0,0.97,2022,13,Hungarian Grand Prix,94,1553,93
+mclaren,0.2612817250984328,-finish_position,10.0,0.97,2022,13,Hungarian Grand Prix,94,1553,93
+mercedes,3.6014139998044565,-finish_position,10.0,0.97,2022,13,Hungarian Grand Prix,94,1553,93
+racing_point,0.5305134261989419,-finish_position,10.0,0.97,2022,13,Hungarian Grand Prix,94,1553,93
+red_bull,3.3121786729532348,-finish_position,10.0,0.97,2022,13,Hungarian Grand Prix,94,1553,93
+renault,0.5748676060467254,-finish_position,10.0,0.97,2022,13,Hungarian Grand Prix,94,1553,93
+sauber,-0.35836064990872063,-finish_position,10.0,0.97,2022,13,Hungarian Grand Prix,94,1553,93
+toro_rosso,-0.6872516965985733,-finish_position,10.0,0.97,2022,13,Hungarian Grand Prix,94,1553,93
+williams,-3.414716237898432,-finish_position,10.0,0.97,2022,13,Hungarian Grand Prix,94,1553,93
+alfa,-1.8101629707980487,-finish_position,10.0,0.97,2022,14,Belgian Grand Prix,95,1572,94
+alphatauri,-0.5788194538526431,-finish_position,10.0,0.97,2022,14,Belgian Grand Prix,95,1572,94
+alpine,0.42933899918634155,-finish_position,10.0,0.97,2022,14,Belgian Grand Prix,95,1572,94
+aston_martin,-0.967716270506431,-finish_position,10.0,0.97,2022,14,Belgian Grand Prix,95,1572,94
+ferrari,2.625300181634155,-finish_position,10.0,0.97,2022,14,Belgian Grand Prix,95,1572,94
+force_india,-0.15478063858937982,-finish_position,10.0,0.97,2022,14,Belgian Grand Prix,95,1572,94
+haas,-3.4076291879550773,-finish_position,10.0,0.97,2022,14,Belgian Grand Prix,95,1572,94
+mclaren,0.20811173846580516,-finish_position,10.0,0.97,2022,14,Belgian Grand Prix,95,1572,94
+mercedes,3.6588731430508687,-finish_position,10.0,0.97,2022,14,Belgian Grand Prix,95,1572,94
+racing_point,0.5394953741832884,-finish_position,10.0,0.97,2022,14,Belgian Grand Prix,95,1572,94
+red_bull,3.364823540764011,-finish_position,10.0,0.97,2022,14,Belgian Grand Prix,95,1572,94
+renault,0.6101656323796325,-finish_position,10.0,0.97,2022,14,Belgian Grand Prix,95,1572,94
+sauber,-0.34448854383717586,-finish_position,10.0,0.97,2022,14,Belgian Grand Prix,95,1572,94
+toro_rosso,-0.6627110550797997,-finish_position,10.0,0.97,2022,14,Belgian Grand Prix,95,1572,94
+williams,-3.5098004890455297,-finish_position,10.0,0.97,2022,14,Belgian Grand Prix,95,1572,94
+alfa,-1.8349569349699384,-finish_position,10.0,0.97,2022,15,Dutch Grand Prix,96,1590,95
+alphatauri,-0.5910571105629446,-finish_position,10.0,0.97,2022,15,Dutch Grand Prix,96,1590,95
+alpine,0.5076684716936928,-finish_position,10.0,0.97,2022,15,Dutch Grand Prix,96,1590,95
+aston_martin,-0.9183699104337082,-finish_position,10.0,0.97,2022,15,Dutch Grand Prix,96,1590,95
+ferrari,2.624879157285262,-finish_position,10.0,0.97,2022,15,Dutch Grand Prix,96,1590,95
+force_india,-0.15821509579808257,-finish_position,10.0,0.97,2022,15,Dutch Grand Prix,96,1590,95
+haas,-3.467780062914115,-finish_position,10.0,0.97,2022,15,Dutch Grand Prix,96,1590,95
+mclaren,0.09591490592320685,-finish_position,10.0,0.97,2022,15,Dutch Grand Prix,96,1590,95
+mercedes,3.675860692587595,-finish_position,10.0,0.97,2022,15,Dutch Grand Prix,96,1590,95
+racing_point,0.5200100354036696,-finish_position,10.0,0.97,2022,15,Dutch Grand Prix,96,1590,95
+red_bull,3.4026551173320225,-finish_position,10.0,0.97,2022,15,Dutch Grand Prix,96,1590,95
+renault,0.6198063941025472,-finish_position,10.0,0.97,2022,15,Dutch Grand Prix,96,1590,95
+sauber,-0.33550116753393566,-finish_position,10.0,0.97,2022,15,Dutch Grand Prix,96,1590,95
+toro_rosso,-0.6636286311320647,-finish_position,10.0,0.97,2022,15,Dutch Grand Prix,96,1590,95
+williams,-3.4772858609831876,-finish_position,10.0,0.97,2022,15,Dutch Grand Prix,96,1590,95
+alfa,-1.8763735262495196,-finish_position,10.0,0.97,2022,16,Italian Grand Prix,97,1608,96
+alphatauri,-0.6050987337237458,-finish_position,10.0,0.97,2022,16,Italian Grand Prix,97,1608,96
+alpine,0.5455114951976705,-finish_position,10.0,0.97,2022,16,Italian Grand Prix,97,1608,96
+aston_martin,-0.9558306611226053,-finish_position,10.0,0.97,2022,16,Italian Grand Prix,97,1608,96
+ferrari,2.6224280415186323,-finish_position,10.0,0.97,2022,16,Italian Grand Prix,97,1608,96
+force_india,-0.14852441360960492,-finish_position,10.0,0.97,2022,16,Italian Grand Prix,97,1608,96
+haas,-3.4567907465391174,-finish_position,10.0,0.97,2022,16,Italian Grand Prix,97,1608,96
+mclaren,0.03605569136754158,-finish_position,10.0,0.97,2022,16,Italian Grand Prix,97,1608,96
+mercedes,3.7272595435488878,-finish_position,10.0,0.97,2022,16,Italian Grand Prix,97,1608,96
+racing_point,0.5058273617810016,-finish_position,10.0,0.97,2022,16,Italian Grand Prix,97,1608,96
+red_bull,3.41627840436371,-finish_position,10.0,0.97,2022,16,Italian Grand Prix,97,1608,96
+renault,0.6656947212884063,-finish_position,10.0,0.97,2022,16,Italian Grand Prix,97,1608,96
+sauber,-0.3326982430390235,-finish_position,10.0,0.97,2022,16,Italian Grand Prix,97,1608,96
+toro_rosso,-0.6484455699195124,-finish_position,10.0,0.97,2022,16,Italian Grand Prix,97,1608,96
+williams,-3.495293364862717,-finish_position,10.0,0.97,2022,16,Italian Grand Prix,97,1608,96
+alfa,-1.9072125573271534,-finish_position,10.0,0.97,2022,17,Singapore Grand Prix,98,1624,97
+alphatauri,-0.6317221855105656,-finish_position,10.0,0.97,2022,17,Singapore Grand Prix,98,1624,97
+alpine,0.4906848878334227,-finish_position,10.0,0.97,2022,17,Singapore Grand Prix,98,1624,97
+aston_martin,-0.9560104175251168,-finish_position,10.0,0.97,2022,17,Singapore Grand Prix,98,1624,97
+ferrari,2.6521218419284516,-finish_position,10.0,0.97,2022,17,Singapore Grand Prix,98,1624,97
+force_india,-0.14044575104758839,-finish_position,10.0,0.97,2022,17,Singapore Grand Prix,98,1624,97
+haas,-3.4735512158299016,-finish_position,10.0,0.97,2022,17,Singapore Grand Prix,98,1624,97
+mclaren,0.03230473967288981,-finish_position,10.0,0.97,2022,17,Singapore Grand Prix,98,1624,97
+mercedes,3.7804704043358828,-finish_position,10.0,0.97,2022,17,Singapore Grand Prix,98,1624,97
+racing_point,0.5010434717839788,-finish_position,10.0,0.97,2022,17,Singapore Grand Prix,98,1624,97
+red_bull,3.4009433426541538,-finish_position,10.0,0.97,2022,17,Singapore Grand Prix,98,1624,97
+renault,0.6513472917161098,-finish_position,10.0,0.97,2022,17,Singapore Grand Prix,98,1624,97
+sauber,-0.33465317630785185,-finish_position,10.0,0.97,2022,17,Singapore Grand Prix,98,1624,97
+toro_rosso,-0.6509593661629274,-finish_position,10.0,0.97,2022,17,Singapore Grand Prix,98,1624,97
+williams,-3.414361310213778,-finish_position,10.0,0.97,2022,17,Singapore Grand Prix,98,1624,97
+alfa,-1.9464902669075956,-finish_position,10.0,0.97,2022,18,Japanese Grand Prix,99,1638,98
+alphatauri,-0.6467649372087214,-finish_position,10.0,0.97,2022,18,Japanese Grand Prix,99,1638,98
+alpine,0.479927929838375,-finish_position,10.0,0.97,2022,18,Japanese Grand Prix,99,1638,98
+aston_martin,-0.8334666489657899,-finish_position,10.0,0.97,2022,18,Japanese Grand Prix,99,1638,98
+ferrari,2.703468444722155,-finish_position,10.0,0.97,2022,18,Japanese Grand Prix,99,1638,98
+force_india,-0.14980953947099288,-finish_position,10.0,0.97,2022,18,Japanese Grand Prix,99,1638,98
+haas,-3.443445771928819,-finish_position,10.0,0.97,2022,18,Japanese Grand Prix,99,1638,98
+mclaren,0.11774551428693075,-finish_position,10.0,0.97,2022,18,Japanese Grand Prix,99,1638,98
+mercedes,3.5740544723694425,-finish_position,10.0,0.97,2022,18,Japanese Grand Prix,99,1638,98
+racing_point,0.44524685145662246,-finish_position,10.0,0.97,2022,18,Japanese Grand Prix,99,1638,98
+red_bull,3.4081606501774724,-finish_position,10.0,0.97,2022,18,Japanese Grand Prix,99,1638,98
+renault,0.6148839673493623,-finish_position,10.0,0.97,2022,18,Japanese Grand Prix,99,1638,98
+sauber,-0.33308731376355255,-finish_position,10.0,0.97,2022,18,Japanese Grand Prix,99,1638,98
+toro_rosso,-0.6408939012608132,-finish_position,10.0,0.97,2022,18,Japanese Grand Prix,99,1638,98
+williams,-3.34952945069406,-finish_position,10.0,0.97,2022,18,Japanese Grand Prix,99,1638,98
+alfa,-2.0865484686844367,-finish_position,10.0,0.97,2022,19,United States Grand Prix,100,1656,99
+alphatauri,-0.7709045888431864,-finish_position,10.0,0.97,2022,19,United States Grand Prix,100,1656,99
+alpine,0.5773714813631188,-finish_position,10.0,0.97,2022,19,United States Grand Prix,100,1656,99
+aston_martin,-0.7708292170321719,-finish_position,10.0,0.97,2022,19,United States Grand Prix,100,1656,99
+ferrari,2.691495527594525,-finish_position,10.0,0.97,2022,19,United States Grand Prix,100,1656,99
+force_india,-0.1559006429398229,-finish_position,10.0,0.97,2022,19,United States Grand Prix,100,1656,99
+haas,-3.4685698738923896,-finish_position,10.0,0.97,2022,19,United States Grand Prix,100,1656,99
+mclaren,0.09171141854493958,-finish_position,10.0,0.97,2022,19,United States Grand Prix,100,1656,99
+mercedes,3.566278189275466,-finish_position,10.0,0.97,2022,19,United States Grand Prix,100,1656,99
+racing_point,0.4459426545827025,-finish_position,10.0,0.97,2022,19,United States Grand Prix,100,1656,99
+red_bull,3.4727442206460437,-finish_position,10.0,0.97,2022,19,United States Grand Prix,100,1656,99
+renault,0.6012892882798828,-finish_position,10.0,0.97,2022,19,United States Grand Prix,100,1656,99
+sauber,-0.3303717635552791,-finish_position,10.0,0.97,2022,19,United States Grand Prix,100,1656,99
+toro_rosso,-0.6075519124376801,-finish_position,10.0,0.97,2022,19,United States Grand Prix,100,1656,99
+williams,-3.256156312901715,-finish_position,10.0,0.97,2022,19,United States Grand Prix,100,1656,99
+alfa,-2.079294899515414,-finish_position,10.0,0.97,2022,20,Mexico City Grand Prix,101,1673,100
+alphatauri,-0.8093394775505873,-finish_position,10.0,0.97,2022,20,Mexico City Grand Prix,101,1673,100
+alpine,0.5519715068091755,-finish_position,10.0,0.97,2022,20,Mexico City Grand Prix,101,1673,100
+aston_martin,-0.7366873437689863,-finish_position,10.0,0.97,2022,20,Mexico City Grand Prix,101,1673,100
+ferrari,2.681591142515838,-finish_position,10.0,0.97,2022,20,Mexico City Grand Prix,101,1673,100
+force_india,-0.1483112866151987,-finish_position,10.0,0.97,2022,20,Mexico City Grand Prix,101,1673,100
+haas,-3.424598709588059,-finish_position,10.0,0.97,2022,20,Mexico City Grand Prix,101,1673,100
+mclaren,0.02771510552287208,-finish_position,10.0,0.97,2022,20,Mexico City Grand Prix,101,1673,100
+mercedes,3.571150661414958,-finish_position,10.0,0.97,2022,20,Mexico City Grand Prix,101,1673,100
+racing_point,0.4394914434733138,-finish_position,10.0,0.97,2022,20,Mexico City Grand Prix,101,1673,100
+red_bull,3.492399915213464,-finish_position,10.0,0.97,2022,20,Mexico City Grand Prix,101,1673,100
+renault,0.6291431847596813,-finish_position,10.0,0.97,2022,20,Mexico City Grand Prix,101,1673,100
+sauber,-0.32916077795350696,-finish_position,10.0,0.97,2022,20,Mexico City Grand Prix,101,1673,100
+toro_rosso,-0.5888172908531605,-finish_position,10.0,0.97,2022,20,Mexico City Grand Prix,101,1673,100
+williams,-3.2772531738643345,-finish_position,10.0,0.97,2022,20,Mexico City Grand Prix,101,1673,100
+alfa,-2.0565401173214988,-finish_position,10.0,0.97,2022,21,São Paulo Grand Prix,102,1691,101
+alphatauri,-0.8133376827637455,-finish_position,10.0,0.97,2022,21,São Paulo Grand Prix,102,1691,101
+alpine,0.5653597500682803,-finish_position,10.0,0.97,2022,21,São Paulo Grand Prix,102,1691,101
+aston_martin,-0.8522775704631449,-finish_position,10.0,0.97,2022,21,São Paulo Grand Prix,102,1691,101
+ferrari,2.691454518542417,-finish_position,10.0,0.97,2022,21,São Paulo Grand Prix,102,1691,101
+force_india,-0.1464864605959546,-finish_position,10.0,0.97,2022,21,São Paulo Grand Prix,102,1691,101
+haas,-3.4658260689332256,-finish_position,10.0,0.97,2022,21,São Paulo Grand Prix,102,1691,101
+mclaren,0.06833659453505923,-finish_position,10.0,0.97,2022,21,São Paulo Grand Prix,102,1691,101
+mercedes,3.603476843817641,-finish_position,10.0,0.97,2022,21,São Paulo Grand Prix,102,1691,101
+racing_point,0.4407568766834024,-finish_position,10.0,0.97,2022,21,São Paulo Grand Prix,102,1691,101
+red_bull,3.5275426761802082,-finish_position,10.0,0.97,2022,21,São Paulo Grand Prix,102,1691,101
+renault,0.6063091514595804,-finish_position,10.0,0.97,2022,21,São Paulo Grand Prix,102,1691,101
+sauber,-0.3173009705681972,-finish_position,10.0,0.97,2022,21,São Paulo Grand Prix,102,1691,101
+toro_rosso,-0.5740145232786343,-finish_position,10.0,0.97,2022,21,São Paulo Grand Prix,102,1691,101
+williams,-3.2774530173621934,-finish_position,10.0,0.97,2022,21,São Paulo Grand Prix,102,1691,101
+alfa,-2.008413307965254,-finish_position,10.0,0.97,2022,22,Abu Dhabi Grand Prix,103,1708,102
+alphatauri,-0.9349055556219306,-finish_position,10.0,0.97,2022,22,Abu Dhabi Grand Prix,103,1708,102
+alpine,0.619997682782455,-finish_position,10.0,0.97,2022,22,Abu Dhabi Grand Prix,103,1708,102
+aston_martin,-0.8424865175662211,-finish_position,10.0,0.97,2022,22,Abu Dhabi Grand Prix,103,1708,102
+ferrari,2.7310184995670306,-finish_position,10.0,0.97,2022,22,Abu Dhabi Grand Prix,103,1708,102
+force_india,-0.13780895936794033,-finish_position,10.0,0.97,2022,22,Abu Dhabi Grand Prix,103,1708,102
+haas,-3.4379723865665333,-finish_position,10.0,0.97,2022,22,Abu Dhabi Grand Prix,103,1708,102
+mclaren,0.06333113194589675,-finish_position,10.0,0.97,2022,22,Abu Dhabi Grand Prix,103,1708,102
+mercedes,3.6590519274993283,-finish_position,10.0,0.97,2022,22,Abu Dhabi Grand Prix,103,1708,102
+racing_point,0.43743795241660033,-finish_position,10.0,0.97,2022,22,Abu Dhabi Grand Prix,103,1708,102
+red_bull,3.471589956076506,-finish_position,10.0,0.97,2022,22,Abu Dhabi Grand Prix,103,1708,102
+renault,0.5942791156775544,-finish_position,10.0,0.97,2022,22,Abu Dhabi Grand Prix,103,1708,102
+sauber,-0.3099589983976051,-finish_position,10.0,0.97,2022,22,Abu Dhabi Grand Prix,103,1708,102
+toro_rosso,-0.5610860835692527,-finish_position,10.0,0.97,2022,22,Abu Dhabi Grand Prix,103,1708,102
+williams,-3.3440744569106213,-finish_position,10.0,0.97,2022,22,Abu Dhabi Grand Prix,103,1708,102
+alfa,-2.0815656572965135,-finish_position,10.0,0.97,2023,1,Bahrain Grand Prix,104,1725,103
+alphatauri,-0.9755275084060206,-finish_position,10.0,0.97,2023,1,Bahrain Grand Prix,104,1725,103
+alpine,0.6349331246301857,-finish_position,10.0,0.97,2023,1,Bahrain Grand Prix,104,1725,103
+aston_martin,-0.7926666859067892,-finish_position,10.0,0.97,2023,1,Bahrain Grand Prix,104,1725,103
+ferrari,2.767795212294006,-finish_position,10.0,0.97,2023,1,Bahrain Grand Prix,104,1725,103
+force_india,-0.13977253401407902,-finish_position,10.0,0.97,2023,1,Bahrain Grand Prix,104,1725,103
+haas,-3.493863641363806,-finish_position,10.0,0.97,2023,1,Bahrain Grand Prix,104,1725,103
+mclaren,0.08878295264880638,-finish_position,10.0,0.97,2023,1,Bahrain Grand Prix,104,1725,103
+mercedes,3.687510502990622,-finish_position,10.0,0.97,2023,1,Bahrain Grand Prix,104,1725,103
+racing_point,0.4105223242612021,-finish_position,10.0,0.97,2023,1,Bahrain Grand Prix,104,1725,103
+red_bull,3.5015489076369364,-finish_position,10.0,0.97,2023,1,Bahrain Grand Prix,104,1725,103
+renault,0.5759896465723483,-finish_position,10.0,0.97,2023,1,Bahrain Grand Prix,104,1725,103
+sauber,-0.30751357309543953,-finish_position,10.0,0.97,2023,1,Bahrain Grand Prix,104,1725,103
+toro_rosso,-0.5433944944777918,-finish_position,10.0,0.97,2023,1,Bahrain Grand Prix,104,1725,103
+williams,-3.332778576473652,-finish_position,10.0,0.97,2023,1,Bahrain Grand Prix,104,1725,103
+alfa,-2.0744872079197902,-finish_position,10.0,0.97,2023,2,Saudi Arabian Grand Prix,105,1742,104
+alphatauri,-1.0786828045791255,-finish_position,10.0,0.97,2023,2,Saudi Arabian Grand Prix,105,1742,104
+alpine,0.46685473355126295,-finish_position,10.0,0.97,2023,2,Saudi Arabian Grand Prix,105,1742,104
+aston_martin,-0.496714462120549,-finish_position,10.0,0.97,2023,2,Saudi Arabian Grand Prix,105,1742,104
+ferrari,2.799118703712034,-finish_position,10.0,0.97,2023,2,Saudi Arabian Grand Prix,105,1742,104
+force_india,-0.147335386295198,-finish_position,10.0,0.97,2023,2,Saudi Arabian Grand Prix,105,1742,104
+haas,-3.520646793114125,-finish_position,10.0,0.97,2023,2,Saudi Arabian Grand Prix,105,1742,104
+mclaren,0.012177618256819569,-finish_position,10.0,0.97,2023,2,Saudi Arabian Grand Prix,105,1742,104
+mercedes,3.6252538877924607,-finish_position,10.0,0.97,2023,2,Saudi Arabian Grand Prix,105,1742,104
+racing_point,0.4043943688134257,-finish_position,10.0,0.97,2023,2,Saudi Arabian Grand Prix,105,1742,104
+red_bull,3.5359381072428784,-finish_position,10.0,0.97,2023,2,Saudi Arabian Grand Prix,105,1742,104
+renault,0.557818181460513,-finish_position,10.0,0.97,2023,2,Saudi Arabian Grand Prix,105,1742,104
+sauber,-0.29777354004217615,-finish_position,10.0,0.97,2023,2,Saudi Arabian Grand Prix,105,1742,104
+toro_rosso,-0.5473573734174335,-finish_position,10.0,0.97,2023,2,Saudi Arabian Grand Prix,105,1742,104
+williams,-3.238558033340963,-finish_position,10.0,0.97,2023,2,Saudi Arabian Grand Prix,105,1742,104
+alfa,-2.162503064713079,-finish_position,10.0,0.97,2023,3,Australian Grand Prix,106,1760,105
+alphatauri,-1.1319766268428526,-finish_position,10.0,0.97,2023,3,Australian Grand Prix,106,1760,105
+alpine,0.3621100526868429,-finish_position,10.0,0.97,2023,3,Australian Grand Prix,106,1760,105
+aston_martin,-0.2922577848486441,-finish_position,10.0,0.97,2023,3,Australian Grand Prix,106,1760,105
+ferrari,2.7885975953691156,-finish_position,10.0,0.97,2023,3,Australian Grand Prix,106,1760,105
+force_india,-0.15115387434481614,-finish_position,10.0,0.97,2023,3,Australian Grand Prix,106,1760,105
+haas,-3.395008079738323,-finish_position,10.0,0.97,2023,3,Australian Grand Prix,106,1760,105
+mclaren,-0.18335303021156776,-finish_position,10.0,0.97,2023,3,Australian Grand Prix,106,1760,105
+mercedes,3.708747906210763,-finish_position,10.0,0.97,2023,3,Australian Grand Prix,106,1760,105
+racing_point,0.4161490830411445,-finish_position,10.0,0.97,2023,3,Australian Grand Prix,106,1760,105
+red_bull,3.6050552006344887,-finish_position,10.0,0.97,2023,3,Australian Grand Prix,106,1760,105
+renault,0.5124417530381076,-finish_position,10.0,0.97,2023,3,Australian Grand Prix,106,1760,105
+sauber,-0.28255657824676644,-finish_position,10.0,0.97,2023,3,Australian Grand Prix,106,1760,105
+toro_rosso,-0.5324571213724375,-finish_position,10.0,0.97,2023,3,Australian Grand Prix,106,1760,105
+williams,-3.261835430661992,-finish_position,10.0,0.97,2023,3,Australian Grand Prix,106,1760,105
+alfa,-2.1505845893796893,-finish_position,10.0,0.97,2023,4,Azerbaijan Grand Prix,107,1772,106
+alphatauri,-1.1425097464483769,-finish_position,10.0,0.97,2023,4,Azerbaijan Grand Prix,107,1772,106
+alpine,0.23596749562674418,-finish_position,10.0,0.97,2023,4,Azerbaijan Grand Prix,107,1772,106
+aston_martin,-0.09266056524640057,-finish_position,10.0,0.97,2023,4,Azerbaijan Grand Prix,107,1772,106
+ferrari,2.6882648745980884,-finish_position,10.0,0.97,2023,4,Azerbaijan Grand Prix,107,1772,106
+force_india,-0.15500967442390953,-finish_position,10.0,0.97,2023,4,Azerbaijan Grand Prix,107,1772,106
+haas,-3.2566451502646223,-finish_position,10.0,0.97,2023,4,Azerbaijan Grand Prix,107,1772,106
+mclaren,-0.12256248652288289,-finish_position,10.0,0.97,2023,4,Azerbaijan Grand Prix,107,1772,106
+mercedes,3.682199278941892,-finish_position,10.0,0.97,2023,4,Azerbaijan Grand Prix,107,1772,106
+racing_point,0.38131836235015226,-finish_position,10.0,0.97,2023,4,Azerbaijan Grand Prix,107,1772,106
+red_bull,3.5786093292294314,-finish_position,10.0,0.97,2023,4,Azerbaijan Grand Prix,107,1772,106
+renault,0.4545676660843133,-finish_position,10.0,0.97,2023,4,Azerbaijan Grand Prix,107,1772,106
+sauber,-0.28471808666724524,-finish_position,10.0,0.97,2023,4,Azerbaijan Grand Prix,107,1772,106
+toro_rosso,-0.5355150619712139,-finish_position,10.0,0.97,2023,4,Azerbaijan Grand Prix,107,1772,106
+williams,-3.2807216459062816,-finish_position,10.0,0.97,2023,4,Azerbaijan Grand Prix,107,1772,106
+alfa,-2.243142031471015,-finish_position,10.0,0.97,2023,5,Miami Grand Prix,108,1790,107
+alphatauri,-1.0196177737947179,-finish_position,10.0,0.97,2023,5,Miami Grand Prix,108,1790,107
+alpine,-0.04961507125527195,-finish_position,10.0,0.97,2023,5,Miami Grand Prix,108,1790,107
+aston_martin,0.06806818335741609,-finish_position,10.0,0.97,2023,5,Miami Grand Prix,108,1790,107
+ferrari,2.7324513227584255,-finish_position,10.0,0.97,2023,5,Miami Grand Prix,108,1790,107
+force_india,-0.15285734812924537,-finish_position,10.0,0.97,2023,5,Miami Grand Prix,108,1790,107
+haas,-3.3214824271320933,-finish_position,10.0,0.97,2023,5,Miami Grand Prix,108,1790,107
+mclaren,-0.13151127412274846,-finish_position,10.0,0.97,2023,5,Miami Grand Prix,108,1790,107
+mercedes,3.678242060077997,-finish_position,10.0,0.97,2023,5,Miami Grand Prix,108,1790,107
+racing_point,0.37257658585120906,-finish_position,10.0,0.97,2023,5,Miami Grand Prix,108,1790,107
+red_bull,3.639084633625976,-finish_position,10.0,0.97,2023,5,Miami Grand Prix,108,1790,107
+renault,0.4824023792005393,-finish_position,10.0,0.97,2023,5,Miami Grand Prix,108,1790,107
+sauber,-0.2769918376181674,-finish_position,10.0,0.97,2023,5,Miami Grand Prix,108,1790,107
+toro_rosso,-0.49642768840660073,-finish_position,10.0,0.97,2023,5,Miami Grand Prix,108,1790,107
+williams,-3.281179712941731,-finish_position,10.0,0.97,2023,5,Miami Grand Prix,108,1790,107
+alfa,-2.2445941415845536,-finish_position,10.0,0.97,2023,6,Monaco Grand Prix,109,1810,108
+alphatauri,-1.1721503563345772,-finish_position,10.0,0.97,2023,6,Monaco Grand Prix,109,1810,108
+alpine,-0.04386786750125962,-finish_position,10.0,0.97,2023,6,Monaco Grand Prix,109,1810,108
+aston_martin,0.2125890390528592,-finish_position,10.0,0.97,2023,6,Monaco Grand Prix,109,1810,108
+ferrari,2.7526911894125865,-finish_position,10.0,0.97,2023,6,Monaco Grand Prix,109,1810,108
+force_india,-0.14493619010951628,-finish_position,10.0,0.97,2023,6,Monaco Grand Prix,109,1810,108
+haas,-3.2549741587178453,-finish_position,10.0,0.97,2023,6,Monaco Grand Prix,109,1810,108
+mclaren,-0.33427480826744954,-finish_position,10.0,0.97,2023,6,Monaco Grand Prix,109,1810,108
+mercedes,3.7176770968514763,-finish_position,10.0,0.97,2023,6,Monaco Grand Prix,109,1810,108
+racing_point,0.4070168367452311,-finish_position,10.0,0.97,2023,6,Monaco Grand Prix,109,1810,108
+red_bull,3.7216335136016703,-finish_position,10.0,0.97,2023,6,Monaco Grand Prix,109,1810,108
+renault,0.4819431373958778,-finish_position,10.0,0.97,2023,6,Monaco Grand Prix,109,1810,108
+sauber,-0.2575449244821974,-finish_position,10.0,0.97,2023,6,Monaco Grand Prix,109,1810,108
+toro_rosso,-0.48663618189791774,-finish_position,10.0,0.97,2023,6,Monaco Grand Prix,109,1810,108
+williams,-3.3545721841643954,-finish_position,10.0,0.97,2023,6,Monaco Grand Prix,109,1810,108
+alfa,-2.2301744183964196,-finish_position,10.0,0.97,2023,7,Spanish Grand Prix,110,1828,109
+alphatauri,-1.244934246639883,-finish_position,10.0,0.97,2023,7,Spanish Grand Prix,110,1828,109
+alpine,0.028895130166322242,-finish_position,10.0,0.97,2023,7,Spanish Grand Prix,110,1828,109
+aston_martin,0.3685929149531484,-finish_position,10.0,0.97,2023,7,Spanish Grand Prix,110,1828,109
+ferrari,2.7260556116980217,-finish_position,10.0,0.97,2023,7,Spanish Grand Prix,110,1828,109
+force_india,-0.1289086151120904,-finish_position,10.0,0.97,2023,7,Spanish Grand Prix,110,1828,109
+haas,-3.3104142682888997,-finish_position,10.0,0.97,2023,7,Spanish Grand Prix,110,1828,109
+mclaren,-0.30254301420222757,-finish_position,10.0,0.97,2023,7,Spanish Grand Prix,110,1828,109
+mercedes,3.702799428732403,-finish_position,10.0,0.97,2023,7,Spanish Grand Prix,110,1828,109
+racing_point,0.47602777607844704,-finish_position,10.0,0.97,2023,7,Spanish Grand Prix,110,1828,109
+red_bull,3.594237505540486,-finish_position,10.0,0.97,2023,7,Spanish Grand Prix,110,1828,109
+renault,0.4906513286360541,-finish_position,10.0,0.97,2023,7,Spanish Grand Prix,110,1828,109
+sauber,-0.24987667823223403,-finish_position,10.0,0.97,2023,7,Spanish Grand Prix,110,1828,109
+toro_rosso,-0.48867414380707186,-finish_position,10.0,0.97,2023,7,Spanish Grand Prix,110,1828,109
+williams,-3.4317343111260823,-finish_position,10.0,0.97,2023,7,Spanish Grand Prix,110,1828,109
+alfa,-2.2602264118784747,-finish_position,10.0,0.97,2023,8,Canadian Grand Prix,111,1848,110
+alphatauri,-1.253634720047166,-finish_position,10.0,0.97,2023,8,Canadian Grand Prix,111,1848,110
+alpine,0.046041988695217376,-finish_position,10.0,0.97,2023,8,Canadian Grand Prix,111,1848,110
+aston_martin,0.4390632662650711,-finish_position,10.0,0.97,2023,8,Canadian Grand Prix,111,1848,110
+ferrari,2.6950684604021995,-finish_position,10.0,0.97,2023,8,Canadian Grand Prix,111,1848,110
+force_india,-0.12275551974587989,-finish_position,10.0,0.97,2023,8,Canadian Grand Prix,111,1848,110
+haas,-3.3439839546920425,-finish_position,10.0,0.97,2023,8,Canadian Grand Prix,111,1848,110
+mclaren,-0.37659555379070253,-finish_position,10.0,0.97,2023,8,Canadian Grand Prix,111,1848,110
+mercedes,3.8081071704929697,-finish_position,10.0,0.97,2023,8,Canadian Grand Prix,111,1848,110
+racing_point,0.46369044997939796,-finish_position,10.0,0.97,2023,8,Canadian Grand Prix,111,1848,110
+red_bull,3.642345549217632,-finish_position,10.0,0.97,2023,8,Canadian Grand Prix,111,1848,110
+renault,0.4874786158212534,-finish_position,10.0,0.97,2023,8,Canadian Grand Prix,111,1848,110
+sauber,-0.23110939296647443,-finish_position,10.0,0.97,2023,8,Canadian Grand Prix,111,1848,110
+toro_rosso,-0.46437979416752634,-finish_position,10.0,0.97,2023,8,Canadian Grand Prix,111,1848,110
+williams,-3.529110153585452,-finish_position,10.0,0.97,2023,8,Canadian Grand Prix,111,1848,110
+alfa,-2.251314683008537,-finish_position,10.0,0.97,2023,9,Austrian Grand Prix,112,1866,111
+alphatauri,-1.3576661117181077,-finish_position,10.0,0.97,2023,9,Austrian Grand Prix,112,1866,111
+alpine,-0.0732273097695606,-finish_position,10.0,0.97,2023,9,Austrian Grand Prix,112,1866,111
+aston_martin,0.5708628510000525,-finish_position,10.0,0.97,2023,9,Austrian Grand Prix,112,1866,111
+ferrari,2.723867346224749,-finish_position,10.0,0.97,2023,9,Austrian Grand Prix,112,1866,111
+force_india,-0.12187985211012495,-finish_position,10.0,0.97,2023,9,Austrian Grand Prix,112,1866,111
+haas,-3.381339486892725,-finish_position,10.0,0.97,2023,9,Austrian Grand Prix,112,1866,111
+mclaren,-0.3947455897984097,-finish_position,10.0,0.97,2023,9,Austrian Grand Prix,112,1866,111
+mercedes,3.806523466767543,-finish_position,10.0,0.97,2023,9,Austrian Grand Prix,112,1866,111
+racing_point,0.47640057217310744,-finish_position,10.0,0.97,2023,9,Austrian Grand Prix,112,1866,111
+red_bull,3.628924087512331,-finish_position,10.0,0.97,2023,9,Austrian Grand Prix,112,1866,111
+renault,0.4764015301628346,-finish_position,10.0,0.97,2023,9,Austrian Grand Prix,112,1866,111
+sauber,-0.224808336826307,-finish_position,10.0,0.97,2023,9,Austrian Grand Prix,112,1866,111
+toro_rosso,-0.4628542728998655,-finish_position,10.0,0.97,2023,9,Austrian Grand Prix,112,1866,111
+williams,-3.415144210816991,-finish_position,10.0,0.97,2023,9,Austrian Grand Prix,112,1866,111
+alfa,-2.265770558816706,-finish_position,10.0,0.97,2023,10,British Grand Prix,113,1885,112
+alphatauri,-1.4922741523583205,-finish_position,10.0,0.97,2023,10,British Grand Prix,113,1885,112
+alpine,-0.15453297696560223,-finish_position,10.0,0.97,2023,10,British Grand Prix,113,1885,112
+aston_martin,0.6307526990203801,-finish_position,10.0,0.97,2023,10,British Grand Prix,113,1885,112
+ferrari,2.7619438777214502,-finish_position,10.0,0.97,2023,10,British Grand Prix,113,1885,112
+force_india,-0.112235903889086,-finish_position,10.0,0.97,2023,10,British Grand Prix,113,1885,112
+haas,-3.3868341867445992,-finish_position,10.0,0.97,2023,10,British Grand Prix,113,1885,112
+mclaren,-0.4108249705437932,-finish_position,10.0,0.97,2023,10,British Grand Prix,113,1885,112
+mercedes,3.7896483697857066,-finish_position,10.0,0.97,2023,10,British Grand Prix,113,1885,112
+racing_point,0.4726928112690065,-finish_position,10.0,0.97,2023,10,British Grand Prix,113,1885,112
+red_bull,3.6755516148174356,-finish_position,10.0,0.97,2023,10,British Grand Prix,113,1885,112
+renault,0.48504098483283387,-finish_position,10.0,0.97,2023,10,British Grand Prix,113,1885,112
+sauber,-0.21972518511156128,-finish_position,10.0,0.97,2023,10,British Grand Prix,113,1885,112
+toro_rosso,-0.4565352545912717,-finish_position,10.0,0.97,2023,10,British Grand Prix,113,1885,112
+williams,-3.316897168425888,-finish_position,10.0,0.97,2023,10,British Grand Prix,113,1885,112
+alfa,-2.291519028870965,-finish_position,10.0,0.97,2023,11,Hungarian Grand Prix,114,1902,113
+alphatauri,-1.6140526215037085,-finish_position,10.0,0.97,2023,11,Hungarian Grand Prix,114,1902,113
+alpine,-0.16400764625227224,-finish_position,10.0,0.97,2023,11,Hungarian Grand Prix,114,1902,113
+aston_martin,0.5625678885074289,-finish_position,10.0,0.97,2023,11,Hungarian Grand Prix,114,1902,113
+ferrari,2.667313180360517,-finish_position,10.0,0.97,2023,11,Hungarian Grand Prix,114,1902,113
+force_india,-0.10764682045021455,-finish_position,10.0,0.97,2023,11,Hungarian Grand Prix,114,1902,113
+haas,-3.3672335838932654,-finish_position,10.0,0.97,2023,11,Hungarian Grand Prix,114,1902,113
+mclaren,-0.23499429607298794,-finish_position,10.0,0.97,2023,11,Hungarian Grand Prix,114,1902,113
+mercedes,3.7931723691151986,-finish_position,10.0,0.97,2023,11,Hungarian Grand Prix,114,1902,113
+racing_point,0.48131703976829726,-finish_position,10.0,0.97,2023,11,Hungarian Grand Prix,114,1902,113
+red_bull,3.65456943711582,-finish_position,10.0,0.97,2023,11,Hungarian Grand Prix,114,1902,113
+renault,0.49316470113062005,-finish_position,10.0,0.97,2023,11,Hungarian Grand Prix,114,1902,113
+sauber,-0.2131904234476501,-finish_position,10.0,0.97,2023,11,Hungarian Grand Prix,114,1902,113
+toro_rosso,-0.4631763869557346,-finish_position,10.0,0.97,2023,11,Hungarian Grand Prix,114,1902,113
+williams,-3.1962838085510925,-finish_position,10.0,0.97,2023,11,Hungarian Grand Prix,114,1902,113
+alfa,-2.3259171336839315,-finish_position,10.0,0.97,2023,12,Belgian Grand Prix,115,1919,114
+alphatauri,-1.683178856401594,-finish_position,10.0,0.97,2023,12,Belgian Grand Prix,115,1919,114
+alpine,-0.13948632536361058,-finish_position,10.0,0.97,2023,12,Belgian Grand Prix,115,1919,114
+aston_martin,0.5089235504124324,-finish_position,10.0,0.97,2023,12,Belgian Grand Prix,115,1919,114
+ferrari,2.621986214741841,-finish_position,10.0,0.97,2023,12,Belgian Grand Prix,115,1919,114
+force_india,-0.10545765158757216,-finish_position,10.0,0.97,2023,12,Belgian Grand Prix,115,1919,114
+haas,-3.398852594868863,-finish_position,10.0,0.97,2023,12,Belgian Grand Prix,115,1919,114
+mclaren,-0.06466194375828775,-finish_position,10.0,0.97,2023,12,Belgian Grand Prix,115,1919,114
+mercedes,3.765573309805949,-finish_position,10.0,0.97,2023,12,Belgian Grand Prix,115,1919,114
+racing_point,0.4604117613824947,-finish_position,10.0,0.97,2023,12,Belgian Grand Prix,115,1919,114
+red_bull,3.678644279512168,-finish_position,10.0,0.97,2023,12,Belgian Grand Prix,115,1919,114
+renault,0.5158556299045042,-finish_position,10.0,0.97,2023,12,Belgian Grand Prix,115,1919,114
+sauber,-0.20762765427250296,-finish_position,10.0,0.97,2023,12,Belgian Grand Prix,115,1919,114
+toro_rosso,-0.46026934620591475,-finish_position,10.0,0.97,2023,12,Belgian Grand Prix,115,1919,114
+williams,-3.1659432396170897,-finish_position,10.0,0.97,2023,12,Belgian Grand Prix,115,1919,114
+alfa,-2.321056927756981,-finish_position,10.0,0.97,2023,13,Dutch Grand Prix,116,1937,115
+alphatauri,-1.7557564461609612,-finish_position,10.0,0.97,2023,13,Dutch Grand Prix,116,1937,115
+alpine,-0.18153493120728656,-finish_position,10.0,0.97,2023,13,Dutch Grand Prix,116,1937,115
+aston_martin,0.5583605979269327,-finish_position,10.0,0.97,2023,13,Dutch Grand Prix,116,1937,115
+ferrari,2.646974244517443,-finish_position,10.0,0.97,2023,13,Dutch Grand Prix,116,1937,115
+force_india,-0.1072704662469137,-finish_position,10.0,0.97,2023,13,Dutch Grand Prix,116,1937,115
+haas,-3.4675529900817943,-finish_position,10.0,0.97,2023,13,Dutch Grand Prix,116,1937,115
+mclaren,0.018053398187079066,-finish_position,10.0,0.97,2023,13,Dutch Grand Prix,116,1937,115
+mercedes,3.740594245045566,-finish_position,10.0,0.97,2023,13,Dutch Grand Prix,116,1937,115
+racing_point,0.44886715538488714,-finish_position,10.0,0.97,2023,13,Dutch Grand Prix,116,1937,115
+red_bull,3.727136241494919,-finish_position,10.0,0.97,2023,13,Dutch Grand Prix,116,1937,115
+renault,0.5568379886994821,-finish_position,10.0,0.97,2023,13,Dutch Grand Prix,116,1937,115
+sauber,-0.20443576932161608,-finish_position,10.0,0.97,2023,13,Dutch Grand Prix,116,1937,115
+toro_rosso,-0.44840898218285474,-finish_position,10.0,0.97,2023,13,Dutch Grand Prix,116,1937,115
+williams,-3.2108073582979175,-finish_position,10.0,0.97,2023,13,Dutch Grand Prix,116,1937,115
+alfa,-2.363041308082926,-finish_position,10.0,0.97,2023,14,Italian Grand Prix,117,1954,116
+alphatauri,-1.884217788007803,-finish_position,10.0,0.97,2023,14,Italian Grand Prix,117,1954,116
+alpine,-0.09230957560510411,-finish_position,10.0,0.97,2023,14,Italian Grand Prix,117,1954,116
+aston_martin,0.6509099078123116,-finish_position,10.0,0.97,2023,14,Italian Grand Prix,117,1954,116
+ferrari,2.6522387647408845,-finish_position,10.0,0.97,2023,14,Italian Grand Prix,117,1954,116
+force_india,-0.1001622694263037,-finish_position,10.0,0.97,2023,14,Italian Grand Prix,117,1954,116
+haas,-3.4449940993693873,-finish_position,10.0,0.97,2023,14,Italian Grand Prix,117,1954,116
+mclaren,0.04327716068104917,-finish_position,10.0,0.97,2023,14,Italian Grand Prix,117,1954,116
+mercedes,3.573747175309455,-finish_position,10.0,0.97,2023,14,Italian Grand Prix,117,1954,116
+racing_point,0.452844655127658,-finish_position,10.0,0.97,2023,14,Italian Grand Prix,117,1954,116
+red_bull,3.7296946718736064,-finish_position,10.0,0.97,2023,14,Italian Grand Prix,117,1954,116
+renault,0.547020372175828,-finish_position,10.0,0.97,2023,14,Italian Grand Prix,117,1954,116
+sauber,-0.19869822882735555,-finish_position,10.0,0.97,2023,14,Italian Grand Prix,117,1954,116
+toro_rosso,-0.4657498796135907,-finish_position,10.0,0.97,2023,14,Italian Grand Prix,117,1954,116
+williams,-3.1005595587883237,-finish_position,10.0,0.97,2023,14,Italian Grand Prix,117,1954,116
+alfa,-2.332732269190795,-finish_position,10.0,0.97,2023,15,Singapore Grand Prix,118,1972,117
+alphatauri,-1.7929818216597313,-finish_position,10.0,0.97,2023,15,Singapore Grand Prix,118,1972,117
+alpine,-0.1936193357147658,-finish_position,10.0,0.97,2023,15,Singapore Grand Prix,118,1972,117
+aston_martin,0.5346305287839076,-finish_position,10.0,0.97,2023,15,Singapore Grand Prix,118,1972,117
+ferrari,2.687871054117999,-finish_position,10.0,0.97,2023,15,Singapore Grand Prix,118,1972,117
+force_india,-0.10229001045511416,-finish_position,10.0,0.97,2023,15,Singapore Grand Prix,118,1972,117
+haas,-3.51561592314648,-finish_position,10.0,0.97,2023,15,Singapore Grand Prix,118,1972,117
+mclaren,0.02674439354486142,-finish_position,10.0,0.97,2023,15,Singapore Grand Prix,118,1972,117
+mercedes,3.563253746071166,-finish_position,10.0,0.97,2023,15,Singapore Grand Prix,118,1972,117
+racing_point,0.4552202536795737,-finish_position,10.0,0.97,2023,15,Singapore Grand Prix,118,1972,117
+red_bull,3.767861847614334,-finish_position,10.0,0.97,2023,15,Singapore Grand Prix,118,1972,117
+renault,0.5396977365112685,-finish_position,10.0,0.97,2023,15,Singapore Grand Prix,118,1972,117
+sauber,-0.19323619579521936,-finish_position,10.0,0.97,2023,15,Singapore Grand Prix,118,1972,117
+toro_rosso,-0.4408350155736637,-finish_position,10.0,0.97,2023,15,Singapore Grand Prix,118,1972,117
+williams,-3.0039689887873853,-finish_position,10.0,0.97,2023,15,Singapore Grand Prix,118,1972,117
+alfa,-2.335525662821348,-finish_position,10.0,0.97,2023,16,Japanese Grand Prix,119,1987,118
+alphatauri,-1.7733207136158482,-finish_position,10.0,0.97,2023,16,Japanese Grand Prix,119,1987,118
+alpine,-0.05718638186136104,-finish_position,10.0,0.97,2023,16,Japanese Grand Prix,119,1987,118
+aston_martin,0.3780666056806016,-finish_position,10.0,0.97,2023,16,Japanese Grand Prix,119,1987,118
+ferrari,2.7242728724400607,-finish_position,10.0,0.97,2023,16,Japanese Grand Prix,119,1987,118
+force_india,-0.0939813319770012,-finish_position,10.0,0.97,2023,16,Japanese Grand Prix,119,1987,118
+haas,-3.4759180543102937,-finish_position,10.0,0.97,2023,16,Japanese Grand Prix,119,1987,118
+mclaren,0.09718990456617824,-finish_position,10.0,0.97,2023,16,Japanese Grand Prix,119,1987,118
+mercedes,3.5355464763437676,-finish_position,10.0,0.97,2023,16,Japanese Grand Prix,119,1987,118
+racing_point,0.4309209765175515,-finish_position,10.0,0.97,2023,16,Japanese Grand Prix,119,1987,118
+red_bull,3.6794287056896082,-finish_position,10.0,0.97,2023,16,Japanese Grand Prix,119,1987,118
+renault,0.5314526462080758,-finish_position,10.0,0.97,2023,16,Japanese Grand Prix,119,1987,118
+sauber,-0.19107240873691195,-finish_position,10.0,0.97,2023,16,Japanese Grand Prix,119,1987,118
+toro_rosso,-0.4429006110897198,-finish_position,10.0,0.97,2023,16,Japanese Grand Prix,119,1987,118
+williams,-3.0069730230333858,-finish_position,10.0,0.97,2023,16,Japanese Grand Prix,119,1987,118
+alfa,-2.3455934776968177,-finish_position,10.0,0.97,2023,17,Qatar Grand Prix,120,2002,119
+alphatauri,-1.7610134502781392,-finish_position,10.0,0.97,2023,17,Qatar Grand Prix,120,2002,119
+alpine,-0.07210310187445365,-finish_position,10.0,0.97,2023,17,Qatar Grand Prix,120,2002,119
+aston_martin,0.3486119716847757,-finish_position,10.0,0.97,2023,17,Qatar Grand Prix,120,2002,119
+ferrari,2.7159861499720828,-finish_position,10.0,0.97,2023,17,Qatar Grand Prix,120,2002,119
+force_india,-0.09219766684166503,-finish_position,10.0,0.97,2023,17,Qatar Grand Prix,120,2002,119
+haas,-3.4929425308504185,-finish_position,10.0,0.97,2023,17,Qatar Grand Prix,120,2002,119
+mclaren,0.22992317593760578,-finish_position,10.0,0.97,2023,17,Qatar Grand Prix,120,2002,119
+mercedes,3.482945898942452,-finish_position,10.0,0.97,2023,17,Qatar Grand Prix,120,2002,119
+racing_point,0.4163990081311068,-finish_position,10.0,0.97,2023,17,Qatar Grand Prix,120,2002,119
+red_bull,3.67528217313279,-finish_position,10.0,0.97,2023,17,Qatar Grand Prix,120,2002,119
+renault,0.5276860113484613,-finish_position,10.0,0.97,2023,17,Qatar Grand Prix,120,2002,119
+sauber,-0.18967094125081518,-finish_position,10.0,0.97,2023,17,Qatar Grand Prix,120,2002,119
+toro_rosso,-0.4343384285344909,-finish_position,10.0,0.97,2023,17,Qatar Grand Prix,120,2002,119
+williams,-3.008974791822467,-finish_position,10.0,0.97,2023,17,Qatar Grand Prix,120,2002,119
+alfa,-2.251450418258189,-finish_position,10.0,0.97,2023,18,United States Grand Prix,121,2019,120
+alphatauri,-1.8645824760832792,-finish_position,10.0,0.97,2023,18,United States Grand Prix,121,2019,120
+alpine,-0.12957507252238878,-finish_position,10.0,0.97,2023,18,United States Grand Prix,121,2019,120
+aston_martin,0.35198793214699753,-finish_position,10.0,0.97,2023,18,United States Grand Prix,121,2019,120
+ferrari,2.7138617448094426,-finish_position,10.0,0.97,2023,18,United States Grand Prix,121,2019,120
+force_india,-0.08758013617545077,-finish_position,10.0,0.97,2023,18,United States Grand Prix,121,2019,120
+haas,-3.516857174759829,-finish_position,10.0,0.97,2023,18,United States Grand Prix,121,2019,120
+mclaren,0.36517758631326686,-finish_position,10.0,0.97,2023,18,United States Grand Prix,121,2019,120
+mercedes,3.472592395537777,-finish_position,10.0,0.97,2023,18,United States Grand Prix,121,2019,120
+racing_point,0.432149503731487,-finish_position,10.0,0.97,2023,18,United States Grand Prix,121,2019,120
+red_bull,3.6219543297874393,-finish_position,10.0,0.97,2023,18,United States Grand Prix,121,2019,120
+renault,0.524268267718821,-finish_position,10.0,0.97,2023,18,United States Grand Prix,121,2019,120
+sauber,-0.18550451254668684,-finish_position,10.0,0.97,2023,18,United States Grand Prix,121,2019,120
+toro_rosso,-0.4246105954030858,-finish_position,10.0,0.97,2023,18,United States Grand Prix,121,2019,120
+williams,-3.0218313742963434,-finish_position,10.0,0.97,2023,18,United States Grand Prix,121,2019,120
+alfa,-2.2814939636751097,-finish_position,10.0,0.97,2023,19,Mexico City Grand Prix,122,2034,121
+alphatauri,-1.9480465986213324,-finish_position,10.0,0.97,2023,19,Mexico City Grand Prix,122,2034,121
+alpine,-0.08166651221108591,-finish_position,10.0,0.97,2023,19,Mexico City Grand Prix,122,2034,121
+aston_martin,0.36127899559881577,-finish_position,10.0,0.97,2023,19,Mexico City Grand Prix,122,2034,121
+ferrari,2.7120411689043222,-finish_position,10.0,0.97,2023,19,Mexico City Grand Prix,122,2034,121
+force_india,-0.08654881815257608,-finish_position,10.0,0.97,2023,19,Mexico City Grand Prix,122,2034,121
+haas,-3.495245333662604,-finish_position,10.0,0.97,2023,19,Mexico City Grand Prix,122,2034,121
+mclaren,0.4150399265487611,-finish_position,10.0,0.97,2023,19,Mexico City Grand Prix,122,2034,121
+mercedes,3.44954843373772,-finish_position,10.0,0.97,2023,19,Mexico City Grand Prix,122,2034,121
+racing_point,0.3992722833648552,-finish_position,10.0,0.97,2023,19,Mexico City Grand Prix,122,2034,121
+red_bull,3.6087128041578143,-finish_position,10.0,0.97,2023,19,Mexico City Grand Prix,122,2034,121
+renault,0.5176934280524644,-finish_position,10.0,0.97,2023,19,Mexico City Grand Prix,122,2034,121
+sauber,-0.18339662490189823,-finish_position,10.0,0.97,2023,19,Mexico City Grand Prix,122,2034,121
+toro_rosso,-0.43459498951345116,-finish_position,10.0,0.97,2023,19,Mexico City Grand Prix,122,2034,121
+williams,-2.952594199626719,-finish_position,10.0,0.97,2023,19,Mexico City Grand Prix,122,2034,121
+alfa,-2.341579535498884,-finish_position,10.0,0.97,2023,20,São Paulo Grand Prix,123,2049,122
+alphatauri,-1.8171629879967646,-finish_position,10.0,0.97,2023,20,São Paulo Grand Prix,123,2049,122
+alpine,-0.11584867434086428,-finish_position,10.0,0.97,2023,20,São Paulo Grand Prix,123,2049,122
+aston_martin,0.3423503199983268,-finish_position,10.0,0.97,2023,20,São Paulo Grand Prix,123,2049,122
+ferrari,2.727906067368225,-finish_position,10.0,0.97,2023,20,São Paulo Grand Prix,123,2049,122
+force_india,-0.08425594960282194,-finish_position,10.0,0.97,2023,20,São Paulo Grand Prix,123,2049,122
+haas,-3.484609806371843,-finish_position,10.0,0.97,2023,20,São Paulo Grand Prix,123,2049,122
+mclaren,0.38092219357331164,-finish_position,10.0,0.97,2023,20,São Paulo Grand Prix,123,2049,122
+mercedes,3.4562050159573263,-finish_position,10.0,0.97,2023,20,São Paulo Grand Prix,123,2049,122
+racing_point,0.3858656876900596,-finish_position,10.0,0.97,2023,20,São Paulo Grand Prix,123,2049,122
+red_bull,3.5983368623260317,-finish_position,10.0,0.97,2023,20,São Paulo Grand Prix,123,2049,122
+renault,0.47060906142107345,-finish_position,10.0,0.97,2023,20,São Paulo Grand Prix,123,2049,122
+sauber,-0.1819073352049437,-finish_position,10.0,0.97,2023,20,São Paulo Grand Prix,123,2049,122
+toro_rosso,-0.4218145805136851,-finish_position,10.0,0.97,2023,20,São Paulo Grand Prix,123,2049,122
+williams,-2.915016338804541,-finish_position,10.0,0.97,2023,20,São Paulo Grand Prix,123,2049,122
+alfa,-2.3496788364360937,-finish_position,10.0,0.97,2023,21,Las Vegas Grand Prix,124,2063,123
+alphatauri,-1.8468353826318515,-finish_position,10.0,0.97,2023,21,Las Vegas Grand Prix,124,2063,123
+alpine,-0.11436354210674561,-finish_position,10.0,0.97,2023,21,Las Vegas Grand Prix,124,2063,123
+aston_martin,0.45848491883947534,-finish_position,10.0,0.97,2023,21,Las Vegas Grand Prix,124,2063,123
+ferrari,2.701776734946793,-finish_position,10.0,0.97,2023,21,Las Vegas Grand Prix,124,2063,123
+force_india,-0.0817115720995289,-finish_position,10.0,0.97,2023,21,Las Vegas Grand Prix,124,2063,123
+haas,-3.46253667986888,-finish_position,10.0,0.97,2023,21,Las Vegas Grand Prix,124,2063,123
+mclaren,0.36055247125505613,-finish_position,10.0,0.97,2023,21,Las Vegas Grand Prix,124,2063,123
+mercedes,3.3966705690580445,-finish_position,10.0,0.97,2023,21,Las Vegas Grand Prix,124,2063,123
+racing_point,0.36215182371471055,-finish_position,10.0,0.97,2023,21,Las Vegas Grand Prix,124,2063,123
+red_bull,3.6026545909338297,-finish_position,10.0,0.97,2023,21,Las Vegas Grand Prix,124,2063,123
+renault,0.4593931131219893,-finish_position,10.0,0.97,2023,21,Las Vegas Grand Prix,124,2063,123
+sauber,-0.17905828584967176,-finish_position,10.0,0.97,2023,21,Las Vegas Grand Prix,124,2063,123
+toro_rosso,-0.42094784901994914,-finish_position,10.0,0.97,2023,21,Las Vegas Grand Prix,124,2063,123
+williams,-2.8865520738572044,-finish_position,10.0,0.97,2023,21,Las Vegas Grand Prix,124,2063,123
+alfa,-2.4334173804175516,-finish_position,10.0,0.97,2023,22,Abu Dhabi Grand Prix,125,2080,124
+alphatauri,-1.8610922945967703,-finish_position,10.0,0.97,2023,22,Abu Dhabi Grand Prix,125,2080,124
+alpine,-0.06998964000193525,-finish_position,10.0,0.97,2023,22,Abu Dhabi Grand Prix,125,2080,124
+aston_martin,0.48255772506861666,-finish_position,10.0,0.97,2023,22,Abu Dhabi Grand Prix,125,2080,124
+ferrari,2.7239233684766546,-finish_position,10.0,0.97,2023,22,Abu Dhabi Grand Prix,125,2080,124
+force_india,-0.08540584217968185,-finish_position,10.0,0.97,2023,22,Abu Dhabi Grand Prix,125,2080,124
+haas,-3.435996550231139,-finish_position,10.0,0.97,2023,22,Abu Dhabi Grand Prix,125,2080,124
+mclaren,0.38485387890611095,-finish_position,10.0,0.97,2023,22,Abu Dhabi Grand Prix,125,2080,124
+mercedes,3.3538852297140616,-finish_position,10.0,0.97,2023,22,Abu Dhabi Grand Prix,125,2080,124
+racing_point,0.33336123798138706,-finish_position,10.0,0.97,2023,22,Abu Dhabi Grand Prix,125,2080,124
+red_bull,3.6356637827269047,-finish_position,10.0,0.97,2023,22,Abu Dhabi Grand Prix,125,2080,124
+renault,0.45608306717778335,-finish_position,10.0,0.97,2023,22,Abu Dhabi Grand Prix,125,2080,124
+sauber,-0.17685374968060785,-finish_position,10.0,0.97,2023,22,Abu Dhabi Grand Prix,125,2080,124
+toro_rosso,-0.40530948834000635,-finish_position,10.0,0.97,2023,22,Abu Dhabi Grand Prix,125,2080,124
+williams,-2.9022633446038437,-finish_position,10.0,0.97,2023,22,Abu Dhabi Grand Prix,125,2080,124
+alfa,-2.5445983072620213,-finish_position,10.0,0.97,2024,1,Bahrain Grand Prix,126,2099,125
+alphatauri,-1.7648518774786779,-finish_position,10.0,0.97,2024,1,Bahrain Grand Prix,126,2099,125
+alpine,-0.14524819093750235,-finish_position,10.0,0.97,2024,1,Bahrain Grand Prix,126,2099,125
+aston_martin,0.47972978900695484,-finish_position,10.0,0.97,2024,1,Bahrain Grand Prix,126,2099,125
+ferrari,2.757285130814523,-finish_position,10.0,0.97,2024,1,Bahrain Grand Prix,126,2099,125
+force_india,-0.07999524879884375,-finish_position,10.0,0.97,2024,1,Bahrain Grand Prix,126,2099,125
+haas,-3.487101657214622,-finish_position,10.0,0.97,2024,1,Bahrain Grand Prix,126,2099,125
+mclaren,0.4571303900557788,-finish_position,10.0,0.97,2024,1,Bahrain Grand Prix,126,2099,125
+mercedes,3.3719308402783983,-finish_position,10.0,0.97,2024,1,Bahrain Grand Prix,126,2099,125
+racing_point,0.33060683323084017,-finish_position,10.0,0.97,2024,1,Bahrain Grand Prix,126,2099,125
+red_bull,3.667118641143662,-finish_position,10.0,0.97,2024,1,Bahrain Grand Prix,126,2099,125
+renault,0.4576190269408739,-finish_position,10.0,0.97,2024,1,Bahrain Grand Prix,126,2099,125
+sauber,-0.17337326243056342,-finish_position,10.0,0.97,2024,1,Bahrain Grand Prix,126,2099,125
+toro_rosso,-0.3824403191095849,-finish_position,10.0,0.97,2024,1,Bahrain Grand Prix,126,2099,125
+williams,-2.9438117882392225,-finish_position,10.0,0.97,2024,1,Bahrain Grand Prix,126,2099,125
+alfa,-2.3010072026526527,-finish_position,10.0,0.97,2024,2,Saudi Arabian Grand Prix,127,2119,126
+alphatauri,-1.5436400560069883,-finish_position,10.0,0.97,2024,2,Saudi Arabian Grand Prix,127,2119,126
+alpine,-0.25862859453543646,-finish_position,10.0,0.97,2024,2,Saudi Arabian Grand Prix,127,2119,126
+aston_martin,0.5117765631191051,-finish_position,10.0,0.97,2024,2,Saudi Arabian Grand Prix,127,2119,126
+ferrari,2.877926819095482,-finish_position,10.0,0.97,2024,2,Saudi Arabian Grand Prix,127,2119,126
+force_india,-0.06599973165095209,-finish_position,10.0,0.97,2024,2,Saudi Arabian Grand Prix,127,2119,126
+haas,-3.377308450784547,-finish_position,10.0,0.97,2024,2,Saudi Arabian Grand Prix,127,2119,126
+mclaren,0.6147318645815016,-finish_position,10.0,0.97,2024,2,Saudi Arabian Grand Prix,127,2119,126
+mercedes,3.4952367641638413,-finish_position,10.0,0.97,2024,2,Saudi Arabian Grand Prix,127,2119,126
+racing_point,0.34797758662995004,-finish_position,10.0,0.97,2024,2,Saudi Arabian Grand Prix,127,2119,126
+rb,-0.5002030156943068,-finish_position,10.0,0.97,2024,2,Saudi Arabian Grand Prix,127,2119,126
+red_bull,3.80408275548112,-finish_position,10.0,0.97,2024,2,Saudi Arabian Grand Prix,127,2119,126
+renault,0.5227975078157291,-finish_position,10.0,0.97,2024,2,Saudi Arabian Grand Prix,127,2119,126
+sauber,-0.8601655495585775,-finish_position,10.0,0.97,2024,2,Saudi Arabian Grand Prix,127,2119,126
+toro_rosso,-0.3266098188236872,-finish_position,10.0,0.97,2024,2,Saudi Arabian Grand Prix,127,2119,126
+williams,-2.9409674411795743,-finish_position,10.0,0.97,2024,2,Saudi Arabian Grand Prix,127,2119,126
+alfa,-2.06017188781096,-finish_position,10.0,0.97,2024,3,Australian Grand Prix,128,2137,127
+alphatauri,-1.3993737039060503,-finish_position,10.0,0.97,2024,3,Australian Grand Prix,128,2137,127
+alpine,-0.22322502776709574,-finish_position,10.0,0.97,2024,3,Australian Grand Prix,128,2137,127
+aston_martin,0.6144816977768339,-finish_position,10.0,0.97,2024,3,Australian Grand Prix,128,2137,127
+ferrari,2.9535853422150202,-finish_position,10.0,0.97,2024,3,Australian Grand Prix,128,2137,127
+force_india,-0.055678219721220945,-finish_position,10.0,0.97,2024,3,Australian Grand Prix,128,2137,127
+haas,-3.2138730362630117,-finish_position,10.0,0.97,2024,3,Australian Grand Prix,128,2137,127
+mclaren,0.7918409688524685,-finish_position,10.0,0.97,2024,3,Australian Grand Prix,128,2137,127
+mercedes,3.5555250210801526,-finish_position,10.0,0.97,2024,3,Australian Grand Prix,128,2137,127
+racing_point,0.3609698333769944,-finish_position,10.0,0.97,2024,3,Australian Grand Prix,128,2137,127
+rb,-1.0690241394508675,-finish_position,10.0,0.97,2024,3,Australian Grand Prix,128,2137,127
+red_bull,3.9113358805870706,-finish_position,10.0,0.97,2024,3,Australian Grand Prix,128,2137,127
+renault,0.5696474940636934,-finish_position,10.0,0.97,2024,3,Australian Grand Prix,128,2137,127
+sauber,-1.6053001416450792,-finish_position,10.0,0.97,2024,3,Australian Grand Prix,128,2137,127
+toro_rosso,-0.29577027918002213,-finish_position,10.0,0.97,2024,3,Australian Grand Prix,128,2137,127
+williams,-2.8349698022079437,-finish_position,10.0,0.97,2024,3,Australian Grand Prix,128,2137,127
+alfa,-2.020149874418446,-finish_position,10.0,0.97,2024,4,Japanese Grand Prix,129,2153,128
+alphatauri,-1.4595764974568537,-finish_position,10.0,0.97,2024,4,Japanese Grand Prix,129,2153,128
+alpine,-0.3532006067762598,-finish_position,10.0,0.97,2024,4,Japanese Grand Prix,129,2153,128
+aston_martin,0.6070058604393762,-finish_position,10.0,0.97,2024,4,Japanese Grand Prix,129,2153,128
+ferrari,3.008719307128097,-finish_position,10.0,0.97,2024,4,Japanese Grand Prix,129,2153,128
+force_india,-0.05120285043253201,-finish_position,10.0,0.97,2024,4,Japanese Grand Prix,129,2153,128
+haas,-3.128453077797174,-finish_position,10.0,0.97,2024,4,Japanese Grand Prix,129,2153,128
+mclaren,0.8666539357973322,-finish_position,10.0,0.97,2024,4,Japanese Grand Prix,129,2153,128
+mercedes,3.5271446396043484,-finish_position,10.0,0.97,2024,4,Japanese Grand Prix,129,2153,128
+racing_point,0.3332908744642544,-finish_position,10.0,0.97,2024,4,Japanese Grand Prix,129,2153,128
+rb,-0.7990373428168122,-finish_position,10.0,0.97,2024,4,Japanese Grand Prix,129,2153,128
+red_bull,3.878852681324944,-finish_position,10.0,0.97,2024,4,Japanese Grand Prix,129,2153,128
+renault,0.5564824105568179,-finish_position,10.0,0.97,2024,4,Japanese Grand Prix,129,2153,128
+sauber,-1.8403426200832471,-finish_position,10.0,0.97,2024,4,Japanese Grand Prix,129,2153,128
+toro_rosso,-0.2936876262441881,-finish_position,10.0,0.97,2024,4,Japanese Grand Prix,129,2153,128
+williams,-2.832499213289649,-finish_position,10.0,0.97,2024,4,Japanese Grand Prix,129,2153,128
+alfa,-1.9922992387367977,-finish_position,10.0,0.97,2024,5,Chinese Grand Prix,130,2170,129
+alphatauri,-1.4360328165484508,-finish_position,10.0,0.97,2024,5,Chinese Grand Prix,130,2170,129
+alpine,-0.5056704967252733,-finish_position,10.0,0.97,2024,5,Chinese Grand Prix,130,2170,129
+aston_martin,0.5864336296709894,-finish_position,10.0,0.97,2024,5,Chinese Grand Prix,130,2170,129
+ferrari,3.0418919559481514,-finish_position,10.0,0.97,2024,5,Chinese Grand Prix,130,2170,129
+force_india,-0.049037510472744066,-finish_position,10.0,0.97,2024,5,Chinese Grand Prix,130,2170,129
+haas,-3.0719302996205715,-finish_position,10.0,0.97,2024,5,Chinese Grand Prix,130,2170,129
+mclaren,0.899111882672456,-finish_position,10.0,0.97,2024,5,Chinese Grand Prix,130,2170,129
+mercedes,3.470512943997286,-finish_position,10.0,0.97,2024,5,Chinese Grand Prix,130,2170,129
+racing_point,0.3288070983378201,-finish_position,10.0,0.97,2024,5,Chinese Grand Prix,130,2170,129
+rb,-0.7055083569104871,-finish_position,10.0,0.97,2024,5,Chinese Grand Prix,130,2170,129
+red_bull,3.922412686931788,-finish_position,10.0,0.97,2024,5,Chinese Grand Prix,130,2170,129
+renault,0.5470215036626919,-finish_position,10.0,0.97,2024,5,Chinese Grand Prix,130,2170,129
+sauber,-1.907909681117908,-finish_position,10.0,0.97,2024,5,Chinese Grand Prix,130,2170,129
+toro_rosso,-0.2778243238275763,-finish_position,10.0,0.97,2024,5,Chinese Grand Prix,130,2170,129
+williams,-2.8499789772613973,-finish_position,10.0,0.97,2024,5,Chinese Grand Prix,130,2170,129
+alfa,-1.9684745736349463,-finish_position,10.0,0.97,2024,6,Miami Grand Prix,131,2187,130
+alphatauri,-1.4101253290268112,-finish_position,10.0,0.97,2024,6,Miami Grand Prix,131,2187,130
+alpine,-0.5553881459323979,-finish_position,10.0,0.97,2024,6,Miami Grand Prix,131,2187,130
+aston_martin,0.5297748269290534,-finish_position,10.0,0.97,2024,6,Miami Grand Prix,131,2187,130
+ferrari,3.049977523761363,-finish_position,10.0,0.97,2024,6,Miami Grand Prix,131,2187,130
+force_india,-0.04796860209151527,-finish_position,10.0,0.97,2024,6,Miami Grand Prix,131,2187,130
+haas,-3.03429053027518,-finish_position,10.0,0.97,2024,6,Miami Grand Prix,131,2187,130
+mclaren,0.9533729992381008,-finish_position,10.0,0.97,2024,6,Miami Grand Prix,131,2187,130
+mercedes,3.4180319962574304,-finish_position,10.0,0.97,2024,6,Miami Grand Prix,131,2187,130
+racing_point,0.333725355447023,-finish_position,10.0,0.97,2024,6,Miami Grand Prix,131,2187,130
+rb,-0.6871013528385824,-finish_position,10.0,0.97,2024,6,Miami Grand Prix,131,2187,130
+red_bull,3.95182614579783,-finish_position,10.0,0.97,2024,6,Miami Grand Prix,131,2187,130
+renault,0.5315616476133277,-finish_position,10.0,0.97,2024,6,Miami Grand Prix,131,2187,130
+sauber,-1.931032433579506,-finish_position,10.0,0.97,2024,6,Miami Grand Prix,131,2187,130
+toro_rosso,-0.2661099353904989,-finish_position,10.0,0.97,2024,6,Miami Grand Prix,131,2187,130
+williams,-2.8677795922746787,-finish_position,10.0,0.97,2024,6,Miami Grand Prix,131,2187,130
+alfa,-1.8995014032994748,-finish_position,10.0,0.97,2024,7,Emilia Romagna Grand Prix,132,2206,131
+alphatauri,-1.4184427962092916,-finish_position,10.0,0.97,2024,7,Emilia Romagna Grand Prix,132,2206,131
+alpine,-0.5564116934742305,-finish_position,10.0,0.97,2024,7,Emilia Romagna Grand Prix,132,2206,131
+aston_martin,0.44691854838104866,-finish_position,10.0,0.97,2024,7,Emilia Romagna Grand Prix,132,2206,131
+ferrari,3.082727186915413,-finish_position,10.0,0.97,2024,7,Emilia Romagna Grand Prix,132,2206,131
+force_india,-0.04463389661642425,-finish_position,10.0,0.97,2024,7,Emilia Romagna Grand Prix,132,2206,131
+haas,-3.0167622804081757,-finish_position,10.0,0.97,2024,7,Emilia Romagna Grand Prix,132,2206,131
+mclaren,1.0095305564480435,-finish_position,10.0,0.97,2024,7,Emilia Romagna Grand Prix,132,2206,131
+mercedes,3.400732593108995,-finish_position,10.0,0.97,2024,7,Emilia Romagna Grand Prix,132,2206,131
+racing_point,0.34980029916702415,-finish_position,10.0,0.97,2024,7,Emilia Romagna Grand Prix,132,2206,131
+rb,-0.6465412280703995,-finish_position,10.0,0.97,2024,7,Emilia Romagna Grand Prix,132,2206,131
+red_bull,3.990140728031953,-finish_position,10.0,0.97,2024,7,Emilia Romagna Grand Prix,132,2206,131
+renault,0.5397957004036257,-finish_position,10.0,0.97,2024,7,Emilia Romagna Grand Prix,132,2206,131
+sauber,-2.106522191845946,-finish_position,10.0,0.97,2024,7,Emilia Romagna Grand Prix,132,2206,131
+toro_rosso,-0.24606742929925657,-finish_position,10.0,0.97,2024,7,Emilia Romagna Grand Prix,132,2206,131
+williams,-2.8847626932329202,-finish_position,10.0,0.97,2024,7,Emilia Romagna Grand Prix,132,2206,131
+alfa,-1.8130304261404022,-finish_position,10.0,0.97,2024,8,Monaco Grand Prix,133,2225,132
+alphatauri,-1.3631669024510695,-finish_position,10.0,0.97,2024,8,Monaco Grand Prix,133,2225,132
+alpine,-0.5952324630602546,-finish_position,10.0,0.97,2024,8,Monaco Grand Prix,133,2225,132
+aston_martin,0.29678817498538257,-finish_position,10.0,0.97,2024,8,Monaco Grand Prix,133,2225,132
+ferrari,3.117677107611742,-finish_position,10.0,0.97,2024,8,Monaco Grand Prix,133,2225,132
+force_india,-0.03556963058885275,-finish_position,10.0,0.97,2024,8,Monaco Grand Prix,133,2225,132
+haas,-2.9346767650658445,-finish_position,10.0,0.97,2024,8,Monaco Grand Prix,133,2225,132
+mclaren,1.1429860518262263,-finish_position,10.0,0.97,2024,8,Monaco Grand Prix,133,2225,132
+mercedes,3.406722081708063,-finish_position,10.0,0.97,2024,8,Monaco Grand Prix,133,2225,132
+racing_point,0.3416258830377677,-finish_position,10.0,0.97,2024,8,Monaco Grand Prix,133,2225,132
+rb,-0.6359620879509366,-finish_position,10.0,0.97,2024,8,Monaco Grand Prix,133,2225,132
+red_bull,3.983732832621433,-finish_position,10.0,0.97,2024,8,Monaco Grand Prix,133,2225,132
+renault,0.5515607141631685,-finish_position,10.0,0.97,2024,8,Monaco Grand Prix,133,2225,132
+sauber,-2.3587707951538235,-finish_position,10.0,0.97,2024,8,Monaco Grand Prix,133,2225,132
+toro_rosso,-0.22503873104353578,-finish_position,10.0,0.97,2024,8,Monaco Grand Prix,133,2225,132
+williams,-2.8796450444990676,-finish_position,10.0,0.97,2024,8,Monaco Grand Prix,133,2225,132
+alfa,-1.7919789819949596,-finish_position,10.0,0.97,2024,9,Canadian Grand Prix,134,2241,133
+alphatauri,-1.396024741628568,-finish_position,10.0,0.97,2024,9,Canadian Grand Prix,134,2241,133
+alpine,-0.5796862505115894,-finish_position,10.0,0.97,2024,9,Canadian Grand Prix,134,2241,133
+aston_martin,0.20404941659490822,-finish_position,10.0,0.97,2024,9,Canadian Grand Prix,134,2241,133
+ferrari,3.160255100025703,-finish_position,10.0,0.97,2024,9,Canadian Grand Prix,134,2241,133
+force_india,-0.03569371495498768,-finish_position,10.0,0.97,2024,9,Canadian Grand Prix,134,2241,133
+haas,-2.9333937947264093,-finish_position,10.0,0.97,2024,9,Canadian Grand Prix,134,2241,133
+mclaren,1.2311879375613775,-finish_position,10.0,0.97,2024,9,Canadian Grand Prix,134,2241,133
+mercedes,3.374748425856549,-finish_position,10.0,0.97,2024,9,Canadian Grand Prix,134,2241,133
+racing_point,0.3339826664305632,-finish_position,10.0,0.97,2024,9,Canadian Grand Prix,134,2241,133
+rb,-0.5283055922117822,-finish_position,10.0,0.97,2024,9,Canadian Grand Prix,134,2241,133
+red_bull,3.9305089150454546,-finish_position,10.0,0.97,2024,9,Canadian Grand Prix,134,2241,133
+renault,0.5442007828129142,-finish_position,10.0,0.97,2024,9,Canadian Grand Prix,134,2241,133
+sauber,-2.43187025199255,-finish_position,10.0,0.97,2024,9,Canadian Grand Prix,134,2241,133
+toro_rosso,-0.22609156689510285,-finish_position,10.0,0.97,2024,9,Canadian Grand Prix,134,2241,133
+williams,-2.8558883494115035,-finish_position,10.0,0.97,2024,9,Canadian Grand Prix,134,2241,133
+alfa,-1.7879859583517608,-finish_position,10.0,0.97,2024,10,Spanish Grand Prix,135,2256,134
+alphatauri,-1.3834649507125696,-finish_position,10.0,0.97,2024,10,Spanish Grand Prix,135,2256,134
+alpine,-0.5662560041316116,-finish_position,10.0,0.97,2024,10,Spanish Grand Prix,135,2256,134
+aston_martin,0.24778218739157076,-finish_position,10.0,0.97,2024,10,Spanish Grand Prix,135,2256,134
+ferrari,3.130507720629235,-finish_position,10.0,0.97,2024,10,Spanish Grand Prix,135,2256,134
+force_india,-0.0352427564671211,-finish_position,10.0,0.97,2024,10,Spanish Grand Prix,135,2256,134
+haas,-2.904079471443893,-finish_position,10.0,0.97,2024,10,Spanish Grand Prix,135,2256,134
+mclaren,1.2551270217542678,-finish_position,10.0,0.97,2024,10,Spanish Grand Prix,135,2256,134
+mercedes,3.379414282928916,-finish_position,10.0,0.97,2024,10,Spanish Grand Prix,135,2256,134
+racing_point,0.3158820032622323,-finish_position,10.0,0.97,2024,10,Spanish Grand Prix,135,2256,134
+rb,-0.515360471096204,-finish_position,10.0,0.97,2024,10,Spanish Grand Prix,135,2256,134
+red_bull,3.915052486271175,-finish_position,10.0,0.97,2024,10,Spanish Grand Prix,135,2256,134
+renault,0.5111567906736958,-finish_position,10.0,0.97,2024,10,Spanish Grand Prix,135,2256,134
+sauber,-2.462872182878639,-finish_position,10.0,0.97,2024,10,Spanish Grand Prix,135,2256,134
+toro_rosso,-0.226736450190213,-finish_position,10.0,0.97,2024,10,Spanish Grand Prix,135,2256,134
+williams,-2.8729242476391024,-finish_position,10.0,0.97,2024,10,Spanish Grand Prix,135,2256,134
+alfa,-1.7298906833831404,-finish_position,10.0,0.97,2024,11,Austrian Grand Prix,136,2276,135
+alphatauri,-1.2760925938081142,-finish_position,10.0,0.97,2024,11,Austrian Grand Prix,136,2276,135
+alpine,-0.47714262282151576,-finish_position,10.0,0.97,2024,11,Austrian Grand Prix,136,2276,135
+aston_martin,0.19084937066080615,-finish_position,10.0,0.97,2024,11,Austrian Grand Prix,136,2276,135
+ferrari,3.1477245044301063,-finish_position,10.0,0.97,2024,11,Austrian Grand Prix,136,2276,135
+force_india,-0.02703839229316646,-finish_position,10.0,0.97,2024,11,Austrian Grand Prix,136,2276,135
+haas,-2.858122423040689,-finish_position,10.0,0.97,2024,11,Austrian Grand Prix,136,2276,135
+mclaren,1.3521772648699857,-finish_position,10.0,0.97,2024,11,Austrian Grand Prix,136,2276,135
+mercedes,3.4381765552058723,-finish_position,10.0,0.97,2024,11,Austrian Grand Prix,136,2276,135
+racing_point,0.33406520014031116,-finish_position,10.0,0.97,2024,11,Austrian Grand Prix,136,2276,135
+rb,-0.8853643762099306,-finish_position,10.0,0.97,2024,11,Austrian Grand Prix,136,2276,135
+red_bull,3.925830926006977,-finish_position,10.0,0.97,2024,11,Austrian Grand Prix,136,2276,135
+renault,0.517655838580508,-finish_position,10.0,0.97,2024,11,Austrian Grand Prix,136,2276,135
+sauber,-2.487127712267197,-finish_position,10.0,0.97,2024,11,Austrian Grand Prix,136,2276,135
+toro_rosso,-0.20787833503603276,-finish_position,10.0,0.97,2024,11,Austrian Grand Prix,136,2276,135
+williams,-2.9578225210347946,-finish_position,10.0,0.97,2024,11,Austrian Grand Prix,136,2276,135
+alfa,-1.6577575101450799,-finish_position,10.0,0.97,2024,12,British Grand Prix,137,2296,136
+alphatauri,-1.2288450649313827,-finish_position,10.0,0.97,2024,12,British Grand Prix,137,2296,136
+alpine,-0.4216563695053197,-finish_position,10.0,0.97,2024,12,British Grand Prix,137,2296,136
+aston_martin,0.04461071019317731,-finish_position,10.0,0.97,2024,12,British Grand Prix,137,2296,136
+ferrari,3.119966121501625,-finish_position,10.0,0.97,2024,12,British Grand Prix,137,2296,136
+force_india,-0.021066883654718954,-finish_position,10.0,0.97,2024,12,British Grand Prix,137,2296,136
+haas,-2.6893190077772213,-finish_position,10.0,0.97,2024,12,British Grand Prix,137,2296,136
+mclaren,1.3149339165513503,-finish_position,10.0,0.97,2024,12,British Grand Prix,137,2296,136
+mercedes,3.5090104453120734,-finish_position,10.0,0.97,2024,12,British Grand Prix,137,2296,136
+racing_point,0.33041804868933033,-finish_position,10.0,0.97,2024,12,British Grand Prix,137,2296,136
+rb,-0.8547299819121037,-finish_position,10.0,0.97,2024,12,British Grand Prix,137,2296,136
+red_bull,3.89385265218649,-finish_position,10.0,0.97,2024,12,British Grand Prix,137,2296,136
+renault,0.49394581863705445,-finish_position,10.0,0.97,2024,12,British Grand Prix,137,2296,136
+sauber,-2.623510979198916,-finish_position,10.0,0.97,2024,12,British Grand Prix,137,2296,136
+toro_rosso,-0.19568082669897158,-finish_position,10.0,0.97,2024,12,British Grand Prix,137,2296,136
+williams,-3.014171089247383,-finish_position,10.0,0.97,2024,12,British Grand Prix,137,2296,136
+alfa,-1.6102199434770126,-finish_position,10.0,0.97,2024,13,Hungarian Grand Prix,138,2314,137
+alphatauri,-1.2418777348136418,-finish_position,10.0,0.97,2024,13,Hungarian Grand Prix,138,2314,137
+alpine,-0.47139314082272743,-finish_position,10.0,0.97,2024,13,Hungarian Grand Prix,138,2314,137
+aston_martin,0.07880900898019237,-finish_position,10.0,0.97,2024,13,Hungarian Grand Prix,138,2314,137
+ferrari,3.032629582218,-finish_position,10.0,0.97,2024,13,Hungarian Grand Prix,138,2314,137
+force_india,-0.008147466926289766,-finish_position,10.0,0.97,2024,13,Hungarian Grand Prix,138,2314,137
+haas,-2.5856833499798695,-finish_position,10.0,0.97,2024,13,Hungarian Grand Prix,138,2314,137
+mclaren,1.3931987724148232,-finish_position,10.0,0.97,2024,13,Hungarian Grand Prix,138,2314,137
+mercedes,3.53201440041774,-finish_position,10.0,0.97,2024,13,Hungarian Grand Prix,138,2314,137
+racing_point,0.34310164253456354,-finish_position,10.0,0.97,2024,13,Hungarian Grand Prix,138,2314,137
+rb,-0.8389057991196677,-finish_position,10.0,0.97,2024,13,Hungarian Grand Prix,138,2314,137
+red_bull,3.754233274771903,-finish_position,10.0,0.97,2024,13,Hungarian Grand Prix,138,2314,137
+renault,0.4869395329089197,-finish_position,10.0,0.97,2024,13,Hungarian Grand Prix,138,2314,137
+sauber,-2.7515895509876733,-finish_position,10.0,0.97,2024,13,Hungarian Grand Prix,138,2314,137
+toro_rosso,-0.1941613771720919,-finish_position,10.0,0.97,2024,13,Hungarian Grand Prix,138,2314,137
+williams,-2.9189478509471747,-finish_position,10.0,0.97,2024,13,Hungarian Grand Prix,138,2314,137
+alfa,-1.549399637605511,-finish_position,10.0,0.97,2024,14,Belgian Grand Prix,139,2333,138
+alphatauri,-1.2489214136474922,-finish_position,10.0,0.97,2024,14,Belgian Grand Prix,139,2333,138
+alpine,-0.5194004455307091,-finish_position,10.0,0.97,2024,14,Belgian Grand Prix,139,2333,138
+aston_martin,0.05375912976973939,-finish_position,10.0,0.97,2024,14,Belgian Grand Prix,139,2333,138
+ferrari,3.042717082523099,-finish_position,10.0,0.97,2024,14,Belgian Grand Prix,139,2333,138
+force_india,-0.0014577457807864712,-finish_position,10.0,0.97,2024,14,Belgian Grand Prix,139,2333,138
+haas,-2.581160039006607,-finish_position,10.0,0.97,2024,14,Belgian Grand Prix,139,2333,138
+mclaren,1.520322128339648,-finish_position,10.0,0.97,2024,14,Belgian Grand Prix,139,2333,138
+mercedes,3.5149506586477934,-finish_position,10.0,0.97,2024,14,Belgian Grand Prix,139,2333,138
+racing_point,0.3376796104351216,-finish_position,10.0,0.97,2024,14,Belgian Grand Prix,139,2333,138
+rb,-0.7550143082104043,-finish_position,10.0,0.97,2024,14,Belgian Grand Prix,139,2333,138
+red_bull,3.720964064371121,-finish_position,10.0,0.97,2024,14,Belgian Grand Prix,139,2333,138
+renault,0.4991717559499215,-finish_position,10.0,0.97,2024,14,Belgian Grand Prix,139,2333,138
+sauber,-2.912622285135938,-finish_position,10.0,0.97,2024,14,Belgian Grand Prix,139,2333,138
+toro_rosso,-0.18766081898852685,-finish_position,10.0,0.97,2024,14,Belgian Grand Prix,139,2333,138
+williams,-2.933927736130497,-finish_position,10.0,0.97,2024,14,Belgian Grand Prix,139,2333,138
+alfa,-1.5306999881878698,-finish_position,10.0,0.97,2024,15,Dutch Grand Prix,140,2351,139
+alphatauri,-1.1870829039884394,-finish_position,10.0,0.97,2024,15,Dutch Grand Prix,140,2351,139
+alpine,-0.532602749226919,-finish_position,10.0,0.97,2024,15,Dutch Grand Prix,140,2351,139
+aston_martin,0.0589154479490725,-finish_position,10.0,0.97,2024,15,Dutch Grand Prix,140,2351,139
+ferrari,3.0518840311210265,-finish_position,10.0,0.97,2024,15,Dutch Grand Prix,140,2351,139
+force_india,-0.0018453641565115639,-finish_position,10.0,0.97,2024,15,Dutch Grand Prix,140,2351,139
+haas,-2.634281398990884,-finish_position,10.0,0.97,2024,15,Dutch Grand Prix,140,2351,139
+mclaren,1.5797117862265802,-finish_position,10.0,0.97,2024,15,Dutch Grand Prix,140,2351,139
+mercedes,3.5327359356343626,-finish_position,10.0,0.97,2024,15,Dutch Grand Prix,140,2351,139
+racing_point,0.3370689863505309,-finish_position,10.0,0.97,2024,15,Dutch Grand Prix,140,2351,139
+rb,-0.8153742347622479,-finish_position,10.0,0.97,2024,15,Dutch Grand Prix,140,2351,139
+red_bull,3.686513114899045,-finish_position,10.0,0.97,2024,15,Dutch Grand Prix,140,2351,139
+renault,0.4891985894028084,-finish_position,10.0,0.97,2024,15,Dutch Grand Prix,140,2351,139
+sauber,-2.9168744573150214,-finish_position,10.0,0.97,2024,15,Dutch Grand Prix,140,2351,139
+toro_rosso,-0.17863529836327066,-finish_position,10.0,0.97,2024,15,Dutch Grand Prix,140,2351,139
+williams,-2.9386314965922766,-finish_position,10.0,0.97,2024,15,Dutch Grand Prix,140,2351,139
+alfa,-1.445078219391082,-finish_position,10.0,0.97,2024,16,Italian Grand Prix,141,2371,140
+alphatauri,-1.1255390901740885,-finish_position,10.0,0.97,2024,16,Italian Grand Prix,141,2371,140
+alpine,-0.5129604706226318,-finish_position,10.0,0.97,2024,16,Italian Grand Prix,141,2371,140
+aston_martin,0.04198808615098617,-finish_position,10.0,0.97,2024,16,Italian Grand Prix,141,2371,140
+ferrari,3.0956760589701307,-finish_position,10.0,0.97,2024,16,Italian Grand Prix,141,2371,140
+force_india,0.003856108419780197,-finish_position,10.0,0.97,2024,16,Italian Grand Prix,141,2371,140
+haas,-2.614006560114844,-finish_position,10.0,0.97,2024,16,Italian Grand Prix,141,2371,140
+mclaren,1.679804517533345,-finish_position,10.0,0.97,2024,16,Italian Grand Prix,141,2371,140
+mercedes,3.508666974920721,-finish_position,10.0,0.97,2024,16,Italian Grand Prix,141,2371,140
+racing_point,0.34230096158614737,-finish_position,10.0,0.97,2024,16,Italian Grand Prix,141,2371,140
+rb,-0.9322712218154406,-finish_position,10.0,0.97,2024,16,Italian Grand Prix,141,2371,140
+red_bull,3.7083605956989865,-finish_position,10.0,0.97,2024,16,Italian Grand Prix,141,2371,140
+renault,0.4883601642889925,-finish_position,10.0,0.97,2024,16,Italian Grand Prix,141,2371,140
+sauber,-3.1453355752235455,-finish_position,10.0,0.97,2024,16,Italian Grand Prix,141,2371,140
+toro_rosso,-0.1688575335786202,-finish_position,10.0,0.97,2024,16,Italian Grand Prix,141,2371,140
+williams,-2.924964796648835,-finish_position,10.0,0.97,2024,16,Italian Grand Prix,141,2371,140
+alfa,-1.401146827304219,-finish_position,10.0,0.97,2024,17,Azerbaijan Grand Prix,142,2390,141
+alphatauri,-1.0933627312301046,-finish_position,10.0,0.97,2024,17,Azerbaijan Grand Prix,142,2390,141
+alpine,-0.5954352579766187,-finish_position,10.0,0.97,2024,17,Azerbaijan Grand Prix,142,2390,141
+aston_martin,-0.06585247495634126,-finish_position,10.0,0.97,2024,17,Azerbaijan Grand Prix,142,2390,141
+ferrari,3.151392831670638,-finish_position,10.0,0.97,2024,17,Azerbaijan Grand Prix,142,2390,141
+force_india,0.006090813595500194,-finish_position,10.0,0.97,2024,17,Azerbaijan Grand Prix,142,2390,141
+haas,-2.6070790500747365,-finish_position,10.0,0.97,2024,17,Azerbaijan Grand Prix,142,2390,141
+mclaren,1.7777108770599688,-finish_position,10.0,0.97,2024,17,Azerbaijan Grand Prix,142,2390,141
+mercedes,3.4932446591363395,-finish_position,10.0,0.97,2024,17,Azerbaijan Grand Prix,142,2390,141
+racing_point,0.3561878396053107,-finish_position,10.0,0.97,2024,17,Azerbaijan Grand Prix,142,2390,141
+rb,-0.9394535366325362,-finish_position,10.0,0.97,2024,17,Azerbaijan Grand Prix,142,2390,141
+red_bull,3.6548909802220297,-finish_position,10.0,0.97,2024,17,Azerbaijan Grand Prix,142,2390,141
+renault,0.49611590343459455,-finish_position,10.0,0.97,2024,17,Azerbaijan Grand Prix,142,2390,141
+sauber,-3.235199134437103,-finish_position,10.0,0.97,2024,17,Azerbaijan Grand Prix,142,2390,141
+toro_rosso,-0.15970965726614883,-finish_position,10.0,0.97,2024,17,Azerbaijan Grand Prix,142,2390,141
+williams,-2.8383952348466015,-finish_position,10.0,0.97,2024,17,Azerbaijan Grand Prix,142,2390,141
+alfa,-1.4132088566062562,-finish_position,10.0,0.97,2024,18,Singapore Grand Prix,143,2406,142
+alphatauri,-1.1099098490691546,-finish_position,10.0,0.97,2024,18,Singapore Grand Prix,143,2406,142
+alpine,-0.6825045658391672,-finish_position,10.0,0.97,2024,18,Singapore Grand Prix,143,2406,142
+aston_martin,-0.0575806547701763,-finish_position,10.0,0.97,2024,18,Singapore Grand Prix,143,2406,142
+ferrari,3.141447093264945,-finish_position,10.0,0.97,2024,18,Singapore Grand Prix,143,2406,142
+force_india,0.005463286716285341,-finish_position,10.0,0.97,2024,18,Singapore Grand Prix,143,2406,142
+haas,-2.5343478205242755,-finish_position,10.0,0.97,2024,18,Singapore Grand Prix,143,2406,142
+mclaren,1.836583121368435,-finish_position,10.0,0.97,2024,18,Singapore Grand Prix,143,2406,142
+mercedes,3.465445429498573,-finish_position,10.0,0.97,2024,18,Singapore Grand Prix,143,2406,142
+racing_point,0.3414162597345781,-finish_position,10.0,0.97,2024,18,Singapore Grand Prix,143,2406,142
+rb,-0.9754723782047227,-finish_position,10.0,0.97,2024,18,Singapore Grand Prix,143,2406,142
+red_bull,3.602581461328505,-finish_position,10.0,0.97,2024,18,Singapore Grand Prix,143,2406,142
+renault,0.4866507014558235,-finish_position,10.0,0.97,2024,18,Singapore Grand Prix,143,2406,142
+sauber,-3.250862372062746,-finish_position,10.0,0.97,2024,18,Singapore Grand Prix,143,2406,142
+toro_rosso,-0.16231266232285943,-finish_position,10.0,0.97,2024,18,Singapore Grand Prix,143,2406,142
+williams,-2.693388193967818,-finish_position,10.0,0.97,2024,18,Singapore Grand Prix,143,2406,142
+alfa,-1.3883389661167902,-finish_position,10.0,0.97,2024,19,United States Grand Prix,144,2424,143
+alphatauri,-1.0758717412750383,-finish_position,10.0,0.97,2024,19,United States Grand Prix,144,2424,143
+alpine,-0.7834855430537415,-finish_position,10.0,0.97,2024,19,United States Grand Prix,144,2424,143
+aston_martin,-0.0825478981725197,-finish_position,10.0,0.97,2024,19,United States Grand Prix,144,2424,143
+ferrari,3.1254219383199713,-finish_position,10.0,0.97,2024,19,United States Grand Prix,144,2424,143
+force_india,0.008250492814194215,-finish_position,10.0,0.97,2024,19,United States Grand Prix,144,2424,143
+haas,-2.4751055833050177,-finish_position,10.0,0.97,2024,19,United States Grand Prix,144,2424,143
+mclaren,1.9521696150044625,-finish_position,10.0,0.97,2024,19,United States Grand Prix,144,2424,143
+mercedes,3.474826405751725,-finish_position,10.0,0.97,2024,19,United States Grand Prix,144,2424,143
+racing_point,0.35124740277137395,-finish_position,10.0,0.97,2024,19,United States Grand Prix,144,2424,143
+rb,-1.1025198635481874,-finish_position,10.0,0.97,2024,19,United States Grand Prix,144,2424,143
+red_bull,3.5669977802250568,-finish_position,10.0,0.97,2024,19,United States Grand Prix,144,2424,143
+renault,0.4888721947087587,-finish_position,10.0,0.97,2024,19,United States Grand Prix,144,2424,143
+sauber,-3.260423212160051,-finish_position,10.0,0.97,2024,19,United States Grand Prix,144,2424,143
+toro_rosso,-0.15006760216743453,-finish_position,10.0,0.97,2024,19,United States Grand Prix,144,2424,143
+williams,-2.6494254197967533,-finish_position,10.0,0.97,2024,19,United States Grand Prix,144,2424,143
+alfa,-1.347814953425495,-finish_position,10.0,0.97,2024,20,Mexico City Grand Prix,145,2443,144
+alphatauri,-1.0532483475722338,-finish_position,10.0,0.97,2024,20,Mexico City Grand Prix,145,2443,144
+alpine,-0.8442313206439849,-finish_position,10.0,0.97,2024,20,Mexico City Grand Prix,145,2443,144
+aston_martin,-0.18169132584505696,-finish_position,10.0,0.97,2024,20,Mexico City Grand Prix,145,2443,144
+ferrari,3.1915775489165736,-finish_position,10.0,0.97,2024,20,Mexico City Grand Prix,145,2443,144
+force_india,0.012379893008281921,-finish_position,10.0,0.97,2024,20,Mexico City Grand Prix,145,2443,144
+haas,-2.393543273470882,-finish_position,10.0,0.97,2024,20,Mexico City Grand Prix,145,2443,144
+mclaren,1.9893836332946484,-finish_position,10.0,0.97,2024,20,Mexico City Grand Prix,145,2443,144
+mercedes,3.457241969505997,-finish_position,10.0,0.97,2024,20,Mexico City Grand Prix,145,2443,144
+racing_point,0.34954732281741724,-finish_position,10.0,0.97,2024,20,Mexico City Grand Prix,145,2443,144
+rb,-1.0621658363248823,-finish_position,10.0,0.97,2024,20,Mexico City Grand Prix,145,2443,144
+red_bull,3.5529662101789103,-finish_position,10.0,0.97,2024,20,Mexico City Grand Prix,145,2443,144
+renault,0.48190967333712337,-finish_position,10.0,0.97,2024,20,Mexico City Grand Prix,145,2443,144
+sauber,-3.3798392423689894,-finish_position,10.0,0.97,2024,20,Mexico City Grand Prix,145,2443,144
+toro_rosso,-0.14278878243683635,-finish_position,10.0,0.97,2024,20,Mexico City Grand Prix,145,2443,144
+williams,-2.6296831689705873,-finish_position,10.0,0.97,2024,20,Mexico City Grand Prix,145,2443,144
+alfa,-1.3319189103643507,-finish_position,10.0,0.97,2024,21,São Paulo Grand Prix,146,2460,145
+alphatauri,-1.0533966002579633,-finish_position,10.0,0.97,2024,21,São Paulo Grand Prix,146,2460,145
+alpine,-0.8350381695083484,-finish_position,10.0,0.97,2024,21,São Paulo Grand Prix,146,2460,145
+aston_martin,-0.17043098087161782,-finish_position,10.0,0.97,2024,21,São Paulo Grand Prix,146,2460,145
+ferrari,3.2559514813704498,-finish_position,10.0,0.97,2024,21,São Paulo Grand Prix,146,2460,145
+force_india,0.019177608247148672,-finish_position,10.0,0.97,2024,21,São Paulo Grand Prix,146,2460,145
+haas,-2.2816938929194954,-finish_position,10.0,0.97,2024,21,São Paulo Grand Prix,146,2460,145
+mclaren,2.0028381060978706,-finish_position,10.0,0.97,2024,21,São Paulo Grand Prix,146,2460,145
+mercedes,3.4637002341777188,-finish_position,10.0,0.97,2024,21,São Paulo Grand Prix,146,2460,145
+racing_point,0.362866554842931,-finish_position,10.0,0.97,2024,21,São Paulo Grand Prix,146,2460,145
+rb,-1.2097332780829357,-finish_position,10.0,0.97,2024,21,São Paulo Grand Prix,146,2460,145
+red_bull,3.402859340469608,-finish_position,10.0,0.97,2024,21,São Paulo Grand Prix,146,2460,145
+renault,0.46545464764107647,-finish_position,10.0,0.97,2024,21,São Paulo Grand Prix,146,2460,145
+sauber,-3.3365437957395847,-finish_position,10.0,0.97,2024,21,São Paulo Grand Prix,146,2460,145
+toro_rosso,-0.13906255459335493,-finish_position,10.0,0.97,2024,21,São Paulo Grand Prix,146,2460,145
+williams,-2.6150297905091557,-finish_position,10.0,0.97,2024,21,São Paulo Grand Prix,146,2460,145
+alfa,-1.346510350508973,-finish_position,10.0,0.97,2024,22,Las Vegas Grand Prix,147,2475,146
+alphatauri,-1.1215889134415735,-finish_position,10.0,0.97,2024,22,Las Vegas Grand Prix,147,2475,146
+alpine,-0.6423514821543246,-finish_position,10.0,0.97,2024,22,Las Vegas Grand Prix,147,2475,146
+aston_martin,-0.2358879895283655,-finish_position,10.0,0.97,2024,22,Las Vegas Grand Prix,147,2475,146
+ferrari,3.22125103171008,-finish_position,10.0,0.97,2024,22,Las Vegas Grand Prix,147,2475,146
+force_india,0.018210474291192977,-finish_position,10.0,0.97,2024,22,Las Vegas Grand Prix,147,2475,146
+haas,-2.292608781828211,-finish_position,10.0,0.97,2024,22,Las Vegas Grand Prix,147,2475,146
+mclaren,1.9805146479441518,-finish_position,10.0,0.97,2024,22,Las Vegas Grand Prix,147,2475,146
+mercedes,3.3978977199197105,-finish_position,10.0,0.97,2024,22,Las Vegas Grand Prix,147,2475,146
+racing_point,0.3567955272556738,-finish_position,10.0,0.97,2024,22,Las Vegas Grand Prix,147,2475,146
+rb,-1.0444755344060674,-finish_position,10.0,0.97,2024,22,Las Vegas Grand Prix,147,2475,146
+red_bull,3.3398415999892173,-finish_position,10.0,0.97,2024,22,Las Vegas Grand Prix,147,2475,146
+renault,0.4497349288139817,-finish_position,10.0,0.97,2024,22,Las Vegas Grand Prix,147,2475,146
+sauber,-3.3019671408798406,-finish_position,10.0,0.97,2024,22,Las Vegas Grand Prix,147,2475,146
+toro_rosso,-0.14430295651445993,-finish_position,10.0,0.97,2024,22,Las Vegas Grand Prix,147,2475,146
+williams,-2.6345527806621964,-finish_position,10.0,0.97,2024,22,Las Vegas Grand Prix,147,2475,146
+alfa,-1.319044872426466,-finish_position,10.0,0.97,2024,23,Qatar Grand Prix,148,2493,147
+alphatauri,-1.1354753822531247,-finish_position,10.0,0.97,2024,23,Qatar Grand Prix,148,2493,147
+alpine,-0.6824838724069037,-finish_position,10.0,0.97,2024,23,Qatar Grand Prix,148,2493,147
+aston_martin,-0.2916970749532069,-finish_position,10.0,0.97,2024,23,Qatar Grand Prix,148,2493,147
+ferrari,3.256771056853627,-finish_position,10.0,0.97,2024,23,Qatar Grand Prix,148,2493,147
+force_india,0.022597353315435463,-finish_position,10.0,0.97,2024,23,Qatar Grand Prix,148,2493,147
+haas,-2.2136136215818305,-finish_position,10.0,0.97,2024,23,Qatar Grand Prix,148,2493,147
+mclaren,1.985974372393559,-finish_position,10.0,0.97,2024,23,Qatar Grand Prix,148,2493,147
+mercedes,3.482087655180769,-finish_position,10.0,0.97,2024,23,Qatar Grand Prix,148,2493,147
+racing_point,0.3612943147546519,-finish_position,10.0,0.97,2024,23,Qatar Grand Prix,148,2493,147
+rb,-1.1033008570680891,-finish_position,10.0,0.97,2024,23,Qatar Grand Prix,148,2493,147
+red_bull,3.2878438199306954,-finish_position,10.0,0.97,2024,23,Qatar Grand Prix,148,2493,147
+renault,0.4398577396117491,-finish_position,10.0,0.97,2024,23,Qatar Grand Prix,148,2493,147
+sauber,-3.2987763618427346,-finish_position,10.0,0.97,2024,23,Qatar Grand Prix,148,2493,147
+toro_rosso,-0.14023500016613094,-finish_position,10.0,0.97,2024,23,Qatar Grand Prix,148,2493,147
+williams,-2.6517992693420243,-finish_position,10.0,0.97,2024,23,Qatar Grand Prix,148,2493,147
+alfa,-1.3627451428650554,-finish_position,10.0,0.97,2024,24,Abu Dhabi Grand Prix,149,2508,148
+alphatauri,-1.1576246226215576,-finish_position,10.0,0.97,2024,24,Abu Dhabi Grand Prix,149,2508,148
+alpine,-0.6172559184977082,-finish_position,10.0,0.97,2024,24,Abu Dhabi Grand Prix,149,2508,148
+aston_martin,-0.268203103220182,-finish_position,10.0,0.97,2024,24,Abu Dhabi Grand Prix,149,2508,148
+ferrari,3.251330911177087,-finish_position,10.0,0.97,2024,24,Abu Dhabi Grand Prix,149,2508,148
+force_india,0.022578665498444863,-finish_position,10.0,0.97,2024,24,Abu Dhabi Grand Prix,149,2508,148
+haas,-2.1814896352865403,-finish_position,10.0,0.97,2024,24,Abu Dhabi Grand Prix,149,2508,148
+mclaren,1.9721663990889169,-finish_position,10.0,0.97,2024,24,Abu Dhabi Grand Prix,149,2508,148
+mercedes,3.403726272849247,-finish_position,10.0,0.97,2024,24,Abu Dhabi Grand Prix,149,2508,148
+racing_point,0.3524191201027746,-finish_position,10.0,0.97,2024,24,Abu Dhabi Grand Prix,149,2508,148
+rb,-1.2019981256380756,-finish_position,10.0,0.97,2024,24,Abu Dhabi Grand Prix,149,2508,148
+red_bull,3.2889584171160777,-finish_position,10.0,0.97,2024,24,Abu Dhabi Grand Prix,149,2508,148
+renault,0.42690301704185063,-finish_position,10.0,0.97,2024,24,Abu Dhabi Grand Prix,149,2508,148
+sauber,-3.0980346407556056,-finish_position,10.0,0.97,2024,24,Abu Dhabi Grand Prix,149,2508,148
+toro_rosso,-0.14244183104396504,-finish_position,10.0,0.97,2024,24,Abu Dhabi Grand Prix,149,2508,148
+williams,-2.68828978294571,-finish_position,10.0,0.97,2024,24,Abu Dhabi Grand Prix,149,2508,148

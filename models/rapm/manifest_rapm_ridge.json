@@ -1,0 +1,25 @@
+{
+  "step": "10_rapm_ridge",
+  "created_at": "2026-05-22T23:06:30",
+  "input": "C:\\Users\\isagr\\Documents\\tcc-f1\\data\\processed\\dataset_feature_engineering_ready_2018_2024.csv",
+  "outputs": {
+    "drivers": "C:\\Users\\isagr\\Documents\\tcc-f1\\data\\processed\\coef_pilotos.csv",
+    "constructors": "C:\\Users\\isagr\\Documents\\tcc-f1\\data\\processed\\coef_construtores.csv",
+    "report": "C:\\Users\\isagr\\Documents\\tcc-f1\\data\\processed\\relatorio_10_rapm_ridge.txt",
+    "documentation": "C:\\Users\\isagr\\Documents\\tcc-f1\\docs\\metodologia_rapm_ridge.md"
+  },
+  "target": "-finish_position",
+  "alpha": 10.0,
+  "decay": 0.97,
+  "min_races_train": 5,
+  "loess": false,
+  "loess_frac": 0.3,
+  "n_rows_input": 2524,
+  "season_min": 2018,
+  "season_max": 2024,
+  "n_races": 149,
+  "n_driver_coef_rows": 4467,
+  "n_constructor_coef_rows": 2001,
+  "n_skipped_initial_races": 5,
+  "anti_leakage_rule": "for each race r, train only on races before r"
+}
