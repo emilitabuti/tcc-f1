@@ -1,6 +1,8 @@
 from pathlib import Path
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+import seaborn as sns
 
 
 # 12 - Análise de correlação e tratamento final de NaN
@@ -21,30 +23,39 @@ INPUT_FILE = PROCESSED_DIR / "dataset_features_final_2018_2025.csv"
 
 OUTPUT_DATASET = PROCESSED_DIR / "dataset_features_final_2018_2025_sem_nan.csv"
 OUTPUT_CORRELATION_MATRIX = REPORTS_DIR / "matriz_correlacao_features.csv"
+OUTPUT_CORRELATION_MATRIX_PNG = REPORTS_DIR / "correlation_matrix_features.png"
+OUTPUT_TARGET_CORRELATION = REPORTS_DIR / "correlation_with_target.csv"
 OUTPUT_HIGH_CORRELATION = REPORTS_DIR / "pares_correlacao_alta_maior_085.csv"
 OUTPUT_REPORT = REPORTS_DIR / "relatorio_correlacao_features.txt"
+OUTPUT_REPORT_MD = REPORTS_DIR / "relatorio_correlacao.md"
 
 
 TARGET_COLUMNS = [
     "finish_position",
 ]
 
-
-ID_COLUMNS = [
-    "season",
-    "round",
-    "race_name",
-    "driver_id",
-    "constructor_id",
-    "RaceID",
-    "status",
-    "status_normalizado",
-    "dnf_categoria",
-    "circuit_id",
-    "compound_normalizado",
+FEATURES_FINAIS = [
+    "grid_position",
+    "qualifying_position",
+    "grid_penalty",
+    "recent_form_5",
+    "recent_form_3",
+    "driver_coef_rapm",
+    "driver_dnf_rate",
+    "driver_experience",
+    "driver_wins_total",
+    "constructor_coef_rapm",
+    "constructor_dnf_rate",
+    "constructor_wins_total",
+    "driver_constructor_synergy",
     "circuit_type",
-    "outlier_colunas",
-    "outlier_tipo",
+    "track_complexity",
+    "altitude_m",
+    "tire_compound_start",
+    "avg_pit_stops_circuit",
+    "season_factor",
+    "weather_impact_factor",
+    "safety_car_flag",
 ]
 
 
@@ -116,6 +127,13 @@ def carregar_dataset():
     return df
 
 
+def validar_features_finais(df):
+    faltantes = [col for col in FEATURES_FINAIS + TARGET_COLUMNS if col not in df.columns]
+
+    if faltantes:
+        raise ValueError(f"Colunas finais ausentes no dataset: {faltantes}")
+
+
 def tratar_nan(df):
     df = df.copy()
 
@@ -153,22 +171,42 @@ def tratar_nan(df):
 
 
 def selecionar_features_numericas(df):
-    numeric_cols = df.select_dtypes(include=[np.number]).columns.tolist()
-
-    excluir = set(TARGET_COLUMNS)
-
-    features = [
-        col for col in numeric_cols
-        if col not in excluir
-    ]
-
-    return features
+    return FEATURES_FINAIS.copy()
 
 
 def gerar_matriz_correlacao(df, features):
     corr = df[features].corr(method="pearson")
 
     return corr
+
+
+def gerar_correlacao_target(df, features):
+    corr_target = (
+        df[features + TARGET_COLUMNS]
+        .corr(method="pearson")[TARGET_COLUMNS[0]]
+        .drop(TARGET_COLUMNS[0])
+        .sort_values(key=lambda s: s.abs(), ascending=False)
+        .reset_index()
+    )
+    corr_target.columns = ["feature", "correlacao_com_finish_position"]
+
+    return corr_target
+
+
+def salvar_heatmap_correlacao(corr):
+    plt.figure(figsize=(14, 11))
+    sns.heatmap(
+        corr,
+        cmap="vlag",
+        center=0,
+        square=True,
+        linewidths=0.4,
+        cbar_kws={"shrink": 0.75},
+    )
+    plt.title("Matriz de correlação - features finais")
+    plt.tight_layout()
+    plt.savefig(OUTPUT_CORRELATION_MATRIX_PNG, dpi=180)
+    plt.close()
 
 
 def identificar_correlacoes_altas(corr, limite=0.85):
@@ -279,6 +317,7 @@ def gerar_relatorio(
     df_original,
     df_tratado,
     features,
+    corr_target,
     pares_df,
     resumo_nan_antes,
     resumo_nan_depois,
@@ -292,7 +331,7 @@ def gerar_relatorio(
     linhas.append(f"Arquivo tratado gerado: {OUTPUT_DATASET}")
     linhas.append(f"Linhas do dataset: {len(df_tratado)}")
     linhas.append(f"Colunas do dataset: {df_tratado.shape[1]}")
-    linhas.append(f"Features numéricas analisadas: {len(features)}")
+    linhas.append(f"Features finais analisadas: {len(features)}")
     linhas.append("")
 
     linhas.append("Tratamento de NaN")
@@ -317,9 +356,17 @@ def gerar_relatorio(
     linhas.append("")
     linhas.append("Análise de correlação")
     linhas.append("-" * 22)
-    linhas.append("Foi calculada a matriz de correlação de Pearson entre todas as features numéricas.")
+    linhas.append("Foi calculada a matriz de correlação de Pearson entre as features finais canônicas.")
     linhas.append("Foram destacados pares com correlação absoluta maior que 0.85.")
     linhas.append(f"Total de pares com correlação alta: {len(pares_df)}")
+    linhas.append("")
+
+    linhas.append("Correlação com o target")
+    linhas.append("-" * 24)
+    for _, row in corr_target.head(10).iterrows():
+        linhas.append(
+            f"- {row['feature']}: r={row['correlacao_com_finish_position']:.4f}"
+        )
     linhas.append("")
 
     if not pares_df.empty:
@@ -336,30 +383,42 @@ def gerar_relatorio(
     linhas.append("Observação metodológica")
     linhas.append("-" * 24)
     linhas.append(
-        "A remoção automática não foi aplicada nesta etapa. "
-        "O arquivo de pares altamente correlacionados foi gerado para revisão e documentação "
-        "antes da definição final das features de modelagem."
+        "A análise foi limitada às features finais de docs/lista_features_modelo.md. "
+        "Colunas auxiliares, z-score/minmax, one-hot intermediário, flags de auditoria e "
+        "telemetria FastF1 não entram nesta matriz de decisão para modelos tree-based."
     )
 
-    OUTPUT_REPORT.write_text("\n".join(linhas), encoding="utf-8")
+    conteudo = "\n".join(linhas)
+    OUTPUT_REPORT.write_text(conteudo, encoding="utf-8")
+
+    md = ["# Relatório de Correlação das Features", ""]
+    for linha in linhas[3:]:
+        if linha and set(linha) == {"-"}:
+            continue
+        md.append(linha)
+    OUTPUT_REPORT_MD.write_text("\n".join(md), encoding="utf-8")
 
 
 def main():
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
 
     df_original = carregar_dataset()
+    validar_features_finais(df_original)
 
     df_tratado, resumo_nan_antes, resumo_nan_depois = tratar_nan(df_original)
 
     features = selecionar_features_numericas(df_tratado)
 
     corr = gerar_matriz_correlacao(df_tratado, features)
+    corr_target = gerar_correlacao_target(df_tratado, features)
 
     pares_df = identificar_correlacoes_altas(corr, limite=0.85)
     pares_df = adicionar_decisoes(pares_df)
 
     df_tratado.to_csv(OUTPUT_DATASET, index=False)
     corr.to_csv(OUTPUT_CORRELATION_MATRIX)
+    corr_target.to_csv(OUTPUT_TARGET_CORRELATION, index=False)
+    salvar_heatmap_correlacao(corr)
 
     if pares_df.empty:
         pares_df = pd.DataFrame(
@@ -380,6 +439,7 @@ def main():
         df_original=df_original,
         df_tratado=df_tratado,
         features=features,
+        corr_target=corr_target,
         pares_df=pares_df,
         resumo_nan_antes=resumo_nan_antes,
         resumo_nan_depois=resumo_nan_depois,
@@ -388,6 +448,7 @@ def main():
     print("Análise de correlação concluída com sucesso.")
     print(f"Dataset sem NaN: {OUTPUT_DATASET}")
     print(f"Matriz de correlação: {OUTPUT_CORRELATION_MATRIX}")
+    print(f"Heatmap de correlação: {OUTPUT_CORRELATION_MATRIX_PNG}")
     print(f"Pares com correlação alta: {OUTPUT_HIGH_CORRELATION}")
     print(f"Relatório: {OUTPUT_REPORT}")
 

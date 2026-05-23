@@ -170,13 +170,89 @@ Critérios:
 - `driver_dnf_rate` e `constructor_dnf_rate` com valores nao triviais;
 - colunas proibidas por leakage nao adicionadas ao dataset final.
 
+## Fechamento pos-feature engineering
+
+A etapa de fim de semana foi executada apos o fechamento do dataset final de features.
+
+Arquivos gerados:
+
+- `data/processed/dataset_features_final_2018_2025_sem_nan.csv`
+- `reports/correlacao_features/matriz_correlacao_features.csv`
+- `reports/correlacao_features/correlation_matrix_features.png`
+- `reports/correlacao_features/correlation_with_target.csv`
+- `reports/correlacao_features/pares_correlacao_alta_maior_085.csv`
+- `reports/correlacao_features/relatorio_correlacao_features.txt`
+- `reports/correlacao_features/relatorio_correlacao.md`
+- `data/processed/dataset_modelagem_X_2018_2025.csv`
+- `data/processed/dataset_modelagem_y_2018_2025.csv`
+- `data/processed/dataset_modelagem_X_2018_2024.csv`
+- `data/processed/dataset_modelagem_y_2018_2024.csv`
+- `data/processed/dataset_modelagem_2018_2025.csv`
+- `data/processed/relatorio_feature_engineering_final.txt`
+- `models/feature_selection/features_modelagem_2018_2025.json`
+- `models/feature_selection/relatorio_13_selecao_features_modelagem.txt`
+
+## Analise de correlacao
+
+A matriz de correlacao foi calculada apenas sobre as features finais canonicas definidas em
+`docs/lista_features_modelo.md`.
+
+Nao foram incluidas na matriz de decisao:
+
+- colunas de identificacao;
+- target;
+- one-hot intermediario de circuito/construtor;
+- flags de auditoria de outlier;
+- artefatos z-score/minmax;
+- telemetria FastF1 usada apenas para auditoria ou baseline especifico.
+
+Essa escolha preserva a interpretabilidade das features finais e evita que artefatos
+intermediarios dominem a analise de multicolinearidade.
+
+## Dataset de modelagem
+
+O dataset `X` foi congelado com 21 features finais:
+
+- `grid_position`
+- `qualifying_position`
+- `grid_penalty`
+- `recent_form_5`
+- `recent_form_3`
+- `driver_coef_rapm`
+- `driver_dnf_rate`
+- `driver_experience`
+- `driver_wins_total`
+- `constructor_coef_rapm`
+- `constructor_dnf_rate`
+- `constructor_wins_total`
+- `driver_constructor_synergy`
+- `circuit_type`
+- `track_complexity`
+- `altitude_m`
+- `tire_compound_start`
+- `avg_pit_stops_circuit`
+- `season_factor`
+- `weather_impact_factor`
+- `safety_car_flag`
+
+O target `finish_position` fica apenas nos arquivos `y`.
+
+Arquivos `y` preservam as chaves:
+
+- `RaceID`
+- `season`
+- `round`
+- `driver_id`
+- `constructor_id`
+- `finish_position`
+
 ## Fora do escopo desta etapa
 
 As tarefas abaixo pertencem ao fechamento pos-feature engineering do fim de semana e serao
-executadas depois:
+nao foram misturadas com a modelagem:
 
-- matriz de correlacao;
-- relatorio de multicolinearidade;
-- decisao de remocao de features redundantes;
-- congelamento de `dataset_modelagem_X_*` e `dataset_modelagem_y_*`.
-
+- treinamento de XGBoost;
+- treinamento de Random Forest;
+- tuning de hiperparametros;
+- avaliacao walk-forward dos modelos;
+- interpretabilidade SHAP dos modelos treinados.

@@ -23,78 +23,57 @@ INPUT_DATASET = PROCESSED_DIR / "dataset_features_final_2018_2025_sem_nan.csv"
 INPUT_CORRELATION_PAIRS = REPORTS_DIR / "pares_correlacao_alta_maior_085.csv"
 
 OUTPUT_DATASET = PROCESSED_DIR / "dataset_modelagem_2018_2025.csv"
+OUTPUT_X_2018_2025 = PROCESSED_DIR / "dataset_modelagem_X_2018_2025.csv"
+OUTPUT_Y_2018_2025 = PROCESSED_DIR / "dataset_modelagem_y_2018_2025.csv"
+OUTPUT_X_2018_2024 = PROCESSED_DIR / "dataset_modelagem_X_2018_2024.csv"
+OUTPUT_Y_2018_2024 = PROCESSED_DIR / "dataset_modelagem_y_2018_2024.csv"
 OUTPUT_FEATURE_LIST = MODELS_DIR / "features_modelagem_2018_2025.json"
 OUTPUT_REPORT = MODELS_DIR / "relatorio_13_selecao_features_modelagem.txt"
+OUTPUT_FINAL_REPORT = PROCESSED_DIR / "relatorio_feature_engineering_final.txt"
 
 TARGET = "finish_position"
+KEY_COLUMNS = ["RaceID", "season", "round", "driver_id", "constructor_id"]
 
 
-COLUNAS_REMOVER_FIXAS = [
-    # Identificação / texto
-    "race_name",
-    "driver_id",
-    "constructor_id",
-    "RaceID",
-    "status",
-    "status_normalizado",
-    "dnf_categoria",
-    "circuit_id",
-    "compound_normalizado",
-    "circuit_type",
-    "outlier_colunas",
-    "outlier_tipo",
-
-    # Target ou variáveis diretamente ligadas ao resultado final
-    "points",
-
-    # Colunas auxiliares que não devem entrar como feature
-    "driver_win_flag",
-]
-
-
-# Remoções manuais iniciais por redundância.
-# Ajuste esta lista depois de revisar o arquivo pares_correlacao_alta_maior_085.csv.
-COLUNAS_REMOVER_CORRELACAO_MANUAL = [
-    # versões originais quando já existem normalizadas
+FEATURES_FINAIS = [
     "grid_position",
-    "laps",
-    "fastf1_laps_count",
-    "fastf1_avg_lap_time",
-    "fastf1_best_lap_time",
-    "fastf1_avg_sector1",
-    "fastf1_avg_sector2",
-    "fastf1_avg_sector3",
-    "fastf1_max_tyre_life",
-    "fastf1_stints_count",
-    "fastf1_pit_in_count",
-    "fastf1_pit_out_count",
-
-    # versões estáticas se existir versão dinâmica
-    "track_complexity_static",
-    "avg_pit_stops_circuit_static_global",
-]
-
-
-FEATURES_PRIORITARIAS_MANTER = [
-    "grid_position_minmax",
-    "laps_minmax",
-    "compound_ordinal",
-    "track_complexity",
-    "weather_impact_factor",
-    "safety_car_flag",
-    "avg_pit_stops_circuit",
-
-    "driver_coef_rapm",
-    "constructor_coef_rapm",
+    "qualifying_position",
+    "grid_penalty",
     "recent_form_5",
     "recent_form_3",
-    "recent_form_cold_start_flag",
+    "driver_coef_rapm",
+    "driver_dnf_rate",
     "driver_experience",
     "driver_wins_total",
-    "constructor_wins_total",
-    "driver_dnf_rate",
+    "constructor_coef_rapm",
     "constructor_dnf_rate",
+    "constructor_wins_total",
     "driver_constructor_synergy",
+    "circuit_type",
+    "track_complexity",
+    "altitude_m",
+    "tire_compound_start",
+    "avg_pit_stops_circuit",
+    "season_factor",
+    "weather_impact_factor",
+    "safety_car_flag",
+]
+
+COLUNAS_PROIBIDAS_X = [
+    TARGET,
+    "points",
+    "race_points",
+    "fastest_lap_race",
+    "previous_position",
+    "status",
+    "laps",
+]
+
+FEATURES_MANTIDAS_APESAR_CORRELACAO = [
+    "recent_form_5",
+    "recent_form_3",
+    "grid_position",
+    "qualifying_position",
 ]
 
 
@@ -139,61 +118,56 @@ def obter_remocoes_sugeridas(pares_df):
     return remover
 
 
-def selecionar_features(df, pares_df):
-    colunas_remover = set()
+def validar_contrato(df):
+    faltantes = [col for col in FEATURES_FINAIS + [TARGET] + KEY_COLUMNS if col not in df.columns]
 
-    for col in COLUNAS_REMOVER_FIXAS:
-        if col in df.columns:
-            colunas_remover.add(col)
+    if faltantes:
+        raise ValueError(f"Colunas obrigatórias ausentes no dataset de modelagem: {faltantes}")
 
-    for col in COLUNAS_REMOVER_CORRELACAO_MANUAL:
-        if col in df.columns:
-            colunas_remover.add(col)
-
-    remocoes_sugeridas = obter_remocoes_sugeridas(pares_df)
-
-    for col in remocoes_sugeridas:
-        if col in df.columns and col not in FEATURES_PRIORITARIAS_MANTER:
-            colunas_remover.add(col)
-
-    # Nunca remove o target aqui.
-    if TARGET in colunas_remover:
-        colunas_remover.remove(TARGET)
-
-    colunas_numericas = df.select_dtypes(include=[np.number]).columns.tolist()
-
-    features = [
-        col for col in colunas_numericas
-        if col != TARGET and col not in colunas_remover
+    nao_numericas = [
+        col for col in FEATURES_FINAIS
+        if col in df.columns and not pd.api.types.is_numeric_dtype(df[col])
     ]
 
-    # Garante que features prioritárias entrem se existirem.
-    for col in FEATURES_PRIORITARIAS_MANTER:
-        if col in df.columns and col not in features and col != TARGET:
-            features.append(col)
-
-    # Remove duplicidade preservando ordem.
-    features = list(dict.fromkeys(features))
-
-    colunas_saida = [TARGET] + features
-
-    df_modelagem = df[colunas_saida].copy()
-
-    return df_modelagem, features, sorted(colunas_remover)
+    if nao_numericas:
+        raise TypeError(f"Features finais não numéricas: {nao_numericas}")
 
 
-def gerar_relatorio(df_original, df_modelagem, features, colunas_removidas, pares_df):
+def selecionar_features(df, pares_df):
+    validar_contrato(df)
+
+    features = FEATURES_FINAIS.copy()
+    colunas_removidas = [
+        col for col in df.columns
+        if col not in set(features + [TARGET] + KEY_COLUMNS)
+    ]
+
+    df_x = df[features].copy()
+    df_y = df[KEY_COLUMNS + [TARGET]].copy()
+    df_modelagem = pd.concat([df_y, df_x], axis=1)
+
+    return df_modelagem, df_x, df_y, features, sorted(colunas_removidas)
+
+
+def gerar_relatorio(df_original, df_modelagem, df_x, df_y, features, colunas_removidas, pares_df):
     linhas = []
 
     linhas.append("Relatório 13 - Seleção Final de Features para Modelagem")
     linhas.append("=" * 65)
     linhas.append("")
     linhas.append(f"Dataset de entrada: {INPUT_DATASET}")
-    linhas.append(f"Dataset final de modelagem: {OUTPUT_DATASET}")
+    linhas.append(f"Dataset combinado de modelagem: {OUTPUT_DATASET}")
+    linhas.append(f"Dataset X 2018-2025: {OUTPUT_X_2018_2025}")
+    linhas.append(f"Dataset y 2018-2025: {OUTPUT_Y_2018_2025}")
+    linhas.append(f"Dataset X 2018-2024: {OUTPUT_X_2018_2024}")
+    linhas.append(f"Dataset y 2018-2024: {OUTPUT_Y_2018_2024}")
     linhas.append(f"Linhas: {len(df_modelagem)}")
     linhas.append(f"Colunas originais: {df_original.shape[1]}")
+    linhas.append(f"Colunas X: {df_x.shape[1]}")
+    linhas.append(f"Colunas y: {df_y.shape[1]}")
     linhas.append(f"Features finais: {len(features)}")
     linhas.append(f"Target: {TARGET}")
+    linhas.append(f"Target presente em X: {TARGET in df_x.columns}")
     linhas.append("")
 
     linhas.append("Features finais selecionadas")
@@ -202,7 +176,7 @@ def gerar_relatorio(df_original, df_modelagem, features, colunas_removidas, pare
         linhas.append(f"- {feature}")
 
     linhas.append("")
-    linhas.append("Colunas removidas")
+    linhas.append("Colunas mantidas fora de X")
     linhas.append("-" * 20)
     if colunas_removidas:
         for col in colunas_removidas:
@@ -227,12 +201,20 @@ def gerar_relatorio(df_original, df_modelagem, features, colunas_removidas, pare
     linhas.append("Decisão metodológica")
     linhas.append("-" * 25)
     linhas.append(
-        "Foram removidas colunas textuais, identificadores, variáveis auxiliares "
-        "e variáveis redundantes com versões normalizadas. "
-        "As features metodológicas principais foram preservadas para a etapa de modelagem."
+        "O dataset X foi congelado usando estritamente a lista canônica de features finais "
+        "de docs/lista_features_modelo.md. Identificadores, target, artefatos de auditoria, "
+        "one-hot intermediário, z-score/minmax e telemetria FastF1 foram mantidos fora de X."
     )
 
-    OUTPUT_REPORT.write_text("\n".join(linhas), encoding="utf-8")
+    linhas.append("")
+    linhas.append("Features mantidas apesar de correlação alta")
+    linhas.append("-" * 44)
+    for feature in FEATURES_MANTIDAS_APESAR_CORRELACAO:
+        linhas.append(f"- {feature}")
+
+    conteudo = "\n".join(linhas)
+    OUTPUT_REPORT.write_text(conteudo, encoding="utf-8")
+    OUTPUT_FINAL_REPORT.write_text(conteudo, encoding="utf-8")
 
 
 def salvar_lista_features(features):
@@ -242,6 +224,8 @@ def salvar_lista_features(features):
         "target": TARGET,
         "n_features": len(features),
         "features": features,
+        "key_columns_y": KEY_COLUMNS,
+        "forbidden_columns_x": COLUNAS_PROIBIDAS_X,
     }
 
     OUTPUT_FEATURE_LIST.write_text(
@@ -256,27 +240,44 @@ def main():
     df = carregar_dataset()
     pares_df = carregar_pares_correlacao()
 
-    df_modelagem, features, colunas_removidas = selecionar_features(df, pares_df)
+    df_modelagem, df_x, df_y, features, colunas_removidas = selecionar_features(df, pares_df)
 
     if df_modelagem.isna().sum().sum() > 0:
         raise RuntimeError("O dataset final de modelagem ainda possui NaN.")
+    if df_x.isna().sum().sum() > 0 or df_y.isna().sum().sum() > 0:
+        raise RuntimeError("Os datasets X/y ainda possuem NaN.")
+    if TARGET in df_x.columns:
+        raise RuntimeError("O target entrou indevidamente em X.")
+    proibidas_em_x = [col for col in COLUNAS_PROIBIDAS_X if col in df_x.columns]
+    if proibidas_em_x:
+        raise RuntimeError(f"Colunas proibidas encontradas em X: {proibidas_em_x}")
 
     OUTPUT_DATASET.parent.mkdir(parents=True, exist_ok=True)
 
     df_modelagem.to_csv(OUTPUT_DATASET, index=False)
+    df_x.to_csv(OUTPUT_X_2018_2025, index=False)
+    df_y.to_csv(OUTPUT_Y_2018_2025, index=False)
+
+    mask_2024 = df["season"] <= 2024
+    df.loc[mask_2024, features].to_csv(OUTPUT_X_2018_2024, index=False)
+    df.loc[mask_2024, KEY_COLUMNS + [TARGET]].to_csv(OUTPUT_Y_2018_2024, index=False)
 
     salvar_lista_features(features)
 
     gerar_relatorio(
         df_original=df,
         df_modelagem=df_modelagem,
+        df_x=df_x,
+        df_y=df_y,
         features=features,
         colunas_removidas=colunas_removidas,
         pares_df=pares_df,
     )
 
     print("Seleção final de features concluída com sucesso.")
-    print(f"Dataset de modelagem: {OUTPUT_DATASET}")
+    print(f"Dataset combinado de modelagem: {OUTPUT_DATASET}")
+    print(f"Dataset X 2018-2025: {OUTPUT_X_2018_2025}")
+    print(f"Dataset y 2018-2025: {OUTPUT_Y_2018_2025}")
     print(f"Lista de features: {OUTPUT_FEATURE_LIST}")
     print(f"Relatório: {OUTPUT_REPORT}")
     print(f"Total de features finais: {len(features)}")

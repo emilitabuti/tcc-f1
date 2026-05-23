@@ -1,41 +1,4 @@
 feature_1,feature_2,correlacao,correlacao_abs,manter_sugerido,remover_sugerido,decisao
-fastf1_stints_count,fastf1_stints_count_zscore,1.000000000000002,1.000000000000002,fastf1_stints_count_zscore,fastf1_stints_count,Manter versão zscore e remover variável original redundante.
-fastf1_avg_sector3,fastf1_avg_sector3_zscore,1.0000000000000016,1.0000000000000016,fastf1_avg_sector3_zscore,fastf1_avg_sector3,Manter versão zscore e remover variável original redundante.
-incident_rate_hist,incident_rate_hist_norm,1.0000000000000013,1.0000000000000013,,,Revisar manualmente antes de remover.
-fastf1_avg_sector1,fastf1_avg_sector1_zscore,1.0000000000000004,1.0000000000000004,fastf1_avg_sector1_zscore,fastf1_avg_sector1,Manter versão zscore e remover variável original redundante.
-fastf1_best_lap_time,fastf1_best_lap_time_zscore,1.0000000000000002,1.0000000000000002,fastf1_best_lap_time_zscore,fastf1_best_lap_time,Manter versão zscore e remover variável original redundante.
-season,season_factor,1.0,1.0,,,Revisar manualmente antes de remover.
-compound_ordinal,tire_compound_start,1.0,1.0,,,Revisar manualmente antes de remover.
-outlier_flag,outlier_legitimo_flag,1.0,1.0,,,Revisar manualmente antes de remover.
-fastf1_pit_out_count,fastf1_pit_out_count_zscore,0.9999999999999998,0.9999999999999998,fastf1_pit_out_count_zscore,fastf1_pit_out_count,Manter versão zscore e remover variável original redundante.
-fastf1_laps_count,fastf1_laps_count_zscore,0.9999999999999997,0.9999999999999997,fastf1_laps_count_zscore,fastf1_laps_count,Manter versão zscore e remover variável original redundante.
-fastf1_avg_sector2,fastf1_avg_sector2_zscore,0.9999999999999996,0.9999999999999996,fastf1_avg_sector2_zscore,fastf1_avg_sector2,Manter versão zscore e remover variável original redundante.
-fastf1_pit_in_count,fastf1_pit_in_count_zscore,0.9999999999999994,0.9999999999999994,fastf1_pit_in_count_zscore,fastf1_pit_in_count,Manter versão zscore e remover variável original redundante.
-fastf1_max_tyre_life,fastf1_max_tyre_life_zscore,0.9999999999999993,0.9999999999999993,fastf1_max_tyre_life_zscore,fastf1_max_tyre_life,Manter versão zscore e remover variável original redundante.
-grid_position,grid_position_minmax,0.9999999999999991,0.9999999999999991,grid_position_minmax,grid_position,Manter versão minmax e remover variável original redundante.
-fastf1_avg_lap_time,fastf1_avg_lap_time_zscore,0.9999999999999972,0.9999999999999972,fastf1_avg_lap_time_zscore,fastf1_avg_lap_time,Manter versão zscore e remover variável original redundante.
-laps,laps_minmax,0.9999999999999969,0.9999999999999969,laps_minmax,laps,Manter versão minmax e remover variável original redundante.
-season_factor,race_order,0.9912337200559391,0.9912337200559391,,,Revisar manualmente antes de remover.
-season,race_order,0.9912337200559391,0.9912337200559391,,,Revisar manualmente antes de remover.
 recent_form_5,recent_form_3,0.9873626211529773,0.9873626211529773,,,Revisar manualmente antes de remover.
-track_complexity,track_complexity_static,0.9842571562773654,0.9842571562773654,track_complexity,track_complexity_static,Manter feature metodológica principal.
-fastf1_pit_in_count,fastf1_pit_out_count,0.982517231469407,0.982517231469407,,,Revisar manualmente antes de remover.
-fastf1_pit_in_count,fastf1_pit_out_count_zscore,0.9825172314694068,0.9825172314694068,fastf1_pit_out_count_zscore,fastf1_pit_in_count,Manter versão zscore e remover variável original redundante.
-fastf1_pit_in_count_zscore,fastf1_pit_out_count_zscore,0.9825172314694058,0.9825172314694058,,,Revisar manualmente antes de remover.
-fastf1_pit_out_count,fastf1_pit_in_count_zscore,0.9825172314694033,0.9825172314694033,fastf1_pit_in_count_zscore,fastf1_pit_out_count,Manter versão zscore e remover variável original redundante.
-fastf1_avg_lap_time,fastf1_best_lap_time,0.9721527746016057,0.9721527746016057,,,Revisar manualmente antes de remover.
-fastf1_avg_lap_time_zscore,fastf1_best_lap_time_zscore,0.9721527746016049,0.9721527746016049,,,Revisar manualmente antes de remover.
-fastf1_avg_lap_time,fastf1_best_lap_time_zscore,0.9721527746016035,0.9721527746016035,fastf1_best_lap_time_zscore,fastf1_avg_lap_time,Manter versão zscore e remover variável original redundante.
-fastf1_best_lap_time,fastf1_avg_lap_time_zscore,0.9721527746016019,0.9721527746016019,fastf1_avg_lap_time_zscore,fastf1_best_lap_time,Manter versão zscore e remover variável original redundante.
 grid_position,qualifying_position,0.9616152355028076,0.9616152355028076,,,Revisar manualmente antes de remover.
-grid_position_minmax,qualifying_position,0.9616152355028073,0.9616152355028073,grid_position_minmax,qualifying_position,Manter versão minmax e remover variável original redundante.
-wet_compound_flag,corrida_chuva_flag,0.940471602227779,0.940471602227779,,,Revisar manualmente antes de remover.
-laps_minmax,length_km,-0.9101535466528607,0.9101535466528607,laps_minmax,length_km,Manter versão minmax e remover variável original redundante.
-laps,length_km,-0.9101535466528593,0.9101535466528593,,,Revisar manualmente antes de remover.
-circuito_rodriguez,altitude_m,0.8789777532014348,0.8789777532014348,,,Revisar manualmente antes de remover.
 recent_form_5,driver_constructor_synergy,-0.8742834344801684,0.8742834344801684,,,Revisar manualmente antes de remover.
-corners,track_complexity_static,0.8687148731503262,0.8687148731503262,,,Revisar manualmente antes de remover.
-fastf1_stints_count,fastf1_pit_in_count_zscore,0.8648124343604233,0.8648124343604233,fastf1_pit_in_count_zscore,fastf1_stints_count,Manter versão zscore e remover variável original redundante.
-fastf1_stints_count,fastf1_pit_in_count,0.8648124343604231,0.8648124343604231,,,Revisar manualmente antes de remover.
-fastf1_stints_count_zscore,fastf1_pit_in_count_zscore,0.8648124343604219,0.8648124343604219,,,Revisar manualmente antes de remover.
-fastf1_pit_in_count,fastf1_stints_count_zscore,0.8648124343604214,0.8648124343604214,fastf1_stints_count_zscore,fastf1_pit_in_count,Manter versão zscore e remover variável original redundante.
