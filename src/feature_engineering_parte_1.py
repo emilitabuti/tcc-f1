@@ -9,7 +9,7 @@ import pandas as pd
 # Correções aplicadas:
 # - merge RAPM protegido contra duplicação;
 # - merge preferencial por RaceID quando disponível;
-# - DNF rates calculadas a partir do histórico classificado de DNF;
+# - DNF rates calculadas causalmente no histórico classificado de DNF;
 # - recent_form_3 e recent_form_5 com fallback 0 para cold-start;
 # - validação para impedir que a base final saia com mais linhas que a entrada;
 # - suporte para rodar 2018-2024 ou 2018-2025 via parâmetro.
@@ -18,14 +18,14 @@ import pandas as pd
 BASE_DIR = Path(__file__).resolve().parents[1]
 PROCESSED_DIR = BASE_DIR / "data" / "processed"
 
-DEFAULT_INPUT_FILE = PROCESSED_DIR / "dataset_feature_engineering_ready_2018_2024.csv"
+DEFAULT_INPUT_FILE = PROCESSED_DIR / "dataset_feature_engineering_ready_2018_2025.csv"
 DEFAULT_DNF_FILE = PROCESSED_DIR / "historico_dnf_classificado_2018_2025.csv"
 
 COEF_PILOTOS_FILE = PROCESSED_DIR / "coef_pilotos.csv"
 COEF_CONSTRUTORES_FILE = PROCESSED_DIR / "coef_construtores.csv"
 
-DEFAULT_OUTPUT_FILE = PROCESSED_DIR / "dataset_feature_engineering_parte_1_2018_2024.csv"
-DEFAULT_REPORT_FILE = PROCESSED_DIR / "relatorio_11_feature_engineering_parte_1.txt"
+DEFAULT_OUTPUT_FILE = PROCESSED_DIR / "dataset_features_final_2018_2025.csv"
+DEFAULT_REPORT_FILE = PROCESSED_DIR / "relatorio_feature_engineering.txt"
 
 
 def parse_args():
@@ -147,6 +147,27 @@ def carregar_base(input_file):
     return df
 
 
+def adicionar_race_order_temporal(df):
+    df = df.copy()
+
+    race_cols = ["season", "round"]
+    if "race_name" in df.columns:
+        race_cols.append("race_name")
+
+    race_order = (
+        df[race_cols]
+        .drop_duplicates()
+        .sort_values(["season", "round"])
+        .reset_index(drop=True)
+    )
+    race_order["race_order"] = np.arange(1, len(race_order) + 1)
+
+    df = df.drop(columns=["race_order"], errors="ignore")
+    df = df.merge(race_order, on=race_cols, how="left", validate="many_to_one")
+
+    return df
+
+
 def preparar_coeficientes_rapm(coef_df, entidade_col, coef_nome):
     coef_df = coef_df.copy()
 
@@ -248,8 +269,6 @@ def weighted_recent_form(historico, n_corridas):
 def adicionar_recent_form(df):
     df = df.copy()
 
-    df["performance_score"] = -df["finish_position"]
-
     df["recent_form_5"] = 0.0
     df["recent_form_3"] = 0.0
     df["recent_form_cold_start_flag"] = 0
@@ -273,7 +292,7 @@ def adicionar_recent_form(df):
                 n_corridas=3,
             )
 
-            historico.append(row["performance_score"])
+            historico.append(row["finish_position"])
 
     return df
 
@@ -401,6 +420,7 @@ def carregar_historico_dnf(dnf_file):
     dnf["round"] = dnf["round"].astype(int)
 
     dnf = garantir_raceid(dnf)
+    dnf = adicionar_race_order_temporal(dnf)
 
     dnf = (
         dnf[
@@ -408,6 +428,7 @@ def carregar_historico_dnf(dnf_file):
                 "RaceID",
                 "season",
                 "round",
+                "race_order",
                 "driver_id",
                 "constructor_id",
                 "is_dnf",
@@ -422,11 +443,73 @@ def carregar_historico_dnf(dnf_file):
     return dnf
 
 
+def calcular_dnf_rates_historico(dnf):
+    dnf = dnf.copy()
+
+    dnf = dnf.sort_values(["driver_id", "race_order", "RaceID"])
+
+    driver_starts_before = dnf.groupby("driver_id").cumcount()
+    driver_dnf_before = (
+        dnf.groupby("driver_id")["dnf_driver_flag"]
+        .transform(lambda s: s.shift(1).fillna(0).cumsum())
+    )
+
+    dnf["driver_dnf_rate"] = np.where(
+        driver_starts_before > 0,
+        driver_dnf_before / driver_starts_before,
+        0.0,
+    )
+
+    constructor_race = (
+        dnf.groupby(["constructor_id", "season", "round", "race_order"], as_index=False)
+        .agg(
+            constructor_dnf_car_race=("dnf_car_flag", "sum"),
+            constructor_entries_race=("RaceID", "count"),
+        )
+        .sort_values(["constructor_id", "race_order"])
+    )
+
+    constructor_dnf_before = (
+        constructor_race.groupby("constructor_id")["constructor_dnf_car_race"]
+        .transform(lambda s: s.shift(1).fillna(0).cumsum())
+    )
+    constructor_entries_before = (
+        constructor_race.groupby("constructor_id")["constructor_entries_race"]
+        .transform(lambda s: s.shift(1).fillna(0).cumsum())
+    )
+
+    constructor_race["constructor_dnf_rate"] = np.where(
+        constructor_entries_before > 0,
+        constructor_dnf_before / constructor_entries_before,
+        0.0,
+    )
+
+    dnf = dnf.merge(
+        constructor_race[
+            [
+                "constructor_id",
+                "season",
+                "round",
+                "constructor_dnf_rate",
+            ]
+        ],
+        on=["constructor_id", "season", "round"],
+        how="left",
+        validate="many_to_one",
+    )
+
+    dnf["driver_dnf_rate"] = dnf["driver_dnf_rate"].fillna(0)
+    dnf["constructor_dnf_rate"] = dnf["constructor_dnf_rate"].fillna(0)
+
+    return dnf
+
+
 def adicionar_dnf_rates(df, dnf_file):
     df = df.copy()
     linhas_antes = len(df)
 
     dnf = carregar_historico_dnf(dnf_file)
+    dnf = calcular_dnf_rates_historico(dnf)
 
     # Remove colunas DNF antigas da FE-ready para evitar conflito no merge.
     colunas_dnf_antigas = [
@@ -445,39 +528,32 @@ def adicionar_dnf_rates(df, dnf_file):
     if colunas_para_remover:
         df = df.drop(columns=colunas_para_remover)
 
-    dnf_flags = dnf[
+    dnf_rates = dnf[
         [
             "RaceID",
-            "is_dnf",
-            "dnf_driver_flag",
-            "dnf_car_flag",
+            "driver_id",
+            "constructor_id",
+            "driver_dnf_rate",
+            "constructor_dnf_rate",
         ]
     ].copy()
 
-    # Garante uma linha por RaceID no histórico de DNF.
-    dnf_flags = (
-        dnf_flags
-        .groupby("RaceID", as_index=False)
+    # Garante uma linha por piloto-corrida no historico de DNF.
+    dnf_rates = (
+        dnf_rates
+        .groupby(["RaceID", "driver_id", "constructor_id"], as_index=False)
         .agg(
-            is_dnf=("is_dnf", "max"),
-            dnf_driver_flag=("dnf_driver_flag", "max"),
-            dnf_car_flag=("dnf_car_flag", "max"),
+            driver_dnf_rate=("driver_dnf_rate", "max"),
+            constructor_dnf_rate=("constructor_dnf_rate", "max"),
         )
     )
 
     df = df.merge(
-        dnf_flags,
-        on="RaceID",
+        dnf_rates,
+        on=["RaceID", "driver_id", "constructor_id"],
         how="left",
         validate="one_to_one",
     )
-
-    # Garante que as colunas existam mesmo se algo vier diferente no arquivo.
-    for col in ["is_dnf", "dnf_driver_flag", "dnf_car_flag"]:
-        if col not in df.columns:
-            df[col] = 0
-
-        df[col] = pd.to_numeric(df[col], errors="coerce").fillna(0).astype(int)
 
     linhas_depois = len(df)
 
@@ -485,65 +561,6 @@ def adicionar_dnf_rates(df, dnf_file):
         raise RuntimeError(
             f"Erro no merge DNF: linhas antes={linhas_antes}, linhas depois={linhas_depois}."
         )
-
-    # DNF rate do piloto:
-    # DNFs causados pelo piloto antes da corrida atual / corridas anteriores do piloto.
-    df = df.sort_values(["driver_id", "race_order"])
-
-    driver_dnf_acumulado = (
-        df.groupby("driver_id")["dnf_driver_flag"]
-        .transform(lambda s: s.cumsum().shift(1).fillna(0))
-    )
-
-    driver_corridas_anteriores = df.groupby("driver_id").cumcount()
-
-    df["driver_dnf_rate"] = np.where(
-        driver_corridas_anteriores > 0,
-        driver_dnf_acumulado / driver_corridas_anteriores,
-        0,
-    )
-
-    # DNF rate do construtor:
-    # DNFs mecânicos anteriores / entradas anteriores do construtor.
-    constructor_race = (
-        df.groupby(["constructor_id", "season", "round", "race_order"], as_index=False)
-        .agg(
-            constructor_dnf_car_race=("dnf_car_flag", "sum"),
-            constructor_entries_race=("RaceID", "count"),
-        )
-        .sort_values(["constructor_id", "race_order"])
-    )
-
-    constructor_race["constructor_dnf_acumulado"] = (
-        constructor_race.groupby("constructor_id")["constructor_dnf_car_race"]
-        .transform(lambda s: s.cumsum().shift(1).fillna(0))
-    )
-
-    constructor_race["constructor_entries_acumuladas"] = (
-        constructor_race.groupby("constructor_id")["constructor_entries_race"]
-        .transform(lambda s: s.cumsum().shift(1).fillna(0))
-    )
-
-    constructor_race["constructor_dnf_rate"] = np.where(
-        constructor_race["constructor_entries_acumuladas"] > 0,
-        constructor_race["constructor_dnf_acumulado"]
-        / constructor_race["constructor_entries_acumuladas"],
-        0,
-    )
-
-    df = df.merge(
-        constructor_race[
-            [
-                "constructor_id",
-                "season",
-                "round",
-                "constructor_dnf_rate",
-            ]
-        ],
-        on=["constructor_id", "season", "round"],
-        how="left",
-        validate="many_to_one",
-    )
 
     df["driver_dnf_rate"] = df["driver_dnf_rate"].fillna(0)
     df["constructor_dnf_rate"] = df["constructor_dnf_rate"].fillna(0)
@@ -632,9 +649,15 @@ def gerar_relatorio(df, input_file, output_file, report_file, existentes, ausent
     linhas.append(f"- recent_form_5 nulos: {int(df['recent_form_5'].isna().sum())}")
     linhas.append(f"- driver_coef_rapm nulos: {int(df['driver_coef_rapm'].isna().sum())}")
     linhas.append(f"- constructor_coef_rapm nulos: {int(df['constructor_coef_rapm'].isna().sum())}")
+    linhas.append(f"- features finais com nulos: {int(df[features_criadas].isna().sum().sum())}")
+    linhas.append(f"- driver_dnf_rate minimo/maximo: {df['driver_dnf_rate'].min():.6f}/{df['driver_dnf_rate'].max():.6f}")
+    linhas.append(f"- constructor_dnf_rate minimo/maximo: {df['constructor_dnf_rate'].min():.6f}/{df['constructor_dnf_rate'].max():.6f}")
     linhas.append("")
     linhas.append("Regra causal:")
     linhas.append("Todas as features historicas usam apenas dados anteriores a corrida atual.")
+    linhas.append("DNF rates foram calculadas no historico DNF classificado antes do merge para a base DNF Excluded.")
+    linhas.append("recent_form_3 e recent_form_5 usam media ponderada de finish_position, conforme a arquitetura.")
+    linhas.append("driver_constructor_synergy usa -finish_position; maior valor indica melhor sinergia historica.")
 
     report_file.write_text("\n".join(linhas), encoding="utf-8")
 

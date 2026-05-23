@@ -1,12 +1,12 @@
 Relatorio 11 - Feature Engineering Parte 1
 =============================================
 
-Arquivo de entrada: /home/emili-tabuti/Documentos/projects/tcc-f1/data/processed/dataset_feature_engineering_ready_2018_2024.csv
-Arquivo de saida: /home/emili-tabuti/Documentos/projects/tcc-f1/data/processed/dataset_feature_engineering_parte_1_2018_2024.csv
-Linhas de entrada: 2524
-Linhas de saida: 2524
+Arquivo de entrada: /home/emili-tabuti/Documentos/projects/tcc-f1/data/processed/dataset_feature_engineering_ready_2018_2025.csv
+Arquivo de saida: /home/emili-tabuti/Documentos/projects/tcc-f1/data/processed/dataset_features_final_2018_2025.csv
+Linhas de entrada: 2943
+Linhas de saida: 2943
 RaceID duplicados na saida: 0
-Temporadas: 2018-2024
+Temporadas: 2018-2025
 
 Features criadas:
 - driver_coef_rapm
@@ -29,8 +29,8 @@ Features ja existentes preservadas:
 Features esperadas nao encontradas na base:
 
 Validacoes:
-- driver_dnf_rate nonzero: 2096
-- constructor_dnf_rate nonzero: 2372
+- driver_dnf_rate nonzero: 2372
+- constructor_dnf_rate nonzero: 2750
 - recent_form_3 nulos: 0
 - recent_form_5 nulos: 0
 - driver_coef_rapm nulos: 0
