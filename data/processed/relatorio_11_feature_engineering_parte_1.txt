@@ -1,0 +1,40 @@
+Relatorio 11 - Feature Engineering Parte 1
+=============================================
+
+Arquivo de entrada: C:\Users\isagr\Documents\tcc-f1\data\processed\dataset_feature_engineering_ready_2018_2024.csv
+Arquivo de saida: C:\Users\isagr\Documents\tcc-f1\data\processed\dataset_feature_engineering_parte_1_2018_2024.csv
+Linhas de entrada: 2524
+Linhas de saida: 2524
+RaceID duplicados na saida: 0
+Temporadas: 2018-2024
+
+Features criadas:
+- driver_coef_rapm
+- constructor_coef_rapm
+- recent_form_5
+- recent_form_3
+- recent_form_cold_start_flag
+- driver_experience
+- driver_wins_total
+- driver_dnf_rate
+- constructor_dnf_rate
+- constructor_wins_total
+- driver_constructor_synergy
+
+Features ja existentes preservadas:
+- track_complexity
+- weather_impact_factor
+- avg_pit_stops_circuit
+
+Features esperadas nao encontradas na base:
+
+Validacoes:
+- driver_dnf_rate nonzero: 0
+- constructor_dnf_rate nonzero: 0
+- recent_form_3 nulos: 0
+- recent_form_5 nulos: 0
+- driver_coef_rapm nulos: 0
+- constructor_coef_rapm nulos: 0
+
+Regra causal:
+Todas as features historicas usam apenas dados anteriores a corrida atual.
