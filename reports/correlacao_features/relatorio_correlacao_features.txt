@@ -1,0 +1,56 @@
+Relatório 12 - Tratamento de NaN e Análise de Correlação
+=================================================================
+
+Arquivo de entrada: C:\Users\isagr\Documents\tcc-f1\data\processed\dataset_features_final_2018_2025.csv
+Arquivo tratado gerado: C:\Users\isagr\Documents\tcc-f1\data\processed\dataset_features_final_2018_2025_sem_nan.csv
+Linhas do dataset: 2943
+Colunas do dataset: 130
+Features numéricas analisadas: 115
+
+Tratamento de NaN
+--------------------
+Não havia NaN no dataset de entrada.
+
+Após o tratamento, não restaram valores NaN.
+
+Análise de correlação
+----------------------
+Foi calculada a matriz de correlação de Pearson entre todas as features numéricas.
+Foram destacados pares com correlação absoluta maior que 0.85.
+Total de pares com correlação alta: 40
+
+Principais pares encontrados:
+- fastf1_stints_count x fastf1_stints_count_zscore: r=1.0000 | decisão: Manter versão zscore e remover variável original redundante.
+- fastf1_avg_sector3 x fastf1_avg_sector3_zscore: r=1.0000 | decisão: Manter versão zscore e remover variável original redundante.
+- incident_rate_hist x incident_rate_hist_norm: r=1.0000 | decisão: Revisar manualmente antes de remover.
+- fastf1_avg_sector1 x fastf1_avg_sector1_zscore: r=1.0000 | decisão: Manter versão zscore e remover variável original redundante.
+- fastf1_best_lap_time x fastf1_best_lap_time_zscore: r=1.0000 | decisão: Manter versão zscore e remover variável original redundante.
+- season x season_factor: r=1.0000 | decisão: Revisar manualmente antes de remover.
+- compound_ordinal x tire_compound_start: r=1.0000 | decisão: Revisar manualmente antes de remover.
+- outlier_flag x outlier_legitimo_flag: r=1.0000 | decisão: Revisar manualmente antes de remover.
+- fastf1_pit_out_count x fastf1_pit_out_count_zscore: r=1.0000 | decisão: Manter versão zscore e remover variável original redundante.
+- fastf1_laps_count x fastf1_laps_count_zscore: r=1.0000 | decisão: Manter versão zscore e remover variável original redundante.
+- fastf1_avg_sector2 x fastf1_avg_sector2_zscore: r=1.0000 | decisão: Manter versão zscore e remover variável original redundante.
+- fastf1_pit_in_count x fastf1_pit_in_count_zscore: r=1.0000 | decisão: Manter versão zscore e remover variável original redundante.
+- fastf1_max_tyre_life x fastf1_max_tyre_life_zscore: r=1.0000 | decisão: Manter versão zscore e remover variável original redundante.
+- grid_position x grid_position_minmax: r=1.0000 | decisão: Manter versão minmax e remover variável original redundante.
+- fastf1_avg_lap_time x fastf1_avg_lap_time_zscore: r=1.0000 | decisão: Manter versão zscore e remover variável original redundante.
+- laps x laps_minmax: r=1.0000 | decisão: Manter versão minmax e remover variável original redundante.
+- season_factor x race_order: r=0.9912 | decisão: Revisar manualmente antes de remover.
+- season x race_order: r=0.9912 | decisão: Revisar manualmente antes de remover.
+- recent_form_5 x recent_form_3: r=0.9874 | decisão: Revisar manualmente antes de remover.
+- track_complexity x track_complexity_static: r=0.9843 | decisão: Manter feature metodológica principal.
+- fastf1_pit_in_count x fastf1_pit_out_count: r=0.9825 | decisão: Revisar manualmente antes de remover.
+- fastf1_pit_in_count x fastf1_pit_out_count_zscore: r=0.9825 | decisão: Manter versão zscore e remover variável original redundante.
+- fastf1_pit_in_count_zscore x fastf1_pit_out_count_zscore: r=0.9825 | decisão: Revisar manualmente antes de remover.
+- fastf1_pit_out_count x fastf1_pit_in_count_zscore: r=0.9825 | decisão: Manter versão zscore e remover variável original redundante.
+- fastf1_avg_lap_time x fastf1_best_lap_time: r=0.9722 | decisão: Revisar manualmente antes de remover.
+- fastf1_avg_lap_time_zscore x fastf1_best_lap_time_zscore: r=0.9722 | decisão: Revisar manualmente antes de remover.
+- fastf1_avg_lap_time x fastf1_best_lap_time_zscore: r=0.9722 | decisão: Manter versão zscore e remover variável original redundante.
+- fastf1_best_lap_time x fastf1_avg_lap_time_zscore: r=0.9722 | decisão: Manter versão zscore e remover variável original redundante.
+- grid_position x qualifying_position: r=0.9616 | decisão: Revisar manualmente antes de remover.
+- grid_position_minmax x qualifying_position: r=0.9616 | decisão: Manter versão minmax e remover variável original redundante.
+
+Observação metodológica
+------------------------
+A remoção automática não foi aplicada nesta etapa. O arquivo de pares altamente correlacionados foi gerado para revisão e documentação antes da definição final das features de modelagem.
