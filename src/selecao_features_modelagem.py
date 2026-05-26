@@ -36,27 +36,21 @@ KEY_COLUMNS = ["RaceID", "season", "round", "driver_id", "constructor_id"]
 
 
 FEATURES_FINAIS = [
-    "grid_position",
     "qualifying_position",
     "grid_penalty",
     "recent_form_5",
-    "recent_form_3",
     "driver_coef_rapm",
     "driver_dnf_rate",
-    "driver_experience",
-    "driver_wins_total",
     "constructor_coef_rapm",
     "constructor_dnf_rate",
     "constructor_wins_total",
     "driver_constructor_synergy",
-    "circuit_type",
     "track_complexity",
     "altitude_m",
     "tire_compound_start",
     "avg_pit_stops_circuit",
     "season_factor",
-    "weather_impact_factor",
-    "safety_car_flag",
+    "incident_rate_hist_norm",
 ]
 
 COLUNAS_PROIBIDAS_X = [
@@ -71,9 +65,8 @@ COLUNAS_PROIBIDAS_X = [
 
 FEATURES_MANTIDAS_APESAR_CORRELACAO = [
     "recent_form_5",
-    "recent_form_3",
-    "grid_position",
     "qualifying_position",
+    "driver_constructor_synergy",
 ]
 
 
@@ -201,9 +194,12 @@ def gerar_relatorio(df_original, df_modelagem, df_x, df_y, features, colunas_rem
     linhas.append("Decisão metodológica")
     linhas.append("-" * 25)
     linhas.append(
-        "O dataset X foi congelado usando estritamente a lista canônica de features finais "
-        "de docs/lista_features_modelo.md. Identificadores, target, artefatos de auditoria, "
-        "one-hot intermediário, z-score/minmax e telemetria FastF1 foram mantidos fora de X."
+        "O dataset X foi corrigido para conter apenas features disponíveis antes da corrida. "
+        "safety_car_flag foi mantida como auditoria fora de X e substituída por "
+        "incident_rate_hist_norm. weather_impact_factor foi recalculada como histórico causal "
+        "por circuito, mas ficou fora do X final após RFE. Também foram removidas "
+        "recent_form_3 e grid_position por redundância empírica com recent_form_5 e "
+        "qualifying_position. A RFE temporal com XGBoost selecionou 15 features finais."
     )
 
     linhas.append("")

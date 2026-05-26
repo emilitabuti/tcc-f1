@@ -1,0 +1,33 @@
+Relatorio RFE - XGBoost
+=============================================
+
+Entrada X: /home/emili-tabuti/Documentos/projects/tcc-f1/data/processed/dataset_modelagem_X_2018_2025.csv
+Entrada y: /home/emili-tabuti/Documentos/projects/tcc-f1/data/processed/dataset_modelagem_y_2018_2025.csv
+Treino: temporadas <= 2024 (2524 linhas)
+Validacao: temporada 2025 (419 linhas)
+
+Melhor subconjunto por MAE em 2025:
+- n_features: 15
+- mae_2025: 2.466866
+- features: qualifying_position, recent_form_5, constructor_coef_rapm, driver_constructor_synergy, constructor_wins_total, season_factor, tire_compound_start, driver_coef_rapm, incident_rate_hist_norm, altitude_m, avg_pit_stops_circuit, track_complexity, constructor_dnf_rate, grid_penalty, driver_dnf_rate
+
+Ranking por gain:
+01. qualifying_position (gain=1096.029907, weight=254)
+02. recent_form_5 (gain=249.892456, weight=214)
+03. constructor_coef_rapm (gain=222.476593, weight=249)
+04. driver_constructor_synergy (gain=145.916855, weight=134)
+05. constructor_wins_total (gain=109.223465, weight=73)
+06. season_factor (gain=56.421665, weight=29)
+07. tire_compound_start (gain=53.056583, weight=46)
+08. driver_coef_rapm (gain=42.510532, weight=175)
+09. incident_rate_hist_norm (gain=41.244087, weight=67)
+10. altitude_m (gain=39.377766, weight=92)
+11. avg_pit_stops_circuit (gain=36.948845, weight=111)
+12. track_complexity (gain=36.242355, weight=170)
+13. constructor_dnf_rate (gain=35.801109, weight=226)
+14. grid_penalty (gain=34.700756, weight=81)
+15. driver_dnf_rate (gain=32.506905, weight=135)
+16. driver_wins_total (gain=32.236687, weight=33)
+17. driver_experience (gain=31.548735, weight=140)
+18. weather_impact_factor (gain=29.328079, weight=141)
+19. circuit_type (gain=26.010717, weight=5)

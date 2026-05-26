@@ -35,27 +35,21 @@ TARGET_COLUMNS = [
 ]
 
 FEATURES_FINAIS = [
-    "grid_position",
     "qualifying_position",
     "grid_penalty",
     "recent_form_5",
-    "recent_form_3",
     "driver_coef_rapm",
     "driver_dnf_rate",
-    "driver_experience",
-    "driver_wins_total",
     "constructor_coef_rapm",
     "constructor_dnf_rate",
     "constructor_wins_total",
     "driver_constructor_synergy",
-    "circuit_type",
     "track_complexity",
     "altitude_m",
     "tire_compound_start",
     "avg_pit_stops_circuit",
     "season_factor",
-    "weather_impact_factor",
-    "safety_car_flag",
+    "incident_rate_hist_norm",
 ]
 
 
@@ -106,6 +100,7 @@ FEATURES_NAN_MEDIAN = [
     "length_km",
     "track_complexity",
     "weather_impact_factor",
+    "weather_impact_cold_start_flag",
     "avg_pit_stops_circuit",
     "track_complexity_static",
     "incident_rate_hist",
@@ -246,7 +241,6 @@ def sugerir_decisao(feature_1, feature_2):
         "driver_coef_rapm",
         "constructor_coef_rapm",
         "recent_form_5",
-        "recent_form_3",
         "driver_experience",
         "driver_wins_total",
         "constructor_wins_total",
@@ -256,8 +250,8 @@ def sugerir_decisao(feature_1, feature_2):
         "track_complexity",
         "weather_impact_factor",
         "avg_pit_stops_circuit",
-        "grid_position_minmax",
         "laps_minmax",
+        "incident_rate_hist_norm",
     ]
 
     # Se uma é versão normalizada/zscore e a outra é original,

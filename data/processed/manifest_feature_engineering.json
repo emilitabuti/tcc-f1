@@ -40,6 +40,8 @@
   "novas_colunas_de_preparacao": [
     "tire_compound_start",
     "season_factor",
+    "weather_impact_observed",
+    "weather_impact_cold_start_flag",
     "avg_pit_stops_circuit_static_global",
     "avg_pit_stops_circuit_cold_start_flag",
     "outlier_reclassificado_pos_contexto_flag",
@@ -53,6 +55,12 @@
     "formula_enriquecida": "0.35*corners_norm + 0.25*length_km_norm + 0.20*altitude_norm + 0.10*circuit_type + 0.10*incident_rate_hist_norm (etapa 09, com componente causal de incidentes historicos por circuito)",
     "componente_incidentes": "incident_rate_hist = taxa historica de SC/VSC no circuito, calculada causalmente com expanding().mean().shift(1) por circuit_id. Cold-start usa taxa global 2018-2024.",
     "track_complexity_static": "Versao estatica original preservada para auditoria. Nao deve ser usada como feature; usar track_complexity."
+  },
+  "contrato_weather_impact": {
+    "feature_modelo": "weather_impact_factor",
+    "formula_observada": "(humidity/100 + 2*rain_binary + (1-air_temp/45)) / 4, calculada no nivel da corrida apenas como historico observado.",
+    "regra_temporal": "A feature usada em X e a media historica anterior do circuito, calculada com expanding().mean().shift(1) por circuit_id. Cold-start usa media global anterior; a primeira corrida recebe 0.0.",
+    "auditoria": "weather_impact_observed e weather_impact_cold_start_flag ficam fora de X. O clima real da corrida alvo nao deve entrar diretamente no modelo pre-corrida."
   },
   "decisao_outlier_stroll_styrian_2021": {
     "caso": "season=2021, round=8, driver_id=stroll, outlier_colunas=fastf1_avg_sector1",
