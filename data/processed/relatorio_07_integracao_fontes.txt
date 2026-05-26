@@ -3,21 +3,21 @@ RELATÓRIO - 07 INTEGRAÇÃO DE FONTES DE SUPORTE
 
 ARQUIVOS DE ENTRADA
 ------------------------------------------------------------
-C:\Users\isagr\Documents\tcc-f1\data\processed\historico_outliers_tratados_2018_2024.csv
-C:\Users\isagr\Documents\tcc-f1\data\processed\historico_outliers_tratados_2018_2025.csv
-C:\Users\isagr\Documents\tcc-f1\data\raw\circuitos_manual.csv
-C:\Users\isagr\Documents\tcc-f1\data\raw\fastf1_weather_2018_2025.csv
-C:\Users\isagr\Documents\tcc-f1\data\raw\ergast_pitstop_2018_2025.csv
-C:\Users\isagr\Documents\tcc-f1\data\raw\openf1_race_control_2025_2026.csv
-C:\Users\isagr\Documents\tcc-f1\data\raw\openf1_meetings_2025_2026.csv
-C:\Users\isagr\Documents\tcc-f1\data\raw\fastf1_qualifying_2018_2025.csv
+/home/emili-tabuti/Documentos/projects/tcc-f1/data/processed/historico_outliers_tratados_2018_2024.csv
+/home/emili-tabuti/Documentos/projects/tcc-f1/data/processed/historico_outliers_tratados_2018_2025.csv
+/home/emili-tabuti/Documentos/projects/tcc-f1/data/raw/circuitos_manual.csv
+/home/emili-tabuti/Documentos/projects/tcc-f1/data/raw/fastf1_weather_2018_2025.csv
+/home/emili-tabuti/Documentos/projects/tcc-f1/data/raw/ergast_pitstop_2018_2025.csv
+/home/emili-tabuti/Documentos/projects/tcc-f1/data/raw/openf1_race_control_2025_2026.csv
+/home/emili-tabuti/Documentos/projects/tcc-f1/data/raw/openf1_meetings_2025_2026.csv
+/home/emili-tabuti/Documentos/projects/tcc-f1/data/raw/fastf1_qualifying_2018_2025.csv
 
-C:\Users\isagr\Documents\tcc-f1\data\raw\fastf1_laps_2018_2025.csv
+/home/emili-tabuti/Documentos/projects/tcc-f1/data/raw/fastf1_laps_2018_2025.csv
 
 ARQUIVOS DE SAÍDA
 ------------------------------------------------------------
-C:\Users\isagr\Documents\tcc-f1\data\processed\dataset_pre_features_2018_2024.csv
-C:\Users\isagr\Documents\tcc-f1\data\processed\dataset_pre_features_2018_2025.csv
+/home/emili-tabuti/Documentos/projects/tcc-f1/data/processed/dataset_pre_features_2018_2024.csv
+/home/emili-tabuti/Documentos/projects/tcc-f1/data/processed/dataset_pre_features_2018_2025.csv
 
 CORREÇÕES APLICADAS
 ------------------------------------------------------------
@@ -40,9 +40,11 @@ Colunas: altitude_m, corners, length_km, circuit_type, track_complexity
 WEATHER IMPACT FACTOR
 ------------------------------------------------------------
 Corridas com dados de weather: 173
-Formula: (norm_humidity + 2*rain_binary + (1-norm_air_temp)) / 4
-weather_impact_factor 2018-2024 - mean: 0.3750
-weather_impact_factor 2018-2024 - std:  0.2531
+Formula observada por corrida: (humidity/100 + 2*rain_binary + (1-air_temp/45)) / 4
+Feature usada em X: media historica anterior do circuito, calculada com expanding().mean().shift(1).
+Cold-start: media global anterior; primeira corrida da base recebe 0.0.
+weather_impact_factor 2018-2024 - mean: 0.3964
+weather_impact_factor 2018-2024 - std:  0.1678
 
 AVG PIT STOPS POR CIRCUITO
 ------------------------------------------------------------
@@ -71,5 +73,5 @@ season
 
 DIMENSÕES FINAIS
 ------------------------------------------------------------
-2018-2024: (2524, 114)
-2018-2025: (2943, 114)
+2018-2024: (2524, 116)
+2018-2025: (2943, 116)

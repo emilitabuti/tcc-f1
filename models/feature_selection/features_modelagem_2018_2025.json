@@ -1,28 +1,22 @@
 {
   "target": "finish_position",
-  "n_features": 21,
+  "n_features": 15,
   "features": [
-    "grid_position",
     "qualifying_position",
     "grid_penalty",
     "recent_form_5",
-    "recent_form_3",
     "driver_coef_rapm",
     "driver_dnf_rate",
-    "driver_experience",
-    "driver_wins_total",
     "constructor_coef_rapm",
     "constructor_dnf_rate",
     "constructor_wins_total",
     "driver_constructor_synergy",
-    "circuit_type",
     "track_complexity",
     "altitude_m",
     "tire_compound_start",
     "avg_pit_stops_circuit",
     "season_factor",
-    "weather_impact_factor",
-    "safety_car_flag"
+    "incident_rate_hist_norm"
   ],
   "key_columns_y": [
     "RaceID",

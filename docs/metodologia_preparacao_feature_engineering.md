@@ -81,6 +81,21 @@ A coluna `avg_pit_stops_circuit` foi recalculada na base pronta usando apenas co
 anteriores do mesmo circuito. A media global por circuito produzida na etapa 07 foi
 preservada como `avg_pit_stops_circuit_static_global` apenas para auditoria.
 
+## Weather impact sem vazamento temporal
+
+O clima real da corrida alvo nao entra diretamente no modelo pre-corrida.
+
+A etapa 07 calcula `weather_impact_observed` por corrida usando:
+
+  (humidity/100 + 2*rain_binary + (1-air_temp/45)) / 4
+
+Esse valor observado fica apenas como historico/auditoria. A feature final
+`weather_impact_factor` e recalculada como media historica anterior do mesmo circuito,
+com `expanding().mean().shift(1)`. Em cold-start, usa-se a media global anterior; a
+primeira corrida da base recebe 0.0.
+
+As colunas `weather_impact_observed` e `weather_impact_cold_start_flag` nao entram em X.
+
 ## Outliers — estado final
 
 Foram aplicadas duas reconciliacoes em sequencia:

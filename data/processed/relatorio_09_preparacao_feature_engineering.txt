@@ -36,8 +36,8 @@ Observacao: finish_position permanece apenas como target/historico.
 
 DIMENSOES
 ----------------------------------------------------------------------
-2018-2024: (2524, 122)
-2018-2025: (2943, 122)
+2018-2024: (2524, 124)
+2018-2025: (2943, 124)
 
 SAFETY CAR
 ----------------------------------------------------------------------
@@ -57,6 +57,14 @@ AVG PIT STOPS CAUSAL
 ----------------------------------------------------------------------
 `avg_pit_stops_circuit` foi recalculada usando apenas corridas anteriores do mesmo circuito. A media global antiga foi preservada em `avg_pit_stops_circuit_static_global` apenas para auditoria.
 Linhas cold-start 2018-2025: 511
+
+WEATHER IMPACT CAUSAL
+----------------------------------------------------------------------
+Feature de modelo: weather_impact_factor
+Formula observada: (humidity/100 + 2*rain_binary + (1-air_temp/45)) / 4, calculada no nivel da corrida apenas como historico observado.
+Regra temporal: A feature usada em X e a media historica anterior do circuito, calculada com expanding().mean().shift(1) por circuit_id. Cold-start usa media global anterior; a primeira corrida recebe 0.0.
+Auditoria: weather_impact_observed e weather_impact_cold_start_flag ficam fora de X. O clima real da corrida alvo nao deve entrar diretamente no modelo pre-corrida.
+weather_impact_factor 2018-2025 — mean: 0.3917  std: 0.1599
 
 TRACK COMPLEXITY ENRIQUECIDA
 ----------------------------------------------------------------------

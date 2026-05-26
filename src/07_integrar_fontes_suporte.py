@@ -206,8 +206,9 @@ def integrar_circuitos(df, circuitos_df):
 
 # ─────────────────────────────────────────────────────────────────────────────
 # LACUNA 4 — Integrar weather e calcular weather_impact_factor
-# Agrega por (season, round): mean AirTemp, mean Humidity, max Rainfall
-# Formula: (norm_hum + 2*rain_binary + (1 - norm_air)) / 4  ∈ [0, 1]
+# Agrega por (season, round): mean AirTemp, mean Humidity, max Rainfall.
+# O clima observado da corrida fica apenas como insumo historico. A feature
+# exposta em X e a media historica anterior do circuito, sem usar a corrida alvo.
 # ─────────────────────────────────────────────────────────────────────────────
 def agregar_weather(weather_df):
     agg = weather_df.groupby(["season", "round"], as_index=False).agg(
@@ -219,37 +220,83 @@ def agregar_weather(weather_df):
     return agg
 
 
-def calcular_weather_impact(weather_agg, treino_2024):
-    air_min = treino_2024["AirTemp"].min()
-    air_max = treino_2024["AirTemp"].max()
-    hum_min = treino_2024["Humidity"].min()
-    hum_max = treino_2024["Humidity"].max()
-
+def calcular_weather_impact_observado(weather_agg):
     df = weather_agg.copy()
-    df["air_norm"] = (df["AirTemp"] - air_min) / (air_max - air_min + 1e-9)
-    df["hum_norm"] = (df["Humidity"] - hum_min) / (hum_max - hum_min + 1e-9)
 
-    df["weather_impact_factor"] = (
+    # Escalas fisicas fixas evitam ajustar normalizadores com informacao futura.
+    df["air_norm"] = (df["AirTemp"] / 45.0).clip(0, 1)
+    df["hum_norm"] = (df["Humidity"] / 100.0).clip(0, 1)
+
+    df["weather_impact_observed"] = (
         df["hum_norm"]
         + 2.0 * df["Rainfall"]
         + (1.0 - df["air_norm"])
     ) / 4.0
 
-    # Garante [0, 1]
-    df["weather_impact_factor"] = df["weather_impact_factor"].clip(0, 1)
-    return df[["season", "round", "weather_impact_factor"]]
+    df["weather_impact_observed"] = df["weather_impact_observed"].clip(0, 1)
+    return df[["season", "round", "weather_impact_observed"]]
 
 
-def integrar_weather(df, weather_df, df_2024_agg):
+def calcular_weather_impact_causal(df, weather_df):
     weather_agg = agregar_weather(weather_df)
-    weather_feat = calcular_weather_impact(weather_agg, df_2024_agg)
-    df = df.merge(weather_feat, on=["season", "round"], how="left")
+    weather_obs = calcular_weather_impact_observado(weather_agg)
+
+    race_weather = (
+        df[["season", "round", "circuit_id"]]
+        .drop_duplicates()
+        .merge(weather_obs, on=["season", "round"], how="left")
+        .sort_values(["season", "round", "circuit_id"])
+        .reset_index(drop=True)
+    )
+
+    race_weather["weather_impact_factor"] = (
+        race_weather.groupby("circuit_id")["weather_impact_observed"]
+        .transform(lambda s: s.expanding().mean().shift(1))
+    )
+
+    race_weather["weather_impact_global_prior"] = (
+        race_weather["weather_impact_observed"].expanding().mean().shift(1)
+    )
+    race_weather["weather_impact_cold_start_flag"] = (
+        race_weather["weather_impact_factor"].isna()
+    ).astype(int)
+    race_weather["weather_impact_factor"] = (
+        race_weather["weather_impact_factor"]
+        .fillna(race_weather["weather_impact_global_prior"])
+        .fillna(0.0)
+        .clip(0, 1)
+    )
+
+    return race_weather[
+        [
+            "season",
+            "round",
+            "circuit_id",
+            "weather_impact_factor",
+            "weather_impact_observed",
+            "weather_impact_cold_start_flag",
+        ]
+    ]
+
+
+def integrar_weather(df, weather_df):
+    df = df.copy()
+    weather_feat = calcular_weather_impact_causal(df, weather_df)
+    df = df.drop(
+        columns=[
+            "weather_impact_factor",
+            "weather_impact_observed",
+            "weather_impact_cold_start_flag",
+        ],
+        errors="ignore",
+    )
+    df = df.merge(weather_feat, on=["season", "round", "circuit_id"], how="left")
 
     n_sem_weather = df["weather_impact_factor"].isnull().sum()
     if n_sem_weather > 0:
-        mediana = df.loc[df["season"] <= 2024, "weather_impact_factor"].median()
-        df["weather_impact_factor"] = df["weather_impact_factor"].fillna(mediana)
-        print(f"  AVISO: {n_sem_weather} linhas sem weather -> preenchido com mediana ({mediana:.3f}).")
+        df["weather_impact_factor"] = df["weather_impact_factor"].fillna(0.0)
+        df["weather_impact_cold_start_flag"] = df["weather_impact_cold_start_flag"].fillna(1).astype(int)
+        print(f"  AVISO: {n_sem_weather} linhas sem weather historico -> preenchido com 0.0.")
     return df
 
 
@@ -413,10 +460,9 @@ def processar(df_2024, df_2025, circuitos_df, weather_df, pitstop_df,
     df_2024 = integrar_circuitos(df_2024, circuitos_df)
     df_2025 = integrar_circuitos(df_2025, circuitos_df)
 
-    print("\n[5/8] Calculando weather_impact_factor...")
-    weather_agg_2024 = agregar_weather(weather_df[weather_df["season"] <= 2024])
-    df_2024 = integrar_weather(df_2024, weather_df, weather_agg_2024)
-    df_2025 = integrar_weather(df_2025, weather_df, weather_agg_2024)
+    print("\n[5/8] Calculando weather_impact_factor historico causal...")
+    df_2024 = integrar_weather(df_2024, weather_df)
+    df_2025 = integrar_weather(df_2025, weather_df)
 
     print("\n[6/8] Calculando avg_pit_stops_circuit...")
     df_2024 = integrar_pitstops(df_2024, pitstop_df)
@@ -482,7 +528,9 @@ def salvar_relatorio(df_2024, df_2025, n_fix_2024, n_fix_2025,
         f.write("WEATHER IMPACT FACTOR\n")
         f.write("-" * 60 + "\n")
         f.write(f"Corridas com dados de weather: {weather_df.groupby(['season','round']).ngroups}\n")
-        f.write("Formula: (norm_humidity + 2*rain_binary + (1-norm_air_temp)) / 4\n")
+        f.write("Formula observada por corrida: (humidity/100 + 2*rain_binary + (1-air_temp/45)) / 4\n")
+        f.write("Feature usada em X: media historica anterior do circuito, calculada com expanding().mean().shift(1).\n")
+        f.write("Cold-start: media global anterior; primeira corrida da base recebe 0.0.\n")
         f.write(f"weather_impact_factor 2018-2024 - mean: {df_2024['weather_impact_factor'].mean():.4f}\n")
         f.write(f"weather_impact_factor 2018-2024 - std:  {df_2024['weather_impact_factor'].std():.4f}\n\n")
 

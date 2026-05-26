@@ -8,42 +8,37 @@ Dataset y 2018-2025: /home/emili-tabuti/Documentos/projects/tcc-f1/data/processe
 Dataset X 2018-2024: /home/emili-tabuti/Documentos/projects/tcc-f1/data/processed/dataset_modelagem_X_2018_2024.csv
 Dataset y 2018-2024: /home/emili-tabuti/Documentos/projects/tcc-f1/data/processed/dataset_modelagem_y_2018_2024.csv
 Linhas: 2943
-Colunas originais: 130
-Colunas X: 21
+Colunas originais: 132
+Colunas X: 15
 Colunas y: 6
-Features finais: 21
+Features finais: 15
 Target: finish_position
 Target presente em X: False
 
 Features finais selecionadas
 -----------------------------------
-- grid_position
 - qualifying_position
 - grid_penalty
 - recent_form_5
-- recent_form_3
 - driver_coef_rapm
 - driver_dnf_rate
-- driver_experience
-- driver_wins_total
 - constructor_coef_rapm
 - constructor_dnf_rate
 - constructor_wins_total
 - driver_constructor_synergy
-- circuit_type
 - track_complexity
 - altitude_m
 - tire_compound_start
 - avg_pit_stops_circuit
 - season_factor
-- weather_impact_factor
-- safety_car_flag
+- incident_rate_hist_norm
 
 Colunas mantidas fora de X
 --------------------
 - avg_pit_stops_circuit_cold_start_flag
 - avg_pit_stops_circuit_static_global
 - circuit_id
+- circuit_type
 - circuito_albert_park
 - circuito_americas
 - circuito_bahrain
@@ -98,7 +93,9 @@ Colunas mantidas fora de X
 - corners
 - corrida_chuva_flag
 - dnf_categoria
+- driver_experience
 - driver_win_flag
+- driver_wins_total
 - fastf1_avg_lap_time
 - fastf1_avg_lap_time_zscore
 - fastf1_avg_sector1
@@ -121,10 +118,10 @@ Colunas mantidas fora de X
 - fastf1_pit_out_count_zscore
 - fastf1_stints_count
 - fastf1_stints_count_zscore
+- grid_position
 - grid_position_minmax
 - grid_position_zero_flag
 - incident_rate_hist
-- incident_rate_hist_norm
 - laps
 - laps_minmax
 - length_km
@@ -138,25 +135,29 @@ Colunas mantidas fora de X
 - outlier_tipo
 - race_name
 - race_order
+- recent_form_3
 - recent_form_cold_start_flag
+- safety_car_flag
 - status
 - status_falha_mecanica_flag
 - status_normalizado
 - track_complexity_static
+- weather_impact_cold_start_flag
+- weather_impact_factor
+- weather_impact_observed
 - wet_compound_flag
 
 Resumo da correlação
 -------------------------
-Pares com correlação alta no relatório anterior: 3
+Pares com correlação alta no relatório anterior: 1
 Colunas com remoção sugerida: 0
 
 Decisão metodológica
 -------------------------
-O dataset X foi congelado usando estritamente a lista canônica de features finais de docs/lista_features_modelo.md. Identificadores, target, artefatos de auditoria, one-hot intermediário, z-score/minmax e telemetria FastF1 foram mantidos fora de X.
+O dataset X foi corrigido para conter apenas features disponíveis antes da corrida. safety_car_flag foi mantida como auditoria fora de X e substituída por incident_rate_hist_norm. weather_impact_factor foi recalculada como histórico causal por circuito, mas ficou fora do X final após RFE. Também foram removidas recent_form_3 e grid_position por redundância empírica com recent_form_5 e qualifying_position. A RFE temporal com XGBoost selecionou 15 features finais.
 
 Features mantidas apesar de correlação alta
 --------------------------------------------
 - recent_form_5
-- recent_form_3
-- grid_position
 - qualifying_position
+- driver_constructor_synergy

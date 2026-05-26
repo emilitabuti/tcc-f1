@@ -486,6 +486,8 @@ def montar_manifest(df_2024, df_2025):
         "novas_colunas_de_preparacao": [
             "tire_compound_start",
             "season_factor",
+            "weather_impact_observed",
+            "weather_impact_cold_start_flag",
             "avg_pit_stops_circuit_static_global",
             "avg_pit_stops_circuit_cold_start_flag",
             "outlier_reclassificado_pos_contexto_flag",
@@ -512,6 +514,22 @@ def montar_manifest(df_2024, df_2025):
             "track_complexity_static": (
                 "Versao estatica original preservada para auditoria. "
                 "Nao deve ser usada como feature; usar track_complexity."
+            ),
+        },
+        "contrato_weather_impact": {
+            "feature_modelo": "weather_impact_factor",
+            "formula_observada": (
+                "(humidity/100 + 2*rain_binary + (1-air_temp/45)) / 4, calculada "
+                "no nivel da corrida apenas como historico observado."
+            ),
+            "regra_temporal": (
+                "A feature usada em X e a media historica anterior do circuito, "
+                "calculada com expanding().mean().shift(1) por circuit_id. "
+                "Cold-start usa media global anterior; a primeira corrida recebe 0.0."
+            ),
+            "auditoria": (
+                "weather_impact_observed e weather_impact_cold_start_flag ficam fora de X. "
+                "O clima real da corrida alvo nao deve entrar diretamente no modelo pre-corrida."
             ),
         },
         "decisao_outlier_stroll_styrian_2021": {
@@ -638,6 +656,20 @@ def salvar_relatorio(df_2024, df_2025, outliers, manifest, erros_entrada, erros_
             f"{manifest['validacoes']['pitstop_cold_start_rows_2018_2025']}\n"
         )
 
+        f.write("\nWEATHER IMPACT CAUSAL\n")
+        f.write("-" * 70 + "\n")
+        weather = manifest.get("contrato_weather_impact", {})
+        f.write(f"Feature de modelo: {weather.get('feature_modelo', 'N/A')}\n")
+        f.write(f"Formula observada: {weather.get('formula_observada', 'N/A')}\n")
+        f.write(f"Regra temporal: {weather.get('regra_temporal', 'N/A')}\n")
+        f.write(f"Auditoria: {weather.get('auditoria', 'N/A')}\n")
+        if "weather_impact_factor" in df_2025.columns:
+            f.write(
+                f"weather_impact_factor 2018-2025 — "
+                f"mean: {df_2025['weather_impact_factor'].mean():.4f}  "
+                f"std: {df_2025['weather_impact_factor'].std():.4f}\n"
+            )
+
         f.write("\nTRACK COMPLEXITY ENRIQUECIDA\n")
         f.write("-" * 70 + "\n")
         tc = manifest.get("contrato_track_complexity", {})
@@ -751,6 +783,21 @@ e Barra et al. [3]) que citam incidentes historicos como componente de complexid
 A coluna `avg_pit_stops_circuit` foi recalculada na base pronta usando apenas corridas
 anteriores do mesmo circuito. A media global por circuito produzida na etapa 07 foi
 preservada como `avg_pit_stops_circuit_static_global` apenas para auditoria.
+
+## Weather impact sem vazamento temporal
+
+O clima real da corrida alvo nao entra diretamente no modelo pre-corrida.
+
+A etapa 07 calcula `weather_impact_observed` por corrida usando:
+
+  (humidity/100 + 2*rain_binary + (1-air_temp/45)) / 4
+
+Esse valor observado fica apenas como historico/auditoria. A feature final
+`weather_impact_factor` e recalculada como media historica anterior do mesmo circuito,
+com `expanding().mean().shift(1)`. Em cold-start, usa-se a media global anterior; a
+primeira corrida da base recebe 0.0.
+
+As colunas `weather_impact_observed` e `weather_impact_cold_start_flag` nao entram em X.
 
 ## Outliers — estado final
 
