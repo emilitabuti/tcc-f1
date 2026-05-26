@@ -1,0 +1,6 @@
+Time-decay escolhido: 0.85
+MAE medio 2023-2024: 2.414576
+Desvio padrao do MAE: 0.212092
+RMSE medio 2023-2024: 3.091010
+Kendall tau medio 2023-2024: 0.647449
+Acuracia top-3 media 2023-2024: 0.151515
