@@ -1,27 +1,96 @@
-# Pendencias da Segunda - Semana 2
+# Plano detalhado - Segunda da Semana 2: Modelagem
 
-## Objetivo
+Data de referencia do cronograma: segunda-feira, Semana 2.
 
-Este documento detalha o que ainda precisa ser feito para concluir a segunda-feira da Semana 2 do cronograma de modelagem.
+Este plano revisa se o cronograma da segunda-feira esta adequado em relacao a
+`ArquiteturaProposta.pdf` e detalha a implementacao que deve ser seguida. O foco e
+concluir a infraestrutura de modelagem temporal antes de entrar em tuning, Random Forest,
+Ridge baseline e RFE final.
 
-Escopo considerado:
+---
 
-- Implementar validacao walk-forward.
-- Integrar o fold de validacao 2025.
-- Criar metricas customizadas.
-- Otimizar o fator de time-decay.
-- Aplicar o time-decay no XGBoost.
+## Veredito sobre o cronograma
 
-Fora do escopo por enquanto:
+O cronograma esta bom e a ordem das tarefas esta correta:
+
+1. validar schema e fold de 2025;
+2. implementar metricas;
+3. otimizar time-decay;
+4. rodar walk-forward;
+5. aplicar `sample_weight` no XGBoost.
+
+Essa ordem e coerente com a arquitetura porque a modelagem nao pode ser embaralhada: a
+validacao precisa respeitar a ordem temporal, e o time-decay precisa ser escolhido em
+folds anteriores antes de avaliar 2025.
+
+O principal ajuste necessario e metodologico: a arquitetura e o cronograma falam em
+treino desde 2014, mas a base final de modelagem do projeto esta em `2018-2025`.
+Portanto, os folds reais devem ser:
+
+| Cronograma original | Execucao real no projeto |
+|---|---|
+| treino 2014-2022 -> validacao 2023 | treino 2018-2022 -> validacao 2023 |
+| treino 2014-2023 -> validacao 2024 | treino 2018-2023 -> validacao 2024 |
+| treino 2014-2024 -> validacao 2025 | treino 2018-2024 -> validacao 2025 |
+
+Esse ajuste deve ser documentado no relatorio, porque afeta a comparacao direta com
+benchmarks que usam toda a era hibrida desde 2014.
+
+---
+
+## Fundamentacao bibliografica usada
+
+| Decisao da segunda-feira | Referencias da arquitetura |
+|---|---|
+| Walk-forward validation temporal | Henderson et al. [9] |
+| Coeficientes RAPM e modelo linear com decomposicao piloto/construtor | Henderson et al. [9], Snoeks [10] |
+| Time-decay e pesos menores para dados antigos | Henderson et al. [9], Tan et al. [18] |
+| XGBoost como primeiro modelo tabular forte | Chen e Guestrin [19], Barra et al. [3], Alonso et al. [4] |
+| Random Forest como comparacao posterior | Breiman [20], Ruan et al. [2] |
+| Metricas MAE, RMSE, R2 e Kendall tau | Henderson et al. [9], Alonso et al. [4] |
+| Acuracia de top-3/podio como metrica complementar | Polishchuk [1] |
+| Evitar leakage de features pos-corrida | Ruan et al. [2], Barra et al. [3], Koopman et al. [5] |
+| Drift regulatorio futuro em 2026 | Lu et al. [15], Chen et al. [11], Thomas et al. [12] |
+
+---
+
+## Escopo da segunda-feira
+
+### Dentro do escopo
+
+- Validar se `X` e `y` de modelagem estao alinhados.
+- Garantir que 2025 esta integrado como fold temporal final.
+- Implementar/validar `src/metricas.py`.
+- Implementar/validar `src/otimizacao_time_decay.py`.
+- Implementar/validar `src/walk_forward.py`.
+- Escolher o fator de time-decay usando apenas 2023 e 2024.
+- Rodar XGBoost sem tuning Optuna com `sample_weight`.
+- Gerar relatorio da segunda-feira.
+
+### Fora do escopo
 
 - Random Forest.
 - Tuning Optuna.
 - Ridge baseline.
 - RFE final.
+- SHAP.
+- Analise definitiva de drift 2026.
 
-## Situacao Atual
+Essas tarefas entram depois porque dependem da infraestrutura temporal validada nesta
+segunda-feira.
 
-Ja existem bases prontas para modelagem:
+---
+
+## Estado atual do projeto
+
+Ja existem os arquivos principais da segunda-feira:
+
+- `src/metricas.py`
+- `src/otimizacao_time_decay.py`
+- `src/walk_forward.py`
+- `src/validar_schema_2025_modelagem.py`
+
+Ja existem bases prontas:
 
 - `data/processed/dataset_modelagem_X_2018_2025.csv`
 - `data/processed/dataset_modelagem_y_2018_2025.csv`
@@ -29,532 +98,298 @@ Ja existem bases prontas para modelagem:
 - `data/processed/openf1_2025_clean.csv`
 - `data/processed/validacao_2025_clean.csv`
 
-As bases `X` e `y` estao alinhadas, sem nulos, com temporadas de 2018 a 2025.
+Ja existem artefatos gerados em `reports/modelagem/`:
 
-Tambem ja existe uma validacao temporal parcial no script:
+- `otimizacao_time_decay_xgboost.csv`
+- `otimizacao_time_decay_xgboost_resumo.csv`
+- `time_decay_escolhido_xgboost.txt`
+- `predicoes_walk_forward_xgboost.csv`
+- `metricas_walk_forward_xgboost.csv`
+- `relatorio_segunda_semana2_xgboost.txt`
+- `validacao_schema_2025_modelagem.txt`
 
-- `src/rfe_xgboost_features.py`
+Portanto, o trabalho agora nao e "comecar do zero"; e revisar, executar, validar e
+documentar.
 
-Esse script treina em 2018-2024 e valida em 2025, mas isso ainda nao substitui o walk-forward completo da segunda-feira.
+---
 
-## O Que Falta Fazer
+## Plano de implementacao detalhado
 
-### 1. Criar `src/metricas.py`
+### 1. Conferir schema e alinhamento de dados
 
-O cronograma pede um arquivo de metricas customizadas com:
+Objetivo: garantir que o fold de 2025 tem exatamente as features esperadas e que `X` e
+`y` continuam alinhados.
 
-- MAE
-- RMSE
-- R2
-- Kendall tau medio por corrida
-- Acuracia top-3
-- Wrapper geral calculando tudo de uma vez
+Comandos:
 
-Esse arquivo deve ser independente dos modelos, para ser usado tanto no XGBoost agora quanto nos outros modelos depois.
-
-Codigo sugerido:
-
-```python
-from __future__ import annotations
-
-import numpy as np
-import pandas as pd
-from scipy.stats import kendalltau
-from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
-
-
-def calcular_mae(y_true, y_pred) -> float:
-    return float(mean_absolute_error(y_true, y_pred))
-
-
-def calcular_rmse(y_true, y_pred) -> float:
-    return float(np.sqrt(mean_squared_error(y_true, y_pred)))
-
-
-def calcular_r2(y_true, y_pred) -> float:
-    return float(r2_score(y_true, y_pred))
-
-
-def kendall_tau_por_corrida(df_pred: pd.DataFrame) -> float:
-    valores = []
-
-    for _, grupo in df_pred.groupby(["season", "round"]):
-        if grupo["finish_position"].nunique() < 2:
-            continue
-
-        tau, _ = kendalltau(
-            grupo["finish_position"],
-            grupo["pred_finish_position"],
-        )
-
-        if not np.isnan(tau):
-            valores.append(tau)
-
-    if not valores:
-        return float("nan")
-
-    return float(np.mean(valores))
-
-
-def acuracia_top3(df_pred: pd.DataFrame) -> float:
-    acertos = []
-
-    for _, grupo in df_pred.groupby(["season", "round"]):
-        real_top3 = set(
-            grupo.sort_values("finish_position")
-            .head(3)["driver_id"]
-            .tolist()
-        )
-
-        pred_top3 = set(
-            grupo.sort_values("pred_finish_position")
-            .head(3)["driver_id"]
-            .tolist()
-        )
-
-        acertos.append(int(real_top3 == pred_top3))
-
-    if not acertos:
-        return float("nan")
-
-    return float(np.mean(acertos))
-
-
-def calcular_metricas(df_pred: pd.DataFrame) -> dict:
-    y_true = df_pred["finish_position"]
-    y_pred = df_pred["pred_finish_position"]
-
-    return {
-        "mae": calcular_mae(y_true, y_pred),
-        "rmse": calcular_rmse(y_true, y_pred),
-        "r2": calcular_r2(y_true, y_pred),
-        "kendall_tau": kendall_tau_por_corrida(df_pred),
-        "top3_accuracy": acuracia_top3(df_pred),
-    }
+```bash
+python src/validar_schema_2025_modelagem.py
+python src/selecao_features_modelagem.py
 ```
 
-### 2. Criar `src/walk_forward.py`
+Checklist:
 
-O cronograma pede estes folds:
+- `dataset_modelagem_X_2018_2025.csv` nao pode conter `finish_position`.
+- `dataset_modelagem_y_2018_2025.csv` deve conter `season`, `round`, `driver_id`,
+  `finish_position`.
+- `X` e `y` devem ter o mesmo numero de linhas.
+- Nenhuma coluna proibida por leakage pode entrar em `X`.
+- A temporada 2025 deve existir em `y`.
 
-- Treino 2014-2022 -> validacao 2023
-- Treino 2014-2023 -> validacao 2024
-- Treino 2014-2024 -> validacao 2025
+Criterio de aceite:
 
-No projeto atual, o recorte oficial dos dados esta em 2018-2025. Entao, na implementacao real, os folds devem ficar assim:
+- O script de schema termina sem erro.
+- O relatorio registra compatibilidade do schema para walk-forward 2025.
 
-- Treino 2018-2022 -> validacao 2023
-- Treino 2018-2023 -> validacao 2024
-- Treino 2018-2024 -> validacao 2025
+Base bibliografica: a validacao anti-leakage segue Ruan et al. [2], Barra et al. [3] e
+Koopman et al. [5], porque variaveis pos-corrida inflariam artificialmente a performance.
 
-Esse ajuste precisa ser documentado no relatorio, porque o cronograma menciona 2014, mas a base final esta filtrada para 2018 em diante.
+---
 
-Codigo sugerido:
+### 2. Revisar `src/metricas.py`
 
-```python
-from __future__ import annotations
+Objetivo: manter as metricas independentes do modelo, reutilizaveis para XGBoost,
+Random Forest e Ridge.
 
-from pathlib import Path
+Metricas obrigatorias:
 
-import pandas as pd
-from xgboost import XGBRegressor
+- `mae`
+- `rmse`
+- `r2`
+- `kendall_tau`
+- `top3_accuracy`
 
-from metricas import calcular_metricas
+Checklist tecnico:
 
+- `calcular_metricas(df_pred)` deve exigir as colunas:
+  - `season`
+  - `round`
+  - `driver_id`
+  - `finish_position`
+  - `pred_finish_position`
+- Kendall tau deve ser calculado por corrida e depois agregado por media.
+- Top-3 deve comparar o conjunto dos tres primeiros reais contra o conjunto dos tres
+  primeiros previstos.
 
-BASE_DIR = Path(__file__).resolve().parents[1]
-PROCESSED_DIR = BASE_DIR / "data" / "processed"
-REPORTS_DIR = BASE_DIR / "reports" / "modelagem"
+Observacao metodologica:
 
-INPUT_X = PROCESSED_DIR / "dataset_modelagem_X_2018_2025.csv"
-INPUT_Y = PROCESSED_DIR / "dataset_modelagem_y_2018_2025.csv"
+A `top3_accuracy` atual e uma metrica estrita: ela so conta acerto quando o conjunto
+inteiro do podio previsto bate com o conjunto real. Por isso ela tende a ficar bem menor
+que a referencia de Polishchuk [1], que usa podio como benchmark de acuracia, mas pode
+ter formulacao diferente. No relatorio, chamar essa metrica de "acuracia top-3 estrita"
+evita comparacao injusta.
 
-OUTPUT_PREDICOES = REPORTS_DIR / "predicoes_walk_forward_xgboost.csv"
-OUTPUT_METRICAS = REPORTS_DIR / "metricas_walk_forward_xgboost.csv"
+Base bibliografica: MAE e Kendall tau sao coerentes com Henderson et al. [9]; top-3 vem
+como comparacao complementar inspirada em Polishchuk [1].
 
+---
 
-FOLDS = [
-    {"train_until": 2022, "valid_season": 2023},
-    {"train_until": 2023, "valid_season": 2024},
-    {"train_until": 2024, "valid_season": 2025},
-]
+### 3. Otimizar o fator de time-decay
 
+Objetivo: escolher o fator de decaimento usando somente folds anteriores ao teste 2025.
 
-def carregar_dados():
-    x = pd.read_csv(INPUT_X)
-    y = pd.read_csv(INPUT_Y)
+Comando:
 
-    if len(x) != len(y):
-        raise RuntimeError(f"X e y com tamanhos diferentes: {len(x)} vs {len(y)}")
-
-    return x, y
-
-
-def criar_modelo_xgboost() -> XGBRegressor:
-    return XGBRegressor(
-        objective="reg:squarederror",
-        n_estimators=350,
-        max_depth=3,
-        learning_rate=0.05,
-        subsample=0.85,
-        colsample_bytree=0.85,
-        reg_lambda=1.0,
-        reg_alpha=0.0,
-        random_state=42,
-        n_jobs=4,
-    )
-
-
-def rodar_fold(x, y, train_until: int, valid_season: int):
-    train_mask = y["season"] <= train_until
-    valid_mask = y["season"] == valid_season
-
-    if valid_mask.sum() == 0:
-        raise RuntimeError(f"Nenhuma linha encontrada para validacao {valid_season}.")
-
-    modelo = criar_modelo_xgboost()
-    modelo.fit(
-        x.loc[train_mask],
-        y.loc[train_mask, "finish_position"],
-    )
-
-    pred = modelo.predict(x.loc[valid_mask])
-
-    df_pred = y.loc[valid_mask].copy()
-    df_pred["pred_finish_position"] = pred
-    df_pred["train_until"] = train_until
-    df_pred["valid_season"] = valid_season
-
-    metricas = calcular_metricas(df_pred)
-    metricas["train_until"] = train_until
-    metricas["valid_season"] = valid_season
-    metricas["n_train"] = int(train_mask.sum())
-    metricas["n_valid"] = int(valid_mask.sum())
-
-    return df_pred, metricas
-
-
-def main():
-    REPORTS_DIR.mkdir(parents=True, exist_ok=True)
-
-    x, y = carregar_dados()
-
-    predicoes = []
-    metricas = []
-
-    for fold in FOLDS:
-        df_pred, fold_metricas = rodar_fold(
-            x=x,
-            y=y,
-            train_until=fold["train_until"],
-            valid_season=fold["valid_season"],
-        )
-
-        predicoes.append(df_pred)
-        metricas.append(fold_metricas)
-
-    df_predicoes = pd.concat(predicoes, ignore_index=True)
-    df_metricas = pd.DataFrame(metricas)
-
-    df_predicoes.to_csv(OUTPUT_PREDICOES, index=False, encoding="utf-8-sig")
-    df_metricas.to_csv(OUTPUT_METRICAS, index=False, encoding="utf-8-sig")
-
-    print("Walk-forward XGBoost concluido.")
-    print(df_metricas.to_string(index=False))
-
-
-if __name__ == "__main__":
-    main()
+```bash
+python src/otimizacao_time_decay.py
 ```
 
-### 3. Criar `src/otimizacao_time_decay.py`
+Fatores testados:
 
-O cronograma pede testar os fatores:
+- `0.50`
+- `0.65`
+- `0.75`
+- `0.85`
+- `0.95`
 
-- 0.50
-- 0.65
-- 0.75
-- 0.85
-- 0.95
+Folds usados na escolha:
 
-A ideia e calcular pesos temporais para cada linha de treino e passar esses pesos ao `sample_weight` do XGBoost.
+- treino 2018-2022 -> validacao 2023
+- treino 2018-2023 -> validacao 2024
 
-Como a validacao pedida para escolher o fator e 2023-2024, o script deve:
+Regra de decisao:
 
-1. Rodar fold 2023 para cada fator.
-2. Rodar fold 2024 para cada fator.
-3. Calcular o MAE medio.
-4. Escolher o fator com menor MAE medio.
-5. Salvar o resultado em CSV.
+- escolher o fator com menor MAE medio em 2023-2024;
+- usar Kendall tau e top-3 apenas como metricas auxiliares;
+- nao usar 2025 para escolher o fator, porque 2025 deve funcionar como validacao final.
 
-Codigo sugerido:
+Resultado atual observado:
 
-```python
-from __future__ import annotations
+| Decay | MAE medio 2023-2024 |
+|---|---:|
+| 0.85 | 2.414576 |
+| 0.75 | 2.414762 |
+| 0.65 | 2.415667 |
+| 0.95 | 2.426356 |
+| 0.50 | 2.435438 |
 
-from pathlib import Path
+Decisao atual: `0.85`.
 
-import numpy as np
-import pandas as pd
-from xgboost import XGBRegressor
+Observacao importante: `0.85` ganhou de `0.75` por margem muito pequena. Como `0.75`
+e o ponto de partida sugerido pelo RAPM, vale documentar que a escolha por `0.85` foi
+empirica, mas que os dois fatores sao praticamente equivalentes nesta amostra.
 
-from metricas import calcular_metricas
+Base bibliografica: Henderson et al. [9] fundamenta o uso de time-decay no contexto
+RAPM/F1; Tan et al. [18] fundamenta a ideia geral de pesos temporais decrescentes em
+aprendizado nao-estacionario.
 
+---
 
-BASE_DIR = Path(__file__).resolve().parents[1]
-PROCESSED_DIR = BASE_DIR / "data" / "processed"
-REPORTS_DIR = BASE_DIR / "reports" / "modelagem"
+### 4. Rodar walk-forward com XGBoost e sample weights
 
-INPUT_X = PROCESSED_DIR / "dataset_modelagem_X_2018_2025.csv"
-INPUT_Y = PROCESSED_DIR / "dataset_modelagem_y_2018_2025.csv"
+Objetivo: validar a infraestrutura completa da segunda-feira com XGBoost ainda sem tuning.
 
-OUTPUT_RESULTADOS = REPORTS_DIR / "otimizacao_time_decay_xgboost.csv"
-OUTPUT_ESCOLHIDO = REPORTS_DIR / "time_decay_escolhido_xgboost.txt"
+Comando:
 
-DECAYS = [0.50, 0.65, 0.75, 0.85, 0.95]
-FOLDS_OTIMIZACAO = [
-    {"train_until": 2022, "valid_season": 2023},
-    {"train_until": 2023, "valid_season": 2024},
-]
-
-
-def carregar_dados():
-    x = pd.read_csv(INPUT_X)
-    y = pd.read_csv(INPUT_Y)
-
-    if len(x) != len(y):
-        raise RuntimeError(f"X e y com tamanhos diferentes: {len(x)} vs {len(y)}")
-
-    return x, y
-
-
-def criar_modelo_xgboost() -> XGBRegressor:
-    return XGBRegressor(
-        objective="reg:squarederror",
-        n_estimators=350,
-        max_depth=3,
-        learning_rate=0.05,
-        subsample=0.85,
-        colsample_bytree=0.85,
-        reg_lambda=1.0,
-        reg_alpha=0.0,
-        random_state=42,
-        n_jobs=4,
-    )
-
-
-def calcular_sample_weight(y_train: pd.DataFrame, valid_season: int, decay: float):
-    distancia = valid_season - y_train["season"]
-    distancia = distancia.clip(lower=0)
-    pesos = np.power(decay, distancia)
-    return pesos.to_numpy()
-
-
-def avaliar_decay(x, y, decay: float, train_until: int, valid_season: int):
-    train_mask = y["season"] <= train_until
-    valid_mask = y["season"] == valid_season
-
-    x_train = x.loc[train_mask]
-    y_train = y.loc[train_mask]
-    x_valid = x.loc[valid_mask]
-    y_valid = y.loc[valid_mask].copy()
-
-    sample_weight = calcular_sample_weight(
-        y_train=y_train,
-        valid_season=valid_season,
-        decay=decay,
-    )
-
-    modelo = criar_modelo_xgboost()
-    modelo.fit(
-        x_train,
-        y_train["finish_position"],
-        sample_weight=sample_weight,
-    )
-
-    y_valid["pred_finish_position"] = modelo.predict(x_valid)
-    metricas = calcular_metricas(y_valid)
-
-    return {
-        "decay": decay,
-        "train_until": train_until,
-        "valid_season": valid_season,
-        "n_train": int(train_mask.sum()),
-        "n_valid": int(valid_mask.sum()),
-        **metricas,
-    }
-
-
-def main():
-    REPORTS_DIR.mkdir(parents=True, exist_ok=True)
-
-    x, y = carregar_dados()
-
-    resultados = []
-
-    for decay in DECAYS:
-        for fold in FOLDS_OTIMIZACAO:
-            resultado = avaliar_decay(
-                x=x,
-                y=y,
-                decay=decay,
-                train_until=fold["train_until"],
-                valid_season=fold["valid_season"],
-            )
-            resultados.append(resultado)
-
-    df_resultados = pd.DataFrame(resultados)
-    df_resultados.to_csv(OUTPUT_RESULTADOS, index=False, encoding="utf-8-sig")
-
-    resumo = (
-        df_resultados
-        .groupby("decay", as_index=False)
-        .agg(
-            mae_medio=("mae", "mean"),
-            mae_std=("mae", "std"),
-            rmse_medio=("rmse", "mean"),
-            kendall_tau_medio=("kendall_tau", "mean"),
-            top3_accuracy_medio=("top3_accuracy", "mean"),
-        )
-        .sort_values(["mae_medio", "decay"])
-    )
-
-    melhor = resumo.iloc[0]
-
-    texto = (
-        f"Time-decay escolhido: {melhor['decay']}\n"
-        f"MAE medio 2023-2024: {melhor['mae_medio']:.6f}\n"
-        f"Desvio padrao do MAE: {melhor['mae_std']:.6f}\n"
-    )
-
-    OUTPUT_ESCOLHIDO.write_text(texto, encoding="utf-8")
-
-    print("Otimizacao de time-decay concluida.")
-    print(resumo.to_string(index=False))
-    print()
-    print(texto)
-
-
-if __name__ == "__main__":
-    main()
+```bash
+python src/walk_forward.py
 ```
 
-### 4. Atualizar o walk-forward para usar o decay escolhido
+Folds finais:
 
-Depois de escolher o melhor decay, o `walk_forward.py` deve ser atualizado para usar `sample_weight`.
+- treino 2018-2022 -> validacao 2023
+- treino 2018-2023 -> validacao 2024
+- treino 2018-2024 -> validacao 2025
 
-A alteracao principal e incluir uma funcao de pesos:
+Peso temporal esperado:
 
-```python
-def calcular_sample_weight(y_train: pd.DataFrame, valid_season: int, decay: float):
-    distancia = valid_season - y_train["season"]
-    distancia = distancia.clip(lower=0)
-    return np.power(decay, distancia).to_numpy()
+```text
+peso = decay ^ (valid_season - season)
 ```
 
-E mudar o `fit` para:
+Com `decay = 0.85`, dados da temporada imediatamente anterior ao fold recebem peso maior
+que dados antigos. Isso preserva o principio da arquitetura: corridas mais recentes devem
+ter mais influencia porque refletem melhor o estado competitivo atual.
 
-```python
-sample_weight = calcular_sample_weight(
-    y_train=y.loc[train_mask],
-    valid_season=valid_season,
-    decay=decay_escolhido,
-)
+Resultados atuais:
 
-modelo.fit(
-    x.loc[train_mask],
-    y.loc[train_mask, "finish_position"],
-    sample_weight=sample_weight,
-)
-```
+| Validacao | MAE | RMSE | R2 | Kendall tau | Top-3 estrito |
+|---|---:|---:|---:|---:|---:|
+| 2023 | 2.564548 | 3.238925 | 0.594347 | 0.625833 | 0.136364 |
+| 2024 | 2.264604 | 2.943094 | 0.683637 | 0.669066 | 0.166667 |
+| 2025 | 2.469857 | 3.191213 | 0.619424 | 0.613309 | 0.125000 |
 
-O fold final 2025 deve usar o decay escolhido com base nos folds 2023 e 2024.
+Leitura rapida:
+
+- O MAE 2025 de `2.469857` fica dentro da meta da arquitetura (`<= 2.5`).
+- O Kendall tau 2025 de `0.613309` fica acima da meta (`>= 0.60`) e proximo da
+  referencia RAPM (`0.625`).
+- O RMSE 2025 de `3.191213` ainda fica acima da meta (`<= 3.0`), ponto para atacar no
+  tuning Optuna.
+- A top-3 estrita esta baixa; nao tratar isso como falha central antes de revisar a
+  definicao da metrica.
+
+Base bibliografica: XGBoost e justificado por Chen e Guestrin [19] e pelos trabalhos de
+predicao em F1 que usam modelos tabulares fortes [3], [4].
+
+---
 
 ### 5. Gerar relatorio da segunda-feira
 
-Ao final, criar um relatorio simples em:
+Objetivo: deixar um rastro auditavel para a metodologia.
+
+Arquivo:
 
 - `reports/modelagem/relatorio_segunda_semana2_xgboost.txt`
 
 Conteudo minimo:
 
-- Bases usadas.
-- Recorte temporal real: 2018-2025.
-- Justificativa do ajuste de 2014 para 2018.
-- Folds usados.
-- Metricas por fold.
-- Decay testado.
-- Decay escolhido.
-- Observacao de que Random Forest ficou fora por decisao temporaria.
+- bases usadas;
+- ajuste do recorte 2014 -> 2018;
+- folds usados;
+- fator de time-decay testado e escolhido;
+- metricas por fold;
+- observacao de que o modelo ainda esta sem tuning;
+- observacao de que Random Forest ficou para etapa posterior.
 
-Modelo de texto:
+Checklist de texto metodologico:
 
-```text
-Relatorio - Segunda Semana 2 - Modelagem XGBoost
-================================================
+- explicar que 2025 nao foi usado para escolher o decay;
+- explicar que `0.85` foi escolhido por MAE medio em 2023-2024;
+- citar que `0.75` veio da referencia RAPM, mas foi tratado como ponto de partida;
+- registrar que a comparacao com benchmarks 2014+ deve considerar o recorte menor
+  2018-2025.
 
-Bases utilizadas:
-- data/processed/dataset_modelagem_X_2018_2025.csv
-- data/processed/dataset_modelagem_y_2018_2025.csv
+---
 
-Recorte temporal:
-O cronograma menciona treino a partir de 2014, mas a base final de modelagem
-esta filtrada para 2018-2025. Portanto, os folds foram adaptados para:
-- treino 2018-2022 -> validacao 2023
-- treino 2018-2023 -> validacao 2024
-- treino 2018-2024 -> validacao 2025
+## Ordem recomendada para executar na pratica
 
-Metricas calculadas:
-- MAE
-- RMSE
-- R2
-- Kendall tau medio por corrida
-- Acuracia top-3
+1. Rodar validacao de schema.
+2. Rodar selecao/congelamento de features se houver qualquer mudanca em FE.
+3. Rodar otimizacao de time-decay.
+4. Conferir `reports/modelagem/time_decay_escolhido_xgboost.txt`.
+5. Rodar walk-forward XGBoost.
+6. Conferir `reports/modelagem/metricas_walk_forward_xgboost.csv`.
+7. Atualizar o relatorio da segunda-feira com os resultados.
+8. Registrar no texto da metodologia o ajuste 2014 -> 2018.
 
-Time-decay:
-Foram testados os fatores 0.50, 0.65, 0.75, 0.85 e 0.95.
-O fator escolhido foi aquele com menor MAE medio nos folds 2023 e 2024.
+---
 
-Random Forest:
-Nao executado nesta etapa por decisao temporaria.
-```
+## Criterios de aceite da segunda-feira
 
-## Ordem Recomendada De Execucao
+A segunda-feira pode ser considerada concluida quando:
 
-1. Criar `src/metricas.py`.
-2. Criar `src/walk_forward.py` sem time-decay para validar que tudo roda.
-3. Criar `src/otimizacao_time_decay.py`.
-4. Rodar a otimizacao do decay.
-5. Atualizar `src/walk_forward.py` para usar o decay escolhido.
-6. Rodar o walk-forward final com XGBoost.
-7. Gerar o relatorio da segunda-feira.
+- `metricas.py` calcula todas as metricas sem depender de um modelo especifico;
+- a otimizacao de time-decay gera CSV completo e arquivo com fator escolhido;
+- o walk-forward roda os tres folds temporais;
+- 2025 entra apenas como validacao final, nao como escolha de hiperparametro;
+- o relatorio menciona o recorte real `2018-2025`;
+- MAE e Kendall tau sao comparados com as metas da arquitetura;
+- as limitacoes ficam registradas.
 
-## Criterio Para Considerar A Segunda Concluida
+---
 
-A segunda-feira pode ser considerada concluida quando existirem:
+## Riscos e ajustes recomendados
 
-- `src/metricas.py`
-- `src/walk_forward.py`
-- `src/otimizacao_time_decay.py`
-- `reports/modelagem/otimizacao_time_decay_xgboost.csv`
-- `reports/modelagem/time_decay_escolhido_xgboost.txt`
-- `reports/modelagem/metricas_walk_forward_xgboost.csv`
-- `reports/modelagem/predicoes_walk_forward_xgboost.csv`
-- `reports/modelagem/relatorio_segunda_semana2_xgboost.txt`
+### Risco 1: diferenca entre 2014+ e 2018+
 
-E quando o relatorio mostrar metricas para:
+A arquitetura usa 2014+ como ideal por causa da era hibrida, mas o dataset final usa 2018+
+por disponibilidade/qualidade das features FastF1. Isso nao invalida o cronograma, mas
+precisa aparecer na metodologia e nas limitacoes.
 
-- validacao 2023
-- validacao 2024
-- validacao 2025
+### Risco 2: `season_factor` em modelos de arvore
 
-## Observacao Importante
+Para validar 2025, `season_factor = 2025` fica fora do range observado no treino
+2018-2024. Modelos de arvore nao extrapolam bem variaveis temporais numericas. Manter
+por enquanto porque a RFE selecionou o conjunto atual, mas observar no tuning e na SHAP.
 
-O arquivo `src/rfe_xgboost_features.py` ja possui uma validacao temporal em 2025 e pode servir como referencia, mas ele nao substitui a segunda-feira porque:
+### Risco 3: top-3 estrita baixa
 
-- nao roda os folds 2023 e 2024;
-- nao calcula todas as metricas customizadas;
-- nao otimiza time-decay;
-- nao salva uma tabela completa de metricas walk-forward.
+A top-3 atual exige acerto exato do conjunto de podio. Ela e util, mas severa. Para a
+comparacao com Polishchuk [1], considerar adicionar depois uma metrica menos estrita:
 
-Portanto, ele deve ser tratado como evidencia de que o XGBoost consegue rodar, nao como entrega final da segunda.
+- `top3_overlap`: media de quantos pilotos do podio real aparecem no top-3 previsto;
+- `podium_recall`: proporcao dos pilotos reais de podio recuperados.
+
+### Risco 4: margem muito pequena entre decays
+
+`0.85` venceu `0.75` por diferenca minima de MAE. No texto, evitar vender isso como uma
+descoberta forte. Melhor frase: "o grid-search indicou leve vantagem empirica para 0.85,
+mantendo 0.75 como referencia teorica do RAPM".
+
+---
+
+## Proxima etapa apos concluir a segunda-feira
+
+Na terca-feira, seguir o cronograma original:
+
+- rodar XGBoost baseline ja validado pela infraestrutura;
+- implementar/rodar Random Forest sem tuning;
+- comparar metricas preliminares;
+- corrigir eventuais problemas antes do Optuna.
+
+Na quarta e quinta:
+
+- Optuna para XGBoost;
+- Optuna para Random Forest.
+
+Na sexta:
+
+- Ridge Regression baseline;
+- tabela comparativa dos tres modelos.
+
+No fim de semana:
+
+- RFE final;
+- re-rodar modelos com features definitivas;
+- preparar feature importance e arquivos para comparacao com 2026.
