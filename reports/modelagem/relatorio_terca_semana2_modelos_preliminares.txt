@@ -1,0 +1,41 @@
+Relatorio - Terca Semana 2 - Modelos Preliminares
+==========================================================
+
+Escopo:
+- Comparacao sem tuning Optuna.
+- Modelos: XGBoost, Random Forest e LightGBM.
+- Folds: 2018-2022 -> 2023, 2018-2023 -> 2024, 2018-2024 -> 2025.
+- Time-decay aplicado via sample_weight.
+
+Arquivos consolidados:
+- xgboost: /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/metricas_walk_forward_xgboost.csv
+- random_forest: /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/metricas_walk_forward_random_forest.csv
+- lightgbm: /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/metricas_walk_forward_lightgbm.csv
+
+Resumo ordenado por MAE medio:
+       modelo  mae_medio  mae_std  rmse_medio  r2_medio  kendall_tau_medio  top3_accuracy_medio  melhor_fold  pior_fold
+     lightgbm   2.362821 0.113731    3.046406  0.651149           0.646404             0.199495         2024       2023
+      xgboost   2.425844 0.177947    3.104655  0.636673           0.636230             0.142677         2024       2023
+random_forest   2.442157 0.119214    3.102825  0.638235           0.635471             0.213384         2024       2025
+
+Metricas por fold:
+       modelo      mae     rmse       r2  kendall_tau  top3_accuracy  train_until  valid_season  decay  n_train  n_valid
+      xgboost 2.575926 3.240866 0.593861     0.615243       0.136364         2022          2023   0.95     1725      374
+      xgboost 2.229264 2.884591 0.696089     0.678936       0.166667         2023          2024   0.95     2099      425
+      xgboost 2.472341 3.188507 0.620070     0.614510       0.125000         2024          2025   0.95     2524      419
+random_forest 2.472972 3.110062 0.625983     0.635811       0.181818         2022          2023   0.95     1725      374
+random_forest 2.310561 2.987150 0.674094     0.664068       0.208333         2023          2024   0.95     2099      425
+random_forest 2.542939 3.211264 0.614627     0.606534       0.250000         2024          2025   0.95     2524      419
+     lightgbm 2.456838 3.105577 0.627061     0.639017       0.181818         2022          2023   0.95     1725      374
+     lightgbm 2.236406 2.925341 0.687442     0.675828       0.125000         2023          2024   0.95     2099      425
+     lightgbm 2.395220 3.108299 0.638944     0.624367       0.291667         2024          2025   0.95     2524      419
+
+Leitura preliminar:
+- Melhor MAE medio sem tuning: lightgbm (2.362821).
+- Esta comparacao ainda nao define finalistas; a decisao final depende de Optuna, Ridge baseline, RFE e feature importance.
+- Top-3 accuracy e estrita e deve ser interpretada com cuidado.
+
+Artefatos gerados:
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/tabela_metricas_preliminares_3modelos.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/tabela_metricas_preliminares_3modelos_resumo.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/relatorio_terca_semana2_modelos_preliminares.txt

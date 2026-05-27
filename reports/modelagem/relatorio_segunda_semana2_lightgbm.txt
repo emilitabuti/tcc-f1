@@ -1,0 +1,43 @@
+Relatorio - Segunda Semana 2 - Modelagem LightGBM
+========================================================
+
+Versao LightGBM:
+- 4.3.0
+
+Bases utilizadas:
+- /home/emili-tabuti/Documentos/projects/tcc-f1/data/processed/dataset_modelagem_X_2018_2025.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/data/processed/dataset_modelagem_y_2018_2025.csv
+
+Recorte temporal:
+O cronograma menciona treino a partir de 2014, mas a base final de modelagem esta filtrada para 2018-2025. Portanto, os folds foram adaptados para o recorte real disponivel.
+
+Folds executados:
+- treino 2018-2022 -> validacao 2023
+- treino 2018-2023 -> validacao 2024
+- treino 2018-2024 -> validacao 2025
+
+Modelo:
+- LightGBM sem tuning Optuna, apenas para validar sample_weight e walk-forward.
+- Um novo LGBMRegressor e criado em cada fold; nenhum lgb.Dataset e reutilizado.
+
+Metricas calculadas:
+- MAE
+- RMSE
+- R2
+- Kendall tau medio por corrida
+- Acuracia top-3
+
+Time-decay:
+- Fator usado no walk-forward LightGBM: 0.95
+- Pesos passados via LGBMRegressor.fit(..., sample_weight=sample_weight).
+
+Metricas por fold:
+     mae     rmse       r2  kendall_tau  top3_accuracy  train_until  valid_season  decay  n_train  n_valid
+2.456838 3.105577 0.627061     0.639017       0.181818         2022          2023   0.95     1725      374
+2.236406 2.925341 0.687442     0.675828       0.125000         2023          2024   0.95     2099      425
+2.395220 3.108299 0.638944     0.624367       0.291667         2024          2025   0.95     2524      419
+
+Artefatos gerados:
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/predicoes_walk_forward_lightgbm.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/metricas_walk_forward_lightgbm.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/relatorio_segunda_semana2_lightgbm.txt

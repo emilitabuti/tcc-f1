@@ -1,0 +1,41 @@
+Relatorio - Terca Semana 2 - Modelagem Random Forest
+==========================================================
+
+Bases utilizadas:
+- /home/emili-tabuti/Documentos/projects/tcc-f1/data/processed/dataset_modelagem_X_2018_2025.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/data/processed/dataset_modelagem_y_2018_2025.csv
+
+Recorte temporal:
+O cronograma menciona treino a partir de 2014, mas a base final de modelagem esta filtrada para 2018-2025. Portanto, os folds foram adaptados para o recorte real disponivel.
+
+Folds executados:
+- treino 2018-2022 -> validacao 2023
+- treino 2018-2023 -> validacao 2024
+- treino 2018-2024 -> validacao 2025
+
+Modelo:
+- Random Forest sem tuning Optuna, baseline preliminar da terca-feira.
+- Um novo RandomForestRegressor e criado em cada fold.
+- Parametros: n_estimators=350, max_features=sqrt, random_state=42.
+
+Metricas calculadas:
+- MAE
+- RMSE
+- R2
+- Kendall tau medio por corrida
+- Acuracia top-3
+
+Time-decay:
+- Fator usado no walk-forward Random Forest: 0.95
+- Pesos passados via RandomForestRegressor.fit(..., sample_weight=sample_weight).
+
+Metricas por fold:
+     mae     rmse       r2  kendall_tau  top3_accuracy  train_until  valid_season  decay  n_train  n_valid
+2.472972 3.110062 0.625983     0.635811       0.181818         2022          2023   0.95     1725      374
+2.310561 2.987150 0.674094     0.664068       0.208333         2023          2024   0.95     2099      425
+2.542939 3.211264 0.614627     0.606534       0.250000         2024          2025   0.95     2524      419
+
+Artefatos gerados:
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/predicoes_walk_forward_random_forest.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/metricas_walk_forward_random_forest.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/relatorio_terca_semana2_random_forest.txt

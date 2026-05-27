@@ -2,10 +2,10 @@ Validacao de Schema - Fold 2025 para Modelagem
 ====================================================
 
 Arquivos verificados:
-- C:\Users\isagr\Documents\tcc-f1\data\processed\dataset_modelagem_X_2018_2025.csv
-- C:\Users\isagr\Documents\tcc-f1\data\processed\dataset_modelagem_y_2018_2025.csv
-- C:\Users\isagr\Documents\tcc-f1\data\processed\openf1_2025_clean.csv
-- C:\Users\isagr\Documents\tcc-f1\models\feature_selection\features_modelagem_2018_2025.json
+- /home/emili-tabuti/Documentos/projects/tcc-f1/data/processed/dataset_modelagem_X_2018_2025.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/data/processed/dataset_modelagem_y_2018_2025.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/data/processed/openf1_2025_clean.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/models/feature_selection/features_modelagem_2018_2025.json
 
 Resumo:
 - X shape: (2943, 15)

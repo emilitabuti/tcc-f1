@@ -2,8 +2,8 @@ Relatorio - Segunda Semana 2 - Modelagem XGBoost
 =======================================================
 
 Bases utilizadas:
-- C:\Users\isagr\Documents\tcc-f1\data\processed\dataset_modelagem_X_2018_2025.csv
-- C:\Users\isagr\Documents\tcc-f1\data\processed\dataset_modelagem_y_2018_2025.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/data/processed/dataset_modelagem_X_2018_2025.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/data/processed/dataset_modelagem_y_2018_2025.csv
 
 Recorte temporal:
 O cronograma menciona treino a partir de 2014, mas a base final de modelagem esta filtrada para 2018-2025. Portanto, os folds foram adaptados para o recorte real disponivel.
@@ -25,22 +25,22 @@ Metricas calculadas:
 
 Time-decay:
 - Fatores testados na etapa de otimizacao: 0.50, 0.65, 0.75, 0.85 e 0.95.
-- Fator usado no walk-forward final: 0.85
+- Fator usado no walk-forward final: 0.95
 
 Metricas por fold:
      mae     rmse       r2  kendall_tau  top3_accuracy  train_until  valid_season  decay  n_train  n_valid
-2.564548 3.238925 0.594347     0.625833       0.136364         2022          2023   0.85     1725      374
-2.264604 2.943094 0.683637     0.669066       0.166667         2023          2024   0.85     2099      425
-2.469857 3.191213 0.619424     0.613309       0.125000         2024          2025   0.85     2524      419
+2.575926 3.240866 0.593861     0.615243       0.136364         2022          2023   0.95     1725      374
+2.229264 2.884591 0.696089     0.678936       0.166667         2023          2024   0.95     2099      425
+2.472341 3.188507 0.620070     0.614510       0.125000         2024          2025   0.95     2524      419
 
 Random Forest:
 - Nao executado nesta etapa por decisao temporaria.
 
 Artefatos gerados:
-- C:\Users\isagr\Documents\tcc-f1\reports\modelagem\otimizacao_time_decay_xgboost.csv
-- C:\Users\isagr\Documents\tcc-f1\reports\modelagem\otimizacao_time_decay_xgboost_resumo.csv
-- C:\Users\isagr\Documents\tcc-f1\reports\modelagem\time_decay_escolhido_xgboost.txt
-- C:\Users\isagr\Documents\tcc-f1\reports\modelagem\validacao_schema_2025_modelagem.txt
-- C:\Users\isagr\Documents\tcc-f1\reports\modelagem\predicoes_walk_forward_xgboost.csv
-- C:\Users\isagr\Documents\tcc-f1\reports\modelagem\metricas_walk_forward_xgboost.csv
-- C:\Users\isagr\Documents\tcc-f1\reports\modelagem\relatorio_segunda_semana2_xgboost.txt
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/otimizacao_time_decay_xgboost.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/otimizacao_time_decay_xgboost_resumo.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/time_decay_escolhido_xgboost.txt
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/validacao_schema_2025_modelagem.txt
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/predicoes_walk_forward_xgboost.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/metricas_walk_forward_xgboost.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/relatorio_segunda_semana2_xgboost.txt
