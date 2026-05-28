@@ -4,12 +4,12 @@
 
 Finalistas preliminares para a Fase 1:
 
-- lightgbm_tuned: MAE medio 2.3129, Kendall tau 0.6532, MAE std 0.1126.
-- random_forest_tuned: MAE medio 2.3251, Kendall tau 0.6497, MAE std 0.1210.
+- lightgbm_tuned: MAE medio 2.3133, Kendall tau 0.6551, MAE std 0.1117.
+- random_forest_tuned: MAE medio 2.3275, Kendall tau 0.6511, MAE std 0.1210.
 
 Modelo arquivado como terceiro candidato:
 
-- xgboost_tuned: MAE medio 2.3409, Kendall tau 0.6507, MAE std 0.1458.
+- xgboost_tuned: MAE medio 2.3342, Kendall tau 0.6518, MAE std 0.1334.
 
 Baseline linear:
 

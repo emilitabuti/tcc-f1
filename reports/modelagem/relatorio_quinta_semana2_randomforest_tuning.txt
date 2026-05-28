@@ -6,26 +6,27 @@ Objetivo:
 - Reavaliar o melhor conjunto em 2023, 2024 e 2025 via walk-forward.
 
 Bases utilizadas:
-- C:\Users\isagr\Documents\tcc-f1\data\processed\dataset_modelagem_X_2018_2025.csv
-- C:\Users\isagr\Documents\tcc-f1\data\processed\dataset_modelagem_y_2018_2025.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/data/processed/dataset_modelagem_X_2018_2025.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/data/processed/dataset_modelagem_y_2018_2025.csv
 
 Time-decay:
 - Fator usado via sample_weight: 0.95
 
 Optuna:
 - Trials executados: 50
-- Melhor MAE medio nos folds de tuning: 2.280968
-- Melhores parametros: {'max_depth': 7, 'n_estimators': 158, 'max_features': 0.5, 'min_samples_split': 2, 'min_samples_leaf': 5}
+- Tempo total de tuning: 89.72 segundos
+- Melhor MAE medio nos folds de tuning: 2.283507
+- Melhores parametros: {'max_depth': 7, 'n_estimators': 173, 'max_features': 0.5, 'min_samples_split': 3, 'min_samples_leaf': 5, 'tempo_tuning_segundos': 89.7187819039973}
 
 Metricas finais por fold:
      mae     rmse       r2  kendall_tau  top3_accuracy  train_until  valid_season  decay  n_train  n_valid
-2.374880 3.035617 0.643675     0.638474       0.181818         2022          2023   0.95     1725      374
-2.187057 2.889531 0.695047     0.678848       0.125000         2023          2024   0.95     2099      425
-2.413260 3.124915 0.635073     0.631906       0.333333         2024          2025   0.95     2524      419
+2.377413 3.036646 0.643433     0.638218       0.181818         2022          2023   0.95     1725      374
+2.189600 2.892334 0.694455     0.680177       0.125000         2023          2024   0.95     2099      425
+2.415568 3.129833 0.633924     0.635008       0.333333         2024          2025   0.95     2524      419
 
 Artefatos gerados:
-- C:\Users\isagr\Documents\tcc-f1\reports\modelagem\optuna_randomforest_trials.csv
-- C:\Users\isagr\Documents\tcc-f1\reports\modelagem\optuna_randomforest_best_params.json
-- C:\Users\isagr\Documents\tcc-f1\reports\modelagem\predicoes_walk_forward_randomforest_tuned.csv
-- C:\Users\isagr\Documents\tcc-f1\reports\modelagem\metricas_walk_forward_randomforest_tuned.csv
-- C:\Users\isagr\Documents\tcc-f1\reports\modelagem\relatorio_quinta_semana2_randomforest_tuning.txt
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/optuna_randomforest_trials.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/optuna_randomforest_best_params.json
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/predicoes_walk_forward_randomforest_tuned.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/metricas_walk_forward_randomforest_tuned.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/relatorio_quinta_semana2_randomforest_tuning.txt

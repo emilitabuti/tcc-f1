@@ -2,5 +2,5 @@
   "alpha": 0.01,
   "modelo": "Ridge",
   "normalizacao": "StandardScaler",
-  "tempo_tuning_segundos": 4.208965396999702
+  "tempo_tuning_segundos": 3.8948415250015387
 }

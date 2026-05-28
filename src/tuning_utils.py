@@ -150,6 +150,7 @@ def gerar_relatorio_tuning(
     best_params: dict,
     decay: float,
     n_trials: int,
+    tempo_tuning_segundos: float | None = None,
 ) -> None:
     linhas = [
         f"Relatorio - {data_cronograma} - Tuning Optuna {modelo}",
@@ -168,6 +169,11 @@ def gerar_relatorio_tuning(
         "",
         "Optuna:",
         f"- Trials executados: {n_trials}",
+        (
+            f"- Tempo total de tuning: {tempo_tuning_segundos:.2f} segundos"
+            if tempo_tuning_segundos is not None
+            else "- Tempo total de tuning: nao registrado"
+        ),
         f"- Melhor MAE medio nos folds de tuning: {best_value:.6f}",
         f"- Melhores parametros: {best_params}",
         "",

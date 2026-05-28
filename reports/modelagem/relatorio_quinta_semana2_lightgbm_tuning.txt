@@ -6,26 +6,27 @@ Objetivo:
 - Reavaliar o melhor conjunto em 2023, 2024 e 2025 via walk-forward.
 
 Bases utilizadas:
-- C:\Users\isagr\Documents\tcc-f1\data\processed\dataset_modelagem_X_2018_2025.csv
-- C:\Users\isagr\Documents\tcc-f1\data\processed\dataset_modelagem_y_2018_2025.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/data/processed/dataset_modelagem_X_2018_2025.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/data/processed/dataset_modelagem_y_2018_2025.csv
 
 Time-decay:
 - Fator usado via sample_weight: 0.95
 
 Optuna:
 - Trials executados: 50
-- Melhor MAE medio nos folds de tuning: 2.286149
-- Melhores parametros: {'max_depth': 4, 'n_estimators': 233, 'num_leaves': 8, 'learning_rate': 0.030253003725649086, 'subsample': 0.9535197334529327, 'colsample_bytree': 0.8639914767557011, 'reg_alpha': 0.7501423371843676, 'reg_lambda': 0.41612197965729475, 'min_child_samples': 38, 'lightgbm_version': '4.6.0'}
+- Tempo total de tuning: 21.46 segundos
+- Melhor MAE medio nos folds de tuning: 2.291017
+- Melhores parametros: {'max_depth': 4, 'n_estimators': 146, 'num_leaves': 8, 'learning_rate': 0.03164237033214078, 'subsample': 0.9926137770798064, 'colsample_bytree': 0.8625417840147478, 'reg_alpha': 0.805684044053038, 'reg_lambda': 0.5585100010421958, 'min_child_samples': 32, 'lightgbm_version': '4.3.0', 'tempo_tuning_segundos': 21.460145429999102}
 
 Metricas finais por fold:
      mae     rmse       r2  kendall_tau  top3_accuracy  train_until  valid_season  decay  n_train  n_valid
-2.388784 3.072583 0.634943     0.642930       0.227273         2022          2023   0.95     1725      374
-2.183514 2.884670 0.696073     0.681937       0.250000         2023          2024   0.95     2099      425
-2.366398 3.073538 0.646974     0.634680       0.291667         2024          2025   0.95     2524      419
+2.395798 3.068859 0.635828     0.642167       0.227273         2022          2023   0.95     1725      374
+2.186237 2.885420 0.695915     0.681806       0.208333         2023          2024   0.95     2099      425
+2.357896 3.070451 0.647683     0.641194       0.291667         2024          2025   0.95     2524      419
 
 Artefatos gerados:
-- C:\Users\isagr\Documents\tcc-f1\reports\modelagem\optuna_lightgbm_trials.csv
-- C:\Users\isagr\Documents\tcc-f1\reports\modelagem\optuna_lightgbm_best_params.json
-- C:\Users\isagr\Documents\tcc-f1\reports\modelagem\predicoes_walk_forward_lightgbm_tuned.csv
-- C:\Users\isagr\Documents\tcc-f1\reports\modelagem\metricas_walk_forward_lightgbm_tuned.csv
-- C:\Users\isagr\Documents\tcc-f1\reports\modelagem\relatorio_quinta_semana2_lightgbm_tuning.txt
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/optuna_lightgbm_trials.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/optuna_lightgbm_best_params.json
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/predicoes_walk_forward_lightgbm_tuned.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/metricas_walk_forward_lightgbm_tuned.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/relatorio_quinta_semana2_lightgbm_tuning.txt

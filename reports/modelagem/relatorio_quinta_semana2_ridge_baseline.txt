@@ -16,7 +16,7 @@ Time-decay:
 Grid-search:
 - Alphas avaliados: 25
 - Melhor MAE medio nos folds de tuning: 2.210738
-- Melhores parametros: {'alpha': 0.01, 'normalizacao': 'StandardScaler', 'modelo': 'Ridge', 'tempo_tuning_segundos': 4.208965396999702}
+- Melhores parametros: {'alpha': 0.01, 'normalizacao': 'StandardScaler', 'modelo': 'Ridge', 'tempo_tuning_segundos': 3.8948415250015387}
 
 Metricas finais por fold:
      mae     rmse       r2  kendall_tau  top3_accuracy  train_until  valid_season  decay  n_train  n_valid

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 from pathlib import Path
 
 import pandas as pd
@@ -20,7 +21,6 @@ OUTPUT_RESUMO = REPORTS_DIR / "tabela_metricas_tunadas_3modelos_resumo.csv"
 OUTPUT_TABELA_4 = REPORTS_DIR / "tabela_metricas_tunadas_4modelos.csv"
 OUTPUT_RESUMO_4 = REPORTS_DIR / "tabela_metricas_tunadas_4modelos_resumo.csv"
 OUTPUT_RELATORIO = REPORTS_DIR / "relatorio_modelos_tunados_26_28_05.txt"
-OUTPUT_RELATORIO_LEGACY = REPORTS_DIR / "relatorio_modelos_tunados_26_27_05.txt"
 OUTPUT_DECISAO = REPORTS_DIR / "decisao_preliminar_algoritmos.md"
 
 METRICAS = ["mae", "rmse", "r2", "kendall_tau", "top3_accuracy"]
@@ -75,6 +75,9 @@ def criar_resumo(df: pd.DataFrame) -> pd.DataFrame:
         df.loc[df.groupby("modelo")["mae"].idxmax()].set_index("modelo")["valid_season"]
     )
     resumo["tempo_tuning_segundos"] = resumo["modelo"].map(carregar_tempos_tuning())
+    resumo["tempo_tuning_minutos"] = resumo["tempo_tuning_segundos"].apply(
+        lambda valor: pd.NA if pd.isna(valor) else float(valor) / 60
+    )
 
     return resumo
 
@@ -82,6 +85,9 @@ def criar_resumo(df: pd.DataFrame) -> pd.DataFrame:
 def carregar_tempos_tuning() -> dict:
     tempos = {}
     arquivos = {
+        "xgboost_tuned": REPORTS_DIR / "optuna_xgboost_best_params.json",
+        "random_forest_tuned": REPORTS_DIR / "optuna_randomforest_best_params.json",
+        "lightgbm_tuned": REPORTS_DIR / "optuna_lightgbm_best_params.json",
         "ridge_baseline": REPORTS_DIR / "ridge_best_params.json",
     }
 
@@ -90,17 +96,40 @@ def carregar_tempos_tuning() -> dict:
             tempos[modelo] = pd.NA
             continue
 
-        dados = pd.read_json(caminho, typ="series")
+        dados = json.loads(caminho.read_text(encoding="utf-8"))
         tempos[modelo] = dados.get("tempo_tuning_segundos", pd.NA)
-
-    for modelo in ["xgboost_tuned", "random_forest_tuned", "lightgbm_tuned"]:
-        tempos[modelo] = pd.NA
 
     return tempos
 
 
+def descrever_tempos_tuning(resumo: pd.DataFrame) -> str:
+    ausentes = resumo.loc[
+        resumo["tempo_tuning_segundos"].isna(),
+        "modelo",
+    ].tolist()
+
+    if not ausentes:
+        return "- Tempo de tuning registrado para todos os modelos."
+
+    modelos = ", ".join(ausentes)
+    return (
+        "- Tempo de tuning ausente para execucoes antigas sem instrumentacao: "
+        f"{modelos}."
+    )
+
+
 def gerar_relatorio(df: pd.DataFrame, resumo: pd.DataFrame) -> None:
     melhor = resumo.iloc[0]
+    ensembles_com_tempo = resumo[
+        (resumo["modelo"] != "ridge_baseline")
+        & resumo["tempo_tuning_segundos"].notna()
+    ]
+    mais_rapido = (
+        ensembles_com_tempo.sort_values("tempo_tuning_segundos").iloc[0]
+        if not ensembles_com_tempo.empty
+        else None
+    )
+
     linhas = [
         "Relatorio - Modelos Tunados - 26/05 a 28/05",
         "=" * 54,
@@ -112,7 +141,7 @@ def gerar_relatorio(df: pd.DataFrame, resumo: pd.DataFrame) -> None:
         "- Ridge Regression incluido como baseline linear com StandardScaler e time-decay.",
         "- Hiperparametros escolhidos por MAE medio em 2023-2024.",
         "- Reavaliacao final em 2023, 2024 e 2025 com walk-forward.",
-        "- Tempo de tuning dos modelos Optuna nao foi registrado na execucao original; o campo fica vazio para esses modelos.",
+        descrever_tempos_tuning(resumo),
         "",
         "Resumo ordenado por MAE medio:",
         resumo.to_string(index=False),
@@ -125,17 +154,26 @@ def gerar_relatorio(df: pd.DataFrame, resumo: pd.DataFrame) -> None:
             f"- Melhor MAE medio tunado: {melhor['modelo']} "
             f"({melhor['mae_medio']:.6f} +/- {melhor['mae_std']:.6f})."
         ),
-        "- Os resultados tunados devem ser comparados aos preliminares sem tuning antes de escolher finalistas.",
+    ]
+
+    if mais_rapido is not None:
+        linhas.append(
+            f"- Modelo de arvore com menor tempo de tuning: {mais_rapido['modelo']} "
+            f"({mais_rapido['tempo_tuning_segundos']:.2f} segundos / "
+            f"{mais_rapido['tempo_tuning_minutos']:.2f} minutos)."
+        )
+
+    linhas.extend([
+        "- Esta consolidacao fecha a quinta-feira com metricas finais preliminares dos 4 modelos.",
         "",
         "Artefatos gerados:",
         f"- {OUTPUT_TABELA_4}",
         f"- {OUTPUT_RESUMO_4}",
         f"- {OUTPUT_DECISAO}",
         f"- {OUTPUT_RELATORIO}",
-    ]
+    ])
 
     OUTPUT_RELATORIO.write_text("\n".join(linhas), encoding="utf-8")
-    OUTPUT_RELATORIO_LEGACY.write_text("\n".join(linhas), encoding="utf-8")
 
 
 def gerar_decisao_preliminar(resumo: pd.DataFrame) -> None:

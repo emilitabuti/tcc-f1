@@ -6,26 +6,27 @@ Objetivo:
 - Reavaliar o melhor conjunto em 2023, 2024 e 2025 via walk-forward.
 
 Bases utilizadas:
-- C:\Users\isagr\Documents\tcc-f1\data\processed\dataset_modelagem_X_2018_2025.csv
-- C:\Users\isagr\Documents\tcc-f1\data\processed\dataset_modelagem_y_2018_2025.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/data/processed/dataset_modelagem_X_2018_2025.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/data/processed/dataset_modelagem_y_2018_2025.csv
 
 Time-decay:
 - Fator usado via sample_weight: 0.95
 
 Optuna:
 - Trials executados: 50
-- Melhor MAE medio nos folds de tuning: 2.316172
-- Melhores parametros: {'n_estimators': 313, 'max_depth': 3, 'learning_rate': 0.017987815801656433, 'subsample': 0.693055878078563, 'reg_alpha': 0.12794491653432793, 'reg_lambda': 0.3813985474388376, 'colsample_bytree': 0.6501227864950603}
+- Tempo total de tuning: 57.20 segundos
+- Melhor MAE medio nos folds de tuning: 2.306488
+- Melhores parametros: {'n_estimators': 269, 'max_depth': 3, 'learning_rate': 0.02207743518025897, 'subsample': 0.6320667544387549, 'reg_alpha': 0.7219110545028448, 'reg_lambda': 0.5782115773391785, 'colsample_bytree': 0.6544778704537475, 'tempo_tuning_segundos': 57.20105937599874}
 
 Metricas finais por fold:
      mae     rmse       r2  kendall_tau  top3_accuracy  train_until  valid_season  decay  n_train  n_valid
-2.455531 3.092162 0.630276     0.639529       0.136364         2022          2023   0.95     1725      374
-2.176812 2.865385 0.700123     0.678738       0.166667         2023          2024   0.95     2099      425
-2.390254 3.101496 0.640522     0.633887       0.333333         2024          2025   0.95     2524      419
+2.430912 3.068878 0.635823     0.643532       0.181818         2022          2023   0.95     1725      374
+2.182064 2.867345 0.699712     0.682655       0.166667         2023          2024   0.95     2099      425
+2.389664 3.104843 0.639746     0.629348       0.375000         2024          2025   0.95     2524      419
 
 Artefatos gerados:
-- C:\Users\isagr\Documents\tcc-f1\reports\modelagem\optuna_xgboost_trials.csv
-- C:\Users\isagr\Documents\tcc-f1\reports\modelagem\optuna_xgboost_best_params.json
-- C:\Users\isagr\Documents\tcc-f1\reports\modelagem\predicoes_walk_forward_xgboost_tuned.csv
-- C:\Users\isagr\Documents\tcc-f1\reports\modelagem\metricas_walk_forward_xgboost_tuned.csv
-- C:\Users\isagr\Documents\tcc-f1\reports\modelagem\relatorio_quarta_semana2_xgboost_tuning.txt
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/optuna_xgboost_trials.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/optuna_xgboost_best_params.json
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/predicoes_walk_forward_xgboost_tuned.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/metricas_walk_forward_xgboost_tuned.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/relatorio_quarta_semana2_xgboost_tuning.txt
