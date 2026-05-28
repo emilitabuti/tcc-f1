@@ -1,0 +1,36 @@
+Relatorio - Modelos Tunados - 26/05 e 27/05
+======================================================
+
+Escopo:
+- Tuning Optuna do XGBoost conforme 26/05.
+- Tuning Optuna do Random Forest conforme 27/05.
+- LightGBM acrescentado como terceiro modelo comparavel.
+- Hiperparametros escolhidos por MAE medio em 2023-2024.
+- Reavaliacao final em 2023, 2024 e 2025 com walk-forward.
+
+Resumo ordenado por MAE medio:
+             modelo  mae_medio  mae_std  rmse_medio  rmse_std  r2_medio  kendall_tau_medio  top3_accuracy_medio
+     lightgbm_tuned   2.312899 0.112608    3.010264  0.108768  0.659330           0.653182             0.256313
+random_forest_tuned   2.325065 0.121050    3.016688  0.118829  0.657932           0.649742             0.213384
+      xgboost_tuned   2.340866 0.145775    3.019681  0.133706  0.656974           0.650718             0.212121
+
+Metricas por fold:
+             modelo      mae     rmse       r2  kendall_tau  top3_accuracy  train_until  valid_season  decay  n_train  n_valid
+      xgboost_tuned 2.455531 3.092162 0.630276     0.639529       0.136364         2022          2023   0.95     1725      374
+      xgboost_tuned 2.176812 2.865385 0.700123     0.678738       0.166667         2023          2024   0.95     2099      425
+      xgboost_tuned 2.390254 3.101496 0.640522     0.633887       0.333333         2024          2025   0.95     2524      419
+random_forest_tuned 2.374880 3.035617 0.643675     0.638474       0.181818         2022          2023   0.95     1725      374
+random_forest_tuned 2.187057 2.889531 0.695047     0.678848       0.125000         2023          2024   0.95     2099      425
+random_forest_tuned 2.413260 3.124915 0.635073     0.631906       0.333333         2024          2025   0.95     2524      419
+     lightgbm_tuned 2.388784 3.072583 0.634943     0.642930       0.227273         2022          2023   0.95     1725      374
+     lightgbm_tuned 2.183514 2.884670 0.696073     0.681937       0.250000         2023          2024   0.95     2099      425
+     lightgbm_tuned 2.366398 3.073538 0.646974     0.634680       0.291667         2024          2025   0.95     2524      419
+
+Leitura:
+- Melhor MAE medio tunado: lightgbm_tuned (2.312899 +/- 0.112608).
+- Os resultados tunados devem ser comparados aos preliminares sem tuning antes de escolher finalistas.
+
+Artefatos gerados:
+- C:\Users\isagr\Documents\tcc-f1\reports\modelagem\tabela_metricas_tunadas_3modelos.csv
+- C:\Users\isagr\Documents\tcc-f1\reports\modelagem\tabela_metricas_tunadas_3modelos_resumo.csv
+- C:\Users\isagr\Documents\tcc-f1\reports\modelagem\relatorio_modelos_tunados_26_27_05.txt
