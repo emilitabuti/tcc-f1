@@ -12,11 +12,16 @@ INPUTS = {
     "xgboost_tuned": REPORTS_DIR / "metricas_walk_forward_xgboost_tuned.csv",
     "random_forest_tuned": REPORTS_DIR / "metricas_walk_forward_randomforest_tuned.csv",
     "lightgbm_tuned": REPORTS_DIR / "metricas_walk_forward_lightgbm_tuned.csv",
+    "ridge_baseline": REPORTS_DIR / "metricas_ridge_baseline.csv",
 }
 
 OUTPUT_TABELA = REPORTS_DIR / "tabela_metricas_tunadas_3modelos.csv"
 OUTPUT_RESUMO = REPORTS_DIR / "tabela_metricas_tunadas_3modelos_resumo.csv"
-OUTPUT_RELATORIO = REPORTS_DIR / "relatorio_modelos_tunados_26_27_05.txt"
+OUTPUT_TABELA_4 = REPORTS_DIR / "tabela_metricas_tunadas_4modelos.csv"
+OUTPUT_RESUMO_4 = REPORTS_DIR / "tabela_metricas_tunadas_4modelos_resumo.csv"
+OUTPUT_RELATORIO = REPORTS_DIR / "relatorio_modelos_tunados_26_28_05.txt"
+OUTPUT_RELATORIO_LEGACY = REPORTS_DIR / "relatorio_modelos_tunados_26_27_05.txt"
+OUTPUT_DECISAO = REPORTS_DIR / "decisao_preliminar_algoritmos.md"
 
 METRICAS = ["mae", "rmse", "r2", "kendall_tau", "top3_accuracy"]
 COLUNAS_ESPERADAS = METRICAS + [
@@ -63,21 +68,51 @@ def criar_resumo(df: pd.DataFrame) -> pd.DataFrame:
         .reset_index(drop=True)
     )
 
+    resumo["melhor_fold"] = resumo["modelo"].map(
+        df.loc[df.groupby("modelo")["mae"].idxmin()].set_index("modelo")["valid_season"]
+    )
+    resumo["pior_fold"] = resumo["modelo"].map(
+        df.loc[df.groupby("modelo")["mae"].idxmax()].set_index("modelo")["valid_season"]
+    )
+    resumo["tempo_tuning_segundos"] = resumo["modelo"].map(carregar_tempos_tuning())
+
     return resumo
+
+
+def carregar_tempos_tuning() -> dict:
+    tempos = {}
+    arquivos = {
+        "ridge_baseline": REPORTS_DIR / "ridge_best_params.json",
+    }
+
+    for modelo, caminho in arquivos.items():
+        if not caminho.exists():
+            tempos[modelo] = pd.NA
+            continue
+
+        dados = pd.read_json(caminho, typ="series")
+        tempos[modelo] = dados.get("tempo_tuning_segundos", pd.NA)
+
+    for modelo in ["xgboost_tuned", "random_forest_tuned", "lightgbm_tuned"]:
+        tempos[modelo] = pd.NA
+
+    return tempos
 
 
 def gerar_relatorio(df: pd.DataFrame, resumo: pd.DataFrame) -> None:
     melhor = resumo.iloc[0]
     linhas = [
-        "Relatorio - Modelos Tunados - 26/05 e 27/05",
+        "Relatorio - Modelos Tunados - 26/05 a 28/05",
         "=" * 54,
         "",
         "Escopo:",
         "- Tuning Optuna do XGBoost conforme 26/05.",
         "- Tuning Optuna do Random Forest conforme 27/05.",
         "- LightGBM acrescentado como terceiro modelo comparavel.",
+        "- Ridge Regression incluido como baseline linear com StandardScaler e time-decay.",
         "- Hiperparametros escolhidos por MAE medio em 2023-2024.",
         "- Reavaliacao final em 2023, 2024 e 2025 com walk-forward.",
+        "- Tempo de tuning dos modelos Optuna nao foi registrado na execucao original; o campo fica vazio para esses modelos.",
         "",
         "Resumo ordenado por MAE medio:",
         resumo.to_string(index=False),
@@ -93,12 +128,73 @@ def gerar_relatorio(df: pd.DataFrame, resumo: pd.DataFrame) -> None:
         "- Os resultados tunados devem ser comparados aos preliminares sem tuning antes de escolher finalistas.",
         "",
         "Artefatos gerados:",
-        f"- {OUTPUT_TABELA}",
-        f"- {OUTPUT_RESUMO}",
+        f"- {OUTPUT_TABELA_4}",
+        f"- {OUTPUT_RESUMO_4}",
+        f"- {OUTPUT_DECISAO}",
         f"- {OUTPUT_RELATORIO}",
     ]
 
     OUTPUT_RELATORIO.write_text("\n".join(linhas), encoding="utf-8")
+    OUTPUT_RELATORIO_LEGACY.write_text("\n".join(linhas), encoding="utf-8")
+
+
+def gerar_decisao_preliminar(resumo: pd.DataFrame) -> None:
+    modelos_sem_ridge = resumo[resumo["modelo"] != "ridge_baseline"].copy()
+    finalistas = modelos_sem_ridge.head(2)
+    descartado = modelos_sem_ridge.tail(1).iloc[0]
+    ridge = resumo[resumo["modelo"] == "ridge_baseline"].iloc[0]
+
+    linhas = [
+        "# Decisao Preliminar dos Algoritmos Finalistas",
+        "",
+        "## Resultado",
+        "",
+        "Finalistas preliminares para a Fase 1:",
+        "",
+    ]
+
+    for _, row in finalistas.iterrows():
+        linhas.append(
+            f"- {row['modelo']}: MAE medio {row['mae_medio']:.4f}, "
+            f"Kendall tau {row['kendall_tau_medio']:.4f}, "
+            f"MAE std {row['mae_std']:.4f}."
+        )
+
+    linhas.extend(
+        [
+            "",
+            "Modelo arquivado como terceiro candidato:",
+            "",
+            (
+                f"- {descartado['modelo']}: MAE medio {descartado['mae_medio']:.4f}, "
+                f"Kendall tau {descartado['kendall_tau_medio']:.4f}, "
+                f"MAE std {descartado['mae_std']:.4f}."
+            ),
+            "",
+            "Baseline linear:",
+            "",
+            (
+                f"- {ridge['modelo']}: MAE medio {ridge['mae_medio']:.4f}, "
+                f"Kendall tau {ridge['kendall_tau_medio']:.4f}. "
+                "Permanece como referencia metodologica, nao como finalista principal."
+            ),
+            "",
+            "## Justificativa",
+            "",
+            (
+                "A escolha segue o criterio definido no cronograma revisado: menor MAE medio, "
+                "maior Kendall tau, estabilidade entre folds e coerencia com a arquitetura. "
+                "O baseline Ridge foi mantido como referencia linear forte baseada na "
+                "fundamentacao RAPM; como ele ficou competitivo, os modelos de arvore devem "
+                "ser justificados tambem pela analise de importancia de features, robustez e "
+                "uso posterior na Fase 2 de drift/adaptacao."
+            ),
+            "",
+            "A decisao ainda deve ser confirmada apos a etapa de feature selection e feature importance.",
+        ]
+    )
+
+    OUTPUT_DECISAO.write_text("\n".join(linhas), encoding="utf-8")
 
 
 def main() -> None:
@@ -106,10 +202,15 @@ def main() -> None:
 
     df = carregar_metricas()
     resumo = criar_resumo(df)
+    df_sem_ridge = df[df["modelo"] != "ridge_baseline"].copy()
+    resumo_sem_ridge = criar_resumo(df_sem_ridge)
 
-    df.to_csv(OUTPUT_TABELA, index=False, encoding="utf-8-sig")
-    resumo.to_csv(OUTPUT_RESUMO, index=False, encoding="utf-8-sig")
+    df_sem_ridge.to_csv(OUTPUT_TABELA, index=False, encoding="utf-8-sig")
+    resumo_sem_ridge.to_csv(OUTPUT_RESUMO, index=False, encoding="utf-8-sig")
+    df.to_csv(OUTPUT_TABELA_4, index=False, encoding="utf-8-sig")
+    resumo.to_csv(OUTPUT_RESUMO_4, index=False, encoding="utf-8-sig")
     gerar_relatorio(df, resumo)
+    gerar_decisao_preliminar(resumo)
 
     print("Consolidacao de modelos tunados concluida.")
     print(resumo.to_string(index=False))
