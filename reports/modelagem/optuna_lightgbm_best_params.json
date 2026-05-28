@@ -8,5 +8,6 @@
   "num_leaves": 8,
   "reg_alpha": 0.7501423371843676,
   "reg_lambda": 0.41612197965729475,
-  "subsample": 0.9535197334529327
+  "subsample": 0.9535197334529327,
+  "tempo_tuning_segundos": 17.503668899997137
 }

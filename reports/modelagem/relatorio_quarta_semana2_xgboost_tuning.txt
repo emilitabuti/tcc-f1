@@ -14,8 +14,9 @@ Time-decay:
 
 Optuna:
 - Trials executados: 50
+- Tempo total de tuning: 43.79 segundos
 - Melhor MAE medio nos folds de tuning: 2.316172
-- Melhores parametros: {'n_estimators': 313, 'max_depth': 3, 'learning_rate': 0.017987815801656433, 'subsample': 0.693055878078563, 'reg_alpha': 0.12794491653432793, 'reg_lambda': 0.3813985474388376, 'colsample_bytree': 0.6501227864950603}
+- Melhores parametros: {'n_estimators': 313, 'max_depth': 3, 'learning_rate': 0.017987815801656433, 'subsample': 0.693055878078563, 'reg_alpha': 0.12794491653432793, 'reg_lambda': 0.3813985474388376, 'colsample_bytree': 0.6501227864950603, 'tempo_tuning_segundos': 43.78524410002865}
 
 Metricas finais por fold:
      mae     rmse       r2  kendall_tau  top3_accuracy  train_until  valid_season  decay  n_train  n_valid

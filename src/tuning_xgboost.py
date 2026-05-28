@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import time
 from pathlib import Path
 
 import optuna
@@ -71,17 +72,25 @@ def main() -> None:
         direction="minimize",
         sampler=optuna.samplers.TPESampler(seed=42),
     )
+    inicio_tuning = time.perf_counter()
     study.optimize(objective, n_trials=args.trials, show_progress_bar=False)
+    tempo_tuning_segundos = time.perf_counter() - inicio_tuning
 
     best_params = dict(study.best_params)
+    best_params["tempo_tuning_segundos"] = float(tempo_tuning_segundos)
     df_trials = study.trials_dataframe(attrs=("number", "value", "params", "state"))
     df_trials.to_csv(OUTPUT_TRIALS, index=False, encoding="utf-8-sig")
     salvar_json(OUTPUT_BEST_PARAMS, best_params)
 
+    model_params = {
+        k: v
+        for k, v in best_params.items()
+        if k != "tempo_tuning_segundos"
+    }
     df_predicoes, df_metricas = avaliar_modelo(
         x=x,
         y=y,
-        criar_modelo=lambda: criar_modelo(best_params),
+        criar_modelo=lambda: criar_modelo(model_params),
         folds=FOLDS_AVALIACAO,
         decay=decay,
     )
@@ -101,6 +110,7 @@ def main() -> None:
         best_params=best_params,
         decay=decay,
         n_trials=len(study.trials),
+        tempo_tuning_segundos=tempo_tuning_segundos,
     )
 
     print("Tuning XGBoost concluido.")

@@ -5,5 +5,6 @@
   "n_estimators": 313,
   "reg_alpha": 0.12794491653432793,
   "reg_lambda": 0.3813985474388376,
-  "subsample": 0.693055878078563
+  "subsample": 0.693055878078563,
+  "tempo_tuning_segundos": 43.78524410002865
 }
