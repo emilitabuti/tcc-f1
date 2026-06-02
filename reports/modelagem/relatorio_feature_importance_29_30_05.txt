@@ -1,0 +1,48 @@
+Relatorio - Feature Importance - 29-30/05
+==================================================
+
+Escopo:
+- Treinar os modelos tunados nos folds walk-forward de avaliacao.
+- Extrair importancia das 15 features finais.
+- Salvar uma referencia especifica do fold 2024 para analise futura de drift.
+
+Time-decay usado: 0.95
+
+Top 10 XGBoost:
+qualifying_position, recent_form_5, constructor_coef_rapm, driver_constructor_synergy, constructor_wins_total, driver_coef_rapm, constructor_dnf_rate, tire_compound_start, incident_rate_hist_norm, season_factor
+
+Top 10 Random Forest:
+qualifying_position, constructor_coef_rapm, recent_form_5, driver_constructor_synergy, constructor_wins_total, driver_coef_rapm, constructor_dnf_rate, avg_pit_stops_circuit, track_complexity, driver_dnf_rate
+
+Top 10 LightGBM:
+qualifying_position, constructor_coef_rapm, recent_form_5, driver_constructor_synergy, constructor_wins_total, constructor_dnf_rate, driver_coef_rapm, avg_pit_stops_circuit, grid_penalty, track_complexity
+
+Checagens metodologicas:
+- qualifying_position aparece entre as features dominantes.
+- constructor_coef_rapm e recent_form_5 sao verificadas como features centrais.
+- driver_coef_rapm e taxas de DNF sao preservadas para interpretabilidade causal.
+
+Artefatos gerados:
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/feature_importance_xgb.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/feature_importance_rf.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/feature_importance_lgb.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/feature_importance_2024.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/relatorio_feature_importance_29_30_05.txt
+
+Referencia fold 2024:
+        modelo  train_until  valid_season                    feature    importance importance_type  weight  split  importance_norm  rank_modelo
+lightgbm_tuned         2023          2024        qualifying_position 339410.596245            gain     NaN  214.0         0.653641          1.0
+lightgbm_tuned         2023          2024      constructor_coef_rapm  59143.762074            gain     NaN  143.0         0.113900          2.0
+lightgbm_tuned         2023          2024              recent_form_5  55479.697936            gain     NaN   99.0         0.106843          3.0
+lightgbm_tuned         2023          2024 driver_constructor_synergy  34959.115807            gain     NaN   67.0         0.067325          4.0
+lightgbm_tuned         2023          2024     constructor_wins_total   6890.592989            gain     NaN   53.0         0.013270          5.0
+lightgbm_tuned         2023          2024           driver_coef_rapm   5547.166576            gain     NaN   70.0         0.010683          6.0
+lightgbm_tuned         2023          2024       constructor_dnf_rate   4915.197290            gain     NaN   91.0         0.009466          7.0
+lightgbm_tuned         2023          2024      avg_pit_stops_circuit   3322.145615            gain     NaN   71.0         0.006398          8.0
+lightgbm_tuned         2023          2024               grid_penalty   2074.808695            gain     NaN   45.0         0.003996          9.0
+lightgbm_tuned         2023          2024    incident_rate_hist_norm   1813.987097            gain     NaN   43.0         0.003493         10.0
+lightgbm_tuned         2023          2024                 altitude_m   1769.341299            gain     NaN   43.0         0.003407         11.0
+lightgbm_tuned         2023          2024            driver_dnf_rate   1625.027202            gain     NaN   36.0         0.003129         12.0
+lightgbm_tuned         2023          2024           track_complexity   1533.635908            gain     NaN   33.0         0.002953         13.0
+lightgbm_tuned         2023          2024        tire_compound_start    627.229303            gain     NaN   12.0         0.001208         14.0
+lightgbm_tuned         2023          2024              season_factor    149.051197            gain     NaN    2.0         0.000287         15.0
