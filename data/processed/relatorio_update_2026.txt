@@ -1,0 +1,38 @@
+Relatório — update_openf1_2026.py
+Gerado em: 2026-06-01T22:32:42
+
+Meetings 2026 no calendário: 24
+Meetings 2026 com resultado: 4
+
+Round 1 (Australian Grand Prix): 22 pilotos raw, 19 após exclusão de DNF
+  qualifying_position: 19/19 preenchidos via API
+Round 2 (Chinese Grand Prix): 22 pilotos raw, 19 após exclusão de DNF
+  qualifying_position: 19/19 preenchidos via API
+Round 3 (Japanese Grand Prix): 22 pilotos raw, 20 após exclusão de DNF
+  qualifying_position: 20/20 preenchidos via API
+Round 6 (Miami Grand Prix): 22 pilotos raw, 18 após exclusão de DNF
+  qualifying_position: 18/18 preenchidos via API
+
+=== Cobertura das features ===
+  qualifying_position: OK
+  grid_penalty: OK
+  recent_form_5: OK
+  driver_coef_rapm: OK
+  driver_dnf_rate: OK
+  constructor_coef_rapm: OK
+  constructor_dnf_rate: OK
+  constructor_wins_total: OK
+  driver_constructor_synergy: OK
+  track_complexity: OK
+  altitude_m: OK
+  tire_compound_start: OK
+  avg_pit_stops_circuit: OK
+  season_factor: OK
+  incident_rate_hist_norm: OK
+
+=== Resumo final ===
+Corridas processadas: 4
+Linhas totais: 76
+Pilotos únicos: 22
+NaN em qualifying_position: 0
+Output: /home/emili-tabuti/Documentos/projects/tcc-f1/data/processed/openf1_2026_available.csv

@@ -26,4 +26,3 @@ __pycache__/
 # OS
 .DS_Store
 docs/*.pdf
-docs/Cronograma_Revisado_LightGBM.docx
