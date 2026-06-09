@@ -1,6 +1,6 @@
 # Roadmap — Estado Atual e Próximas Etapas
 
-Data: 02/06/2026
+Data: 09/06/2026
 
 ---
 
@@ -12,16 +12,16 @@ As Semanas 1 e 2 do cronograma estão **completamente executadas e documentadas*
 
 | Métrica | Meta | Resultado | Status |
 |---|---|---|---|
-| MAE (LightGBM) | ≤ 2.5 | 2.313 | ✅ |
-| MAE (Random Forest) | ≤ 2.5 | 2.328 | ✅ |
-| RMSE | ≤ 3.0 | 3.008 / 3.020 | ⚠️ Marginalmente acima |
-| R² | ≥ 0.75 | 0.660 / 0.657 | ❌ Abaixo da meta |
-| Kendall τ | ≥ 0.60 | 0.655 / 0.651 | ✅ |
-| Top-3 accuracy | ≥ 70% | 24% / 21% | ❌ Métrica de regressão vs. classificação |
+| MAE (LightGBM) | ≤ 2.5 | 2.326 | ✅ |
+| MAE (XGBoost) | ≤ 2.5 | 2.348 | ✅ |
+| RMSE | ≤ 3.0 | 3.015 / 3.021 | ⚠️ Marginalmente acima |
+| R² | ≥ 0.75 | 0.658 / 0.657 | ❌ Abaixo da meta |
+| Kendall τ | ≥ 0.60 | 0.653 / 0.652 | ✅ |
+| Top-3 accuracy | ≥ 70% | 25,6% / 25,6% | ❌ Métrica de regressão vs. classificação |
 
-**Algoritmos finalistas:** LightGBM + Random Forest  
-**Baseline:** Ridge Regression (melhor MAE global: 2.273)  
-**Dataset:** 2.943 linhas, 15 features, 0 NaN, 0 colunas proibidas
+**Algoritmos finalistas:** LightGBM + XGBoost
+**Baseline:** Ridge Regression (melhor MAE global: 2.272)
+**Dataset:** 2.943 linhas, 13 features, 0 NaN, 0 colunas proibidas
 
 ---
 
@@ -62,9 +62,9 @@ Ordenados por impacto potencial na defesa ou nos próximos resultados.
 
 ### Infraestrutura
 
-- [x] Dataset modelagem 2018-2025 com 15 features, 0 NaN
-- [x] LightGBM e RF treinados com hiperparâmetros ótimos (Optuna)
-- [x] 4 corridas de 2026 processadas em `openf1_2026_available.csv` (76 linhas, 15 features)
+- [x] Dataset modelagem 2018-2025 com 13 features, 0 NaN
+- [x] LightGBM, XGBoost, Random Forest e Ridge avaliados com hiperparâmetros ótimos (Optuna/grid)
+- [x] 4 corridas de 2026 processadas em `openf1_2026_available.csv` (76 linhas; schema deve ser realinhado às 13 features finais antes de nova análise)
 - [x] `feature_importance_2024.csv` — referência pré-regulamento para comparação de drift
 - [x] `update_openf1_2026.py` funcional para extração incremental
 
@@ -136,7 +136,7 @@ Estes itens não foram criados nesta auditoria mas precisam existir no documento
 | Argumento formal: por que Ridge supera árvores em MAE | Seção Resultados / Discussão | Alta |
 | Tabela de comparação de MAE com a literatura (contextualizando 2018+ vs. 2014+) | Seção Resultados | Alta |
 | Documentação RAPM como Fixed Effects (não RAPM estrito) | Seção Metodologia — RAPM | Média |
-| Justificativa para decay=0.95 vs. 0.75 do paper | Seção Metodologia — Walk-Forward | Média |
+| Justificativa para decay=0.99 vs. 0.75 do paper | Seção Metodologia — Walk-Forward | Média |
 | Análise de viés de sobrevivência dos DNFs | Seção Limitações | Média |
 | Por que top-3 accuracy 18-24% é esperado (regressão vs. classificação) | Seção Resultados | Alta |
 
@@ -148,7 +148,7 @@ A infraestrutura para a Fase 2 (TrAdaBoost + análise de drift) está parcialmen
 
 | Artefato | Status |
 |---|---|
-| 4 corridas de 2026 com 15 features | ✅ `openf1_2026_available.csv` |
+| 4 corridas de 2026 com schema a realinhar para 13 features | ⚠️ `openf1_2026_available.csv` |
 | Referência de feature importance pré-2026 | ✅ `feature_importance_2024.csv` |
 | Biblioteca `adapt==0.4.5` (TrAdaBoost) | ✅ No `requirements.txt` |
 | Modelos finalistas com hiperparâmetros ótimos | ✅ Salvos em `optuna_*_best_params.json` |

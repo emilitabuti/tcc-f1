@@ -134,9 +134,9 @@ O scaler é ajustado (`fit`) na base 2018-2024 e apenas aplicado (`transform`) n
 
 Porém, na validação walk-forward com três folds (2023, 2024, 2025), o scaler foi ajustado em toda a base 2018-2024 — não apenas no subconjunto de treino de cada fold. No fold 1 (treino 2018-2022, validação 2023), o scaler já conhece a distribuição de 2023 e 2024.
 
-**Isso é um problema?** Para os modelos de árvore (LightGBM, RF, XGBoost): não, porque as colunas `_zscore` e `_minmax` não entram no X final. As 15 features do modelo são `qualifying_position`, `recent_form_5`, etc. — nenhuma delas é coluna `_zscore`.
+**Isso é um problema?** Para os modelos de árvore (LightGBM, RF, XGBoost): não, porque as colunas `_zscore` e `_minmax` não entram no X final. As 13 features do modelo são `qualifying_position`, `recent_form_5`, etc. — nenhuma delas é coluna `_zscore`.
 
-Para o Ridge baseline, que usa as mesmas 15 features diretamente (sem colunas `_zscore`), o StandardScaler é reaplicado dentro do walk-forward por fold. O risco latente existe se alguém modificar o pipeline para usar as colunas `_zscore` como features diretas sem refazer o fit por fold.
+Para o Ridge baseline, que usa as mesmas 13 features diretamente (sem colunas `_zscore`), o StandardScaler é reaplicado dentro do walk-forward por fold. O risco latente existe se alguém modificar o pipeline para usar as colunas `_zscore` como features diretas sem refazer o fit por fold.
 
 ---
 
@@ -180,7 +180,7 @@ Do `relatorio_04_normalizacao.txt`: 11 colunas com z-score, 2 colunas com MinMax
 **Limitações:**
 - O mapeamento `race_name → circuit_id` é hardcoded: 37 corridas mapeadas. Qualquer GP novo (ex: Madrid 2026, que aparece nos raw data) precisa ser adicionado manualmente ou o pipeline quebra com `ValueError`.
 - Os compostos HYPERSOFT, ULTRASOFT e SUPERSOFT são de 2018 e foram descontinuados. Em temporadas recentes (2023+) apenas SOFT, MEDIUM e HARD são usados — o `compound_ordinal` efetivamente varia entre 1 e 3 na base majoritária.
-- O scaler de normalização foi ajustado em toda a base 2018-2024, não por fold do walk-forward. Para as 15 features atuais isso é inócuo, mas é uma fragilidade se o pipeline for modificado.
+- O scaler de normalização foi ajustado em toda a base 2018-2024, não por fold do walk-forward. Para as 13 features atuais isso é inócuo, mas é uma fragilidade se o pipeline for modificado.
 
 ---
 
@@ -192,4 +192,4 @@ Do `relatorio_04_normalizacao.txt`: 11 colunas com z-score, 2 colunas com MinMax
 | Ordinal para pneu (performance) | ✅ | — | Arquitetura seção 2: "Soft > Medium > Hard" |
 | Piloto via RAPM, não OHE | ✅ | — | Henderson et al. [9], arquitetura seção 2 |
 | Normalizar só para Ridge | ✅ | — | Arquitetura explícita; coerente com [19][20] |
-| Scaler ajustado no treino, não no teste | ✅ | — | Sem leakage para as 15 features finais |
+| Scaler ajustado no treino, não no teste | ✅ | — | Sem leakage para as 13 features finais |

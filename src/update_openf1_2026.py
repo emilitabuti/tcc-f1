@@ -17,7 +17,7 @@ import requests
 #   2018-2025 para permitir a análise de drift (Semana 3, P2).
 #
 # Saídas:
-#   data/processed/openf1_2026_available.csv  — X com as 15 features + y
+#   data/processed/openf1_2026_available.csv  — X com as features finais + y
 #   data/processed/relatorio_update_2026.txt  — relatório de cobertura
 #
 # Como usar:
@@ -37,20 +37,18 @@ OPENF1_BASE = "https://api.openf1.org/v1"
 # Features exatas do contrato — mesma ordem do dataset_modelagem_X_2018_2025.csv
 FEATURES_FINAIS = [
     "qualifying_position",
-    "grid_penalty",
-    "recent_form_5",
-    "driver_coef_rapm",
-    "driver_dnf_rate",
     "constructor_coef_rapm",
-    "constructor_dnf_rate",
-    "constructor_wins_total",
+    "recent_form_5",
     "driver_constructor_synergy",
+    "constructor_wins_total",
+    "driver_coef_rapm",
     "track_complexity",
-    "altitude_m",
     "tire_compound_start",
-    "avg_pit_stops_circuit",
     "season_factor",
-    "incident_rate_hist_norm",
+    "avg_pit_stops_circuit",
+    "constructor_dnf_rate",
+    "grid_penalty",
+    "altitude_m",
 ]
 
 KEY_COLS = ["RaceID", "season", "round", "race_name", "driver_id", "constructor_id"]
@@ -476,7 +474,7 @@ def main():
 
     df_final = pd.concat(frames, ignore_index=True)
 
-    # Garantir que as 15 features estão presentes
+    # Garantir que as features finais estão presentes
     missing_features = [f for f in FEATURES_FINAIS if f not in df_final.columns]
     if missing_features:
         print(f"\n[AVISO] Features ausentes no output: {missing_features}")

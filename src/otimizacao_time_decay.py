@@ -20,11 +20,18 @@ OUTPUT_RESULTADOS = REPORTS_DIR / "otimizacao_time_decay_xgboost.csv"
 OUTPUT_RESUMO = REPORTS_DIR / "otimizacao_time_decay_xgboost_resumo.csv"
 OUTPUT_ESCOLHIDO = REPORTS_DIR / "time_decay_escolhido_xgboost.txt"
 
-DECAYS = [0.50, 0.65, 0.75, 0.85, 0.95]
+DECAYS = [0.50, 0.65, 0.75, 0.85, 0.88, 0.90, 0.92, 0.94, 0.95, 0.96, 0.97, 0.98, 0.99]
 FOLDS_OTIMIZACAO = [
     {"train_until": 2022, "valid_season": 2023},
     {"train_until": 2023, "valid_season": 2024},
 ]
+METRIC_WEIGHTS = {
+    "mae_score": 0.30,
+    "rmse_score": 0.15,
+    "r2_score": 0.20,
+    "kendall_tau_score": 0.20,
+    "top3_accuracy_score": 0.15,
+}
 
 
 def carregar_dados():
@@ -101,6 +108,43 @@ def avaliar_decay(x, y, decay: float, train_until: int, valid_season: int):
     }
 
 
+def normalizar_coluna(df: pd.DataFrame, coluna: str, maior_melhor: bool) -> pd.Series:
+    serie = df[coluna]
+    minimo = serie.min()
+    maximo = serie.max()
+
+    if maximo == minimo:
+        return pd.Series(1.0, index=df.index)
+
+    if maior_melhor:
+        return (serie - minimo) / (maximo - minimo)
+
+    return (maximo - serie) / (maximo - minimo)
+
+
+def adicionar_score_composto(resumo: pd.DataFrame) -> pd.DataFrame:
+    resumo = resumo.copy()
+    resumo["mae_score"] = normalizar_coluna(resumo, "mae_medio", maior_melhor=False)
+    resumo["rmse_score"] = normalizar_coluna(resumo, "rmse_medio", maior_melhor=False)
+    resumo["r2_score"] = normalizar_coluna(resumo, "r2_medio", maior_melhor=True)
+    resumo["kendall_tau_score"] = normalizar_coluna(
+        resumo,
+        "kendall_tau_medio",
+        maior_melhor=True,
+    )
+    resumo["top3_accuracy_score"] = normalizar_coluna(
+        resumo,
+        "top3_accuracy_medio",
+        maior_melhor=True,
+    )
+
+    resumo["score_composto"] = 0.0
+    for coluna, peso in METRIC_WEIGHTS.items():
+        resumo["score_composto"] += peso * resumo[coluna]
+
+    return resumo
+
+
 def main():
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -133,7 +177,11 @@ def main():
             kendall_tau_medio=("kendall_tau", "mean"),
             top3_accuracy_medio=("top3_accuracy", "mean"),
         )
-        .sort_values(["mae_medio", "decay"])
+    )
+    resumo = adicionar_score_composto(resumo)
+    resumo = (
+        resumo
+        .sort_values(["score_composto", "mae_medio", "decay"], ascending=[False, True, True])
         .reset_index(drop=True)
     )
     resumo.to_csv(OUTPUT_RESUMO, index=False, encoding="utf-8-sig")
@@ -141,11 +189,14 @@ def main():
     melhor = resumo.iloc[0]
     texto = (
         f"Time-decay escolhido: {melhor['decay']}\n"
+        f"Score composto 2023-2024: {melhor['score_composto']:.6f}\n"
         f"MAE medio 2023-2024: {melhor['mae_medio']:.6f}\n"
         f"Desvio padrao do MAE: {melhor['mae_std']:.6f}\n"
         f"RMSE medio 2023-2024: {melhor['rmse_medio']:.6f}\n"
+        f"R2 medio 2023-2024: {melhor['r2_medio']:.6f}\n"
         f"Kendall tau medio 2023-2024: {melhor['kendall_tau_medio']:.6f}\n"
         f"Acuracia top-3 media 2023-2024: {melhor['top3_accuracy_medio']:.6f}\n"
+        f"Pesos do score composto: {METRIC_WEIGHTS}\n"
     )
 
     OUTPUT_ESCOLHIDO.write_text(texto, encoding="utf-8")

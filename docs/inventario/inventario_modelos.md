@@ -30,9 +30,10 @@ Artefatos da seleção de features via RFE temporal.
 
 | Arquivo | Classificação | Motivo |
 |---|---|---|
-| `features_modelagem_2018_2025.json` | **Essencial** | Contrato formal das 15 features — lista canônica usada em todo o pipeline de modelagem |
+| `features_modelagem_2018_2025.json` | **Essencial** | Contrato formal das 13 features — lista canônica usada em todo o pipeline de modelagem |
 | `rfe_xgboost_ranking.csv` | **Essencial** | Ranking de importância por gain das 19 features candidatas — evidência da seleção |
-| `rfe_xgboost_subsets.csv` | **Essencial** | MAE de cada subconjunto testado no RFE — mostra por que 15 foi o número escolhido |
+| `rfe_xgboost_subsets.csv` | **Essencial** | Métricas e score composto de cada subconjunto testado no RFE — mostra por que 13 foi o número escolhido |
+| `rfe_xgboost_pareto.csv` | **Essencial** | Subconjuntos Pareto-ótimos do RFE multi-métrica |
 | `manifest_rfe_xgboost.json` | **Essencial** | Metadados da execução do RFE: parâmetros, datas, versões |
 | `relatorio_rfe_xgboost.txt` | **Essencial** | Relatório legível da seleção: ranking final e subconjunto escolhido |
 | `relatorio_13_selecao_features_modelagem.txt` | **Essencial** | Relatório da etapa 13: decisões de inclusão/exclusão de features |
@@ -53,9 +54,9 @@ Resultados, visualizações e relatórios gerados pelas análises.
 
 | Arquivo | Classificação | Motivo |
 |---|---|---|
-| `relatorio_correlacao.md` | **Essencial** | Relatório de correlação entre as 15 features — inclui pares com r > 0.85 e correlação com o target |
+| `relatorio_correlacao.md` | **Essencial** | Relatório de correlação entre features candidatas/finais — inclui pares com r > 0.85 e correlação com o target |
 | `relatorio_correlacao_features.txt` | **Importante** | Versão texto do mesmo relatório |
-| `matriz_correlacao_features.csv` | **Essencial** | Matriz de correlação de Pearson completa entre as 15 features |
+| `matriz_correlacao_features.csv` | **Essencial** | Matriz de correlação de Pearson completa entre as features analisadas |
 | `correlation_with_target.csv` | **Essencial** | Correlação de cada feature com `finish_position` |
 | `pares_correlacao_alta_maior_085.csv` | **Essencial** | Pares com \|r\| > 0.85 — base das decisões de remoção de multicolinearidade |
 | `correlation_matrix_features.png` | **Importante** | Heatmap visual da matriz de correlação |
@@ -80,7 +81,7 @@ Resultados, visualizações e relatórios gerados pelas análises.
 
 | Arquivo | Classificação | Motivo |
 |---|---|---|
-| `decisao_algoritmos.md` | **Essencial** | Decisão fechada em 30/05: LightGBM + RF finalistas, XGBoost arquivado |
+| `decisao_algoritmos.md` | **Essencial** | Decisão revisada: LightGBM + XGBoost finalistas, Random Forest arquivado |
 | `decisao_preliminar_algoritmos.md` | **Candidato à remoção** | Versão anterior da decisão — substituída por `decisao_algoritmos.md` |
 | `tabela_metricas_tunadas_4modelos.csv` | **Essencial** | Tabela definitiva: MAE por fold para os 4 modelos (LightGBM, RF, XGBoost, Ridge) |
 | `tabela_metricas_tunadas_4modelos_resumo.csv` | **Essencial** | Resumo por modelo: MAE médio, DP, tempo de tuning |
@@ -106,8 +107,8 @@ Resultados, visualizações e relatórios gerados pelas análises.
 
 | Arquivo | Classificação | Motivo |
 |---|---|---|
-| `time_decay_escolhido_xgboost.txt` | **Essencial** | Decay=0.95 — valor escolhido e justificativa |
-| `otimizacao_time_decay_xgboost.csv` | **Essencial** | MAE por fator de decay testado (0.50, 0.65, 0.75, 0.85, 0.95) |
+| `time_decay_escolhido_xgboost.txt` | **Essencial** | Decay=0.99 — valor escolhido por score composto e justificativa |
+| `otimizacao_time_decay_xgboost.csv` | **Essencial** | Métricas por fator de decay testado (0.50 a 0.99) |
 | `otimizacao_time_decay_xgboost_resumo.csv` | **Importante** | Resumo compacto da otimização |
 
 #### Predições

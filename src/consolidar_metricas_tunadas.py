@@ -5,6 +5,8 @@ from pathlib import Path
 
 import pandas as pd
 
+from tuning_utils import score_composto_metricas
+
 
 BASE_DIR = Path(__file__).resolve().parents[1]
 REPORTS_DIR = BASE_DIR / "reports" / "modelagem"
@@ -67,6 +69,16 @@ def criar_resumo(df: pd.DataFrame) -> pd.DataFrame:
         .sort_values(["mae_medio", "kendall_tau_medio"], ascending=[True, False])
         .reset_index(drop=True)
     )
+    resumo["score_composto_medio"] = resumo["modelo"].map(
+        {
+            modelo: score_composto_metricas(grupo)
+            for modelo, grupo in df.groupby("modelo")
+        }
+    )
+    resumo = resumo.sort_values(
+        ["score_composto_medio", "mae_medio"],
+        ascending=[False, True],
+    ).reset_index(drop=True)
 
     resumo["melhor_fold"] = resumo["modelo"].map(
         df.loc[df.groupby("modelo")["mae"].idxmin()].set_index("modelo")["valid_season"]
@@ -139,11 +151,11 @@ def gerar_relatorio(df: pd.DataFrame, resumo: pd.DataFrame) -> None:
         "- Tuning Optuna do Random Forest conforme 27/05.",
         "- LightGBM acrescentado como terceiro modelo comparavel.",
         "- Ridge Regression incluido como baseline linear com StandardScaler e time-decay.",
-        "- Hiperparametros escolhidos por MAE medio em 2023-2024.",
+        "- Hiperparametros escolhidos por score composto multi-metrica em 2023-2024.",
         "- Reavaliacao final em 2023, 2024 e 2025 com walk-forward.",
         descrever_tempos_tuning(resumo),
         "",
-        "Resumo ordenado por MAE medio:",
+        "Resumo ordenado por score composto multi-metrica:",
         resumo.to_string(index=False),
         "",
         "Metricas por fold:",
@@ -151,8 +163,9 @@ def gerar_relatorio(df: pd.DataFrame, resumo: pd.DataFrame) -> None:
         "",
         "Leitura:",
         (
-            f"- Melhor MAE medio tunado: {melhor['modelo']} "
-            f"({melhor['mae_medio']:.6f} +/- {melhor['mae_std']:.6f})."
+            f"- Melhor score composto medio: {melhor['modelo']} "
+            f"({melhor['score_composto_medio']:.6f}); MAE medio "
+            f"{melhor['mae_medio']:.6f} +/- {melhor['mae_std']:.6f}."
         ),
     ]
 
@@ -193,7 +206,8 @@ def gerar_decisao_preliminar(resumo: pd.DataFrame) -> None:
 
     for _, row in finalistas.iterrows():
         linhas.append(
-            f"- {row['modelo']}: MAE medio {row['mae_medio']:.4f}, "
+                f"- {row['modelo']}: score composto {row['score_composto_medio']:.4f}, "
+                f"MAE medio {row['mae_medio']:.4f}, "
             f"Kendall tau {row['kendall_tau_medio']:.4f}, "
             f"MAE std {row['mae_std']:.4f}."
         )
@@ -204,7 +218,8 @@ def gerar_decisao_preliminar(resumo: pd.DataFrame) -> None:
             "Modelo arquivado como terceiro candidato:",
             "",
             (
-                f"- {descartado['modelo']}: MAE medio {descartado['mae_medio']:.4f}, "
+                f"- {descartado['modelo']}: score composto {descartado['score_composto_medio']:.4f}, "
+                f"MAE medio {descartado['mae_medio']:.4f}, "
                 f"Kendall tau {descartado['kendall_tau_medio']:.4f}, "
                 f"MAE std {descartado['mae_std']:.4f}."
             ),
@@ -212,7 +227,8 @@ def gerar_decisao_preliminar(resumo: pd.DataFrame) -> None:
             "Baseline linear:",
             "",
             (
-                f"- {ridge['modelo']}: MAE medio {ridge['mae_medio']:.4f}, "
+                f"- {ridge['modelo']}: score composto {ridge['score_composto_medio']:.4f}, "
+                f"MAE medio {ridge['mae_medio']:.4f}, "
                 f"Kendall tau {ridge['kendall_tau_medio']:.4f}. "
                 "Permanece como referencia metodologica, nao como finalista principal."
             ),
@@ -220,8 +236,9 @@ def gerar_decisao_preliminar(resumo: pd.DataFrame) -> None:
             "## Justificativa",
             "",
             (
-                "A escolha segue o criterio definido no cronograma revisado: menor MAE medio, "
-                "maior Kendall tau, estabilidade entre folds e coerencia com a arquitetura. "
+                "A escolha segue o criterio multi-metrica definido na revisao: equilibrar MAE, "
+                "RMSE, R2, Kendall tau e top-3 accuracy, mantendo estabilidade entre folds "
+                "e coerencia com a arquitetura. "
                 "O baseline Ridge foi mantido como referencia linear forte baseada na "
                 "fundamentacao RAPM; como ele ficou competitivo, os modelos de arvore devem "
                 "ser justificados tambem pela analise de importancia de features, robustez e "

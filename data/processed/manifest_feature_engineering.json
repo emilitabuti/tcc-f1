@@ -52,7 +52,7 @@
   ],
   "contrato_track_complexity": {
     "formula_estatica": "0.40*corners_norm + 0.30*length_km_norm + 0.20*altitude_norm + 0.10*circuit_type (etapa 07, baseada em circuitos_manual.csv)",
-    "formula_enriquecida": "0.35*corners_norm + 0.25*length_km_norm + 0.20*altitude_norm + 0.10*circuit_type + 0.10*incident_rate_hist_norm (etapa 09, com componente causal de incidentes historicos por circuito)",
+    "formula_enriquecida": "0.358565*corners_norm + 0.145285*length_km_norm + 0.050026*altitude_norm + 0.119041*circuit_type + 0.327083*incident_rate_hist_norm (etapa 09, calibrada por validacao temporal 2025)",
     "componente_incidentes": "incident_rate_hist = taxa historica de SC/VSC no circuito, calculada causalmente com expanding().mean().shift(1) por circuit_id. Cold-start usa taxa global 2018-2024.",
     "track_complexity_static": "Versao estatica original preservada para auditoria. Nao deve ser usada como feature; usar track_complexity."
   },

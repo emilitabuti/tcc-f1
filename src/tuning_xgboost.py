@@ -16,6 +16,7 @@ from tuning_utils import (
     carregar_decay_escolhido,
     gerar_relatorio_tuning,
     salvar_json,
+    score_composto_metricas,
 )
 
 
@@ -65,10 +66,10 @@ def main() -> None:
             folds=FOLDS_TUNING,
             decay=decay,
         )
-        return float(df_metricas["mae"].mean())
+        return score_composto_metricas(df_metricas)
 
     study = optuna.create_study(
-        direction="minimize",
+        direction="maximize",
         sampler=optuna.samplers.TPESampler(seed=42),
     )
     inicio_tuning = time.perf_counter()
@@ -76,6 +77,7 @@ def main() -> None:
     tempo_tuning_segundos = time.perf_counter() - inicio_tuning
 
     best_params = dict(study.best_params)
+    best_params["score_composto_tuning"] = float(study.best_value)
     best_params["tempo_tuning_segundos"] = float(tempo_tuning_segundos)
     df_trials = study.trials_dataframe(attrs=("number", "value", "params", "state"))
     df_trials.to_csv(OUTPUT_TRIALS, index=False, encoding="utf-8-sig")
@@ -84,7 +86,7 @@ def main() -> None:
     model_params = {
         k: v
         for k, v in best_params.items()
-        if k != "tempo_tuning_segundos"
+        if k not in {"tempo_tuning_segundos", "score_composto_tuning"}
     }
     df_predicoes, df_metricas = avaliar_modelo(
         x=x,

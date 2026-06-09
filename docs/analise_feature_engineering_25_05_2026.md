@@ -4,7 +4,7 @@
 **Data da análise:** 25/05/2026  
 **Escopo:** Validação de tudo executado até 23/05, com foco na etapa de Feature Engineering
 
-> **Atualização pós-correção — 25/05/2026:** os bloqueadores identificados nesta análise foram tratados no pipeline. O dataset final de modelagem agora tem **15 features**, sem `safety_car_flag`, sem `grid_position`, sem `recent_form_3` e sem clima real observado da corrida. A RFE temporal com XGBoost selecionou o subconjunto final com MAE 2025 = **2.466866**. Artefatos principais: `data/processed/dataset_modelagem_X_2018_2025.csv`, `models/feature_selection/features_modelagem_2018_2025.json`, `models/feature_selection/relatorio_rfe_xgboost.txt`.
+> **Atualização pós-correção — 25/05/2026; revisada em 09/06/2026:** os bloqueadores identificados nesta análise foram tratados no pipeline. O dataset final de modelagem agora tem **13 features**, sem `safety_car_flag`, sem `grid_position`, sem `recent_form_3` e sem clima real observado da corrida. A RFE temporal multi-fold com XGBoost selecionou o subconjunto final por score composto multi-métrica. Artefatos principais: `data/processed/dataset_modelagem_X_2018_2025.csv`, `models/feature_selection/features_modelagem_2018_2025.json`, `models/feature_selection/relatorio_rfe_xgboost.txt`.
 
 ---
 
@@ -382,7 +382,7 @@ Os **2 problemas de data leakage** foram removidos do conjunto final de modelage
 - `safety_car_flag` permanece apenas como auditoria e foi substituída em X por `incident_rate_hist_norm`.
 - `weather_impact_factor` foi recalculada como histórico causal por circuito, mas a RFE temporal não a manteve no subconjunto final.
 - `recent_form_3` e `grid_position` foram removidas por redundância severa.
-- A RFE com XGBoost reduziu o conjunto de 19 candidatos corrigidos para **15 features finais**.
+- A RFE com XGBoost reduziu o conjunto de candidatos corrigidos para **13 features finais** na revisão multi-fold.
 
 Após as correções, o projeto está em condição adequada para iniciar a modelagem da Semana 2 com fundamento científico mais sólido. O único par com `|r| > 0.85` remanescente é `recent_form_5 × driver_constructor_synergy`; ele foi mantido por diferença conceitual e deve ser acompanhado via SHAP/ablação durante a modelagem.
 

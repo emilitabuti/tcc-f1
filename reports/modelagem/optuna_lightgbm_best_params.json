@@ -1,13 +1,14 @@
 {
-  "colsample_bytree": 0.8625417840147478,
-  "learning_rate": 0.03164237033214078,
+  "colsample_bytree": 0.769190293247081,
+  "learning_rate": 0.01591245413851519,
   "lightgbm_version": "4.3.0",
-  "max_depth": 4,
-  "min_child_samples": 32,
-  "n_estimators": 146,
-  "num_leaves": 8,
-  "reg_alpha": 0.805684044053038,
-  "reg_lambda": 0.5585100010421958,
-  "subsample": 0.9926137770798064,
-  "tempo_tuning_segundos": 21.460145429999102
+  "max_depth": 3,
+  "min_child_samples": 22,
+  "n_estimators": 230,
+  "num_leaves": 7,
+  "reg_alpha": 0.6590459496278955,
+  "reg_lambda": 0.0784902131943882,
+  "score_composto_tuning": 0.4975678983172439,
+  "subsample": 0.8619248771072074,
+  "tempo_tuning_segundos": 21.97133424600179
 }

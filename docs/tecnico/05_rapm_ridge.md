@@ -113,7 +113,7 @@ peso = decay ^ distancia                  # decay = 0.75
 
 O valor 0.75 vem diretamente de Henderson et al. [9], que o identificaram como o fator ótimo para o dataset de F1. A unidade é **por temporada** (`decay_unit = "season"`), não por corrida — isso é coerente com o fato de que regulamentos e equipes mudam entre temporadas, não entre corridas individuais dentro de uma temporada.
 
-**Diferença importante:** o RAPM usa decay=0.75, mas o walk-forward de modelagem usa decay=0.95 (otimizado empiricamente). São dois contextos diferentes — o RAPM calcula coeficientes de habilidade a longo prazo; o walk-forward pondera corridas recentes para a previsão imediata. A diferença está documentada no documento 08 (Walk-Forward).
+**Diferença importante:** o RAPM usa decay=0.75, mas o walk-forward de modelagem usa decay=0.99 (otimizado empiricamente por score composto multi-métrica). São dois contextos diferentes — o RAPM calcula coeficientes de habilidade a longo prazo; o walk-forward pondera corridas recentes para a previsão imediata. A diferença está documentada no documento 08 (Walk-Forward).
 
 ### Regularização Ridge — alpha = 10.0
 

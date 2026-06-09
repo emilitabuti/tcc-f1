@@ -56,14 +56,13 @@ A média de ~17 pilotos por GP (de 20 possíveis) reflete as exclusões por DNF 
 
 **Features presentes em X** (verificado):
 ```
-qualifying_position, grid_penalty, recent_form_5, driver_coef_rapm,
-driver_dnf_rate, constructor_coef_rapm, constructor_dnf_rate,
-constructor_wins_total, driver_constructor_synergy, track_complexity,
-altitude_m, tire_compound_start, avg_pit_stops_circuit,
-season_factor, incident_rate_hist_norm
+qualifying_position, constructor_coef_rapm, recent_form_5,
+driver_constructor_synergy, constructor_wins_total, driver_coef_rapm,
+track_complexity, tire_compound_start, season_factor,
+avg_pit_stops_circuit, constructor_dnf_rate, grid_penalty, altitude_m
 ```
 
-Exatamente as 15 features do contrato em `models/feature_selection/features_modelagem_2018_2025.json`.
+Exatamente as 13 features do contrato em `models/feature_selection/features_modelagem_2018_2025.json`.
 
 ---
 

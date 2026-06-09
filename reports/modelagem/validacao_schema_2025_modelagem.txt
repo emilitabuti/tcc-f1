@@ -8,13 +8,13 @@ Arquivos verificados:
 - /home/emili-tabuti/Documentos/projects/tcc-f1/models/feature_selection/features_modelagem_2018_2025.json
 
 Resumo:
-- X shape: (2943, 15)
+- X shape: (2943, 13)
 - y shape: (2943, 6)
 - openf1_2025_clean shape: (419, 114)
 - Linhas 2025 em y: 419
 - Corridas 2025 no fold: 24
-- Features em X: 15
-- Features numericas em X: 15
+- Features em X: 13
+- Features numericas em X: 13
 
 Resultado:
 - OK: schema compativel para executar o walk-forward 2025.

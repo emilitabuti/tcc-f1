@@ -21,6 +21,7 @@ MODELS_DIR = BASE_DIR / "models" / "feature_selection"
 
 INPUT_DATASET = PROCESSED_DIR / "dataset_features_final_2018_2025_sem_nan.csv"
 INPUT_CORRELATION_PAIRS = REPORTS_DIR / "pares_correlacao_alta_maior_085.csv"
+INPUT_RFE_MANIFEST = MODELS_DIR / "manifest_rfe_xgboost.json"
 
 OUTPUT_DATASET = PROCESSED_DIR / "dataset_modelagem_2018_2025.csv"
 OUTPUT_X_2018_2025 = PROCESSED_DIR / "dataset_modelagem_X_2018_2025.csv"
@@ -40,7 +41,6 @@ FEATURES_FINAIS = [
     "grid_penalty",
     "recent_form_5",
     "driver_coef_rapm",
-    "driver_dnf_rate",
     "constructor_coef_rapm",
     "constructor_dnf_rate",
     "constructor_wins_total",
@@ -48,7 +48,6 @@ FEATURES_FINAIS = [
     "track_complexity",
     "altitude_m",
     "tire_compound_start",
-    "avg_pit_stops_circuit",
     "season_factor",
     "incident_rate_hist_norm",
 ]
@@ -92,6 +91,19 @@ def carregar_pares_correlacao():
     return pd.read_csv(INPUT_CORRELATION_PAIRS)
 
 
+def carregar_features_selecionadas():
+    if not INPUT_RFE_MANIFEST.exists():
+        return FEATURES_FINAIS.copy()
+
+    payload = json.loads(INPUT_RFE_MANIFEST.read_text(encoding="utf-8"))
+    features = payload.get("selected_features")
+
+    if not features:
+        return FEATURES_FINAIS.copy()
+
+    return list(features)
+
+
 def obter_remocoes_sugeridas(pares_df):
     if pares_df.empty:
         return []
@@ -111,14 +123,14 @@ def obter_remocoes_sugeridas(pares_df):
     return remover
 
 
-def validar_contrato(df):
-    faltantes = [col for col in FEATURES_FINAIS + [TARGET] + KEY_COLUMNS if col not in df.columns]
+def validar_contrato(df, features):
+    faltantes = [col for col in features + [TARGET] + KEY_COLUMNS if col not in df.columns]
 
     if faltantes:
         raise ValueError(f"Colunas obrigatórias ausentes no dataset de modelagem: {faltantes}")
 
     nao_numericas = [
-        col for col in FEATURES_FINAIS
+        col for col in features
         if col in df.columns and not pd.api.types.is_numeric_dtype(df[col])
     ]
 
@@ -126,10 +138,10 @@ def validar_contrato(df):
         raise TypeError(f"Features finais não numéricas: {nao_numericas}")
 
 
-def selecionar_features(df, pares_df):
-    validar_contrato(df)
+def selecionar_features(df, pares_df, features_selecionadas):
+    validar_contrato(df, features_selecionadas)
 
-    features = FEATURES_FINAIS.copy()
+    features = features_selecionadas.copy()
     colunas_removidas = [
         col for col in df.columns
         if col not in set(features + [TARGET] + KEY_COLUMNS)
@@ -199,7 +211,8 @@ def gerar_relatorio(df_original, df_modelagem, df_x, df_y, features, colunas_rem
         "incident_rate_hist_norm. weather_impact_factor foi recalculada como histórico causal "
         "por circuito, mas ficou fora do X final após RFE. Também foram removidas "
         "recent_form_3 e grid_position por redundância empírica com recent_form_5 e "
-        "qualifying_position. A RFE temporal com XGBoost selecionou 15 features finais."
+        f"qualifying_position. A RFE temporal com XGBoost selecionou {len(features)} "
+        "features finais."
     )
 
     linhas.append("")
@@ -235,8 +248,13 @@ def main():
 
     df = carregar_dataset()
     pares_df = carregar_pares_correlacao()
+    features_selecionadas = carregar_features_selecionadas()
 
-    df_modelagem, df_x, df_y, features, colunas_removidas = selecionar_features(df, pares_df)
+    df_modelagem, df_x, df_y, features, colunas_removidas = selecionar_features(
+        df,
+        pares_df,
+        features_selecionadas,
+    )
 
     if df_modelagem.isna().sum().sum() > 0:
         raise RuntimeError("O dataset final de modelagem ainda possui NaN.")

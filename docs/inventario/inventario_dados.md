@@ -153,7 +153,7 @@ Artefatos gerados pelo pipeline. Organizados por etapa de origem.
 |---|---|---|
 | `dataset_modelagem_2018_2025.csv` | **Importante** | Dataset unificado com X + y + chaves |
 | `dataset_modelagem_X_2018_2024.csv` | **Essencial** | Matrix X versão 2018-2024 — referência para análise de drift |
-| `dataset_modelagem_X_2018_2025.csv` | **Essencial** | Matrix X final de modelagem (15 features, 2.943 linhas) |
+| `dataset_modelagem_X_2018_2025.csv` | **Essencial** | Matrix X final de modelagem (13 features, 2.943 linhas) |
 | `dataset_modelagem_y_2018_2024.csv` | **Essencial** | Target versão 2018-2024 |
 | `dataset_modelagem_y_2018_2025.csv` | **Essencial** | Target final (finish_position, 2.943 linhas) |
 | `target_finish_position_2018_2024.csv` | **Candidato à remoção** | Verificar se é duplicata de `dataset_modelagem_y_2018_2024.csv` |
@@ -163,5 +163,5 @@ Artefatos gerados pelo pipeline. Organizados por etapa de origem.
 
 | Arquivo | Classificação | Motivo |
 |---|---|---|
-| `openf1_2026_available.csv` | **Essencial** | 4 corridas de 2026 processadas com as 15 features — base para análise de drift |
+| `openf1_2026_available.csv` | **Essencial** | 4 corridas de 2026 processadas — base para análise de drift; realinhar schema para as 13 features finais antes de nova rodada |
 | `relatorio_update_2026.txt` | **Importante** | Rastreabilidade da extração e processamento 2026 |

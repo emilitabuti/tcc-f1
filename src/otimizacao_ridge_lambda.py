@@ -16,6 +16,7 @@ from tuning_utils import (
     carregar_dados,
     carregar_decay_escolhido,
     salvar_json,
+    score_composto_metricas,
 )
 
 
@@ -58,7 +59,7 @@ def gerar_relatorio_ridge(
         "=" * 56,
         "",
         "Objetivo:",
-        "- Otimizar alpha por grid-search nos folds de tuning 2023 e 2024.",
+        "- Otimizar alpha por score composto multi-metrica nos folds de tuning 2023 e 2024.",
         "- Reavaliar o melhor alpha em 2023, 2024 e 2025 via walk-forward.",
         "- Usar StandardScaler porque Ridge e sensivel a escala das features.",
         "",
@@ -71,7 +72,7 @@ def gerar_relatorio_ridge(
         "",
         "Grid-search:",
         f"- Alphas avaliados: {len(ALPHAS)}",
-        f"- Melhor MAE medio nos folds de tuning: {best_value:.6f}",
+        f"- Melhor score composto nos folds de tuning: {best_value:.6f}",
         f"- Melhores parametros: {best_params}",
         "",
         "Metricas finais por fold:",
@@ -104,9 +105,11 @@ def main() -> None:
             folds=FOLDS_TUNING,
             decay=decay,
         )
+        score = score_composto_metricas(df_metricas)
         resultados.append(
             {
                 "alpha": float(alpha),
+                "score_composto": float(score),
                 "mae_medio": float(df_metricas["mae"].mean()),
                 "mae_std": float(df_metricas["mae"].std()),
                 "rmse_medio": float(df_metricas["rmse"].mean()),
@@ -117,8 +120,8 @@ def main() -> None:
         )
 
     df_alphas = pd.DataFrame(resultados).sort_values(
-        ["mae_medio", "kendall_tau_medio"],
-        ascending=[True, False],
+        ["score_composto", "mae_medio"],
+        ascending=[False, True],
     )
     melhor = df_alphas.iloc[0].to_dict()
     best_params = {
@@ -126,6 +129,7 @@ def main() -> None:
         "normalizacao": "StandardScaler",
         "modelo": "Ridge",
         "tempo_tuning_segundos": float(time.perf_counter() - inicio),
+        "score_composto_tuning": float(melhor["score_composto"]),
     }
 
     df_predicoes, df_metricas = avaliar_modelo(
@@ -143,7 +147,7 @@ def main() -> None:
 
     gerar_relatorio_ridge(
         df_metricas=df_metricas,
-        best_value=float(melhor["mae_medio"]),
+            best_value=float(melhor["score_composto"]),
         best_params=best_params,
         decay=decay,
     )

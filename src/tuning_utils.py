@@ -28,6 +28,13 @@ FOLDS_AVALIACAO = [
     {"train_until": 2024, "valid_season": 2025},
 ]
 DECAY_PADRAO = 0.75
+METRIC_WEIGHTS = {
+    "mae_score": 0.30,
+    "rmse_score": 0.15,
+    "r2_score": 0.20,
+    "kendall_tau_score": 0.20,
+    "top3_accuracy_score": 0.15,
+}
 
 
 def carregar_dados() -> tuple[pd.DataFrame, pd.DataFrame]:
@@ -130,6 +137,20 @@ def avaliar_modelo(
     return pd.concat(predicoes, ignore_index=True), pd.DataFrame(metricas)
 
 
+def score_composto_metricas(df_metricas: pd.DataFrame) -> float:
+    medias = df_metricas[["mae", "rmse", "r2", "kendall_tau", "top3_accuracy"]].mean()
+    componentes = {
+        "mae_score": 1.0 / (1.0 + float(medias["mae"])),
+        "rmse_score": 1.0 / (1.0 + float(medias["rmse"])),
+        "r2_score": max(0.0, min(1.0, (float(medias["r2"]) + 1.0) / 2.0)),
+        "kendall_tau_score": max(0.0, min(1.0, (float(medias["kendall_tau"]) + 1.0) / 2.0)),
+        "top3_accuracy_score": max(0.0, min(1.0, float(medias["top3_accuracy"]))),
+    }
+    return float(
+        sum(METRIC_WEIGHTS[coluna] * componentes[coluna] for coluna in METRIC_WEIGHTS)
+    )
+
+
 def salvar_json(caminho: Path, dados: dict) -> None:
     caminho.write_text(
         json.dumps(dados, indent=2, sort_keys=True, ensure_ascii=False),
@@ -157,7 +178,8 @@ def gerar_relatorio_tuning(
         "=" * 64,
         "",
         "Objetivo:",
-        "- Minimizar MAE medio nos folds de tuning 2023 e 2024.",
+        "- Maximizar score composto multi-metrica nos folds de tuning 2023 e 2024.",
+        f"- Pesos do score: {METRIC_WEIGHTS}.",
         "- Reavaliar o melhor conjunto em 2023, 2024 e 2025 via walk-forward.",
         "",
         "Bases utilizadas:",
@@ -174,7 +196,7 @@ def gerar_relatorio_tuning(
             if tempo_tuning_segundos is not None
             else "- Tempo total de tuning: nao registrado"
         ),
-        f"- Melhor MAE medio nos folds de tuning: {best_value:.6f}",
+        f"- Melhor score composto nos folds de tuning: {best_value:.6f}",
         f"- Melhores parametros: {best_params}",
         "",
         "Metricas finais por fold:",

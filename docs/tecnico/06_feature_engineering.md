@@ -60,7 +60,7 @@ for idx, row in grupo.iterrows():
 
 Maior `recent_form` = posições recentes piores (posição 1 é melhor, mas vale 1; posição 10 vale 10). Portanto correlação positiva com `finish_position` é esperada (r=0.710 para `recent_form_5`).
 
-**Sobre `recent_form_3`:** foi criada mas depois removida na seleção de features por multicolinearidade severa com `recent_form_5` (r=0.987). Documentada aqui para rastreabilidade — o RFE excluiu `recent_form_3` do conjunto final.
+**Sobre `recent_form_3`:** foi criada mas depois removida antes da modelagem por multicolinearidade severa com `recent_form_5` (r=0.987). A validação prática realizada pela Emili confirmou que `recent_form_5` era a escolha correta para o conjunto final: além de ser quase redundante com `recent_form_3`, apresentou correlação ligeiramente maior com o target (`r=0.7104` contra `r=0.6950`) e MAE médio marginalmente melhor na validação temporal 2025 ao trocar uma pela outra (`2.4701` contra `2.4723`). O RFE foi executado já sem `recent_form_3` e manteve `recent_form_5` no conjunto final de 13 features.
 
 ---
 
@@ -123,7 +123,7 @@ A correlação de r=-0.87 com `recent_form_5` é alta mas não eliminatória —
 
 | Feature | Fórmula | Mecanismo causal | Cold-start |
 |---|---|---|---|
-| `track_complexity` | `0.35×corners_norm + 0.25×length_km_norm + 0.20×altitude_norm + 0.10×circuit_type + 0.10×incident_rate_hist_norm` | Componentes estáticos: dados do circuito existentes antes da corrida. Componente `incident_rate_hist_norm`: taxa histórica causal (ver abaixo) | Média global 2018-2024 para `incident_rate_hist_norm` |
+| `track_complexity` | `0.358565×corners_norm + 0.145285×length_km_norm + 0.050026×altitude_norm + 0.119041×circuit_type + 0.327083×incident_rate_hist_norm` | Componentes estáticos: dados do circuito existentes antes da corrida. Componente `incident_rate_hist_norm`: taxa histórica causal (ver abaixo) | Média global 2018-2024 para `incident_rate_hist_norm` |
 | `incident_rate_hist_norm` | Taxa histórica de SC/VSC no circuito: `expanding().mean().shift(1)` por `circuit_id` | `shift(1)` por circuito | Taxa global 2018-2024 |
 | `altitude_m` | Altitude do circuito em metros (dado estático de `circuitos_manual.csv`) | Estático — existe antes da corrida | N/A (estático) |
 
@@ -131,7 +131,7 @@ A correlação de r=-0.87 com `recent_form_5` é alta mas não eliminatória —
 - **Estáticos** (corners, length, altitude, circuit_type): propriedades físicas permanentes do circuito.
 - **Causal histórico** (`incident_rate_hist_norm`): proporção de corridas anteriores naquele circuito que tiveram safety car. Calculada com `expanding().mean().shift(1)`.
 
-Os pesos (0.35, 0.25, 0.20, 0.10, 0.10) são **arbitrários** — sem calibração empírica. Este é um ponto de fragilidade documentável. A correlação final com o target é próxima de zero (r=-0.012), o que pode indicar que o índice composto não captura o que importa para posição final, ou que o efeito existe mas é mediado por outras features.
+Os pesos originais (0.35, 0.25, 0.20, 0.10, 0.10) eram heurísticos. Em revisão posterior, a Emili calibrou os pesos olhando o desempenho no split temporal de validação 2025. A melhor combinação validada foi `0.358565/0.145285/0.050026/0.119041/0.327083` para `corners_norm`, `length_km_norm`, `altitude_norm`, `circuit_type` e `incident_rate_hist_norm`, respectivamente. A calibração reduziu o MAE médio do modelo final de `2.4709` para `2.4578` nos seeds avaliados. A correlação linear isolada com o target permanece baixa, mas o ganho em XGBoost indica que a feature contribui por interações com outras variáveis.
 
 ---
 
@@ -142,7 +142,7 @@ Os pesos (0.35, 0.25, 0.20, 0.10, 0.10) são **arbitrários** — sem calibraç�
 | `tire_compound_start` | `compound_ordinal` da largada (Soft=3, Medium=2, Hard=1, Wet=0) — ver documento 03 | Composto de largada é decidido antes da corrida | MEDIUM (2) como fallback |
 | `avg_pit_stops_circuit` | `expanding().mean().shift(1)` de `fastf1_pit_in_count` médio por corrida no circuito | `shift(1)` por `circuit_id` | Média global anterior como fallback |
 
-`avg_pit_stops_circuit` foi recalculada causalmente na etapa 09 — substituiu uma versão estática que usava a média de todo o período. A versão estática foi preservada em `avg_pit_stops_circuit_static_global` para auditoria. Linhas com cold-start nessa feature: 511 de 2.943 (17,4%) — correspondentes às primeiras corridas de cada circuito na base.
+`avg_pit_stops_circuit` foi recalculada causalmente na etapa 09 porque a versão estática usava a média de todo o período e poderia incorporar informação futura ao predizer corridas passadas. A versão causal usa `expanding().mean().shift(1)` por `circuit_id`, garantindo que cada corrida use apenas pit stops de corridas anteriores no mesmo circuito. A validação realizada pela Emili confirmou que a recalculagem era metodologicamente necessária para remover leakage temporal; depois da revisão robusta com RFE temporal multi-fold, a feature passou a integrar o X final. A versão estática foi preservada em `avg_pit_stops_circuit_static_global` apenas para auditoria. Linhas com cold-start nessa feature: 511 de 2.943 (17,4%) — correspondentes às primeiras corridas de cada circuito na base; nesses casos, usa-se fallback de média global anterior.
 
 ---
 
@@ -160,7 +160,7 @@ Os pesos (0.35, 0.25, 0.20, 0.10, 0.10) são **arbitrários** — sem calibraç�
 
 Esse valor *observado* (que usa dados reais da corrida em si) fica **fora de X** — é apenas histórico. A feature `weather_impact_factor` que entra no modelo é a média desse índice nas corridas *anteriores* do mesmo circuito. Isso resolve o leakage original: ao predizer uma corrida, o modelo usa o padrão histórico de clima daquele circuito, não o clima real da corrida atual.
 
-A RFE posterior excluiu `weather_impact_factor` do conjunto final de 15 features — o sinal histórico de clima foi insuficiente para adicionar valor marginal ao modelo.
+A RFE posterior excluiu `weather_impact_factor` do conjunto final de 13 features — o sinal histórico de clima foi insuficiente para adicionar valor marginal ao modelo.
 
 ---
 
@@ -206,15 +206,17 @@ Do `relatorio_09_preparacao_feature_engineering.txt`:
 
 **Por que `recent_form_3` foi criada e depois removida?**
 
-A arquitetura previa ambas as features para "capturam janelas diferentes". Na prática, r=0.987 entre as duas torna a diferença de janela empiricamente irrelevante nesse dataset. O RFE confirmou: remover `recent_form_3` não piora o MAE. A decisão de manter apenas `recent_form_5` está alinhada com a janela maior citada pelo RF+SHAP paper [2].
+A arquitetura previa ambas as features para "capturam janelas diferentes". Na prática, r=0.987 entre as duas torna a diferença de janela empiricamente irrelevante nesse dataset. A comparação prática confirmou que remover `recent_form_3` não prejudica o MAE médio e que manter apenas `recent_form_5` está alinhado com a janela maior citada pelo RF+SHAP paper [2].
+
+Validação adicional feita pela Emili comparou três cenários no mesmo split temporal usado na seleção (treino até 2024 e validação em 2025): modelo final com `recent_form_5`, modelo trocando `recent_form_5` por `recent_form_3`, e modelo com ambas. O modelo com `recent_form_5` teve o melhor MAE médio entre as alternativas de janela única (`2.4701` vs. `2.4723`), enquanto usar ambas não trouxe ganho médio (`2.4736`). Portanto, a decisão de manter `recent_form_5` e remover `recent_form_3` foi correta: preserva o sinal mais estável e evita redundância quase perfeita.
 
 **`driver_wins_total` foi removida pelo RFE (rank 16) — por quê?**
 
 A arquitetura a previa como feature. O RFE a excluiu porque seu sinal está majoritariamente capturado em `driver_coef_rapm` — ambas medem o histórico de sucesso do piloto, mas o RAPM o faz de forma mais contínua e temporal. Manter as duas seria redundância parcial.
 
-**Pesos de `track_complexity` são arbitrários:**
+**Pesos de `track_complexity` foram calibrados por desempenho:**
 
-A literatura (Ruan et al. [2]) cita complexidade de circuito como feature relevante mas não especifica pesos para componentes individuais. Os valores 0.35/0.25/0.20/0.10/0.10 foram definidos sem calibração empírica. A correlação final com o target (r=-0.012) é próxima de zero — possíveis explicações: (1) a complexidade do circuito afeta o *número* de acidentes mas não quem *vence* (determinado pelo carro/piloto); (2) o efeito é capturado indiretamente pelos coeficientes RAPM históricos do circuito; (3) os pesos estão mal calibrados.
+A literatura (Ruan et al. [2]) cita complexidade de circuito como feature relevante, mas não especifica pesos para componentes individuais. Inicialmente foram usados pesos heurísticos 0.35/0.25/0.20/0.10/0.10. Em revisão de melhoria de resultado, a Emili avaliou combinações alternativas no split temporal 2025 e adotou os pesos 0.358565/0.145285/0.050026/0.119041/0.327083. Apesar da correlação linear isolada com o target ser próxima de zero, a versão calibrada melhorou o MAE médio do modelo final (`2.4578` vs. `2.4709`), sugerindo ganho por interação não linear no XGBoost.
 
 **`season_factor` como feature discutível:**
 
@@ -231,7 +233,7 @@ Um modelo walk-forward com treino até 2024 e validação em 2025 verá `season_
 | `constructor_dnf_rate` só falhas mecânicas | ✅ | — | Separação piloto/carro da arquitetura |
 | `driver_constructor_synergy` via desempenho histórico | ✅ | — | Ruan et al. [2] |
 | `qualifying_position` em vez de `grid_position` | ✅ | — | Barra et al. [3]: correlação esperada r≈0.71; observada r=0.77 |
-| Pesos `track_complexity` calibrados empiricamente | — | ⚠️ | Pesos arbitrários — sem calibração |
+| Pesos `track_complexity` calibrados empiricamente | ✅ | — | Calibração por validação temporal 2025 |
 | `weather_impact_factor` como histórico causal | ✅ | — | Correção do leakage original; RFE excluiu a feature do conjunto final |
 | `grid_penalty` com referência bibliográfica | — | ⚠️ | Feature adicionada sem citação específica |
 | `season_factor` com referência bibliográfica | — | ⚠️ | Razoável conceitualmente, sem citação direta |

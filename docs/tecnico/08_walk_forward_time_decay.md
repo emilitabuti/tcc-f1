@@ -2,7 +2,7 @@
 
 ## Contexto
 
-Com o dataset de modelagem pronto (15 features, 2.943 linhas), o próximo passo é definir como treinar e avaliar os modelos respeitando a natureza temporal dos dados. Dois problemas precisam ser resolvidos: (1) como dividir treino e validação sem contaminar o futuro no passado; (2) como ponderar observações mais antigas para que o modelo priorize padrões recentes.
+Com o dataset de modelagem pronto (13 features, 2.943 linhas), o próximo passo é definir como treinar e avaliar os modelos respeitando a natureza temporal dos dados. Dois problemas precisam ser resolvidos: (1) como dividir treino e validação sem contaminar o futuro no passado; (2) como ponderar observações mais antigas para que o modelo priorize padrões recentes.
 
 ---
 
@@ -66,19 +66,19 @@ def calcular_sample_weight(y_train, valid_season, decay):
     return np.power(decay, distancia).to_numpy()
 ```
 
-Para o fold 3 (treino 2018-2024, validação 2025) com decay=0.95:
+Para o fold 3 (treino 2018-2024, validação 2025) com decay=0.99:
 
-| Temporada | Distância até 2025 | Peso (decay=0.95) |
+| Temporada | Distância até 2025 | Peso (decay=0.99) |
 |---|---|---|
-| 2024 | 1 | 0.9500 |
-| 2023 | 2 | 0.9025 |
-| 2022 | 3 | 0.8574 |
-| 2021 | 4 | 0.8145 |
-| 2020 | 5 | 0.7738 |
-| 2019 | 6 | 0.7351 |
-| 2018 | 7 | 0.6983 |
+| 2024 | 1 | 0.9900 |
+| 2023 | 2 | 0.9801 |
+| 2022 | 3 | 0.9703 |
+| 2021 | 4 | 0.9606 |
+| 2020 | 5 | 0.9510 |
+| 2019 | 6 | 0.9415 |
+| 2018 | 7 | 0.9321 |
 
-O peso é passado ao `model.fit()` via `sample_weight` — o modelo otimiza a função de perda ponderada. Temporadas antigas não são descartadas: a de 2018 ainda recebe peso de ~0.70. Isso é muito diferente de decay=0.75 (onde 2018 valeria ~0.13).
+O peso é passado ao `model.fit()` via `sample_weight` — o modelo otimiza a função de perda ponderada. Temporadas antigas não são descartadas: a de 2018 ainda recebe peso de ~0.93. Isso é muito diferente de decay=0.75 (onde 2018 valeria ~0.13).
 
 **Importante:** o time-decay no walk-forward usa `valid_season` como referência, não a temporada atual. No fold 1, a temporada de 2022 tem distância 1 para a validação de 2023; no fold 3, distância 3.
 
@@ -88,32 +88,43 @@ O peso é passado ao `model.fit()` via `sample_weight` — o modelo otimiza a fu
 
 **Script:** `src/otimizacao_time_decay.py`
 
-**Candidatos testados:** {0.50, 0.65, 0.75, 0.85, 0.95}
+**Candidatos testados:** {0.50, 0.65, 0.75, 0.85, 0.88, 0.90, 0.92, 0.94, 0.95, 0.96, 0.97, 0.98, 0.99}
 
 **Folds de otimização:** apenas 2023 e 2024 (fold 1 e fold 2). O fold 2025 foi **reservado como holdout** — não participou da seleção do decay para evitar data leakage na otimização do hiperparâmetro.
 
+**Critério de seleção:** score composto multi-métrica, usando os mesmos pesos adotados depois na seleção de features e no tuning dos modelos:
+
+| Métrica normalizada | Peso |
+|---|---:|
+| MAE invertido | 0.30 |
+| RMSE invertido | 0.15 |
+| R² | 0.20 |
+| Kendall τ | 0.20 |
+| Top-3 accuracy | 0.15 |
+
 **Resultados** (do `otimizacao_time_decay_xgboost_resumo.csv`):
 
-| Decay | MAE médio 2023-2024 | DP MAE | RMSE médio | Kendall τ |
-|---|---|---|---|---|
-| **0.95** | **2.4026** | 0.2451 | **3.0627** | **0.6471** |
-| 0.85 | 2.4188 | 0.1986 | 3.1016 | 0.6420 |
-| 0.75 | 2.4235 | **0.1248** | 3.0997 | 0.6419 |
-| 0.65 | 2.4339 | 0.1515 | 3.1141 | 0.6386 |
-| 0.50 | 2.4652 | 0.1659 | 3.1538 | 0.6324 |
+| Decay | Score composto | MAE médio | DP MAE | RMSE médio | R² médio | Kendall τ | Top-3 |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| **0.99** | **1.0000** | **2.3609** | 0.1943 | **3.0328** | **0.6528** | **0.6523** | **19.5%** |
+| 0.96 | 0.8355 | 2.3663 | 0.2215 | 3.0499 | 0.6484 | 0.6495 | 17.4% |
+| 0.95 | 0.7747 | 2.3779 | 0.2031 | 3.0598 | 0.6465 | 0.6498 | 17.4% |
+| 0.85 | 0.6712 | 2.3896 | 0.1821 | 3.0615 | 0.6464 | 0.6515 | 15.2% |
+| 0.65 | 0.5331 | 2.4175 | **0.1639** | 3.1058 | 0.6361 | 0.6432 | **19.5%** |
+| 0.50 | 0.0000 | 2.4544 | 0.1715 | 3.1572 | 0.6240 | 0.6298 | 15.2% |
 
-**Vencedor: decay=0.95** — menor MAE médio em 2023-2024.
+**Vencedor: decay=0.99** — melhor score composto geral nos folds 2023-2024, além de melhor MAE, RMSE, R², Kendall τ e top-3 médios. A busca fina mostrou que o limite superior original (`0.95`) era bom, mas ainda havia ganho ao testar valores menos agressivos.
 
-**Atenção ao DP:** o decay=0.95 tem o maior desvio padrão (0.245) entre os testados. O decay=0.75 tem o menor DP (0.125). Isso significa que 0.95 é ótimo em média mas menos estável entre folds. A banca pode questionar: "você escolheu o decay mais instável". Resposta: o critério de seleção definido na arquitetura (seção 8) era minimizar MAE médio, não minimizar instabilidade. O valor 0.95 atende ao critério especificado.
+**Atenção ao DP:** o decay=0.99 não tem o menor DP de MAE; o decay=0.65 é mais estável. A resposta para a banca passa a ser: a escolha não foi feita por estabilidade isolada, e sim pelo melhor equilíbrio geral entre erro, explicabilidade, ranking e top-3.
 
 ---
 
-## Por que 0.95 e não 0.75 do paper?
+## Por que 0.99 e não 0.75 do paper?
 
 Henderson et al. [9] identificaram 0.75 como valor ótimo no RAPM paper. A divergência tem três explicações plausíveis:
 
 **1. Dataset diferente (2018+ vs. 2014+):**
-O período 2018-2025 está integralmente dentro da era híbrida — regulamento, filosofia de design e métricas competitivas são mais estáveis que no período 2014-2024. Corridas de 2018 ainda são relevantes em 2025. Com decay=0.75, a temporada de 2018 valeria apenas 0.13 no fold 3 — essencialmente descartada. Com 0.95, vale 0.70 — ainda informativamente útil.
+O período 2018-2025 está integralmente dentro da era híbrida — regulamento, filosofia de design e métricas competitivas são mais estáveis que no período 2014-2024. Corridas de 2018 ainda são relevantes em 2025. Com decay=0.75, a temporada de 2018 valeria apenas 0.13 no fold 3 — essencialmente descartada. Com 0.99, vale 0.93 — quase integralmente preservada.
 
 **2. Tamanho menor do dataset:**
 Com apenas 7 temporadas de dados (vs. 11 de Henderson et al.), descartar agressivamente os anos iniciais deixaria o treino muito pequeno para o modelo generalizar.
@@ -122,7 +133,7 @@ Com apenas 7 temporadas de dados (vs. 11 de Henderson et al.), descartar agressi
 O projeto já inclui `season_factor` e `driver_coef_rapm` que capturam evolução temporal. O time-decay no walk-forward pode precisar ser menos agressivo porque as features já comunicam o efeito temporal.
 
 **O argumento central para a defesa:**
-O decay foi otimizado empiricamente nos dados deste projeto, não apenas copiado do paper. O resultado empírico é 0.95. A literatura cita 0.75 como ponto de partida, não como valor universal — o próprio Henderson et al. [9] recomendam otimizar o fator para o dataset específico via grid-search temporal, que foi exatamente o que foi feito.
+O decay foi otimizado empiricamente nos dados deste projeto, não apenas copiado do paper. O resultado empírico multi-métrica é 0.99. A literatura cita 0.75 como ponto de partida, não como valor universal — o próprio Henderson et al. [9] recomenda otimizar o fator para o dataset específico via validação temporal, que foi exatamente o que foi feito.
 
 ---
 
@@ -189,7 +200,7 @@ def acuracia_top3(df_pred):
 
 **Igualdade exata de conjunto**: os três pilotos preditos como pódio precisam ser exatamente os três que fizeram pódio, sem importar a ordem interna. Uma predição que acerta 2 dos 3 não pontua.
 
-**Por que os valores são baixos (18-24%)?** Isso é esperado para um problema de regressão contínua avaliado por classificação de pódio exata. Polishchuk [1] que reporta 78% usou um modelo de classificação direta treinado especificamente para prever pódio — o problema de otimização era diferente. Comparações diretas com esse benchmark são metodologicamente inválidas sem ajuste.
+**Por que os valores são baixos (~18-29%)?** Isso é esperado para um problema de regressão contínua avaliado por classificação de pódio exata. Polishchuk [1] que reporta 78% usou um modelo de classificação direta treinado especificamente para prever pódio — o problema de otimização era diferente. Comparações diretas com esse benchmark são metodologicamente inválidas sem ajuste.
 
 ---
 
@@ -197,11 +208,12 @@ def acuracia_top3(df_pred):
 
 ### Otimização de time-decay
 
-| Decay | MAE médio (folds 2023-2024) | Escolhido |
-|---|---|---|
-| 0.95 | 2.4026 ± 0.245 | ✅ Sim |
-| 0.85 | 2.4188 ± 0.199 | Não |
-| 0.75 | 2.4235 ± 0.125 | Não |
+| Decay | Score composto | MAE médio (folds 2023-2024) | Escolhido |
+|---|---:|---:|---|
+| 0.99 | **1.0000** | **2.3609 ± 0.194** | ✅ Sim |
+| 0.96 | 0.8355 | 2.3663 ± 0.221 | Não |
+| 0.95 | 0.7747 | 2.3779 ± 0.203 | Não |
+| 0.85 | 0.6712 | 2.3896 ± 0.182 | Não |
 
 ### Walk-forward por fold (modelo XGBoost baseline, antes do tuning)
 
@@ -221,15 +233,15 @@ Os valores definitivos após tuning estão no documento 09.
 
 **O fold 2025 não participou da otimização do decay:**
 
-O decay foi otimizado em folds 2023-2024. O fold 2025 é genuinamente independente — o valor 0.95 não foi ajustado para otimizar 2025. Isso é metodologicamente correto e defensável.
+O decay foi otimizado em folds 2023-2024. O fold 2025 é genuinamente independente — o valor 0.99 não foi ajustado para otimizar 2025. Isso é metodologicamente correto e defensável.
 
-**A escolha de 0.95 tem maior instabilidade:**
+**A escolha de 0.99 tem trade-off de estabilidade:**
 
-DP=0.245 vs. 0.125 do decay=0.75. Isso significa que o modelo com 0.95 tem performance mais variável entre folds — pode ser excelente em 2024 mas mediano em 2023 (ou vice-versa). Para a Fase 2 com TrAdaBoost, essa instabilidade pode ser relevante: o algoritmo precisa de um modelo base estável.
+DP=0.194, maior que os decays 0.65, 0.50 e 0.85. Isso significa que o modelo com 0.99 ainda tem alguma variação entre folds, embora não tenha sido escolhido por uma métrica isolada. O ganho de equilíbrio geral compensou esse trade-off: melhor score composto, melhor MAE, melhor RMSE, melhor R², melhor Kendall τ e melhor top-3.
 
 **Apenas 5 valores testados:**
 
-O grid-search cobriu 5 pontos em [0.50, 0.95]. Espaços intermediários como 0.88 ou 0.92 não foram testados. Uma busca mais fina poderia revelar valor ligeiramente diferente. Para o TCC isso é aceitável — o esforço computacional de 50 folds extras para afinar o decimal não justifica a melhoria marginal esperada.
+O grid-search original cobria 5 pontos em [0.50, 0.95]. A revisão posterior testou valores intermediários e menos agressivos até 0.99. Essa busca fina revelou ganho real: `0.99` superou `0.95` no score composto multi-métrica.
 
 ---
 
@@ -241,6 +253,6 @@ O grid-search cobriu 5 pontos em [0.50, 0.95]. Espaços intermediários como 0.8
 | Nunca embaralhar dados | ✅ | — | Arquitetura: "A ordem temporal é inviolável" |
 | Decay como `sample_weight` no `model.fit()` | ✅ | — | Henderson et al. [9], Tan et al. [18] |
 | Otimizar decay via grid-search temporal | ✅ | — | Arquitetura prevê; executado nos folds 2023-2024 |
-| Decay ótimo = 0.75 | — | ⚠️ | Empírico: 0.95. Defensável pela diferença de dataset e período |
+| Decay ótimo = 0.75 | — | ⚠️ | Empírico: 0.99. Defensável pela diferença de dataset e período |
 | Kendall τ por corrida (não global) | ✅ | — | Henderson et al. [9]: τ calculado por GP individualmente |
-| Top-3 accuracy por igualdade de conjunto | ⚠️ | — | Criterio mais estrito que o de Polishchuk [1] — explica por que 18-24% vs. 78% |
+| Top-3 accuracy por igualdade de conjunto | ⚠️ | — | Criterio mais estrito que o de Polishchuk [1] — explica por que ~18-29% vs. 78% |

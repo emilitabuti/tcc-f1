@@ -204,7 +204,7 @@ Features a documentar individualmente:
 1. Quais dois leakages foram identificados em 25/05 e como cada um foi corrigido?
 2. Quais pares de multicolinearidade severa foram encontrados e qual foi a decisão para cada um?
 3. Como o RFE foi executado temporalmente (por que não usar cross-validation padrão)?
-4. Por que 15 features e não 12 ou 18? O que o `rfe_xgboost_subsets.csv` mostra?
+4. Por que 13 features e não 12 ou 15? O que o `rfe_xgboost_subsets.csv` mostra?
 5. Por que `driver_wins_total` foi excluída pelo RFE se estava na arquitetura original?
 6. O par `recent_form_5` × `driver_constructor_synergy` (r=0.87) foi mantido — com qual justificativa?
 7. Quais features ficaram fora do modelo e por quê?

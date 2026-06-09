@@ -7,11 +7,11 @@ Data de fechamento: 30/05/2026
 Algoritmos finalistas para apresentacao da Fase 1:
 
 1. **LightGBM**
-2. **Random Forest**
+2. **XGBoost**
 
 Algoritmo de arvore arquivado:
 
-- **XGBoost**
+- **Random Forest**
 
 Baseline mantido como referencia metodologica:
 
@@ -19,12 +19,12 @@ Baseline mantido como referencia metodologica:
 
 ## Evidencias Quantitativas
 
-| Modelo | MAE medio | MAE DP | RMSE medio | R2 medio | Kendall tau | Top-3 accuracy | Tempo tuning |
-|---|---:|---:|---:|---:|---:|---:|---:|
-| Ridge baseline | 2.2734 | 0.1336 | 2.9582 | 0.6708 | 0.6546 | 0.1856 | 0.06 min |
-| LightGBM | 2.3133 | 0.1117 | 3.0082 | 0.6598 | 0.6551 | 0.2424 | 0.36 min |
-| Random Forest | 2.3275 | 0.1210 | 3.0196 | 0.6573 | 0.6511 | 0.2134 | 1.50 min |
-| XGBoost | 2.3342 | 0.1334 | 3.0137 | 0.6584 | 0.6518 | 0.2412 | 0.95 min |
+| Modelo | Score composto | MAE medio | MAE DP | RMSE medio | R2 medio | Kendall tau | Top-3 accuracy | Tempo tuning |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| LightGBM | 0.4971 | 2.3264 | 0.1316 | 3.0146 | 0.6582 | 0.6530 | 0.2563 | 0.37 min |
+| XGBoost | 0.4963 | 2.3479 | 0.1358 | 3.0207 | 0.6569 | 0.6523 | 0.2563 | 0.61 min |
+| Random Forest | 0.4957 | 2.3732 | 0.1235 | 3.0515 | 0.6501 | 0.6436 | 0.2689 | 1.14 min |
+| Ridge baseline | 0.4900 | 2.2723 | 0.1306 | 2.9574 | 0.6710 | 0.6543 | 0.1856 | 0.07 min |
 
 Arquivos de origem:
 
@@ -33,46 +33,36 @@ Arquivos de origem:
 
 ## Justificativa da Escolha
 
-O criterio definido no cronograma revisado foi aplicado de forma empirica:
+O criterio revisado foi aplicado de forma empirica por score composto multi-metrica:
 
-- menor MAE medio nos folds walk-forward 2023, 2024 e 2025;
-- maior Kendall tau medio;
-- estabilidade entre folds, medida pelo desvio padrao do MAE;
-- custo computacional;
-- coerencia com a arquitetura da Fase 2, que exigira analise de drift e possivel
-  adaptacao incremental.
+- MAE invertido: peso 0.30;
+- RMSE invertido: peso 0.15;
+- R2: peso 0.20;
+- Kendall tau: peso 0.20;
+- top-3 accuracy: peso 0.15.
 
-Entre os modelos de arvore, o **LightGBM** apresentou o melhor MAE medio
-(`2.3133`), o melhor Kendall tau medio (`0.6551`), o melhor top-3 accuracy medio
-(`0.2424`) e o menor tempo de tuning (`0.36 min`). Por isso, ele substitui o
-XGBoost como principal modelo de arvore para a Fase 1.
+O **LightGBM** apresentou o melhor score composto medio (`0.4971`) e menor tempo
+de tuning entre os modelos de arvore finalistas. O **XGBoost** ficou em
+segundo no score composto (`0.4963`) e manteve o mesmo top-3 medio do
+LightGBM.
 
-O **Random Forest** foi mantido como segundo finalista por combinar desempenho
-proximo ao LightGBM com maior simplicidade interpretativa e robustez natural de
-bagging. Ele tambem funciona como contraponto metodologico ao boosting, conforme
-previsto na arquitetura.
+O **Random Forest** foi arquivado como terceiro candidato de arvore. Seu top-3
+medio foi o maior entre as arvores, mas o score composto ficou abaixo de
+LightGBM e XGBoost porque MAE, RMSE, R2 e Kendall tau foram piores.
 
-O **XGBoost** foi arquivado como terceiro candidato. Apesar de ser o algoritmo
-originalmente previsto como principal e ter desempenho adequado, ficou atras de
-LightGBM e Random Forest em MAE medio e atras do LightGBM em estabilidade,
-Kendall tau e custo computacional.
-
-O **Ridge baseline** obteve o menor MAE geral (`2.2734`). Esse resultado deve ser
-reportado explicitamente, pois mostra que a decomposicao linear inspirada em RAPM
-e forte para este dataset. Ainda assim, ele permanece como baseline, nao como
-modelo finalista principal, porque o objetivo da Fase 1 inclui comparar modelos
-de arvore interpretaveis e preparar a analise de drift/adaptacao da Fase 2.
+O **Ridge baseline** obteve o menor MAE, menor RMSE e maior R2. Esse resultado
+deve ser reportado explicitamente, pois mostra que a decomposicao linear inspirada
+em RAPM e forte para este dataset. Ainda assim, ele permanece como baseline,
+porque o objetivo da Fase 1 inclui comparar modelos de arvore interpretaveis e
+preparar a analise de drift/adaptacao da Fase 2.
 
 ## Feature Importance
-
-A etapa de importancia de features confirmou coerencia entre os modelos e a
-literatura usada na arquitetura.
 
 Top features por modelo:
 
 | Modelo | Top 5 features |
 |---|---|
-| XGBoost | `qualifying_position`, `recent_form_5`, `constructor_coef_rapm`, `driver_constructor_synergy`, `constructor_wins_total` |
+| XGBoost | `qualifying_position`, `constructor_coef_rapm`, `recent_form_5`, `driver_constructor_synergy`, `constructor_wins_total` |
 | Random Forest | `qualifying_position`, `constructor_coef_rapm`, `recent_form_5`, `driver_constructor_synergy`, `constructor_wins_total` |
 | LightGBM | `qualifying_position`, `constructor_coef_rapm`, `recent_form_5`, `driver_constructor_synergy`, `constructor_wins_total` |
 
@@ -84,25 +74,12 @@ Arquivos gerados:
 - `reports/modelagem/feature_importance_2024.csv`
 - `reports/modelagem/relatorio_feature_importance_29_30_05.txt`
 
-Leitura metodologica:
-
-- `qualifying_position` domina os tres modelos, coerente com a relevancia do grid
-  e do qualifying na literatura de predicao de resultados em F1.
-- `constructor_coef_rapm` aparece como feature central, coerente com a literatura
-  que atribui grande peso ao construtor na variancia de desempenho.
-- `recent_form_5` aparece de forma consistente, sustentando a inclusao de forma
-  recente como feature historica causal.
-- `driver_constructor_synergy` aparece no top 5 dos tres modelos, reforcando a
-  decisao de modelar a relacao piloto-equipe.
-- As taxas de DNF e features de circuito permanecem com importancia menor, mas
-  preservam interpretabilidade e cobertura dos objetivos especificos do TCC.
-
 ## Dataset Final
 
 O dataset de modelagem foi validado com:
 
 - 2.943 linhas;
-- 15 features em X;
+- 13 features em X;
 - 0 valores NaN em X e y;
 - temporadas 2018 a 2025;
 - nenhuma coluna proibida em X.
@@ -110,48 +87,23 @@ O dataset de modelagem foi validado com:
 Features finais:
 
 - `qualifying_position`
-- `grid_penalty`
 - `recent_form_5`
-- `driver_coef_rapm`
-- `driver_dnf_rate`
 - `constructor_coef_rapm`
-- `constructor_dnf_rate`
-- `constructor_wins_total`
 - `driver_constructor_synergy`
-- `track_complexity`
-- `altitude_m`
+- `constructor_wins_total`
+- `driver_coef_rapm`
+- `season_factor`
 - `tire_compound_start`
 - `avg_pit_stops_circuit`
-- `season_factor`
-- `incident_rate_hist_norm`
-
-Colunas explicitamente excluidas de X por leakage ou causalidade:
-
-- `finish_position`
-- `points`
-- `race_points`
-- `fastest_lap_race`
-- `previous_position`
-- `safety_car_flag`
-
-## Fundamentacao Bibliografica
-
-Esta decisao segue o mapa de referencias da arquitetura:
-
-- Walk-forward validation e time-decay: Henderson et al. [9], Tan et al. [18].
-- Coeficientes RAPM: Henderson et al. [9], Snoeks [10].
-- Features de forma, sinergia, circuito e risco: Ruan et al. [2], Barra et al.
-  [3], Heilmeier et al. [6].
-- XGBoost: Chen & Guestrin [19].
-- Random Forest: Breiman [20].
-- LightGBM como terceiro candidato empirico: Barra et al. [3].
-- Otimizacao de hiperparametros: Bergstra & Bengio [22], Akiba et al. [23].
-- Metricas e benchmarks: Polishchuk [1], Alonso et al. [4], Henderson et al. [9].
+- `track_complexity`
+- `grid_penalty`
+- `constructor_dnf_rate`
+- `altitude_m`
 
 ## Conclusao
 
-A Fase 1 fica fechada com **LightGBM** e **Random Forest** como modelos
-finalistas. O **XGBoost** permanece documentado como terceiro algoritmo avaliado,
-mas nao sera priorizado na apresentacao. O **Ridge Regression** deve ser
-apresentado como baseline forte e como evidencia de que os coeficientes inspirados
-em RAPM capturam parte relevante da estrutura dos dados.
+A Fase 1 fica fechada com **LightGBM** e **XGBoost** como modelos finalistas.
+O **Random Forest** permanece documentado como terceiro algoritmo avaliado, mas
+nao sera priorizado na apresentacao pelo criterio multi-metrica. O **Ridge Regression** deve ser apresentado
+como baseline forte e como evidencia de que os coeficientes inspirados em RAPM
+capturam parte relevante da estrutura dos dados.

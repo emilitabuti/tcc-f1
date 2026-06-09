@@ -1,8 +1,9 @@
 {
-  "max_depth": 7,
-  "max_features": 0.5,
+  "max_depth": 11,
+  "max_features": "log2",
   "min_samples_leaf": 5,
   "min_samples_split": 3,
-  "n_estimators": 173,
-  "tempo_tuning_segundos": 89.7187819039973
+  "n_estimators": 231,
+  "score_composto_tuning": 0.4954779786520615,
+  "tempo_tuning_segundos": 68.67761396999413
 }

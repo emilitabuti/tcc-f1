@@ -59,11 +59,11 @@ historica de Safety Car e Virtual Safety Car por circuito.
 
 Formula final (5 componentes):
 
-  track_complexity = 0.35 * corners_norm
-                   + 0.25 * length_km_norm
-                   + 0.20 * altitude_norm
-                   + 0.10 * circuit_type
-                   + 0.10 * incident_rate_hist_norm
+  track_complexity = 0.358565 * corners_norm
+                   + 0.145285 * length_km_norm
+                   + 0.050026 * altitude_norm
+                   + 0.119041 * circuit_type
+                   + 0.327083 * incident_rate_hist_norm
 
 onde `incident_rate_hist_norm` e a taxa historica de SC/VSC no circuito, calculada
 causalmente: para cada corrida r, so usa corridas anteriores a r no mesmo circuito

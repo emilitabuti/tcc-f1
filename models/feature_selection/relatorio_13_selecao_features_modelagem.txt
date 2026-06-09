@@ -9,29 +9,27 @@ Dataset X 2018-2024: /home/emili-tabuti/Documentos/projects/tcc-f1/data/processe
 Dataset y 2018-2024: /home/emili-tabuti/Documentos/projects/tcc-f1/data/processed/dataset_modelagem_y_2018_2024.csv
 Linhas: 2943
 Colunas originais: 132
-Colunas X: 15
+Colunas X: 13
 Colunas y: 6
-Features finais: 15
+Features finais: 13
 Target: finish_position
 Target presente em X: False
 
 Features finais selecionadas
 -----------------------------------
 - qualifying_position
-- grid_penalty
-- recent_form_5
-- driver_coef_rapm
-- driver_dnf_rate
 - constructor_coef_rapm
-- constructor_dnf_rate
-- constructor_wins_total
+- recent_form_5
 - driver_constructor_synergy
+- constructor_wins_total
+- driver_coef_rapm
 - track_complexity
-- altitude_m
 - tire_compound_start
-- avg_pit_stops_circuit
 - season_factor
-- incident_rate_hist_norm
+- avg_pit_stops_circuit
+- constructor_dnf_rate
+- grid_penalty
+- altitude_m
 
 Colunas mantidas fora de X
 --------------------
@@ -93,6 +91,7 @@ Colunas mantidas fora de X
 - corners
 - corrida_chuva_flag
 - dnf_categoria
+- driver_dnf_rate
 - driver_experience
 - driver_win_flag
 - driver_wins_total
@@ -122,6 +121,7 @@ Colunas mantidas fora de X
 - grid_position_minmax
 - grid_position_zero_flag
 - incident_rate_hist
+- incident_rate_hist_norm
 - laps
 - laps_minmax
 - length_km
@@ -154,7 +154,7 @@ Colunas com remoção sugerida: 0
 
 Decisão metodológica
 -------------------------
-O dataset X foi corrigido para conter apenas features disponíveis antes da corrida. safety_car_flag foi mantida como auditoria fora de X e substituída por incident_rate_hist_norm. weather_impact_factor foi recalculada como histórico causal por circuito, mas ficou fora do X final após RFE. Também foram removidas recent_form_3 e grid_position por redundância empírica com recent_form_5 e qualifying_position. A RFE temporal com XGBoost selecionou 15 features finais.
+O dataset X foi corrigido para conter apenas features disponíveis antes da corrida. safety_car_flag foi mantida como auditoria fora de X e substituída por incident_rate_hist_norm. weather_impact_factor foi recalculada como histórico causal por circuito, mas ficou fora do X final após RFE. Também foram removidas recent_form_3 e grid_position por redundância empírica com recent_form_5 e qualifying_position. A RFE temporal com XGBoost selecionou 13 features finais.
 
 Features mantidas apesar de correlação alta
 --------------------------------------------

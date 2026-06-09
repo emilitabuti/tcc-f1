@@ -48,7 +48,7 @@ Gerada ao longo das Semanas 1 e 2 pelos próprios scripts do pipeline.
 | Arquivo | Classificação | O que documenta |
 |---|---|---|
 | `analise_feature_engineering_25_05_2026.md` | **Essencial** | Auditoria de leakage de 25/05 — identifica `safety_car_flag` e `weather_impact_factor` como leakage e prescreve correções. Evento crítico da transição S1→S2 |
-| `lista_features_modelo.md` | **Essencial** | Contrato das 15 features finais do modelo — deve permanecer sincronizado com `models/feature_selection/features_modelagem_2018_2025.json` |
+| `lista_features_modelo.md` | **Essencial** | Contrato das 13 features finais do modelo — deve permanecer sincronizado com `models/feature_selection/features_modelagem_2018_2025.json` |
 | `mapeamento_openf1_ergast.md` | **Essencial** | Mapeamento de identificadores entre OpenF1 e Ergast (driver_number → driver_id, meeting_key → round) |
 
 ---
@@ -64,6 +64,6 @@ Gerada ao longo das Semanas 1 e 2 pelos próprios scripts do pipeline.
 | `tecnico/05_rapm_ridge.md` | 3.5 | Documenta RAPM como adaptação (não estrito), alpha=10.0 não tunado, decay=0.75 |
 | `tecnico/06_feature_engineering.md` | 3.6 | Documenta cada feature com fórmula, referência e mecanismo causal |
 | `tecnico/07_selecao_features.md` | 3.7 | Documenta leakages corrigidos, multicolinearidade e RFE |
-| `tecnico/08_walk_forward_time_decay.md` | 3.8 | Documenta folds, decay=0.95 vs. 0.75 do paper, impossibilidade de embaralhar |
-| `tecnico/09_modelagem_tuning.md` | 3.9 | Documenta 3 algoritmos, Optuna 50 trials, decisão LightGBM+RF |
+| `tecnico/08_walk_forward_time_decay.md` | 3.8 | Documenta folds, decay=0.99 vs. 0.75 do paper, impossibilidade de embaralhar |
+| `tecnico/09_modelagem_tuning.md` | 3.9 | Documenta 3 algoritmos, Optuna 50 trials, decisão LightGBM+XGBoost |
 | `tecnico/10_resultados_feature_importance.md` | 3.10 | Documenta resultados, Ridge vs. árvores, top-3 baixo, convergência com literatura |

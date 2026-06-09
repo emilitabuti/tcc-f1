@@ -1,15 +1,15 @@
 # Lista canônica de features do modelo — F1 Predictive Model
 
-Data: 25/05/2026
+Data: 09/06/2026
 Fonte de referência: `ArquiteturaProposta.pdf`, `manifest_feature_engineering.json`
 Base de entrada: `data/processed/dataset_feature_engineering_ready_2018_2025.csv`
 
-Atualização metodológica: após a análise de correlação, leakage e RFE temporal com
-XGBoost em 25/05/2026, o conjunto de entrada do modelo foi reduzido de 21 para
-15 features. `safety_car_flag` permanece apenas como auditoria e foi substituída
-por `incident_rate_hist_norm`; `weather_impact_factor` passou a ser histórico
-causal por circuito, mas ficou fora de X após a RFE; `recent_form_3` e
-`grid_position` foram removidas por redundância severa.
+Atualização metodológica: após a análise de correlação, leakage e RFE temporal
+multi-fold com XGBoost, o conjunto de entrada do modelo foi reduzido de 21 para
+13 features finais. `safety_car_flag` permanece apenas como auditoria e foi
+substituída metodologicamente por histórico causal de incidentes; `weather_impact_factor`
+passou a ser histórico causal por circuito, mas ficou fora de X após a RFE;
+`recent_form_3` e `grid_position` foram removidas por redundância severa.
 
 ---
 
@@ -56,7 +56,7 @@ para features causais. Deve ser separado de `X` antes de qualquer treino.
 | Feature | Tipo | Descrição | Fonte | Status |
 |---|---|---|---|---|
 | `driver_coef_rapm` | Numérica | Coeficiente Ridge time-decay do piloto | `rapm_ridge.py` — quinta 20/05 | **Pendente RAPM** |
-| `driver_dnf_rate` | Numérica | DNFs piloto / corridas disputadas (causal) | `historico_dnf_classificado_2018_2025.csv` + shift(1) | **Pendente FE** |
+| `driver_dnf_rate` | Numérica | DNFs piloto / corridas disputadas (causal) | `historico_dnf_classificado_2018_2025.csv` + shift(1) | Criada, mas fora do X final após RFE |
 
 ### Categoria: Construtor (a calcular na FE)
 
@@ -96,26 +96,25 @@ para features causais. Deve ser separado de `X` antes de qualquer treino.
 
 | Feature | Tipo | Descrição | Fonte | Status |
 |---|---|---|---|---|
-| `incident_rate_hist_norm` | Numérica [0,1] | Taxa histórica normalizada de SC/VSC no circuito antes da corrida | FastF1 TrackStatus 4/6/7 + shift(1) | Pronto |
+| `incident_rate_hist_norm` | Numérica [0,1] | Taxa histórica normalizada de SC/VSC no circuito antes da corrida | FastF1 TrackStatus 4/6/7 + shift(1) | Criada; entra em `track_complexity`, mas fora do X direto após RFE |
 
 ---
 
 ## Features prontas na base FE-ready
 
-Das 15 features finais, **8 já estão prontas** em
+Das 13 features finais, **7 já estão prontas** em
 `data/processed/dataset_feature_engineering_ready_2018_2025.csv`:
 
 - `qualifying_position`, `grid_penalty`
 - `track_complexity`, `altitude_m`
 - `tire_compound_start`, `avg_pit_stops_circuit`
 - `season_factor`
-- `incident_rate_hist_norm`
 
-**7 features ainda precisam ser calculadas** em `feature_engineering.py`:
+**6 features finais ainda são calculadas** em `feature_engineering.py`:
 
 - `recent_form_5` (forma recente)
-- `driver_coef_rapm`, `constructor_coef_rapm` (via `rapm_ridge.py`, quinta 20/05)
-- `driver_dnf_rate`, `constructor_dnf_rate` (via `historico_dnf_classificado_2018_2025.csv`)
+- `driver_coef_rapm`, `constructor_coef_rapm` (via `rapm_ridge.py`)
+- `constructor_dnf_rate` (via `historico_dnf_classificado_2018_2025.csv`)
 - `constructor_wins_total` (acumulado causal)
 - `driver_constructor_synergy` (média histórica por par piloto-equipe)
 
@@ -152,24 +151,19 @@ COLUNAS_PROIBIDAS = [
 ]
 
 FEATURES_FINAIS = [
-    # Grid
-    "qualifying_position", "grid_penalty",
-    # Forma recente (calcular na FE)
+    "qualifying_position",
+    "constructor_coef_rapm",
     "recent_form_5",
-    # Piloto (calcular na FE)
-    "driver_coef_rapm", "driver_dnf_rate",
-    # Construtor (calcular na FE)
-    "constructor_coef_rapm", "constructor_dnf_rate", "constructor_wins_total",
-    # Sinergia (calcular na FE)
     "driver_constructor_synergy",
-    # Circuito
-    "track_complexity", "altitude_m",
-    # Pneu
-    "tire_compound_start", "avg_pit_stops_circuit",
-    # Temporada
+    "constructor_wins_total",
+    "driver_coef_rapm",
+    "track_complexity",
+    "tire_compound_start",
     "season_factor",
-    # Eventos
-    "incident_rate_hist_norm",
+    "avg_pit_stops_circuit",
+    "constructor_dnf_rate",
+    "grid_penalty",
+    "altitude_m",
 ]
 
 # Para o baseline Ridge Regression, adicionar as colunas normalizadas:
@@ -208,12 +202,13 @@ Pares avaliados ou esperados com alta correlação (r > 0,85 → considerar remo
 
 ## Decisão RFE XGBoost
 
-RFE temporal executada com treino em 2018-2024 e validação em 2025:
+RFE temporal executada em folds causais 2023, 2024 e 2025:
 
-- Melhor subconjunto: 15 features
-- MAE 2025: 2,466866
-- Features removidas pela RFE: `driver_wins_total`, `driver_experience`,
-  `weather_impact_factor`, `circuit_type`
+- Melhor subconjunto: 13 features
+- Score composto médio: 0,955882 no arquivo de subconjuntos
+- Features candidatas fora do X final: `incident_rate_hist_norm`, `driver_dnf_rate`
+  e demais candidatas rejeitadas em etapas anteriores, como `weather_impact_factor`,
+  `driver_experience`, `driver_wins_total` de piloto, `grid_position` e `recent_form_3`.
 
 Artefatos:
 

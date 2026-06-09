@@ -1,33 +1,43 @@
-Relatorio RFE - XGBoost
+Relatorio RFE Multi-Metrica - XGBoost
 =============================================
 
-Entrada X: /home/emili-tabuti/Documentos/projects/tcc-f1/data/processed/dataset_modelagem_X_2018_2025.csv
+Entrada dataset tratado: /home/emili-tabuti/Documentos/projects/tcc-f1/data/processed/dataset_features_final_2018_2025_sem_nan.csv
 Entrada y: /home/emili-tabuti/Documentos/projects/tcc-f1/data/processed/dataset_modelagem_y_2018_2025.csv
-Treino: temporadas <= 2024 (2524 linhas)
-Validacao: temporada 2025 (419 linhas)
+Folds temporais:
+- treino <= 2022 (1725 linhas), validacao = 2023 (374 linhas)
+- treino <= 2023 (2099 linhas), validacao = 2024 (425 linhas)
+- treino <= 2024 (2524 linhas), validacao = 2025 (419 linhas)
+Features candidatas: 15
+Pesos do score composto: {'mae_score': 0.3, 'rmse_score': 0.15, 'r2_score': 0.2, 'kendall_tau_score': 0.2, 'top3_accuracy_score': 0.15}
 
-Melhor subconjunto por MAE em 2025:
-- n_features: 15
-- mae_2025: 2.466866
-- features: qualifying_position, recent_form_5, constructor_coef_rapm, driver_constructor_synergy, constructor_wins_total, season_factor, tire_compound_start, driver_coef_rapm, incident_rate_hist_norm, altitude_m, avg_pit_stops_circuit, track_complexity, constructor_dnf_rate, grid_penalty, driver_dnf_rate
+Melhor subconjunto por score composto medio multi-fold:
+- n_features: 13
+- score_composto: 0.955882
+- mae_medio: 2.397761
+- rmse_medio: 3.072732
+- r2_medio: 0.644983
+- kendall_tau_medio: 0.644910
+- top3_accuracy_medio: 0.186869
+- features: qualifying_position, constructor_coef_rapm, recent_form_5, driver_constructor_synergy, constructor_wins_total, driver_coef_rapm, track_complexity, tire_compound_start, season_factor, avg_pit_stops_circuit, constructor_dnf_rate, grid_penalty, altitude_m
 
-Ranking por gain:
-01. qualifying_position (gain=1096.029907, weight=254)
-02. recent_form_5 (gain=249.892456, weight=214)
-03. constructor_coef_rapm (gain=222.476593, weight=249)
-04. driver_constructor_synergy (gain=145.916855, weight=134)
-05. constructor_wins_total (gain=109.223465, weight=73)
-06. season_factor (gain=56.421665, weight=29)
-07. tire_compound_start (gain=53.056583, weight=46)
-08. driver_coef_rapm (gain=42.510532, weight=175)
-09. incident_rate_hist_norm (gain=41.244087, weight=67)
-10. altitude_m (gain=39.377766, weight=92)
-11. avg_pit_stops_circuit (gain=36.948845, weight=111)
-12. track_complexity (gain=36.242355, weight=170)
-13. constructor_dnf_rate (gain=35.801109, weight=226)
-14. grid_penalty (gain=34.700756, weight=81)
-15. driver_dnf_rate (gain=32.506905, weight=135)
-16. driver_wins_total (gain=32.236687, weight=33)
-17. driver_experience (gain=31.548735, weight=140)
-18. weather_impact_factor (gain=29.328079, weight=141)
-19. circuit_type (gain=26.010717, weight=5)
+Subconjuntos Pareto-otimos:
+ n_features  score_composto  mae_medio  rmse_medio  r2_medio  kendall_tau_medio  top3_accuracy_medio
+         13        0.955882   2.397761    3.072732  0.644983            0.64491             0.186869
+         14        0.476265   2.414328    3.104681  0.637265            0.63814             0.199495
+
+Ranking por gain medio normalizado:
+01. qualifying_position (gain_medio_norm=1.000000, gain_medio=790.463277, weight_medio=275.3)
+02. constructor_coef_rapm (gain_medio_norm=0.276571, gain_medio=229.443044, weight_medio=287.3)
+03. recent_form_5 (gain_medio_norm=0.169539, gain_medio=165.974752, weight_medio=240.7)
+04. driver_constructor_synergy (gain_medio_norm=0.128922, gain_medio=121.713811, weight_medio=156.0)
+05. constructor_wins_total (gain_medio_norm=0.043069, gain_medio=61.047619, weight_medio=76.3)
+06. driver_coef_rapm (gain_medio_norm=0.015357, gain_medio=38.148488, weight_medio=210.3)
+07. track_complexity (gain_medio_norm=0.014017, gain_medio=37.407094, weight_medio=221.3)
+08. tire_compound_start (gain_medio_norm=0.011647, gain_medio=36.483412, weight_medio=56.3)
+09. season_factor (gain_medio_norm=0.010977, gain_medio=36.265623, weight_medio=24.7)
+10. avg_pit_stops_circuit (gain_medio_norm=0.008496, gain_medio=32.722998, weight_medio=180.7)
+11. constructor_dnf_rate (gain_medio_norm=0.008074, gain_medio=32.765746, weight_medio=268.0)
+12. grid_penalty (gain_medio_norm=0.007367, gain_medio=32.242587, weight_medio=92.0)
+13. altitude_m (gain_medio_norm=0.006839, gain_medio=31.554127, weight_medio=109.7)
+14. incident_rate_hist_norm (gain_medio_norm=0.003751, gain_medio=29.523670, weight_medio=52.7)
+15. driver_dnf_rate (gain_medio_norm=0.001293, gain_medio=27.936162, weight_medio=151.3)

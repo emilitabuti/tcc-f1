@@ -8,7 +8,7 @@ O processo seguiu três etapas em sequência:
 
 1. **Identificação e correção de leakage** — remoção de dados pós-corrida (25/05/2026).
 2. **Análise de correlação** — remoção de redundâncias severas (r > 0.85).
-3. **RFE temporal com XGBoost** — seleção do subconjunto ótimo por MAE no fold 2025.
+3. **RFE temporal multi-métrica com XGBoost** — seleção do subconjunto ótimo por score composto médio nos folds 2023, 2024 e 2025.
 
 ---
 
@@ -18,7 +18,7 @@ O processo seguiu três etapas em sequência:
 |---|---|
 | Critério r > 0.85 para multicolinearidade | Arquitetura, seção 5: "Análise de Correlação — Ação se > 0.85" |
 | RFE com XGBoost para seleção final | Arquitetura, seção 7: "RFE com XGBoost → ranking de importância individual" |
-| Validação MAE com N vs N-1 features | Arquitetura, seção 7: "Validação: comparar MAE com N features vs N-1 features" |
+| Validação multi-métrica com N vs N-1 features | Extensão da arquitetura: MAE, RMSE, R², Kendall τ e top-3 accuracy |
 | Anti-leakage em séries temporais | Tan et al. [18] — Instance-Conditional Timescales of Decay |
 
 ---
@@ -55,7 +55,7 @@ Esses valores só existem enquanto a corrida acontece — um modelo pré-corrida
 
 **Correlação com o target:** r=-0.013 (essencialmente zero). Uma chuva de leakage que não adicionava sinal real ao modelo.
 
-**Correção:** recalculada como média histórica por circuito usando `expanding().mean().shift(1)`. O valor *observado* da corrida fica armazenado em `weather_impact_observed` fora de X. O RFE posterior excluiu `weather_impact_factor` do conjunto final de 15 features — o sinal histórico foi insuficiente.
+**Correção:** recalculada como média histórica por circuito usando `expanding().mean().shift(1)`. O valor *observado* da corrida fica armazenado em `weather_impact_observed` fora de X. O RFE posterior excluiu `weather_impact_factor` do conjunto final de 13 features — o sinal histórico foi insuficiente.
 
 ---
 
@@ -87,60 +87,63 @@ O arquivo `pares_correlacao_alta_maior_085.csv` registra esta decisão: `"Revisa
 
 ### Por que RFE temporal e não cross-validation padrão?
 
-Cross-validation padrão embaralha os dados. Em séries temporais, isso cria leakage: o modelo pode treinar em 2024 e validar em 2022, "vendo o futuro". O RFE aqui usa um único split temporal:
+Cross-validation padrão embaralha os dados. Em séries temporais, isso cria leakage: o modelo pode treinar em 2024 e validar em 2022, "vendo o futuro". O RFE aqui usa validação temporal em três folds causais:
 
 ```
-Treino: seasons ≤ 2024  →  2524 linhas
-Validação: season = 2025  →  419 linhas
+Treino: seasons ≤ 2022  →  Validação: season = 2023
+Treino: seasons ≤ 2023  →  Validação: season = 2024
+Treino: seasons ≤ 2024  →  Validação: season = 2025
 ```
 
-O MAE medido é o erro real de predição — o modelo nunca viu dados de 2025 durante o processo de seleção.
+As métricas medidas são erro e qualidade de ranking em folds temporais reais. Em cada fold, o modelo vê apenas temporadas anteriores à temporada de validação.
 
 ### Processo de seleção
 
-1. Treina XGBoost com todos os candidatos nas mesmas configurações do walk-forward.
-2. Extrai ranking de importância por **gain** (contribuição média ao ganho de informação).
-3. Avalia o MAE no fold 2025 para subconjuntos crescentes: top-1, top-2, ..., top-19 features.
-4. Escolhe o subconjunto com menor MAE.
+1. Treina XGBoost com todos os candidatos em cada fold temporal.
+2. Extrai ranking de importância por **gain** em cada fold e agrega por gain médio normalizado.
+3. Avalia MAE, RMSE, R², Kendall τ e top-3 accuracy nos folds 2023, 2024 e 2025 para subconjuntos crescentes.
+4. Normaliza as cinco métricas médias e escolhe o subconjunto com maior score composto médio.
 
-### Resultado do RFE — MAE por subconjunto (do `rfe_xgboost_subsets.csv`)
+Pesos do score composto:
 
-| N features | MAE fold 2025 | Observação |
-|---|---|---|
-| 12 | 2.5099 | Abaixo do mínimo |
-| 13 | 2.4921 | Melhorando |
-| 14 | 2.4781 | Melhorando |
-| **15** | **2.4669** | **Mínimo global — subconjunto escolhido** |
-| 16 | 2.4938 | Piora — `driver_wins_total` adicionada |
-| 17 | 2.5621 | Continua piorando |
-| 18 | 2.5392 | Piora |
-| 19 | 2.5140 | Piora |
+| Métrica normalizada | Peso |
+|---|---|
+| MAE invertido | 0.30 |
+| RMSE invertido | 0.15 |
+| R² | 0.20 |
+| Kendall τ | 0.20 |
+| Top-3 accuracy | 0.15 |
 
-O subconjunto de 15 features é o mínimo global. A adição da 16ª feature (`driver_wins_total`) já aumenta o MAE — indica que a feature adiciona ruído em vez de sinal.
+### Resultado do RFE — score composto por subconjunto (do `rfe_xgboost_subsets.csv`)
+
+| N features | Score | MAE | RMSE | R² | Kendall τ | Top-3 | Observação |
+|---|---:|---:|---:|---:|---:|---:|---|
+| **13** | **0.9559** | **2.3978** | **3.0727** | **0.6450** | **0.6449** | 18.7% | **Melhor compromisso global** |
+| 14 | 0.4763 | 2.4143 | 3.1047 | 0.6373 | 0.6381 | **19.9%** | `incident_rate_hist_norm` melhora top-3 médio, mas piora erro/R²/ranking |
+| 15 | 0.1993 | 2.4274 | 3.1030 | 0.6375 | 0.6377 | 15.7% | `driver_dnf_rate` adiciona ruído |
+| 12 | 0.0971 | 2.4275 | 3.1144 | 0.6344 | 0.6308 | 18.4% | Pior equilíbrio global |
+
+O subconjunto de 13 features permanece como melhor compromisso global. A revisão multi-fold confirmou o tamanho final, mas alterou a composição: `avg_pit_stops_circuit` entrou no X final e `incident_rate_hist_norm` ficou fora como feature direta.
 
 ### Ranking completo por gain (do `rfe_xgboost_ranking.csv`)
 
-| Rank | Feature | Gain | Status |
+| Rank | Feature | Gain médio normalizado | Status |
 |---|---|---|---|
-| 1 | `qualifying_position` | 1.096 | ✅ No modelo |
-| 2 | `recent_form_5` | 250 | ✅ No modelo |
-| 3 | `constructor_coef_rapm` | 222 | ✅ No modelo |
-| 4 | `driver_constructor_synergy` | 146 | ✅ No modelo |
-| 5 | `constructor_wins_total` | 109 | ✅ No modelo |
-| 6 | `season_factor` | 56 | ✅ No modelo |
-| 7 | `tire_compound_start` | 53 | ✅ No modelo |
-| 8 | `driver_coef_rapm` | 43 | ✅ No modelo |
-| 9 | `incident_rate_hist_norm` | 41 | ✅ No modelo |
-| 10 | `altitude_m` | 39 | ✅ No modelo |
-| 11 | `avg_pit_stops_circuit` | 37 | ✅ No modelo |
-| 12 | `track_complexity` | 36 | ✅ No modelo |
-| 13 | `constructor_dnf_rate` | 36 | ✅ No modelo |
-| 14 | `grid_penalty` | 35 | ✅ No modelo |
-| 15 | `driver_dnf_rate` | 33 | ✅ No modelo |
-| **16** | **`driver_wins_total`** | 32 | ❌ Excluída — piora o MAE |
-| **17** | **`driver_experience`** | 32 | ❌ Excluída |
-| **18** | **`weather_impact_factor`** | 29 | ❌ Excluída |
-| **19** | **`circuit_type`** | 26 | ❌ Excluída |
+| 1 | `qualifying_position` | 1.0000 | ✅ No modelo |
+| 2 | `constructor_coef_rapm` | 0.2766 | ✅ No modelo |
+| 3 | `recent_form_5` | 0.1695 | ✅ No modelo |
+| 4 | `driver_constructor_synergy` | 0.1289 | ✅ No modelo |
+| 5 | `constructor_wins_total` | 0.0431 | ✅ No modelo |
+| 6 | `driver_coef_rapm` | 0.0154 | ✅ No modelo |
+| 7 | `track_complexity` | 0.0140 | ✅ No modelo |
+| 8 | `tire_compound_start` | 0.0116 | ✅ No modelo |
+| 9 | `season_factor` | 0.0110 | ✅ No modelo |
+| 10 | `avg_pit_stops_circuit` | 0.0085 | ✅ No modelo |
+| 11 | `constructor_dnf_rate` | 0.0081 | ✅ No modelo |
+| 12 | `grid_penalty` | 0.0074 | ✅ No modelo |
+| 13 | `altitude_m` | 0.0068 | ✅ No modelo |
+| **14** | **`incident_rate_hist_norm`** | 0.0038 | ❌ Excluída como feature direta |
+| **15** | **`driver_dnf_rate`** | 0.0013 | ❌ Excluída |
 
 ---
 
@@ -150,8 +153,10 @@ O subconjunto de 15 features é o mínimo global. A adição da 16ª feature (`d
 |---|---|---|
 | `recent_form_3` | Multicolinearidade r=0.987 com `recent_form_5` | Janela de 3 corridas é redundante — a de 5 engloba a de 3 e adiciona contexto de médio prazo |
 | `grid_position` | Multicolinearidade r=0.962 com `qualifying_position` | `qualifying_position` tem correlação maior com o target (0.772 vs. 0.753) e é mais informativa por representar desempenho puro no qualifying |
-| `driver_wins_total` | Rank 16 — adição piora MAE (2.4669→2.4938) | Sinal capturado por `driver_coef_rapm`, que encoda histórico de sucesso de forma contínua e temporal |
+| `driver_wins_total` | Excluída em rodada anterior de RFE — adição piorava MAE | Sinal capturado por `driver_coef_rapm`, que encoda histórico de sucesso de forma contínua e temporal |
 | `driver_experience` | Rank 17 — pouco sinal incremental | Fortemente confundida com qualidade da equipe — pilotos de equipes top têm mais corridas *e* melhores resultados |
+| `incident_rate_hist_norm` | Adição ao subconjunto de 13 piora score composto (`0.9559→0.4763`) | O sinal histórico de incidentes permanece incorporado em `track_complexity`, mas como feature direta piorou o equilíbrio médio entre erro, R² e ranking |
+| `driver_dnf_rate` | Adição ao subconjunto de 14 piora score composto (`0.4763→0.1993`) | A taxa histórica de DNF do piloto não adicionou sinal incremental frente a RAPM, forma recente e sinergia piloto-construtor |
 | `weather_impact_factor` | Rank 18 — sinal histórico insuficiente | Mesmo após correção de leakage, o padrão histórico de clima por circuito não é preditivo suficiente de posição final |
 | `circuit_type` | Rank 19 — gain mínimo (26) | r=-0.006 com o target. Circuito urbano vs. permanente não tem poder preditivo isolado de posição final |
 
@@ -164,7 +169,7 @@ Gerado pelo script `selecao_features_modelagem.py`:
 | Métrica | Valor |
 |---|---|
 | Linhas em X | 2.943 |
-| Features em X | 15 |
+| Features em X | 13 |
 | NaN em X | 0 |
 | NaN em y | 0 |
 | Colunas proibidas em X | 0 |
@@ -176,9 +181,9 @@ Gerado pelo script `selecao_features_modelagem.py`:
 
 ## Avaliação crítica
 
-**O RFE com um único fold 2025 é suficiente?**
+**Por que trocar o fold único 2025 por múltiplos folds?**
 
-Usar apenas o fold 2025 para seleção de features é uma simplificação. Idealmente, o RFE seria executado com cross-validation temporal em múltiplos folds (2023, 2024, 2025) e o subconjunto selecionado seria aquele com menor MAE médio. Com um único fold, existe o risco de que o subconjunto de 15 features esteja ligeiramente sobreajustado ao padrão de 2025. Para a defesa: o fold 2025 foi escolhido por ser o mais recente e, portanto, o mais representativo do desempenho esperado em 2026. Além disso, o RFE foi executado após todos os hiperparâmetros de limpeza e feature engineering terem sido fixados — sem iterações de olhar o resultado e ajustar o pipeline.
+A seleção original com fold único 2025 era causal, mas sensível ao padrão de uma única temporada. A revisão executada pela Emili substituiu essa simplificação por validação temporal multi-fold em 2023, 2024 e 2025. O resultado manteve 13 features, mas tornou a seleção mais robusta e mudou a composição final: `avg_pit_stops_circuit` entrou e `incident_rate_hist_norm` saiu como feature direta.
 
 **O par `recent_form_5` × `driver_constructor_synergy` permanece com r=-0.874:**
 
@@ -186,7 +191,7 @@ Usar apenas o fold 2025 para seleção de features é uma simplificação. Ideal
 
 **`driver_wins_total` estava na arquitetura original e foi excluída:**
 
-A arquitetura (seção 4) a listava como feature de piloto. O RFE mostrou que adicionar `driver_wins_total` ao conjunto de 15 piora o MAE. A exclusão é empiricamente fundamentada — mas deve ser documentada como divergência entre planejamento e implementação.
+A arquitetura (seção 4) a listava como feature de piloto. O RFE mostrou que adicionar `driver_wins_total` piora o MAE. A exclusão é empiricamente fundamentada — mas deve ser documentada como divergência entre planejamento e implementação.
 
 ---
 
@@ -196,7 +201,7 @@ A arquitetura (seção 4) a listava como feature de piloto. O RFE mostrou que ad
 |---|---|---|---|
 | Critério r > 0.85 para remoção | ✅ | — | Arquitetura seção 5 |
 | RFE com XGBoost | ✅ | — | Arquitetura seção 7 |
-| Validação por MAE com N vs N-1 features | ✅ | — | Arquitetura seção 7 |
-| Subconjunto de 12-15 features | ✅ | — | Arquitetura previa "12-15 variáveis finais"; resultado: 15 |
+| Validação multi-métrica com N vs N-1 features | ✅ | — | Extensão do critério original de MAE |
+| Subconjunto de 12-15 features | ✅ | — | Arquitetura previa "12-15 variáveis finais"; resultado: 13 |
 | `driver_wins_total` no modelo | — | ⚠️ | Prevista na arquitetura; excluída empiricamente pelo RFE |
-| RFE com múltiplos folds | — | ⚠️ | Executado com fold único 2025; arquitetura não especificava |
+| RFE com múltiplos folds | ✅ | — | Revisão robusta executada com folds 2023, 2024 e 2025 |

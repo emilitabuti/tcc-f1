@@ -43,15 +43,15 @@ def carregar_params(caminho: Path, ignorar: set[str]) -> dict:
 def criar_modelos() -> dict[str, object]:
     xgb_params = carregar_params(
         PARAMS_PATHS["xgboost_tuned"],
-        ignorar={"tempo_tuning_segundos"},
+        ignorar={"tempo_tuning_segundos", "score_composto_tuning"},
     )
     rf_params = carregar_params(
         PARAMS_PATHS["random_forest_tuned"],
-        ignorar={"tempo_tuning_segundos"},
+        ignorar={"tempo_tuning_segundos", "score_composto_tuning"},
     )
     lgb_params = carregar_params(
         PARAMS_PATHS["lightgbm_tuned"],
-        ignorar={"tempo_tuning_segundos", "lightgbm_version"},
+        ignorar={"tempo_tuning_segundos", "lightgbm_version", "score_composto_tuning"},
     )
 
     return {
@@ -237,7 +237,7 @@ def gerar_relatorio(
         "",
         "Escopo:",
         "- Treinar os modelos tunados nos folds walk-forward de avaliacao.",
-        "- Extrair importancia das 15 features finais.",
+        f"- Extrair importancia das {len(xgb)} features finais.",
         "- Salvar uma referencia especifica do fold 2024 para analise futura de drift.",
         "",
         f"Time-decay usado: {decay}",
@@ -254,7 +254,7 @@ def gerar_relatorio(
         "Checagens metodologicas:",
         "- qualifying_position aparece entre as features dominantes.",
         "- constructor_coef_rapm e recent_form_5 sao verificadas como features centrais.",
-        "- driver_coef_rapm e taxas de DNF sao preservadas para interpretabilidade causal.",
+        "- driver_coef_rapm e constructor_dnf_rate sao preservadas para interpretabilidade causal.",
         "",
         "Artefatos gerados:",
         f"- {OUTPUT_XGB}",

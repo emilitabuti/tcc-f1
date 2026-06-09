@@ -41,9 +41,9 @@ Scripts executados em ordem para transformar os dados raw em datasets prontos pa
 | `09_preparar_base_feature_engineering.py` | 09 | **Essencial** | Prepara base com colunas de circuito, clima histórico e track_complexity | `dataset_feature_engineering_ready_*.csv` |
 | `rapm_ridge.py` | 10 | **Essencial** | Gera coeficientes RAPM via Ridge com time-decay, corrida a corrida (causal) | `coef_pilotos_rapm_*.csv`, `coef_construtores_rapm_*.csv` |
 | `feature_engineering_parte_1.py` | 11 | **Essencial** | Cria recent_form, driver_experience, wins, DNF rates, sinergia | `dataset_features_final_*.csv` |
-| `analise_correlacao_features.py` | 12 | **Essencial** | Calcula matriz de correlação de Pearson entre as 15 features finais | `reports/correlacao_features/` |
-| `rfe_xgboost_features.py` | 12b | **Essencial** | RFE temporal com XGBoost — seleciona as 15 features finais por gain | `models/feature_selection/` |
-| `selecao_features_modelagem.py` | 13 | **Essencial** | Gera X e y finais com as 15 features, remove colunas proibidas | `dataset_modelagem_X_*.csv`, `dataset_modelagem_y_*.csv` |
+| `analise_correlacao_features.py` | 12 | **Essencial** | Calcula matriz de correlação de Pearson entre as features candidatas/finais | `reports/correlacao_features/` |
+| `rfe_xgboost_features.py` | 12b | **Essencial** | RFE temporal multi-fold com XGBoost — seleciona as 13 features finais por score composto | `models/feature_selection/` |
+| `selecao_features_modelagem.py` | 13 | **Essencial** | Gera X e y finais com as 13 features, remove colunas proibidas | `dataset_modelagem_X_*.csv`, `dataset_modelagem_y_*.csv` |
 | `pipeline_dados.py` | Orquestrador | **Essencial** | Executa as etapas do pipeline em sequência | — |
 
 ---
@@ -56,7 +56,7 @@ Scripts de treinamento, tuning e avaliação dos modelos.
 |---|---|---|---|
 | `metricas.py` | **Essencial** | Calcula MAE, RMSE, R², Kendall τ e acurácia top-3 | — (módulo utilitário) |
 | `tuning_utils.py` | **Essencial** | Funções comuns de tuning Optuna compartilhadas entre os 3 modelos | — (módulo utilitário) |
-| `otimizacao_time_decay.py` | **Essencial** | Grid-search do fator de time-decay (testou 0.50, 0.65, 0.75, 0.85, 0.95) | `reports/modelagem/time_decay_escolhido_xgboost.txt` |
+| `otimizacao_time_decay.py` | **Essencial** | Grid-search do fator de time-decay por score composto (0.50 a 0.99) | `reports/modelagem/time_decay_escolhido_xgboost.txt` |
 | `walk_forward.py` | **Essencial** | Walk-forward validation do XGBoost (3 folds: 2023, 2024, 2025) | `reports/modelagem/metricas_walk_forward_xgboost.csv` |
 | `walk_forward_random_forest.py` | **Essencial** | Idem para Random Forest | `reports/modelagem/metricas_walk_forward_random_forest.csv` |
 | `walk_forward_lightgbm.py` | **Essencial** | Idem para LightGBM | `reports/modelagem/metricas_walk_forward_lightgbm.csv` |
@@ -85,4 +85,4 @@ Scripts de treinamento, tuning e avaliação dos modelos.
 
 | Arquivo | Classificação | O que faz |
 |---|---|---|
-| `update_openf1_2026.py` | **Essencial** | Extrai e processa corridas 2026 disponíveis, aplica as 15 features, salva `openf1_2026_available.csv` |
+| `update_openf1_2026.py` | **Essencial** | Extrai e processa corridas 2026 disponíveis, aplica as features finais, salva `openf1_2026_available.csv` |

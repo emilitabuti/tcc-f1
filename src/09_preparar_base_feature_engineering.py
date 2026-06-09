@@ -218,12 +218,12 @@ def enriquecer_track_complexity(df):
 
     Cold-start (primeira corrida no circuito): usa taxa global de 2018-2024.
 
-    Nova formula (pesos revisados):
-      track_complexity = 0.35 * corners_norm
-                       + 0.25 * length_km_norm
-                       + 0.20 * altitude_norm
-                       + 0.10 * circuit_type
-                       + 0.10 * incident_rate_hist_norm
+    Formula calibrada por validacao temporal 2025:
+      track_complexity = 0.358565 * corners_norm
+                       + 0.145285 * length_km_norm
+                       + 0.050026 * altitude_norm
+                       + 0.119041 * circuit_type
+                       + 0.327083 * incident_rate_hist_norm
 
     A versao estatica original fica preservada em track_complexity_static.
     """
@@ -286,13 +286,13 @@ def enriquecer_track_complexity(df):
         (global_rate - rate_min) / (rate_max - rate_min + 1e-9)
     ).clip(0, 1)
 
-    # Nova formula com 5 componentes
+    # Formula calibrada por validacao temporal 2025.
     df["track_complexity"] = (
-        0.35 * df["_tc_corners_norm"]
-        + 0.25 * df["_tc_length_km_norm"]
-        + 0.20 * df["_tc_altitude_m_norm"]
-        + 0.10 * df["circuit_type"]
-        + 0.10 * df["incident_rate_hist_norm"]
+        0.358565 * df["_tc_corners_norm"]
+        + 0.145285 * df["_tc_length_km_norm"]
+        + 0.050026 * df["_tc_altitude_m_norm"]
+        + 0.119041 * df["circuit_type"]
+        + 0.327083 * df["incident_rate_hist_norm"]
     ).clip(0, 1)
 
     df = df.drop(
@@ -502,9 +502,10 @@ def montar_manifest(df_2024, df_2025):
                 " (etapa 07, baseada em circuitos_manual.csv)"
             ),
             "formula_enriquecida": (
-                "0.35*corners_norm + 0.25*length_km_norm + 0.20*altitude_norm"
-                " + 0.10*circuit_type + 0.10*incident_rate_hist_norm"
-                " (etapa 09, com componente causal de incidentes historicos por circuito)"
+                "0.358565*corners_norm + 0.145285*length_km_norm "
+                "+ 0.050026*altitude_norm + 0.119041*circuit_type "
+                "+ 0.327083*incident_rate_hist_norm"
+                " (etapa 09, calibrada por validacao temporal 2025)"
             ),
             "componente_incidentes": (
                 "incident_rate_hist = taxa historica de SC/VSC no circuito, calculada "
@@ -762,11 +763,11 @@ historica de Safety Car e Virtual Safety Car por circuito.
 
 Formula final (5 componentes):
 
-  track_complexity = 0.35 * corners_norm
-                   + 0.25 * length_km_norm
-                   + 0.20 * altitude_norm
-                   + 0.10 * circuit_type
-                   + 0.10 * incident_rate_hist_norm
+  track_complexity = 0.358565 * corners_norm
+                   + 0.145285 * length_km_norm
+                   + 0.050026 * altitude_norm
+                   + 0.119041 * circuit_type
+                   + 0.327083 * incident_rate_hist_norm
 
 onde `incident_rate_hist_norm` e a taxa historica de SC/VSC no circuito, calculada
 causalmente: para cada corrida r, so usa corridas anteriores a r no mesmo circuito
