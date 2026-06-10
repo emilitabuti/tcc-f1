@@ -16,6 +16,19 @@ Com o dataset de modelagem pronto e a infraestrutura de walk-forward estabelecid
 | Ridge baseline | Henderson et al. [9] — "Adaptado diretamente do RAPM paper. Serve como referência simples para mostrar que os modelos de árvore realmente agregam valor em relação a uma solução linear." |
 | Optuna (Bayesian optimization) | Akiba et al. [23] — "Optuna: A Next-generation Hyperparameter Optimization Framework" |
 | Justificativa teórica de busca de hiperparâmetros | Bergstra & Bengio [22] — Random Search for Hyper-Parameter Optimization |
+| Validação temporal e anti-leakage | Scikit-learn: `TimeSeriesSplit` e guia de *common pitfalls*; Cawley & Talbot (2010) sobre viés de seleção em model selection |
+| Ridge e normalização | Scikit-learn: documentação de `Ridge` e `StandardScaler`/padronização |
+
+**Referências metodológicas complementares usadas nesta revisão:**
+
+- Scikit-learn, validação cruzada em séries temporais: https://scikit-learn.org/stable/modules/cross_validation.html#time-series-split
+- Scikit-learn, vazamento de dados e pré-processamento: https://scikit-learn.org/stable/common_pitfalls.html#data-leakage
+- Scikit-learn, Ridge Regression: https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Ridge.html
+- Scikit-learn, padronização de features: https://scikit-learn.org/stable/modules/preprocessing.html#standardization-or-mean-removal-and-variance-scaling
+- Optuna `TPESampler`: https://optuna.readthedocs.io/en/stable/reference/samplers/generated/optuna.samplers.TPESampler.html
+- Akiba et al. (2019), Optuna: https://dl.acm.org/doi/10.1145/3292500.3330701
+- Bergstra & Bengio (2012), Random Search for Hyper-Parameter Optimization: https://jmlr.org/papers/v13/bergstra12a.html
+- Cawley & Talbot (2010), seleção de modelos e viés de avaliação: https://jmlr.org/papers/v11/cawley10a.html
 
 ---
 
@@ -138,9 +151,18 @@ O fold 2025 é reservado como holdout também para o tuning — os hiperparâmet
 | `min_samples_split` | 2–10 | |
 | `min_samples_leaf` | 1–5 | |
 
-**Ridge** (tuning via `RidgeCV`, não Optuna):
+**Ridge** (grid-search manual, não Optuna):
 
-Varre `alpha` em escala log de 0.01 a 100 com `cross_val` temporal. Resultado: `alpha=0.01` — regularização mínima. Isso significa que os coeficientes lineares têm alta liberdade, o que é coerente com a força do sinal linear (construtor domina a variância).
+O baseline linear não usa Optuna porque só há um hiperparâmetro principal a escolher: `alpha`, a força da penalização L2. O script final `src/otimizacao_ridge_lambda.py` varre 25 valores em escala logarítmica entre 0.01 e 100 (`np.logspace(-2, 2, 25)`) e avalia cada valor nos mesmos folds temporais de tuning dos modelos de árvore:
+
+```
+2018-2022 -> validação 2023
+2018-2023 -> validação 2024
+```
+
+Resultado: `alpha=0.01`. Isso indica regularização mínima. Em termos simples, o Ridge quase não precisou "segurar" os coeficientes lineares: as features finais, especialmente os sinais de piloto/construtor derivados do RAPM e a informação de classificação, já formam uma relação linear forte com `finish_position`.
+
+**Importante:** a implementação final não usa `RidgeCV`. Ela usa `Ridge(alpha=...)` dentro de um wrapper com `StandardScaler`, ajustando o scaler somente no treino de cada fold e aplicando `transform` na validação. Isso segue a recomendação do scikit-learn para evitar vazamento em pré-processamento: aprender médias/desvios apenas com o conjunto de treino e nunca com o conjunto de validação/teste.
 
 ---
 
@@ -163,6 +185,58 @@ Varre `alpha` em escala log de 0.01 a 100 com `cross_val` temporal. Resultado: `
 
 ---
 
+## Validação dos hiperparâmetros ótimos
+
+Para conferir se os hiperparâmetros documentados realmente correspondem aos melhores resultados salvos nos artefatos, foi criada uma verificação isolada em `src/verificar/validar_09_modelagem_tuning.py`.
+
+1. os melhores trials de Optuna contra `optuna_*_best_params.json`;
+2. o grid de `alpha` do Ridge contra `ridge_best_params.json`;
+3. a presença dos folds temporais 2023-2024 em `tuning_utils.py`;
+4. se o script do Ridge usa ou não `RidgeCV`.
+
+Resumo da validação:
+
+| Modelo | Busca | Melhor trial/grid | MAE médio nos folds de tuning | Parâmetros conferem com JSON? |
+|---|---|---:|---:|---|
+| XGBoost | Optuna TPE, 50 trials | trial 23 | 2.306488 | Sim |
+| LightGBM | Optuna TPE, 50 trials | trial 34 | 2.291017 | Sim |
+| Random Forest | Optuna TPE, 50 trials | trial 49 | 2.283507 | Sim |
+| Ridge | Grid log de 25 alphas | `alpha=0.01` | 2.210738 | Sim |
+
+Validações específicas do Ridge:
+
+| Checagem | Resultado |
+|---|---|
+| `alpha` salvo em `ridge_best_params.json` | 0.01 |
+| `alpha` vencedor em `ridge_alpha_grid.csv` | 0.01 |
+| Quantidade de alphas avaliados | 25 |
+| Script usa `RidgeCV`? | Não |
+| Script usa `FOLDS_TUNING`? | Sim |
+
+Sensibilidade do Ridge ao `alpha` nos folds de tuning:
+
+| Alpha | MAE médio tuning | Δ MAE vs. `alpha=0.01` |
+|---:|---:|---:|
+| 0.01 | 2.210738 | 0.000000 |
+| 0.10 | 2.210750 | +0.000013 |
+| 1.00 | 2.210876 | +0.000138 |
+| 10.00 | 2.212207 | +0.001469 |
+| 100.00 | 2.229301 | +0.018563 |
+
+Leitura: `alpha=0.01` é o vencedor formal, mas a curva é praticamente plana entre 0.01 e 10.0. Isso torna o baseline linear robusto à escolha exata de `alpha`: mesmo uma regularização muito maior (`alpha=10.0`) piora o MAE de tuning em apenas 0.0015 posição. A queda mais visível aparece só em `alpha=100.0`, quando a penalização já começa a encolher demais os coeficientes.
+
+### Por que foi feito dessa maneira?
+
+O desenho segue uma lógica de previsão temporal, não de amostragem aleatória. Em F1, uma corrida futura nunca pode informar a escolha de hiperparâmetros de uma corrida passada. Por isso, os folds são expansivos: treina-se até 2022 e valida-se 2023; depois treina-se até 2023 e valida-se 2024. O ano de 2025 fica fora da seleção de hiperparâmetros e entra apenas na avaliação final.
+
+Essa separação reduz dois riscos clássicos:
+
+- **vazamento temporal:** usar informação de 2025, ou estatísticas calculadas com 2025, para decidir hiperparâmetros;
+- **viés de seleção:** ajustar hiperparâmetros diretamente ao conjunto que será usado para reportar a performance final.
+
+A literatura de validação temporal do scikit-learn recomenda exatamente essa ideia: em dados autocorrelacionados no tempo, métodos clássicos como `KFold`/`ShuffleSplit` podem gerar estimativas ruins porque misturam observações próximas no tempo entre treino e validação. Cawley & Talbot (2010) também alertam que a própria etapa de seleção de modelo pode sofrer overfitting quando o mesmo critério é usado de forma pouco isolada.
+
+---
 ## Resultados finais e decisão dos finalistas
 
 **Métricas após tuning** (folds 2023, 2024, 2025 — do `relatorio_modelos_tunados_26_28_05.txt`):
@@ -184,7 +258,7 @@ Varre `alpha` em escala log de 0.01 a 100 com `cross_val` temporal. Resultado: `
 
 ### Por que LightGBM supera XGBoost?
 
-Em todos os critérios definidos no cronograma (MAE médio, Kendall τ, top-3, tempo de tuning), LightGBM supera XGBoost:
+Em todos os critérios definidos (MAE médio, Kendall τ, top-3, tempo de tuning), LightGBM supera XGBoost:
 
 | Critério | LightGBM | XGBoost | Diferença |
 |---|---|---|---|
@@ -211,14 +285,6 @@ A força do Ridge é um resultado *a reportar*, não um problema. Na verdade, co
 ---
 
 ## Avaliação crítica
-
-**Por que o Optuna só usou 50 trials?**
-
-O cronograma (seção "Pontos de Atenção") menciona a opção de reduzir para 30 trials no LightGBM se necessário. 50 trials foi mantido para todos. Com TPE e `seed=42`, 50 trials é suficiente para espaços de 7-9 dimensões — estudos empíricos com TPE mostram convergência razoável já com 30-40 trials em espaços similares (Akiba et al. [23]).
-
-**Ridge `alpha=0.01` — regularização quase nula:**
-
-Idealmente, o ridge para o baseline de modelagem deveria ter sido tunado com validação cruzada temporal nos mesmos folds 2023-2024. O `RidgeCV` implementado usa validação cruzada padrão (não temporal), o que tecnicamente introduz um vazamento menor na seleção do alpha. O impacto é limitado porque o alpha ótimo é muito pequeno — mesmo com valores vizinhos (0.001, 0.1), o MAE do Ridge linear não muda significativamente.
 
 **Diferença LightGBM vs. XGBoost de 0.021 posições:**
 
