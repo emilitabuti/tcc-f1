@@ -115,7 +115,6 @@ def main() -> None:
                 "rmse_medio": float(df_metricas["rmse"].mean()),
                 "r2_medio": float(df_metricas["r2"].mean()),
                 "kendall_tau_medio": float(df_metricas["kendall_tau"].mean()),
-                "top3_accuracy_medio": float(df_metricas["top3_accuracy"].mean()),
             }
         )
 

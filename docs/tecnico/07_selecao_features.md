@@ -18,7 +18,7 @@ O processo seguiu três etapas em sequência:
 |---|---|
 | Critério r > 0.85 para multicolinearidade | Arquitetura, seção 5: "Análise de Correlação — Ação se > 0.85" |
 | RFE com XGBoost para seleção final | Arquitetura, seção 7: "RFE com XGBoost → ranking de importância individual" |
-| Validação multi-métrica com N vs N-1 features | Extensão da arquitetura: MAE, RMSE, R², Kendall τ e top-3 accuracy |
+| Validação multi-métrica com N vs N-1 features | Extensão da arquitetura: MAE, RMSE, R² e Kendall τ |
 | Anti-leakage em séries temporais | Tan et al. [18] — Instance-Conditional Timescales of Decay |
 
 ---
@@ -101,27 +101,26 @@ As métricas medidas são erro e qualidade de ranking em folds temporais reais. 
 
 1. Treina XGBoost com todos os candidatos em cada fold temporal.
 2. Extrai ranking de importância por **gain** em cada fold e agrega por gain médio normalizado.
-3. Avalia MAE, RMSE, R², Kendall τ e top-3 accuracy nos folds 2023, 2024 e 2025 para subconjuntos crescentes.
-4. Normaliza as cinco métricas médias e escolhe o subconjunto com maior score composto médio.
+3. Avalia MAE, RMSE, R² e Kendall τ nos folds 2023, 2024 e 2025 para subconjuntos crescentes.
+4. Normaliza as quatro métricas médias e escolhe o subconjunto com maior score composto médio.
 
 Pesos do score composto:
 
 | Métrica normalizada | Peso |
 |---|---|
-| MAE invertido | 0.30 |
-| RMSE invertido | 0.15 |
+| MAE invertido | 0.35 |
+| RMSE invertido | 0.20 |
 | R² | 0.20 |
-| Kendall τ | 0.20 |
-| Top-3 accuracy | 0.15 |
+| Kendall τ | 0.25 |
 
 ### Resultado do RFE — score composto por subconjunto (do `rfe_xgboost_subsets.csv`)
 
-| N features | Score | MAE | RMSE | R² | Kendall τ | Top-3 | Observação |
-|---|---:|---:|---:|---:|---:|---:|---|
-| **13** | **0.9559** | **2.3978** | **3.0727** | **0.6450** | **0.6449** | 18.7% | **Melhor compromisso global** |
-| 14 | 0.4763 | 2.4143 | 3.1047 | 0.6373 | 0.6381 | **19.9%** | `incident_rate_hist_norm` melhora top-3 médio, mas piora erro/R²/ranking |
-| 15 | 0.1993 | 2.4274 | 3.1030 | 0.6375 | 0.6377 | 15.7% | `driver_dnf_rate` adiciona ruído |
-| 12 | 0.0971 | 2.4275 | 3.1144 | 0.6344 | 0.6308 | 18.4% | Pior equilíbrio global |
+| N features | Score | MAE | RMSE | R² | Kendall τ | Observação |
+|---|---:|---:|---:|---:|---:|---|
+| **13** | **1.0000** | **2.3978** | **3.0727** | **0.6450** | **0.6449** | **Melhor compromisso global** |
+| 14 | 0.3860 | 2.4143 | 3.1047 | 0.6373 | 0.6381 | `incident_rate_hist_norm` piora o equilíbrio entre erro, R² e ranking |
+| 15 | 0.2375 | 2.4274 | 3.1030 | 0.6375 | 0.6377 | `driver_dnf_rate` adiciona ruído |
+| 12 | 0.0000 | 2.4275 | 3.1144 | 0.6344 | 0.6308 | Pior equilíbrio global |
 
 O subconjunto de 13 features permanece como melhor compromisso global. A revisão multi-fold confirmou o tamanho final, mas alterou a composição: `avg_pit_stops_circuit` entrou no X final e `incident_rate_hist_norm` ficou fora como feature direta.
 
@@ -155,8 +154,8 @@ O subconjunto de 13 features permanece como melhor compromisso global. A revisã
 | `grid_position` | Multicolinearidade r=0.962 com `qualifying_position` | `qualifying_position` tem correlação maior com o target (0.772 vs. 0.753) e é mais informativa por representar desempenho puro no qualifying |
 | `driver_wins_total` | Excluída em rodada anterior de RFE — adição piorava MAE | Sinal capturado por `driver_coef_rapm`, que encoda histórico de sucesso de forma contínua e temporal |
 | `driver_experience` | Rank 17 — pouco sinal incremental | Fortemente confundida com qualidade da equipe — pilotos de equipes top têm mais corridas *e* melhores resultados |
-| `incident_rate_hist_norm` | Adição ao subconjunto de 13 piora score composto (`0.9559→0.4763`) | O sinal histórico de incidentes permanece incorporado em `track_complexity`, mas como feature direta piorou o equilíbrio médio entre erro, R² e ranking |
-| `driver_dnf_rate` | Adição ao subconjunto de 14 piora score composto (`0.4763→0.1993`) | A taxa histórica de DNF do piloto não adicionou sinal incremental frente a RAPM, forma recente e sinergia piloto-construtor |
+| `incident_rate_hist_norm` | Adição ao subconjunto de 13 piora score composto (`1.0000→0.3860`) | O sinal histórico de incidentes permanece incorporado em `track_complexity`, mas como feature direta piorou o equilíbrio médio entre erro, R² e ranking |
+| `driver_dnf_rate` | Adição ao subconjunto de 14 piora score composto (`0.3860→0.2375`) | A taxa histórica de DNF do piloto não adicionou sinal incremental frente a RAPM, forma recente e sinergia piloto-construtor |
 | `weather_impact_factor` | Rank 18 — sinal histórico insuficiente | Mesmo após correção de leakage, o padrão histórico de clima por circuito não é preditivo suficiente de posição final |
 | `circuit_type` | Rank 19 — gain mínimo (26) | r=-0.006 com o target. Circuito urbano vs. permanente não tem poder preditivo isolado de posição final |
 
@@ -201,7 +200,7 @@ A arquitetura (seção 4) a listava como feature de piloto. O RFE mostrou que ad
 |---|---|---|---|
 | Critério r > 0.85 para remoção | ✅ | — | Arquitetura seção 5 |
 | RFE com XGBoost | ✅ | — | Arquitetura seção 7 |
-| Validação multi-métrica com N vs N-1 features | ✅ | — | Extensão do critério original de MAE |
+| Validação multi-métrica com N vs N-1 features | ✅ | — | Extensão do critério original de MAE, restrita a métricas comparáveis de regressão/ranking |
 | Subconjunto de 12-15 features | ✅ | — | Arquitetura previa "12-15 variáveis finais"; resultado: 13 |
 | `driver_wins_total` no modelo | — | ⚠️ | Prevista na arquitetura; excluída empiricamente pelo RFE |
 | RFE com múltiplos folds | ✅ | — | Revisão robusta executada com folds 2023, 2024 e 2025 |

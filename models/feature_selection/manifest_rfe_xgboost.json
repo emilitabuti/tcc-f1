@@ -15,11 +15,10 @@
     }
   ],
   "metric_weights": {
-    "mae_score": 0.3,
-    "rmse_score": 0.15,
+    "mae_score": 0.35,
+    "rmse_score": 0.2,
     "r2_score": 0.2,
-    "kendall_tau_score": 0.2,
-    "top3_accuracy_score": 0.15
+    "kendall_tau_score": 0.25
   },
   "candidate_features": [
     "qualifying_position",
@@ -39,12 +38,11 @@
     "incident_rate_hist_norm"
   ],
   "best_n_features": 13,
-  "best_score_composto": 0.9558823529411763,
+  "best_score_composto": 1.0,
   "best_mae_medio": 2.397761424382528,
   "best_rmse_medio": 3.072732078016186,
   "best_r2_medio": 0.6449834903081259,
   "best_kendall_tau_medio": 0.644909789877071,
-  "best_top3_accuracy_medio": 0.18686868686868685,
   "selected_features": [
     "qualifying_position",
     "constructor_coef_rapm",

@@ -8,22 +8,20 @@ Folds temporais:
 - treino <= 2023 (2099 linhas), validacao = 2024 (425 linhas)
 - treino <= 2024 (2524 linhas), validacao = 2025 (419 linhas)
 Features candidatas: 15
-Pesos do score composto: {'mae_score': 0.3, 'rmse_score': 0.15, 'r2_score': 0.2, 'kendall_tau_score': 0.2, 'top3_accuracy_score': 0.15}
+Pesos do score composto: {'mae_score': 0.35, 'rmse_score': 0.2, 'r2_score': 0.2, 'kendall_tau_score': 0.25}
 
 Melhor subconjunto por score composto medio multi-fold:
 - n_features: 13
-- score_composto: 0.955882
+- score_composto: 1.000000
 - mae_medio: 2.397761
 - rmse_medio: 3.072732
 - r2_medio: 0.644983
 - kendall_tau_medio: 0.644910
-- top3_accuracy_medio: 0.186869
 - features: qualifying_position, constructor_coef_rapm, recent_form_5, driver_constructor_synergy, constructor_wins_total, driver_coef_rapm, track_complexity, tire_compound_start, season_factor, avg_pit_stops_circuit, constructor_dnf_rate, grid_penalty, altitude_m
 
 Subconjuntos Pareto-otimos:
- n_features  score_composto  mae_medio  rmse_medio  r2_medio  kendall_tau_medio  top3_accuracy_medio
-         13        0.955882   2.397761    3.072732  0.644983            0.64491             0.186869
-         14        0.476265   2.414328    3.104681  0.637265            0.63814             0.199495
+ n_features  score_composto  mae_medio  rmse_medio  r2_medio  kendall_tau_medio
+         13             1.0   2.397761    3.072732  0.644983            0.64491
 
 Ranking por gain medio normalizado:
 01. qualifying_position (gain_medio_norm=1.000000, gain_medio=790.463277, weight_medio=275.3)

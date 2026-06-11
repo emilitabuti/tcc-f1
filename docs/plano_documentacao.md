@@ -229,10 +229,10 @@ Features a documentar individualmente:
 1. Por que walk-forward e não cross-validation padrão em séries temporais?
 2. Como os três folds são definidos e por que começam em 2018 e não em 2014?
 3. Como o time-decay é implementado como `sample_weight` no treinamento?
-4. O fator 0.95 foi escolhido por qual critério? O que o grid-search mostrou?
-5. Por que 0.95 difere do 0.75 recomendado por Henderson et al.? Essa divergência é defensável?
+4. O fator 0.99 foi escolhido por qual critério? O que o grid-search mostrou?
+5. Por que 0.99 difere do 0.75 recomendado por Henderson et al.? Essa divergência é defensável?
 6. Por que os dados nunca são embaralhados?
-7. Como as métricas MAE, RMSE, R², Kendall τ e top-3 são calculadas por fold?
+7. Como as métricas MAE, RMSE, R² e Kendall τ são calculadas por fold?
 
 **Critério de conclusão:** todas as perguntas respondidas com os valores reais do `otimizacao_time_decay_xgboost.csv`.
 
@@ -280,7 +280,7 @@ Features a documentar individualmente:
 **Perguntas que o documento deve responder:**
 1. Quais são os resultados finais de cada modelo em cada fold (tabela completa)?
 2. As metas da arquitetura foram atingidas? (MAE ≤ 2.5, RMSE ≤ 3.0, R² ≥ 0.75, Kendall τ ≥ 0.60)
-3. Por que o top-3 accuracy ficou abaixo de 30% se Polishchuk reporta 78%?
+3. Por que o top-3 foi removido das métricas oficiais se trabalhos de pódio reportam acurácias altas?
 4. `qualifying_position` domina a feature importance nos três modelos — isso é coerente com a literatura?
 5. `constructor_coef_rapm` aparece consistentemente no top-3 — o que isso confirma da literatura (Snoeks [10])?
 6. Features de circuito e pneu têm importância baixa — isso invalida sua inclusão no modelo?

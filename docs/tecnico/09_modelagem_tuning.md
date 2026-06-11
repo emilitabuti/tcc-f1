@@ -79,7 +79,7 @@ Grid Search testa todas as combinações de uma grade pré-definida. Com 7 hiper
 
 **Seed fixo:** `TPESampler(seed=42)` — reprodutibilidade garantida.
 
-**Objetivo revisado:** após a revisão de seleção de features, o tuning passou a maximizar um score composto multi-métrica nos folds 2023-2024. O score combina MAE invertido (0.30), RMSE invertido (0.15), R² (0.20), Kendall τ (0.20) e top-3 accuracy (0.15). Isso evita escolher hiperparâmetros bons apenas em MAE, mas ruins para ranking ou pódio.
+**Objetivo revisado:** após a revisão de seleção de features e a retirada da métrica top-3 do pipeline principal, o tuning passou a maximizar um score composto multi-métrica nos folds 2023-2024. O score combina MAE invertido (0.35), RMSE invertido (0.20), R² (0.20) e Kendall τ (0.25). Isso evita escolher hiperparâmetros bons apenas em MAE, mas ruins para erro quadrático, explicabilidade ou ranking.
 
 ### Folds de tuning vs. folds de avaliação
 
@@ -150,17 +150,17 @@ Varre `alpha` em escala log de 0.01 a 100 com `cross_val` temporal. Resultado: `
 
 | Modelo | Parâmetros ótimos | Tempo de tuning |
 |---|---|---|
-| **XGBoost** | `n_estimators=344, max_depth=3, lr=0.010, subsample=0.952, colsample_bytree=0.686, reg_alpha=0.039, reg_lambda=0.913` | 36.7s |
-| **LightGBM** | `n_estimators=230, max_depth=3, num_leaves=7, lr=0.016, subsample=0.862, colsample_bytree=0.769, reg_alpha=0.659, reg_lambda=0.078, min_child_samples=22` | 22.0s |
-| **Random Forest** | `n_estimators=231, max_depth=11, max_features=log2, min_samples_split=3, min_samples_leaf=5` | 68.7s |
-| **Ridge** | `alpha=0.01` com `StandardScaler` | 4.1s |
+| **XGBoost** | `n_estimators=100, max_depth=3, lr=0.040, subsample=0.707, colsample_bytree=0.626, reg_alpha=0.090, reg_lambda=0.612` | 251.1s |
+| **LightGBM** | `n_estimators=200, max_depth=6, num_leaves=16, lr=0.022, subsample=0.710, colsample_bytree=0.896, reg_alpha=0.665, reg_lambda=0.115, min_child_samples=23` | 232.6s |
+| **Random Forest** | `n_estimators=140, max_depth=6, max_features=0.5, min_samples_split=8, min_samples_leaf=5` | 240.7s |
+| **Ridge** | `alpha=0.01` com `StandardScaler` | 7.9s |
 
 **Observações sobre os hiperparâmetros ótimos:**
 
 - **XGBoost manteve `max_depth=3`**: árvores rasas. Isso é comum em dados tabulares com features correlacionadas — profundidade excessiva gera overfitting.
-- **LightGBM também ficou com `max_depth=3`** e `num_leaves=7`, um modelo raso e estável.
-- **LightGBM `subsample=0.862`**: usa boa parte dos dados, mas ainda com amostragem para reduzir variância.
-- **RF `max_features=log2`**: usa cerca de 3-4 features por nó, forçando diversidade entre árvores.
+- **LightGBM ficou com `max_depth=6`, mas `num_leaves=16`**: a profundidade máxima permite interações, enquanto o limite de folhas mantém regularização.
+- **LightGBM `subsample=0.710`**: usa amostragem relevante para reduzir variância.
+- **RF `max_features=0.5`**: usa metade das features por divisão, equilibrando diversidade entre árvores e acesso ao sinal dominante de `qualifying_position`.
 - **Ridge `alpha=0.01`**: regularização quase nula — os coeficientes lineares têm alta liberdade. Coerente com a força do sinal RAPM.
 
 ---
@@ -169,42 +169,44 @@ Varre `alpha` em escala log de 0.01 a 100 com `cross_val` temporal. Resultado: `
 
 **Métricas após tuning** (folds 2023, 2024, 2025 — do `relatorio_modelos_tunados_26_28_05.txt`):
 
-| Modelo | Score composto | MAE médio | DP MAE | RMSE médio | R² médio | Kendall τ | Top-3 acc | Tempo tuning |
-|---|---|---|---|---|---|---|---|---|
-| **LightGBM** | **0.4971** | 2.3264 | 0.1316 | 3.0146 | 0.6582 | **0.6530** | 0.2563 | 0.37 min |
-| **XGBoost** | 0.4963 | 2.3479 | 0.1358 | 3.0207 | 0.6569 | 0.6523 | 0.2563 | 0.61 min |
-| Random Forest | 0.4957 | 2.3732 | **0.1235** | 3.0515 | 0.6501 | 0.6436 | **0.2689** | 1.14 min |
-| Ridge | 0.4900 | **2.2723** | 0.1306 | **2.9574** | **0.6710** | **0.6543** | 0.1856 | 0.07 min |
+| Modelo | Score composto | MAE médio | DP MAE | RMSE médio | R² médio | Kendall τ | Tempo tuning |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Ridge | **0.5314** | **2.2723** | 0.1306 | **2.9574** | **0.6710** | **0.6543** | 0.13 min |
+| **LightGBM** | **0.5279** | 2.3172 | 0.1233 | 3.0121 | 0.6587 | 0.6536 | 3.88 min |
+| **Random Forest** | 0.5272 | 2.3263 | **0.1220** | 3.0121 | 0.6589 | 0.6503 | 4.01 min |
+| XGBoost | 0.5269 | 2.3415 | 0.1448 | 3.0161 | 0.6578 | 0.6525 | 4.19 min |
 
 ---
 
 ## Decisão dos finalistas (30/05/2026)
 
-**Finalistas: LightGBM + XGBoost**
-**Arquivado como modelo de árvore finalista: Random Forest**
+**Finalistas de árvore: LightGBM + Random Forest**
+**Arquivado como terceiro modelo de árvore: XGBoost**
 **Mantido como baseline: Ridge**
 
-### Por que LightGBM supera XGBoost?
+### Por que LightGBM permanece como principal modelo de árvore?
 
-LightGBM e XGBoost ficaram próximos no score composto. LightGBM vence por margem pequena e mantém vantagem em MAE, RMSE, R², Kendall τ e menor tempo de tuning:
+LightGBM ficou com o maior score composto entre os modelos de árvore e apresentou o melhor MAE médio das árvores. A margem sobre Random Forest é pequena, mas consistente com o critério revisado:
 
-| Critério | LightGBM | XGBoost | Diferença |
+| Critério | LightGBM | Random Forest | Diferença |
 |---|---|---|---|
-| Score composto | **0.4971** | 0.4963 | +0.0008 |
-| MAE médio | **2.3264** | 2.3479 | -0.022 |
-| Kendall τ | **0.6530** | 0.6523 | +0.0007 |
-| Top-3 accuracy | **0.2563** | **0.2563** | 0.000 |
-| Tempo tuning | **0.37 min** | 0.61 min | 1.7× mais rápido |
+| Score composto | **0.5279** | 0.5272 | +0.0007 |
+| MAE médio | **2.3172** | 2.3263 | -0.009 |
+| RMSE médio | **3.0121** | 3.0121 | empate prático |
+| Kendall τ | **0.6536** | 0.6503 | +0.0034 |
+| Tempo tuning | **3.88 min** | 4.01 min | levemente menor |
 
 A diferença é pequena, então a decisão deve ser apresentada como empate técnico com vantagem operacional do LightGBM.
 
-### Por que XGBoost volta como segundo finalista?
+### Por que Random Forest entra como segundo finalista?
 
-Após a busca fina do time-decay e retuning com `decay=0.99`, XGBoost superou Random Forest no score composto (`0.4963` vs. `0.4957`) e empatou com LightGBM em top-3 médio. Random Forest teve o maior top-3 médio (`0.2689`), mas piorou MAE, RMSE, R² e Kendall τ. Pelo critério final de cinco métricas, XGBoost volta como segundo finalista.
+Após a remoção de top-3 do score, Random Forest superou XGBoost no score composto final (`0.5272` vs. `0.5269`) e ficou praticamente empatado com LightGBM em RMSE e R². A diferença é pequena, mas Random Forest passa a ser mais defensável como segundo modelo de árvore porque oferece um comportamento de ensemble por bagging, teoricamente útil para análise de estabilidade e drift.
+
+XGBoost permanece documentado como terceiro modelo de árvore avaliado. Ele ainda é metodologicamente relevante, mas deixou de ser finalista quando a seleção passou a considerar apenas métricas comparáveis à literatura de regressão.
 
 ### Por que Ridge continua baseline apesar de melhor MAE/R²?
 
-O Ridge tem o melhor MAE global (2.2723), melhor RMSE, melhor R² e melhor Kendall τ. Este resultado é metodologicamente honesto e deve ser reportado. O Ridge permanece como **baseline**, não como finalista principal, por três razões:
+O Ridge tem o melhor score composto global (0.5314), menor MAE, menor RMSE, maior R² e maior Kendall τ. Este resultado é metodologicamente honesto e deve ser reportado. O Ridge permanece como **baseline**, não como finalista principal, por três razões:
 
 1. **Objetivo científico do TCC**: o projeto compara modelos de árvore interpretáveis (feature importance, SHAP) com baseline linear. Usar Ridge como finalista principal esvazia essa comparação — seria como concluir "o simples é suficiente" sem explorar o que os árvores capturam adicionalmente.
 
@@ -226,9 +228,9 @@ O cronograma (seção "Pontos de Atenção") menciona a opção de reduzir para 
 
 O Ridge usa grid-search temporal nos mesmos folds 2023-2024 dos demais modelos. O alpha ótimo permaneceu `0.01`, indicando regularização quase nula e força do sinal linear RAPM.
 
-**Diferença LightGBM vs. XGBoost é mínima:**
+**Diferença entre as árvores é mínima:**
 
-A diferença de score composto entre os finalistas é `0.0008`. Em termos práticos, é empate técnico. A preferência por LightGBM se apoia tanto no melhor equilíbrio multi-métrica quanto no custo computacional menor.
+A diferença de score composto entre LightGBM, Random Forest e XGBoost é inferior a `0.0011`. Em termos práticos, é empate técnico. A preferência por LightGBM e Random Forest se apoia no critério revisado sem top-3: melhor equilíbrio médio para LightGBM e ligeira vantagem de Random Forest sobre XGBoost no score final.
 
 ---
 
@@ -236,8 +238,8 @@ A diferença de score composto entre os finalistas é `0.0008`. Em termos práti
 
 | Aspecto | Alinhado | Divergente | Observação |
 |---|---|---|---|
-| XGBoost como algoritmo finalista | ✅ | — | Previsto na arquitetura e voltou ao top-2 após busca fina do time-decay |
-| Random Forest como segundo finalista | — | ⚠️ | Maior top-3 médio, mas ficou atrás de XGBoost no score composto |
+| XGBoost como algoritmo finalista | — | ⚠️ | Previsto na arquitetura, mas ficou em terceiro entre as árvores após remover top-3 do score |
+| Random Forest como segundo finalista | ✅ | — | Superou XGBoost no score revisado e oferece comparação bagging vs. boosting |
 | Optuna 50 trials | ✅ | — | Arquitetura seção 9 |
 | Folds de tuning isolados do fold 2025 | ✅ | — | Fold 2025 nunca visto durante tuning; usado apenas na seleção temporal multi-fold |
 | Ridge como baseline (não finalista) | ✅ | — | Arquitetura: "Adaptado do RAPM paper. Serve como referência simples." |

@@ -1,6 +1,6 @@
 # Roadmap — Estado Atual e Próximas Etapas
 
-Data: 09/06/2026
+Data: 11/06/2026
 
 ---
 
@@ -12,15 +12,18 @@ As Semanas 1 e 2 do cronograma estão **completamente executadas e documentadas*
 
 | Métrica | Meta | Resultado | Status |
 |---|---|---|---|
-| MAE (LightGBM) | ≤ 2.5 | 2.326 | ✅ |
-| MAE (XGBoost) | ≤ 2.5 | 2.348 | ✅ |
-| RMSE | ≤ 3.0 | 3.015 / 3.021 | ⚠️ Marginalmente acima |
-| R² | ≥ 0.75 | 0.658 / 0.657 | ❌ Abaixo da meta |
-| Kendall τ | ≥ 0.60 | 0.653 / 0.652 | ✅ |
-| Top-3 accuracy | ≥ 70% | 25,6% / 25,6% | ❌ Métrica de regressão vs. classificação |
+| MAE (Ridge) | ≤ 2.5 | 2.272 | ✅ |
+| MAE (LightGBM) | ≤ 2.5 | 2.317 | ✅ |
+| MAE (Random Forest) | ≤ 2.5 | 2.326 | ✅ |
+| MAE (XGBoost) | ≤ 2.5 | 2.341 | ✅ |
+| RMSE | ≤ 3.0 | Ridge 2.957; árvores ~3.012–3.016 | ⚠️ Parcial |
+| R² | ≥ 0.75 | Ridge 0.671; árvores ~0.658–0.659 | ❌ Abaixo da meta original |
+| Kendall τ | ≥ 0.60 | 0.650–0.654 | ✅ |
+| Top-3 accuracy | Fora do pipeline oficial | — | Removida por não ser comparável à regressão causal |
 
-**Algoritmos finalistas:** LightGBM + XGBoost
-**Baseline:** Ridge Regression (melhor MAE global: 2.272)
+**Algoritmos finalistas de árvore:** LightGBM + Random Forest
+**Baseline forte:** Ridge Regression (melhor resultado global: MAE 2.272; score 0.5314)
+**Modelo de árvore arquivado:** XGBoost
 **Dataset:** 2.943 linhas, 13 features, 0 NaN, 0 colunas proibidas
 
 ---
@@ -88,7 +91,7 @@ Organizado por responsabilidade, conforme o cronograma `Cronograma_Revisado_Ligh
 | Segunda 01/06 *(já passado)* | Criar `update_openf1_2026.py` | ✅ Feito |
 | Terça 01/06 | Documentar `pipeline_dados.py`, `rapm_ridge.py` com docstrings | Nenhuma |
 | Terça 01/06 | Documentar `tuning_lightgbm.py` — diferenças em relação ao XGBoost | Nenhuma |
-| Quarta 02/06 | Criar notebook de demonstração dos 2 finalistas | Modelos tunados já disponíveis |
+| Quarta 02/06 | Criar notebook de demonstração dos 2 finalistas de árvore | Modelos tunados já disponíveis |
 | Quinta 03/06 | Criar README com instruções de reprodução + seção dos 3 algoritmos | Notebook pronto |
 | Sexta 04/06 | Revisão cruzada: código vs. texto do P3 | P3 disponível |
 
@@ -138,7 +141,7 @@ Estes itens não foram criados nesta auditoria mas precisam existir no documento
 | Documentação RAPM como Fixed Effects (não RAPM estrito) | Seção Metodologia — RAPM | Média |
 | Justificativa para decay=0.99 vs. 0.75 do paper | Seção Metodologia — Walk-Forward | Média |
 | Análise de viés de sobrevivência dos DNFs | Seção Limitações | Média |
-| Por que top-3 accuracy 18-24% é esperado (regressão vs. classificação) | Seção Resultados | Alta |
+| Por que top-3 foi removido das métricas oficiais (regressão vs. classificação) | Seção Resultados | Alta |
 
 ---
 

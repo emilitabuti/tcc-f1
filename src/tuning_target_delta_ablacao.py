@@ -1,5 +1,13 @@
 from __future__ import annotations
 
+"""
+OBSOLETO / HISTORICO.
+
+Este script explorava target_delta = finish_position - qualifying_position.
+Ele foi desativado na versao final porque o target oficial do TCC nao pode
+mudar: todos os modelos comparaveis devem prever diretamente finish_position.
+"""
+
 import time
 from pathlib import Path
 
@@ -156,19 +164,10 @@ def tunar_modelo(nome: str, x: pd.DataFrame, y: pd.DataFrame, sugerir, criar, tr
 
 
 def main() -> None:
-    ABLATION_DIR.mkdir(parents=True, exist_ok=True)
-    x, y = carregar_dados()
-    resultados = [
-        tunar_modelo("LightGBM", x, y, sugerir_lgb, criar_lgb, trials=50),
-        tunar_modelo("XGBoost", x, y, sugerir_xgb, criar_xgb, trials=50),
-    ]
-    df = pd.DataFrame(resultados).sort_values("score_composto", ascending=False)
-    df.to_csv(
-        ABLATION_DIR / "resultados_target_delta_retuned.csv",
-        index=False,
-        encoding="utf-8-sig",
+    raise SystemExit(
+        "Script obsoleto: target_delta foi rejeitado na versao final. "
+        "Use src/ablacao_pareada_lgbm_xgboost.py ou os scripts oficiais com target finish_position."
     )
-    print(df.to_string(index=False))
 
 
 if __name__ == "__main__":

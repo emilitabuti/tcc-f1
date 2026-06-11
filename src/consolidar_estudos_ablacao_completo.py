@@ -17,10 +17,6 @@ def inferir_grupo_experimento_modelo(path: Path) -> tuple[str, str, str]:
     elif stem.endswith("_xgboost"):
         modelo = "XGBoost"
         experimento = stem.removesuffix("_xgboost")
-    elif stem == "lightgbmclassifier_retuned":
-        return "podio_classificador_retuned", stem, "LightGBMClassifier"
-    elif stem == "xgbclassifier_retuned":
-        return "podio_classificador_retuned", stem, "XGBClassifier"
     elif stem == "lightgbm_target_delta_retuned":
         return "retuned", stem, "LightGBM"
     elif stem == "xgboost_target_delta_retuned":
@@ -51,16 +47,6 @@ def rows_de_metricas() -> list[dict]:
         grupo, experimento, modelo = inferir_grupo_experimento_modelo(path)
         if "mae" in df.columns:
             rows.append(resumo(grupo, experimento, modelo, df))
-        elif "top3_accuracy" in df.columns:
-            rows.append(
-                {
-                    "grupo": grupo,
-                    "experimento": experimento,
-                    "modelo": modelo,
-                    "top3_accuracy_medio": df["top3_accuracy"].mean(),
-                    "top3_overlap_medio": df.get("top3_overlap", pd.Series(dtype=float)).mean(),
-                }
-            )
     return rows
 
 
@@ -163,13 +149,9 @@ def gerar_relatorio(df: pd.DataFrame) -> None:
         "",
         df.dropna(subset=["r2_medio"]).sort_values("r2_medio", ascending=False).head(20).to_markdown(index=False),
         "",
-        "## Melhores por top-3 exato",
-        "",
-        df.dropna(subset=["top3_accuracy_medio"]).sort_values("top3_accuracy_medio", ascending=False).head(20).to_markdown(index=False),
-        "",
         "## Observacoes",
         "",
-        "- Decay, loss, target, perfis de score e classificadores de pódio foram retunados com Optuna.",
+        "- Decay, loss, target e perfis de score foram retunados com Optuna.",
         "- Ensembles foram otimizados em grade discreta restrita, com passo 0.1, cobrindo pares e trios estratégicos.",
         "- O score composto reportado usa o perfil oficial atual.",
     ]
@@ -180,8 +162,8 @@ def main() -> None:
     rows = rows_de_metricas()
     rows.extend(rows_ensembles_otimizados())
     df = pd.DataFrame(rows).sort_values(
-        ["score_composto", "rmse_medio", "top3_accuracy_medio"],
-        ascending=[False, True, False],
+        ["score_composto", "rmse_medio"],
+        ascending=[False, True],
         na_position="last",
     )
     df.to_csv(ABLATION_DIR / "resultados_estudos_ablacao_completo.csv", index=False, encoding="utf-8-sig")

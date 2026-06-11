@@ -26,11 +26,10 @@ FOLDS_OTIMIZACAO = [
     {"train_until": 2023, "valid_season": 2024},
 ]
 METRIC_WEIGHTS = {
-    "mae_score": 0.30,
-    "rmse_score": 0.15,
+    "mae_score": 0.35,
+    "rmse_score": 0.20,
     "r2_score": 0.20,
-    "kendall_tau_score": 0.20,
-    "top3_accuracy_score": 0.15,
+    "kendall_tau_score": 0.25,
 }
 
 
@@ -132,12 +131,6 @@ def adicionar_score_composto(resumo: pd.DataFrame) -> pd.DataFrame:
         "kendall_tau_medio",
         maior_melhor=True,
     )
-    resumo["top3_accuracy_score"] = normalizar_coluna(
-        resumo,
-        "top3_accuracy_medio",
-        maior_melhor=True,
-    )
-
     resumo["score_composto"] = 0.0
     for coluna, peso in METRIC_WEIGHTS.items():
         resumo["score_composto"] += peso * resumo[coluna]
@@ -175,7 +168,6 @@ def main():
             rmse_medio=("rmse", "mean"),
             r2_medio=("r2", "mean"),
             kendall_tau_medio=("kendall_tau", "mean"),
-            top3_accuracy_medio=("top3_accuracy", "mean"),
         )
     )
     resumo = adicionar_score_composto(resumo)
@@ -195,7 +187,6 @@ def main():
         f"RMSE medio 2023-2024: {melhor['rmse_medio']:.6f}\n"
         f"R2 medio 2023-2024: {melhor['r2_medio']:.6f}\n"
         f"Kendall tau medio 2023-2024: {melhor['kendall_tau_medio']:.6f}\n"
-        f"Acuracia top-3 media 2023-2024: {melhor['top3_accuracy_medio']:.6f}\n"
         f"Pesos do score composto: {METRIC_WEIGHTS}\n"
     )
 

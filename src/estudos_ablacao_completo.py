@@ -1,5 +1,14 @@
 from __future__ import annotations
 
+"""
+Retunings complementares de ablação.
+
+Contrato da versão final:
+- o target oficial permanece finish_position;
+- blocos antigos de delta_grid/log1p/rank_norm foram desativados;
+- resultados antigos desses blocos devem ser tratados apenas como histórico.
+"""
+
 import itertools
 import json
 import time
@@ -10,8 +19,8 @@ import lightgbm as lgb
 import numpy as np
 import optuna
 import pandas as pd
-from lightgbm import LGBMClassifier, LGBMRegressor
-from xgboost import XGBClassifier, XGBRegressor
+from lightgbm import LGBMRegressor
+from xgboost import XGBRegressor
 
 from metricas import calcular_metricas
 from estudos_ablacao_modelos import (
@@ -36,52 +45,40 @@ RANK_NORM_GRID_SIZE = 20
 
 SCORE_PROFILES = {
     "atual": {
-        "mae_score": 0.30,
-        "rmse_score": 0.15,
+        "mae_score": 0.35,
+        "rmse_score": 0.20,
         "r2_score": 0.20,
-        "kendall_tau_score": 0.20,
-        "top3_accuracy_score": 0.15,
+        "kendall_tau_score": 0.25,
     },
     "rmse_r2": {
         "mae_score": 0.25,
-        "rmse_score": 0.25,
-        "r2_score": 0.25,
+        "rmse_score": 0.30,
+        "r2_score": 0.30,
         "kendall_tau_score": 0.15,
-        "top3_accuracy_score": 0.10,
     },
     "ranking": {
-        "mae_score": 0.20,
-        "rmse_score": 0.10,
-        "r2_score": 0.15,
-        "kendall_tau_score": 0.25,
-        "top3_accuracy_score": 0.30,
+        "mae_score": 0.25,
+        "rmse_score": 0.15,
+        "r2_score": 0.20,
+        "kendall_tau_score": 0.40,
     },
     "erro_continuo": {
         "mae_score": 0.40,
         "rmse_score": 0.30,
         "r2_score": 0.20,
-        "kendall_tau_score": 0.05,
-        "top3_accuracy_score": 0.05,
-    },
-    "podio": {
-        "mae_score": 0.15,
-        "rmse_score": 0.10,
-        "r2_score": 0.10,
-        "kendall_tau_score": 0.25,
-        "top3_accuracy_score": 0.40,
+        "kendall_tau_score": 0.10,
     },
 }
 
 
 def score_metricas(df_metricas: pd.DataFrame, weights: dict[str, float] | None = None) -> float:
     weights = weights or SCORE_PROFILES["atual"]
-    medias = df_metricas[["mae", "rmse", "r2", "kendall_tau", "top3_accuracy"]].mean()
+    medias = df_metricas[["mae", "rmse", "r2", "kendall_tau"]].mean()
     componentes = {
         "mae_score": 1.0 / (1.0 + float(medias["mae"])),
         "rmse_score": 1.0 / (1.0 + float(medias["rmse"])),
         "r2_score": max(0.0, min(1.0, (float(medias["r2"]) + 1.0) / 2.0)),
         "kendall_tau_score": max(0.0, min(1.0, (float(medias["kendall_tau"]) + 1.0) / 2.0)),
-        "top3_accuracy_score": max(0.0, min(1.0, float(medias["top3_accuracy"]))),
     }
     return float(sum(weights[k] * componentes[k] for k in weights))
 
@@ -101,7 +98,6 @@ def resumo(
         "rmse_medio": metricas["rmse"].mean(),
         "r2_medio": metricas["r2"].mean(),
         "kendall_tau_medio": metricas["kendall_tau"].mean(),
-        "top3_accuracy_medio": metricas["top3_accuracy"].mean(),
         "score_composto": score_metricas(metricas),
     }
     row.update(extras)
@@ -346,18 +342,17 @@ def rodar_retunings(rows: list[dict], x: pd.DataFrame, y: pd.DataFrame) -> None:
     for objective in ["reg:absoluteerror", "reg:pseudohubererror"]:
         tunar_regressor(rows, x, y, "loss_retuned", f"xgb_objective_{objective}_retuned", "XGBoost", objective)
 
-    for target_mode in ["delta_grid", "log1p_finish", "rank_norm"]:
-        for modelo, objective in [("LightGBM", "regression"), ("XGBoost", "reg:squarederror")]:
-            tunar_regressor(
-                rows,
-                x,
-                y,
-                grupo="target_retuned_completo",
-                experimento=f"target_{target_mode}_retuned",
-                modelo=modelo,
-                objective=objective,
-                target_mode=target_mode,
-            )
+    rows.append(
+        {
+            "grupo": "target_retuned_completo",
+            "experimento": "target_transformations_desativadas",
+            "modelo": "nao_executado",
+            "erro": (
+                "Transformacoes de target desativadas na versao final; "
+                "target oficial fixo em finish_position."
+            ),
+        }
+    )
 
     for profile in SCORE_PROFILES:
         for modelo, objective in [("LightGBM", "regression"), ("XGBoost", "reg:squarederror")]:
@@ -371,94 +366,6 @@ def rodar_retunings(rows: list[dict], x: pd.DataFrame, y: pd.DataFrame) -> None:
                 objective=objective,
                 score_profile=profile,
             )
-
-
-def podium_labels(y: pd.DataFrame) -> pd.Series:
-    labels = pd.Series(0, index=y.index)
-    for _, group in y.groupby(["season", "round"]):
-        labels.loc[group.sort_values("finish_position").head(3).index] = 1
-    return labels
-
-
-def avaliar_top3_classifier(x, y, criar_modelo, folds, decay) -> tuple[float, pd.DataFrame]:
-    labels = podium_labels(y)
-    fold_rows = []
-    preds = []
-    for fold in folds:
-        train_mask = y["season"] <= fold["train_until"]
-        valid_mask = y["season"] == fold["valid_season"]
-        sample_weight = calcular_sample_weight(y.loc[train_mask], fold["valid_season"], decay)
-        model = criar_modelo()
-        model.fit(x.loc[train_mask], labels.loc[train_mask], sample_weight=sample_weight)
-        proba = model.predict_proba(x.loc[valid_mask])[:, 1]
-        df_pred = y.loc[valid_mask].copy()
-        df_pred["podium_score"] = proba
-        exact_hits = []
-        overlap_hits = []
-        for _, group in df_pred.groupby(["season", "round"]):
-            real = set(group.sort_values("finish_position").head(3)["driver_id"])
-            pred = set(group.sort_values("podium_score", ascending=False).head(3)["driver_id"])
-            exact_hits.append(int(real == pred))
-            overlap_hits.append(len(real & pred) / 3.0)
-        fold_rows.append(
-            {
-                "train_until": fold["train_until"],
-                "valid_season": fold["valid_season"],
-                "top3_accuracy": float(np.mean(exact_hits)),
-                "top3_overlap": float(np.mean(overlap_hits)),
-            }
-        )
-        preds.append(df_pred)
-    return float(np.mean([r["top3_accuracy"] for r in fold_rows])), pd.DataFrame(fold_rows)
-
-
-def tunar_classificadores(rows: list[dict], x: pd.DataFrame, y: pd.DataFrame, trials: int = DEFAULT_TRIALS) -> None:
-    def build_lgb(params):
-        return LGBMClassifier(
-            random_state=42,
-            n_jobs=4,
-            verbosity=-1,
-            class_weight="balanced",
-            **cast_params(params, "lgb"),
-        )
-
-    def build_xgb(params):
-        return XGBClassifier(
-            random_state=42,
-            n_jobs=4,
-            objective="binary:logistic",
-            eval_metric="logloss",
-            scale_pos_weight=5.0,
-            **cast_params(params, "xgb"),
-        )
-
-    for modelo, sugerir, build in [
-        ("LightGBMClassifier", sugerir_lgb, build_lgb),
-        ("XGBClassifier", sugerir_xgb, build_xgb),
-    ]:
-        def objective(trial, sugerir=sugerir, build=build):
-            params = sugerir(trial)
-            score, _ = avaliar_top3_classifier(x, y, lambda: build(params), FOLDS_TUNING, DEFAULT_DECAY)
-            return score
-
-        study = optuna.create_study(direction="maximize", sampler=optuna.samplers.TPESampler(seed=42))
-        start = time.perf_counter()
-        study.optimize(objective, n_trials=trials, show_progress_bar=False)
-        elapsed = time.perf_counter() - start
-        best_params = dict(study.best_params)
-        _, met = avaliar_top3_classifier(x, y, lambda: build(best_params), FOLDS_AVALIACAO, DEFAULT_DECAY)
-        rows.append(
-            {
-                "grupo": "podio_classificador_retuned",
-                "experimento": f"{modelo}_retuned",
-                "modelo": modelo,
-                "top3_accuracy_medio": met["top3_accuracy"].mean(),
-                "top3_overlap_medio": met["top3_overlap"].mean(),
-                "score_tuning": float(study.best_value),
-                "tempo_tuning_segundos": elapsed,
-            }
-        )
-        met.to_csv(ABLATION_DIR / f"metricas_{modelo.lower()}_retuned.csv", index=False, encoding="utf-8-sig")
 
 
 def metricas_por_fold(df_pred: pd.DataFrame) -> pd.DataFrame:
@@ -476,8 +383,6 @@ def optimized_ensembles(rows: list[dict]) -> None:
         "lgb": REPORTS_DIR / "predicoes_walk_forward_lightgbm_tuned.csv",
         "xgb": REPORTS_DIR / "predicoes_walk_forward_xgboost_tuned.csv",
         "rf": REPORTS_DIR / "predicoes_walk_forward_randomforest_tuned.csv",
-        "lgb_delta": ABLATION_DIR / "predicoes_target_delta_grid_retuned_lightgbm.csv",
-        "xgb_delta": ABLATION_DIR / "predicoes_target_delta_grid_retuned_xgboost.csv",
     }
     available = {name: pd.read_csv(path) for name, path in arquivos.items() if path.exists()}
     if len(available) < 2:
@@ -504,10 +409,6 @@ def optimized_ensembles(rows: list[dict]) -> None:
 
     trios_preferidos = [
         ("ridge", "lgb", "xgb"),
-        ("ridge", "lgb", "lgb_delta"),
-        ("ridge", "xgb", "xgb_delta"),
-        ("lgb", "xgb", "xgb_delta"),
-        ("lgb", "xgb", "lgb_delta"),
         ("lgb", "xgb", "rf"),
     ]
     index = {name: i for i, name in enumerate(names)}
@@ -570,14 +471,10 @@ def gerar_relatorio_completo(df: pd.DataFrame) -> None:
         "",
         df.dropna(subset=["r2_medio"]).sort_values("r2_medio", ascending=False).head(20).to_markdown(index=False),
         "",
-        "## Melhores por top-3 exato",
-        "",
-        df.dropna(subset=["top3_accuracy_medio"]).sort_values("top3_accuracy_medio", ascending=False).head(20).to_markdown(index=False),
-        "",
         "## Observacoes",
         "",
         "- As ablações de features são triagem com hiperparâmetros atuais.",
-        "- Decay, loss, target, pesos do score e classificadores de pódio foram retunados com Optuna.",
+        "- Decay, loss, target e pesos do score foram retunados com Optuna.",
         "- O score composto sempre é reportado no perfil oficial atual; `score_perfil` mostra o score do perfil alternativo quando aplicável.",
     ]
     (ABLATION_DIR / "relatorio_estudos_ablacao_completo.md").write_text("\n".join(linhas), encoding="utf-8")
@@ -598,7 +495,6 @@ def main() -> None:
     rows: list[dict] = []
     rodar_feature_screen_completo(rows, full, y, features, lgb_params, xgb_params)
     rodar_retunings(rows, x, y)
-    tunar_classificadores(rows, x, y)
     optimized_ensembles(rows)
 
     df = pd.DataFrame(rows)

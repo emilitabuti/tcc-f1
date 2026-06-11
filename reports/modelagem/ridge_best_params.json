@@ -2,6 +2,6 @@
   "alpha": 0.01,
   "modelo": "Ridge",
   "normalizacao": "StandardScaler",
-  "score_composto_tuning": 0.49347260500054113,
-  "tempo_tuning_segundos": 4.131943305001187
+  "score_composto_tuning": 0.5374760024193019,
+  "tempo_tuning_segundos": 7.945904082999732
 }

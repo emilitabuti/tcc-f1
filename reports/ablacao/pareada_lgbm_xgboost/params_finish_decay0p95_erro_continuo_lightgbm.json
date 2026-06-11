@@ -1,0 +1,26 @@
+{
+  "best_params": {
+    "colsample_bytree": 0.7370063974951027,
+    "learning_rate": 0.010940708291808208,
+    "max_depth": 10,
+    "min_child_samples": 40,
+    "n_estimators": 328,
+    "num_leaves": 50,
+    "reg_alpha": 0.7043379041169772,
+    "reg_lambda": 0.573269580069785,
+    "subsample": 0.7737425087025644
+  },
+  "best_value_tuning": 0.44209290966812986,
+  "decay": 0.95,
+  "modelo": "LightGBM",
+  "objective": "regression",
+  "score_profile": "erro_continuo",
+  "score_weights": {
+    "kendall_tau_score": 0.1,
+    "mae_score": 0.4,
+    "r2_score": 0.2,
+    "rmse_score": 0.3
+  },
+  "target_mode": "finish",
+  "trials": 20
+}

@@ -96,26 +96,25 @@ O peso é passado ao `model.fit()` via `sample_weight` — o modelo otimiza a fu
 
 | Métrica normalizada | Peso |
 |---|---:|
-| MAE invertido | 0.30 |
-| RMSE invertido | 0.15 |
+| MAE invertido | 0.35 |
+| RMSE invertido | 0.20 |
 | R² | 0.20 |
-| Kendall τ | 0.20 |
-| Top-3 accuracy | 0.15 |
+| Kendall τ | 0.25 |
 
 **Resultados** (do `otimizacao_time_decay_xgboost_resumo.csv`):
 
-| Decay | Score composto | MAE médio | DP MAE | RMSE médio | R² médio | Kendall τ | Top-3 |
-|---|---:|---:|---:|---:|---:|---:|---:|
-| **0.99** | **1.0000** | **2.3609** | 0.1943 | **3.0328** | **0.6528** | **0.6523** | **19.5%** |
-| 0.96 | 0.8355 | 2.3663 | 0.2215 | 3.0499 | 0.6484 | 0.6495 | 17.4% |
-| 0.95 | 0.7747 | 2.3779 | 0.2031 | 3.0598 | 0.6465 | 0.6498 | 17.4% |
-| 0.85 | 0.6712 | 2.3896 | 0.1821 | 3.0615 | 0.6464 | 0.6515 | 15.2% |
-| 0.65 | 0.5331 | 2.4175 | **0.1639** | 3.1058 | 0.6361 | 0.6432 | **19.5%** |
-| 0.50 | 0.0000 | 2.4544 | 0.1715 | 3.1572 | 0.6240 | 0.6298 | 15.2% |
+| Decay | Score composto | MAE médio | DP MAE | RMSE médio | R² médio | Kendall τ |
+|---|---:|---:|---:|---:|---:|---:|
+| **0.99** | **1.0000** | **2.3609** | 0.1943 | **3.0328** | **0.6528** | **0.6523** |
+| 0.96 | 0.8914 | 2.3663 | 0.2215 | 3.0499 | 0.6484 | 0.6495 |
+| 0.95 | 0.8209 | 2.3779 | 0.2031 | 3.0598 | 0.6465 | 0.6498 |
+| 0.85 | 0.7925 | 2.3896 | 0.1821 | 3.0615 | 0.6464 | 0.6515 |
+| 0.65 | 0.4532 | 2.4175 | **0.1639** | 3.1058 | 0.6361 | 0.6432 |
+| 0.50 | 0.0000 | 2.4544 | 0.1715 | 3.1572 | 0.6240 | 0.6298 |
 
-**Vencedor: decay=0.99** — melhor score composto geral nos folds 2023-2024, além de melhor MAE, RMSE, R², Kendall τ e top-3 médios. A busca fina mostrou que o limite superior original (`0.95`) era bom, mas ainda havia ganho ao testar valores menos agressivos.
+**Vencedor: decay=0.99** — melhor score composto geral nos folds 2023-2024, além de melhor MAE, RMSE, R² e Kendall τ médios. A busca fina mostrou que o limite superior original (`0.95`) era bom, mas ainda havia ganho ao testar valores menos agressivos.
 
-**Atenção ao DP:** o decay=0.99 não tem o menor DP de MAE; o decay=0.65 é mais estável. A resposta para a banca passa a ser: a escolha não foi feita por estabilidade isolada, e sim pelo melhor equilíbrio geral entre erro, explicabilidade, ranking e top-3.
+**Atenção ao DP:** o decay=0.99 não tem o menor DP de MAE; o decay=0.65 é mais estável. A resposta para a banca passa a ser: a escolha não foi feita por estabilidade isolada, e sim pelo melhor equilíbrio geral entre erro, explicabilidade e ranking.
 
 ---
 
@@ -186,21 +185,11 @@ def kendall_tau_por_corrida(df_pred):
 
 Meta: ≥ 0.60 (baseada em Henderson et al. [9]: τ=0.625).
 
-### Acurácia Top-3
+### Remoção da métrica top-3
 
-```python
-def acuracia_top3(df_pred):
-    acertos = []
-    for _, grupo in df_pred.groupby(["season", "round"]):
-        real_top3 = set(grupo.nsmallest(3, "finish_position")["driver_id"])
-        pred_top3 = set(grupo.nsmallest(3, "pred_finish_position")["driver_id"])
-        acertos.append(int(real_top3 == pred_top3))  # ← igualdade exata de conjunto
-    return np.mean(acertos)
-```
+A acurácia top-3 foi removida das métricas oficiais do pipeline. A decisão foi tomada porque os trabalhos bibliográficos comparáveis à regressão de `finish_position` reportam MAE, RMSE, R² e métricas de ranking/correlação. Top-3 aparece em estudos que formulam o problema como classificação de pódio ou classes de resultado, o que não é equivalente à regressão causal pré-corrida usada neste projeto.
 
-**Igualdade exata de conjunto**: os três pilotos preditos como pódio precisam ser exatamente os três que fizeram pódio, sem importar a ordem interna. Uma predição que acerta 2 dos 3 não pontua.
-
-**Por que os valores são baixos (~18-29%)?** Isso é esperado para um problema de regressão contínua avaliado por classificação de pódio exata. Polishchuk [1] que reporta 78% usou um modelo de classificação direta treinado especificamente para prever pódio — o problema de otimização era diferente. Comparações diretas com esse benchmark são metodologicamente inválidas sem ajuste.
+Com isso, o score composto e a seleção de hiperparâmetros passam a avaliar apenas erro contínuo e qualidade de ranking.
 
 ---
 
@@ -237,7 +226,7 @@ O decay foi otimizado em folds 2023-2024. O fold 2025 é genuinamente independen
 
 **A escolha de 0.99 tem trade-off de estabilidade:**
 
-DP=0.194, maior que os decays 0.65, 0.50 e 0.85. Isso significa que o modelo com 0.99 ainda tem alguma variação entre folds, embora não tenha sido escolhido por uma métrica isolada. O ganho de equilíbrio geral compensou esse trade-off: melhor score composto, melhor MAE, melhor RMSE, melhor R², melhor Kendall τ e melhor top-3.
+DP=0.194, maior que os decays 0.65, 0.50 e 0.85. Isso significa que o modelo com 0.99 ainda tem alguma variação entre folds, embora não tenha sido escolhido por uma métrica isolada. O ganho de equilíbrio geral compensou esse trade-off: melhor score composto, melhor MAE, melhor RMSE, melhor R² e melhor Kendall τ.
 
 **Apenas 5 valores testados:**
 
@@ -255,4 +244,4 @@ O grid-search original cobria 5 pontos em [0.50, 0.95]. A revisão posterior tes
 | Otimizar decay via grid-search temporal | ✅ | — | Arquitetura prevê; executado nos folds 2023-2024 |
 | Decay ótimo = 0.75 | — | ⚠️ | Empírico: 0.99. Defensável pela diferença de dataset e período |
 | Kendall τ por corrida (não global) | ✅ | — | Henderson et al. [9]: τ calculado por GP individualmente |
-| Top-3 accuracy por igualdade de conjunto | ⚠️ | — | Criterio mais estrito que o de Polishchuk [1] — explica por que ~18-29% vs. 78% |
+| Métricas oficiais restritas à regressão/ranking | ✅ | — | MAE, RMSE, R² e Kendall τ são comparáveis aos trabalhos de regressão revisados |

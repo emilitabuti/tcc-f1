@@ -1,0 +1,33 @@
+Relatorio - 27/05 - acrescimo - Tuning Optuna LightGBM
+================================================================
+
+Objetivo:
+- Maximizar score composto multi-metrica nos folds de tuning 2023 e 2024.
+- Pesos do score: {'mae_score': 0.35, 'rmse_score': 0.2, 'r2_score': 0.2, 'kendall_tau_score': 0.25}.
+- Reavaliar o melhor conjunto em 2023, 2024 e 2025 via walk-forward.
+
+Bases utilizadas:
+- /home/emili-tabuti/Documentos/projects/tcc-f1/data/processed/dataset_modelagem_X_2018_2025.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/data/processed/dataset_modelagem_y_2018_2025.csv
+
+Time-decay:
+- Fator usado via sample_weight: 0.99
+
+Optuna:
+- Trials executados: 50
+- Tempo total de tuning: 232.58 segundos
+- Melhor score composto nos folds de tuning: 0.531428
+- Melhores parametros: {'max_depth': 6, 'n_estimators': 200, 'num_leaves': 16, 'learning_rate': 0.021789832698433893, 'subsample': 0.709670776358849, 'colsample_bytree': 0.8958811695922362, 'reg_alpha': 0.6647203623823736, 'reg_lambda': 0.11493982635758407, 'min_child_samples': 23, 'score_composto_tuning': 0.5314283644126924, 'lightgbm_version': '4.3.0', 'tempo_tuning_segundos': 232.58256747899986}
+
+Metricas finais por fold:
+     mae     rmse       r2  kendall_tau  train_until  valid_season  decay  n_train  n_valid
+2.403702 3.089898 0.630817     0.648225         2022          2023   0.99     1725      374
+2.176077 2.860732 0.701096     0.681946         2023          2024   0.99     2099      425
+2.371858 3.085648 0.644187     0.630740         2024          2025   0.99     2524      419
+
+Artefatos gerados:
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/optuna_lightgbm_trials.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/optuna_lightgbm_best_params.json
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/predicoes_walk_forward_lightgbm_tuned.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/metricas_walk_forward_lightgbm_tuned.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/relatorio_quinta_semana2_lightgbm_tuning.txt

@@ -11,30 +11,30 @@ Escopo:
 - Tempo de tuning registrado para todos os modelos.
 
 Resumo ordenado por score composto multi-metrica:
-             modelo  mae_medio  mae_std  rmse_medio  rmse_std  r2_medio  kendall_tau_medio  top3_accuracy_medio  score_composto_medio  melhor_fold  pior_fold  tempo_tuning_segundos  tempo_tuning_minutos
-     lightgbm_tuned   2.326365 0.131648    3.014611  0.124313  0.658227           0.652999             0.256313              0.497122         2024       2023              21.971334              0.366189
-      xgboost_tuned   2.347949 0.135816    3.020687  0.120963  0.656875           0.652344             0.256313              0.496283         2024       2023              36.692460              0.611541
-random_forest_tuned   2.373242 0.123549    3.051513  0.118203  0.650065           0.643562             0.268939              0.495662         2024       2025              68.677614              1.144627
-     ridge_baseline   2.272328 0.130552    2.957368  0.143767  0.671014           0.654332             0.185606              0.489957         2024       2025               4.131943              0.068866
+             modelo  mae_medio  mae_std  rmse_medio  rmse_std  r2_medio  kendall_tau_medio  score_composto_medio  melhor_fold  pior_fold  tempo_tuning_segundos  tempo_tuning_minutos
+     ridge_baseline   2.272328 0.130552    2.957368  0.143767  0.671014           0.654332              0.531389         2024       2025               7.945904              0.132432
+     lightgbm_tuned   2.317212 0.123259    3.012093  0.131100  0.658700           0.653637              0.527934         2024       2023             232.582567              3.876376
+random_forest_tuned   2.326350 0.121978    3.012110  0.123955  0.658914           0.650263              0.527244         2024       2025             240.675567              4.011259
+      xgboost_tuned   2.341451 0.144827    3.016088  0.131690  0.657845           0.652476              0.526889         2024       2023             251.108706              4.185145
 
 Metricas por fold:
-             modelo      mae     rmse       r2  kendall_tau  top3_accuracy  train_until  valid_season  decay  n_train  n_valid
-      xgboost_tuned 2.455594 3.083952 0.632237     0.637950       0.227273         2022          2023   0.99     1725      374
-      xgboost_tuned 2.195358 2.881211 0.696801     0.684472       0.250000         2023          2024   0.99     2099      425
-      xgboost_tuned 2.392895 3.096898 0.641588     0.634609       0.291667         2024          2025   0.99     2524      419
-random_forest_tuned 2.397064 3.052351 0.639735     0.637620       0.181818         2022          2023   0.99     1725      374
-random_forest_tuned 2.239517 2.932892 0.685826     0.676605       0.291667         2023          2024   0.99     2099      425
-random_forest_tuned 2.483145 3.169295 0.624634     0.616462       0.333333         2024          2025   0.99     2524      419
-     lightgbm_tuned 2.413533 3.077160 0.633855     0.640155       0.227273         2022          2023   0.99     1725      374
-     lightgbm_tuned 2.174927 2.871446 0.698853     0.686370       0.250000         2023          2024   0.99     2099      425
-     lightgbm_tuned 2.390635 3.095227 0.641974     0.632473       0.291667         2024          2025   0.99     2524      419
-     ridge_baseline 2.281362 2.981447 0.656278     0.643483       0.181818         2022          2023   0.99     1725      374
-     ridge_baseline 2.137493 2.803082 0.713021     0.693690       0.166667         2023          2024   0.99     2099      425
-     ridge_baseline 2.398129 3.087576 0.643742     0.625822       0.208333         2024          2025   0.99     2524      419
+             modelo      mae     rmse       r2  kendall_tau  train_until  valid_season  decay  n_train  n_valid
+      xgboost_tuned 2.453912 3.074379 0.634517     0.644828         2022          2023   0.99     1725      374
+      xgboost_tuned 2.178032 2.865312 0.700138     0.684965         2023          2024   0.99     2099      425
+      xgboost_tuned 2.392409 3.108573 0.638880     0.627637         2024          2025   0.99     2524      419
+random_forest_tuned 2.366420 3.035340 0.643740     0.638880         2022          2023   0.99     1725      374
+random_forest_tuned 2.189377 2.878184 0.697438     0.684039         2023          2024   0.99     2099      425
+random_forest_tuned 2.423252 3.122807 0.635566     0.627869         2024          2025   0.99     2524      419
+     lightgbm_tuned 2.403702 3.089898 0.630817     0.648225         2022          2023   0.99     1725      374
+     lightgbm_tuned 2.176077 2.860732 0.701096     0.681946         2023          2024   0.99     2099      425
+     lightgbm_tuned 2.371858 3.085648 0.644187     0.630740         2024          2025   0.99     2524      419
+     ridge_baseline 2.281362 2.981447 0.656278     0.643483         2022          2023   0.99     1725      374
+     ridge_baseline 2.137493 2.803082 0.713021     0.693690         2023          2024   0.99     2099      425
+     ridge_baseline 2.398129 3.087576 0.643742     0.625822         2024          2025   0.99     2524      419
 
 Leitura:
-- Melhor score composto medio: lightgbm_tuned (0.497122); MAE medio 2.326365 +/- 0.131648.
-- Modelo de arvore com menor tempo de tuning: lightgbm_tuned (21.97 segundos / 0.37 minutos).
+- Melhor score composto medio: ridge_baseline (0.531389); MAE medio 2.272328 +/- 0.130552.
+- Modelo de arvore com menor tempo de tuning: lightgbm_tuned (232.58 segundos / 3.88 minutos).
 - Esta consolidacao fecha a quinta-feira com metricas finais preliminares dos 4 modelos.
 
 Artefatos gerados:

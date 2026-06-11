@@ -283,4 +283,4 @@ A cadeia de isolamento é rigorosa: o fold 2025 só é "visto" na avaliação fi
 | `grid_penalty` sem referência bibliográfica | Feature adicionada sem embasamento explícito | `docs/tecnico/06_feature_engineering.md` |
 | `driver_wins_total` excluída pelo RFE | Divergência com arquitetura original | `docs/tecnico/07_selecao_features.md` |
 | R² < 0.75 (meta não atingida) | Meta baseada em TabNet com dados diferentes | `docs/tecnico/10_resultados_feature_importance.md` |
-| Top-3 accuracy 18-24% (meta não atingida) | Critério de regressão vs. meta de classificação | `docs/tecnico/10_resultados_feature_importance.md` |
+| Top-3 removido das métricas oficiais | Critério de classificação de pódio não comparável à regressão causal | `docs/tecnico/08_walk_forward_time_decay.md` |

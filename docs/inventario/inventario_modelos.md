@@ -81,7 +81,7 @@ Resultados, visualizações e relatórios gerados pelas análises.
 
 | Arquivo | Classificação | Motivo |
 |---|---|---|
-| `decisao_algoritmos.md` | **Essencial** | Decisão revisada: LightGBM + XGBoost finalistas, Random Forest arquivado |
+| `decisao_algoritmos.md` | **Essencial** | Decisão revisada: LightGBM + Random Forest finalistas de árvore, XGBoost arquivado como terceiro candidato |
 | `decisao_preliminar_algoritmos.md` | **Candidato à remoção** | Versão anterior da decisão — substituída por `decisao_algoritmos.md` |
 | `tabela_metricas_tunadas_4modelos.csv` | **Essencial** | Tabela definitiva: MAE por fold para os 4 modelos (LightGBM, RF, XGBoost, Ridge) |
 | `tabela_metricas_tunadas_4modelos_resumo.csv` | **Essencial** | Resumo por modelo: MAE médio, DP, tempo de tuning |

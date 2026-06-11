@@ -1,0 +1,32 @@
+Relatorio - 28/05 - Ridge Regression Baseline
+========================================================
+
+Objetivo:
+- Otimizar alpha por score composto multi-metrica nos folds de tuning 2023 e 2024.
+- Reavaliar o melhor alpha em 2023, 2024 e 2025 via walk-forward.
+- Usar StandardScaler porque Ridge e sensivel a escala das features.
+
+Bases utilizadas:
+- data/processed/dataset_modelagem_X_2018_2025.csv
+- data/processed/dataset_modelagem_y_2018_2025.csv
+
+Time-decay:
+- Fator usado via sample_weight: 0.99
+
+Grid-search:
+- Alphas avaliados: 25
+- Melhor score composto nos folds de tuning: 0.537476
+- Melhores parametros: {'alpha': 0.01, 'normalizacao': 'StandardScaler', 'modelo': 'Ridge', 'tempo_tuning_segundos': 7.945904082999732, 'score_composto_tuning': 0.5374760024193019}
+
+Metricas finais por fold:
+     mae     rmse       r2  kendall_tau  train_until  valid_season  decay  n_train  n_valid
+2.281362 2.981447 0.656278     0.643483         2022          2023   0.99     1725      374
+2.137493 2.803082 0.713021     0.693690         2023          2024   0.99     2099      425
+2.398129 3.087576 0.643742     0.625822         2024          2025   0.99     2524      419
+
+Artefatos gerados:
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/ridge_alpha_grid.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/ridge_best_params.json
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/predicoes_walk_forward_ridge_baseline.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/metricas_ridge_baseline.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/relatorio_quinta_semana2_ridge_baseline.txt

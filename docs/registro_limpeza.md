@@ -114,7 +114,7 @@ Remover esses arquivos quebraria a reexecução do pipeline.
 ### `reports/modelagem/` — arquivos ativos
 
 ```
-decisao_algoritmos.md               ← decisão final revisada LightGBM + XGBoost
+decisao_algoritmos.md               ← decisão final revisada LightGBM + Random Forest
 feature_importance_2024.csv         ← referência para drift análise
 feature_importance_lgb.csv
 feature_importance_rf.csv

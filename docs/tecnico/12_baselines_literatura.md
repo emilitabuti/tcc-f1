@@ -29,7 +29,7 @@ Assim, o desenho metodológico do projeto é:
 - prever posição final ou ranking;
 - respeitar a ordem temporal por walk-forward;
 - excluir ou recalcular variáveis que só seriam conhecidas durante/depois da corrida;
-- tratar pódio/top-3 como métrica derivada ou estudo complementar de classificação.
+- deixar classificação de pódio/top-3 fora do pipeline principal.
 
 Esse desenho é mais restritivo que muitos trabalhos de pódio, mas é mais adequado para a pergunta real de previsão pré-corrida.
 
@@ -45,9 +45,8 @@ As metas originais continuam úteis como referência aspiracional, mas a compara
 | RMSE | ≤ 3.0 | Penaliza erros grandes; meta ainda alinhada ao TabNet |
 | R² | ≥ 0.65 ou ≥ 0.66 | Meta realista para setup causal com features pré-corrida |
 | Kendall τ | ≥ 0.60 | Métrica principal de qualidade de ranking |
-| Top-3 exato | ≥ 25% como baseline; ≥ 30% como avanço forte | Métrica complementar, sem baseline acadêmico equivalente |
 
-O top-3 ≥ 70% deve ser tratado como meta aspiracional de classificação de pódio, não como critério de sucesso da regressão causal.
+Top-3 foi removido das métricas oficiais. Trabalhos que reportam acurácia de pódio tratam outro problema, normalmente classificação direta, e não devem ser usados como critério de sucesso da regressão causal.
 
 ---
 
@@ -67,17 +66,17 @@ O top-3 ≥ 70% deve ser tratado como meta aspiracional de classificação de p�
 
 O baseline mais diretamente comparável em termos de métricas é o estudo com TabNet:
 
-| Métrica | TabNet literatura | Nosso baseline oficial LightGBM | Nosso melhor candidato causal `rank_norm_grid20` |
+| Métrica | TabNet literatura | Nosso baseline oficial LightGBM | Nosso melhor modelo de regressão oficial |
 |---|---:|---:|---:|
-| MAE | 2.17 | 2.3264 | 2.3227 LightGBM / 2.3063 XGBoost |
-| RMSE | 2.87 | 3.0146 | 3.0109 LightGBM / 2.9959 XGBoost |
-| R² | 0.75 | 0.6582 | 0.6589 LightGBM / 0.6623 XGBoost |
+| MAE | 2.17 | 2.3172 | 2.2723 Ridge |
+| RMSE | 2.87 | 3.0121 | 2.9574 Ridge |
+| R² | 0.75 | 0.6587 | 0.6710 Ridge |
 | Correlação | 0.87 | não usada como métrica final | não usada como métrica final |
 
 Leitura:
 
 - O nosso MAE está próximo do baseline TabNet, mas ainda acima.
-- O RMSE do melhor candidato causal XGBoost já fica abaixo de 3.0, mas ainda acima do 2.87 do TabNet.
+- O RMSE do Ridge fica abaixo de 3.0; as árvores ficam ligeiramente acima.
 - O maior gap continua sendo R²: ~0.66 neste projeto contra 0.75 no TabNet.
 - A comparação deve ser apresentada com cautela porque o estudo TabNet menciona variáveis como voltas completadas e indicador de ultrapassagem, que podem refletir informação intra/pós-corrida se usadas como features.
 
@@ -107,7 +106,7 @@ Isso apoia diretamente a inclusão e dominância de `qualifying_position` no nos
 
 ## Referências Pouco Comparáveis
 
-### Regressão causal com top-3 derivado
+### Classificação de pódio/top-3
 
 Foi feita uma busca específica por trabalhos que combinassem simultaneamente:
 
@@ -115,7 +114,7 @@ Foi feita uma busca específica por trabalhos que combinassem simultaneamente:
 - regressão/ranking de posição final;
 - métrica de top-3 derivada da predição de posição.
 
-Não foi encontrado, entre as referências acadêmicas revisadas, um estudo diretamente equivalente ao pipeline deste projeto medindo top-3 exato a partir de regressão causal de `finish_position`.
+Não foi encontrado, entre as referências acadêmicas revisadas, um estudo diretamente equivalente ao pipeline deste projeto medindo top-3 exato a partir de regressão causal de `finish_position`. Por isso, top-3 foi retirado das métricas oficiais do pipeline principal.
 
 O padrão encontrado na literatura é separar os problemas:
 
@@ -128,7 +127,7 @@ Portanto, não há uma meta acadêmica robusta para dizer que uma regressão cau
 - regressão causal → comparar MAE, RMSE, R² e métricas de ranking;
 - pódio/top-3 → comparar apenas com modelos treinados especificamente para classificação de pódio.
 
-### Classificação de pódio / classes de resultado
+### Classes de resultado
 
 Krzysztoń & Smołka (2026) alcançam F1-score 77.83% e accuracy 82.25%, mas o problema é multi-classe:
 
@@ -137,13 +136,13 @@ Krzysztoń & Smołka (2026) alcançam F1-score 77.83% e accuracy 82.25%, mas o p
 - pontos;
 - sem pontos.
 
-Isso não é equivalente a prever `finish_position` contínua nem ao nosso top-3 por conjunto exato. Portanto, serve como referência de que classificação por faixas pode ter desempenho alto, mas não deve ser usada como meta direta para MAE/RMSE/R².
+Isso não é equivalente a prever `finish_position` contínua. Portanto, serve como referência de que classificação por faixas pode ter desempenho alto, mas não deve ser usada como meta direta para MAE/RMSE/R²/Kendall τ.
 
 ### Polishchuk 78% top-3
 
 O artigo de Polishchuk não é acadêmico e usa classificação direta de pódio. Além disso, a métrica reportada parece medir acerto de vagas individuais de pódio, não igualdade exata do conjunto inteiro de três pilotos. O texto também menciona dataset com features pré-corrida e pós-corrida, então não deve ser usado como baseline acadêmico direto.
 
-Para este TCC, Polishchuk pode ser citado apenas como motivação informal para um estudo separado de classificador de pódio, não como comparação direta com o pipeline principal.
+Para este TCC, Polishchuk pode ser citado apenas como exemplo de formulação alternativa de classificação de pódio, não como comparação direta com o pipeline principal.
 
 ---
 
@@ -153,7 +152,8 @@ Para comparar o pipeline atual com a literatura, usar a seguinte narrativa:
 
 1. **Regressão de posição final:** comparar principalmente com o TabNet.
    - Literatura: MAE 2.17, RMSE 2.87, R² 0.75.
-   - Nosso melhor causal: MAE 2.3063, RMSE 2.9959, R² 0.6623 no XGBoost `rank_norm_grid20`.
+   - Nosso melhor modelo oficial: MAE 2.2723, RMSE 2.9574, R² 0.6710 no Ridge baseline.
+   - Nosso melhor modelo de árvore oficial: MAE 2.3172, RMSE 3.0121, R² 0.6587 no LightGBM.
 
 2. **Ranking/estrutura do problema:** usar Rane e van Kesteren & Bergkamp.
    - Construtor explica 64% a 88% da variância, sustentando o RAPM e a importância de features de construtor.
@@ -161,8 +161,7 @@ Para comparar o pipeline atual com a literatura, usar a seguinte narrativa:
 3. **Feature dominante:** usar Weissbock & Mills.
    - Qualifying é o principal preditor da posição final, justificando a dominância de `qualifying_position`.
 
-4. **Top-3:** não comparar diretamente com 78% de Polishchuk.
-   - O nosso top-3 é derivado de regressão e exige igualdade exata do conjunto de pódio.
+4. **Top-3:** não usar como métrica oficial.
    - Trabalhos com 70%+ geralmente tratam pódio como classificação direta ou classes agregadas.
    - Não foi encontrado baseline acadêmico equivalente para top-3 exato derivado de regressão causal de posição final.
 

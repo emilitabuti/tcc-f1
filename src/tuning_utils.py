@@ -29,11 +29,10 @@ FOLDS_AVALIACAO = [
 ]
 DECAY_PADRAO = 0.75
 METRIC_WEIGHTS = {
-    "mae_score": 0.30,
-    "rmse_score": 0.15,
+    "mae_score": 0.35,
+    "rmse_score": 0.20,
     "r2_score": 0.20,
-    "kendall_tau_score": 0.20,
-    "top3_accuracy_score": 0.15,
+    "kendall_tau_score": 0.25,
 }
 
 
@@ -138,13 +137,12 @@ def avaliar_modelo(
 
 
 def score_composto_metricas(df_metricas: pd.DataFrame) -> float:
-    medias = df_metricas[["mae", "rmse", "r2", "kendall_tau", "top3_accuracy"]].mean()
+    medias = df_metricas[["mae", "rmse", "r2", "kendall_tau"]].mean()
     componentes = {
         "mae_score": 1.0 / (1.0 + float(medias["mae"])),
         "rmse_score": 1.0 / (1.0 + float(medias["rmse"])),
         "r2_score": max(0.0, min(1.0, (float(medias["r2"]) + 1.0) / 2.0)),
         "kendall_tau_score": max(0.0, min(1.0, (float(medias["kendall_tau"]) + 1.0) / 2.0)),
-        "top3_accuracy_score": max(0.0, min(1.0, float(medias["top3_accuracy"]))),
     }
     return float(
         sum(METRIC_WEIGHTS[coluna] * componentes[coluna] for coluna in METRIC_WEIGHTS)

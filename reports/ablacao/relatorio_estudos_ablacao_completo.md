@@ -1,109 +1,12 @@
-# Relatorio Completo de Estudos de Ablacao
+# Relatório Completo de Estudos de Ablação
 
-Consolidacao da execucao completa do plano de ablação.
+Este relatório foi invalidado pela revisão metodológica que removeu a métrica top-3 do pipeline principal.
 
-## Melhores por score composto
+A avaliação oficial agora usa apenas:
 
-| grupo                   | experimento                     | modelo   |   mae_medio |   rmse_medio |   r2_medio |   kendall_tau_medio |   top3_accuracy_medio |   score_composto |   top3_overlap_medio |   score_tuning | pesos                           |
-|:------------------------|:--------------------------------|:---------|------------:|-------------:|-----------:|--------------------:|----------------------:|-----------------:|---------------------:|---------------:|:--------------------------------|
-| target_retuned_completo | target_rank_norm_retuned        | LightGBM |     2.23809 |      2.8912  |   0.685722 |            0.639641 |              0.284091 |         0.506346 |                  nan |     nan        | nan                             |
-| score_weights_retuned   | score_erro_continuo_retuned     | LightGBM |     2.31126 |      2.99743 |   0.662065 |            0.652433 |              0.284091 |         0.502188 |                  nan |     nan        | nan                             |
-| validacao_causal_target | target_rank_norm_grid20_retuned | LightGBM |     2.32267 |      3.0109  |   0.658936 |            0.653171 |              0.282828 |         0.501322 |                  nan |     nan        | nan                             |
-| ensemble_otimizado      | ensemble_grid_rank_14           | ensemble |     2.25173 |      2.96125 |   0.670039 |            0.656866 |              0.256313 |         0.501263 |                  nan |       0.507024 | ridge=0.5;lgb_delta=0.5         |
-| ensemble_otimizado      | ensemble_grid_rank_17           | ensemble |     2.25278 |      2.96897 |   0.668295 |            0.657062 |              0.256313 |         0.501005 |                  nan |       0.506604 | ridge=0.4;lgb_delta=0.6         |
-| loss_retuned            | lgb_objective_huber_retuned     | LightGBM |     2.30802 |      3.04101 |   0.652365 |            0.64979  |              0.284091 |         0.500637 |                  nan |     nan        | nan                             |
-| validacao_causal_target | target_rank_norm_grid20_retuned | XGBoost  |     2.30625 |      2.99589 |   0.662339 |            0.654204 |              0.270202 |         0.50046  |                  nan |     nan        | nan                             |
-| ensemble_otimizado      | ensemble_grid_rank_1            | ensemble |     2.25443 |      2.99924 |   0.660763 |            0.656326 |              0.257576 |         0.500034 |                  nan |       0.508396 | xgb=0.2;xgb_delta=0.8           |
-| ensemble_otimizado      | ensemble_grid_rank_8            | ensemble |     2.24334 |      2.95278 |   0.671678 |            0.659457 |              0.242424 |         0.499922 |                  nan |       0.50758  | ridge=0.4;xgb=0.2;xgb_delta=0.4 |
-| ensemble_otimizado      | ensemble_grid_rank_2            | ensemble |     2.25408 |      3.00247 |   0.659999 |            0.656059 |              0.257576 |         0.499911 |                  nan |       0.508386 | lgb=0.2;xgb_delta=0.8           |
-| retuned                 | xgboost_target_delta_retuned    | XGBoost  |     2.26574 |      3.00334 |   0.660137 |            0.657548 |              0.257576 |         0.499737 |                  nan |     nan        | nan                             |
-| target_retuned_completo | target_rank_norm_retuned        | XGBoost  |     2.25421 |      2.89919 |   0.683902 |            0.643303 |              0.241162 |         0.499553 |                  nan |     nan        | nan                             |
-| ensemble_otimizado      | ensemble_grid_rank_4            | ensemble |     2.25326 |      3.00788 |   0.658703 |            0.654044 |              0.257576 |         0.499552 |                  nan |       0.508009 | rf=0.1;xgb_delta=0.9            |
-| ensemble_otimizado      | ensemble_grid_rank_20           | ensemble |     2.25906 |      2.96412 |   0.669186 |            0.660964 |              0.242424 |         0.499269 |                  nan |       0.50631  | ridge=0.2;xgb=0.4;xgb_delta=0.4 |
-| ensemble_otimizado      | ensemble_grid_rank_7            | ensemble |     2.25837 |      3.01035 |   0.658542 |            0.652479 |              0.257576 |         0.499212 |                  nan |       0.507621 | lgb_delta=0.6;xgb_delta=0.4     |
-| ensemble_otimizado      | ensemble_grid_rank_6            | ensemble |     2.25589 |      3.01033 |   0.658448 |            0.65166  |              0.257576 |         0.499191 |                  nan |       0.507621 | lgb_delta=0.5;xgb_delta=0.5     |
-| ensemble_otimizado      | ensemble_grid_rank_11           | ensemble |     2.25458 |      3.01151 |   0.658077 |            0.651644 |              0.257576 |         0.499179 |                  nan |       0.507522 | lgb_delta=0.4;xgb_delta=0.6     |
-| ensemble_otimizado      | ensemble_grid_rank_12           | ensemble |     2.25456 |      3.01389 |   0.657431 |            0.650562 |              0.257576 |         0.498984 |                  nan |       0.507407 | lgb_delta=0.3;xgb_delta=0.7     |
-| ensemble_otimizado      | ensemble_grid_rank_18           | ensemble |     2.26433 |      2.95578 |   0.671334 |            0.655848 |              0.242424 |         0.498903 |                  nan |       0.506548 | ridge=0.6;lgb=0.2;lgb_delta=0.2 |
-| retuned                 | lightgbm_target_delta_retuned   | LightGBM |     2.27998 |      3.02242 |   0.656155 |            0.651259 |              0.257576 |         0.498133 |                  nan |     nan        | nan                             |
+- MAE;
+- RMSE;
+- R²;
+- Kendall τ.
 
-## Melhores por RMSE
-
-| grupo                   | experimento                     | modelo   |   mae_medio |   rmse_medio |   r2_medio |   kendall_tau_medio |   top3_accuracy_medio |   score_composto |   top3_overlap_medio |   score_tuning | pesos                           |
-|:------------------------|:--------------------------------|:---------|------------:|-------------:|-----------:|--------------------:|----------------------:|-----------------:|---------------------:|---------------:|:--------------------------------|
-| target_retuned_completo | target_rank_norm_retuned        | LightGBM |     2.23809 |      2.8912  |   0.685722 |            0.639641 |              0.284091 |         0.506346 |                  nan |     nan        | nan                             |
-| target_retuned_completo | target_rank_norm_retuned        | XGBoost  |     2.25421 |      2.89919 |   0.683902 |            0.643303 |              0.241162 |         0.499553 |                  nan |     nan        | nan                             |
-| ensemble_otimizado      | ensemble_grid_rank_8            | ensemble |     2.24334 |      2.95278 |   0.671678 |            0.659457 |              0.242424 |         0.499922 |                  nan |       0.50758  | ridge=0.4;xgb=0.2;xgb_delta=0.4 |
-| ensemble_otimizado      | ensemble_grid_rank_18           | ensemble |     2.26433 |      2.95578 |   0.671334 |            0.655848 |              0.242424 |         0.498903 |                  nan |       0.506548 | ridge=0.6;lgb=0.2;lgb_delta=0.2 |
-| ensemble_otimizado      | ensemble_grid_rank_14           | ensemble |     2.25173 |      2.96125 |   0.670039 |            0.656866 |              0.256313 |         0.501263 |                  nan |       0.507024 | ridge=0.5;lgb_delta=0.5         |
-| ensemble_otimizado      | ensemble_grid_rank_20           | ensemble |     2.25906 |      2.96412 |   0.669186 |            0.660964 |              0.242424 |         0.499269 |                  nan |       0.50631  | ridge=0.2;xgb=0.4;xgb_delta=0.4 |
-| ensemble_otimizado      | ensemble_grid_rank_17           | ensemble |     2.25278 |      2.96897 |   0.668295 |            0.657062 |              0.256313 |         0.501005 |                  nan |       0.506604 | ridge=0.4;lgb_delta=0.6         |
-| ensemble_otimizado      | ensemble_grid_rank_15           | ensemble |     2.24342 |      2.96988 |   0.667633 |            0.659101 |              0.228535 |         0.497233 |                  nan |       0.506789 | ridge=0.2;xgb=0.2;xgb_delta=0.6 |
-| ensemble_otimizado      | ensemble_grid_rank_19           | ensemble |     2.24105 |      2.98949 |   0.662919 |            0.658083 |              0.228535 |         0.496542 |                  nan |       0.506363 | ridge=0.2;xgb_delta=0.8         |
-| validacao_causal_target | target_rank_norm_grid20_retuned | XGBoost  |     2.30625 |      2.99589 |   0.662339 |            0.654204 |              0.270202 |         0.50046  |                  nan |     nan        | nan                             |
-| score_weights_retuned   | score_erro_continuo_retuned     | LightGBM |     2.31126 |      2.99743 |   0.662065 |            0.652433 |              0.284091 |         0.502188 |                  nan |     nan        | nan                             |
-| ensemble_otimizado      | ensemble_grid_rank_1            | ensemble |     2.25443 |      2.99924 |   0.660763 |            0.656326 |              0.257576 |         0.500034 |                  nan |       0.508396 | xgb=0.2;xgb_delta=0.8           |
-| decay_retuned           | decay_0.95_retuned              | LightGBM |     2.31435 |      2.99956 |   0.661617 |            0.649362 |              0.256313 |         0.497564 |                  nan |     nan        | nan                             |
-| score_weights_retuned   | score_rmse_r2_retuned           | LightGBM |     2.31765 |      3.00125 |   0.661269 |            0.65417  |              0.256313 |         0.497905 |                  nan |     nan        | nan                             |
-| decay_retuned           | decay_0.98_retuned              | LightGBM |     2.31776 |      3.00184 |   0.661083 |            0.654278 |              0.256313 |         0.497888 |                  nan |     nan        | nan                             |
-| ensemble_otimizado      | ensemble_grid_rank_2            | ensemble |     2.25408 |      3.00247 |   0.659999 |            0.656059 |              0.257576 |         0.499911 |                  nan |       0.508386 | lgb=0.2;xgb_delta=0.8           |
-| retuned                 | xgboost_target_delta_retuned    | XGBoost  |     2.26574 |      3.00334 |   0.660137 |            0.657548 |              0.257576 |         0.499737 |                  nan |     nan        | nan                             |
-| ensemble_otimizado      | ensemble_grid_rank_3            | ensemble |     2.2492  |      3.00737 |   0.658729 |            0.653205 |              0.243687 |         0.497508 |                  nan |       0.508097 | ridge=0.1;xgb_delta=0.9         |
-| ensemble_otimizado      | ensemble_grid_rank_4            | ensemble |     2.25326 |      3.00788 |   0.658703 |            0.654044 |              0.257576 |         0.499552 |                  nan |       0.508009 | rf=0.1;xgb_delta=0.9            |
-| ensemble_otimizado      | ensemble_grid_rank_6            | ensemble |     2.25589 |      3.01033 |   0.658448 |            0.65166  |              0.257576 |         0.499191 |                  nan |       0.507621 | lgb_delta=0.5;xgb_delta=0.5     |
-
-## Melhores por R2
-
-| grupo                   | experimento                     | modelo   |   mae_medio |   rmse_medio |   r2_medio |   kendall_tau_medio |   top3_accuracy_medio |   score_composto |   top3_overlap_medio |   score_tuning | pesos                           |
-|:------------------------|:--------------------------------|:---------|------------:|-------------:|-----------:|--------------------:|----------------------:|-----------------:|---------------------:|---------------:|:--------------------------------|
-| target_retuned_completo | target_rank_norm_retuned        | LightGBM |     2.23809 |      2.8912  |   0.685722 |            0.639641 |              0.284091 |         0.506346 |                  nan |     nan        | nan                             |
-| target_retuned_completo | target_rank_norm_retuned        | XGBoost  |     2.25421 |      2.89919 |   0.683902 |            0.643303 |              0.241162 |         0.499553 |                  nan |     nan        | nan                             |
-| ensemble_otimizado      | ensemble_grid_rank_8            | ensemble |     2.24334 |      2.95278 |   0.671678 |            0.659457 |              0.242424 |         0.499922 |                  nan |       0.50758  | ridge=0.4;xgb=0.2;xgb_delta=0.4 |
-| ensemble_otimizado      | ensemble_grid_rank_18           | ensemble |     2.26433 |      2.95578 |   0.671334 |            0.655848 |              0.242424 |         0.498903 |                  nan |       0.506548 | ridge=0.6;lgb=0.2;lgb_delta=0.2 |
-| ensemble_otimizado      | ensemble_grid_rank_14           | ensemble |     2.25173 |      2.96125 |   0.670039 |            0.656866 |              0.256313 |         0.501263 |                  nan |       0.507024 | ridge=0.5;lgb_delta=0.5         |
-| ensemble_otimizado      | ensemble_grid_rank_20           | ensemble |     2.25906 |      2.96412 |   0.669186 |            0.660964 |              0.242424 |         0.499269 |                  nan |       0.50631  | ridge=0.2;xgb=0.4;xgb_delta=0.4 |
-| ensemble_otimizado      | ensemble_grid_rank_17           | ensemble |     2.25278 |      2.96897 |   0.668295 |            0.657062 |              0.256313 |         0.501005 |                  nan |       0.506604 | ridge=0.4;lgb_delta=0.6         |
-| ensemble_otimizado      | ensemble_grid_rank_15           | ensemble |     2.24342 |      2.96988 |   0.667633 |            0.659101 |              0.228535 |         0.497233 |                  nan |       0.506789 | ridge=0.2;xgb=0.2;xgb_delta=0.6 |
-| ensemble_otimizado      | ensemble_grid_rank_19           | ensemble |     2.24105 |      2.98949 |   0.662919 |            0.658083 |              0.228535 |         0.496542 |                  nan |       0.506363 | ridge=0.2;xgb_delta=0.8         |
-| validacao_causal_target | target_rank_norm_grid20_retuned | XGBoost  |     2.30625 |      2.99589 |   0.662339 |            0.654204 |              0.270202 |         0.50046  |                  nan |     nan        | nan                             |
-| score_weights_retuned   | score_erro_continuo_retuned     | LightGBM |     2.31126 |      2.99743 |   0.662065 |            0.652433 |              0.284091 |         0.502188 |                  nan |     nan        | nan                             |
-| decay_retuned           | decay_0.95_retuned              | LightGBM |     2.31435 |      2.99956 |   0.661617 |            0.649362 |              0.256313 |         0.497564 |                  nan |     nan        | nan                             |
-| score_weights_retuned   | score_rmse_r2_retuned           | LightGBM |     2.31765 |      3.00125 |   0.661269 |            0.65417  |              0.256313 |         0.497905 |                  nan |     nan        | nan                             |
-| decay_retuned           | decay_0.98_retuned              | LightGBM |     2.31776 |      3.00184 |   0.661083 |            0.654278 |              0.256313 |         0.497888 |                  nan |     nan        | nan                             |
-| ensemble_otimizado      | ensemble_grid_rank_1            | ensemble |     2.25443 |      2.99924 |   0.660763 |            0.656326 |              0.257576 |         0.500034 |                  nan |       0.508396 | xgb=0.2;xgb_delta=0.8           |
-| retuned                 | xgboost_target_delta_retuned    | XGBoost  |     2.26574 |      3.00334 |   0.660137 |            0.657548 |              0.257576 |         0.499737 |                  nan |     nan        | nan                             |
-| ensemble_otimizado      | ensemble_grid_rank_2            | ensemble |     2.25408 |      3.00247 |   0.659999 |            0.656059 |              0.257576 |         0.499911 |                  nan |       0.508386 | lgb=0.2;xgb_delta=0.8           |
-| score_weights_retuned   | score_podio_retuned             | LightGBM |     2.32441 |      3.01103 |   0.65905  |            0.648507 |              0.256313 |         0.496841 |                  nan |     nan        | nan                             |
-| validacao_causal_target | target_rank_norm_grid20_retuned | LightGBM |     2.32267 |      3.0109  |   0.658936 |            0.653171 |              0.282828 |         0.501322 |                  nan |     nan        | nan                             |
-| ensemble_otimizado      | ensemble_grid_rank_3            | ensemble |     2.2492  |      3.00737 |   0.658729 |            0.653205 |              0.243687 |         0.497508 |                  nan |       0.508097 | ridge=0.1;xgb_delta=0.9         |
-
-## Melhores por top-3 exato
-
-| grupo                   | experimento                                | modelo   |   mae_medio |   rmse_medio |   r2_medio |   kendall_tau_medio |   top3_accuracy_medio |   score_composto |   top3_overlap_medio |   score_tuning | pesos                       |
-|:------------------------|:-------------------------------------------|:---------|------------:|-------------:|-----------:|--------------------:|----------------------:|-----------------:|---------------------:|---------------:|:----------------------------|
-| loss_retuned            | xgb_objective_reg_pseudohubererror_retuned | XGBoost  |    22.5747  |     23.1578  | -19.1253   |          nan        |              0.299242 |         0.263821 |                  nan |     nan        | nan                         |
-| target_retuned_completo | target_rank_norm_retuned                   | LightGBM |     2.23809 |      2.8912  |   0.685722 |            0.639641 |              0.284091 |         0.506346 |                  nan |     nan        | nan                         |
-| loss_retuned            | lgb_objective_huber_retuned                | LightGBM |     2.30802 |      3.04101 |   0.652365 |            0.64979  |              0.284091 |         0.500637 |                  nan |     nan        | nan                         |
-| score_weights_retuned   | score_erro_continuo_retuned                | LightGBM |     2.31126 |      2.99743 |   0.662065 |            0.652433 |              0.284091 |         0.502188 |                  nan |     nan        | nan                         |
-| validacao_causal_target | target_rank_norm_grid20_retuned            | LightGBM |     2.32267 |      3.0109  |   0.658936 |            0.653171 |              0.282828 |         0.501322 |                  nan |     nan        | nan                         |
-| decay_retuned           | decay_0.99_retuned                         | XGBoost  |     2.34665 |      3.03004 |   0.654562 |            0.648639 |              0.270202 |         0.497713 |                  nan |     nan        | nan                         |
-| target_retuned_completo | target_log1p_finish_retuned                | XGBoost  |     2.33887 |      3.09278 |   0.64041  |            0.649387 |              0.270202 |         0.496011 |                  nan |     nan        | nan                         |
-| validacao_causal_target | target_rank_norm_grid20_retuned            | XGBoost  |     2.30625 |      2.99589 |   0.662339 |            0.654204 |              0.270202 |         0.50046  |                  nan |     nan        | nan                         |
-| score_weights_retuned   | score_rmse_r2_retuned                      | XGBoost  |     2.34665 |      3.03004 |   0.654562 |            0.648639 |              0.270202 |         0.497713 |                  nan |     nan        | nan                         |
-| score_weights_retuned   | score_atual_retuned                        | XGBoost  |     2.34665 |      3.03004 |   0.654562 |            0.648639 |              0.270202 |         0.497713 |                  nan |     nan        | nan                         |
-| ensemble_otimizado      | ensemble_grid_rank_11                      | ensemble |     2.25458 |      3.01151 |   0.658077 |            0.651644 |              0.257576 |         0.499179 |                  nan |       0.507522 | lgb_delta=0.4;xgb_delta=0.6 |
-| ensemble_otimizado      | ensemble_grid_rank_6                       | ensemble |     2.25589 |      3.01033 |   0.658448 |            0.65166  |              0.257576 |         0.499191 |                  nan |       0.507621 | lgb_delta=0.5;xgb_delta=0.5 |
-| ensemble_otimizado      | ensemble_grid_rank_7                       | ensemble |     2.25837 |      3.01035 |   0.658542 |            0.652479 |              0.257576 |         0.499212 |                  nan |       0.507621 | lgb_delta=0.6;xgb_delta=0.4 |
-| ensemble_otimizado      | ensemble_grid_rank_2                       | ensemble |     2.25408 |      3.00247 |   0.659999 |            0.656059 |              0.257576 |         0.499911 |                  nan |       0.508386 | lgb=0.2;xgb_delta=0.8       |
-| ensemble_otimizado      | ensemble_grid_rank_4                       | ensemble |     2.25326 |      3.00788 |   0.658703 |            0.654044 |              0.257576 |         0.499552 |                  nan |       0.508009 | rf=0.1;xgb_delta=0.9        |
-| ensemble_otimizado      | ensemble_grid_rank_1                       | ensemble |     2.25443 |      2.99924 |   0.660763 |            0.656326 |              0.257576 |         0.500034 |                  nan |       0.508396 | xgb=0.2;xgb_delta=0.8       |
-| ensemble_otimizado      | ensemble_grid_rank_12                      | ensemble |     2.25456 |      3.01389 |   0.657431 |            0.650562 |              0.257576 |         0.498984 |                  nan |       0.507407 | lgb_delta=0.3;xgb_delta=0.7 |
-| retuned                 | lightgbm_target_delta_retuned              | LightGBM |     2.27998 |      3.02242 |   0.656155 |            0.651259 |              0.257576 |         0.498133 |                  nan |     nan        | nan                         |
-| target_retuned_completo | target_delta_grid_retuned                  | LightGBM |     2.27998 |      3.02242 |   0.656155 |            0.651259 |              0.257576 |         0.498133 |                  nan |     nan        | nan                         |
-| retuned                 | xgboost_target_delta_retuned               | XGBoost  |     2.26574 |      3.00334 |   0.660137 |            0.657548 |              0.257576 |         0.499737 |                  nan |     nan        | nan                         |
-
-## Observacoes
-
-- Decay, loss, target, perfis de score e classificadores de pódio foram retunados com Optuna.
-- Ensembles foram otimizados em grade discreta restrita, com passo 0.1, cobrindo pares e trios estratégicos.
-- O score composto reportado usa o perfil oficial atual.
+Os artefatos brutos antigos em `reports/ablacao/` podem permanecer para rastreabilidade, mas não devem ser usados como base de decisão ou defesa metodológica.

@@ -155,7 +155,6 @@ def gerar_relatorio(df_metricas: pd.DataFrame, decay: float):
             "- RMSE",
             "- R2",
             "- Kendall tau medio por corrida",
-            "- Acuracia top-3",
             "",
             "Time-decay:",
             f"- Fator usado no walk-forward LightGBM: {decay}",

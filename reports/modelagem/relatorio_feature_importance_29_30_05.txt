@@ -9,13 +9,13 @@ Escopo:
 Time-decay usado: 0.99
 
 Top 10 XGBoost:
-qualifying_position, constructor_coef_rapm, recent_form_5, constructor_wins_total, driver_constructor_synergy, driver_coef_rapm, track_complexity, season_factor, constructor_dnf_rate, altitude_m
+qualifying_position, constructor_coef_rapm, recent_form_5, driver_constructor_synergy, constructor_wins_total, driver_coef_rapm, track_complexity, constructor_dnf_rate, tire_compound_start, altitude_m
 
 Top 10 Random Forest:
 qualifying_position, constructor_coef_rapm, recent_form_5, driver_constructor_synergy, constructor_wins_total, driver_coef_rapm, constructor_dnf_rate, track_complexity, avg_pit_stops_circuit, altitude_m
 
 Top 10 LightGBM:
-qualifying_position, constructor_coef_rapm, recent_form_5, driver_constructor_synergy, constructor_wins_total, driver_coef_rapm, constructor_dnf_rate, track_complexity, avg_pit_stops_circuit, grid_penalty
+qualifying_position, constructor_coef_rapm, recent_form_5, driver_constructor_synergy, track_complexity, constructor_dnf_rate, driver_coef_rapm, avg_pit_stops_circuit, constructor_wins_total, altitude_m
 
 Checagens metodologicas:
 - qualifying_position aparece entre as features dominantes.
@@ -31,18 +31,18 @@ Artefatos gerados:
 
 Referencia fold 2024:
              modelo  train_until  valid_season                    feature    importance         importance_type  weight  split  importance_norm  rank_modelo
-     lightgbm_tuned         2023          2024        qualifying_position 720277.937292                    gain     NaN  345.0         0.626571          1.0
-     lightgbm_tuned         2023          2024      constructor_coef_rapm 206860.642357                    gain     NaN  248.0         0.179948          2.0
-     lightgbm_tuned         2023          2024              recent_form_5 112950.244306                    gain     NaN  169.0         0.098256          3.0
-     lightgbm_tuned         2023          2024 driver_constructor_synergy  56222.076040                    gain     NaN  124.0         0.048908          4.0
-     lightgbm_tuned         2023          2024     constructor_wins_total  17088.886744                    gain     NaN   58.0         0.014866          5.0
-     lightgbm_tuned         2023          2024           driver_coef_rapm  12223.875696                    gain     NaN  106.0         0.010634          6.0
-     lightgbm_tuned         2023          2024       constructor_dnf_rate   6996.462194                    gain     NaN   78.0         0.006086          7.0
-     lightgbm_tuned         2023          2024      avg_pit_stops_circuit   5915.117908                    gain     NaN   91.0         0.005146          8.0
-     lightgbm_tuned         2023          2024           track_complexity   4037.657581                    gain     NaN   48.0         0.003512          9.0
-     lightgbm_tuned         2023          2024               grid_penalty   3232.495392                    gain     NaN   49.0         0.002812         10.0
-     lightgbm_tuned         2023          2024                 altitude_m   2310.172689                    gain     NaN   41.0         0.002010         11.0
-     lightgbm_tuned         2023          2024        tire_compound_start   1208.228399                    gain     NaN   20.0         0.001051         12.0
-     lightgbm_tuned         2023          2024              season_factor    231.790497                    gain     NaN    2.0         0.000202         13.0
-random_forest_tuned         2023          2024        qualifying_position      0.284352 gini_impurity_reduction     NaN    NaN         0.284352          1.0
-random_forest_tuned         2023          2024      constructor_coef_rapm      0.183820 gini_impurity_reduction     NaN    NaN         0.183820          2.0
+     lightgbm_tuned         2023          2024        qualifying_position 600132.899384                    gain     NaN  479.0         0.659036          1.0
+     lightgbm_tuned         2023          2024      constructor_coef_rapm 106344.561327                    gain     NaN  391.0         0.116782          2.0
+     lightgbm_tuned         2023          2024              recent_form_5  71370.129935                    gain     NaN  300.0         0.078375          3.0
+     lightgbm_tuned         2023          2024 driver_constructor_synergy  52569.785824                    gain     NaN  225.0         0.057730          4.0
+     lightgbm_tuned         2023          2024       constructor_dnf_rate  16217.104723                    gain     NaN  334.0         0.017809          5.0
+     lightgbm_tuned         2023          2024           track_complexity  15226.082305                    gain     NaN  289.0         0.016721          6.0
+     lightgbm_tuned         2023          2024           driver_coef_rapm  12975.208904                    gain     NaN  229.0         0.014249          7.0
+     lightgbm_tuned         2023          2024      avg_pit_stops_circuit  12027.337575                    gain     NaN  258.0         0.013208          8.0
+     lightgbm_tuned         2023          2024                 altitude_m   7377.544459                    gain     NaN  168.0         0.008102          9.0
+     lightgbm_tuned         2023          2024     constructor_wins_total   5954.301003                    gain     NaN   81.0         0.006539         10.0
+     lightgbm_tuned         2023          2024               grid_penalty   4740.371206                    gain     NaN  114.0         0.005206         11.0
+     lightgbm_tuned         2023          2024              season_factor   3508.437382                    gain     NaN   67.0         0.003853         12.0
+     lightgbm_tuned         2023          2024        tire_compound_start   2178.267794                    gain     NaN   51.0         0.002392         13.0
+random_forest_tuned         2023          2024        qualifying_position      0.457918 gini_impurity_reduction     NaN    NaN         0.457918          1.0
+random_forest_tuned         2023          2024      constructor_coef_rapm      0.198063 gini_impurity_reduction     NaN    NaN         0.198063          2.0

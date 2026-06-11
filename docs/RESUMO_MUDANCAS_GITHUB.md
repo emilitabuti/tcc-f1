@@ -1,16 +1,18 @@
 # Resumo das mudanças para subir no GitHub
 
-Data: 09/06/2026
+Data: 11/06/2026
 
 Este arquivo resume a revisão recente do repositório para facilitar a leitura da equipe.
 
 ## Mudanças metodológicas principais
 
-- O critério de seleção deixou de ser apenas MAE médio e passou a ser um score composto multi-métrica: MAE, RMSE, R², Kendall tau e top-3 accuracy.
+- O critério de seleção deixou de ser apenas MAE médio e passou a ser um score composto multi-métrica: MAE, RMSE, R² e Kendall tau.
 - O time-decay do walk-forward foi revisado: o valor final documentado é `0.99`, escolhido por score composto nos folds 2023-2024.
 - A seleção de features foi refeita com RFE temporal multi-fold em 2023, 2024 e 2025.
 - O X final passou de 15 para 13 features, com 2.943 linhas e 0 NaN.
-- Os finalistas de árvore foram revisados para LightGBM e XGBoost. Random Forest fica documentado como terceiro candidato avaliado.
+- Os finalistas de árvore foram revisados para LightGBM e Random Forest. XGBoost fica documentado como terceiro modelo de árvore avaliado.
+- A métrica top-3 foi removida do pipeline oficial por não ser comparável à regressão causal de `finish_position`.
+- Estudos exploratórios com transformação do target foram marcados como históricos/obsoletos; o target oficial permanece `finish_position`.
 - Foram adicionados estudos de ablação em `reports/ablacao/` e scripts correspondentes em `src/`.
 
 ## Contrato atual de features
@@ -43,9 +45,9 @@ altitude_m
 - `docs/tecnico/10_resultados_feature_importance.md`
 - `docs/tecnico/11_plano_estudos_ablacao.md`
 - `docs/tecnico/12_baselines_literatura.md`
+- `docs/tecnico/13_material_complementar_discussao_modelos.md`
 - `reports/modelagem/decisao_algoritmos.md`
 - `reports/ablacao/relatorio_estudos_ablacao_completo.md`
-- `validacao_resultados_tcc.txt`
 
 ## Checks feitos antes do push
 
@@ -53,6 +55,7 @@ altitude_m
 - Validação de JSONs do repositório
 - Checagem de shapes e NaN nos CSVs principais
 - `git diff --check`
+- Varredura de consistência para referências antigas a top-3, target transformado e finalistas desatualizados
 
 ## Atenções restantes
 

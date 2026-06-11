@@ -21,12 +21,12 @@ OUTPUT_REPORT = MODELS_DIR / "relatorio_rfe_xgboost.txt"
 OUTPUT_MANIFEST = MODELS_DIR / "manifest_rfe_xgboost.json"
 
 METRIC_WEIGHTS = {
-    "mae_score": 0.30,
-    "rmse_score": 0.15,
+    "mae_score": 0.35,
+    "rmse_score": 0.20,
     "r2_score": 0.20,
-    "kendall_tau_score": 0.20,
-    "top3_accuracy_score": 0.15,
+    "kendall_tau_score": 0.25,
 }
+METRICAS_AVALIACAO = ["mae", "rmse", "r2", "kendall_tau"]
 
 FOLDS_RFE = [
     {"train_until": 2022, "valid_season": 2023},
@@ -215,12 +215,12 @@ def evaluate_subsets(x, y, ranking):
             df_pred["pred_finish_position"] = pred
             metricas = calcular_metricas(df_pred)
 
-            for metrica in ["mae", "rmse", "r2", "kendall_tau", "top3_accuracy"]:
+            for metrica in METRICAS_AVALIACAO:
                 row[f"{metrica}_{valid_season}"] = float(metricas[metrica])
 
             fold_metricas.append(metricas)
 
-        for metrica in ["mae", "rmse", "r2", "kendall_tau", "top3_accuracy"]:
+        for metrica in METRICAS_AVALIACAO:
             row[f"{metrica}_medio"] = float(
                 sum(float(item[metrica]) for item in fold_metricas) / len(fold_metricas)
             )
@@ -260,12 +260,6 @@ def adicionar_score_composto(subsets):
         "kendall_tau_medio",
         maior_melhor=True,
     )
-    subsets["top3_accuracy_score"] = normalizar_coluna(
-        subsets,
-        "top3_accuracy_medio",
-        maior_melhor=True,
-    )
-
     subsets["score_composto"] = 0.0
     for coluna, peso in METRIC_WEIGHTS.items():
         subsets["score_composto"] += peso * subsets[coluna]
@@ -279,7 +273,6 @@ def identificar_pareto(subsets):
         ("rmse_medio", False),
         ("r2_medio", True),
         ("kendall_tau_medio", True),
-        ("top3_accuracy_medio", True),
     ]
     pareto = []
 
@@ -356,7 +349,6 @@ def main():
         f"- rmse_medio: {best['rmse_medio']:.6f}",
         f"- r2_medio: {best['r2_medio']:.6f}",
         f"- kendall_tau_medio: {best['kendall_tau_medio']:.6f}",
-        f"- top3_accuracy_medio: {best['top3_accuracy_medio']:.6f}",
         f"- features: {', '.join(selected)}",
         "",
         "Subconjuntos Pareto-otimos:",
@@ -367,7 +359,6 @@ def main():
             "rmse_medio",
             "r2_medio",
             "kendall_tau_medio",
-            "top3_accuracy_medio",
         ]].to_string(index=False),
         "",
         "Ranking por gain medio normalizado:",
@@ -394,7 +385,6 @@ def main():
                 "best_rmse_medio": float(best["rmse_medio"]),
                 "best_r2_medio": float(best["r2_medio"]),
                 "best_kendall_tau_medio": float(best["kendall_tau_medio"]),
-                "best_top3_accuracy_medio": float(best["top3_accuracy_medio"]),
                 "selected_features": selected,
                 "ranking_csv": OUTPUT_RANKING.relative_to(BASE_DIR).as_posix(),
                 "subsets_csv": OUTPUT_SUBSETS.relative_to(BASE_DIR).as_posix(),

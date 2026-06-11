@@ -5,5 +5,4 @@ Desvio padrao do MAE: 0.194305
 RMSE medio 2023-2024: 3.032814
 R2 medio 2023-2024: 0.652822
 Kendall tau medio 2023-2024: 0.652293
-Acuracia top-3 media 2023-2024: 0.195076
-Pesos do score composto: {'mae_score': 0.3, 'rmse_score': 0.15, 'r2_score': 0.2, 'kendall_tau_score': 0.2, 'top3_accuracy_score': 0.15}
+Pesos do score composto: {'mae_score': 0.35, 'rmse_score': 0.2, 'r2_score': 0.2, 'kendall_tau_score': 0.25}

@@ -25,7 +25,7 @@ OUTPUT_RESUMO_4 = REPORTS_DIR / "tabela_metricas_tunadas_4modelos_resumo.csv"
 OUTPUT_RELATORIO = REPORTS_DIR / "relatorio_modelos_tunados_26_28_05.txt"
 OUTPUT_DECISAO = REPORTS_DIR / "decisao_preliminar_algoritmos.md"
 
-METRICAS = ["mae", "rmse", "r2", "kendall_tau", "top3_accuracy"]
+METRICAS = ["mae", "rmse", "r2", "kendall_tau"]
 COLUNAS_ESPERADAS = METRICAS + [
     "train_until",
     "valid_season",
@@ -64,7 +64,6 @@ def criar_resumo(df: pd.DataFrame) -> pd.DataFrame:
             rmse_std=("rmse", "std"),
             r2_medio=("r2", "mean"),
             kendall_tau_medio=("kendall_tau", "mean"),
-            top3_accuracy_medio=("top3_accuracy", "mean"),
         )
         .sort_values(["mae_medio", "kendall_tau_medio"], ascending=[True, False])
         .reset_index(drop=True)
@@ -237,7 +236,7 @@ def gerar_decisao_preliminar(resumo: pd.DataFrame) -> None:
             "",
             (
                 "A escolha segue o criterio multi-metrica definido na revisao: equilibrar MAE, "
-                "RMSE, R2, Kendall tau e top-3 accuracy, mantendo estabilidade entre folds "
+                "RMSE, R2 e Kendall tau, mantendo estabilidade entre folds "
                 "e coerencia com a arquitetura. "
                 "O baseline Ridge foi mantido como referencia linear forte baseada na "
                 "fundamentacao RAPM; como ele ficou competitivo, os modelos de arvore devem "

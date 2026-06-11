@@ -39,30 +39,6 @@ def kendall_tau_por_corrida(df_pred: pd.DataFrame) -> float:
     return float(np.mean(valores))
 
 
-def acuracia_top3(df_pred: pd.DataFrame) -> float:
-    acertos = []
-
-    for _, grupo in df_pred.groupby(["season", "round"]):
-        real_top3 = set(
-            grupo.sort_values("finish_position")
-            .head(3)["driver_id"]
-            .tolist()
-        )
-
-        pred_top3 = set(
-            grupo.sort_values("pred_finish_position")
-            .head(3)["driver_id"]
-            .tolist()
-        )
-
-        acertos.append(int(real_top3 == pred_top3))
-
-    if not acertos:
-        return float("nan")
-
-    return float(np.mean(acertos))
-
-
 def calcular_metricas(df_pred: pd.DataFrame) -> dict:
     colunas_obrigatorias = {
         "season",
@@ -84,5 +60,4 @@ def calcular_metricas(df_pred: pd.DataFrame) -> dict:
         "rmse": calcular_rmse(y_true, y_pred),
         "r2": calcular_r2(y_true, y_pred),
         "kendall_tau": kendall_tau_por_corrida(df_pred),
-        "top3_accuracy": acuracia_top3(df_pred),
     }

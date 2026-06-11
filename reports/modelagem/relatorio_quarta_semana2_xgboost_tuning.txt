@@ -1,0 +1,33 @@
+Relatorio - 26/05 - Tuning Optuna XGBoost
+================================================================
+
+Objetivo:
+- Maximizar score composto multi-metrica nos folds de tuning 2023 e 2024.
+- Pesos do score: {'mae_score': 0.35, 'rmse_score': 0.2, 'r2_score': 0.2, 'kendall_tau_score': 0.25}.
+- Reavaliar o melhor conjunto em 2023, 2024 e 2025 via walk-forward.
+
+Bases utilizadas:
+- /home/emili-tabuti/Documentos/projects/tcc-f1/data/processed/dataset_modelagem_X_2018_2025.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/data/processed/dataset_modelagem_y_2018_2025.csv
+
+Time-decay:
+- Fator usado via sample_weight: 0.99
+
+Optuna:
+- Trials executados: 50
+- Tempo total de tuning: 251.11 segundos
+- Melhor score composto nos folds de tuning: 0.530774
+- Melhores parametros: {'n_estimators': 100, 'max_depth': 3, 'learning_rate': 0.04019135246943929, 'subsample': 0.7065339096051256, 'reg_alpha': 0.09028172279146734, 'reg_lambda': 0.6124918431201478, 'colsample_bytree': 0.6264430812910725, 'score_composto_tuning': 0.5307743145934184, 'tempo_tuning_segundos': 251.10870610600023}
+
+Metricas finais por fold:
+     mae     rmse       r2  kendall_tau  train_until  valid_season  decay  n_train  n_valid
+2.453912 3.074379 0.634517     0.644828         2022          2023   0.99     1725      374
+2.178032 2.865312 0.700138     0.684965         2023          2024   0.99     2099      425
+2.392409 3.108573 0.638880     0.627637         2024          2025   0.99     2524      419
+
+Artefatos gerados:
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/optuna_xgboost_trials.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/optuna_xgboost_best_params.json
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/predicoes_walk_forward_xgboost_tuned.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/metricas_walk_forward_xgboost_tuned.csv
+- /home/emili-tabuti/Documentos/projects/tcc-f1/reports/modelagem/relatorio_quarta_semana2_xgboost_tuning.txt

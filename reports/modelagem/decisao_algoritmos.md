@@ -7,11 +7,11 @@ Data de fechamento: 30/05/2026
 Algoritmos finalistas para apresentacao da Fase 1:
 
 1. **LightGBM**
-2. **XGBoost**
+2. **Random Forest**
 
 Algoritmo de arvore arquivado:
 
-- **Random Forest**
+- **XGBoost**
 
 Baseline mantido como referencia metodologica:
 
@@ -19,12 +19,12 @@ Baseline mantido como referencia metodologica:
 
 ## Evidencias Quantitativas
 
-| Modelo | Score composto | MAE medio | MAE DP | RMSE medio | R2 medio | Kendall tau | Top-3 accuracy | Tempo tuning |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|
-| LightGBM | 0.4971 | 2.3264 | 0.1316 | 3.0146 | 0.6582 | 0.6530 | 0.2563 | 0.37 min |
-| XGBoost | 0.4963 | 2.3479 | 0.1358 | 3.0207 | 0.6569 | 0.6523 | 0.2563 | 0.61 min |
-| Random Forest | 0.4957 | 2.3732 | 0.1235 | 3.0515 | 0.6501 | 0.6436 | 0.2689 | 1.14 min |
-| Ridge baseline | 0.4900 | 2.2723 | 0.1306 | 2.9574 | 0.6710 | 0.6543 | 0.1856 | 0.07 min |
+| Modelo | Score composto | MAE medio | MAE DP | RMSE medio | R2 medio | Kendall tau | Tempo tuning |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Ridge baseline | 0.5314 | 2.2723 | 0.1306 | 2.9574 | 0.6710 | 0.6543 | 0.13 min |
+| LightGBM | 0.5279 | 2.3172 | 0.1233 | 3.0121 | 0.6587 | 0.6536 | 3.88 min |
+| Random Forest | 0.5272 | 2.3263 | 0.1220 | 3.0121 | 0.6589 | 0.6503 | 4.01 min |
+| XGBoost | 0.5269 | 2.3415 | 0.1448 | 3.0161 | 0.6578 | 0.6525 | 4.19 min |
 
 Arquivos de origem:
 
@@ -35,24 +35,24 @@ Arquivos de origem:
 
 O criterio revisado foi aplicado de forma empirica por score composto multi-metrica:
 
-- MAE invertido: peso 0.30;
-- RMSE invertido: peso 0.15;
+- MAE invertido: peso 0.35;
+- RMSE invertido: peso 0.20;
 - R2: peso 0.20;
-- Kendall tau: peso 0.20;
-- top-3 accuracy: peso 0.15.
+- Kendall tau: peso 0.25.
 
-O **LightGBM** apresentou o melhor score composto medio (`0.4971`) e menor tempo
-de tuning entre os modelos de arvore finalistas. O **XGBoost** ficou em
-segundo no score composto (`0.4963`) e manteve o mesmo top-3 medio do
-LightGBM.
+O **LightGBM** apresentou o melhor score composto medio entre os modelos de
+arvore (`0.5279`) e o menor MAE medio das arvores. O **Random Forest** ficou em
+segundo entre as arvores (`0.5272`), com RMSE e R2 praticamente empatados com
+LightGBM e maior estabilidade de MAE.
 
-O **Random Forest** foi arquivado como terceiro candidato de arvore. Seu top-3
-medio foi o maior entre as arvores, mas o score composto ficou abaixo de
-LightGBM e XGBoost porque MAE, RMSE, R2 e Kendall tau foram piores.
+O **XGBoost** foi arquivado como terceiro candidato de arvore. A diferenca para
+Random Forest e pequena (`0.5269` vs. `0.5272`), mas o score composto revisado,
+sem top-3, favoreceu Random Forest.
 
-O **Ridge baseline** obteve o menor MAE, menor RMSE e maior R2. Esse resultado
-deve ser reportado explicitamente, pois mostra que a decomposicao linear inspirada
-em RAPM e forte para este dataset. Ainda assim, ele permanece como baseline,
+O **Ridge baseline** obteve o melhor score composto, menor MAE, menor RMSE,
+maior R2 e maior Kendall tau. Esse resultado deve ser reportado explicitamente,
+pois mostra que a decomposicao linear inspirada em RAPM e forte para este dataset.
+Ainda assim, ele permanece como baseline,
 porque o objetivo da Fase 1 inclui comparar modelos de arvore interpretaveis e
 preparar a analise de drift/adaptacao da Fase 2.
 
@@ -102,8 +102,8 @@ Features finais:
 
 ## Conclusao
 
-A Fase 1 fica fechada com **LightGBM** e **XGBoost** como modelos finalistas.
-O **Random Forest** permanece documentado como terceiro algoritmo avaliado, mas
+A Fase 1 fica fechada com **LightGBM** e **Random Forest** como modelos finalistas.
+O **XGBoost** permanece documentado como terceiro algoritmo avaliado, mas
 nao sera priorizado na apresentacao pelo criterio multi-metrica. O **Ridge Regression** deve ser apresentado
 como baseline forte e como evidencia de que os coeficientes inspirados em RAPM
 capturam parte relevante da estrutura dos dados.

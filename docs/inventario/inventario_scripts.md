@@ -54,7 +54,7 @@ Scripts de treinamento, tuning e avaliação dos modelos.
 
 | Arquivo | Classificação | O que faz | Saída principal |
 |---|---|---|---|
-| `metricas.py` | **Essencial** | Calcula MAE, RMSE, R², Kendall τ e acurácia top-3 | — (módulo utilitário) |
+| `metricas.py` | **Essencial** | Calcula MAE, RMSE, R² e Kendall τ; top-3 não faz parte do pipeline oficial | — (módulo utilitário) |
 | `tuning_utils.py` | **Essencial** | Funções comuns de tuning Optuna compartilhadas entre os 3 modelos | — (módulo utilitário) |
 | `otimizacao_time_decay.py` | **Essencial** | Grid-search do fator de time-decay por score composto (0.50 a 0.99) | `reports/modelagem/time_decay_escolhido_xgboost.txt` |
 | `walk_forward.py` | **Essencial** | Walk-forward validation do XGBoost (3 folds: 2023, 2024, 2025) | `reports/modelagem/metricas_walk_forward_xgboost.csv` |
@@ -67,6 +67,11 @@ Scripts de treinamento, tuning e avaliação dos modelos.
 | `consolidar_metricas_tunadas.py` | **Essencial** | Agrega métricas dos 4 modelos tunados em tabela comparativa | `reports/modelagem/tabela_metricas_tunadas_4modelos.csv` |
 | `consolidar_metricas_preliminares.py` | **Importante** | Idem para versão preliminar (pré-tuning) | `reports/modelagem/tabela_metricas_preliminares_3modelos.csv` |
 | `gerar_feature_importance_modelos.py` | **Essencial** | Extrai importância de features dos 3 modelos de árvore + salva fold 2024 | `reports/modelagem/feature_importance_*.csv` |
+| `estudos_ablacao_modelos.py` | **Importante** | Estudos de ablação oficiais com target fixo `finish_position`; transformações de target foram desativadas | `reports/ablacao/` |
+| `estudos_ablacao_completo.py` | **Importante** | Retunings de ablação oficiais com target fixo `finish_position`; transformações de target foram desativadas | `reports/ablacao/` |
+| `ablacao_pareada_lgbm_xgboost.py` | **Importante** | Ablação pareada LightGBM vs. XGBoost com target oficial fixo `finish_position` | `reports/ablacao/pareada_lgbm_xgboost/` |
+| `tuning_target_delta_ablacao.py` | **Temporário / obsoleto** | Experimento histórico com target transformado; bloqueado para uso oficial | — |
+| `validar_rank_norm_causal.py` | **Temporário / obsoleto** | Experimento histórico com target transformado; bloqueado para uso oficial | — |
 
 ---
 

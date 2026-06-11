@@ -53,9 +53,9 @@ Gerada ao longo das Semanas 1 e 2 pelos próprios scripts do pipeline.
 
 ---
 
-## O que ainda não existe e precisa ser criado (Etapa 3 desta auditoria)
+## Documentação técnica criada (Etapa 3 desta auditoria)
 
-| Arquivo a criar | Etapa | Por que é necessário |
+| Arquivo | Etapa | O que documenta |
 |---|---|---|
 | `tecnico/01_coleta_dados.md` | 3.1 | Documenta decisão de usar 3 fontes, corte em 2018, RaceID |
 | `tecnico/02_limpeza_dnf.md` | 3.2 | Documenta classificação de DNF, viés de sobrevivência, desclassificados |
@@ -65,5 +65,8 @@ Gerada ao longo das Semanas 1 e 2 pelos próprios scripts do pipeline.
 | `tecnico/06_feature_engineering.md` | 3.6 | Documenta cada feature com fórmula, referência e mecanismo causal |
 | `tecnico/07_selecao_features.md` | 3.7 | Documenta leakages corrigidos, multicolinearidade e RFE |
 | `tecnico/08_walk_forward_time_decay.md` | 3.8 | Documenta folds, decay=0.99 vs. 0.75 do paper, impossibilidade de embaralhar |
-| `tecnico/09_modelagem_tuning.md` | 3.9 | Documenta 3 algoritmos, Optuna 50 trials, decisão LightGBM+XGBoost |
-| `tecnico/10_resultados_feature_importance.md` | 3.10 | Documenta resultados, Ridge vs. árvores, top-3 baixo, convergência com literatura |
+| `tecnico/09_modelagem_tuning.md` | 3.9 | Documenta 4 modelos, Optuna/grid search, decisão LightGBM+Random Forest e Ridge como baseline forte |
+| `tecnico/10_resultados_feature_importance.md` | 3.10 | Documenta resultados, Ridge vs. árvores, feature importance e convergência com literatura |
+| `tecnico/11_plano_estudos_ablacao.md` | Complementar | Documenta plano e resultado de ablações com target oficial fixo |
+| `tecnico/12_baselines_literatura.md` | Complementar | Consolida baselines acadêmicos comparáveis e remoção de top-3 |
+| `tecnico/13_material_complementar_discussao_modelos.md` | Complementar | Consolida discussão sobre literatura, linearidade aparente e mudanças regulatórias |

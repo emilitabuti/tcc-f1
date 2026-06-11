@@ -18,7 +18,7 @@ OUTPUT_TABELA = REPORTS_DIR / "tabela_metricas_preliminares_3modelos.csv"
 OUTPUT_RESUMO = REPORTS_DIR / "tabela_metricas_preliminares_3modelos_resumo.csv"
 OUTPUT_RELATORIO = REPORTS_DIR / "relatorio_terca_semana2_modelos_preliminares.txt"
 
-METRICAS = ["mae", "rmse", "r2", "kendall_tau", "top3_accuracy"]
+METRICAS = ["mae", "rmse", "r2", "kendall_tau"]
 COLUNAS_ESPERADAS = METRICAS + [
     "train_until",
     "valid_season",
@@ -56,7 +56,6 @@ def criar_resumo(df: pd.DataFrame) -> pd.DataFrame:
             rmse_medio=("rmse", "mean"),
             r2_medio=("r2", "mean"),
             kendall_tau_medio=("kendall_tau", "mean"),
-            top3_accuracy_medio=("top3_accuracy", "mean"),
         )
     )
 
@@ -112,7 +111,6 @@ def gerar_relatorio(df: pd.DataFrame, resumo: pd.DataFrame):
                 f"({melhor['mae_medio']:.6f})."
             ),
             "- Esta comparacao ainda nao define finalistas; a decisao final depende de Optuna, Ridge baseline, RFE e feature importance.",
-            "- Top-3 accuracy e estrita e deve ser interpretada com cuidado.",
             "",
             "Artefatos gerados:",
             f"- {OUTPUT_TABELA}",
