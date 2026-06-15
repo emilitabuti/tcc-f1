@@ -1,38 +1,45 @@
 Relatório — update_openf1_2026.py
-Gerado em: 2026-06-01T22:32:42
+Gerado em: 2026-06-15T19:45:24
 
-Meetings 2026 no calendário: 24
-Meetings 2026 com resultado: 4
+API OpenF1: resultados 2026 atualizados.
+Corridas com resultado na API: Australian Grand Prix, Chinese Grand Prix, Japanese Grand Prix, Miami Grand Prix, Canadian Grand Prix, Monaco Grand Prix, Barcelona Grand Prix
+Corridas sem resultado na API: Bahrain Grand Prix, Saudi Arabian Grand Prix, Austrian Grand Prix, British Grand Prix, Belgian Grand Prix, Hungarian Grand Prix, Dutch Grand Prix, Italian Grand Prix, Spanish Grand Prix, Azerbaijan Grand Prix, Singapore Grand Prix, United States Grand Prix, Mexico City Grand Prix, São Paulo Grand Prix, Las Vegas Grand Prix, Qatar Grand Prix, Abu Dhabi Grand Prix
+Meetings 2026 no calendario: 24
+Meetings 2026 com resultado: 7
 
-Round 1 (Australian Grand Prix): 22 pilotos raw, 19 após exclusão de DNF
+Round 1 (Australian Grand Prix): 22 pilotos raw, 19 apos exclusao de DNF
   qualifying_position: 19/19 preenchidos via API
-Round 2 (Chinese Grand Prix): 22 pilotos raw, 19 após exclusão de DNF
+Round 2 (Chinese Grand Prix): 22 pilotos raw, 19 apos exclusao de DNF
   qualifying_position: 19/19 preenchidos via API
-Round 3 (Japanese Grand Prix): 22 pilotos raw, 20 após exclusão de DNF
+Round 3 (Japanese Grand Prix): 22 pilotos raw, 20 apos exclusao de DNF
   qualifying_position: 20/20 preenchidos via API
-Round 6 (Miami Grand Prix): 22 pilotos raw, 18 após exclusão de DNF
+Round 6 (Miami Grand Prix): 22 pilotos raw, 18 apos exclusao de DNF
   qualifying_position: 18/18 preenchidos via API
+Round 7 (Canadian Grand Prix): 22 pilotos raw, 17 apos exclusao de DNF
+  qualifying_position: 17/17 preenchidos via API
+Round 8 (Monaco Grand Prix): 22 pilotos raw, 15 apos exclusao de DNF
+  qualifying_position: 15/15 preenchidos via API
+Round 9 (Barcelona Grand Prix): 22 pilotos raw, 15 apos exclusao de DNF
+  qualifying_position: 15/15 preenchidos via API
 
 === Cobertura das features ===
   qualifying_position: OK
-  grid_penalty: OK
-  recent_form_5: OK
-  driver_coef_rapm: OK
-  driver_dnf_rate: OK
   constructor_coef_rapm: OK
-  constructor_dnf_rate: OK
-  constructor_wins_total: OK
+  recent_form_5: OK
   driver_constructor_synergy: OK
+  constructor_wins_total: OK
+  driver_coef_rapm: OK
   track_complexity: OK
-  altitude_m: OK
   tire_compound_start: OK
-  avg_pit_stops_circuit: OK
   season_factor: OK
-  incident_rate_hist_norm: OK
+  avg_pit_stops_circuit: OK
+  constructor_dnf_rate: OK
+  grid_penalty: OK
+  altitude_m: OK
 
 === Resumo final ===
-Corridas processadas: 4
-Linhas totais: 76
+Corridas processadas: 7
+Linhas totais: 123
 Pilotos únicos: 22
 NaN em qualifying_position: 0
 Output: /home/emili-tabuti/Documentos/projects/tcc-f1/data/processed/openf1_2026_available.csv

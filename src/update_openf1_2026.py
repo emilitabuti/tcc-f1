@@ -7,6 +7,7 @@ import json
 import numpy as np
 import pandas as pd
 import requests
+import time
 
 # ---------------------------------------------------------------------------
 # update_openf1_2026.py
@@ -101,15 +102,35 @@ DRIVER_NUMBER_TO_ID: dict[int, str] = {
 # Funções auxiliares
 # ---------------------------------------------------------------------------
 
-def _get(endpoint: str, params: dict) -> list[dict]:
+def _normalizar_resposta_json(data) -> list[dict]:
+    if isinstance(data, list):
+        return data
+    if isinstance(data, dict):
+        if isinstance(data.get("data"), list):
+            return data["data"]
+        if any(chave in data for chave in ["meeting_key", "session_key", "driver_number", "position"]):
+            return [data]
+    return []
+
+
+def _get(endpoint: str, params: dict, retries: int = 3) -> list[dict]:
     url = f"{OPENF1_BASE}/{endpoint}"
-    try:
-        r = requests.get(url, params=params, timeout=30)
-        r.raise_for_status()
-        return r.json()
-    except Exception as exc:
-        print(f"  [AVISO] OpenF1 API falhou: {exc}")
-        return []
+    for tentativa in range(1, retries + 1):
+        try:
+            r = requests.get(url, params=params, timeout=45)
+            if r.status_code == 429:
+                espera = 30 * tentativa
+                print(f"  [AVISO] Rate limit OpenF1; aguardando {espera}s")
+                time.sleep(espera)
+                continue
+            r.raise_for_status()
+            return _normalizar_resposta_json(r.json())
+        except Exception as exc:
+            if tentativa == retries:
+                print(f"  [AVISO] OpenF1 API falhou: {exc}")
+                return []
+            time.sleep(5 * tentativa)
+    return []
 
 
 def carregar_meetings_2026() -> pd.DataFrame:
@@ -134,6 +155,125 @@ def carregar_stints_2026() -> pd.DataFrame:
 def carregar_race_control_2026() -> pd.DataFrame:
     rc = pd.read_csv(RAW_DIR / "openf1_race_control_2025_2026.csv")
     return rc[rc["season"] == 2026].copy() if "season" in rc.columns else pd.DataFrame()
+
+
+def _salvar_raw_atualizado(caminho: Path, df_2026: pd.DataFrame) -> None:
+    if caminho.exists():
+        df_existente = pd.read_csv(caminho)
+        if "season" in df_existente.columns:
+            df_existente = df_existente[df_existente["season"] != 2026].copy()
+        df_saida = pd.concat([df_existente, df_2026], ignore_index=True, sort=False)
+    else:
+        df_saida = df_2026
+
+    df_saida.to_csv(caminho, index=False)
+
+
+def atualizar_raws_2026_via_openf1(meetings_2026: pd.DataFrame, log: list[str]) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+    """Busca resultados 2026 disponiveis na OpenF1 e atualiza os CSVs raw."""
+    sessions = _get("sessions", {"year": 2026})
+    if not sessions:
+        log.append("API OpenF1: sem retorno de sessoes 2026; mantendo raws locais.")
+        return carregar_resultados_2026(), carregar_stints_2026(), carregar_race_control_2026()
+
+    df_sessions = pd.DataFrame(sessions)
+    if "session_name" not in df_sessions.columns:
+        log.append("API OpenF1: retorno de sessoes sem coluna session_name; mantendo raws locais.")
+        return carregar_resultados_2026(), carregar_stints_2026(), carregar_race_control_2026()
+
+    meeting_keys_validos = set(meetings_2026["meeting_key"].astype(int))
+    corridas = df_sessions[
+        (df_sessions["session_name"] == "Race")
+        & (df_sessions["meeting_key"].isin(meeting_keys_validos))
+    ].copy()
+
+    resultados: list[dict] = []
+    stints_all: list[dict] = []
+    rc_all: list[dict] = []
+    corridas_com_resultado: list[int] = []
+    corridas_sem_resultado: list[int] = []
+
+    for _, sess in corridas.sort_values("date_start").iterrows():
+        meeting_key = int(sess["meeting_key"])
+        session_key = int(sess["session_key"])
+
+        result = _get("session_result", {"session_key": session_key})
+        if not result:
+            corridas_sem_resultado.append(meeting_key)
+            continue
+
+        corridas_com_resultado.append(meeting_key)
+        for row in result:
+            resultados.append(
+                {
+                    "season": 2026,
+                    "meeting_key": meeting_key,
+                    "session_key": session_key,
+                    "driver_number": row.get("driver_number"),
+                    "position": row.get("position"),
+                    "dnf": row.get("dnf"),
+                    "number_of_laps": row.get("number_of_laps"),
+                }
+            )
+
+        stints = _get("stints", {"session_key": session_key})
+        for row in stints:
+            stints_all.append(
+                {
+                    "season": 2026,
+                    "meeting_key": meeting_key,
+                    "session_key": session_key,
+                    "driver_number": row.get("driver_number"),
+                    "stint_number": row.get("stint_number"),
+                    "compound": row.get("compound"),
+                    "lap_start": row.get("lap_start"),
+                    "tyre_age_at_start": row.get("tyre_age_at_start"),
+                }
+            )
+
+        rc = _get("race_control", {"session_key": session_key})
+        for row in rc:
+            rc_all.append(
+                {
+                    "season": 2026,
+                    "meeting_key": meeting_key,
+                    "session_key": session_key,
+                    "date": row.get("date"),
+                    "category": row.get("category"),
+                    "flag": row.get("flag"),
+                    "message": row.get("message"),
+                    "driver_number": row.get("driver_number"),
+                    "lap_number": row.get("lap_number"),
+                }
+            )
+
+        time.sleep(0.5)
+
+    if not resultados:
+        log.append("API OpenF1: nenhum resultado 2026 encontrado; mantendo raws locais.")
+        return carregar_resultados_2026(), carregar_stints_2026(), carregar_race_control_2026()
+
+    df_resultados = pd.DataFrame(resultados)
+    df_stints = pd.DataFrame(stints_all)
+    df_rc = pd.DataFrame(rc_all)
+
+    _salvar_raw_atualizado(RAW_DIR / "openf1_session_result_2025_2026.csv", df_resultados)
+    _salvar_raw_atualizado(RAW_DIR / "openf1_stints_2025_2026.csv", df_stints)
+    _salvar_raw_atualizado(RAW_DIR / "openf1_race_control_2025_2026.csv", df_rc)
+
+    nomes = meetings_2026.set_index("meeting_key")["meeting_name"].to_dict()
+    log.append("API OpenF1: resultados 2026 atualizados.")
+    log.append(
+        "Corridas com resultado na API: "
+        + ", ".join(nomes.get(mk, str(mk)) for mk in sorted(corridas_com_resultado))
+    )
+    if corridas_sem_resultado:
+        log.append(
+            "Corridas sem resultado na API: "
+            + ", ".join(nomes.get(mk, str(mk)) for mk in sorted(corridas_sem_resultado))
+        )
+
+    return df_resultados, df_stints, df_rc
 
 
 def buscar_qualifying_openf1(meeting_key: int) -> pd.DataFrame:
@@ -198,10 +338,15 @@ def snapshot_features_fim_2025(X: pd.DataFrame, y: pd.DataFrame) -> pd.DataFrame
 
     # Última corrida de cada piloto em 2025
     idx_last = df_2025.groupby("driver_id")["round"].idxmax()
-    snapshot_drivers = df_2025.loc[idx_last].set_index("driver_id")[
-        ["driver_coef_rapm", "driver_dnf_rate", "recent_form_5",
-         "driver_constructor_synergy", "constructor_id"]
-    ].copy()
+    driver_cols = [
+        "driver_coef_rapm",
+        "recent_form_5",
+        "driver_constructor_synergy",
+        "constructor_id",
+    ]
+    snapshot_drivers = df_2025.loc[idx_last].set_index("driver_id")[driver_cols].copy()
+    if "driver_dnf_rate" not in snapshot_drivers.columns:
+        snapshot_drivers["driver_dnf_rate"] = 0.0
 
     # Última corrida de cada construtor em 2025
     idx_last_c = df_2025.groupby("constructor_id")["round"].idxmax()
@@ -221,7 +366,14 @@ def carregar_features_circuito() -> pd.DataFrame:
     df = pd.concat([y[["season", "round", "driver_id"]], X], axis=1)
 
     circuit_cols = [
-        "track_complexity", "altitude_m", "avg_pit_stops_circuit", "incident_rate_hist_norm"
+        col
+        for col in [
+            "track_complexity",
+            "altitude_m",
+            "avg_pit_stops_circuit",
+            "incident_rate_hist_norm",
+        ]
+        if col in df.columns
     ]
     # Uma linha por round (features de circuito são idênticas para todos os pilotos)
     circuito = df.groupby("round")[circuit_cols].first().reset_index()
@@ -280,7 +432,7 @@ def processar_corrida_2026(
     log: list[str],
 ) -> pd.DataFrame:
 
-    print(f"\n  Processando Round {round_num} — {race_name} (meeting_key={meeting_key})")
+    print(f"\n  Processando Round {round_num} - {race_name} (meeting_key={meeting_key})")
 
     # 1. Resultado da corrida
     corrida_raw = results_2026[results_2026["meeting_key"] == meeting_key].copy()
@@ -298,7 +450,7 @@ def processar_corrida_2026(
     n_finishers = len(corrida)
     log.append(
         f"Round {round_num} ({race_name}): {n_total} pilotos raw, "
-        f"{n_finishers} após exclusão de DNF"
+        f"{n_finishers} apos exclusao de DNF"
     )
 
     if corrida.empty:
@@ -363,7 +515,7 @@ def processar_corrida_2026(
     circ = circuito_features[circuito_features["round"] == round_num]
     if not circ.empty:
         for col in ["track_complexity", "altitude_m", "avg_pit_stops_circuit", "incident_rate_hist_norm"]:
-            corrida[col] = circ.iloc[0][col]
+            corrida[col] = circ.iloc[0][col] if col in circ.columns else np.nan
     else:
         # Circuito novo em 2026 sem histórico — usar mediana global
         for col in ["track_complexity", "altitude_m", "avg_pit_stops_circuit", "incident_rate_hist_norm"]:
@@ -413,18 +565,19 @@ def main():
     # Carregar dados raw 2026
     print("\n[1] Carregando arquivos raw 2026...")
     meetings_2026 = carregar_meetings_2026()
-    results_2026 = carregar_resultados_2026()
-    stints_2026 = carregar_stints_2026()
-    rc_2026 = carregar_race_control_2026()
+    results_2026, stints_2026, rc_2026 = atualizar_raws_2026_via_openf1(
+        meetings_2026=meetings_2026,
+        log=log,
+    )
 
     meetings_com_resultado = set(results_2026["meeting_key"].unique())
     meetings_disponiveis = meetings_2026[
         meetings_2026["meeting_key"].isin(meetings_com_resultado)
     ].copy()
 
-    print(f"  Meetings 2026 no calendário: {len(meetings_2026)}")
+    print(f"  Meetings 2026 no calendario: {len(meetings_2026)}")
     print(f"  Meetings 2026 com resultado: {len(meetings_disponiveis)}")
-    log.append(f"Meetings 2026 no calendário: {len(meetings_2026)}")
+    log.append(f"Meetings 2026 no calendario: {len(meetings_2026)}")
     log.append(f"Meetings 2026 com resultado: {len(meetings_disponiveis)}")
     log.append("")
 

@@ -1,0 +1,457 @@
+﻿RaceID,season,round,race_name,driver_id,constructor_id,finish_position,qualifying_position,modelo,modelo_label,pred_finish_position,erro,erro_abs
+russell_2026_1,2026,1,Australian Grand Prix,russell,mercedes,1.0,1,ridge_baseline,Ridge,4.193527211793383,3.1935272117933833,3.1935272117933833
+antonelli_2026_1,2026,1,Australian Grand Prix,antonelli,mercedes,2.0,2,ridge_baseline,Ridge,5.252675928593252,3.252675928593252,3.252675928593252
+leclerc_2026_1,2026,1,Australian Grand Prix,leclerc,ferrari,3.0,4,ridge_baseline,Ridge,5.171418426835708,2.171418426835708,2.171418426835708
+hamilton_2026_1,2026,1,Australian Grand Prix,hamilton,ferrari,4.0,7,ridge_baseline,Ridge,7.810519786241791,3.810519786241791,3.810519786241791
+max_verstappen_2026_1,2026,1,Australian Grand Prix,max_verstappen,red_bull,5.0,6,ridge_baseline,Ridge,4.56000782947895,-0.4399921705210499,0.4399921705210499
+driver_3_2026_2026_1,2026,1,Australian Grand Prix,driver_3_2026,unknown_2026,6.0,20,ridge_baseline,Ridge,13.408632032469434,7.408632032469434,7.408632032469434
+bearman_2026_1,2026,1,Australian Grand Prix,bearman,haas,7.0,12,ridge_baseline,Ridge,11.343399279696616,4.343399279696616,4.343399279696616
+driver_41_2026_2026_1,2026,1,Australian Grand Prix,driver_41_2026,unknown_2026,8.0,9,ridge_baseline,Ridge,8.684913531978873,0.6849135319788733,0.6849135319788733
+bortoleto_2026_1,2026,1,Australian Grand Prix,bortoleto,sauber,9.0,10,ridge_baseline,Ridge,12.628413306346921,3.6284133063469213,3.6284133063469213
+gasly_2026_1,2026,1,Australian Grand Prix,gasly,alpine,10.0,14,ridge_baseline,Ridge,13.802386927308401,3.802386927308401,3.802386927308401
+ocon_2026_1,2026,1,Australian Grand Prix,ocon,haas,11.0,13,ridge_baseline,Ridge,12.948666571500063,1.9486665715000626,1.9486665715000626
+albon_2026_1,2026,1,Australian Grand Prix,albon,williams,12.0,15,ridge_baseline,Ridge,13.530559115184651,1.5305591151846514,1.5305591151846514
+lawson_2026_1,2026,1,Australian Grand Prix,lawson,rb,13.0,8,ridge_baseline,Ridge,10.48494476604039,-2.5150552339596093,2.5150552339596093
+colapinto_2026_1,2026,1,Australian Grand Prix,colapinto,alpine,14.0,16,ridge_baseline,Ridge,15.665072900786443,1.665072900786443,1.665072900786443
+sainz_2026_1,2026,1,Australian Grand Prix,sainz,williams,15.0,21,ridge_baseline,Ridge,14.480689669465516,-0.5193103305344842,0.5193103305344842
+driver_11_2026_2026_1,2026,1,Australian Grand Prix,driver_11_2026,unknown_2026,16.0,18,ridge_baseline,Ridge,12.425058417090028,-3.5749415829099718,3.5749415829099718
+antonelli_2026_2,2026,2,Chinese Grand Prix,antonelli,mercedes,1.0,1,ridge_baseline,Ridge,4.360570490736493,3.3605704907364933,3.3605704907364933
+russell_2026_2,2026,2,Chinese Grand Prix,russell,mercedes,2.0,2,ridge_baseline,Ridge,4.132565081739105,2.132565081739105,2.132565081739105
+hamilton_2026_2,2026,2,Chinese Grand Prix,hamilton,ferrari,3.0,3,ridge_baseline,Ridge,5.671699386681315,2.671699386681315,2.671699386681315
+leclerc_2026_2,2026,2,Chinese Grand Prix,leclerc,ferrari,4.0,4,ridge_baseline,Ridge,4.69488464288019,0.69488464288019,0.69488464288019
+bearman_2026_2,2026,2,Chinese Grand Prix,bearman,haas,5.0,10,ridge_baseline,Ridge,10.03572218793862,5.035722187938619,5.035722187938619
+gasly_2026_2,2026,2,Chinese Grand Prix,gasly,alpine,6.0,7,ridge_baseline,Ridge,10.416851566044205,4.416851566044205,4.416851566044205
+lawson_2026_2,2026,2,Chinese Grand Prix,lawson,rb,7.0,14,ridge_baseline,Ridge,12.50184090549231,5.50184090549231,5.50184090549231
+hadjar_2026_2,2026,2,Chinese Grand Prix,hadjar,rb,8.0,9,ridge_baseline,Ridge,9.744415885395734,1.7444158853957337,1.7444158853957337
+sainz_2026_2,2026,2,Chinese Grand Prix,sainz,williams,9.0,17,ridge_baseline,Ridge,12.49429957748197,3.4942995774819696,3.4942995774819696
+colapinto_2026_2,2026,2,Chinese Grand Prix,colapinto,alpine,10.0,12,ridge_baseline,Ridge,13.526252501225965,3.526252501225965,3.526252501225965
+hulkenberg_2026_2,2026,2,Chinese Grand Prix,hulkenberg,sauber,11.0,11,ridge_baseline,Ridge,11.550281758759777,0.5502817587597768,0.5502817587597768
+driver_41_2026_2026_2,2026,2,Chinese Grand Prix,driver_41_2026,unknown_2026,12.0,15,ridge_baseline,Ridge,10.854239979007719,-1.145760020992281,1.145760020992281
+driver_77_2026_2026_2,2026,2,Chinese Grand Prix,driver_77_2026,unknown_2026,13.0,19,ridge_baseline,Ridge,12.36409628703575,-0.6359037129642502,0.6359037129642502
+ocon_2026_2,2026,2,Chinese Grand Prix,ocon,haas,14.0,13,ridge_baseline,Ridge,12.624563095121474,-1.3754369048785264,1.3754369048785264
+driver_11_2026_2026_2,2026,2,Chinese Grand Prix,driver_11_2026,unknown_2026,15.0,21,ridge_baseline,Ridge,13.195239594838228,-1.8047604051617725,1.8047604051617725
+antonelli_2026_3,2026,3,Japanese Grand Prix,antonelli,mercedes,1.0,1,ridge_baseline,Ridge,4.239160391466978,3.239160391466978,3.239160391466978
+piastri_2026_3,2026,3,Japanese Grand Prix,piastri,mclaren,2.0,3,ridge_baseline,Ridge,4.0964524458174365,2.0964524458174365,2.0964524458174365
+leclerc_2026_3,2026,3,Japanese Grand Prix,leclerc,ferrari,3.0,4,ridge_baseline,Ridge,4.573474543610675,1.5734745436106747,1.5734745436106747
+russell_2026_3,2026,3,Japanese Grand Prix,russell,mercedes,4.0,2,ridge_baseline,Ridge,4.01115498246959,0.01115498246958957,0.01115498246958957
+max_verstappen_2026_3,2026,3,Japanese Grand Prix,max_verstappen,red_bull,5.0,5,ridge_baseline,Ridge,3.546492292352677,-1.453507707647323,1.453507707647323
+hamilton_2026_3,2026,3,Japanese Grand Prix,hamilton,ferrari,6.0,6,ridge_baseline,Ridge,6.797004249115517,0.7970042491155169,0.7970042491155169
+gasly_2026_3,2026,3,Japanese Grand Prix,gasly,alpine,7.0,7,ridge_baseline,Ridge,10.29544146677469,3.2954414667746903,3.2954414667746903
+driver_3_2026_2026_3,2026,3,Japanese Grand Prix,driver_3_2026,unknown_2026,8.0,11,ridge_baseline,Ridge,8.918112956556318,0.9181129565563175,0.9181129565563175
+lawson_2026_3,2026,3,Japanese Grand Prix,lawson,rb,9.0,14,ridge_baseline,Ridge,12.380430806222794,3.380430806222794,3.380430806222794
+ocon_2026_3,2026,3,Japanese Grand Prix,ocon,haas,10.0,12,ridge_baseline,Ridge,11.93515103437379,1.9351510343737903,1.9351510343737903
+hulkenberg_2026_3,2026,3,Japanese Grand Prix,hulkenberg,sauber,11.0,13,ridge_baseline,Ridge,12.107584659715812,1.1075846597158119,1.1075846597158119
+hadjar_2026_3,2026,3,Japanese Grand Prix,hadjar,rb,12.0,8,ridge_baseline,Ridge,9.359864439801907,-2.640135560198093,2.640135560198093
+bortoleto_2026_3,2026,3,Japanese Grand Prix,bortoleto,sauber,13.0,9,ridge_baseline,Ridge,11.614897769220649,-1.385102230779351,1.385102230779351
+driver_41_2026_2026_3,2026,3,Japanese Grand Prix,driver_41_2026,unknown_2026,14.0,10,ridge_baseline,Ridge,8.502541302655079,-5.497458697344921,5.497458697344921
+sainz_2026_3,2026,3,Japanese Grand Prix,sainz,williams,15.0,16,ridge_baseline,Ridge,11.957317824311215,-3.0426821756887854,3.0426821756887854
+colapinto_2026_3,2026,3,Japanese Grand Prix,colapinto,alpine,16.0,15,ridge_baseline,Ridge,14.49912705608324,-1.5008729439167592,1.5008729439167592
+driver_11_2026_2026_3,2026,3,Japanese Grand Prix,driver_11_2026,unknown_2026,17.0,19,ridge_baseline,Ridge,12.242686187766234,-4.757313812233766,4.757313812233766
+alonso_2026_3,2026,3,Japanese Grand Prix,alonso,aston_martin,18.0,21,ridge_baseline,Ridge,14.208053459728745,-3.7919465402712547,3.7919465402712547
+driver_77_2026_2026_3,2026,3,Japanese Grand Prix,driver_77_2026,unknown_2026,19.0,20,ridge_baseline,Ridge,12.810688149244402,-6.1893118507555975,6.1893118507555975
+albon_2026_3,2026,3,Japanese Grand Prix,albon,williams,20.0,17,ridge_baseline,Ridge,13.763758539762097,-6.236241460237903,6.236241460237903
+antonelli_2026_6,2026,6,Miami Grand Prix,antonelli,mercedes,1.0,1,ridge_baseline,Ridge,4.193662666348427,3.193662666348427,3.193662666348427
+max_verstappen_2026_6,2026,6,Miami Grand Prix,max_verstappen,red_bull,2.0,4,ridge_baseline,Ridge,3.085422913332885,1.0854229133328852,1.0854229133328852
+piastri_2026_6,2026,6,Miami Grand Prix,piastri,mclaren,3.0,7,ridge_baseline,Ridge,5.7132413363038435,2.7132413363038435,2.7132413363038435
+russell_2026_6,2026,6,Miami Grand Prix,russell,mercedes,4.0,5,ridge_baseline,Ridge,5.212372219054756,1.212372219054756,1.212372219054756
+driver_3_2026_2026_6,2026,6,Miami Grand Prix,driver_3_2026,unknown_2026,5.0,2,ridge_baseline,Ridge,5.1324703463266115,0.13247034632661148,0.13247034632661148
+hamilton_2026_6,2026,6,Miami Grand Prix,hamilton,ferrari,6.0,6,ridge_baseline,Ridge,6.751506523996966,0.7515065239969658,0.7515065239969658
+colapinto_2026_6,2026,6,Miami Grand Prix,colapinto,alpine,7.0,8,ridge_baseline,Ridge,11.544627753656012,4.5446277536560125,4.5446277536560125
+leclerc_2026_6,2026,6,Miami Grand Prix,leclerc,ferrari,8.0,3,ridge_baseline,Ridge,4.112405164590882,-3.887594835409118,3.887594835409118
+sainz_2026_6,2026,6,Miami Grand Prix,sainz,williams,9.0,13,ridge_baseline,Ridge,10.665105137488943,1.6651051374889434,1.6651051374889434
+albon_2026_6,2026,6,Miami Grand Prix,albon,williams,10.0,15,ridge_baseline,Ridge,12.887117506841067,2.887117506841067,2.887117506841067
+bearman_2026_6,2026,6,Miami Grand Prix,bearman,haas,11.0,12,ridge_baseline,Ridge,10.69995767135303,-0.30004232864697045,0.30004232864697045
+bortoleto_2026_6,2026,6,Miami Grand Prix,bortoleto,sauber,12.0,21,ridge_baseline,Ridge,16.55625989091697,4.556259890916969,4.556259890916969
+ocon_2026_6,2026,6,Miami Grand Prix,ocon,haas,13.0,14,ridge_baseline,Ridge,12.720796617057717,-0.2792033829422831,0.2792033829422831
+driver_41_2026_2026_6,2026,6,Miami Grand Prix,driver_41_2026,unknown_2026,14.0,16,ridge_baseline,Ridge,10.950473500943962,-3.0495264990560376,3.0495264990560376
+alonso_2026_6,2026,6,Miami Grand Prix,alonso,aston_martin,15.0,17,ridge_baseline,Ridge,12.500269119005235,-2.4997308809947647,2.4997308809947647
+driver_11_2026_2026_6,2026,6,Miami Grand Prix,driver_11_2026,unknown_2026,16.0,20,ridge_baseline,Ridge,12.612760116548921,-3.3872398834510786,3.3872398834510786
+stroll_2026_6,2026,6,Miami Grand Prix,stroll,aston_martin,17.0,18,ridge_baseline,Ridge,14.97593828959355,-2.0240617104064498,2.0240617104064498
+driver_77_2026_2026_6,2026,6,Miami Grand Prix,driver_77_2026,unknown_2026,18.0,19,ridge_baseline,Ridge,12.19718846264768,-5.802811537352319,5.802811537352319
+antonelli_2026_7,2026,7,Canadian Grand Prix,antonelli,mercedes,1.0,2,ridge_baseline,Ridge,4.470591398580363,3.470591398580363,3.470591398580363
+hamilton_2026_7,2026,7,Canadian Grand Prix,hamilton,ferrari,2.0,5,ridge_baseline,Ridge,6.1972919484264235,4.1972919484264235,4.1972919484264235
+driver_3_2026_2026_7,2026,7,Canadian Grand Prix,driver_3_2026,unknown_2026,3.0,6,ridge_baseline,Ridge,6.656114040262265,3.656114040262265,3.656114040262265
+leclerc_2026_7,2026,7,Canadian Grand Prix,leclerc,ferrari,4.0,8,ridge_baseline,Ridge,6.051620512427776,2.0516205124277764,2.0516205124277764
+hadjar_2026_7,2026,7,Canadian Grand Prix,hadjar,rb,5.0,7,ridge_baseline,Ridge,8.760152139112813,3.7601521391128134,3.7601521391128134
+colapinto_2026_7,2026,7,Canadian Grand Prix,colapinto,alpine,6.0,10,ridge_baseline,Ridge,12.389558447366117,6.389558447366117,6.389558447366117
+lawson_2026_7,2026,7,Canadian Grand Prix,lawson,rb,7.0,12,ridge_baseline,Ridge,11.51757715920939,4.51757715920939,4.51757715920939
+gasly_2026_7,2026,7,Canadian Grand Prix,gasly,alpine,8.0,14,ridge_baseline,Ridge,13.17273270487244,5.172732704872439,5.172732704872439
+sainz_2026_7,2026,7,Canadian Grand Prix,sainz,williams,9.0,15,ridge_baseline,Ridge,11.814896446352904,2.814896446352904,2.814896446352904
+bearman_2026_7,2026,7,Canadian Grand Prix,bearman,haas,10.0,16,ridge_baseline,Ridge,12.223601365288685,2.223601365288685,2.223601365288685
+piastri_2026_7,2026,7,Canadian Grand Prix,piastri,mclaren,11.0,4,ridge_baseline,Ridge,4.785174375661606,-6.214825624338394,6.214825624338394
+hulkenberg_2026_7,2026,7,Canadian Grand Prix,hulkenberg,sauber,12.0,11,ridge_baseline,Ridge,11.549591627856262,-0.4504083721437375,0.4504083721437375
+bortoleto_2026_7,2026,7,Canadian Grand Prix,bortoleto,sauber,13.0,13,ridge_baseline,Ridge,13.550334660768536,0.5503346607685362,0.5503346607685362
+ocon_2026_7,2026,7,Canadian Grand Prix,ocon,haas,14.0,17,ridge_baseline,Ridge,13.828868657092132,-0.17113134290786824,0.17113134290786824
+stroll_2026_7,2026,7,Canadian Grand Prix,stroll,aston_martin,15.0,22,ridge_baseline,Ridge,16.499581983529204,1.499581983529204,1.499581983529204
+driver_77_2026_2026_7,2026,7,Canadian Grand Prix,driver_77_2026,unknown_2026,16.0,21,ridge_baseline,Ridge,13.346979771511641,-2.6530202284883586,2.6530202284883586
+antonelli_2026_8,2026,8,Monaco Grand Prix,antonelli,mercedes,1.0,1,ridge_baseline,Ridge,4.188136238297744,3.1881362382977443,3.1881362382977443
+hamilton_2026_8,2026,8,Monaco Grand Prix,hamilton,ferrari,2.0,3,ridge_baseline,Ridge,5.499265134242565,3.499265134242565,3.499265134242565
+gasly_2026_8,2026,8,Monaco Grand Prix,gasly,alpine,3.0,9,ridge_baseline,Ridge,11.075560621407934,8.075560621407934,8.075560621407934
+hadjar_2026_8,2026,8,Monaco Grand Prix,hadjar,rb,4.0,5,ridge_baseline,Ridge,8.062125324928955,4.062125324928955,4.062125324928955
+piastri_2026_8,2026,8,Monaco Grand Prix,piastri,mclaren,5.0,7,ridge_baseline,Ridge,5.70771490825316,0.70771490825316,0.70771490825316
+lawson_2026_8,2026,8,Monaco Grand Prix,lawson,rb,6.0,10,ridge_baseline,Ridge,10.667120037448603,4.667120037448603,4.667120037448603
+driver_41_2026_2026_8,2026,8,Monaco Grand Prix,driver_41_2026,unknown_2026,7.0,15,ridge_baseline,Ridge,10.529375418992041,3.529375418992041,3.529375418992041
+albon_2026_8,2026,8,Monaco Grand Prix,albon,williams,8.0,11,ridge_baseline,Ridge,11.219304463185425,3.2193044631854253,3.2193044631854253
+ocon_2026_8,2026,8,Monaco Grand Prix,ocon,haas,9.0,17,ridge_baseline,Ridge,13.961985150710753,4.961985150710753,4.961985150710753
+alonso_2026_8,2026,8,Monaco Grand Prix,alonso,aston_martin,10.0,21,ridge_baseline,Ridge,14.15702930655951,4.15702930655951,4.15702930655951
+bortoleto_2026_8,2026,8,Monaco Grand Prix,bortoleto,sauber,11.0,16,ridge_baseline,Ridge,14.320444885783163,3.3204448857831625,3.3204448857831625
+russell_2026_8,2026,8,Monaco Grand Prix,russell,mercedes,12.0,6,ridge_baseline,Ridge,5.622417444905314,-6.377582555094686,6.377582555094686
+hulkenberg_2026_8,2026,8,Monaco Grand Prix,hulkenberg,sauber,13.0,13,ridge_baseline,Ridge,12.056560506546578,-0.9434394934534218,0.9434394934534218
+colapinto_2026_8,2026,8,Monaco Grand Prix,colapinto,alpine,14.0,14,ridge_baseline,Ridge,14.032531249012766,0.032531249012766494,0.032531249012766494
+driver_11_2026_2026_8,2026,8,Monaco Grand Prix,driver_11_2026,unknown_2026,15.0,18,ridge_baseline,Ridge,11.623660073118831,-3.376339926881169,3.376339926881169
+hamilton_2026_9,2026,9,Barcelona Grand Prix,hamilton,ferrari,1.0,2,ridge_baseline,Ridge,5.059400220849959,4.059400220849959,4.059400220849959
+russell_2026_9,2026,9,Barcelona Grand Prix,russell,mercedes,2.0,1,ridge_baseline,Ridge,3.520265915907749,1.520265915907749,1.520265915907749
+max_verstappen_2026_9,2026,9,Barcelona Grand Prix,max_verstappen,red_bull,3.0,4,ridge_baseline,Ridge,3.055603225790837,0.05560322579083721,0.05560322579083721
+driver_3_2026_2026_9,2026,9,Barcelona Grand Prix,driver_3_2026,unknown_2026,4.0,5,ridge_baseline,Ridge,6.34936562048828,2.34936562048828,2.34936562048828
+piastri_2026_9,2026,9,Barcelona Grand Prix,piastri,mclaren,5.0,7,ridge_baseline,Ridge,5.683421648761794,0.6834216487617937,0.6834216487617937
+hadjar_2026_9,2026,9,Barcelona Grand Prix,hadjar,rb,6.0,6,ridge_baseline,Ridge,8.453403719338828,2.4534037193388283,2.4534037193388283
+gasly_2026_9,2026,9,Barcelona Grand Prix,gasly,alpine,7.0,14,ridge_baseline,Ridge,13.129125631422767,6.129125631422767,6.129125631422767
+lawson_2026_9,2026,9,Barcelona Grand Prix,lawson,rb,8.0,8,ridge_baseline,Ridge,9.811683470154756,1.8116834701547564,1.8116834701547564
+driver_41_2026_2026_9,2026,9,Barcelona Grand Prix,driver_41_2026,unknown_2026,9.0,11,ridge_baseline,Ridge,8.842795543895717,-0.15720445610428335,0.15720445610428335
+colapinto_2026_9,2026,9,Barcelona Grand Prix,colapinto,alpine,10.0,13,ridge_baseline,Ridge,13.592666335620162,3.5926663356201622,3.5926663356201622
+bortoleto_2026_9,2026,9,Barcelona Grand Prix,bortoleto,sauber,11.0,12,ridge_baseline,Ridge,12.786295318263766,1.7862953182637664,1.7862953182637664
+sainz_2026_9,2026,9,Barcelona Grand Prix,sainz,williams,12.0,16,ridge_baseline,Ridge,11.882000411650612,-0.11799958834938806,0.11799958834938806
+ocon_2026_9,2026,9,Barcelona Grand Prix,ocon,haas,13.0,17,ridge_baseline,Ridge,13.937691891219387,0.9376918912193872,0.9376918912193872
+driver_11_2026_2026_9,2026,9,Barcelona Grand Prix,driver_11_2026,unknown_2026,14.0,19,ridge_baseline,Ridge,12.014938467528703,-1.9850615324712972,1.9850615324712972
+russell_2026_1,2026,1,Australian Grand Prix,russell,mercedes,1.0,1,lightgbm_tuned,LightGBM,3.2677095981646325,2.2677095981646325,2.2677095981646325
+antonelli_2026_1,2026,1,Australian Grand Prix,antonelli,mercedes,2.0,2,lightgbm_tuned,LightGBM,4.118230889688122,2.118230889688122,2.118230889688122
+leclerc_2026_1,2026,1,Australian Grand Prix,leclerc,ferrari,3.0,4,lightgbm_tuned,LightGBM,3.8187254911487662,0.8187254911487662,0.8187254911487662
+hamilton_2026_1,2026,1,Australian Grand Prix,hamilton,ferrari,4.0,7,lightgbm_tuned,LightGBM,6.830516579851176,2.830516579851176,2.830516579851176
+max_verstappen_2026_1,2026,1,Australian Grand Prix,max_verstappen,red_bull,5.0,6,lightgbm_tuned,LightGBM,4.486473911697305,-0.5135260883026946,0.5135260883026946
+driver_3_2026_2026_1,2026,1,Australian Grand Prix,driver_3_2026,unknown_2026,6.0,20,lightgbm_tuned,LightGBM,13.285663758476659,7.285663758476659,7.285663758476659
+bearman_2026_1,2026,1,Australian Grand Prix,bearman,haas,7.0,12,lightgbm_tuned,LightGBM,10.03694118405277,3.03694118405277,3.03694118405277
+driver_41_2026_2026_1,2026,1,Australian Grand Prix,driver_41_2026,unknown_2026,8.0,9,lightgbm_tuned,LightGBM,8.438616184920928,0.438616184920928,0.438616184920928
+bortoleto_2026_1,2026,1,Australian Grand Prix,bortoleto,sauber,9.0,10,lightgbm_tuned,LightGBM,10.60079183928534,1.6007918392853409,1.6007918392853409
+gasly_2026_1,2026,1,Australian Grand Prix,gasly,alpine,10.0,14,lightgbm_tuned,LightGBM,13.726572606009167,3.7265726060091673,3.7265726060091673
+ocon_2026_1,2026,1,Australian Grand Prix,ocon,haas,11.0,13,lightgbm_tuned,LightGBM,12.044482052678505,1.0444820526785055,1.0444820526785055
+albon_2026_1,2026,1,Australian Grand Prix,albon,williams,12.0,15,lightgbm_tuned,LightGBM,13.232303731404224,1.2323037314042242,1.2323037314042242
+lawson_2026_1,2026,1,Australian Grand Prix,lawson,rb,13.0,8,lightgbm_tuned,LightGBM,10.27007622487642,-2.7299237751235808,2.7299237751235808
+colapinto_2026_1,2026,1,Australian Grand Prix,colapinto,alpine,14.0,16,lightgbm_tuned,LightGBM,15.429809307436093,1.4298093074360931,1.4298093074360931
+sainz_2026_1,2026,1,Australian Grand Prix,sainz,williams,15.0,21,lightgbm_tuned,LightGBM,13.32623665750064,-1.6737633424993597,1.6737633424993597
+driver_11_2026_2026_1,2026,1,Australian Grand Prix,driver_11_2026,unknown_2026,16.0,18,lightgbm_tuned,LightGBM,13.239836461323126,-2.760163538676874,2.760163538676874
+antonelli_2026_2,2026,2,Chinese Grand Prix,antonelli,mercedes,1.0,1,lightgbm_tuned,LightGBM,3.3821287972724017,2.3821287972724017,2.3821287972724017
+russell_2026_2,2026,2,Chinese Grand Prix,russell,mercedes,2.0,2,lightgbm_tuned,LightGBM,4.175108845208558,2.175108845208558,2.175108845208558
+hamilton_2026_2,2026,2,Chinese Grand Prix,hamilton,ferrari,3.0,3,lightgbm_tuned,LightGBM,4.6283722380032035,1.6283722380032035,1.6283722380032035
+leclerc_2026_2,2026,2,Chinese Grand Prix,leclerc,ferrari,4.0,4,lightgbm_tuned,LightGBM,3.8429164037628043,-0.1570835962371957,0.1570835962371957
+bearman_2026_2,2026,2,Chinese Grand Prix,bearman,haas,5.0,10,lightgbm_tuned,LightGBM,8.96617757202641,3.9661775720264103,3.9661775720264103
+gasly_2026_2,2026,2,Chinese Grand Prix,gasly,alpine,6.0,7,lightgbm_tuned,LightGBM,9.138264474420431,3.1382644744204313,3.1382644744204313
+lawson_2026_2,2026,2,Chinese Grand Prix,lawson,rb,7.0,14,lightgbm_tuned,LightGBM,12.839043929904854,5.839043929904854,5.839043929904854
+hadjar_2026_2,2026,2,Chinese Grand Prix,hadjar,rb,8.0,9,lightgbm_tuned,LightGBM,9.576718684428881,1.5767186844288812,1.5767186844288812
+sainz_2026_2,2026,2,Chinese Grand Prix,sainz,williams,9.0,17,lightgbm_tuned,LightGBM,12.266164388476655,3.266164388476655,3.266164388476655
+colapinto_2026_2,2026,2,Chinese Grand Prix,colapinto,alpine,10.0,12,lightgbm_tuned,LightGBM,12.531778257063241,2.531778257063241,2.531778257063241
+hulkenberg_2026_2,2026,2,Chinese Grand Prix,hulkenberg,sauber,11.0,11,lightgbm_tuned,LightGBM,10.89287005633058,-0.10712994366942041,0.10712994366942041
+driver_41_2026_2026_2,2026,2,Chinese Grand Prix,driver_41_2026,unknown_2026,12.0,15,lightgbm_tuned,LightGBM,11.764355934241046,-0.23564406575895447,0.23564406575895447
+driver_77_2026_2026_2,2026,2,Chinese Grand Prix,driver_77_2026,unknown_2026,13.0,19,lightgbm_tuned,LightGBM,13.149419835696092,0.14941983569609185,0.14941983569609185
+ocon_2026_2,2026,2,Chinese Grand Prix,ocon,haas,14.0,13,lightgbm_tuned,LightGBM,11.2016014308827,-2.7983985691172997,2.7983985691172997
+driver_11_2026_2026_2,2026,2,Chinese Grand Prix,driver_11_2026,unknown_2026,15.0,21,lightgbm_tuned,LightGBM,13.149419835696092,-1.8505801643039081,1.8505801643039081
+antonelli_2026_3,2026,3,Japanese Grand Prix,antonelli,mercedes,1.0,1,lightgbm_tuned,LightGBM,3.457547701054696,2.457547701054696,2.457547701054696
+piastri_2026_3,2026,3,Japanese Grand Prix,piastri,mclaren,2.0,3,lightgbm_tuned,LightGBM,2.8045908556062273,0.8045908556062273,0.8045908556062273
+leclerc_2026_3,2026,3,Japanese Grand Prix,leclerc,ferrari,3.0,4,lightgbm_tuned,LightGBM,3.768257401341574,0.7682574013415739,0.7682574013415739
+russell_2026_3,2026,3,Japanese Grand Prix,russell,mercedes,4.0,2,lightgbm_tuned,LightGBM,4.169151191354408,0.16915119135440815,0.16915119135440815
+max_verstappen_2026_3,2026,3,Japanese Grand Prix,max_verstappen,red_bull,5.0,5,lightgbm_tuned,LightGBM,3.7097000431536196,-1.2902999568463804,1.2902999568463804
+hamilton_2026_3,2026,3,Japanese Grand Prix,hamilton,ferrari,6.0,6,lightgbm_tuned,LightGBM,6.478535159830341,0.4785351598303409,0.4785351598303409
+gasly_2026_3,2026,3,Japanese Grand Prix,gasly,alpine,7.0,7,lightgbm_tuned,LightGBM,9.420399040253393,2.4203990402533933,2.4203990402533933
+driver_3_2026_2026_3,2026,3,Japanese Grand Prix,driver_3_2026,unknown_2026,8.0,11,lightgbm_tuned,LightGBM,9.435914408718563,1.4359144087185634,1.4359144087185634
+lawson_2026_3,2026,3,Japanese Grand Prix,lawson,rb,9.0,14,lightgbm_tuned,LightGBM,12.972942929138725,3.972942929138725,3.972942929138725
+ocon_2026_3,2026,3,Japanese Grand Prix,ocon,haas,10.0,12,lightgbm_tuned,LightGBM,11.118058490374592,1.118058490374592,1.118058490374592
+hulkenberg_2026_3,2026,3,Japanese Grand Prix,hulkenberg,sauber,11.0,13,lightgbm_tuned,LightGBM,11.58738506018715,0.5873850601871506,0.5873850601871506
+hadjar_2026_3,2026,3,Japanese Grand Prix,hadjar,rb,12.0,8,lightgbm_tuned,LightGBM,9.63069812046404,-2.3693018795359606,2.3693018795359606
+bortoleto_2026_3,2026,3,Japanese Grand Prix,bortoleto,sauber,13.0,9,lightgbm_tuned,LightGBM,9.760884801743119,-3.239115198256881,3.239115198256881
+driver_41_2026_2026_3,2026,3,Japanese Grand Prix,driver_41_2026,unknown_2026,14.0,10,lightgbm_tuned,LightGBM,9.05480820575209,-4.9451917942479096,4.9451917942479096
+sainz_2026_3,2026,3,Japanese Grand Prix,sainz,williams,15.0,16,lightgbm_tuned,LightGBM,12.038270748374924,-2.9617292516250764,2.9617292516250764
+colapinto_2026_3,2026,3,Japanese Grand Prix,colapinto,alpine,16.0,15,lightgbm_tuned,LightGBM,14.711560310444982,-1.2884396895550179,1.2884396895550179
+driver_11_2026_2026_3,2026,3,Japanese Grand Prix,driver_11_2026,unknown_2026,17.0,19,lightgbm_tuned,LightGBM,13.314518160819732,-3.6854818391802677,3.6854818391802677
+alonso_2026_3,2026,3,Japanese Grand Prix,alonso,aston_martin,18.0,21,lightgbm_tuned,LightGBM,13.622490477092176,-4.377509522907824,4.377509522907824
+driver_77_2026_2026_3,2026,3,Japanese Grand Prix,driver_77_2026,unknown_2026,19.0,20,lightgbm_tuned,LightGBM,13.314518160819732,-5.685481839180268,5.685481839180268
+albon_2026_3,2026,3,Japanese Grand Prix,albon,williams,20.0,17,lightgbm_tuned,LightGBM,13.539134413414905,-6.460865586585095,6.460865586585095
+antonelli_2026_6,2026,6,Miami Grand Prix,antonelli,mercedes,1.0,1,lightgbm_tuned,LightGBM,3.7228756908780096,2.7228756908780096,2.7228756908780096
+max_verstappen_2026_6,2026,6,Miami Grand Prix,max_verstappen,red_bull,2.0,4,lightgbm_tuned,LightGBM,2.775323871007457,0.775323871007457,0.775323871007457
+piastri_2026_6,2026,6,Miami Grand Prix,piastri,mclaren,3.0,7,lightgbm_tuned,LightGBM,5.081800179234153,2.081800179234153,2.081800179234153
+russell_2026_6,2026,6,Miami Grand Prix,russell,mercedes,4.0,5,lightgbm_tuned,LightGBM,5.068711147865407,1.0687111478654074,1.0687111478654074
+driver_3_2026_2026_6,2026,6,Miami Grand Prix,driver_3_2026,unknown_2026,5.0,2,lightgbm_tuned,LightGBM,4.226106691882363,-0.7738933081176373,0.7738933081176373
+hamilton_2026_6,2026,6,Miami Grand Prix,hamilton,ferrari,6.0,6,lightgbm_tuned,LightGBM,6.565082471421116,0.5650824714211158,0.5650824714211158
+colapinto_2026_6,2026,6,Miami Grand Prix,colapinto,alpine,7.0,8,lightgbm_tuned,LightGBM,11.350600129814076,4.350600129814076,4.350600129814076
+leclerc_2026_6,2026,6,Miami Grand Prix,leclerc,ferrari,8.0,3,lightgbm_tuned,LightGBM,3.4634616004526078,-4.536538399547393,4.536538399547393
+sainz_2026_6,2026,6,Miami Grand Prix,sainz,williams,9.0,13,lightgbm_tuned,LightGBM,10.828894360069402,1.8288943600694019,1.8288943600694019
+albon_2026_6,2026,6,Miami Grand Prix,albon,williams,10.0,15,lightgbm_tuned,LightGBM,13.19064201767727,3.19064201767727,3.19064201767727
+bearman_2026_6,2026,6,Miami Grand Prix,bearman,haas,11.0,12,lightgbm_tuned,LightGBM,9.989896368939757,-1.0101036310602431,1.0101036310602431
+bortoleto_2026_6,2026,6,Miami Grand Prix,bortoleto,sauber,12.0,21,lightgbm_tuned,LightGBM,14.245799194251699,2.245799194251699,2.245799194251699
+ocon_2026_6,2026,6,Miami Grand Prix,ocon,haas,13.0,14,lightgbm_tuned,LightGBM,12.669524990770807,-0.33047500922919326,0.33047500922919326
+driver_41_2026_2026_6,2026,6,Miami Grand Prix,driver_41_2026,unknown_2026,14.0,16,lightgbm_tuned,LightGBM,12.357440005241283,-1.6425599947587166,1.6425599947587166
+alonso_2026_6,2026,6,Miami Grand Prix,alonso,aston_martin,15.0,17,lightgbm_tuned,LightGBM,13.177788006895115,-1.8222119931048848,1.8222119931048848
+driver_11_2026_2026_6,2026,6,Miami Grand Prix,driver_11_2026,unknown_2026,16.0,20,lightgbm_tuned,LightGBM,13.56974692298991,-2.4302530770100894,2.4302530770100894
+stroll_2026_6,2026,6,Miami Grand Prix,stroll,aston_martin,17.0,18,lightgbm_tuned,LightGBM,14.371754354312648,-2.628245645687352,2.628245645687352
+driver_77_2026_2026_6,2026,6,Miami Grand Prix,driver_77_2026,unknown_2026,18.0,19,lightgbm_tuned,LightGBM,13.56974692298991,-4.430253077010089,4.430253077010089
+antonelli_2026_7,2026,7,Canadian Grand Prix,antonelli,mercedes,1.0,2,lightgbm_tuned,LightGBM,4.301875713832704,3.301875713832704,3.301875713832704
+hamilton_2026_7,2026,7,Canadian Grand Prix,hamilton,ferrari,2.0,5,lightgbm_tuned,LightGBM,5.710872631179364,3.710872631179364,3.710872631179364
+driver_3_2026_2026_7,2026,7,Canadian Grand Prix,driver_3_2026,unknown_2026,3.0,6,lightgbm_tuned,LightGBM,6.0696632591070445,3.0696632591070445,3.0696632591070445
+leclerc_2026_7,2026,7,Canadian Grand Prix,leclerc,ferrari,4.0,8,lightgbm_tuned,LightGBM,6.205115982732131,2.2051159827321314,2.2051159827321314
+hadjar_2026_7,2026,7,Canadian Grand Prix,hadjar,rb,5.0,7,lightgbm_tuned,LightGBM,8.856554400421551,3.856554400421551,3.856554400421551
+colapinto_2026_7,2026,7,Canadian Grand Prix,colapinto,alpine,6.0,10,lightgbm_tuned,LightGBM,12.17442195015876,6.174421950158759,6.174421950158759
+lawson_2026_7,2026,7,Canadian Grand Prix,lawson,rb,7.0,12,lightgbm_tuned,LightGBM,11.73994092808004,4.73994092808004,4.73994092808004
+gasly_2026_7,2026,7,Canadian Grand Prix,gasly,alpine,8.0,14,lightgbm_tuned,LightGBM,13.589615512953468,5.589615512953468,5.589615512953468
+sainz_2026_7,2026,7,Canadian Grand Prix,sainz,williams,9.0,15,lightgbm_tuned,LightGBM,12.035064411880803,3.0350644118808034,3.0350644118808034
+bearman_2026_7,2026,7,Canadian Grand Prix,bearman,haas,10.0,16,lightgbm_tuned,LightGBM,11.69545435564681,1.6954543556468096,1.6954543556468096
+piastri_2026_7,2026,7,Canadian Grand Prix,piastri,mclaren,11.0,4,lightgbm_tuned,LightGBM,3.1580366370439967,-7.841963362956003,7.841963362956003
+hulkenberg_2026_7,2026,7,Canadian Grand Prix,hulkenberg,sauber,12.0,11,lightgbm_tuned,LightGBM,10.94989388218936,-1.0501061178106408,1.0501061178106408
+bortoleto_2026_7,2026,7,Canadian Grand Prix,bortoleto,sauber,13.0,13,lightgbm_tuned,LightGBM,12.013546291986161,-0.9864537080138387,0.9864537080138387
+ocon_2026_7,2026,7,Canadian Grand Prix,ocon,haas,14.0,17,lightgbm_tuned,LightGBM,12.989119819772341,-1.0108801802276588,1.0108801802276588
+stroll_2026_7,2026,7,Canadian Grand Prix,stroll,aston_martin,15.0,22,lightgbm_tuned,LightGBM,14.287064004440587,-0.7129359955594126,0.7129359955594126
+driver_77_2026_2026_7,2026,7,Canadian Grand Prix,driver_77_2026,unknown_2026,16.0,21,lightgbm_tuned,LightGBM,13.462162469948167,-2.537837530051833,2.537837530051833
+antonelli_2026_8,2026,8,Monaco Grand Prix,antonelli,mercedes,1.0,1,lightgbm_tuned,LightGBM,3.4464606310489065,2.4464606310489065,2.4464606310489065
+hamilton_2026_8,2026,8,Monaco Grand Prix,hamilton,ferrari,2.0,3,lightgbm_tuned,LightGBM,4.533902678160489,2.533902678160489,2.533902678160489
+gasly_2026_8,2026,8,Monaco Grand Prix,gasly,alpine,3.0,9,lightgbm_tuned,LightGBM,10.280394782950163,7.280394782950163,7.280394782950163
+hadjar_2026_8,2026,8,Monaco Grand Prix,hadjar,rb,4.0,5,lightgbm_tuned,LightGBM,7.279279057823254,3.2792790578232536,3.2792790578232536
+piastri_2026_8,2026,8,Monaco Grand Prix,piastri,mclaren,5.0,7,lightgbm_tuned,LightGBM,4.983797607544381,-0.01620239245561894,0.01620239245561894
+lawson_2026_8,2026,8,Monaco Grand Prix,lawson,rb,6.0,10,lightgbm_tuned,LightGBM,10.445741330613908,4.445741330613908,4.445741330613908
+driver_41_2026_2026_8,2026,8,Monaco Grand Prix,driver_41_2026,unknown_2026,7.0,15,lightgbm_tuned,LightGBM,11.569783969322954,4.569783969322954,4.569783969322954
+albon_2026_8,2026,8,Monaco Grand Prix,albon,williams,8.0,11,lightgbm_tuned,LightGBM,11.694617657204137,3.6946176572041374,3.6946176572041374
+ocon_2026_8,2026,8,Monaco Grand Prix,ocon,haas,9.0,17,lightgbm_tuned,LightGBM,13.18412670420887,4.18412670420887,4.18412670420887
+alonso_2026_8,2026,8,Monaco Grand Prix,alonso,aston_martin,10.0,21,lightgbm_tuned,LightGBM,13.58206522574528,3.5820652257452803,3.5820652257452803
+bortoleto_2026_8,2026,8,Monaco Grand Prix,bortoleto,sauber,11.0,16,lightgbm_tuned,LightGBM,13.159982999537286,2.159982999537286,2.159982999537286
+russell_2026_8,2026,8,Monaco Grand Prix,russell,mercedes,12.0,6,lightgbm_tuned,LightGBM,5.63169919859401,-6.36830080140599,6.36830080140599
+hulkenberg_2026_8,2026,8,Monaco Grand Prix,hulkenberg,sauber,13.0,13,lightgbm_tuned,LightGBM,11.54973851035699,-1.45026148964301,1.45026148964301
+colapinto_2026_8,2026,8,Monaco Grand Prix,colapinto,alpine,14.0,14,lightgbm_tuned,LightGBM,14.726052189781429,0.7260521897814289,0.7260521897814289
+driver_11_2026_2026_8,2026,8,Monaco Grand Prix,driver_11_2026,unknown_2026,15.0,18,lightgbm_tuned,LightGBM,12.966113110419116,-2.0338868895808844,2.0338868895808844
+hamilton_2026_9,2026,9,Barcelona Grand Prix,hamilton,ferrari,1.0,2,lightgbm_tuned,LightGBM,4.478306174156249,3.4783061741562493,3.4783061741562493
+russell_2026_9,2026,9,Barcelona Grand Prix,russell,mercedes,2.0,1,lightgbm_tuned,LightGBM,3.4685382123707393,1.4685382123707393,1.4685382123707393
+max_verstappen_2026_9,2026,9,Barcelona Grand Prix,max_verstappen,red_bull,3.0,4,lightgbm_tuned,LightGBM,2.8560711944189094,-0.14392880558109056,0.14392880558109056
+driver_3_2026_2026_9,2026,9,Barcelona Grand Prix,driver_3_2026,unknown_2026,4.0,5,lightgbm_tuned,LightGBM,5.180674735752274,1.180674735752274,1.180674735752274
+piastri_2026_9,2026,9,Barcelona Grand Prix,piastri,mclaren,5.0,7,lightgbm_tuned,LightGBM,4.95134273187598,-0.04865726812402027,0.04865726812402027
+hadjar_2026_9,2026,9,Barcelona Grand Prix,hadjar,rb,6.0,6,lightgbm_tuned,LightGBM,7.7588700228596945,1.7588700228596945,1.7588700228596945
+gasly_2026_9,2026,9,Barcelona Grand Prix,gasly,alpine,7.0,14,lightgbm_tuned,LightGBM,13.895196355635417,6.8951963556354166,6.8951963556354166
+lawson_2026_9,2026,9,Barcelona Grand Prix,lawson,rb,8.0,8,lightgbm_tuned,LightGBM,10.328886976813425,2.3288869768134255,2.3288869768134255
+driver_41_2026_2026_9,2026,9,Barcelona Grand Prix,driver_41_2026,unknown_2026,9.0,11,lightgbm_tuned,LightGBM,9.294345523851307,0.2943455238513071,0.2943455238513071
+colapinto_2026_9,2026,9,Barcelona Grand Prix,colapinto,alpine,10.0,13,lightgbm_tuned,LightGBM,13.795586784344755,3.7955867843447546,3.7955867843447546
+bortoleto_2026_9,2026,9,Barcelona Grand Prix,bortoleto,sauber,11.0,12,lightgbm_tuned,LightGBM,11.648802104773647,0.6488021047736474,0.6488021047736474
+sainz_2026_9,2026,9,Barcelona Grand Prix,sainz,williams,12.0,16,lightgbm_tuned,LightGBM,11.43859841906417,-0.5614015809358293,0.5614015809358293
+ocon_2026_9,2026,9,Barcelona Grand Prix,ocon,haas,13.0,17,lightgbm_tuned,LightGBM,12.957465326349505,-0.042534673650495236,0.042534673650495236
+driver_11_2026_2026_9,2026,9,Barcelona Grand Prix,driver_11_2026,unknown_2026,14.0,19,lightgbm_tuned,LightGBM,12.489651468380535,-1.5103485316194654,1.5103485316194654
+russell_2026_1,2026,1,Australian Grand Prix,russell,mercedes,1.0,1,random_forest_tuned,Random Forest,3.440381594945718,2.440381594945718,2.440381594945718
+antonelli_2026_1,2026,1,Australian Grand Prix,antonelli,mercedes,2.0,2,random_forest_tuned,Random Forest,3.9817243205356987,1.9817243205356987,1.9817243205356987
+leclerc_2026_1,2026,1,Australian Grand Prix,leclerc,ferrari,3.0,4,random_forest_tuned,Random Forest,3.753518344612251,0.7535183446122509,0.7535183446122509
+hamilton_2026_1,2026,1,Australian Grand Prix,hamilton,ferrari,4.0,7,random_forest_tuned,Random Forest,6.999046153451228,2.9990461534512276,2.9990461534512276
+max_verstappen_2026_1,2026,1,Australian Grand Prix,max_verstappen,red_bull,5.0,6,random_forest_tuned,Random Forest,4.808568119148347,-0.19143188085165264,0.19143188085165264
+driver_3_2026_2026_1,2026,1,Australian Grand Prix,driver_3_2026,unknown_2026,6.0,20,random_forest_tuned,Random Forest,12.50108462639342,6.501084626393419,6.501084626393419
+bearman_2026_1,2026,1,Australian Grand Prix,bearman,haas,7.0,12,random_forest_tuned,Random Forest,10.62580438743018,3.625804387430181,3.625804387430181
+driver_41_2026_2026_1,2026,1,Australian Grand Prix,driver_41_2026,unknown_2026,8.0,9,random_forest_tuned,Random Forest,9.090788708867779,1.0907887088677786,1.0907887088677786
+bortoleto_2026_1,2026,1,Australian Grand Prix,bortoleto,sauber,9.0,10,random_forest_tuned,Random Forest,11.168008418699927,2.1680084186999267,2.1680084186999267
+gasly_2026_1,2026,1,Australian Grand Prix,gasly,alpine,10.0,14,random_forest_tuned,Random Forest,13.394364207059908,3.3943642070599083,3.3943642070599083
+ocon_2026_1,2026,1,Australian Grand Prix,ocon,haas,11.0,13,random_forest_tuned,Random Forest,11.884737081819585,0.8847370818195852,0.8847370818195852
+albon_2026_1,2026,1,Australian Grand Prix,albon,williams,12.0,15,random_forest_tuned,Random Forest,13.222216061753725,1.2222160617537252,1.2222160617537252
+lawson_2026_1,2026,1,Australian Grand Prix,lawson,rb,13.0,8,random_forest_tuned,Random Forest,10.242553867616431,-2.757446132383569,2.757446132383569
+colapinto_2026_1,2026,1,Australian Grand Prix,colapinto,alpine,14.0,16,random_forest_tuned,Random Forest,15.374264112090847,1.374264112090847,1.374264112090847
+sainz_2026_1,2026,1,Australian Grand Prix,sainz,williams,15.0,21,random_forest_tuned,Random Forest,12.55299769451942,-2.4470023054805807,2.4470023054805807
+driver_11_2026_2026_1,2026,1,Australian Grand Prix,driver_11_2026,unknown_2026,16.0,18,random_forest_tuned,Random Forest,12.419913456012786,-3.580086543987214,3.580086543987214
+antonelli_2026_2,2026,2,Chinese Grand Prix,antonelli,mercedes,1.0,1,random_forest_tuned,Random Forest,3.515675207621765,2.515675207621765,2.515675207621765
+russell_2026_2,2026,2,Chinese Grand Prix,russell,mercedes,2.0,2,random_forest_tuned,Random Forest,3.9643671915593495,1.9643671915593495,1.9643671915593495
+hamilton_2026_2,2026,2,Chinese Grand Prix,hamilton,ferrari,3.0,3,random_forest_tuned,Random Forest,4.450974096213962,1.4509740962139617,1.4509740962139617
+leclerc_2026_2,2026,2,Chinese Grand Prix,leclerc,ferrari,4.0,4,random_forest_tuned,Random Forest,3.7340035252458117,-0.2659964747541883,0.2659964747541883
+bearman_2026_2,2026,2,Chinese Grand Prix,bearman,haas,5.0,10,random_forest_tuned,Random Forest,10.092726585853777,5.092726585853777,5.092726585853777
+gasly_2026_2,2026,2,Chinese Grand Prix,gasly,alpine,6.0,7,random_forest_tuned,Random Forest,10.110215524539862,4.110215524539862,4.110215524539862
+lawson_2026_2,2026,2,Chinese Grand Prix,lawson,rb,7.0,14,random_forest_tuned,Random Forest,12.857371357551786,5.857371357551786,5.857371357551786
+hadjar_2026_2,2026,2,Chinese Grand Prix,hadjar,rb,8.0,9,random_forest_tuned,Random Forest,10.225309523237376,2.2253095232373763,2.2253095232373763
+sainz_2026_2,2026,2,Chinese Grand Prix,sainz,williams,9.0,17,random_forest_tuned,Random Forest,12.13281413309111,3.1328141330911095,3.1328141330911095
+colapinto_2026_2,2026,2,Chinese Grand Prix,colapinto,alpine,10.0,12,random_forest_tuned,Random Forest,12.717464490531642,2.7174644905316416,2.7174644905316416
+hulkenberg_2026_2,2026,2,Chinese Grand Prix,hulkenberg,sauber,11.0,11,random_forest_tuned,Random Forest,10.750263652384298,-0.24973634761570196,0.24973634761570196
+driver_41_2026_2026_2,2026,2,Chinese Grand Prix,driver_41_2026,unknown_2026,12.0,15,random_forest_tuned,Random Forest,11.821271279493102,-0.17872872050689814,0.17872872050689814
+driver_77_2026_2026_2,2026,2,Chinese Grand Prix,driver_77_2026,unknown_2026,13.0,19,random_forest_tuned,Random Forest,12.529483409750659,-0.4705165902493409,0.4705165902493409
+ocon_2026_2,2026,2,Chinese Grand Prix,ocon,haas,14.0,13,random_forest_tuned,Random Forest,11.83132336407412,-2.1686766359258804,2.1686766359258804
+driver_11_2026_2026_2,2026,2,Chinese Grand Prix,driver_11_2026,unknown_2026,15.0,21,random_forest_tuned,Random Forest,12.529483409750659,-2.470516590249341,2.470516590249341
+antonelli_2026_3,2026,3,Japanese Grand Prix,antonelli,mercedes,1.0,1,random_forest_tuned,Random Forest,3.493703103496295,2.493703103496295,2.493703103496295
+piastri_2026_3,2026,3,Japanese Grand Prix,piastri,mclaren,2.0,3,random_forest_tuned,Random Forest,2.676637501816028,0.6766375018160282,0.6766375018160282
+leclerc_2026_3,2026,3,Japanese Grand Prix,leclerc,ferrari,3.0,4,random_forest_tuned,Random Forest,3.5597880598831457,0.5597880598831457,0.5597880598831457
+russell_2026_3,2026,3,Japanese Grand Prix,russell,mercedes,4.0,2,random_forest_tuned,Random Forest,3.943994867302074,-0.05600513269792584,0.05600513269792584
+max_verstappen_2026_3,2026,3,Japanese Grand Prix,max_verstappen,red_bull,5.0,5,random_forest_tuned,Random Forest,3.5989523772661776,-1.4010476227338224,1.4010476227338224
+hamilton_2026_3,2026,3,Japanese Grand Prix,hamilton,ferrari,6.0,6,random_forest_tuned,Random Forest,6.5281883696988965,0.5281883696988965,0.5281883696988965
+gasly_2026_3,2026,3,Japanese Grand Prix,gasly,alpine,7.0,7,random_forest_tuned,Random Forest,10.009162717583523,3.009162717583523,3.009162717583523
+driver_3_2026_2026_3,2026,3,Japanese Grand Prix,driver_3_2026,unknown_2026,8.0,11,random_forest_tuned,Random Forest,9.567665313764852,1.5676653137648522,1.5676653137648522
+lawson_2026_3,2026,3,Japanese Grand Prix,lawson,rb,9.0,14,random_forest_tuned,Random Forest,12.833961951627284,3.833961951627284,3.833961951627284
+ocon_2026_3,2026,3,Japanese Grand Prix,ocon,haas,10.0,12,random_forest_tuned,Random Forest,11.060666512855297,1.0606665128552972,1.0606665128552972
+hulkenberg_2026_3,2026,3,Japanese Grand Prix,hulkenberg,sauber,11.0,13,random_forest_tuned,Random Forest,11.545660481767325,0.5456604817673245,0.5456604817673245
+hadjar_2026_3,2026,3,Japanese Grand Prix,hadjar,rb,12.0,8,random_forest_tuned,Random Forest,9.7924287037977,-2.2075712962022997,2.2075712962022997
+bortoleto_2026_3,2026,3,Japanese Grand Prix,bortoleto,sauber,13.0,9,random_forest_tuned,Random Forest,10.90063828358593,-2.0993617164140694,2.0993617164140694
+driver_41_2026_2026_3,2026,3,Japanese Grand Prix,driver_41_2026,unknown_2026,14.0,10,random_forest_tuned,Random Forest,9.501100329198717,-4.498899670801283,4.498899670801283
+sainz_2026_3,2026,3,Japanese Grand Prix,sainz,williams,15.0,16,random_forest_tuned,Random Forest,12.056091925270708,-2.9439080747292916,2.9439080747292916
+colapinto_2026_3,2026,3,Japanese Grand Prix,colapinto,alpine,16.0,15,random_forest_tuned,Random Forest,15.07066380051745,-0.9293361994825506,0.9293361994825506
+driver_11_2026_2026_3,2026,3,Japanese Grand Prix,driver_11_2026,unknown_2026,17.0,19,random_forest_tuned,Random Forest,12.630140846987514,-4.369859153012486,4.369859153012486
+alonso_2026_3,2026,3,Japanese Grand Prix,alonso,aston_martin,18.0,21,random_forest_tuned,Random Forest,13.385937212635245,-4.614062787364755,4.614062787364755
+driver_77_2026_2026_3,2026,3,Japanese Grand Prix,driver_77_2026,unknown_2026,19.0,20,random_forest_tuned,Random Forest,12.630140846987514,-6.369859153012486,6.369859153012486
+albon_2026_3,2026,3,Japanese Grand Prix,albon,williams,20.0,17,random_forest_tuned,Random Forest,13.311784570485473,-6.688215429514527,6.688215429514527
+antonelli_2026_6,2026,6,Miami Grand Prix,antonelli,mercedes,1.0,1,random_forest_tuned,Random Forest,3.420501909608263,2.420501909608263,2.420501909608263
+max_verstappen_2026_6,2026,6,Miami Grand Prix,max_verstappen,red_bull,2.0,4,random_forest_tuned,Random Forest,2.661138909259549,0.6611389092595492,0.6611389092595492
+piastri_2026_6,2026,6,Miami Grand Prix,piastri,mclaren,3.0,7,random_forest_tuned,Random Forest,5.191604096339166,2.191604096339166,2.191604096339166
+russell_2026_6,2026,6,Miami Grand Prix,russell,mercedes,4.0,5,random_forest_tuned,Random Forest,4.740691154471299,0.7406911544712989,0.7406911544712989
+driver_3_2026_2026_6,2026,6,Miami Grand Prix,driver_3_2026,unknown_2026,5.0,2,random_forest_tuned,Random Forest,3.7607570434166786,-1.2392429565833214,1.2392429565833214
+hamilton_2026_6,2026,6,Miami Grand Prix,hamilton,ferrari,6.0,6,random_forest_tuned,Random Forest,6.516670376977021,0.5166703769770207,0.5166703769770207
+colapinto_2026_6,2026,6,Miami Grand Prix,colapinto,alpine,7.0,8,random_forest_tuned,Random Forest,11.723455550132599,4.7234555501325985,4.7234555501325985
+leclerc_2026_6,2026,6,Miami Grand Prix,leclerc,ferrari,8.0,3,random_forest_tuned,Random Forest,3.277556176643559,-4.722443823356441,4.722443823356441
+sainz_2026_6,2026,6,Miami Grand Prix,sainz,williams,9.0,13,random_forest_tuned,Random Forest,11.098818177902826,2.0988181779028263,2.0988181779028263
+albon_2026_6,2026,6,Miami Grand Prix,albon,williams,10.0,15,random_forest_tuned,Random Forest,13.180580659312897,3.1805806593128967,3.1805806593128967
+bearman_2026_6,2026,6,Miami Grand Prix,bearman,haas,11.0,12,random_forest_tuned,Random Forest,10.595286084950853,-0.4047139150491468,0.4047139150491468
+bortoleto_2026_6,2026,6,Miami Grand Prix,bortoleto,sauber,12.0,21,random_forest_tuned,Random Forest,13.786675741809855,1.7866757418098551,1.7866757418098551
+ocon_2026_6,2026,6,Miami Grand Prix,ocon,haas,13.0,14,random_forest_tuned,Random Forest,13.079736682674817,0.0797366826748167,0.0797366826748167
+driver_41_2026_2026_6,2026,6,Miami Grand Prix,driver_41_2026,unknown_2026,14.0,16,random_forest_tuned,Random Forest,12.145137473109033,-1.854862526890967,1.854862526890967
+alonso_2026_6,2026,6,Miami Grand Prix,alonso,aston_martin,15.0,17,random_forest_tuned,Random Forest,12.991956697141733,-2.008043302858267,2.008043302858267
+driver_11_2026_2026_6,2026,6,Miami Grand Prix,driver_11_2026,unknown_2026,16.0,20,random_forest_tuned,Random Forest,12.693841133210089,-3.306158866789911,3.306158866789911
+stroll_2026_6,2026,6,Miami Grand Prix,stroll,aston_martin,17.0,18,random_forest_tuned,Random Forest,13.805609627537052,-3.194390372462948,3.194390372462948
+driver_77_2026_2026_6,2026,6,Miami Grand Prix,driver_77_2026,unknown_2026,18.0,19,random_forest_tuned,Random Forest,12.693841133210089,-5.306158866789911,5.306158866789911
+antonelli_2026_7,2026,7,Canadian Grand Prix,antonelli,mercedes,1.0,2,random_forest_tuned,Random Forest,3.979264439843068,2.979264439843068,2.979264439843068
+hamilton_2026_7,2026,7,Canadian Grand Prix,hamilton,ferrari,2.0,5,random_forest_tuned,Random Forest,5.722393195211628,3.7223931952116276,3.7223931952116276
+driver_3_2026_2026_7,2026,7,Canadian Grand Prix,driver_3_2026,unknown_2026,3.0,6,random_forest_tuned,Random Forest,5.752886192556192,2.7528861925561916,2.7528861925561916
+leclerc_2026_7,2026,7,Canadian Grand Prix,leclerc,ferrari,4.0,8,random_forest_tuned,Random Forest,6.101008146837876,2.1010081468378763,2.1010081468378763
+hadjar_2026_7,2026,7,Canadian Grand Prix,hadjar,rb,5.0,7,random_forest_tuned,Random Forest,8.50709866221312,3.507098662213121,3.507098662213121
+colapinto_2026_7,2026,7,Canadian Grand Prix,colapinto,alpine,6.0,10,random_forest_tuned,Random Forest,12.195310803236207,6.195310803236207,6.195310803236207
+lawson_2026_7,2026,7,Canadian Grand Prix,lawson,rb,7.0,12,random_forest_tuned,Random Forest,11.315927131719326,4.3159271317193255,4.3159271317193255
+gasly_2026_7,2026,7,Canadian Grand Prix,gasly,alpine,8.0,14,random_forest_tuned,Random Forest,13.328811265509406,5.328811265509406,5.328811265509406
+sainz_2026_7,2026,7,Canadian Grand Prix,sainz,williams,9.0,15,random_forest_tuned,Random Forest,11.962589847433435,2.962589847433435,2.962589847433435
+bearman_2026_7,2026,7,Canadian Grand Prix,bearman,haas,10.0,16,random_forest_tuned,Random Forest,11.987590534854318,1.9875905348543181,1.9875905348543181
+piastri_2026_7,2026,7,Canadian Grand Prix,piastri,mclaren,11.0,4,random_forest_tuned,Random Forest,2.987041777673259,-8.012958222326741,8.012958222326741
+hulkenberg_2026_7,2026,7,Canadian Grand Prix,hulkenberg,sauber,12.0,11,random_forest_tuned,Random Forest,10.626355900605581,-1.3736440993944186,1.3736440993944186
+bortoleto_2026_7,2026,7,Canadian Grand Prix,bortoleto,sauber,13.0,13,random_forest_tuned,Random Forest,11.901084352376579,-1.0989156476234214,1.0989156476234214
+ocon_2026_7,2026,7,Canadian Grand Prix,ocon,haas,14.0,17,random_forest_tuned,Random Forest,13.378445202042682,-0.6215547979573177,0.6215547979573177
+stroll_2026_7,2026,7,Canadian Grand Prix,stroll,aston_martin,15.0,22,random_forest_tuned,Random Forest,13.834480519023792,-1.165519480976208,1.165519480976208
+driver_77_2026_2026_7,2026,7,Canadian Grand Prix,driver_77_2026,unknown_2026,16.0,21,random_forest_tuned,Random Forest,12.671842734158215,-3.328157265841785,3.328157265841785
+antonelli_2026_8,2026,8,Monaco Grand Prix,antonelli,mercedes,1.0,1,random_forest_tuned,Random Forest,3.492869287200782,2.492869287200782,2.492869287200782
+hamilton_2026_8,2026,8,Monaco Grand Prix,hamilton,ferrari,2.0,3,random_forest_tuned,Random Forest,4.348915644494908,2.348915644494908,2.348915644494908
+gasly_2026_8,2026,8,Monaco Grand Prix,gasly,alpine,3.0,9,random_forest_tuned,Random Forest,10.751063553268654,7.751063553268654,7.751063553268654
+hadjar_2026_8,2026,8,Monaco Grand Prix,hadjar,rb,4.0,5,random_forest_tuned,Random Forest,7.579133363860235,3.579133363860235,3.579133363860235
+piastri_2026_8,2026,8,Monaco Grand Prix,piastri,mclaren,5.0,7,random_forest_tuned,Random Forest,5.063235434426681,0.063235434426681,0.063235434426681
+lawson_2026_8,2026,8,Monaco Grand Prix,lawson,rb,6.0,10,random_forest_tuned,Random Forest,10.73600875503317,4.73600875503317,4.73600875503317
+driver_41_2026_2026_8,2026,8,Monaco Grand Prix,driver_41_2026,unknown_2026,7.0,15,random_forest_tuned,Random Forest,11.692910670141028,4.692910670141028,4.692910670141028
+albon_2026_8,2026,8,Monaco Grand Prix,albon,williams,8.0,11,random_forest_tuned,Random Forest,11.014077571095523,3.014077571095523,3.014077571095523
+ocon_2026_8,2026,8,Monaco Grand Prix,ocon,haas,9.0,17,random_forest_tuned,Random Forest,13.349449466182705,4.349449466182705,4.349449466182705
+alonso_2026_8,2026,8,Monaco Grand Prix,alonso,aston_martin,10.0,21,random_forest_tuned,Random Forest,13.279106127580752,3.279106127580752,3.279106127580752
+bortoleto_2026_8,2026,8,Monaco Grand Prix,bortoleto,sauber,11.0,16,random_forest_tuned,Random Forest,13.455824589042072,2.455824589042072,2.455824589042072
+russell_2026_8,2026,8,Monaco Grand Prix,russell,mercedes,12.0,6,random_forest_tuned,Random Forest,5.579110624441157,-6.420889375558843,6.420889375558843
+hulkenberg_2026_8,2026,8,Monaco Grand Prix,hulkenberg,sauber,13.0,13,random_forest_tuned,Random Forest,11.52495662836547,-1.4750433716345306,1.4750433716345306
+colapinto_2026_8,2026,8,Monaco Grand Prix,colapinto,alpine,14.0,14,random_forest_tuned,Random Forest,15.025565014225734,1.0255650142257338,1.0255650142257338
+driver_11_2026_2026_8,2026,8,Monaco Grand Prix,driver_11_2026,unknown_2026,15.0,18,random_forest_tuned,Random Forest,12.251249753410212,-2.748750246589788,2.748750246589788
+hamilton_2026_9,2026,9,Barcelona Grand Prix,hamilton,ferrari,1.0,2,random_forest_tuned,Random Forest,4.398250052004275,3.3982500520042747,3.3982500520042747
+russell_2026_9,2026,9,Barcelona Grand Prix,russell,mercedes,2.0,1,random_forest_tuned,Random Forest,3.5817137204579046,1.5817137204579046,1.5817137204579046
+max_verstappen_2026_9,2026,9,Barcelona Grand Prix,max_verstappen,red_bull,3.0,4,random_forest_tuned,Random Forest,2.9407490409649784,-0.059250959035021644,0.059250959035021644
+driver_3_2026_2026_9,2026,9,Barcelona Grand Prix,driver_3_2026,unknown_2026,4.0,5,random_forest_tuned,Random Forest,5.085586070736121,1.0855860707361211,1.0855860707361211
+piastri_2026_9,2026,9,Barcelona Grand Prix,piastri,mclaren,5.0,7,random_forest_tuned,Random Forest,5.047640615259471,0.047640615259471275,0.047640615259471275
+hadjar_2026_9,2026,9,Barcelona Grand Prix,hadjar,rb,6.0,6,random_forest_tuned,Random Forest,7.791860857901036,1.7918608579010362,1.7918608579010362
+gasly_2026_9,2026,9,Barcelona Grand Prix,gasly,alpine,7.0,14,random_forest_tuned,Random Forest,13.439220824933539,6.439220824933539,6.439220824933539
+lawson_2026_9,2026,9,Barcelona Grand Prix,lawson,rb,8.0,8,random_forest_tuned,Random Forest,10.263690144543773,2.263690144543773,2.263690144543773
+driver_41_2026_2026_9,2026,9,Barcelona Grand Prix,driver_41_2026,unknown_2026,9.0,11,random_forest_tuned,Random Forest,9.535711809891719,0.5357118098917191,0.5357118098917191
+colapinto_2026_9,2026,9,Barcelona Grand Prix,colapinto,alpine,10.0,13,random_forest_tuned,Random Forest,13.389895551489959,3.3898955514899587,3.3898955514899587
+bortoleto_2026_9,2026,9,Barcelona Grand Prix,bortoleto,sauber,11.0,12,random_forest_tuned,Random Forest,11.417671642589337,0.41767164258933676,0.41767164258933676
+sainz_2026_9,2026,9,Barcelona Grand Prix,sainz,williams,12.0,16,random_forest_tuned,Random Forest,11.652776958515236,-0.3472230414847637,0.3472230414847637
+ocon_2026_9,2026,9,Barcelona Grand Prix,ocon,haas,13.0,17,random_forest_tuned,Random Forest,13.318373713641925,0.31837371364192535,0.31837371364192535
+driver_11_2026_2026_9,2026,9,Barcelona Grand Prix,driver_11_2026,unknown_2026,14.0,19,random_forest_tuned,Random Forest,12.20511395213726,-1.7948860478627395,1.7948860478627395
+russell_2026_1,2026,1,Australian Grand Prix,russell,mercedes,1.0,1,xgboost_tuned,XGBoost,3.7998979091644287,2.7998979091644287,2.7998979091644287
+antonelli_2026_1,2026,1,Australian Grand Prix,antonelli,mercedes,2.0,2,xgboost_tuned,XGBoost,4.987736225128174,2.987736225128174,2.987736225128174
+leclerc_2026_1,2026,1,Australian Grand Prix,leclerc,ferrari,3.0,4,xgboost_tuned,XGBoost,3.7915565967559814,0.7915565967559814,0.7915565967559814
+hamilton_2026_1,2026,1,Australian Grand Prix,hamilton,ferrari,4.0,7,xgboost_tuned,XGBoost,6.938703536987305,2.9387035369873047,2.9387035369873047
+max_verstappen_2026_1,2026,1,Australian Grand Prix,max_verstappen,red_bull,5.0,6,xgboost_tuned,XGBoost,4.140664100646973,-0.8593358993530273,0.8593358993530273
+driver_3_2026_2026_1,2026,1,Australian Grand Prix,driver_3_2026,unknown_2026,6.0,20,xgboost_tuned,XGBoost,12.581622123718262,6.581622123718262,6.581622123718262
+bearman_2026_1,2026,1,Australian Grand Prix,bearman,haas,7.0,12,xgboost_tuned,XGBoost,10.06006908416748,3.0600690841674805,3.0600690841674805
+driver_41_2026_2026_1,2026,1,Australian Grand Prix,driver_41_2026,unknown_2026,8.0,9,xgboost_tuned,XGBoost,8.484291076660156,0.48429107666015625,0.48429107666015625
+bortoleto_2026_1,2026,1,Australian Grand Prix,bortoleto,sauber,9.0,10,xgboost_tuned,XGBoost,11.14918041229248,2.1491804122924805,2.1491804122924805
+gasly_2026_1,2026,1,Australian Grand Prix,gasly,alpine,10.0,14,xgboost_tuned,XGBoost,13.468131065368652,3.4681310653686523,3.4681310653686523
+ocon_2026_1,2026,1,Australian Grand Prix,ocon,haas,11.0,13,xgboost_tuned,XGBoost,12.2178373336792,1.2178373336791992,1.2178373336791992
+albon_2026_1,2026,1,Australian Grand Prix,albon,williams,12.0,15,xgboost_tuned,XGBoost,13.002119064331055,1.0021190643310547,1.0021190643310547
+lawson_2026_1,2026,1,Australian Grand Prix,lawson,rb,13.0,8,xgboost_tuned,XGBoost,10.158547401428223,-2.8414525985717773,2.8414525985717773
+colapinto_2026_1,2026,1,Australian Grand Prix,colapinto,alpine,14.0,16,xgboost_tuned,XGBoost,14.888399124145508,0.8883991241455078,0.8883991241455078
+sainz_2026_1,2026,1,Australian Grand Prix,sainz,williams,15.0,21,xgboost_tuned,XGBoost,12.423330307006836,-2.576669692993164,2.576669692993164
+driver_11_2026_2026_1,2026,1,Australian Grand Prix,driver_11_2026,unknown_2026,16.0,18,xgboost_tuned,XGBoost,12.581622123718262,-3.4183778762817383,3.4183778762817383
+antonelli_2026_2,2026,2,Chinese Grand Prix,antonelli,mercedes,1.0,1,xgboost_tuned,XGBoost,4.750881195068359,3.7508811950683594,3.7508811950683594
+russell_2026_2,2026,2,Chinese Grand Prix,russell,mercedes,2.0,2,xgboost_tuned,XGBoost,4.183011531829834,2.183011531829834,2.183011531829834
+hamilton_2026_2,2026,2,Chinese Grand Prix,hamilton,ferrari,3.0,3,xgboost_tuned,XGBoost,4.989217281341553,1.9892172813415527,1.9892172813415527
+leclerc_2026_2,2026,2,Chinese Grand Prix,leclerc,ferrari,4.0,4,xgboost_tuned,XGBoost,3.7915565967559814,-0.20844340324401855,0.20844340324401855
+bearman_2026_2,2026,2,Chinese Grand Prix,bearman,haas,5.0,10,xgboost_tuned,XGBoost,9.347175598144531,4.347175598144531,4.347175598144531
+gasly_2026_2,2026,2,Chinese Grand Prix,gasly,alpine,6.0,7,xgboost_tuned,XGBoost,9.812767028808594,3.8127670288085938,3.8127670288085938
+lawson_2026_2,2026,2,Chinese Grand Prix,lawson,rb,7.0,14,xgboost_tuned,XGBoost,12.634217262268066,5.634217262268066,5.634217262268066
+hadjar_2026_2,2026,2,Chinese Grand Prix,hadjar,rb,8.0,9,xgboost_tuned,XGBoost,9.862504005432129,1.862504005432129,1.862504005432129
+sainz_2026_2,2026,2,Chinese Grand Prix,sainz,williams,9.0,17,xgboost_tuned,XGBoost,11.925240516662598,2.9252405166625977,2.9252405166625977
+colapinto_2026_2,2026,2,Chinese Grand Prix,colapinto,alpine,10.0,12,xgboost_tuned,XGBoost,13.231269836425781,3.2312698364257812,3.2312698364257812
+hulkenberg_2026_2,2026,2,Chinese Grand Prix,hulkenberg,sauber,11.0,11,xgboost_tuned,XGBoost,11.052253723144531,0.05225372314453125,0.05225372314453125
+driver_41_2026_2026_2,2026,2,Chinese Grand Prix,driver_41_2026,unknown_2026,12.0,15,xgboost_tuned,XGBoost,11.488405227661133,-0.5115947723388672,0.5115947723388672
+driver_77_2026_2026_2,2026,2,Chinese Grand Prix,driver_77_2026,unknown_2026,13.0,19,xgboost_tuned,XGBoost,12.62192153930664,-0.3780784606933594,0.3780784606933594
+ocon_2026_2,2026,2,Chinese Grand Prix,ocon,haas,14.0,13,xgboost_tuned,XGBoost,12.20303726196289,-1.7969627380371094,1.7969627380371094
+driver_11_2026_2026_2,2026,2,Chinese Grand Prix,driver_11_2026,unknown_2026,15.0,21,xgboost_tuned,XGBoost,12.62192153930664,-2.3780784606933594,2.3780784606933594
+antonelli_2026_3,2026,3,Japanese Grand Prix,antonelli,mercedes,1.0,1,xgboost_tuned,XGBoost,4.750881195068359,3.7508811950683594,3.7508811950683594
+piastri_2026_3,2026,3,Japanese Grand Prix,piastri,mclaren,2.0,3,xgboost_tuned,XGBoost,2.643746852874756,0.6437468528747559,0.6437468528747559
+leclerc_2026_3,2026,3,Japanese Grand Prix,leclerc,ferrari,3.0,4,xgboost_tuned,XGBoost,3.7915565967559814,0.7915565967559814,0.7915565967559814
+russell_2026_3,2026,3,Japanese Grand Prix,russell,mercedes,4.0,2,xgboost_tuned,XGBoost,4.183011531829834,0.18301153182983398,0.18301153182983398
+max_verstappen_2026_3,2026,3,Japanese Grand Prix,max_verstappen,red_bull,5.0,5,xgboost_tuned,XGBoost,3.550102472305298,-1.4498975276947021,1.4498975276947021
+hamilton_2026_3,2026,3,Japanese Grand Prix,hamilton,ferrari,6.0,6,xgboost_tuned,XGBoost,6.6175432205200195,0.6175432205200195,0.6175432205200195
+gasly_2026_3,2026,3,Japanese Grand Prix,gasly,alpine,7.0,7,xgboost_tuned,XGBoost,9.73690414428711,2.7369041442871094,2.7369041442871094
+driver_3_2026_2026_3,2026,3,Japanese Grand Prix,driver_3_2026,unknown_2026,8.0,11,xgboost_tuned,XGBoost,9.482380867004395,1.4823808670043945,1.4823808670043945
+lawson_2026_3,2026,3,Japanese Grand Prix,lawson,rb,9.0,14,xgboost_tuned,XGBoost,12.561366081237793,3.561366081237793,3.561366081237793
+ocon_2026_3,2026,3,Japanese Grand Prix,ocon,haas,10.0,12,xgboost_tuned,XGBoost,11.479758262634277,1.4797582626342773,1.4797582626342773
+hulkenberg_2026_3,2026,3,Japanese Grand Prix,hulkenberg,sauber,11.0,13,xgboost_tuned,XGBoost,11.779003143310547,0.7790031433105469,0.7790031433105469
+hadjar_2026_3,2026,3,Japanese Grand Prix,hadjar,rb,12.0,8,xgboost_tuned,XGBoost,9.76952838897705,-2.230471611022949,2.230471611022949
+bortoleto_2026_3,2026,3,Japanese Grand Prix,bortoleto,sauber,13.0,9,xgboost_tuned,XGBoost,10.384190559387207,-2.615809440612793,2.615809440612793
+driver_41_2026_2026_3,2026,3,Japanese Grand Prix,driver_41_2026,unknown_2026,14.0,10,xgboost_tuned,XGBoost,8.932868003845215,-5.067131996154785,5.067131996154785
+sainz_2026_3,2026,3,Japanese Grand Prix,sainz,williams,15.0,16,xgboost_tuned,XGBoost,11.376955032348633,-3.623044967651367,3.623044967651367
+colapinto_2026_3,2026,3,Japanese Grand Prix,colapinto,alpine,16.0,15,xgboost_tuned,XGBoost,14.522454261779785,-1.4775457382202148,1.4775457382202148
+driver_11_2026_2026_3,2026,3,Japanese Grand Prix,driver_11_2026,unknown_2026,17.0,19,xgboost_tuned,XGBoost,12.575729370117188,-4.4242706298828125,4.4242706298828125
+alonso_2026_3,2026,3,Japanese Grand Prix,alonso,aston_martin,18.0,21,xgboost_tuned,XGBoost,12.974127769470215,-5.025872230529785,5.025872230529785
+driver_77_2026_2026_3,2026,3,Japanese Grand Prix,driver_77_2026,unknown_2026,19.0,20,xgboost_tuned,XGBoost,12.575729370117188,-6.4242706298828125,6.4242706298828125
+albon_2026_3,2026,3,Japanese Grand Prix,albon,williams,20.0,17,xgboost_tuned,XGBoost,13.244312286376953,-6.755687713623047,6.755687713623047
+antonelli_2026_6,2026,6,Miami Grand Prix,antonelli,mercedes,1.0,1,xgboost_tuned,XGBoost,4.848212242126465,3.848212242126465,3.848212242126465
+max_verstappen_2026_6,2026,6,Miami Grand Prix,max_verstappen,red_bull,2.0,4,xgboost_tuned,XGBoost,2.685246229171753,0.6852462291717529,0.6852462291717529
+piastri_2026_6,2026,6,Miami Grand Prix,piastri,mclaren,3.0,7,xgboost_tuned,XGBoost,4.594200134277344,1.5942001342773438,1.5942001342773438
+russell_2026_6,2026,6,Miami Grand Prix,russell,mercedes,4.0,5,xgboost_tuned,XGBoost,5.178503036499023,1.1785030364990234,1.1785030364990234
+driver_3_2026_2026_6,2026,6,Miami Grand Prix,driver_3_2026,unknown_2026,5.0,2,xgboost_tuned,XGBoost,5.395987033843994,0.39598703384399414,0.39598703384399414
+hamilton_2026_6,2026,6,Miami Grand Prix,hamilton,ferrari,6.0,6,xgboost_tuned,XGBoost,6.6493306159973145,0.6493306159973145,0.6493306159973145
+colapinto_2026_6,2026,6,Miami Grand Prix,colapinto,alpine,7.0,8,xgboost_tuned,XGBoost,11.960725784301758,4.960725784301758,4.960725784301758
+leclerc_2026_6,2026,6,Miami Grand Prix,leclerc,ferrari,8.0,3,xgboost_tuned,XGBoost,3.6085541248321533,-4.391445875167847,4.391445875167847
+sainz_2026_6,2026,6,Miami Grand Prix,sainz,williams,9.0,13,xgboost_tuned,XGBoost,10.442564010620117,1.4425640106201172,1.4425640106201172
+albon_2026_6,2026,6,Miami Grand Prix,albon,williams,10.0,15,xgboost_tuned,XGBoost,12.935090065002441,2.9350900650024414,2.9350900650024414
+bearman_2026_6,2026,6,Miami Grand Prix,bearman,haas,11.0,12,xgboost_tuned,XGBoost,9.993040084838867,-1.0069599151611328,1.0069599151611328
+bortoleto_2026_6,2026,6,Miami Grand Prix,bortoleto,sauber,12.0,21,xgboost_tuned,XGBoost,14.071985244750977,2.0719852447509766,2.0719852447509766
+ocon_2026_6,2026,6,Miami Grand Prix,ocon,haas,13.0,14,xgboost_tuned,XGBoost,12.895739555358887,-0.10426044464111328,0.10426044464111328
+driver_41_2026_2026_6,2026,6,Miami Grand Prix,driver_41_2026,unknown_2026,14.0,16,xgboost_tuned,XGBoost,11.741860389709473,-2.2581396102905273,2.2581396102905273
+alonso_2026_6,2026,6,Miami Grand Prix,alonso,aston_martin,15.0,17,xgboost_tuned,XGBoost,12.513142585754395,-2.4868574142456055,2.4868574142456055
+driver_11_2026_2026_6,2026,6,Miami Grand Prix,driver_11_2026,unknown_2026,16.0,20,xgboost_tuned,XGBoost,12.725360870361328,-3.274639129638672,3.274639129638672
+stroll_2026_6,2026,6,Miami Grand Prix,stroll,aston_martin,17.0,18,xgboost_tuned,XGBoost,14.237578392028809,-2.7624216079711914,2.7624216079711914
+driver_77_2026_2026_6,2026,6,Miami Grand Prix,driver_77_2026,unknown_2026,18.0,19,xgboost_tuned,XGBoost,12.725360870361328,-5.274639129638672,5.274639129638672
+antonelli_2026_7,2026,7,Canadian Grand Prix,antonelli,mercedes,1.0,2,xgboost_tuned,XGBoost,5.022930145263672,4.022930145263672,4.022930145263672
+hamilton_2026_7,2026,7,Canadian Grand Prix,hamilton,ferrari,2.0,5,xgboost_tuned,XGBoost,5.974135875701904,3.9741358757019043,3.9741358757019043
+driver_3_2026_2026_7,2026,7,Canadian Grand Prix,driver_3_2026,unknown_2026,3.0,6,xgboost_tuned,XGBoost,7.121982574462891,4.121982574462891,4.121982574462891
+leclerc_2026_7,2026,7,Canadian Grand Prix,leclerc,ferrari,4.0,8,xgboost_tuned,XGBoost,5.94742488861084,1.9474248886108398,1.9474248886108398
+hadjar_2026_7,2026,7,Canadian Grand Prix,hadjar,rb,5.0,7,xgboost_tuned,XGBoost,9.025860786437988,4.025860786437988,4.025860786437988
+colapinto_2026_7,2026,7,Canadian Grand Prix,colapinto,alpine,6.0,10,xgboost_tuned,XGBoost,12.62192153930664,6.621921539306641,6.621921539306641
+lawson_2026_7,2026,7,Canadian Grand Prix,lawson,rb,7.0,12,xgboost_tuned,XGBoost,11.234237670898438,4.2342376708984375,4.2342376708984375
+gasly_2026_7,2026,7,Canadian Grand Prix,gasly,alpine,8.0,14,xgboost_tuned,XGBoost,13.38047981262207,5.38047981262207,5.38047981262207
+sainz_2026_7,2026,7,Canadian Grand Prix,sainz,williams,9.0,15,xgboost_tuned,XGBoost,11.22693920135498,2.2269392013549805,2.2269392013549805
+bearman_2026_7,2026,7,Canadian Grand Prix,bearman,haas,10.0,16,xgboost_tuned,XGBoost,11.513794898986816,1.5137948989868164,1.5137948989868164
+piastri_2026_7,2026,7,Canadian Grand Prix,piastri,mclaren,11.0,4,xgboost_tuned,XGBoost,2.8498942852020264,-8.150105714797974,8.150105714797974
+hulkenberg_2026_7,2026,7,Canadian Grand Prix,hulkenberg,sauber,12.0,11,xgboost_tuned,XGBoost,10.930198669433594,-1.0698013305664062,1.0698013305664062
+bortoleto_2026_7,2026,7,Canadian Grand Prix,bortoleto,sauber,13.0,13,xgboost_tuned,XGBoost,12.539521217346191,-0.4604787826538086,0.4604787826538086
+ocon_2026_7,2026,7,Canadian Grand Prix,ocon,haas,14.0,17,xgboost_tuned,XGBoost,13.234186172485352,-0.7658138275146484,0.7658138275146484
+stroll_2026_7,2026,7,Canadian Grand Prix,stroll,aston_martin,15.0,22,xgboost_tuned,XGBoost,14.192618370056152,-0.8073816299438477,0.8073816299438477
+driver_77_2026_2026_7,2026,7,Canadian Grand Prix,driver_77_2026,unknown_2026,16.0,21,xgboost_tuned,XGBoost,12.610922813415527,-3.3890771865844727,3.3890771865844727
+antonelli_2026_8,2026,8,Monaco Grand Prix,antonelli,mercedes,1.0,1,xgboost_tuned,XGBoost,4.7369384765625,3.7369384765625,3.7369384765625
+hamilton_2026_8,2026,8,Monaco Grand Prix,hamilton,ferrari,2.0,3,xgboost_tuned,XGBoost,4.975274562835693,2.9752745628356934,2.9752745628356934
+gasly_2026_8,2026,8,Monaco Grand Prix,gasly,alpine,3.0,9,xgboost_tuned,XGBoost,10.498177528381348,7.498177528381348,7.498177528381348
+hadjar_2026_8,2026,8,Monaco Grand Prix,hadjar,rb,4.0,5,xgboost_tuned,XGBoost,7.879037857055664,3.879037857055664,3.879037857055664
+piastri_2026_8,2026,8,Monaco Grand Prix,piastri,mclaren,5.0,7,xgboost_tuned,XGBoost,4.527848243713379,-0.4721517562866211,0.4721517562866211
+lawson_2026_8,2026,8,Monaco Grand Prix,lawson,rb,6.0,10,xgboost_tuned,XGBoost,10.522465705871582,4.522465705871582,4.522465705871582
+driver_41_2026_2026_8,2026,8,Monaco Grand Prix,driver_41_2026,unknown_2026,7.0,15,xgboost_tuned,XGBoost,11.379205703735352,4.379205703735352,4.379205703735352
+albon_2026_8,2026,8,Monaco Grand Prix,albon,williams,8.0,11,xgboost_tuned,XGBoost,11.308091163635254,3.308091163635254,3.308091163635254
+ocon_2026_8,2026,8,Monaco Grand Prix,ocon,haas,9.0,17,xgboost_tuned,XGBoost,13.187308311462402,4.187308311462402,4.187308311462402
+alonso_2026_8,2026,8,Monaco Grand Prix,alonso,aston_martin,10.0,21,xgboost_tuned,XGBoost,12.911120414733887,2.9111204147338867,2.9111204147338867
+bortoleto_2026_8,2026,8,Monaco Grand Prix,bortoleto,sauber,11.0,16,xgboost_tuned,XGBoost,13.198344230651855,2.1983442306518555,2.1983442306518555
+russell_2026_8,2026,8,Monaco Grand Prix,russell,mercedes,12.0,6,xgboost_tuned,XGBoost,5.67897367477417,-6.32102632522583,6.32102632522583
+hulkenberg_2026_8,2026,8,Monaco Grand Prix,hulkenberg,sauber,13.0,13,xgboost_tuned,XGBoost,11.70205307006836,-1.2979469299316406,1.2979469299316406
+colapinto_2026_8,2026,8,Monaco Grand Prix,colapinto,alpine,14.0,14,xgboost_tuned,XGBoost,14.414092063903809,0.4140920639038086,0.4140920639038086
+driver_11_2026_2026_8,2026,8,Monaco Grand Prix,driver_11_2026,unknown_2026,15.0,18,xgboost_tuned,XGBoost,12.467761993408203,-2.532238006591797,2.532238006591797
+hamilton_2026_9,2026,9,Barcelona Grand Prix,hamilton,ferrari,1.0,2,xgboost_tuned,XGBoost,5.0724334716796875,4.0724334716796875,4.0724334716796875
+russell_2026_9,2026,9,Barcelona Grand Prix,russell,mercedes,2.0,1,xgboost_tuned,XGBoost,4.0360870361328125,2.0360870361328125,2.0360870361328125
+max_verstappen_2026_9,2026,9,Barcelona Grand Prix,max_verstappen,red_bull,3.0,4,xgboost_tuned,XGBoost,2.7994914054870605,-0.20050859451293945,0.20050859451293945
+driver_3_2026_2026_9,2026,9,Barcelona Grand Prix,driver_3_2026,unknown_2026,4.0,5,xgboost_tuned,XGBoost,6.492288112640381,2.492288112640381,2.492288112640381
+piastri_2026_9,2026,9,Barcelona Grand Prix,piastri,mclaren,5.0,7,xgboost_tuned,XGBoost,4.527848243713379,-0.4721517562866211,0.4721517562866211
+hadjar_2026_9,2026,9,Barcelona Grand Prix,hadjar,rb,6.0,6,xgboost_tuned,XGBoost,8.653938293457031,2.6539382934570312,2.6539382934570312
+gasly_2026_9,2026,9,Barcelona Grand Prix,gasly,alpine,7.0,14,xgboost_tuned,XGBoost,13.3720064163208,6.372006416320801,6.372006416320801
+lawson_2026_9,2026,9,Barcelona Grand Prix,lawson,rb,8.0,8,xgboost_tuned,XGBoost,10.128053665161133,2.128053665161133,2.128053665161133
+driver_41_2026_2026_9,2026,9,Barcelona Grand Prix,driver_41_2026,unknown_2026,9.0,11,xgboost_tuned,XGBoost,9.49147891998291,0.49147891998291016,0.49147891998291016
+colapinto_2026_9,2026,9,Barcelona Grand Prix,colapinto,alpine,10.0,13,xgboost_tuned,XGBoost,13.720756530761719,3.7207565307617188,3.7207565307617188
+bortoleto_2026_9,2026,9,Barcelona Grand Prix,bortoleto,sauber,11.0,12,xgboost_tuned,XGBoost,11.837835311889648,0.8378353118896484,0.8378353118896484
+sainz_2026_9,2026,9,Barcelona Grand Prix,sainz,williams,12.0,16,xgboost_tuned,XGBoost,11.301495552062988,-0.6985044479370117,0.6985044479370117
+ocon_2026_9,2026,9,Barcelona Grand Prix,ocon,haas,13.0,17,xgboost_tuned,XGBoost,13.09352970123291,0.09352970123291016,0.09352970123291016
+driver_11_2026_2026_9,2026,9,Barcelona Grand Prix,driver_11_2026,unknown_2026,14.0,19,xgboost_tuned,XGBoost,12.43199634552002,-1.5680036544799805,1.5680036544799805
