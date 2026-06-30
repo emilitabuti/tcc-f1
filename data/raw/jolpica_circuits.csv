@@ -1,0 +1,79 @@
+circuit_id,circuit_name,lat,long,country
+adelaide,Adelaide Street Circuit,-34.9272,138.617,Australia
+ain-diab,Ain Diab,33.5786,-7.6875,Morocco
+aintree,Aintree,53.4769,-2.94056,UK
+albert_park,Albert Park Grand Prix Circuit,-37.8497,144.968,Australia
+americas,Circuit of the Americas,30.1328,-97.6411,USA
+anderstorp,Scandinavian Raceway,57.2653,13.6042,Sweden
+avus,AVUS,52.4806,13.2514,Germany
+bahrain,Bahrain International Circuit,26.0325,50.5106,Bahrain
+baku,Baku City Circuit,40.3725,49.8533,Azerbaijan
+boavista,Circuito da Boavista,41.1705,-8.67325,Portugal
+brands_hatch,Brands Hatch,51.3569,0.263056,UK
+bremgarten,Circuit Bremgarten,46.9589,7.40194,Switzerland
+buddh,Buddh International Circuit,28.3487,77.5331,India
+catalunya,Circuit de Barcelona-Catalunya,41.57,2.26111,Spain
+charade,Charade Circuit,45.7472,3.03889,France
+dallas,Fair Park,32.7774,-96.7587,USA
+detroit,Detroit Street Circuit,42.3298,-83.0401,USA
+dijon,Dijon-Prenois,47.3625,4.89913,France
+donington,Donington Park,52.8306,-1.37528,UK
+essarts,Rouen-Les-Essarts,49.3306,1.00458,France
+estoril,Autódromo do Estoril,38.7506,-9.39417,Portugal
+fuji,Fuji Speedway,35.3717,138.927,Japan
+galvez,Autódromo Juan y Oscar Gálvez,-34.6943,-58.4593,Argentina
+george,Prince George Circuit,-33.0486,27.8736,South Africa
+hockenheimring,Hockenheimring,49.3278,8.56583,Germany
+hungaroring,Hungaroring,47.5789,19.2486,Hungary
+imola,Autodromo Enzo e Dino Ferrari,44.3439,11.7167,Italy
+indianapolis,Indianapolis Motor Speedway,39.795,-86.2347,USA
+interlagos,Autódromo José Carlos Pace,-23.7036,-46.6997,Brazil
+istanbul,Istanbul Park,40.9517,29.405,Turkey
+jacarepagua,Autódromo Internacional Nelson Piquet,-22.9756,-43.395,Brazil
+jarama,Jarama,40.6171,-3.58558,Spain
+jeddah,Jeddah Corniche Circuit,21.6319,39.1044,Saudi Arabia
+jerez,Circuito de Jerez,36.7083,-6.03417,Spain
+kyalami,Kyalami,-25.9894,28.0767,South Africa
+las_vegas,Las Vegas Street Circuit,36.1162,-115.174,USA
+lemans,Le Mans,47.95,0.224231,France
+long_beach,Long Beach,33.7651,-118.189,USA
+losail,Losail International Circuit,25.49,51.4542,Qatar
+madring,Madring,40.46528,-3.61528,Spain
+magny_cours,Circuit de Nevers Magny-Cours,46.8642,3.16361,France
+marina_bay,Marina Bay Street Circuit,1.2914,103.864,Singapore
+miami,Miami International Autodrome,25.9581,-80.2389,USA
+monaco,Circuit de Monaco,43.7347,7.42056,Monaco
+monsanto,Monsanto Park Circuit,38.7197,-9.20306,Portugal
+montjuic,Montjuïc,41.3664,2.15167,Spain
+monza,Autodromo Nazionale di Monza,45.6156,9.28111,Italy
+mosport,Mosport International Raceway,44.0481,-78.6756,Canada
+mugello,Autodromo Internazionale del Mugello,43.9975,11.3719,Italy
+nivelles,Nivelles-Baulers,50.6211,4.32694,Belgium
+nurburgring,Nürburgring,50.3356,6.9475,Germany
+okayama,Okayama International Circuit,34.915,134.221,Japan
+pedralbes,Circuit de Pedralbes,41.3903,2.11667,Spain
+pescara,Pescara Circuit,42.475,14.1508,Italy
+phoenix,Phoenix street circuit,33.4479,-112.075,USA
+portimao,Autódromo Internacional do Algarve,37.227,-8.6267,Portugal
+red_bull_ring,Red Bull Ring,47.2197,14.7647,Austria
+reims,Reims-Gueux,49.2542,3.93083,France
+ricard,Circuit Paul Ricard,43.2506,5.79167,France
+riverside,Riverside International Raceway,33.937,-117.273,USA
+rodriguez,Autódromo Hermanos Rodríguez,19.4042,-99.0907,Mexico
+sebring,Sebring International Raceway,27.4547,-81.3483,USA
+sepang,Sepang International Circuit,2.76083,101.738,Malaysia
+shanghai,Shanghai International Circuit,31.3389,121.22,China
+silverstone,Silverstone Circuit,52.0786,-1.01694,UK
+sochi,Sochi Autodrom,43.4057,39.9578,Russia
+spa,Circuit de Spa-Francorchamps,50.4372,5.97139,Belgium
+suzuka,Suzuka Circuit,34.8431,136.541,Japan
+tremblant,Circuit Mont-Tremblant,46.1877,-74.6099,Canada
+valencia,Valencia Street Circuit,39.4589,-0.331667,Spain
+vegas,Las Vegas Strip Street Circuit,36.1147,-115.173,USA
+villeneuve,Circuit Gilles Villeneuve,45.5,-73.5228,Canada
+watkins_glen,Watkins Glen,42.3369,-76.9272,USA
+yas_marina,Yas Marina Circuit,24.4672,54.6031,UAE
+yeongam,Korean International Circuit,34.7333,126.417,Korea
+zandvoort,Circuit Park Zandvoort,52.3888,4.54092,Netherlands
+zeltweg,Zeltweg,47.2039,14.7478,Austria
+zolder,Zolder,50.9894,5.25694,Belgium

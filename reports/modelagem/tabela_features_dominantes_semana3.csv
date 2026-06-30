@@ -1,0 +1,25 @@
+﻿modelo_label,rank,feature,importance_type,importance_norm_media
+LightGBM,1,qualifying_position,gain,0.6778418941088412
+LightGBM,2,constructor_coef_rapm,gain,0.1068801872149484
+LightGBM,3,recent_form_5,gain,0.0683845251773494
+LightGBM,4,driver_constructor_synergy,gain,0.0540262729632503
+LightGBM,5,track_complexity,gain,0.0189319917874825
+LightGBM,6,constructor_dnf_rate,gain,0.0180423468415646
+LightGBM,7,driver_coef_rapm,gain,0.0125763582771326
+LightGBM,8,avg_pit_stops_circuit,gain,0.0121205596327577
+Random Forest,1,qualifying_position,gini_impurity_reduction,0.464757726381052
+Random Forest,2,constructor_coef_rapm,gini_impurity_reduction,0.2024384327709056
+Random Forest,3,recent_form_5,gini_impurity_reduction,0.1510886974390717
+Random Forest,4,driver_constructor_synergy,gini_impurity_reduction,0.078205512780082
+Random Forest,5,constructor_wins_total,gini_impurity_reduction,0.0400414038968562
+Random Forest,6,driver_coef_rapm,gini_impurity_reduction,0.0215496907521413
+Random Forest,7,constructor_dnf_rate,gini_impurity_reduction,0.0100341854762851
+Random Forest,8,track_complexity,gini_impurity_reduction,0.0094354619330141
+XGBoost,1,qualifying_position,gain,0.352585860464411
+XGBoost,2,constructor_coef_rapm,gain,0.1855799275408526
+XGBoost,3,recent_form_5,gain,0.1845436884895801
+XGBoost,4,driver_constructor_synergy,gain,0.073557381502884
+XGBoost,5,constructor_wins_total,gain,0.0520457138443851
+XGBoost,6,driver_coef_rapm,gain,0.0309178069763228
+XGBoost,7,track_complexity,gain,0.0186253235436511
+XGBoost,8,constructor_dnf_rate,gain,0.0183825712888429

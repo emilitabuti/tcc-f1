@@ -1,0 +1,16 @@
+feature,correlacao_com_finish_position
+qualifying_position,0.7716973097606286
+recent_form_5,0.710385323042784
+constructor_coef_rapm,-0.6831465605215221
+driver_constructor_synergy,-0.6629052139285055
+driver_coef_rapm,-0.5991940221404358
+constructor_wins_total,-0.42061857109360556
+driver_dnf_rate,0.08287308097959714
+grid_penalty,-0.07682589843560243
+season_factor,0.035093266873940356
+constructor_dnf_rate,-0.02777212845398192
+track_complexity,-0.008473973678636199
+altitude_m,-0.005769483095039411
+avg_pit_stops_circuit,-0.003129441480777109
+tire_compound_start,-0.0013718117019518518
+incident_rate_hist_norm,0.00023719472948591333

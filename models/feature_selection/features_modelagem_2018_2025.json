@@ -1,0 +1,35 @@
+{
+  "target": "finish_position",
+  "n_features": 13,
+  "features": [
+    "qualifying_position",
+    "constructor_coef_rapm",
+    "recent_form_5",
+    "driver_constructor_synergy",
+    "constructor_wins_total",
+    "driver_coef_rapm",
+    "track_complexity",
+    "tire_compound_start",
+    "season_factor",
+    "avg_pit_stops_circuit",
+    "constructor_dnf_rate",
+    "grid_penalty",
+    "altitude_m"
+  ],
+  "key_columns_y": [
+    "RaceID",
+    "season",
+    "round",
+    "driver_id",
+    "constructor_id"
+  ],
+  "forbidden_columns_x": [
+    "finish_position",
+    "points",
+    "race_points",
+    "fastest_lap_race",
+    "previous_position",
+    "status",
+    "laps"
+  ]
+}

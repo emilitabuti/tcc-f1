@@ -1,0 +1,24 @@
+{
+  "best_params": {
+    "colsample_bytree": 0.7727780074568463,
+    "learning_rate": 0.028145092716060652,
+    "max_depth": 4,
+    "n_estimators": 172,
+    "reg_alpha": 0.2912291401980419,
+    "reg_lambda": 0.6118528947223795,
+    "subsample": 0.8099025726528951
+  },
+  "best_value_tuning": 0.5243681833305716,
+  "decay": 0.99,
+  "modelo": "XGBoost",
+  "objective": "reg:squarederror",
+  "score_profile": "rmse_r2",
+  "score_weights": {
+    "kendall_tau_score": 0.15,
+    "mae_score": 0.25,
+    "r2_score": 0.3,
+    "rmse_score": 0.3
+  },
+  "target_mode": "finish",
+  "trials": 20
+}

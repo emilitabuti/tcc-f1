@@ -1,0 +1,3 @@
+﻿grupo,experimento,modelo,mae_medio,rmse_medio,r2_medio,kendall_tau_medio,top3_accuracy_medio,score_composto,decay,objective,target_mode,score_profile,score_tuning,score_perfil,tempo_tuning_segundos
+validacao_causal_target,target_rank_norm_grid20_retuned,LightGBM,2.322673691539268,3.0109034371346937,0.6589361755071494,0.6531714881137395,0.2828282828282828,0.5013218006099966,0.99,regression,rank_norm_grid20,atual,0.4980011539255401,0.5013218006099966,13.656831819003855
+validacao_causal_target,target_rank_norm_grid20_retuned,XGBoost,2.3062522411346436,2.9958892936046104,0.6623391707738241,0.6542044668264295,0.27020202020202017,0.5004604228776052,0.99,reg:squarederror,rank_norm_grid20,atual,0.4963726774265962,0.5004604228776052,37.626048049998644

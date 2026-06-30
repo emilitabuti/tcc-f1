@@ -1,0 +1,65 @@
+{
+  "method": "XGBRegressor gain ranking medio temporal + subset ablation multi-fold multi-metrica",
+  "folds": [
+    {
+      "train_until": 2022,
+      "valid_season": 2023
+    },
+    {
+      "train_until": 2023,
+      "valid_season": 2024
+    },
+    {
+      "train_until": 2024,
+      "valid_season": 2025
+    }
+  ],
+  "metric_weights": {
+    "mae_score": 0.35,
+    "rmse_score": 0.2,
+    "r2_score": 0.2,
+    "kendall_tau_score": 0.25
+  },
+  "candidate_features": [
+    "qualifying_position",
+    "grid_penalty",
+    "recent_form_5",
+    "driver_coef_rapm",
+    "driver_dnf_rate",
+    "constructor_coef_rapm",
+    "constructor_dnf_rate",
+    "constructor_wins_total",
+    "driver_constructor_synergy",
+    "track_complexity",
+    "altitude_m",
+    "tire_compound_start",
+    "avg_pit_stops_circuit",
+    "season_factor",
+    "incident_rate_hist_norm"
+  ],
+  "best_n_features": 13,
+  "best_score_composto": 1.0,
+  "best_mae_medio": 2.397761424382528,
+  "best_rmse_medio": 3.072732078016186,
+  "best_r2_medio": 0.6449834903081259,
+  "best_kendall_tau_medio": 0.644909789877071,
+  "selected_features": [
+    "qualifying_position",
+    "constructor_coef_rapm",
+    "recent_form_5",
+    "driver_constructor_synergy",
+    "constructor_wins_total",
+    "driver_coef_rapm",
+    "track_complexity",
+    "tire_compound_start",
+    "season_factor",
+    "avg_pit_stops_circuit",
+    "constructor_dnf_rate",
+    "grid_penalty",
+    "altitude_m"
+  ],
+  "ranking_csv": "models/feature_selection/rfe_xgboost_ranking.csv",
+  "subsets_csv": "models/feature_selection/rfe_xgboost_subsets.csv",
+  "pareto_csv": "models/feature_selection/rfe_xgboost_pareto.csv",
+  "report": "models/feature_selection/relatorio_rfe_xgboost.txt"
+}

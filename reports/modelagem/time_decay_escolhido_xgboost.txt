@@ -1,0 +1,8 @@
+Time-decay escolhido: 0.99
+Score composto 2023-2024: 1.000000
+MAE medio 2023-2024: 2.360868
+Desvio padrao do MAE: 0.194305
+RMSE medio 2023-2024: 3.032814
+R2 medio 2023-2024: 0.652822
+Kendall tau medio 2023-2024: 0.652293
+Pesos do score composto: {'mae_score': 0.35, 'rmse_score': 0.2, 'r2_score': 0.2, 'kendall_tau_score': 0.25}

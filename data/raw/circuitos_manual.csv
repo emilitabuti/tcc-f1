@@ -1,0 +1,33 @@
+circuit_id,circuit_name,altitude_m,corners,length_km,circuit_type
+albert_park,Albert Park Circuit,13,16,5.278,0
+bahrain,Bahrain International Circuit,7,15,5.412,0
+jeddah,Jeddah Corniche Circuit,15,27,6.174,1
+shanghai,Shanghai International Circuit,5,16,5.451,0
+miami,Miami International Autodrome,2,19,5.412,1
+imola,Autodromo Enzo e Dino Ferrari,26,19,4.909,0
+monaco,Circuit de Monaco,7,19,3.337,1
+catalunya,Circuit de Barcelona-Catalunya,109,16,4.675,0
+villeneuve,Circuit Gilles Villeneuve,7,14,4.361,1
+red_bull_ring,Red Bull Ring,678,10,4.318,0
+silverstone,Silverstone Circuit,145,18,5.891,0
+hungaroring,Hungaroring,264,14,4.381,0
+spa,Circuit de Spa-Francorchamps,401,19,7.004,0
+zandvoort,Circuit Zandvoort,3,14,4.259,0
+monza,Autodromo Nazionale di Monza,162,11,5.793,0
+baku,Baku City Circuit,0,20,6.003,1
+marina_bay,Marina Bay Street Circuit,0,19,4.940,1
+suzuka,Suzuka Circuit,44,18,5.807,0
+losail,Losail International Circuit,20,16,5.380,0
+americas,Circuit of the Americas,150,20,5.513,0
+rodriguez,Autodromo Hermanos Rodriguez,2285,17,4.304,0
+interlagos,Autodromo Jose Carlos Pace,785,15,4.309,0
+las_vegas,Las Vegas Strip Circuit,620,17,6.201,1
+yas_marina,Yas Marina Circuit,3,16,5.281,0
+mugello,Autodromo Internazionale del Mugello,379,15,5.245,0
+portimao,Autodromo Internacional do Algarve,108,15,4.653,0
+nurburgring,Nurburgring,322,16,5.148,0
+istanbul,Istanbul Park,130,14,5.338,0
+bahrain_outer,Bahrain International Circuit (Outer),7,11,3.543,0
+sochi,Sochi Autodrom,10,18,5.848,1
+hockenheim,Hockenheimring,110,16,4.574,0
+ricard,Circuit Paul Ricard,406,15,5.842,0

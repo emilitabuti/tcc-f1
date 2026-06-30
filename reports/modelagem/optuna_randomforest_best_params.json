@@ -1,0 +1,9 @@
+{
+  "max_depth": 6,
+  "max_features": 0.5,
+  "min_samples_leaf": 5,
+  "min_samples_split": 8,
+  "n_estimators": 140,
+  "score_composto_tuning": 0.5320634228230869,
+  "tempo_tuning_segundos": 240.67556713900012
+}

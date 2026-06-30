@@ -1,0 +1,74 @@
+
+=======================================================
+  Ergast 2018-2024
+=======================================================
+  Shape  : (2979, 9)
+  Colunas: ['season', 'round', 'race_name', 'driver_id', 'constructor', 'grid_position', 'finish_position', 'status', 'points']
+  Seasons: [2018, 2019, 2020, 2021, 2022, 2023, 2024]
+
+  Sem nulos.
+
+=======================================================
+  Ergast pitstops 2018-2024
+=======================================================
+  Shape  : (5120, 7)
+  Colunas: ['season', 'round', 'race_name', 'driver_id', 'stop', 'lap', 'duration']
+  Seasons: [2018, 2019, 2020, 2021, 2022, 2023, 2024]
+
+  Nulos por coluna:
+    duration: 6 (0.1%)
+
+=======================================================
+  Ergast 2025
+=======================================================
+  Shape  : (479, 9)
+  Colunas: ['season', 'round', 'race_name', 'driver_id', 'constructor', 'grid_position', 'finish_position', 'status', 'points']
+  Seasons: [2025]
+
+  Sem nulos.
+
+=======================================================
+  FastF1 qualifying 2018-2024
+=======================================================
+  Shape  : (45809, 7)
+  Colunas: ['Driver', 'LapTime', 'Sector1Time', 'Sector2Time', 'Sector3Time', 'season', 'round']
+  Seasons: [2018, 2019, 2020, 2021, 2022, 2023, 2024]
+
+  Nulos por coluna:
+    LapTime: 14475 (31.6%)
+    Sector1Time: 10948 (23.9%)
+    Sector2Time: 681 (1.5%)
+    Sector3Time: 3176 (6.9%)
+
+=======================================================
+  FastF1 laps 2018-2024
+=======================================================
+  Shape  : (164463, 11)
+  Colunas: ['Driver', 'LapNumber', 'LapTime', 'Sector1Time', 'Sector2Time', 'Sector3Time', 'Compound', 'TyreLife', 'Stint', 'season', 'round']
+  Seasons: [2018, 2019, 2020, 2021, 2022, 2023, 2024]
+
+  Nulos por coluna:
+    LapTime: 2969 (1.8%)
+    Sector1Time: 3565 (2.2%)
+    Sector2Time: 349 (0.2%)
+    Sector3Time: 533 (0.3%)
+    Compound: 343 (0.2%)
+    TyreLife: 343 (0.2%)
+    Stint: 343 (0.2%)
+
+=======================================================
+  Ergast vs FastF1 Qualifying
+=======================================================
+  Corridas em Ergast sem correspondencia em FastF1 Qualifying: 1
+    Season 2024, Round 21
+
+=======================================================
+  Ergast vs FastF1 Laps
+=======================================================
+  Corridas em Ergast sem correspondencia em FastF1 Laps: 0
+
+=======================================================
+  Ergast vs Pitstops
+=======================================================
+  Corridas em Ergast sem correspondencia em Pitstops: 1
+    Season 2021, Round 12
