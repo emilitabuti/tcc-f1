@@ -3,12 +3,14 @@
 
 # Cache FastF1
 data/raw/fastf1_cache/
+dados/cache/
 
 # Logs de extração
 data/raw/*.log
 
 # Checkpoints intermediários
 data/raw/fastf1_checkpoint.json
+dados/fastf1_checkpoint.json
 
 # VS Code / editor
 .vscode/
