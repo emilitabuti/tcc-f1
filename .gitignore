@@ -1,5 +1,6 @@
 # Ambiente virtual
 .venv/
+.venv-1/
 
 # Cache FastF1
 data/raw/fastf1_cache/
@@ -28,3 +29,4 @@ __pycache__/
 # OS
 .DS_Store
 docs/*.pdf
+docs/tratamento_dados_random_forest.md
