@@ -93,6 +93,18 @@ def montar_circuitos():
 
     circuitos = circuitos_manual.merge(localizacao, on="circuit_id", how="left")
 
+    # a api nao conhece o "bahrain_outer" (id criado so no circuitos_manual.csv
+    # pra separar o layout do Sakhir GP 2020), entao ele fica sem lat/long/country
+    # depois do merge acima. corrige usando os dados do "bahrain", que e o mesmo
+    # circuito fisico, so com o layout da pista diferente.
+    bahrain = circuitos[circuitos["circuit_id"] == "bahrain"][["lat", "long", "country"]].dropna()
+    if not bahrain.empty:
+        referencia = bahrain.iloc[0]
+        mascara = circuitos["circuit_id"] == "bahrain_outer"
+        circuitos.loc[mascara, "lat"] = circuitos.loc[mascara, "lat"].fillna(referencia["lat"])
+        circuitos.loc[mascara, "long"] = circuitos.loc[mascara, "long"].fillna(referencia["long"])
+        circuitos.loc[mascara, "country"] = circuitos.loc[mascara, "country"].fillna(referencia["country"])
+
     return circuitos
 
 

@@ -16,6 +16,7 @@ dados/fastf1_checkpoint.json
 # VS Code / editor
 .vscode/
 .claude/
+.github/prompts/
 
 # Python
 __pycache__/
