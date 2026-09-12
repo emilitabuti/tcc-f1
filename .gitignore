@@ -1,0 +1,33 @@
+# Ambiente virtual
+.venv/
+.venv-1/
+
+# Cache FastF1
+data/raw/fastf1_cache/
+dados/cache/
+
+# Logs de extração
+data/raw/*.log
+
+# Checkpoints intermediários
+data/raw/fastf1_checkpoint.json
+dados/fastf1_checkpoint.json
+
+# VS Code / editor
+.vscode/
+.claude/
+.github/prompts/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+docs/*.pdf
+docs/tratamento_dados_random_forest.md
