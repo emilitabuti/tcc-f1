@@ -40,7 +40,7 @@ def validar_base(base):
     """Confere se a Etapa 4 entregou dados consistentes."""
     colunas_obrigatorias = [
         "season", "round", "circuit_id", "driver_id", "num_pitstops",
-        "status_categoria", "choveu", *COLUNAS_TEMPO_VOLTA, *COLUNAS_PITSTOP,
+        "status", "choveu", *COLUNAS_TEMPO_VOLTA, *COLUNAS_PITSTOP,
     ]
 
     faltando = [coluna for coluna in colunas_obrigatorias if coluna not in base.columns]
@@ -156,7 +156,11 @@ def estatisticas_pitstop_total(historico, coluna, circuit_id, season, num_pitsto
 def obter_explicacao_observada(linha):
     """Usa informacoes da corrida atual apenas para explicar o outlier no log."""
     choveu = bool(linha.get("choveu", 0))
-    dnf_piloto = linha.get("status_categoria", "") == "dnf_piloto"
+    status = str(linha.get("status", "")).strip().lower()
+    dnf_piloto = any(
+        palavra in status
+        for palavra in ["accident", "collision", "spun off", "spin", "crash"]
+    )
 
     if choveu and dnf_piloto:
         return "outlier_explicado", "chuva e dnf_piloto"

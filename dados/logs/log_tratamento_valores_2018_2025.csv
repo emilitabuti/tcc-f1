@@ -1,221 +1,221 @@
 season,round,race_name,circuit_id,driver_id,constructor_id,coluna,tipo_tratamento,valor_original,valor_novo,metodo,observacao
-2018,1,Australian Grand Prix,albert_park,gasly,toro_rosso,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2018,1,Australian Grand Prix,albert_park,ericsson,sauber,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2018,1,Australian Grand Prix,albert_park,sirotkin,williams,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2018,2,Bahrain Grand Prix,bahrain,ricciardo,red_bull,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2018,4,Azerbaijan Grand Prix,baku,hulkenberg,renault,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2018,4,Azerbaijan Grand Prix,baku,ocon,force_india,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2018,4,Azerbaijan Grand Prix,baku,sirotkin,williams,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2018,5,Spanish Grand Prix,catalunya,raikkonen,ferrari,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2018,5,Spanish Grand Prix,catalunya,grosjean,haas,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2018,5,Spanish Grand Prix,catalunya,gasly,toro_rosso,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2018,5,Spanish Grand Prix,catalunya,hulkenberg,renault,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2018,7,Canadian Grand Prix,villeneuve,brendon_hartley,toro_rosso,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2018,7,Canadian Grand Prix,villeneuve,stroll,williams,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2018,8,French Grand Prix,ricard,perez,force_india,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2018,8,French Grand Prix,ricard,ocon,force_india,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2018,8,French Grand Prix,ricard,gasly,toro_rosso,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2018,9,Austrian Grand Prix,red_bull_ring,brendon_hartley,toro_rosso,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2018,9,Austrian Grand Prix,red_bull_ring,bottas,mercedes,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2018,9,Austrian Grand Prix,red_bull_ring,hulkenberg,renault,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2018,10,British Grand Prix,silverstone,brendon_hartley,toro_rosso,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2018,11,German Grand Prix,hockenheimring,ricciardo,red_bull,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2018,12,Hungarian Grand Prix,hungaroring,max_verstappen,red_bull,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2018,12,Hungarian Grand Prix,hungaroring,leclerc,sauber,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2018,13,Belgian Grand Prix,spa,ricciardo,red_bull,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2018,13,Belgian Grand Prix,spa,leclerc,sauber,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2018,13,Belgian Grand Prix,spa,alonso,mclaren,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2018,13,Belgian Grand Prix,spa,hulkenberg,renault,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2018,14,Italian Grand Prix,monza,alonso,mclaren,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2018,14,Italian Grand Prix,monza,brendon_hartley,toro_rosso,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2018,15,Singapore Grand Prix,marina_bay,ocon,force_india,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2018,16,Russian Grand Prix,sochi,gasly,toro_rosso,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2018,18,United States Grand Prix,americas,ricciardo,red_bull,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2018,18,United States Grand Prix,americas,alonso,mclaren,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2018,19,Mexican Grand Prix,rodriguez,alonso,mclaren,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2018,20,Brazilian Grand Prix,interlagos,hulkenberg,renault,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2018,21,Abu Dhabi Grand Prix,yas_marina,ericsson,sauber,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2018,21,Abu Dhabi Grand Prix,yas_marina,raikkonen,ferrari,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2018,21,Abu Dhabi Grand Prix,yas_marina,hulkenberg,renault,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2019,1,Australian Grand Prix,albert_park,sainz,mclaren,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2019,4,Azerbaijan Grand Prix,baku,gasly,red_bull,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2019,7,Canadian Grand Prix,villeneuve,norris,mclaren,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2019,10,British Grand Prix,silverstone,giovinazzi,alfa,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2019,11,German Grand Prix,hockenheimring,perez,racing_point,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2019,13,Belgian Grand Prix,spa,max_verstappen,red_bull,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2019,16,Russian Grand Prix,sochi,grosjean,haas,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2019,17,Japanese Grand Prix,suzuka,max_verstappen,red_bull,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2019,18,Mexican Grand Prix,rodriguez,norris,mclaren,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2019,19,United States Grand Prix,americas,vettel,ferrari,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2019,21,Abu Dhabi Grand Prix,yas_marina,gasly,toro_rosso,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2020,1,Austrian Grand Prix,red_bull_ring,kevin_magnussen,haas,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2020,1,Austrian Grand Prix,red_bull_ring,stroll,racing_point,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2020,1,Austrian Grand Prix,red_bull_ring,ricciardo,renault,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2020,1,Austrian Grand Prix,red_bull_ring,max_verstappen,red_bull,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2020,2,Styrian Grand Prix,red_bull_ring,ocon,renault,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2020,2,Styrian Grand Prix,red_bull_ring,vettel,ferrari,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2020,4,British Grand Prix,silverstone,kvyat,alphatauri,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2020,4,British Grand Prix,silverstone,kevin_magnussen,haas,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2020,4,British Grand Prix,silverstone,hulkenberg,racing_point,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2020,7,Belgian Grand Prix,spa,giovinazzi,alfa,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2020,7,Belgian Grand Prix,spa,russell,williams,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2020,7,Belgian Grand Prix,spa,sainz,mclaren,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2020,8,Italian Grand Prix,monza,vettel,ferrari,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2020,9,Tuscan Grand Prix,mugello,latifi,williams,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2020,9,Tuscan Grand Prix,mugello,kevin_magnussen,haas,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2020,9,Tuscan Grand Prix,mugello,giovinazzi,alfa,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2020,9,Tuscan Grand Prix,mugello,sainz,mclaren,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2020,9,Tuscan Grand Prix,mugello,max_verstappen,red_bull,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2020,9,Tuscan Grand Prix,mugello,gasly,alphatauri,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2020,10,Russian Grand Prix,sochi,sainz,mclaren,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2020,10,Russian Grand Prix,sochi,stroll,racing_point,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2020,11,Eifel Grand Prix,nurburgring,ocon,renault,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2020,13,Emilia Romagna Grand Prix,imola,gasly,alphatauri,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2020,15,Bahrain Grand Prix,bahrain,grosjean,haas,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2020,16,Sakhir Grand Prix,bahrain_outer,max_verstappen,red_bull,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2020,16,Sakhir Grand Prix,bahrain_outer,leclerc,ferrari,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2020,17,Abu Dhabi Grand Prix,yas_marina,perez,racing_point,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2021,1,Bahrain Grand Prix,bahrain,mazepin,haas,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2021,2,Emilia Romagna Grand Prix,imola,latifi,williams,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2021,3,Portuguese Grand Prix,portimao,raikkonen,alfa,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2021,4,Spanish Grand Prix,catalunya,tsunoda,alphatauri,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2021,5,Monaco Grand Prix,monaco,bottas,mercedes,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2021,5,Monaco Grand Prix,monaco,leclerc,ferrari,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2021,6,Azerbaijan Grand Prix,baku,stroll,aston_martin,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2021,6,Azerbaijan Grand Prix,baku,ocon,alpine,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2021,8,Styrian Grand Prix,red_bull_ring,gasly,alphatauri,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2021,9,Austrian Grand Prix,red_bull_ring,ocon,alpine,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2021,10,British Grand Prix,silverstone,max_verstappen,red_bull,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2021,11,Hungarian Grand Prix,hungaroring,bottas,mercedes,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2021,11,Hungarian Grand Prix,hungaroring,perez,red_bull,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2021,11,Hungarian Grand Prix,hungaroring,leclerc,ferrari,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2021,11,Hungarian Grand Prix,hungaroring,stroll,aston_martin,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2021,12,Belgian Grand Prix,spa,max_verstappen,red_bull,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2021,12,Belgian Grand Prix,spa,russell,williams,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2021,12,Belgian Grand Prix,spa,hamilton,mercedes,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2021,12,Belgian Grand Prix,spa,ricciardo,mclaren,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2021,12,Belgian Grand Prix,spa,vettel,aston_martin,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2021,12,Belgian Grand Prix,spa,gasly,alphatauri,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2021,12,Belgian Grand Prix,spa,ocon,alpine,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2021,12,Belgian Grand Prix,spa,leclerc,ferrari,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2021,12,Belgian Grand Prix,spa,latifi,williams,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2021,12,Belgian Grand Prix,spa,sainz,ferrari,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2021,12,Belgian Grand Prix,spa,alonso,alpine,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2021,12,Belgian Grand Prix,spa,bottas,mercedes,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2021,12,Belgian Grand Prix,spa,giovinazzi,alfa,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2021,12,Belgian Grand Prix,spa,norris,mclaren,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2021,12,Belgian Grand Prix,spa,tsunoda,alphatauri,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2021,12,Belgian Grand Prix,spa,mick_schumacher,haas,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2021,12,Belgian Grand Prix,spa,mazepin,haas,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2021,12,Belgian Grand Prix,spa,raikkonen,alfa,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2021,12,Belgian Grand Prix,spa,perez,red_bull,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2021,12,Belgian Grand Prix,spa,stroll,aston_martin,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2021,14,Italian Grand Prix,monza,gasly,alphatauri,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2021,14,Italian Grand Prix,monza,tsunoda,alphatauri,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2021,16,Turkish Grand Prix,istanbul,ocon,alpine,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2021,18,Mexico City Grand Prix,rodriguez,mick_schumacher,haas,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2021,18,Mexico City Grand Prix,rodriguez,tsunoda,alphatauri,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2021,21,Saudi Arabian Grand Prix,jeddah,mick_schumacher,haas,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2021,22,Abu Dhabi Grand Prix,yas_marina,russell,williams,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2021,22,Abu Dhabi Grand Prix,yas_marina,mazepin,haas,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2022,2,Saudi Arabian Grand Prix,jeddah,latifi,williams,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2022,2,Saudi Arabian Grand Prix,jeddah,tsunoda,alphatauri,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2022,2,Saudi Arabian Grand Prix,jeddah,mick_schumacher,haas,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2022,3,Australian Grand Prix,albert_park,vettel,aston_martin,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2022,3,Australian Grand Prix,albert_park,sainz,ferrari,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2022,4,Emilia Romagna Grand Prix,imola,alonso,alpine,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2022,4,Emilia Romagna Grand Prix,imola,sainz,ferrari,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2022,5,Miami Grand Prix,miami,zhou,alfa,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2022,7,Monaco Grand Prix,monaco,kevin_magnussen,haas,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2022,8,Azerbaijan Grand Prix,baku,sainz,ferrari,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2022,9,Canadian Grand Prix,villeneuve,mick_schumacher,haas,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2022,9,Canadian Grand Prix,villeneuve,perez,red_bull,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2022,10,British Grand Prix,silverstone,russell,mercedes,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2022,10,British Grand Prix,silverstone,zhou,alfa,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2022,10,British Grand Prix,silverstone,albon,williams,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2022,12,French Grand Prix,ricard,leclerc,ferrari,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2022,14,Belgian Grand Prix,spa,bottas,alfa,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2022,14,Belgian Grand Prix,spa,hamilton,mercedes,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2022,16,Italian Grand Prix,monza,alonso,alpine,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2022,16,Italian Grand Prix,monza,vettel,aston_martin,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2022,17,Singapore Grand Prix,marina_bay,ocon,alpine,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2022,17,Singapore Grand Prix,marina_bay,albon,williams,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2022,17,Singapore Grand Prix,marina_bay,alonso,alpine,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2022,17,Singapore Grand Prix,marina_bay,latifi,williams,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2022,17,Singapore Grand Prix,marina_bay,zhou,alfa,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2022,18,Japanese Grand Prix,suzuka,sainz,ferrari,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2022,18,Japanese Grand Prix,suzuka,albon,williams,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2022,19,United States Grand Prix,americas,sainz,ferrari,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2022,21,São Paulo Grand Prix,interlagos,kevin_magnussen,haas,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2022,21,São Paulo Grand Prix,interlagos,ricciardo,mclaren,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2023,1,Bahrain Grand Prix,bahrain,piastri,mclaren,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2023,3,Australian Grand Prix,albert_park,albon,williams,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2023,3,Australian Grand Prix,albert_park,leclerc,ferrari,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2023,4,Azerbaijan Grand Prix,baku,de_vries,alphatauri,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2023,8,Canadian Grand Prix,villeneuve,sargeant,williams,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2023,10,British Grand Prix,silverstone,kevin_magnussen,haas,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2023,10,British Grand Prix,silverstone,ocon,alpine,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2023,11,Hungarian Grand Prix,hungaroring,ocon,alpine,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2023,11,Hungarian Grand Prix,hungaroring,gasly,alpine,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2023,12,Belgian Grand Prix,spa,piastri,mclaren,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2023,13,Dutch Grand Prix,zandvoort,sargeant,williams,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2023,14,Italian Grand Prix,monza,tsunoda,alphatauri,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2023,15,Singapore Grand Prix,marina_bay,tsunoda,alphatauri,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2023,15,Singapore Grand Prix,marina_bay,stroll,aston_martin,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2023,17,Qatar Grand Prix,losail,hamilton,mercedes,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2023,17,Qatar Grand Prix,losail,sainz,ferrari,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2023,18,United States Grand Prix,americas,piastri,mclaren,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2023,18,United States Grand Prix,americas,ocon,alpine,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2023,19,Mexico City Grand Prix,rodriguez,perez,red_bull,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2023,20,São Paulo Grand Prix,interlagos,kevin_magnussen,haas,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2023,20,São Paulo Grand Prix,interlagos,albon,williams,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2023,20,São Paulo Grand Prix,interlagos,leclerc,ferrari,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2023,21,Las Vegas Grand Prix,vegas,norris,mclaren,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2024,2,Saudi Arabian Grand Prix,jeddah,stroll,aston_martin,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2024,2,Saudi Arabian Grand Prix,jeddah,gasly,alpine,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2024,3,Australian Grand Prix,albert_park,max_verstappen,red_bull,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2024,4,Japanese Grand Prix,suzuka,ricciardo,rb,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2024,4,Japanese Grand Prix,suzuka,albon,williams,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2024,8,Monaco Grand Prix,monaco,ocon,alpine,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2024,8,Monaco Grand Prix,monaco,perez,red_bull,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2024,8,Monaco Grand Prix,monaco,hulkenberg,haas,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2024,8,Monaco Grand Prix,monaco,kevin_magnussen,haas,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2024,9,Canadian Grand Prix,villeneuve,sargeant,williams,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2024,12,British Grand Prix,silverstone,gasly,alpine,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2024,14,Belgian Grand Prix,spa,zhou,sauber,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2024,16,Italian Grand Prix,monza,tsunoda,rb,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2024,19,United States Grand Prix,americas,hamilton,mercedes,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2024,20,Mexico City Grand Prix,rodriguez,alonso,aston_martin,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2024,20,Mexico City Grand Prix,rodriguez,albon,williams,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2024,20,Mexico City Grand Prix,rodriguez,tsunoda,rb,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2024,21,São Paulo Grand Prix,interlagos,albon,williams,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2024,21,São Paulo Grand Prix,interlagos,stroll,aston_martin,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2024,23,Qatar Grand Prix,losail,colapinto,williams,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2024,23,Qatar Grand Prix,losail,ocon,alpine,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2024,24,Abu Dhabi Grand Prix,yas_marina,perez,red_bull,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2025,1,Australian Grand Prix,albert_park,sainz,williams,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2025,1,Australian Grand Prix,albert_park,doohan,alpine,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2025,1,Australian Grand Prix,albert_park,hadjar,rb,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2025,2,Chinese Grand Prix,shanghai,alonso,aston_martin,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2025,5,Saudi Arabian Grand Prix,jeddah,tsunoda,red_bull,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2025,5,Saudi Arabian Grand Prix,jeddah,gasly,alpine,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2025,6,Miami Grand Prix,miami,bearman,haas,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2025,6,Miami Grand Prix,miami,doohan,alpine,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2025,11,Austrian Grand Prix,red_bull_ring,max_verstappen,red_bull,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2025,11,Austrian Grand Prix,red_bull_ring,antonelli,mercedes,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2025,11,Austrian Grand Prix,red_bull_ring,sainz,williams,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2025,12,British Grand Prix,silverstone,bortoleto,sauber,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2025,12,British Grand Prix,silverstone,lawson,rb,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2025,12,British Grand Prix,silverstone,colapinto,alpine,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2025,15,Dutch Grand Prix,zandvoort,hamilton,ferrari,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2025,16,Italian Grand Prix,monza,hulkenberg,sauber,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2025,17,Azerbaijan Grand Prix,baku,piastri,mclaren,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2025,19,United States Grand Prix,americas,sainz,williams,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2025,20,Mexico City Grand Prix,rodriguez,hulkenberg,sauber,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2025,21,São Paulo Grand Prix,interlagos,leclerc,ferrari,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2025,21,São Paulo Grand Prix,interlagos,bortoleto,sauber,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2025,22,Las Vegas Grand Prix,vegas,stroll,aston_martin,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
-2025,23,Qatar Grand Prix,losail,hulkenberg,sauber,num_pitstops,ausencia_estrutural,,0.0,regra_fixa,sem registro de pitstop; considerado zero paradas
+2018,1,Australian Grand Prix,albert_park,gasly,toro_rosso,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2018,1,Australian Grand Prix,albert_park,ericsson,sauber,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2018,1,Australian Grand Prix,albert_park,sirotkin,williams,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2018,2,Bahrain Grand Prix,bahrain,ricciardo,red_bull,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2018,4,Azerbaijan Grand Prix,baku,hulkenberg,renault,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2018,4,Azerbaijan Grand Prix,baku,ocon,force_india,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2018,4,Azerbaijan Grand Prix,baku,sirotkin,williams,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2018,5,Spanish Grand Prix,catalunya,raikkonen,ferrari,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2018,5,Spanish Grand Prix,catalunya,grosjean,haas,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2018,5,Spanish Grand Prix,catalunya,gasly,toro_rosso,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2018,5,Spanish Grand Prix,catalunya,hulkenberg,renault,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2018,7,Canadian Grand Prix,villeneuve,brendon_hartley,toro_rosso,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2018,7,Canadian Grand Prix,villeneuve,stroll,williams,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2018,8,French Grand Prix,ricard,perez,force_india,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2018,8,French Grand Prix,ricard,ocon,force_india,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2018,8,French Grand Prix,ricard,gasly,toro_rosso,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2018,9,Austrian Grand Prix,red_bull_ring,brendon_hartley,toro_rosso,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2018,9,Austrian Grand Prix,red_bull_ring,bottas,mercedes,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2018,9,Austrian Grand Prix,red_bull_ring,hulkenberg,renault,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2018,10,British Grand Prix,silverstone,brendon_hartley,toro_rosso,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2018,11,German Grand Prix,hockenheimring,ricciardo,red_bull,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2018,12,Hungarian Grand Prix,hungaroring,max_verstappen,red_bull,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2018,12,Hungarian Grand Prix,hungaroring,leclerc,sauber,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2018,13,Belgian Grand Prix,spa,ricciardo,red_bull,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2018,13,Belgian Grand Prix,spa,leclerc,sauber,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2018,13,Belgian Grand Prix,spa,alonso,mclaren,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2018,13,Belgian Grand Prix,spa,hulkenberg,renault,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2018,14,Italian Grand Prix,monza,alonso,mclaren,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2018,14,Italian Grand Prix,monza,brendon_hartley,toro_rosso,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2018,15,Singapore Grand Prix,marina_bay,ocon,force_india,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2018,16,Russian Grand Prix,sochi,gasly,toro_rosso,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2018,18,United States Grand Prix,americas,ricciardo,red_bull,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2018,18,United States Grand Prix,americas,alonso,mclaren,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2018,19,Mexican Grand Prix,rodriguez,alonso,mclaren,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2018,20,Brazilian Grand Prix,interlagos,hulkenberg,renault,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2018,21,Abu Dhabi Grand Prix,yas_marina,ericsson,sauber,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2018,21,Abu Dhabi Grand Prix,yas_marina,raikkonen,ferrari,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2018,21,Abu Dhabi Grand Prix,yas_marina,hulkenberg,renault,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2019,1,Australian Grand Prix,albert_park,sainz,mclaren,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2019,4,Azerbaijan Grand Prix,baku,gasly,red_bull,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2019,7,Canadian Grand Prix,villeneuve,norris,mclaren,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2019,10,British Grand Prix,silverstone,giovinazzi,alfa,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2019,11,German Grand Prix,hockenheimring,perez,racing_point,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2019,13,Belgian Grand Prix,spa,max_verstappen,red_bull,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2019,16,Russian Grand Prix,sochi,grosjean,haas,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2019,17,Japanese Grand Prix,suzuka,max_verstappen,red_bull,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2019,18,Mexican Grand Prix,rodriguez,norris,mclaren,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2019,19,United States Grand Prix,americas,vettel,ferrari,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2019,21,Abu Dhabi Grand Prix,yas_marina,gasly,toro_rosso,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2020,1,Austrian Grand Prix,red_bull_ring,kevin_magnussen,haas,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2020,1,Austrian Grand Prix,red_bull_ring,stroll,racing_point,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2020,1,Austrian Grand Prix,red_bull_ring,ricciardo,renault,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2020,1,Austrian Grand Prix,red_bull_ring,max_verstappen,red_bull,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2020,2,Styrian Grand Prix,red_bull_ring,ocon,renault,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2020,2,Styrian Grand Prix,red_bull_ring,vettel,ferrari,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2020,4,British Grand Prix,silverstone,kvyat,alphatauri,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2020,4,British Grand Prix,silverstone,kevin_magnussen,haas,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2020,4,British Grand Prix,silverstone,hulkenberg,racing_point,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2020,7,Belgian Grand Prix,spa,giovinazzi,alfa,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2020,7,Belgian Grand Prix,spa,russell,williams,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2020,7,Belgian Grand Prix,spa,sainz,mclaren,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2020,8,Italian Grand Prix,monza,vettel,ferrari,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2020,9,Tuscan Grand Prix,mugello,latifi,williams,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2020,9,Tuscan Grand Prix,mugello,kevin_magnussen,haas,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2020,9,Tuscan Grand Prix,mugello,giovinazzi,alfa,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2020,9,Tuscan Grand Prix,mugello,sainz,mclaren,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2020,9,Tuscan Grand Prix,mugello,max_verstappen,red_bull,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2020,9,Tuscan Grand Prix,mugello,gasly,alphatauri,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2020,10,Russian Grand Prix,sochi,sainz,mclaren,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2020,10,Russian Grand Prix,sochi,stroll,racing_point,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2020,11,Eifel Grand Prix,nurburgring,ocon,renault,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2020,13,Emilia Romagna Grand Prix,imola,gasly,alphatauri,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2020,15,Bahrain Grand Prix,bahrain,grosjean,haas,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2020,16,Sakhir Grand Prix,bahrain_outer,max_verstappen,red_bull,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2020,16,Sakhir Grand Prix,bahrain_outer,leclerc,ferrari,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2020,17,Abu Dhabi Grand Prix,yas_marina,perez,racing_point,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2021,1,Bahrain Grand Prix,bahrain,mazepin,haas,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2021,2,Emilia Romagna Grand Prix,imola,latifi,williams,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2021,3,Portuguese Grand Prix,portimao,raikkonen,alfa,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2021,4,Spanish Grand Prix,catalunya,tsunoda,alphatauri,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2021,5,Monaco Grand Prix,monaco,bottas,mercedes,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2021,5,Monaco Grand Prix,monaco,leclerc,ferrari,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2021,6,Azerbaijan Grand Prix,baku,stroll,aston_martin,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2021,6,Azerbaijan Grand Prix,baku,ocon,alpine,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2021,8,Styrian Grand Prix,red_bull_ring,gasly,alphatauri,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2021,9,Austrian Grand Prix,red_bull_ring,ocon,alpine,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2021,10,British Grand Prix,silverstone,max_verstappen,red_bull,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2021,11,Hungarian Grand Prix,hungaroring,bottas,mercedes,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2021,11,Hungarian Grand Prix,hungaroring,perez,red_bull,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2021,11,Hungarian Grand Prix,hungaroring,leclerc,ferrari,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2021,11,Hungarian Grand Prix,hungaroring,stroll,aston_martin,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2021,14,Italian Grand Prix,monza,gasly,alphatauri,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2021,14,Italian Grand Prix,monza,tsunoda,alphatauri,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2021,16,Turkish Grand Prix,istanbul,ocon,alpine,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2021,18,Mexico City Grand Prix,rodriguez,mick_schumacher,haas,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2021,18,Mexico City Grand Prix,rodriguez,tsunoda,alphatauri,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2021,21,Saudi Arabian Grand Prix,jeddah,mick_schumacher,haas,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2021,22,Abu Dhabi Grand Prix,yas_marina,russell,williams,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2021,22,Abu Dhabi Grand Prix,yas_marina,mazepin,haas,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2022,2,Saudi Arabian Grand Prix,jeddah,latifi,williams,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2022,2,Saudi Arabian Grand Prix,jeddah,tsunoda,alphatauri,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2022,2,Saudi Arabian Grand Prix,jeddah,mick_schumacher,haas,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2022,3,Australian Grand Prix,albert_park,vettel,aston_martin,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2022,3,Australian Grand Prix,albert_park,sainz,ferrari,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2022,4,Emilia Romagna Grand Prix,imola,alonso,alpine,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2022,4,Emilia Romagna Grand Prix,imola,sainz,ferrari,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2022,5,Miami Grand Prix,miami,zhou,alfa,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2022,7,Monaco Grand Prix,monaco,kevin_magnussen,haas,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2022,8,Azerbaijan Grand Prix,baku,sainz,ferrari,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2022,9,Canadian Grand Prix,villeneuve,mick_schumacher,haas,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2022,9,Canadian Grand Prix,villeneuve,perez,red_bull,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2022,10,British Grand Prix,silverstone,russell,mercedes,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2022,10,British Grand Prix,silverstone,zhou,alfa,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2022,10,British Grand Prix,silverstone,albon,williams,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2022,12,French Grand Prix,ricard,leclerc,ferrari,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2022,14,Belgian Grand Prix,spa,bottas,alfa,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2022,14,Belgian Grand Prix,spa,hamilton,mercedes,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2022,16,Italian Grand Prix,monza,alonso,alpine,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2022,16,Italian Grand Prix,monza,vettel,aston_martin,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2022,17,Singapore Grand Prix,marina_bay,ocon,alpine,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2022,17,Singapore Grand Prix,marina_bay,albon,williams,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2022,17,Singapore Grand Prix,marina_bay,alonso,alpine,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2022,17,Singapore Grand Prix,marina_bay,latifi,williams,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2022,17,Singapore Grand Prix,marina_bay,zhou,alfa,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2022,18,Japanese Grand Prix,suzuka,sainz,ferrari,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2022,18,Japanese Grand Prix,suzuka,albon,williams,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2022,19,United States Grand Prix,americas,sainz,ferrari,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2022,21,São Paulo Grand Prix,interlagos,kevin_magnussen,haas,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2022,21,São Paulo Grand Prix,interlagos,ricciardo,mclaren,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2023,1,Bahrain Grand Prix,bahrain,piastri,mclaren,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2023,3,Australian Grand Prix,albert_park,albon,williams,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2023,3,Australian Grand Prix,albert_park,leclerc,ferrari,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2023,4,Azerbaijan Grand Prix,baku,de_vries,alphatauri,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2023,8,Canadian Grand Prix,villeneuve,sargeant,williams,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2023,10,British Grand Prix,silverstone,kevin_magnussen,haas,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2023,10,British Grand Prix,silverstone,ocon,alpine,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2023,11,Hungarian Grand Prix,hungaroring,ocon,alpine,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2023,11,Hungarian Grand Prix,hungaroring,gasly,alpine,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2023,12,Belgian Grand Prix,spa,piastri,mclaren,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2023,13,Dutch Grand Prix,zandvoort,sargeant,williams,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2023,14,Italian Grand Prix,monza,tsunoda,alphatauri,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2023,15,Singapore Grand Prix,marina_bay,tsunoda,alphatauri,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2023,15,Singapore Grand Prix,marina_bay,stroll,aston_martin,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2023,17,Qatar Grand Prix,losail,hamilton,mercedes,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2023,17,Qatar Grand Prix,losail,sainz,ferrari,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2023,18,United States Grand Prix,americas,piastri,mclaren,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2023,18,United States Grand Prix,americas,ocon,alpine,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2023,19,Mexico City Grand Prix,rodriguez,perez,red_bull,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2023,20,São Paulo Grand Prix,interlagos,kevin_magnussen,haas,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2023,20,São Paulo Grand Prix,interlagos,albon,williams,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2023,20,São Paulo Grand Prix,interlagos,leclerc,ferrari,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2023,21,Las Vegas Grand Prix,vegas,norris,mclaren,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2024,2,Saudi Arabian Grand Prix,jeddah,stroll,aston_martin,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2024,2,Saudi Arabian Grand Prix,jeddah,gasly,alpine,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2024,3,Australian Grand Prix,albert_park,max_verstappen,red_bull,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2024,4,Japanese Grand Prix,suzuka,ricciardo,rb,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2024,4,Japanese Grand Prix,suzuka,albon,williams,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2024,8,Monaco Grand Prix,monaco,ocon,alpine,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2024,8,Monaco Grand Prix,monaco,perez,red_bull,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2024,8,Monaco Grand Prix,monaco,hulkenberg,haas,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2024,8,Monaco Grand Prix,monaco,kevin_magnussen,haas,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2024,9,Canadian Grand Prix,villeneuve,sargeant,williams,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2024,12,British Grand Prix,silverstone,gasly,alpine,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2024,14,Belgian Grand Prix,spa,zhou,sauber,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2024,16,Italian Grand Prix,monza,tsunoda,rb,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2024,19,United States Grand Prix,americas,hamilton,mercedes,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2024,20,Mexico City Grand Prix,rodriguez,alonso,aston_martin,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2024,20,Mexico City Grand Prix,rodriguez,albon,williams,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2024,20,Mexico City Grand Prix,rodriguez,tsunoda,rb,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2024,21,São Paulo Grand Prix,interlagos,albon,williams,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2024,21,São Paulo Grand Prix,interlagos,stroll,aston_martin,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2024,23,Qatar Grand Prix,losail,colapinto,williams,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2024,23,Qatar Grand Prix,losail,ocon,alpine,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2024,24,Abu Dhabi Grand Prix,yas_marina,perez,red_bull,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2025,1,Australian Grand Prix,albert_park,sainz,williams,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2025,1,Australian Grand Prix,albert_park,doohan,alpine,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2025,1,Australian Grand Prix,albert_park,hadjar,rb,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2025,2,Chinese Grand Prix,shanghai,alonso,aston_martin,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2025,5,Saudi Arabian Grand Prix,jeddah,tsunoda,red_bull,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2025,5,Saudi Arabian Grand Prix,jeddah,gasly,alpine,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2025,6,Miami Grand Prix,miami,bearman,haas,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2025,6,Miami Grand Prix,miami,doohan,alpine,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2025,11,Austrian Grand Prix,red_bull_ring,max_verstappen,red_bull,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2025,11,Austrian Grand Prix,red_bull_ring,antonelli,mercedes,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2025,11,Austrian Grand Prix,red_bull_ring,sainz,williams,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2025,12,British Grand Prix,silverstone,bortoleto,sauber,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2025,12,British Grand Prix,silverstone,lawson,rb,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2025,12,British Grand Prix,silverstone,colapinto,alpine,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2025,15,Dutch Grand Prix,zandvoort,hamilton,ferrari,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2025,16,Italian Grand Prix,monza,hulkenberg,sauber,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2025,17,Azerbaijan Grand Prix,baku,piastri,mclaren,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2025,19,United States Grand Prix,americas,sainz,williams,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2025,20,Mexico City Grand Prix,rodriguez,hulkenberg,sauber,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2025,21,São Paulo Grand Prix,interlagos,leclerc,ferrari,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2025,21,São Paulo Grand Prix,interlagos,bortoleto,sauber,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2025,22,Las Vegas Grand Prix,vegas,stroll,aston_martin,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2025,23,Qatar Grand Prix,losail,hulkenberg,sauber,num_pitstops,ausencia_estrutural,,0.0,regra_pitstop,corrida possui dados de pitstop; ausencia do piloto considerada zero paradas
+2021,12,Belgian Grand Prix,spa,max_verstappen,red_bull,num_pitstops,ausencia_dado,,0.0,sentinela_zero,dados de pitstop indisponiveis para a corrida; flag pitstop_dado_disponivel preserva a ausencia
+2021,12,Belgian Grand Prix,spa,russell,williams,num_pitstops,ausencia_dado,,0.0,sentinela_zero,dados de pitstop indisponiveis para a corrida; flag pitstop_dado_disponivel preserva a ausencia
+2021,12,Belgian Grand Prix,spa,hamilton,mercedes,num_pitstops,ausencia_dado,,0.0,sentinela_zero,dados de pitstop indisponiveis para a corrida; flag pitstop_dado_disponivel preserva a ausencia
+2021,12,Belgian Grand Prix,spa,ricciardo,mclaren,num_pitstops,ausencia_dado,,0.0,sentinela_zero,dados de pitstop indisponiveis para a corrida; flag pitstop_dado_disponivel preserva a ausencia
+2021,12,Belgian Grand Prix,spa,vettel,aston_martin,num_pitstops,ausencia_dado,,0.0,sentinela_zero,dados de pitstop indisponiveis para a corrida; flag pitstop_dado_disponivel preserva a ausencia
+2021,12,Belgian Grand Prix,spa,gasly,alphatauri,num_pitstops,ausencia_dado,,0.0,sentinela_zero,dados de pitstop indisponiveis para a corrida; flag pitstop_dado_disponivel preserva a ausencia
+2021,12,Belgian Grand Prix,spa,ocon,alpine,num_pitstops,ausencia_dado,,0.0,sentinela_zero,dados de pitstop indisponiveis para a corrida; flag pitstop_dado_disponivel preserva a ausencia
+2021,12,Belgian Grand Prix,spa,leclerc,ferrari,num_pitstops,ausencia_dado,,0.0,sentinela_zero,dados de pitstop indisponiveis para a corrida; flag pitstop_dado_disponivel preserva a ausencia
+2021,12,Belgian Grand Prix,spa,latifi,williams,num_pitstops,ausencia_dado,,0.0,sentinela_zero,dados de pitstop indisponiveis para a corrida; flag pitstop_dado_disponivel preserva a ausencia
+2021,12,Belgian Grand Prix,spa,sainz,ferrari,num_pitstops,ausencia_dado,,0.0,sentinela_zero,dados de pitstop indisponiveis para a corrida; flag pitstop_dado_disponivel preserva a ausencia
+2021,12,Belgian Grand Prix,spa,alonso,alpine,num_pitstops,ausencia_dado,,0.0,sentinela_zero,dados de pitstop indisponiveis para a corrida; flag pitstop_dado_disponivel preserva a ausencia
+2021,12,Belgian Grand Prix,spa,bottas,mercedes,num_pitstops,ausencia_dado,,0.0,sentinela_zero,dados de pitstop indisponiveis para a corrida; flag pitstop_dado_disponivel preserva a ausencia
+2021,12,Belgian Grand Prix,spa,giovinazzi,alfa,num_pitstops,ausencia_dado,,0.0,sentinela_zero,dados de pitstop indisponiveis para a corrida; flag pitstop_dado_disponivel preserva a ausencia
+2021,12,Belgian Grand Prix,spa,norris,mclaren,num_pitstops,ausencia_dado,,0.0,sentinela_zero,dados de pitstop indisponiveis para a corrida; flag pitstop_dado_disponivel preserva a ausencia
+2021,12,Belgian Grand Prix,spa,tsunoda,alphatauri,num_pitstops,ausencia_dado,,0.0,sentinela_zero,dados de pitstop indisponiveis para a corrida; flag pitstop_dado_disponivel preserva a ausencia
+2021,12,Belgian Grand Prix,spa,mick_schumacher,haas,num_pitstops,ausencia_dado,,0.0,sentinela_zero,dados de pitstop indisponiveis para a corrida; flag pitstop_dado_disponivel preserva a ausencia
+2021,12,Belgian Grand Prix,spa,mazepin,haas,num_pitstops,ausencia_dado,,0.0,sentinela_zero,dados de pitstop indisponiveis para a corrida; flag pitstop_dado_disponivel preserva a ausencia
+2021,12,Belgian Grand Prix,spa,raikkonen,alfa,num_pitstops,ausencia_dado,,0.0,sentinela_zero,dados de pitstop indisponiveis para a corrida; flag pitstop_dado_disponivel preserva a ausencia
+2021,12,Belgian Grand Prix,spa,perez,red_bull,num_pitstops,ausencia_dado,,0.0,sentinela_zero,dados de pitstop indisponiveis para a corrida; flag pitstop_dado_disponivel preserva a ausencia
+2021,12,Belgian Grand Prix,spa,stroll,aston_martin,num_pitstops,ausencia_dado,,0.0,sentinela_zero,dados de pitstop indisponiveis para a corrida; flag pitstop_dado_disponivel preserva a ausencia
 2018,1,Australian Grand Prix,albert_park,gasly,toro_rosso,tempo_total_pitstop,ausencia_estrutural,,0.0,regra_pitstop,piloto nao realizou pitstop
 2018,1,Australian Grand Prix,albert_park,ericsson,sauber,tempo_total_pitstop,ausencia_estrutural,,0.0,regra_pitstop,piloto nao realizou pitstop
 2018,1,Australian Grand Prix,albert_park,sirotkin,williams,tempo_total_pitstop,ausencia_estrutural,,0.0,regra_pitstop,piloto nao realizou pitstop

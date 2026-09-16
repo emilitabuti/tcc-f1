@@ -22,7 +22,7 @@ import pandas as pd
 
 PASTA_DADOS = "dados"
 PASTA_PROCESSADOS = os.path.join(PASTA_DADOS, "processados")
-ARQUIVO_ENTRADA = os.path.join(PASTA_PROCESSADOS, "base_tratada_2018_2025.csv")
+ARQUIVO_ENTRADA = os.path.join(PASTA_PROCESSADOS, "base_consolidada_2018_2025.csv")
 ARQUIVO_SAIDA = os.path.join(PASTA_PROCESSADOS, "base_tratada_2018_2025.csv")
 PASTA_LOGS = os.path.join(PASTA_DADOS, "logs")
 ARQUIVO_LOG_TRATAMENTO = os.path.join(PASTA_LOGS, "log_tratamento_valores_2018_2025.csv")
@@ -199,7 +199,7 @@ if __name__ == "__main__":
         "num_pitstops", "tempo_total_pitstop", "tempo_medio_pitstop", "fastf1_avg_lap_time",
         "fastf1_best_lap_time", "fastf1_num_voltas", "fastf1_num_stints", "fastf1_tyre_life_media",
         "Q1_s", "Q2_s", "Q3_s", "qualifying_position", "grid_position", "temp_ar_media",
-        "temp_pista_media", "umidade_media", "vento_media",
+        "temp_pista_media", "umidade_media", "vento_media", "pitstop_dado_disponivel",
     ]
     for coluna in colunas_numericas:
         if coluna in base.columns:
@@ -207,6 +207,9 @@ if __name__ == "__main__":
 
     if "choveu" in base.columns:
         base["choveu"] = base["choveu"].apply(normalizar_choveu)
+
+    if "pitstop_dado_disponivel" in base.columns:
+        base["pitstop_dado_disponivel"] = base["pitstop_dado_disponivel"].fillna(0).astype(int)
 
     for coluna in ["fastf1_avg_lap_time", "fastf1_best_lap_time"]:
         if coluna in base.columns:
@@ -234,11 +237,26 @@ if __name__ == "__main__":
         base = marcar_invalido(base, "qualifying_position", base["qualifying_position"] <= 0, "posicao de classificacao invalida", log_tratamento)
 
     if "num_pitstops" in base.columns:
-        mascara = base["num_pitstops"].isna()
-        quantidade = mascara.sum()
-        if quantidade > 0:
-            base = preencher_faltantes(base, "num_pitstops", mascara, 0, log_tratamento, "ausencia_estrutural", "regra_fixa", "sem registro de pitstop; considerado zero paradas")
-        somar_preenchimentos(resumo_preenchimentos, "num_pitstops", quantidade)
+        base["num_pitstops_imputado"] = base["num_pitstops"].isna().astype(int)
+
+        if "pitstop_dado_disponivel" in base.columns:
+            mascara_sem_parada = base["num_pitstops"].isna() & (base["pitstop_dado_disponivel"] == 1)
+            quantidade_sem_parada = mascara_sem_parada.sum()
+            if quantidade_sem_parada > 0:
+                base = preencher_faltantes(base, "num_pitstops", mascara_sem_parada, 0, log_tratamento, "ausencia_estrutural", "regra_pitstop", "corrida possui dados de pitstop; ausencia do piloto considerada zero paradas")
+            somar_preenchimentos(resumo_preenchimentos, "num_pitstops", quantidade_sem_parada)
+
+            mascara_indisponivel = base["num_pitstops"].isna() & (base["pitstop_dado_disponivel"] == 0)
+            quantidade_indisponivel = mascara_indisponivel.sum()
+            if quantidade_indisponivel > 0:
+                base = preencher_faltantes(base, "num_pitstops", mascara_indisponivel, 0, log_tratamento, "ausencia_dado", "sentinela_zero", "dados de pitstop indisponiveis para a corrida; flag pitstop_dado_disponivel preserva a ausencia")
+            somar_preenchimentos(resumo_preenchimentos, "num_pitstops", quantidade_indisponivel)
+        else:
+            mascara = base["num_pitstops"].isna()
+            quantidade = mascara.sum()
+            if quantidade > 0:
+                base = preencher_faltantes(base, "num_pitstops", mascara, 0, log_tratamento, "ausencia_estrutural", "regra_fixa", "sem registro de pitstop; considerado zero paradas")
+            somar_preenchimentos(resumo_preenchimentos, "num_pitstops", quantidade)
 
     for coluna in ["tempo_total_pitstop", "tempo_medio_pitstop"]:
         if coluna not in base.columns:
@@ -275,9 +293,19 @@ if __name__ == "__main__":
         mascara_grid = base["qualifying_position"].isna() & (base["grid_position"] > 0)
         quantidade_grid = mascara_grid.sum()
         if quantidade_grid > 0:
-            base = preencher_faltantes(base, "qualifying_position", mascara_grid, 0, log_tratamento, "aproximacao", "grid_position", "qualifying_position ausente; utilizada a posicao real de largada")
+            valores_originais = base["qualifying_position"].copy()
             base.loc[mascara_grid, "qualifying_position"] = base.loc[mascara_grid, "grid_position"]
-            base = preencher_faltantes(base, "qualifying_position", mascara_grid, 0, log_tratamento, "aproximacao", "grid_position", "qualifying_position ausente; utilizada a posicao real de largada")
+            registrar_tratamento(
+                log_tratamento,
+                base,
+                base.index[mascara_grid],
+                "qualifying_position",
+                valores_originais,
+                base["qualifying_position"],
+                "aproximacao",
+                "grid_position",
+                "qualifying_position ausente; utilizada a posicao real de largada",
+            )
 
         mascara_fallback = base["qualifying_position"].isna()
         quantidade_fallback = mascara_fallback.sum()

@@ -18,6 +18,10 @@ dados/fastf1_checkpoint.json
 .claude/
 .github/prompts/
 
+# Arquivos locais/temporarios
+tmp/
+docs/
+
 # Python
 __pycache__/
 *.pyc

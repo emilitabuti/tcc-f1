@@ -16,10 +16,10 @@ PASTA_DADOS = "dados"
 # pasta usada pelo fastf1 pra guardar o cache das sessões
 CACHE_DIR = os.path.join(PASTA_DADOS, "cache")
 
-# arquivo que guarda quais rounds do fastf1 já foram baixados com sucesso
+# guarda quais rounds do fastf1 já foram baixados
 CKPT_FILE = os.path.join(PASTA_DADOS, "fastf1_checkpoint.json")
 
-# cria as pastas caso ainda não existam
+# cria as pastas se ainda não existir
 os.makedirs(PASTA_DADOS, exist_ok=True)
 os.makedirs(CACHE_DIR, exist_ok=True)
 
@@ -30,7 +30,7 @@ fastf1.Cache.enable_cache(CACHE_DIR)
 def requisitar(url, tentativas=5):
     """faz um GET na url, tentando de novo se der erro de conexão ou limite de requisições (429)"""
 
-    for _ in range(tentativas):
+    for tentativa in range(tentativas):
 
         try:
             # faz a requisição pra api
@@ -42,7 +42,7 @@ def requisitar(url, tentativas=5):
             time.sleep(10)
             continue
 
-        # código 429 significa excesso de requisições
+        # código 429 (excesso de requisições)
         if response.status_code == 429:
             print("Limite da API. Aguardando...")
             time.sleep(30)
@@ -53,14 +53,14 @@ def requisitar(url, tentativas=5):
             print("Erro:", response.status_code)
             return None
 
-        # deu certo, converte a resposta pra json
+        # converte a resposta pra json
         return response.json()
 
     return None
 
 
 def paginar(url, limit=100):
-    """percorre todas as páginas de um endpoint paginado da jolpica, uma de cada vez"""
+    """percorre todas as páginas de um endpoint da jolpica, uma de cada vez"""
 
     offset = 0
 
@@ -83,27 +83,50 @@ def paginar(url, limit=100):
         offset += limit
         time.sleep(0.3)
 
-        # para quando tiver percorrido todas as páginas
+        # quando tiver percorrido todas as páginas
         if offset >= total:
             return
 
 
 def salvar(df, nome_arquivo):
-    """salva o dataframe como csv dentro da pasta de dados."""
+    """salva o dataframe como csv dentro da pasta de dados"""
     caminho = os.path.join(PASTA_DADOS, nome_arquivo)
     df.to_csv(caminho, index=False)
     print("Salvo:", caminho)
 
 
 def salvar_incremental(df, nome_arquivo):
-    """acrescenta linhas num csv, criando o cabeçalho só se o arquivo ainda não existir."""
+    """acrescenta linhas em um csv, criando o cabeçalho só se o arquivo ainda não existir"""
     caminho = os.path.join(PASTA_DADOS, nome_arquivo)
     existe = os.path.exists(caminho)
     df.to_csv(caminho, mode="a", header=not existe, index=False)
 
 
+def salvar_round_incremental(df, nome_arquivo, ano, round_num, chaves_unicidade):
+    """substitui o round no CSV antes de salvar pra evitar duplicatas"""
+    caminho = os.path.join(PASTA_DADOS, nome_arquivo)
+
+    # se o arquivo ja existe, remove as linhas antigas desse round
+    if os.path.exists(caminho):
+        existente = pd.read_csv(caminho)
+        mesmo_round = (existente["season"].astype(int) == int(ano)) & (existente["round"].astype(int) == int(round_num))
+        combinado = pd.concat([existente.loc[~mesmo_round], df], ignore_index=True)
+    else:
+        # se ainda nao existe, o arquivo completo é o novo dataframe
+        combinado = df.copy()
+
+    # remove duplicatas pelas chaves esperadas 
+    chaves_presentes = [coluna for coluna in chaves_unicidade if coluna in combinado.columns]
+    if len(chaves_presentes) == len(chaves_unicidade):
+        combinado = combinado.drop_duplicates(subset=chaves_unicidade, keep="last")
+
+    # salva o arquivo atualizado
+    combinado.to_csv(caminho, index=False)
+    print("Salvo:", caminho, "| round:", f"{ano}-{round_num}")
+
+
 def carregar_checkpoint():
-    """le quais rounds do fastf1 já foram processados em execuções anteriores."""
+    """le quais rounds do fastf1 já foram processados em execuções anteriores"""
     if os.path.exists(CKPT_FILE):
         with open(CKPT_FILE) as f:
             return set(json.load(f))
@@ -111,6 +134,7 @@ def carregar_checkpoint():
 
 
 def salvar_checkpoint(concluidos):
+    """salva os rounds do fastf1 que já foram processados"""
     with open(CKPT_FILE, "w") as f:
         json.dump(sorted(concluidos), f)
 
@@ -216,7 +240,7 @@ def buscar_circuitos():
         if not data:
             continue
 
-        # percorre cada circuito retornado e guarda os campos que interessam
+        # percorre cada circuito retornado e guarda os campos
         for circuito in data["MRData"]["CircuitTable"]["Circuits"]:
             dados.append({
                 "circuit_id": circuito["circuitId"],
@@ -250,11 +274,10 @@ def buscar_pilotos():
         if not data:
             continue
 
-        # percorre cada piloto retornado e guarda os campos que interessam
+        # percorre cada piloto retornado e guarda os campos
         for driver in data["MRData"]["DriverTable"]["Drivers"]:
             dados.append({
                 "driver_id": driver["driverId"],
-                # codigo oficial de 3 letras (ex: "HAM"), usado pra casar com o fastf1
                 "code": driver.get("code", ""),
                 "given_name": driver["givenName"],
                 "family_name": driver["familyName"],
@@ -307,20 +330,21 @@ def cols_disponiveis(df, colunas):
 
 
 def carregar_sessao(ano, round_num, tipo, tentativas=5, espera=900):
-    """carrega uma sessão do fastf1, esperando e tentando de novo se bater no limite da api.
+    """carrega uma sessao do fastf1 com novas tentativas se bater no limite"""
 
-    se esgotar as tentativas e o limite continuar valendo, relança o erro pra quem chamou
-    saber que esse round não foi concluído (e assim não marcar o checkpoint como feito).
-    """
+    # tenta carregar a sessao algumas vezes antes de desistir
     for tentativa in range(tentativas):
         try:
+            # busca e carrega a sessao do fastf1
             sessao = fastf1.get_session(ano, round_num, tipo)
             sessao.load(laps=True, telemetry=False, weather=(tipo == "R"), messages=False)
             return sessao
         except RateLimitExceededError:
+            # espera antes de tentar de novo quando a api bloqueia por limite
             print(f"Limite da API atingido, aguardando {espera}s antes de tentar de novo...")
             time.sleep(espera)
 
+    # avisa quem chamou que o round nao deve ser marcado como concluido
     raise RateLimitExceededError("limite da api continua ativo após várias tentativas")
 
 
@@ -328,7 +352,7 @@ def buscar_fastf1():
 
     print("\nBuscando dados do FastF1...")
 
-    # rounds que já foram baixados com sucesso em execuções anteriores
+    # rounds que já foram baixados em execuções anteriores
     concluidos = carregar_checkpoint()
 
     # percorre cada temporada
@@ -356,9 +380,9 @@ def buscar_fastf1():
 
             print("Round:", round_num)
 
-            # se bater no limite da api mesmo depois das tentativas, não marca
-            # o round como concluído, pra ele ser retomado na próxima execução
+            # se qualquer parte falhar, nao marca o round como concluido para que ele seja retomado na proxima execucao
             limite_atingido = False
+            round_falhou = False
 
             # QUALIFYING
             try:
@@ -366,7 +390,7 @@ def buscar_fastf1():
 
                 resultados = session_q.results
 
-                # verifica quais colunas que a gente quer existem
+                # verifica se as colunas que a gente quer existem
                 colunas = cols_disponiveis(resultados, ["Abbreviation", "Position", "Q1", "Q2", "Q3"])
 
                 # cria um dataframe só com essas colunas
@@ -379,53 +403,50 @@ def buscar_fastf1():
                 df_q["season"] = ano
                 df_q["round"] = round_num
 
-                salvar_incremental(df_q, "fastf1_qualifying_2018_2025.csv")
+                salvar_round_incremental(df_q, "fastf1_qualifying_2018_2025.csv", ano, round_num, ["season", "round", "Driver"],)
 
             except RateLimitExceededError:
                 print("Limite da api esgotado no qualifying, fica pra próxima execução:", ano, round_num)
                 limite_atingido = True
+                round_falhou = True
 
             except Exception as erro:
                 print("Erro no qualifying:", ano, round_num, erro)
+                round_falhou = True
 
             # CORRIDA / VOLTAS
             try:
                 session_r = carregar_sessao(ano, round_num, "R")
 
                 # colunas de volta que a gente quer salvar
-                colunas_laps = cols_disponiveis(session_r.laps, [
-                    "Driver", "LapNumber", "LapTime", "Sector1Time", "Sector2Time",
-                    "Sector3Time", "Compound", "TyreLife", "Stint", "TrackStatus",
-                    "FreshTyre", "PitInTime", "PitOutTime"
-                ])
+                colunas_laps = cols_disponiveis(session_r.laps, ["Driver", "LapNumber", "LapTime", "Sector1Time", "Sector2Time", "Sector3Time", "Compound", "TyreLife", "Stint", "TrackStatus", "FreshTyre", "PitInTime", "PitOutTime"])
 
                 df_laps = session_r.laps[colunas_laps].copy()
                 df_laps["season"] = ano
                 df_laps["round"] = round_num
-                salvar_incremental(df_laps, "fastf1_laps_2018_2025.csv")
+                salvar_round_incremental(df_laps, "fastf1_laps_2018_2025.csv", ano, round_num, ["season", "round", "Driver", "LapNumber"],)
 
                 # CLIMA
                 # só salva o clima se a sessão realmente trouxe esses dados
                 if session_r.weather_data is not None and len(session_r.weather_data) > 0:
-                    colunas_weather = cols_disponiveis(
-                        session_r.weather_data,
-                        ["AirTemp", "Humidity", "Rainfall", "TrackTemp", "WindSpeed"]
-                    )
+                    colunas_weather = cols_disponiveis(session_r.weather_data, ["Time", "AirTemp", "Humidity", "Rainfall", "TrackTemp", "WindSpeed"])
 
                     df_weather = session_r.weather_data[colunas_weather].copy()
                     df_weather["season"] = ano
                     df_weather["round"] = round_num
-                    salvar_incremental(df_weather, "fastf1_weather_2018_2025.csv")
+                    salvar_round_incremental(df_weather, "fastf1_weather_2018_2025.csv", ano, round_num, ["season", "round", "Time"],)
 
             except RateLimitExceededError:
                 print("Limite da api esgotado na corrida, fica pra próxima execução:", ano, round_num)
                 limite_atingido = True
+                round_falhou = True
 
             except Exception as erro:
                 print("Erro na corrida:", ano, round_num, erro)
+                round_falhou = True
 
-            # só marca como concluído se não foi o limite da api que atrapalhou
-            if not limite_atingido:
+            # so marca como concluido se nenhuma etapa do round falhou
+            if not limite_atingido and not round_falhou:
                 concluidos.add(chave)
                 salvar_checkpoint(concluidos)
 
