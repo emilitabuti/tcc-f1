@@ -1,38 +1,28 @@
-"""
-Junta todos os csv brutos da pasta dados/ numa unica tabela, com uma linha
-por (temporada, corrida, piloto).
-"""
+#junta todos os csv brutos numa unica tabela, com uma linha por (temporada, corrida, piloto)
 
 import os
 import pandas as pd
 
-
-# pasta onde estao os dados brutos
 PASTA_DADOS = "dados"
 
-# pasta onde vamos salvar a base consolidada
+#pasta onde salvamos a base consolidada
 PASTA_SAIDA = os.path.join(PASTA_DADOS, "processados")
 os.makedirs(PASTA_SAIDA, exist_ok=True)
 
-
-# a api marca o Sakhir GP (2020, layout "Outer Circuit") com o mesmo
-# circuit_id do Bahrain GP normal ("bahrain"), mas o circuitos_manual.csv
-# trata como um circuito a parte ("bahrain_outer") porque o layout da pista
-# foi diferente. corrige na mao so esse caso especial, que nao tem
-# como resolver so com o circuit_id que vem da api.
+#a api marca o Sakhir GP (2020, layout "Outer Circuit") com o mesmo
+#circuit_id do Bahrain GP normal ("bahrain"), mas o circuitos_manual.csv
+#trata como um circuito a parte ("bahrain_outer") porque o layout da pista
+#foi diferente. então corrigimos aqui manualmente
 CORRIGIR_CIRCUITO_POR_CORRIDA = {
     "Sakhir Grand Prix": "bahrain_outer",
 }
 
-
 def carregar_csv(nome_arquivo):
-    """le um csv de dentro da pasta de dados brutos"""
     caminho = os.path.join(PASTA_DADOS, nome_arquivo)
     return pd.read_csv(caminho)
 
-
 def validar_unicidade(df, colunas, nome):
-    """garante que uma tabela nao tem chaves duplicadas antes do merge"""
+    """verifica se a tabela nao tem chaves duplicadas antes do merge"""
     duplicados = df.duplicated(subset=colunas, keep=False)
     if duplicados.any():
         exemplos = df.loc[duplicados, colunas].head(20)
@@ -41,9 +31,8 @@ def validar_unicidade(df, colunas, nome):
             + exemplos.to_string(index=False)
         )
 
-
 def validar_sem_mapeamento_faltante(df, coluna_origem, coluna_mapeada, nome):
-    """falha se algum codigo do FastF1 nao foi convertido para driver_id"""
+    """verifica se algum codigo do FastF1 nao foi convertido para driver_id"""
     faltantes = df[df[coluna_origem].notna() & df[coluna_mapeada].isna()]
     if faltantes.empty:
         return
@@ -54,9 +43,8 @@ def validar_sem_mapeamento_faltante(df, coluna_origem, coluna_mapeada, nome):
         + ", ".join(codigos)
     )
 
-
 def validar_base_consolidada(base):
-    """valida a unidade da base final: uma linha por piloto em cada corrida"""
+    """valida na base final se tem uma linha por piloto em cada corrida"""
     print("Validando base consolidada...")
 
     chaves = ["season", "round", "driver_id"]
@@ -110,14 +98,10 @@ def validar_base_consolidada(base):
 
     print("Validacao da base consolidada concluida com sucesso.")
 
-
 def tempo_para_segundos(coluna):
-    """converte uma coluna de tempo (formato "0 days 00:01:32.123") para segundos"""
     return pd.to_timedelta(coluna, errors="coerce").dt.total_seconds()
 
-
 def duracao_pitstop_para_segundos(valor):
-    """converte a duracao do pitstop pra segundos."""
     valor = str(valor)
 
     if ":" in valor:
@@ -129,16 +113,9 @@ def duracao_pitstop_para_segundos(valor):
     except ValueError:
         return None
 
-
-
 # RESULTADOS + CIRCUITO
 def montar_resultados_com_circuito():
-    """pega os resultados das corridas e descobre o circuito de cada uma
-
-    o circuito vem do calendario_circuitos_2018_2025.csv, que traz o
-    circuit_id oficial de cada (season, round) direto da api.
-    """
-
+    """pega os resultados das corridas e descobre o circuito de cada uma"""
     print("Montando resultados com circuito...")
 
     resultados = carregar_csv("resultados_2018_2025.csv")
@@ -158,27 +135,23 @@ def montar_resultados_com_circuito():
     for race_name, circuito_correto in CORRIGIR_CIRCUITO_POR_CORRIDA.items():
         resultados.loc[resultados["race_name"] == race_name, "circuit_id"] = circuito_correto
 
-    # avisa se sobrou alguma corrida sem circuito mapeado
+    # verifica se sobrou alguma corrida sem circuito mapeado
     sem_circuito = resultados[resultados["circuit_id"].isna()]
     if len(sem_circuito) > 0:
         print("Aviso: corridas sem circuito mapeado ->", sem_circuito["race_name"].unique())
 
     return resultados
 
-
-# CIRCUITOS (localizacao da api + dados manuais de altitude, curvas,...)
+# CIRCUITOS
 def montar_circuitos():
-    """junta a localizacao (vinda da api) com os dados manuais de cada circuito"""
-
+    """junta a localizacao (api) com os dados manuais de cada circuito"""
     print("Montando tabela de circuitos...")
 
     circuitos_api = carregar_csv("circuitos_2018_2025.csv")
     circuitos_manual = carregar_csv("circuitos_manual.csv")
 
-    # so usa lat/long/country da api, o resto (nome, altitude,...) vem do manual
-    localizacao = circuitos_api[["circuit_id", "lat", "long", "country"]].drop_duplicates(
-        subset=["circuit_id"]
-    )
+    # usa lat/long/country da api, o resto (nome, altitude,...) vem do manual
+    localizacao = circuitos_api[["circuit_id", "lat", "long", "country"]].drop_duplicates(subset=["circuit_id"])
     validar_unicidade(circuitos_manual, ["circuit_id"], "circuitos_manual")
     validar_unicidade(localizacao, ["circuit_id"], "circuitos_api")
 
@@ -191,8 +164,8 @@ def montar_circuitos():
 
     # a api nao conhece o "bahrain_outer" (id criado so no circuitos_manual.csv
     # pra separar o layout do Sakhir GP 2020), entao ele fica sem lat/long/country
-    # depois do merge acima. corrige usando os dados do "bahrain", que e o mesmo
-    # circuito fisico, so com o layout da pista diferente.
+    # depois do merge. corrigimos usando os dados do "bahrain", que e o mesmo
+    # circuito, so com o layout da pista diferente.
     bahrain = circuitos[circuitos["circuit_id"] == "bahrain"][["lat", "long", "country"]].dropna()
     if not bahrain.empty:
         referencia = bahrain.iloc[0]
@@ -203,11 +176,9 @@ def montar_circuitos():
 
     return circuitos
 
-
-# PIT STOPS (agregado por corrida e piloto)
+# PIT STOPS
 def montar_pitstops_agregado():
     """conta quantas paradas cada piloto fez numa corrida e o tempo gasto nelas"""
-
     print("Agregando pit stops...")
 
     pitstops = carregar_csv("pitstops_2018_2025.csv")
@@ -222,25 +193,22 @@ def montar_pitstops_agregado():
     validar_unicidade(agregado, ["season", "round", "driver_id"], "pitstops_agregado")
     return agregado
 
-
 def montar_disponibilidade_pitstops():
-    """marca as corridas em que o arquivo de pit stops possui ao menos um registro"""
+    """marca as corridas em que o arquivo de pit stops possui pelo menos um registro"""
     pitstops = carregar_csv("pitstops_2018_2025.csv")
     disponibilidade = pitstops[["season", "round"]].drop_duplicates().copy()
     disponibilidade["pitstop_dado_disponivel"] = 1
     validar_unicidade(disponibilidade, ["season", "round"], "pitstop_disponibilidade")
     return disponibilidade
 
-
-# VOLTAS DO FASTF1 (agregado por corrida e piloto)
+# VOLTAS DO FASTF1
 def montar_laps_agregado(codigo_para_driver_id):
-    """resume as voltas de cada piloto numa corrida: tempo medio, melhor volta,..."""
-
+    """agrega as voltas de cada piloto numa corrida: tempo medio, melhor volta,..."""
     print("Agregando voltas (fastf1)...")
 
     laps = carregar_csv("fastf1_laps_2018_2025.csv")
 
-    # troca o codigo de 3 letras do fastf1 pelo driver_id usado no resto da base
+    # troca o codigo de 3 letras do fastf1 pelo driver_id
     laps["driver_id"] = laps["Driver"].map(codigo_para_driver_id)
     validar_sem_mapeamento_faltante(laps, "Driver", "driver_id", "fastf1_laps")
     laps["LapTime_s"] = tempo_para_segundos(laps["LapTime"])
@@ -271,11 +239,9 @@ def montar_laps_agregado(codigo_para_driver_id):
     validar_unicidade(agregado, ["season", "round", "driver_id"], "laps_agregado")
     return agregado
 
-
-# QUALIFYING (fastf1)
+# QUALIFYING
 def montar_qualifying(codigo_para_driver_id):
     """pega a posicao de largada e os tempos de classificacao de cada piloto"""
-
     print("Montando qualifying (fastf1)...")
 
     quali = carregar_csv("fastf1_qualifying_2018_2025.csv")
@@ -292,11 +258,9 @@ def montar_qualifying(codigo_para_driver_id):
     validar_unicidade(quali, ["season", "round", "driver_id"], "qualifying")
     return quali
 
-
-# CLIMA (fastf1)
+# CLIMA
 def montar_weather_agregado():
-    """resume o clima da corrida inteira (uma linha por temporada+round)"""
-
+    """agrega o clima da corrida inteira (uma linha por temporada e round)"""
     print("Agregando clima (fastf1)...")
 
     weather = carregar_csv("fastf1_weather_2018_2025.csv")
@@ -306,24 +270,17 @@ def montar_weather_agregado():
         temp_pista_media=("TrackTemp", "mean"),
         umidade_media=("Humidity", "mean"),
         vento_media=("WindSpeed", "mean"),
-        choveu=("Rainfall", "max"),  # se choveu em algum momento, marca a corrida como chuvosa
+        choveu=("Rainfall", "max"),
     ).reset_index()
 
     validar_unicidade(agregado, ["season", "round"], "weather_agregado")
     return agregado
 
-
-# EXECUÇÃO DO PROGRAMA
 if __name__ == "__main__":
-
     pilotos = carregar_csv("pilotos_2018_2025.csv")
 
-    # monta o mapa codigo-de-3-letras -> driver_id a partir da propria coluna
-    codigo_para_driver_id = (
-        pilotos.dropna(subset=["code"])
-        .set_index("code")["driver_id"]
-        .to_dict()
-    )
+    # monta o mapa (codigo de 3 letras -> driver_id)
+    codigo_para_driver_id = (pilotos.dropna(subset=["code"]).set_index("code")["driver_id"].to_dict())
 
     resultados = montar_resultados_com_circuito()
     circuitos = montar_circuitos()
@@ -363,7 +320,12 @@ if __name__ == "__main__":
         how="left",
         validate="one_to_one",
     )
-    base = base.merge(weather_agg, on=["season", "round"], how="left", validate="many_to_one")
+    base = base.merge(
+        weather_agg,
+        on=["season", "round"],
+        how="left",
+        validate="many_to_one"
+    )
 
     base["pitstop_dado_disponivel"] = base["pitstop_dado_disponivel"].fillna(0).astype(int)
 
