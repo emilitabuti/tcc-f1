@@ -1,20 +1,4 @@
-﻿"""
-ETAPA 4 - TRATAMENTO DE VALORES AUSENTES E INVALIDOS
-
-Objetivos:
-- tratar valores ausentes cujo significado e conhecido;
-- identificar valores impossiveis ou inconsistentes;
-- criar indicadores para Q1, Q2 e Q3;
-- preencher dados ausentes utilizando somente corridas anteriores;
-- criar indicador de disponibilidade dos dados climaticos;
-- tratar qualifying_position ausente;
-- garantir que a base final nao possua valores NaN;
-- registrar em um unico log todas as alteracoes realizadas.
-
-Importante:
-Nenhum calculo de mediana ou moda utiliza a corrida atual
-ou corridas futuras.
-"""
+﻿#trata valores ausentes e invalidos da base consolidada antes da modelagem
 
 import os
 import numpy as np
@@ -22,39 +6,38 @@ import pandas as pd
 
 PASTA_DADOS = "dados"
 PASTA_PROCESSADOS = os.path.join(PASTA_DADOS, "processados")
+
 ARQUIVO_ENTRADA = os.path.join(PASTA_PROCESSADOS, "base_consolidada_2018_2025.csv")
 ARQUIVO_SAIDA = os.path.join(PASTA_PROCESSADOS, "base_tratada_2018_2025.csv")
 PASTA_LOGS = os.path.join(PASTA_DADOS, "logs")
 ARQUIVO_LOG_TRATAMENTO = os.path.join(PASTA_LOGS, "log_tratamento_valores_2018_2025.csv")
 
+# colunas de qualifying que podem ficar ausentes quando o piloto nao marcou tempo
 COLUNAS_QUALIFYING_TEMPO = ["Q1_s", "Q2_s", "Q3_s"]
+
+# colunas usadas pra marcar disponibilidade de clima
 COLUNAS_CLIMA = ["temp_ar_media", "temp_pista_media", "umidade_media", "vento_media", "choveu"]
+
+# colunas preenchidas com historico de corridas anteriores
 COLUNAS_MEDIANA_TEMPORAL = [
-    "fastf1_avg_lap_time",
-    "fastf1_best_lap_time",
-    "fastf1_num_voltas",
-    "fastf1_num_stints",
-    "fastf1_tyre_life_media",
-    "tempo_total_pitstop",
-    "tempo_medio_pitstop",
-    "temp_ar_media",
-    "temp_pista_media",
-    "umidade_media",
-    "vento_media",
+    "fastf1_avg_lap_time", "fastf1_best_lap_time", "fastf1_num_voltas", "fastf1_num_stints",
+    "fastf1_tyre_life_media", "tempo_total_pitstop", "tempo_medio_pitstop",
+    "temp_ar_media", "temp_pista_media", "umidade_media", "vento_media",
 ]
 COLUNAS_CONTAGEM = {"fastf1_num_voltas", "fastf1_num_stints"}
-COLUNAS_LOG = [
-    "season", "round", "race_name", "circuit_id", "driver_id", "constructor_id",
-    "coluna", "tipo_tratamento", "valor_original", "valor_novo", "metodo", "observacao",
-]
+
+# formato do arquivo que registra cada alteração feita na base
+COLUNAS_LOG = ["season", "round", "race_name", "circuit_id", "driver_id", "constructor_id",
+               "coluna", "tipo_tratamento", "valor_original", "valor_novo", "metodo", "observacao"]
 
 
 def colunas_identificacao(base):
+    """pega as colunas usadas pra identificar cada linha no log"""
     preferidas = ["season", "round", "race_name", "circuit_id", "driver_id", "constructor_id"]
     return [coluna for coluna in preferidas if coluna in base.columns]
 
-
 def registrar_tratamento(log_tratamento, base, indices, coluna, valores_originais, valores_novos, tipo_tratamento, metodo, observacao=""):
+    """guarda no log quais valores foram alterados"""
     identificadores = colunas_identificacao(base)
     for indice in indices:
         registro = {coluna_id: base.at[indice, coluna_id] for coluna_id in identificadores}
@@ -68,14 +51,14 @@ def registrar_tratamento(log_tratamento, base, indices, coluna, valores_originai
         })
         log_tratamento.append(registro)
 
-
 def somar_preenchimentos(resumo, coluna, quantidade):
+    """acumula quantos valores foram preenchidos por coluna"""
     if quantidade == 0:
         return
     resumo[coluna] = resumo.get(coluna, 0) + int(quantidade)
 
-
 def marcar_invalido(base, coluna, esconder, motivo, log_tratamento):
+    """troca valores invalidos por NaN para serem tratados depois"""
     esconder = esconder & base[coluna].notna()
     if not esconder.any():
         return base
@@ -83,21 +66,13 @@ def marcar_invalido(base, coluna, esconder, motivo, log_tratamento):
     indices = base.index[esconder]
     valores_originais = base[coluna].copy()
     base.loc[esconder, coluna] = np.nan
-    registrar_tratamento(
-        log_tratamento,
-        base,
-        indices,
-        coluna,
-        valores_originais,
-        base[coluna],
-        tipo_tratamento="invalido",
-        metodo="validacao",
-        observacao=motivo,
-    )
+    registrar_tratamento(log_tratamento, base, indices, coluna,
+        valores_originais, base[coluna], tipo_tratamento="invalido",
+        metodo="validacao", observacao=motivo,)
     return base
 
-
 def normalizar_choveu(valor):
+    """converte a coluna de chuva para 0, 1 ou NaN"""
     if pd.isna(valor):
         return np.nan
     if isinstance(valor, (bool, np.bool_)):
@@ -110,12 +85,12 @@ def normalizar_choveu(valor):
         return 0
     return np.nan
 
-
-def esconder_corridas_anteriores(base, season, round_):
+def mascara_corridas_anteriores(base, season, round_):
+    """seleciona somente corridas anteriores a corrida atual"""
     return (base["season"] < season) | ((base["season"] == season) & (base["round"] < round_))
 
-
 def mediana_historica(historico, coluna, circuit_id, season):
+    """calcula mediana usando circuito, temporada ou historico geral"""
     dados = historico.copy()
     if coluna in {"tempo_total_pitstop", "tempo_medio_pitstop"}:
         dados = dados[dados["num_pitstops"] > 0]
@@ -134,8 +109,8 @@ def mediana_historica(historico, coluna, circuit_id, season):
         return valores.median()
     return np.nan
 
-
 def moda_historica(historico, coluna, circuit_id, season):
+    """calcula moda usando circuito, temporada ou historico geral"""
     if circuit_id is not None and "circuit_id" in historico.columns:
         valores = historico.loc[historico["circuit_id"] == circuit_id, coluna].dropna()
         if not valores.empty:
@@ -150,8 +125,8 @@ def moda_historica(historico, coluna, circuit_id, season):
         return valores.mode().iloc[0]
     return np.nan
 
-
 def preencher_faltantes(base, coluna, mascara, valor, log_tratamento, tipo, metodo, observacao):
+    """preenche valores ausentes e registra a alteração no log"""
     if not mascara.any():
         return base
 
@@ -170,11 +145,10 @@ def preencher_faltantes(base, coluna, mascara, valor, log_tratamento, tipo, meto
     )
     return base
 
-
-if __name__ == "__main__":
-    print("=" * 70)
-    print("ETAPA 4 - VALORES AUSENTES E INVALIDOS")
-    print("=" * 70)
+def tratar_base():
+    """executa o tratamento completo da base consolidada"""
+    os.makedirs(PASTA_PROCESSADOS, exist_ok=True)
+    os.makedirs(PASTA_LOGS, exist_ok=True)
 
     if not os.path.exists(ARQUIVO_ENTRADA):
         raise FileNotFoundError(f"Arquivo nao encontrado: {ARQUIVO_ENTRADA}")
@@ -183,13 +157,11 @@ if __name__ == "__main__":
     log_tratamento = []
     resumo_preenchimentos = {}
 
-    print()
-    print("Linhas:", len(base))
-    print()
-    print("NaN antes do tratamento:")
     ausentes = base.isna().sum()
     ausentes = ausentes[ausentes > 0]
-    print(ausentes if len(ausentes) > 0 else "nenhum")
+    print("Tratando valores ausentes...")
+    print("Linhas de entrada:", len(base))
+    print("Colunas com NaN antes:", len(ausentes))
 
     base["season"] = pd.to_numeric(base["season"], errors="coerce")
     base["round"] = pd.to_numeric(base["round"], errors="coerce")
@@ -236,6 +208,7 @@ if __name__ == "__main__":
     if "qualifying_position" in base.columns:
         base = marcar_invalido(base, "qualifying_position", base["qualifying_position"] <= 0, "posicao de classificacao invalida", log_tratamento)
 
+    # diferencia ausencia de parada da indisponibilidade dos dados de pit stop
     if "num_pitstops" in base.columns:
         base["num_pitstops_imputado"] = base["num_pitstops"].isna().astype(int)
 
@@ -270,6 +243,7 @@ if __name__ == "__main__":
         zero_invalido = (base["num_pitstops"] > 0) & (base[coluna] == 0)
         base = marcar_invalido(base, coluna, zero_invalido, "tempo igual a zero apesar de existir pitstop", log_tratamento)
 
+    # preserva se houve tempo registrado antes de substituir ausencias por zero
     for nome, flag in [("Q1_s", "registrou_tempo_q1"), ("Q2_s", "chegou_no_q2"), ("Q3_s", "chegou_no_q3")]:
         if nome in base.columns:
             base[flag] = base[nome].notna().astype(int)
@@ -283,6 +257,7 @@ if __name__ == "__main__":
             base = preencher_faltantes(base, coluna, mascara, 0, log_tratamento, "ausencia_estrutural", "sentinela_zero", "zero nao representa tempo real; a coluna binaria correspondente indica se houve tempo registrado")
         somar_preenchimentos(resumo_preenchimentos, coluna, quantidade)
 
+    # registra se os dados climaticos estavam originalmente disponiveis
     colunas_clima_existentes = [coluna for coluna in COLUNAS_CLIMA if coluna in base.columns]
     if colunas_clima_existentes:
         base["clima_dado_disponivel"] = base[colunas_clima_existentes].notna().all(axis=1).astype(int)
@@ -325,14 +300,16 @@ if __name__ == "__main__":
         base["tire_compound_predominante"] = base["tire_compound_predominante"].replace(r"^\s*$", np.nan, regex=True)
         base["tire_compound_imputado"] = base["tire_compound_predominante"].isna().astype(int)
 
+    # congela a base antes das imputacoes para nao usar valores imputados como historico
     base_historica = base.copy()
     corridas = base[["season", "round"]].drop_duplicates().sort_values(["season", "round"])
 
+    # usa apenas corridas anteriores, priorizando circuito, temporada e historico geral
     for _, corrida in corridas.iterrows():
         season = corrida["season"]
         round_ = corrida["round"]
         mascara_corrida = (base["season"] == season) & (base["round"] == round_)
-        historico = base_historica[esconder_corridas_anteriores(base_historica, season, round_)]
+        historico = base_historica[mascara_corridas_anteriores(base_historica, season, round_)]
         circuitos = base.loc[mascara_corrida, "circuit_id"].dropna().unique()
         circuit_id = circuitos[0] if len(circuitos) > 0 else None
 
@@ -367,7 +344,7 @@ if __name__ == "__main__":
             if quantidade == 0:
                 continue
 
-            historico = base_historica[esconder_corridas_anteriores(base_historica, season, round_)]
+            historico = base_historica[mascara_corridas_anteriores(base_historica, season, round_)]
             circuitos = base.loc[mascara_corrida, "circuit_id"].dropna().unique()
             circuit_id = circuitos[0] if len(circuitos) > 0 else None
             valor = moda_historica(historico, "tire_compound_predominante", circuit_id, season)
@@ -390,7 +367,7 @@ if __name__ == "__main__":
             if quantidade == 0:
                 continue
 
-            historico = base_historica[esconder_corridas_anteriores(base_historica, season, round_)]
+            historico = base_historica[mascara_corridas_anteriores(base_historica, season, round_)]
             circuitos = base.loc[mascara_corrida, "circuit_id"].dropna().unique()
             circuit_id = circuitos[0] if len(circuitos) > 0 else None
             valor = moda_historica(historico, "choveu", circuit_id, season)
@@ -403,55 +380,27 @@ if __name__ == "__main__":
             base = preencher_faltantes(base, "choveu", mascara_faltando, valor, log_tratamento, "imputacao_temporal", metodo, observacao)
             somar_preenchimentos(resumo_preenchimentos, "choveu", quantidade)
 
+    # garante que a base enviada à modelagem não tenha valores ausentes
     faltando = base.isna().sum()
     faltando = faltando[faltando > 0]
 
-    print()
-    print("NaN depois do tratamento:")
     if len(faltando) > 0:
+        print("NaN depois do tratamento:")
         print(faltando)
         raise ValueError("Ainda existem valores NaN na base apos o tratamento.")
-    print("Nenhum valor NaN encontrado.")
+    print("NaN depois:", 0)
+    print("Valores preenchidos:", sum(resumo_preenchimentos.values()))
 
-    print()
-    print("=" * 70)
-    print("VALORES PREENCHIDOS")
-    print("=" * 70)
-    if resumo_preenchimentos:
-        for coluna, quantidade in sorted(resumo_preenchimentos.items()):
-            print(f"{coluna}: {quantidade}")
-    else:
-        print("Nenhum valor precisou ser preenchido.")
-
-    os.makedirs(PASTA_PROCESSADOS, exist_ok=True)
     base.to_csv(ARQUIVO_SAIDA, index=False)
 
     log_df = pd.DataFrame(log_tratamento, columns=COLUNAS_LOG)
     log_df.to_csv(ARQUIVO_LOG_TRATAMENTO, index=False)
 
-    print()
-    print("=" * 70)
-    print("RESUMO DO LOG DE TRATAMENTO")
-    print("=" * 70)
-    if not log_df.empty:
-        print()
-        print("Por tipo de tratamento:")
-        print(log_df["tipo_tratamento"].value_counts())
-        print()
-        print("Por metodo:")
-        print(log_df["metodo"].value_counts())
-    else:
-        print("Nenhuma alteracao registrada.")
-
-    print()
-    print("=" * 70)
-    print("ETAPA 4 CONCLUIDA")
-    print("=" * 70)
-    print()
-    print("Base tratada:")
-    print(ARQUIVO_SAIDA)
-    print()
-    print("Log completo:")
-    print(ARQUIVO_LOG_TRATAMENTO)
-    print()
+    print("Alteracoes registradas no log:", len(log_df))
+    print("Base tratada salva em:", ARQUIVO_SAIDA)
+    print("Log salvo em:", ARQUIVO_LOG_TRATAMENTO)
     print("Linhas:", len(base), "| Colunas:", len(base.columns))
+
+
+if __name__ == "__main__":
+    tratar_base()
