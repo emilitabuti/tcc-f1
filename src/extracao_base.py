@@ -6,158 +6,124 @@ import pandas as pd
 import fastf1
 from fastf1 import RateLimitExceededError
 
+ANO_INICIO = 2018
+ANO_FIM = 2025
 
-# endpoint base da api jolpica
 BASE_URL = "https://api.jolpi.ca/ergast/f1"
 
-# pasta onde os arquivos csv vão ser salvos
 PASTA_DADOS = "dados"
 
-# pasta usada pelo fastf1 pra guardar o cache das sessões
+#cache local do FastF1 para evitar novos downloads das mesmas sessões
 CACHE_DIR = os.path.join(PASTA_DADOS, "cache")
 
-# guarda quais rounds do fastf1 já foram baixados
+#checkpoint com os rounds já processados
 CKPT_FILE = os.path.join(PASTA_DADOS, "fastf1_checkpoint.json")
 
-# cria as pastas se ainda não existir
 os.makedirs(PASTA_DADOS, exist_ok=True)
 os.makedirs(CACHE_DIR, exist_ok=True)
 
-# ativa o cache do fastf1, assim ele não baixa tudo de novo
 fastf1.Cache.enable_cache(CACHE_DIR)
 
 
 def requisitar(url, tentativas=5):
-    """faz um GET na url, tentando de novo se der erro de conexão ou limite de requisições (429)"""
-
+    #tenta novamente em caso de falha de conexão ou limite da API
     for tentativa in range(tentativas):
-
         try:
-            # faz a requisição pra api
             response = requests.get(url, timeout=30)
 
         except requests.exceptions.RequestException as erro:
-            # deu erro de conexão, espera um pouco e tenta de novo
             print("Erro de conexão:", erro)
             time.sleep(10)
             continue
 
-        # código 429 (excesso de requisições)
         if response.status_code == 429:
             print("Limite da API. Aguardando...")
             time.sleep(30)
             continue
 
-        # se der outro erro, desiste
         if response.status_code != 200:
             print("Erro:", response.status_code)
             return None
 
-        # converte a resposta pra json
         return response.json()
 
     return None
 
 
 def paginar(url, limit=100):
-    """percorre todas as páginas de um endpoint da jolpica, uma de cada vez"""
-
+    #busca todas as páginas de um endpoint
+    paginas = []
     offset = 0
 
     while True:
-        # monta a url da página atual
         separador = "&" if "?" in url else "?"
         data = requisitar(f"{url}{separador}limit={limit}&offset={offset}")
 
-        # se a requisição falhou, encerra
         if data is None:
-            return
+            break
 
-        # devolve a página
-        yield data
+        paginas.append(data)
 
-        # total de registros que o endpoint tem no total
         total = int(data["MRData"]["total"])
-
-        # avança pra próxima página
         offset += limit
+
+        if offset >= total:
+            break
+
         time.sleep(0.3)
 
-        # quando tiver percorrido todas as páginas
-        if offset >= total:
-            return
+    return paginas
 
 
 def salvar(df, nome_arquivo):
-    """salva o dataframe como csv dentro da pasta de dados"""
+    #salva o dataframe como csv dentro da pasta de dados
     caminho = os.path.join(PASTA_DADOS, nome_arquivo)
     df.to_csv(caminho, index=False)
     print("Salvo:", caminho)
 
 
-def salvar_incremental(df, nome_arquivo):
-    """acrescenta linhas em um csv, criando o cabeçalho só se o arquivo ainda não existir"""
-    caminho = os.path.join(PASTA_DADOS, nome_arquivo)
-    existe = os.path.exists(caminho)
-    df.to_csv(caminho, mode="a", header=not existe, index=False)
-
-
 def salvar_round_incremental(df, nome_arquivo, ano, round_num, chaves_unicidade):
-    """substitui o round no CSV antes de salvar pra evitar duplicatas"""
+    #permite refazer um round sem acumular versões antigas
     caminho = os.path.join(PASTA_DADOS, nome_arquivo)
 
-    # se o arquivo ja existe, remove as linhas antigas desse round
     if os.path.exists(caminho):
         existente = pd.read_csv(caminho)
+        #substitui somente o round que está sendo reprocessado
         mesmo_round = (existente["season"].astype(int) == int(ano)) & (existente["round"].astype(int) == int(round_num))
         combinado = pd.concat([existente.loc[~mesmo_round], df], ignore_index=True)
     else:
-        # se ainda nao existe, o arquivo completo é o novo dataframe
         combinado = df.copy()
 
-    # remove duplicatas pelas chaves esperadas 
+    #garante uma única linha por registro esperado
     chaves_presentes = [coluna for coluna in chaves_unicidade if coluna in combinado.columns]
     if len(chaves_presentes) == len(chaves_unicidade):
         combinado = combinado.drop_duplicates(subset=chaves_unicidade, keep="last")
 
-    # salva o arquivo atualizado
     combinado.to_csv(caminho, index=False)
     print("Salvo:", caminho, "| round:", f"{ano}-{round_num}")
 
 
 def carregar_checkpoint():
-    """le quais rounds do fastf1 já foram processados em execuções anteriores"""
+    #le quais rounds do fastf1 já foram processados em execuções anteriores
     if os.path.exists(CKPT_FILE):
         with open(CKPT_FILE) as f:
             return set(json.load(f))
     return set()
 
-
 def salvar_checkpoint(concluidos):
-    """salva os rounds do fastf1 que já foram processados"""
     with open(CKPT_FILE, "w") as f:
         json.dump(sorted(concluidos), f)
 
-
-
-# RESULTADOS DAS CORRIDAS DE 2018 ATÉ 2025
+#RESULTADOS DAS CORRIDAS DE 2018 ATÉ 2025
 def buscar_resultados():
+    print(f"\nBuscando resultados de {ANO_INICIO} até {ANO_FIM}...")
 
-    print("\nBuscando resultados de 2018 até 2025...")
-
-    # lista que vai guardar cada linha de resultado encontrada
     dados = []
 
-    # percorre uma temporada de cada vez, de 2018 até 2025
-    for ano in range(2018, 2026):
+    for ano in range(ANO_INICIO, ANO_FIM + 1):
         print("Temporada:", ano)
-
-        # busca todas as páginas de resultados dessa temporada
         for pagina in paginar(f"{BASE_URL}/{ano}/results.json"):
-
-            # cada página traz uma lista de corridas
             for race in pagina["MRData"]["RaceTable"]["Races"]:
-
                 # cada corrida traz o resultado de cada piloto
                 for result in race["Results"]:
                     dados.append({
@@ -173,38 +139,28 @@ def buscar_resultados():
                         "laps": result.get("laps", "")
                     })
 
-    # transforma tudo em dataframe e salva em um csv
     salvar(pd.DataFrame(dados), "resultados_2018_2025.csv")
 
 
 
-# PIT STOPS 2018 ATÉ 2025
+#PIT STOPS 2018 ATÉ 2025
 def buscar_pitstops():
+    print(f"\nBuscando pit stops de {ANO_INICIO} até {ANO_FIM}...")
 
-    print("\nBuscando pit stops de 2018 até 2025...")
-
-    # lista que vai guardar todos os pit stops encontrados
     dados = []
 
-    # percorre todas as temporadas
-    for ano in range(2018, 2026):
+    for ano in range(ANO_INICIO, ANO_FIM + 1):
         print("Temporada:", ano)
 
-        # busca o calendário da temporada pra saber quantos rounds ela teve
+        #busca o calendário da temporada pra saber quantos rounds ela teve
         calendario = requisitar(f"{BASE_URL}/{ano}/races.json?limit=100")
         if not calendario:
             continue
-
         rounds = [r["round"] for r in calendario["MRData"]["RaceTable"]["Races"]]
 
-        # percorre cada round (gp) da temporada
         for round_num in rounds:
-
-            # busca todas as páginas de pit stops desse round
             for pagina in paginar(f"{BASE_URL}/{ano}/{round_num}/pitstops.json"):
                 for race in pagina["MRData"]["RaceTable"]["Races"]:
-
-                    # percorre cada pit stop dessa corrida
                     for pit in race["PitStops"]:
                         dados.append({
                             "season": ano,
@@ -216,31 +172,22 @@ def buscar_pitstops():
                             "duration": pit["duration"]
                         })
 
-            # pausa antes de passar pro próximo round
             time.sleep(0.5)
 
-    # transforma tudo em dataframe e salva em um csv
     salvar(pd.DataFrame(dados), "pitstops_2018_2025.csv")
 
 
-
-# CIRCUITOS UTILIZADOS ENTRE 2018 E 2025
+#CIRCUITOS UTILIZADOS ENTRE 2018 E 2025
 def buscar_circuitos():
+    print(f"\nBuscando circuitos de {ANO_INICIO} até {ANO_FIM}...")
 
-    print("\nBuscando circuitos de 2018 até 2025...")
-
-    # lista que vai guardar os circuitos encontrados
     dados = []
 
-    # faz a busca dos circuitos de cada temporada
-    for ano in range(2018, 2026):
+    for ano in range(ANO_INICIO, ANO_FIM + 1):
         print("Temporada:", ano)
-
         data = requisitar(f"{BASE_URL}/{ano}/circuits.json?limit=100")
         if not data:
             continue
-
-        # percorre cada circuito retornado e guarda os campos
         for circuito in data["MRData"]["CircuitTable"]["Circuits"]:
             dados.append({
                 "circuit_id": circuito["circuitId"],
@@ -249,32 +196,24 @@ def buscar_circuitos():
                 "long": circuito["Location"]["long"],
                 "country": circuito["Location"]["country"]
             })
-
         time.sleep(0.5)
 
-    # um circuito pode aparecer em várias temporadas, então remove as repetições pelo id
+    #um circuito pode aparecer em várias temporadas
     df = pd.DataFrame(dados).drop_duplicates(subset="circuit_id")
     salvar(df, "circuitos_2018_2025.csv")
 
 
-
-# PILOTOS QUE COMPETIRAM ENTRE 2018 E 2025
+#PILOTOS QUE COMPETIRAM ENTRE 2018 E 2025
 def buscar_pilotos():
+    print(f"\nBuscando pilotos de {ANO_INICIO} até {ANO_FIM}...")
 
-    print("\nBuscando pilotos de 2018 até 2025...")
-
-    # lista que vai guardar os pilotos encontrados
     dados = []
 
-    # busca os pilotos de cada temporada
-    for ano in range(2018, 2026):
+    for ano in range(ANO_INICIO, ANO_FIM + 1):
         print("Temporada:", ano)
-
         data = requisitar(f"{BASE_URL}/{ano}/drivers.json?limit=100")
         if not data:
             continue
-
-        # percorre cada piloto retornado e guarda os campos
         for driver in data["MRData"]["DriverTable"]["Drivers"]:
             dados.append({
                 "driver_id": driver["driverId"],
@@ -284,31 +223,25 @@ def buscar_pilotos():
                 "date_of_birth": driver.get("dateOfBirth", ""),
                 "nationality": driver.get("nationality", "")
             })
-
         time.sleep(0.5)
 
-    # um piloto pode competir em vários anos, então remove os repetidos
+    #um piloto pode competir em vários anos
     df = pd.DataFrame(dados).drop_duplicates(subset="driver_id")
     salvar(df, "pilotos_2018_2025.csv")
 
 
 
-# CALENDARIO: EM QUAL CIRCUITO CADA CORRIDA ACONTECEU
+#CALENDARIO: EM QUAL CIRCUITO CADA CORRIDA ACONTECEU
 def buscar_calendario_circuitos():
-
-    print("\nBuscando calendário de circuitos de 2018 até 2025...")
+    print(f"\nBuscando calendário de circuitos de {ANO_INICIO} até {ANO_FIM}...")
 
     dados = []
 
-    # percorre cada temporada
-    for ano in range(2018, 2026):
+    for ano in range(ANO_INICIO, ANO_FIM + 1):
         print("Temporada:", ano)
-
         data = requisitar(f"{BASE_URL}/{ano}/races.json?limit=100")
         if not data:
             continue
-
-        # percorre cada corrida da temporada e guarda o circuito dela
         for race in data["MRData"]["RaceTable"]["Races"]:
             dados.append({
                 "season": race["season"],
@@ -325,62 +258,49 @@ def buscar_calendario_circuitos():
 
 # FASTF1 - QUALIFYING, VOLTAS E CLIMA DE 2018 ATÉ 2025
 def cols_disponiveis(df, colunas):
-    """devolve só as colunas da lista que realmente existem no dataframe"""
     return [coluna for coluna in colunas if coluna in df.columns]
 
 
 def carregar_sessao(ano, round_num, tipo, tentativas=5, espera=900):
-    """carrega uma sessao do fastf1 com novas tentativas se bater no limite"""
-
-    # tenta carregar a sessao algumas vezes antes de desistir
     for tentativa in range(tentativas):
         try:
-            # busca e carrega a sessao do fastf1
             sessao = fastf1.get_session(ano, round_num, tipo)
+            #carrega clima apenas nas sessões de corrida
             sessao.load(laps=True, telemetry=False, weather=(tipo == "R"), messages=False)
             return sessao
         except RateLimitExceededError:
-            # espera antes de tentar de novo quando a api bloqueia por limite
             print(f"Limite da API atingido, aguardando {espera}s antes de tentar de novo...")
             time.sleep(espera)
 
-    # avisa quem chamou que o round nao deve ser marcado como concluido
+    #mantém o round pendente quando o limite da API persiste
     raise RateLimitExceededError("limite da api continua ativo após várias tentativas")
 
 
 def buscar_fastf1():
-
     print("\nBuscando dados do FastF1...")
 
-    # rounds que já foram baixados em execuções anteriores
     concluidos = carregar_checkpoint()
 
-    # percorre cada temporada
-    for ano in range(2018, 2026):
+    for ano in range(ANO_INICIO, ANO_FIM + 1):
         print("\nFastF1 - Temporada:", ano)
-
         try:
-            # busca o calendário da temporada
             schedule = fastf1.get_event_schedule(ano, include_testing=False)
         except Exception as erro:
             print("Erro ao buscar calendário:", erro)
             continue
 
-        # pega só os números dos rounds
         rounds = schedule["RoundNumber"].dropna().astype(int)
 
-        # percorre cada gp da temporada
         for round_num in rounds:
             chave = f"{ano}-{round_num}"
-
-            # pula rounds que já foram baixados numa execução anterior
+             #evita repetir rounds concluídos em execuções anteriores
             if chave in concluidos:
                 print("Round:", round_num, "(já processado, pulando)")
                 continue
 
             print("Round:", round_num)
 
-            # se qualquer parte falhar, nao marca o round como concluido para que ele seja retomado na proxima execucao
+            # qualquer falha mantém o round pendente para uma próxima execução
             limite_atingido = False
             round_falhou = False
 
@@ -390,16 +310,12 @@ def buscar_fastf1():
 
                 resultados = session_q.results
 
-                # verifica se as colunas que a gente quer existem
                 colunas = cols_disponiveis(resultados, ["Abbreviation", "Position", "Q1", "Q2", "Q3"])
 
-                # cria um dataframe só com essas colunas
                 df_q = resultados[colunas].copy()
 
-                # renomeia algumas colunas
                 df_q = df_q.rename(columns={"Abbreviation": "Driver", "Position": "position"})
 
-                # adiciona temporada e round pra identificar de onde veio a linha
                 df_q["season"] = ano
                 df_q["round"] = round_num
 
@@ -414,11 +330,10 @@ def buscar_fastf1():
                 print("Erro no qualifying:", ano, round_num, erro)
                 round_falhou = True
 
-            # CORRIDA / VOLTAS
+            #CORRIDA/VOLTAS
             try:
                 session_r = carregar_sessao(ano, round_num, "R")
 
-                # colunas de volta que a gente quer salvar
                 colunas_laps = cols_disponiveis(session_r.laps, ["Driver", "LapNumber", "LapTime", "Sector1Time", "Sector2Time", "Sector3Time", "Compound", "TyreLife", "Stint", "TrackStatus", "FreshTyre", "PitInTime", "PitOutTime"])
 
                 df_laps = session_r.laps[colunas_laps].copy()
@@ -427,7 +342,6 @@ def buscar_fastf1():
                 salvar_round_incremental(df_laps, "fastf1_laps_2018_2025.csv", ano, round_num, ["season", "round", "Driver", "LapNumber"],)
 
                 # CLIMA
-                # só salva o clima se a sessão realmente trouxe esses dados
                 if session_r.weather_data is not None and len(session_r.weather_data) > 0:
                     colunas_weather = cols_disponiveis(session_r.weather_data, ["Time", "AirTemp", "Humidity", "Rainfall", "TrackTemp", "WindSpeed"])
 
@@ -445,37 +359,23 @@ def buscar_fastf1():
                 print("Erro na corrida:", ano, round_num, erro)
                 round_falhou = True
 
-            # so marca como concluido se nenhuma etapa do round falhou
+            #registra o checkpoint somente quando todas as etapas terminam corretamente
             if not limite_atingido and not round_falhou:
                 concluidos.add(chave)
                 salvar_checkpoint(concluidos)
 
-            # pausa entre cada gp pra não sobrecarregar a fonte de dados
             time.sleep(1)
 
     print("\nFastF1 finalizado (ou pausado pelo limite da api - rode o script de novo mais tarde pra continuar de onde parou).")
 
 
-
 # EXECUÇÃO DO PROGRAMA
 if __name__ == "__main__":
-
-    # busca os resultados das corridas
     buscar_resultados()
-
-    # busca os pit stops
     buscar_pitstops()
-
-    # busca os circuitos
     buscar_circuitos()
-
-    # busca os pilotos
     buscar_pilotos()
-
-    # busca em qual circuito cada corrida aconteceu
     buscar_calendario_circuitos()
-
-    # busca qualifying, voltas e clima pelo fastf1
     buscar_fastf1()
 
     print("\nExtração finalizada.")

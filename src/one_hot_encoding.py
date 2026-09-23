@@ -1,36 +1,22 @@
-"""ETAPA 6 - MATRIZ DE MODELAGEM COM ONE-HOT ENCODING.
-
-Prepara uma base diretamente utilizavel por modelos do scikit-learn:
-
-- usa somente variaveis disponiveis antes da corrida;
-- separa `finish_position` como alvo;
-- aplica One-Hot Encoding apenas nas categoricas escolhidas;
-- remove colunas textuais auxiliares e colunas pos-corrida;
-- valida que a matriz final nao possui NaN, object dtype ou vazamento.
-
-Observacao metodologica:
-para avaliacao temporal, o encoder deve ser ajustado apenas no conjunto de
-treino e aplicado no conjunto de teste. Este script gera uma matriz historica
-unica para a proxima etapa do projeto.
-"""
+#monta a base de modelagem aplicando one-hot encoding nas colunas categoricas
 
 import json
 import os
-
 import joblib
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import OneHotEncoder
-
 from colunas_modelagem import COLUNA_ALVO, validar_sem_vazamento
 
 PASTA_DADOS = "dados"
 PASTA_PROCESSADOS = os.path.join(PASTA_DADOS, "processados")
+
 ARQUIVO_ENTRADA = os.path.join(PASTA_PROCESSADOS, "base_tratada_2018_2025.csv")
 ARQUIVO_SAIDA = os.path.join(PASTA_PROCESSADOS, "base_modelagem_2018_2025.csv")
 ARQUIVO_ENCODER = os.path.join(PASTA_PROCESSADOS, "one_hot_encoder_2018_2025.joblib")
 ARQUIVO_METADADOS = os.path.join(PASTA_PROCESSADOS, "base_modelagem_metadados_2018_2025.json")
 
+# colunas que viram colunas binarias com one-hot encoding
 COLUNAS_CATEGORICAS = [
     "driver_id",
     "constructor_id",
@@ -38,6 +24,7 @@ COLUNAS_CATEGORICAS = [
     "circuit_type",
 ]
 
+# colunas numericas que entram no modelo
 COLUNAS_NUMERICAS = [
     "season",
     "round",
@@ -58,6 +45,7 @@ COLUNAS_NUMERICAS = [
     "diferenca_grid_qualifying",
 ]
 
+# colunas usadas pra identificar a corrida e o piloto
 COLUNAS_IDENTIFICACAO = [
     "season",
     "round",
@@ -67,25 +55,26 @@ COLUNAS_IDENTIFICACAO = [
     "circuit_id",
 ]
 
-
 def validar_colunas(base):
+    """verifica se as colunas usadas na modelagem existem na base"""
     colunas_necessarias = sorted(set(COLUNAS_CATEGORICAS + COLUNAS_NUMERICAS + [COLUNA_ALVO]))
     ausentes = [coluna for coluna in colunas_necessarias if coluna not in base.columns]
     if ausentes:
         raise ValueError("Colunas obrigatorias ausentes: " + ", ".join(ausentes))
 
-
 def montar_matriz_modelagem(base):
-    """Retorna base de modelagem, encoder, metadados e identificadores."""
+    """monta a matriz numerica, o encoder, os metadados e os identificadores"""
     validar_colunas(base)
 
     colunas_modelo_antes_encoding = COLUNAS_NUMERICAS + COLUNAS_CATEGORICAS
     validar_sem_vazamento(colunas_modelo_antes_encoding)
 
+    # separa o alvo que o modelo vai prever
     y = pd.to_numeric(base[COLUNA_ALVO], errors="coerce")
     if y.isna().any():
         raise ValueError(f"Alvo {COLUNA_ALVO} possui valores ausentes ou invalidos.")
 
+    # verifica se as features numericas ficaram como numeros
     X_num = base[COLUNAS_NUMERICAS].copy()
     for coluna in COLUNAS_NUMERICAS:
         X_num[coluna] = pd.to_numeric(X_num[coluna], errors="coerce")
@@ -95,6 +84,7 @@ def montar_matriz_modelagem(base):
         faltantes = faltantes[faltantes > 0]
         raise ValueError("Features numericas possuem NaN:\n" + faltantes.to_string())
 
+    # transforma as categorias em colunas binarias
     encoder = OneHotEncoder(
         handle_unknown="ignore",
         sparse_output=False,
@@ -104,11 +94,13 @@ def montar_matriz_modelagem(base):
     colunas_codificadas = encoder.get_feature_names_out(COLUNAS_CATEGORICAS)
     X_cat = pd.DataFrame(dados_codificados, columns=colunas_codificadas, index=base.index)
 
+    # junta alvo, colunas numericas e colunas geradas pelo one-hot
     X = pd.concat([X_num, X_cat], axis=1)
     base_modelagem = pd.concat([base[[COLUNA_ALVO]].copy(), X], axis=1)
 
     validar_base_modelagem(base_modelagem)
 
+    # guarda metadados
     identificadores = base[[coluna for coluna in COLUNAS_IDENTIFICACAO if coluna in base.columns]].copy()
     metadados = {
         "arquivo_entrada": ARQUIVO_ENTRADA,
@@ -128,8 +120,8 @@ def montar_matriz_modelagem(base):
 
     return base_modelagem, encoder, metadados, identificadores
 
-
 def validar_base_modelagem(base_modelagem):
+    """valida se a base esta pronta pra entrar no modelo"""
     if base_modelagem.isna().any().any():
         faltantes = base_modelagem.isna().sum()
         faltantes = faltantes[faltantes > 0]
@@ -147,6 +139,7 @@ def validar_base_modelagem(base_modelagem):
 
 
 def mostrar_resumo(base_original, base_modelagem, encoder, metadados):
+    """mostra um resumo da base gerada"""
     print()
     print("=" * 70)
     print("RESUMO DA BASE DE MODELAGEM")
@@ -164,22 +157,14 @@ def mostrar_resumo(base_original, base_modelagem, encoder, metadados):
 
 
 if __name__ == "__main__":
-    print("=" * 70)
-    print("ETAPA 6 - BASE DE MODELAGEM")
-    print("=" * 70)
-
     if not os.path.exists(ARQUIVO_ENTRADA):
         raise FileNotFoundError(f"Arquivo de entrada nao encontrado: {ARQUIVO_ENTRADA}")
 
-    print()
-    print("Lendo base tratada...")
     base = pd.read_csv(ARQUIVO_ENTRADA)
-    print("Linhas:", len(base), "| Colunas:", len(base.columns))
 
-    print()
-    print("Montando matriz numerica sem vazamento...")
     base_modelagem, encoder, metadados, identificadores = montar_matriz_modelagem(base)
 
+    # salva a base, o encoder e os metadados
     os.makedirs(PASTA_PROCESSADOS, exist_ok=True)
     base_modelagem.to_csv(ARQUIVO_SAIDA, index=False)
     joblib.dump(encoder, ARQUIVO_ENCODER)
@@ -188,10 +173,6 @@ if __name__ == "__main__":
 
     mostrar_resumo(base, base_modelagem, encoder, metadados)
 
-    print()
-    print("=" * 70)
-    print("ETAPA CONCLUIDA")
-    print("=" * 70)
     print("Base de modelagem salva em:", ARQUIVO_SAIDA)
     print("Encoder salvo em:", ARQUIVO_ENCODER)
     print("Metadados salvos em:", ARQUIVO_METADADOS)
