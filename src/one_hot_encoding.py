@@ -56,14 +56,14 @@ COLUNAS_IDENTIFICACAO = [
 ]
 
 def validar_colunas(base):
-    """verifica se as colunas usadas na modelagem existem na base"""
+    # verifica se as colunas usadas na modelagem existem na base
     colunas_necessarias = sorted(set(COLUNAS_CATEGORICAS + COLUNAS_NUMERICAS + [COLUNA_ALVO]))
     ausentes = [coluna for coluna in colunas_necessarias if coluna not in base.columns]
     if ausentes:
         raise ValueError("Colunas obrigatorias ausentes: " + ", ".join(ausentes))
 
 def montar_matriz_modelagem(base):
-    """monta a matriz numerica, o encoder, os metadados e os identificadores"""
+    # monta a matriz numerica, o encoder, os metadados e os identificadores
     validar_colunas(base)
 
     colunas_modelo_antes_encoding = COLUNAS_NUMERICAS + COLUNAS_CATEGORICAS
@@ -121,7 +121,7 @@ def montar_matriz_modelagem(base):
     return base_modelagem, encoder, metadados, identificadores
 
 def validar_base_modelagem(base_modelagem):
-    """valida se a base esta pronta pra entrar no modelo"""
+    # valida se a base esta pronta pra entrar no modelo
     if base_modelagem.isna().any().any():
         faltantes = base_modelagem.isna().sum()
         faltantes = faltantes[faltantes > 0]
@@ -139,7 +139,7 @@ def validar_base_modelagem(base_modelagem):
 
 
 def mostrar_resumo(base_original, base_modelagem, encoder, metadados):
-    """mostra um resumo da base gerada"""
+    # mostra um resumo da base gerada
     print()
     print("=" * 70)
     print("RESUMO DA BASE DE MODELAGEM")

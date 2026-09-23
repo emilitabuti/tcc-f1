@@ -32,12 +32,12 @@ COLUNAS_LOG = ["season", "round", "race_name", "circuit_id", "driver_id", "const
 
 
 def colunas_identificacao(base):
-    """pega as colunas usadas pra identificar cada linha no log"""
+    # pega as colunas usadas pra identificar cada linha no log
     preferidas = ["season", "round", "race_name", "circuit_id", "driver_id", "constructor_id"]
     return [coluna for coluna in preferidas if coluna in base.columns]
 
 def registrar_tratamento(log_tratamento, base, indices, coluna, valores_originais, valores_novos, tipo_tratamento, metodo, observacao=""):
-    """guarda no log quais valores foram alterados"""
+    # guarda no log quais valores foram alterados
     identificadores = colunas_identificacao(base)
     for indice in indices:
         registro = {coluna_id: base.at[indice, coluna_id] for coluna_id in identificadores}
@@ -52,13 +52,13 @@ def registrar_tratamento(log_tratamento, base, indices, coluna, valores_originai
         log_tratamento.append(registro)
 
 def somar_preenchimentos(resumo, coluna, quantidade):
-    """acumula quantos valores foram preenchidos por coluna"""
+    # acumula quantos valores foram preenchidos por coluna
     if quantidade == 0:
         return
     resumo[coluna] = resumo.get(coluna, 0) + int(quantidade)
 
 def marcar_invalido(base, coluna, esconder, motivo, log_tratamento):
-    """troca valores invalidos por NaN para serem tratados depois"""
+    # troca valores invalidos por NaN para serem tratados depois
     esconder = esconder & base[coluna].notna()
     if not esconder.any():
         return base
@@ -72,7 +72,7 @@ def marcar_invalido(base, coluna, esconder, motivo, log_tratamento):
     return base
 
 def normalizar_choveu(valor):
-    """converte a coluna de chuva para 0, 1 ou NaN"""
+    # converte a coluna de chuva para 0, 1 ou NaN
     if pd.isna(valor):
         return np.nan
     if isinstance(valor, (bool, np.bool_)):
@@ -86,11 +86,11 @@ def normalizar_choveu(valor):
     return np.nan
 
 def mascara_corridas_anteriores(base, season, round_):
-    """seleciona somente corridas anteriores a corrida atual"""
+    # seleciona somente corridas anteriores a corrida atual
     return (base["season"] < season) | ((base["season"] == season) & (base["round"] < round_))
 
 def mediana_historica(historico, coluna, circuit_id, season):
-    """calcula mediana usando circuito, temporada ou historico geral"""
+    # calcula mediana usando circuito, temporada ou historico geral
     dados = historico.copy()
     if coluna in {"tempo_total_pitstop", "tempo_medio_pitstop"}:
         dados = dados[dados["num_pitstops"] > 0]
@@ -110,7 +110,7 @@ def mediana_historica(historico, coluna, circuit_id, season):
     return np.nan
 
 def moda_historica(historico, coluna, circuit_id, season):
-    """calcula moda usando circuito, temporada ou historico geral"""
+    # calcula moda usando circuito, temporada ou historico geral
     if circuit_id is not None and "circuit_id" in historico.columns:
         valores = historico.loc[historico["circuit_id"] == circuit_id, coluna].dropna()
         if not valores.empty:
@@ -126,7 +126,7 @@ def moda_historica(historico, coluna, circuit_id, season):
     return np.nan
 
 def preencher_faltantes(base, coluna, mascara, valor, log_tratamento, tipo, metodo, observacao):
-    """preenche valores ausentes e registra a alteração no log"""
+    # preenche valores ausentes e registra a alteração no log
     if not mascara.any():
         return base
 
@@ -146,7 +146,7 @@ def preencher_faltantes(base, coluna, mascara, valor, log_tratamento, tipo, meto
     return base
 
 def tratar_base():
-    """executa o tratamento completo da base consolidada"""
+    # executa o tratamento completo da base consolidada
     os.makedirs(PASTA_PROCESSADOS, exist_ok=True)
     os.makedirs(PASTA_LOGS, exist_ok=True)
 

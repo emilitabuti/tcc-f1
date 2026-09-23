@@ -61,7 +61,7 @@ COLUNAS_POS_CORRIDA = [
 ]
 
 def validar_sem_vazamento(colunas_modelo):
-    """verifica se alguma coluna pos-corrida entrou no modelo"""
+    # verifica se alguma coluna pos-corrida entrou no modelo
     proibidas = sorted(set(colunas_modelo) & set(COLUNAS_POS_CORRIDA))
     if proibidas:
         raise ValueError(

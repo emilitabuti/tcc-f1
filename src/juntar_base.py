@@ -22,7 +22,7 @@ def carregar_csv(nome_arquivo):
     return pd.read_csv(caminho)
 
 def validar_unicidade(df, colunas, nome):
-    """verifica se a tabela nao tem chaves duplicadas antes do merge"""
+    # verifica se a tabela nao tem chaves duplicadas antes do merge
     duplicados = df.duplicated(subset=colunas, keep=False)
     if duplicados.any():
         exemplos = df.loc[duplicados, colunas].head(20)
@@ -32,7 +32,7 @@ def validar_unicidade(df, colunas, nome):
         )
 
 def validar_sem_mapeamento_faltante(df, coluna_origem, coluna_mapeada, nome):
-    """verifica se algum codigo do FastF1 nao foi convertido para driver_id"""
+    # verifica se algum codigo do FastF1 nao foi convertido para driver_id
     faltantes = df[df[coluna_origem].notna() & df[coluna_mapeada].isna()]
     if faltantes.empty:
         return
@@ -44,7 +44,7 @@ def validar_sem_mapeamento_faltante(df, coluna_origem, coluna_mapeada, nome):
     )
 
 def validar_base_consolidada(base):
-    """valida na base final se tem uma linha por piloto em cada corrida"""
+    # valida na base final se tem uma linha por piloto em cada corrida
     print("Validando base consolidada...")
 
     chaves = ["season", "round", "driver_id"]
@@ -115,7 +115,7 @@ def duracao_pitstop_para_segundos(valor):
 
 # RESULTADOS + CIRCUITO
 def montar_resultados_com_circuito():
-    """pega os resultados das corridas e descobre o circuito de cada uma"""
+    # pega os resultados das corridas e descobre o circuito de cada uma
     print("Montando resultados com circuito...")
 
     resultados = carregar_csv("resultados_2018_2025.csv")
@@ -144,7 +144,7 @@ def montar_resultados_com_circuito():
 
 # CIRCUITOS
 def montar_circuitos():
-    """junta a localizacao (api) com os dados manuais de cada circuito"""
+    # junta a localizacao (api) com os dados manuais de cada circuito
     print("Montando tabela de circuitos...")
 
     circuitos_api = carregar_csv("circuitos_2018_2025.csv")
@@ -178,7 +178,7 @@ def montar_circuitos():
 
 # PIT STOPS
 def montar_pitstops_agregado():
-    """conta quantas paradas cada piloto fez numa corrida e o tempo gasto nelas"""
+    # conta quantas paradas cada piloto fez numa corrida e o tempo gasto nelas
     print("Agregando pit stops...")
 
     pitstops = carregar_csv("pitstops_2018_2025.csv")
@@ -194,7 +194,7 @@ def montar_pitstops_agregado():
     return agregado
 
 def montar_disponibilidade_pitstops():
-    """marca as corridas em que o arquivo de pit stops possui pelo menos um registro"""
+    # marca as corridas em que o arquivo de pit stops possui pelo menos um registro
     pitstops = carregar_csv("pitstops_2018_2025.csv")
     disponibilidade = pitstops[["season", "round"]].drop_duplicates().copy()
     disponibilidade["pitstop_dado_disponivel"] = 1
@@ -203,7 +203,7 @@ def montar_disponibilidade_pitstops():
 
 # VOLTAS DO FASTF1
 def montar_laps_agregado(codigo_para_driver_id):
-    """agrega as voltas de cada piloto numa corrida: tempo medio, melhor volta,..."""
+    # agrega as voltas de cada piloto numa corrida: tempo medio, melhor volta,...
     print("Agregando voltas (fastf1)...")
 
     laps = carregar_csv("fastf1_laps_2018_2025.csv")
@@ -241,7 +241,7 @@ def montar_laps_agregado(codigo_para_driver_id):
 
 # QUALIFYING
 def montar_qualifying(codigo_para_driver_id):
-    """pega a posicao de largada e os tempos de classificacao de cada piloto"""
+    # pega a posicao de largada e os tempos de classificacao de cada piloto
     print("Montando qualifying (fastf1)...")
 
     quali = carregar_csv("fastf1_qualifying_2018_2025.csv")
@@ -260,7 +260,7 @@ def montar_qualifying(codigo_para_driver_id):
 
 # CLIMA
 def montar_weather_agregado():
-    """agrega o clima da corrida inteira (uma linha por temporada e round)"""
+    # agrega o clima da corrida inteira (uma linha por temporada e round)
     print("Agregando clima (fastf1)...")
 
     weather = carregar_csv("fastf1_weather_2018_2025.csv")
