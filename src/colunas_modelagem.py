@@ -1,10 +1,6 @@
-"""Contratos de colunas para evitar vazamento de dados no modelo.
+#define quais colunas podem entrar no modelo e quais causariam vazamento
 
-Este arquivo nao cria features. Ele apenas documenta quais colunas podem ser
-usadas diretamente antes da corrida, quais sao resultado/observacao da propria
-corrida e qual e o alvo previsto.
-"""
-
+# coluna que o modelo vai tentar prever
 COLUNA_ALVO = "finish_position"
 
 COLUNAS_PRE_CORRIDA = [
@@ -64,9 +60,8 @@ COLUNAS_POS_CORRIDA = [
     "situacao_pitstop",
 ]
 
-
 def validar_sem_vazamento(colunas_modelo):
-    """Falha se colunas pos-corrida forem usadas diretamente no modelo."""
+    """verifica se alguma coluna pos-corrida entrou no modelo"""
     proibidas = sorted(set(colunas_modelo) & set(COLUNAS_POS_CORRIDA))
     if proibidas:
         raise ValueError(
